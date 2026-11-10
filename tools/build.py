@@ -81,6 +81,7 @@ class ContentHTML(HTMLParser):
             if not path.is_relative_to(self.base.resolve()):
                 raise ValueError("Article images must be inside their series directory")
             self.assets.append(path)
+            self.text.append(alt)
             self.parts.append(f'<img alt="{html.escape(alt, quote=True)}" src="{data_uri(path)}">')
             return
         if tag == "a" and values.get("href"):
