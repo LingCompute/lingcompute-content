@@ -33,10 +33,13 @@ pip install -r requirements.txt
 python -m playwright install chromium
 python -m unittest discover -s tests
 python tools/build.py --check
+python tools/fonts.py
 python tools/build.py
 ```
 
 打开生成的 `build/index.html` 查看文章。CI 的 `article-preview` 附件包含相同产物；下载后在本地打开。生成目录不入库。投稿方式见 [CONTRIBUTING.md](CONTRIBUTING.md)，默认排版与篇幅见 [编辑规范](docs/editorial.md)，审核流程见 [审核规则](docs/review.md)。
+
+默认字体为小米 MiSans：正文 Regular、小标题及表头 Medium、标题及强调 Semibold。`tools/fonts.py` 首次从[小米官方](https://hyperos.mi.com/font/en/download/)下载约 228 MB 字体包，仅在本机缓存三份未经修改、经 SHA256 校验的原始 WOFF2；后续复用缓存。字体嵌入独立 HTML 预览，不单独随仓库或 CI 附件分发。GitHub Markdown 的字体由 GitHub 控制；公众号编辑器和读者设备可能回退为苹方、微软雅黑或其他中文无衬线字体，发送前需真机检查。详见[字体与授权](docs/rights.md#字体)。
 
 | 目录 | 用途 |
 | --- | --- |

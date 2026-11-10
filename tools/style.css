@@ -1,11 +1,13 @@
 :root{--brand:#0649AD;--ink:#2C4459;--heading:#12263A;--muted:#52687A}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;padding:32px 16px;background:#F3F7FC;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:17px;line-height:1.75}
+body{margin:0;padding:32px 16px;background:#F3F7FC;color:var(--ink);font-family:"MiSans","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",sans-serif;font-size:17px;font-weight:400;line-height:1.75}
 article{max-width:750px;margin:auto;padding:42px 48px;background:white;border-radius:12px}
 h1{margin:0 0 24px;color:var(--heading);font-size:30px;line-height:1.45}
 h2{margin:44px 0 20px;padding-left:14px;border-left:4px solid var(--brand);color:var(--heading);font-size:23px;line-height:1.5}
 h3{margin:30px 0 14px;color:var(--heading);font-size:20px;line-height:1.5}
+h1,h2,strong{font-weight:600}
+h3,th{font-weight:500}
 p{margin:18px 0}
 a,strong{color:var(--brand)}
 a{overflow-wrap:anywhere}
@@ -23,6 +25,7 @@ th,td{padding:10px 8px;border:1px solid #D8E2ED;text-align:left;vertical-align:t
 th{background:#EEF4FC;color:var(--heading)}
 blockquote{margin:24px 0;padding:4px 18px;border-left:3px solid var(--brand);background:#F3F7FC}
 pre{white-space:pre-wrap;overflow-wrap:anywhere;padding:14px;background:#F3F7FC;font-size:14px}
+pre,code{font-family:ui-monospace,"SFMono-Regular",Consolas,"Liberation Mono",monospace}
 .meta{margin-bottom:28px;padding:16px;background:#F3F7FC;border-radius:8px;font-size:14px;color:var(--muted)}
 .meta p{margin:6px 0}
 .warning{color:#784900}
