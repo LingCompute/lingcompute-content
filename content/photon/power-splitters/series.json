@@ -7,13 +7,28 @@
       "slug": "01-y-junction",
       "authors": [],
       "summary": "区分分光比和总透射，理解对称Y分支如何实现宽带等分。",
-      "sources": ["https://www.lingcompute.com/photon/learning-center/examples/notebooks/YJunction"]
+      "sources": [
+        "https://www.lingcompute.com/photon/learning-center/examples/notebooks/YJunction"
+      ]
     },
     {
       "slug": "02-directional-coupler",
       "authors": [],
       "summary": "从超模相位和耦合模模型出发，理解功率交换及长度、失配和几何参数的取舍。",
-      "sources": ["https://www.lingcompute.com/photon/learning-center/examples/notebooks/DirectionalCoupler"]
+      "sources": [
+        "https://www.lingcompute.com/photon/learning-center/examples/notebooks/DirectionalCoupler"
+      ]
+    },
+    {
+      "slug": "04-comparison",
+      "authors": [],
+      "summary": "按带宽、比例、面积和工艺边界选择分光结构。",
+      "sources": [
+        "https://www.lingcompute.com/photon/learning-center/example-library",
+        "https://www.lingcompute.com/photon/learning-center/examples/notebooks/YJunction",
+        "https://www.lingcompute.com/photon/learning-center/examples/notebooks/DirectionalCoupler",
+        "https://www.lingcompute.com/photon/learning-center/examples/notebooks/MMIPowerSplitter2x2"
+      ]
     }
   ]
 }

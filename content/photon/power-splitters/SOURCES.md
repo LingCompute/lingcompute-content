@@ -43,3 +43,8 @@ GIF 是 3D Carpet 单频场的相位变化演示，起伏表示场值，不是�
 可核查[产品条款](https://www.flexcompute.com/terms-of-use/)与[官方结果下载/查看说明](https://www.flexcompute.com/tidy3d/learning-center/faq/)。公开条款未在本次核查中提供覆盖所有输出及 GUI 元素的明确再许可条款，不能将“可下载”视为可以向第三方授予 CC 许可。需要重用这些素材时请另核实适用协议和相应权利；本页不作法律判断。
 
 两篇历史审核状态和初始文件哈希见仓库 `reviews/legacy.json`。原始制作材料保留于制作方，审核需要时由维护者安排核查。
+
+
+## 待审新增篇目：三种分光器，到底怎么选
+
+[本篇来源、口径、素材与待核查项](sources/04-comparison.md)。指定业内审核者确认内容、来源及素材权利后才能收录。
