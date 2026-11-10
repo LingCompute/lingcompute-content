@@ -1,0 +1,36 @@
+# 待审证据记录：两条波导十字相交，怎样让光各走各的？
+
+状态：技术、逐图来源和授权待人审。作者 GitHub 账号尚未提供，`authors` 留空，不得据此安排作者自审。原稿只做待审标识和目录适配，未重新求解或核验数值。
+
+## 来源入口
+
+- https://www.lingcompute.com/photon/learning-center/examples/notebooks/WaveguideCrossing
+- https://www.lingcompute.com/photon/learning-center/examples/notebooks/SWGWaveguideCrossing
+- https://www.lingcompute.com/photon/learning-center/examples/notebooks/EulerWaveguideBend
+- https://www.lingcompute.com/photon/learning-center/examples/notebooks/ZeroCrossTalkTE
+
+以上同时包含原稿链接与系列候选参考；不表示本篇已经逐项复现所有案例。审核前需把每个定量结论与实际模型/推导对应。只有通用案例入口或缺少原稿来源链接的篇目，尤其需要补齐文章级依据。
+
+## 条件与口径
+
+圆弧/Euler 与有包层/裸波导仅在配对条件下作定量比较。交叉串扰为 +y 单侧，需写清净通量还是已存导模。100 弯预算是损耗外推，不是多弯 FDTD。
+
+具体材料、波段、单位、归一化与采样条件见原稿相邻段落，需由审核者交叉核对。制作方保留原始工程，可安排审核者核查；原始数据、Notebook、日志与私人结果链接不在本 PR 公开。
+
+## 随文素材
+
+| 文件 | 原稿图注（待核查） |
+| --- | --- |
+| `figures/05-crossing-principle.png` | 图 1：左侧通过中心展宽调节束形，右侧通过孔阵占空比改变方向响应。机制示意未按比例，不能从图中直接比较面积。 |
+| `figures/11-cosine-geometry.png` | 图 2：本次求解的实际结构。光由左侧进入；右侧是直行口，上方 +y 是记录串扰的侧口。模型没有把上下两侧的串扰通量加在一起。 |
+| `figures/12-cosine-field.png` | 图 3：1310 nm 的电场幅值 ／E／。光在展宽区发生整形，主要沿水平方向进入对面端口；侧臂中较弱的场仍需要端口统计确认。 |
+| `video/crossing-cosine-GUI-3D-crop.gif` | 动画：本次 FDTD 余弦锥形交叉的 GUI 原生 3D Carpet 动图，XY 平面 z = 0，Re(Ey)，λ = 1310 nm。展示单频场相位变化，起伏表示场值，不是结构形变或真实脉冲传播；串扰仍以端口统计为准。 |
+| `figures/13-cosine-spectra.png` | 图 4：1260–1360 nm 内的插损与单侧串扰。插损按 −10 log10(T) 记为正值；原 Notebook 的负值透射 dB 曲线在本文中做了符号统一。 |
+| `figures/14-swg-geometry.png` | 图 5：从实际模型重绘的孔阵及局部放大。方向差异来自矩形孔与占空比布局；蓝色为硅，浅色孔区为二氧化硅。 |
+| `figures/15-swg-field.png` | 图 6：本次 TE0 入射的场图，波长为 1917.95 nm。这个值来自源的中心频率；后面用 1950 nm 作为谱线示例读数，两者并不相同。 |
+| `video/swg-TE0-GUI-3D-crop.gif` | 动画：本次 FDTD SWG 交叉的 GUI 原生 3D Carpet 动图，TE0 入射，XY 平面 z = 0，Re(Ey)，λ ≈ 1917.95 nm。展示单频场相位变化，起伏表示场值，不是真实脉冲传播；不能据此推断 TE1 或 TE2 入射性能。 |
+| `figures/16-swg-spectra.png` | 图 7：1700–2200 nm 的 TE0 插损，以及两种模式统计口径下的单侧串扰。三个已记录模式之和仍不等于所有辐射、全部模式和全部端口的泄漏。 |
+
+PNG/GIF 来自原制作工程；图注不是来源链或许可证明。合并前逐项确认示意/解析/仿真分类、原始案例、制作或裁剪关系、第三方权利条件。GUI 动画若为单频相位展示，不解释成脉冲传播；公司及第三方标识不纳入内容 CC 许可。本 PR 的公开审阅不授予额外的第三方权利。
+
+原稿指纹（加入待审标识之前的 SHA256）：`1b598a78b7e26e4a7d1ee537bc43a403a7810483655d7503f2bdbec7b145308a`。
