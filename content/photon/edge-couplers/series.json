@@ -1,0 +1,19 @@
+{
+  "product": "photon",
+  "title": "图解无源光子器件 · 端面与模斑接口",
+  "audience": "具有光学基础、需要理解和选择集成光子器件的工程师与科研人员",
+  "articles": [
+    {
+      "slug": "04-mode-converter",
+      "authors": [],
+      "summary": "区分线性锥、Luneburg 与半透镜的模斑转换条件。",
+      "sources": [
+        "https://www.lingcompute.com/photon/learning-center/examples/notebooks/WaveguideSizeConverter",
+        "https://www.lingcompute.com/photon/learning-center/example-library",
+        "https://www.lingcompute.com/photon/learning-center/examples/notebooks/EdgeCoupler",
+        "https://www.lingcompute.com/photon/learning-center/examples/notebooks/BilayerSiNEdgeCoupler",
+        "https://www.lingcompute.com/photon/learning-center/examples/notebooks/FreeFormCoupler"
+      ]
+    }
+  ]
+}
