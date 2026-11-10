@@ -1,0 +1,18 @@
+{
+  "product": "photon",
+  "title": "图解无源光子器件 · 波长选择",
+  "audience": "具有光学基础、需要理解和选择集成光子器件的工程师与科研人员",
+  "articles": [
+    {
+      "slug": "01-overview",
+      "authors": [],
+      "summary": "用谐振和布拉格散射理解波长选择的两类机制。",
+      "sources": [
+        "https://www.lingcompute.com/photon/learning-center/examples/notebooks/RingResonator",
+        "https://www.lingcompute.com/photon/learning-center/examples/notebooks/WaveguideToRingCoupling",
+        "https://www.lingcompute.com/photon/learning-center/examples/notebooks/BraggGratings",
+        "https://www.lingcompute.com/photon/learning-center/examples/notebooks/PCMBraggGratingFilter"
+      ]
+    }
+  ]
+}
