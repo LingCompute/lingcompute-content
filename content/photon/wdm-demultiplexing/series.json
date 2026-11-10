@@ -1,0 +1,16 @@
+{
+  "product": "photon",
+  "title": "图解无源光子器件 · 波分解复用",
+  "audience": "具有光学基础、需要理解和选择集成光子器件的工程师与科研人员",
+  "articles": [
+    {
+      "slug": "02-mmi",
+      "authors": [],
+      "summary": "理解多模干涉如何将两个波长送往不同端口。",
+      "sources": [
+        "https://www.lingcompute.com/photon/learning-center/examples/notebooks/MultiplexingMMI",
+        "https://www.lingcompute.com/photon/learning-center/examples/notebooks/Autograd9WDM"
+      ]
+    }
+  ]
+}
