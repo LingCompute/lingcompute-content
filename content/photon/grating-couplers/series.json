@@ -1,0 +1,15 @@
+{
+  "product": "photon",
+  "title": "图解无源光子器件 · 光栅耦合",
+  "audience": "具有光学基础、需要理解和选择集成光子器件的工程师与科研人员",
+  "articles": [
+    {
+      "slug": "04-bilayer",
+      "authors": [],
+      "summary": "理解双层结构调节衬底泄漏的机制及二维/三维差别。",
+      "sources": [
+        "https://www.lingcompute.com/photon/learning-center/examples/notebooks/BilayerSiNSiGC"
+      ]
+    }
+  ]
+}
