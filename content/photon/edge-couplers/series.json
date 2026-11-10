@@ -1,0 +1,19 @@
+{
+  "product": "photon",
+  "title": "图解无源光子器件 · 端面与模斑接口",
+  "audience": "具有光学基础、需要理解和选择集成光子器件的工程师与科研人员",
+  "articles": [
+    {
+      "slug": "06-comparison",
+      "authors": [],
+      "summary": "按波段、接口尺寸、占地与端口口径选择方案。",
+      "sources": [
+        "https://www.lingcompute.com/photon/learning-center/examples/notebooks/EdgeCoupler",
+        "https://www.lingcompute.com/photon/learning-center/examples/notebooks/BilayerSiNEdgeCoupler",
+        "https://www.lingcompute.com/photon/learning-center/examples/notebooks/WaveguideSizeConverter",
+        "https://www.lingcompute.com/photon/learning-center/examples/notebooks/FreeFormCoupler",
+        "https://www.lingcompute.com/photon/learning-center/example-library"
+      ]
+    }
+  ]
+}
