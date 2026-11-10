@@ -1,0 +1,19 @@
+{
+  "product": "photon",
+  "title": "图解无源光子器件 · 功率分配",
+  "audience": "具有光学基础、需要理解和选择集成光子器件的工程师与科研人员",
+  "articles": [
+    {
+      "slug": "01-y-junction",
+      "authors": [],
+      "summary": "区分分光比和总透射，理解对称Y分支如何实现宽带等分。",
+      "sources": ["https://www.lingcompute.com/photon/learning-center/examples/notebooks/YJunction"]
+    },
+    {
+      "slug": "02-directional-coupler",
+      "authors": [],
+      "summary": "从超模相位和耦合模模型出发，理解功率交换及长度、失配和几何参数的取舍。",
+      "sources": ["https://www.lingcompute.com/photon/learning-center/examples/notebooks/DirectionalCoupler"]
+    }
+  ]
+}

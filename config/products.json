@@ -1,0 +1,18 @@
+{
+  "photon": {
+    "name": "灵算光子",
+    "url": "https://www.lingcompute.com/products/photon"
+  },
+  "fluid": {
+    "name": "灵算流体",
+    "url": "https://www.lingcompute.com/products/fluid"
+  },
+  "rf": {
+    "name": "灵算射频",
+    "url": "https://www.lingcompute.com/products/rf"
+  },
+  "insight": {
+    "name": "灵算洞察",
+    "url": "https://www.lingcompute.com/products/insight"
+  }
+}

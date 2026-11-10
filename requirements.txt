@@ -1,0 +1,4 @@
+Markdown==3.7
+bleach==6.1.0
+Pillow==12.2.0
+playwright==1.64.1

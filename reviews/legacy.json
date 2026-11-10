@@ -1,0 +1,32 @@
+{
+  "content/photon/power-splitters/01-y-junction.md": {
+    "basis": "Project owner confirmed the current manuscript and referenced assets passed prior human industry review.",
+    "confirmation_date": "2026-11-10",
+    "reviewer": null,
+    "review_date": null,
+    "manuscript_sha256": "39d1776622e9d9bff48d874eab34c48f2b630f420edfd165ef2a5e87307571f7",
+    "assets": {
+      "content/photon/power-splitters/figures/01-application.png": "e025ef8a6f042f3e8723f7f8ede231fbf34de061602acb34ebcdb38d7b32ddfe",
+      "content/photon/power-splitters/figures/03-metrics.png": "69290446f27e96144fd541690ceb328f988e6b7c0c3eec520b9e149faebacdc1",
+      "content/photon/power-splitters/figures/02-three-families.png": "95e95db986a75671c33c3c9efc4e6350283b2b8324416e9d39c995155d65d448",
+      "content/photon/power-splitters/figures/04-y-junction.png": "93077034f55d7fa6288708099aff04d0050abaeb48a921674f5694dd5f5bfea2",
+      "content/photon/power-splitters/video/YJunction-GUI-3D-crop.gif": "3b81e51df283b6eb9ab479bf529f060c7c2408e7e84c06bac47a4e66ac652c37"
+    }
+  },
+  "content/photon/power-splitters/02-directional-coupler.md": {
+    "basis": "Project owner confirmed the current manuscript and referenced assets passed prior human industry review.",
+    "confirmation_date": "2026-11-10",
+    "reviewer": null,
+    "review_date": null,
+    "manuscript_sha256": "80af3f3a276e60ad1b5dd53bc6d90be2378a7aae0a2df460da37cb67a6fe581c",
+    "assets": {
+      "content/photon/power-splitters/figures/12-supermode.png": "19e3db3e2532f5940ea0eee92044c7fc5eaca3e8984e028f835a0cf86ff1f2e7",
+      "content/photon/power-splitters/figures/11-coupler-length.png": "2e4e1f19d323cd66608a3c25c5722a572d80306fb233ab66ac5c8925b1951343",
+      "content/photon/power-splitters/figures/13-mismatch.png": "a1ec8f6152dabdba54f7dbe21ce0dd9f8dc0f6f8aadd1ba73831f1ffc6e394fa",
+      "content/photon/power-splitters/figures/15-sensitivity.png": "8bffbafbf5e4dda269034939090eaa4fb9c1750ee69c3a50b253d77274aeea9e",
+      "content/photon/power-splitters/figures/05-directional-coupler.png": "de2e56765f0c8d94d55ea5f4677436a5d11bdf9b9b2fd788ab61556c29272f5d",
+      "content/photon/power-splitters/figures/14-validation.png": "fb8aeaa28bdb4ab1f45a12340ac9e7a4520647ff9071389a1e7129ccba0d5ca5",
+      "content/photon/power-splitters/video/DirectionalCoupler-GUI-3D-crop.gif": "67fa2c60af5b106fe8ca42ec4420bb4582196567182c389b122358640f1b4396"
+    }
+  }
+}
