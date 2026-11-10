@@ -1,0 +1,17 @@
+{
+  "product": "photon",
+  "title": "图解无源光子器件 · 模分复用",
+  "audience": "具有光学基础、需要理解和选择集成光子器件的工程师与科研人员",
+  "articles": [
+    {
+      "slug": "03-invdes",
+      "authors": [],
+      "summary": "理解逆向模式转换的优化目标与实测功率口径。",
+      "sources": [
+        "https://www.lingcompute.com/photon/learning-center/examples/notebooks/8ChannelDemultiplexer",
+        "https://www.lingcompute.com/photon/learning-center/examples/notebooks/Autograd3InverseDesign",
+        "https://www.lingcompute.com/photon/learning-center/examples/notebooks/StripToSlotConverters"
+      ]
+    }
+  ]
+}
