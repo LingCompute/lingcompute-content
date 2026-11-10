@@ -1,0 +1,18 @@
+{
+  "product": "photon",
+  "title": "图解无源光子器件 · 波长选择",
+  "audience": "具有光学基础、需要理解和选择集成光子器件的工程师与科研人员",
+  "articles": [
+    {
+      "slug": "06-comparison",
+      "authors": [],
+      "summary": "联合评估 Q、带宽、面积和可调性选择选波器件。",
+      "sources": [
+        "https://www.lingcompute.com/photon/learning-center/examples/notebooks/RingResonator",
+        "https://www.lingcompute.com/photon/learning-center/examples/notebooks/WaveguideToRingCoupling",
+        "https://www.lingcompute.com/photon/learning-center/examples/notebooks/BraggGratings",
+        "https://www.lingcompute.com/photon/learning-center/examples/notebooks/PCMBraggGratingFilter"
+      ]
+    }
+  ]
+}
