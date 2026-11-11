@@ -6,21 +6,34 @@
 
 ## 按产品阅读
 
-| 产品 | 文章 | 产品入口 |
+<!-- BEGIN GENERATED CATALOG -->
+
+| 产品 | 系列 | 产品入口 |
 | --- | --- | --- |
-| 灵算光子 | [图解无源光子器件 · 功率分配](#图解无源光子器件--功率分配) | [产品介绍](https://www.lingcompute.com/products/photon) |
+| 灵算光子 | [图解无源光子器件 · 功率分配](#series-photon-power-splitters) | [产品介绍](https://www.lingcompute.com/products/photon) |
 | 灵算流体 | 待首篇审核后收录 | [产品介绍](https://www.lingcompute.com/products/fluid) |
 | 灵算射频 | 待首篇审核后收录 | [产品介绍](https://www.lingcompute.com/products/rf) |
 | 灵算洞察 | 待首篇审核后收录 | [产品介绍](https://www.lingcompute.com/products/insight) |
 
+<a id="series-photon-power-splitters"></a>
+
 ### 图解无源光子器件 · 功率分配
 
-适合具有光学基础、需要理解和选择集成光子器件的工程师与科研人员。
+适合：具有光学基础、需要理解和选择集成光子器件的工程师与科研人员。
 
-1. [一束光，怎么被“掰”成两路？](content/photon/power-splitters/01-y-junction.md) — 分清分光比和总透射，理解对称 Y 分支。
-2. [两条波导靠得够近，光就自己换手](content/photon/power-splitters/02-directional-coupler.md) — 用超模和耦合模模型理解长度、失配与几何取舍。
+1. [一束光，怎么被“掰”成两路？](content/photon/power-splitters/01-y-junction.md) — 区分分光比和总透射，理解对称Y分支如何实现宽带等分。
 
-[来源、定量口径与素材说明](content/photon/power-splitters/SOURCES.md)。两篇的当前版本已由项目负责人确认完成历史人审；审核者署名和实际日期未提供，记录见 [legacy.json](reviews/legacy.json)。后续篇目通过独立 PR 审核后逐篇收录。公开 PR 中的稿件仍是待审稿，正式目录以 `main` 为准；收录也不等于已经在公众号发送。
+   预计阅读 **6–11 分钟**，实操另计。 [来源、定量口径与素材说明](content/photon/power-splitters/SOURCES.md)。
+
+2. [两条波导靠得够近，光就自己换手](content/photon/power-splitters/02-directional-coupler.md) — 从超模相位和耦合模模型出发，理解功率交换及长度、失配和几何参数的取舍。
+
+   预计阅读 **14–26 分钟**，实操另计。 **长文提示：超过10参考屏，建议先扫描小标题，再按问题细读。** [来源、定量口径与素材说明](content/photon/power-splitters/SOURCES.md)。
+
+阅读时长为编辑模型估计；参考视口为390×844 CSS像素，不同设备会有差异。
+
+<!-- END GENERATED CATALOG -->
+
+两篇功率分配历史稿的当前版本已由项目负责人确认完成历史人审；审核者署名和实际日期未提供，记录见 [legacy.json](reviews/legacy.json)。后续篇目通过独立 PR 审核后逐篇收录。公开 PR 中的稿件仍是待审稿；分支目录用于预览该分支，正式目录以 `main` 为准，收录也不等于已经在公众号发送。
 
 ## 投稿与生成
 
@@ -34,9 +47,12 @@ python -m playwright install chromium
 python -m unittest discover -s tests
 python tools/build.py --check
 python tools/build.py
+python tools/catalog.py
 ```
 
 打开生成的 `build/index.html` 查看文章。CI 的 `article-preview` 附件包含相同产物；下载后在本地打开。生成目录不入库。投稿方式见 [CONTRIBUTING.md](CONTRIBUTING.md)，默认排版与篇幅见 [编辑规范](docs/editorial.md)，审核流程见 [审核规则](docs/review.md)。
+
+首页标记区由 `series.json`、当前源稿和构建报告生成，提供读者前提、文章问题、预计阅读时长及长文提示。增删文章或修改正文、随文图后，重新构建并运行 `python tools/catalog.py`，将 README 更新随同一 PR 提交；CI 用 `python tools/catalog.py --check` 拦截遗漏或过期信息。
 
 | 目录 | 用途 |
 | --- | --- |
