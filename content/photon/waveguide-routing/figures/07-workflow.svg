@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="446.400pt" height="351.328pt" viewBox="0.000 -0.992 446.400 351.328" stroke-linejoin="round" stroke-linecap="butt" font-family="MiSans, sans-serif" font-weight="400">
+ <defs>
+  </defs>
+ <g id="figure_1" transform="translate(0 20)">
+  <g id="patch_1">
+   <path d="M 0 330.336  L 446.4 330.336  L 446.4 0  L 0 0  z " fill="#ffffff" />
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 73.2096 100.44  L 420.0624 100.44  Q 426.312 100.44 426.312 94.1904  L 426.312 62.0496  Q 426.312 55.8 420.0624 55.8  L 73.2096 55.8  Q 66.96 55.8 66.96 62.0496  L 66.96 94.1904  Q 66.96 100.44 73.2096 100.44  z " clip-path="url(#p7f234503a9)" fill="#f1f7fe" />
+   </g>
+   <g id="patch_3">
+    <path d="M 73.2096 158.472  L 420.0624 158.472  Q 426.312 158.472 426.312 152.2224  L 426.312 120.0816  Q 426.312 113.832 420.0624 113.832  L 73.2096 113.832  Q 66.96 113.832 66.96 120.0816  L 66.96 152.2224  Q 66.96 158.472 73.2096 158.472  z " clip-path="url(#p7f234503a9)" fill="#fcebdb" />
+   </g>
+   <g id="patch_4">
+    <path d="M 73.2096 216.504  L 420.0624 216.504  Q 426.312 216.504 426.312 210.2544  L 426.312 178.1136  Q 426.312 171.864 420.0624 171.864  L 73.2096 171.864  Q 66.96 171.864 66.96 178.1136  L 66.96 210.2544  Q 66.96 216.504 73.2096 216.504  z " clip-path="url(#p7f234503a9)" fill="#f1f7fe" />
+   </g>
+   <g id="patch_5">
+    <path d="M 73.2096 274.536  L 420.0624 274.536  Q 426.312 274.536 426.312 268.2864  L 426.312 236.1456  Q 426.312 229.896 420.0624 229.896  L 73.2096 229.896  Q 66.96 229.896 66.96 236.1456  L 66.96 268.2864  Q 66.96 274.536 73.2096 274.536  z " clip-path="url(#p7f234503a9)" fill="#fcebdb" />
+   </g>
+   <g id="line2d_2">
+    <path d="M 20.088 45.5328  L 58.032 45.5328  " clip-path="url(#p7f234503a9)" fill="none" stroke="#1f6fd0" stroke-width="3.2" />
+   </g>
+   <g id="patch_6">
+    <path d="M 66.96 95.0832  L 69.8616 95.0832  L 69.8616 61.1568  L 66.96 61.1568  z " clip-path="url(#p7f234503a9)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_7">
+    <path d="M 66.96 153.1152  L 69.8616 153.1152  L 69.8616 119.1888  L 66.96 119.1888  z " clip-path="url(#p7f234503a9)" fill="#e8823c" />
+   </g>
+   <g id="patch_8">
+    <path d="M 66.96 211.1472  L 69.8616 211.1472  L 69.8616 177.2208  L 66.96 177.2208  z " clip-path="url(#p7f234503a9)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_9">
+    <path d="M 66.96 269.1792  L 69.8616 269.1792  L 69.8616 235.2528  L 66.96 235.2528  z " clip-path="url(#p7f234503a9)" fill="#e8823c" />
+   </g>
+   <g id="patch_10">
+    <path d="M 42.408 90.6192  C 45.722827 90.6192 48.902333 89.302205 51.246269 86.958269  C 53.590205 84.614333 54.9072 81.434827 54.9072 78.12  C 54.9072 74.805173 53.590205 71.625667 51.246269 69.281731  C 48.902333 66.937795 45.722827 65.6208 42.408 65.6208  C 39.093173 65.6208 35.913667 66.937795 33.569731 69.281731  C 31.225795 71.625667 29.9088 74.805173 29.9088 78.12  C 29.9088 81.434827 31.225795 84.614333 33.569731 86.958269  C 35.913667 89.302205 39.093173 90.6192 42.408 90.6192  z " clip-path="url(#p7f234503a9)" fill="#0b4c9c" stroke="#ffffff" stroke-width="2" stroke-linejoin="miter" />
+   </g>
+   <g id="patch_11">
+    <path d="M 42.408 148.6512  C 45.722827 148.6512 48.902333 147.334205 51.246269 144.990269  C 53.590205 142.646333 54.9072 139.466827 54.9072 136.152  C 54.9072 132.837173 53.590205 129.657667 51.246269 127.313731  C 48.902333 124.969795 45.722827 123.6528 42.408 123.6528  C 39.093173 123.6528 35.913667 124.969795 33.569731 127.313731  C 31.225795 129.657667 29.9088 132.837173 29.9088 136.152  C 29.9088 139.466827 31.225795 142.646333 33.569731 144.990269  C 35.913667 147.334205 39.093173 148.6512 42.408 148.6512  z " clip-path="url(#p7f234503a9)" fill="#e8823c" stroke="#ffffff" stroke-width="2" stroke-linejoin="miter" />
+   </g>
+   <g id="patch_12">
+    <path d="M 42.408 206.6832  C 45.722827 206.6832 48.902333 205.366205 51.246269 203.022269  C 53.590205 200.678333 54.9072 197.498827 54.9072 194.184  C 54.9072 190.869173 53.590205 187.689667 51.246269 185.345731  C 48.902333 183.001795 45.722827 181.6848 42.408 181.6848  C 39.093173 181.6848 35.913667 183.001795 33.569731 185.345731  C 31.225795 187.689667 29.9088 190.869173 29.9088 194.184  C 29.9088 197.498827 31.225795 200.678333 33.569731 203.022269  C 35.913667 205.366205 39.093173 206.6832 42.408 206.6832  z " clip-path="url(#p7f234503a9)" fill="#0b4c9c" stroke="#ffffff" stroke-width="2" stroke-linejoin="miter" />
+   </g>
+   <g id="patch_13">
+    <path d="M 42.408 264.7152  C 45.722827 264.7152 48.902333 263.398205 51.246269 261.054269  C 53.590205 258.710333 54.9072 255.530827 54.9072 252.216  C 54.9072 248.901173 53.590205 245.721667 51.246269 243.377731  C 48.902333 241.033795 45.722827 239.7168 42.408 239.7168  C 39.093173 239.7168 35.913667 241.033795 33.569731 243.377731  C 31.225795 245.721667 29.9088 248.901173 29.9088 252.216  C 29.9088 255.530827 31.225795 258.710333 33.569731 261.054269  C 35.913667 263.398205 39.093173 264.7152 42.408 264.7152  z " clip-path="url(#p7f234503a9)" fill="#e8823c" stroke="#ffffff" stroke-width="2" stroke-linejoin="miter" />
+   </g>
+   <g id="text_3">
+    <text x="42.408" y="82.01293" transform="rotate(-0 42.408 82.01293)" font-weight="600" font-size="11.5px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#ffffff">01</text>
+   </g>
+   <g id="text_4">
+    <text x="80.352" y="83.705508" transform="rotate(-0 80.352 83.705508)" font-weight="600" font-size="16.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">先定半径</text>
+   </g>
+   <g id="text_5">
+    <text x="42.408" y="140.04493" transform="rotate(-0 42.408 140.04493)" font-weight="600" font-size="11.5px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#ffffff">02</text>
+   </g>
+   <g id="text_6">
+    <text x="80.352" y="141.737508" transform="rotate(-0 80.352 141.737508)" font-weight="600" font-size="16.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">再看损耗预算</text>
+   </g>
+   <g id="text_7">
+    <text x="42.408" y="198.07693" transform="rotate(-0 42.408 198.07693)" font-weight="600" font-size="11.5px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#ffffff">03</text>
+   </g>
+   <g id="text_8">
+    <text x="80.352" y="199.769508" transform="rotate(-0 80.352 199.769508)" font-weight="600" font-size="16.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">算串扰上限</text>
+   </g>
+   <g id="text_9">
+    <text x="42.408" y="256.10893" transform="rotate(-0 42.408 256.10893)" font-weight="600" font-size="11.5px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#ffffff">04</text>
+   </g>
+   <g id="text_10">
+    <text x="80.352" y="257.801508" transform="rotate(-0 80.352 257.801508)" font-weight="600" font-size="16.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">最后核工艺</text>
+   </g>
+   <g id="text_11">
+    <text x="223.2" y="299.985206" transform="rotate(-0 223.2 299.985206)" font-size="13.2px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#12263a">顺序不能反：先约束几何，再分配指标，最后落到工艺</text>
+   </g>
+   <g id="text_12">
+    <text x="20.088" y="322.453272" transform="rotate(-0 20.088 322.453272)" font-size="11px" font-family="MiSans, sans-serif" text-anchor="start" fill="#8a9bab">本篇为方法建议；具体数值见第 5 篇的实测对照</text>
+   </g>
+   <g id="text_13">
+    <text x="187.488" y="82.908438" transform="rotate(-0 187.488 82.908438)" font-size="14px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">版图能给出多大的转弯空间？</text>
+   </g>
+   <g id="text_14">
+    <text x="187.488" y="140.891219" transform="rotate(-0 187.488 140.891219)" font-size="14px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">链路里允许每个弯丢多少 dB？</text>
+   </g>
+   <g id="text_15">
+    <text x="187.488" y="198.923219" transform="rotate(-0 187.488 198.923219)" font-size="14px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">相邻波导、交叉点要压到多少 dB？</text>
+   </g>
+   <g id="text_16">
+    <text x="187.488" y="248.920019" transform="rotate(-0 187.488 248.920019)" font-size="14px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">最小线宽、对准精度、刻蚀深度是否</text>
+   </g>
+   <g id="text_17">
+    <text x="187.488" y="264.990419" transform="rotate(-0 187.488 264.990419)" font-size="14px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">做得出？</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p7f234503a9">
+   <rect x="0" y="0" width="446.4" height="330.336" />
+  </clipPath>
+ </defs>
+ <g id="text_1">
+  <text x="20.088" y="16.730645" transform="rotate(-0 20.088 16.730645)" font-size="12.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4e9be8">选型流程</text>
+ </g>
+ <g id="text_2" transform="translate(0 10)">
+  <text x="20.088" y="38.818091" transform="rotate(-0 20.088 38.818091)" font-size="25px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a" font-weight="600">布线选型，按这四步走</text>
+ </g>
+ <g id="line2d_1" transform="translate(0 10)">
+  <path d="M 42.408 78.12  L 42.408 252.216  " clip-path="url(#p7f234503a9)" fill="none" stroke="#dcebfa" stroke-width="2.6" stroke-linecap="square" />
+ </g>
+</svg>

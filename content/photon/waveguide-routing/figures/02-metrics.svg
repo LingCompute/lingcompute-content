@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="446.400pt" height="314.833pt" viewBox="0.000 -0.209 446.400 314.833" stroke-linejoin="round" stroke-linecap="butt" font-family="MiSans, sans-serif" font-weight="400">
+ <defs>
+  </defs>
+ <g id="figure_1" transform="translate(0 20)">
+  <g id="patch_1">
+   <path d="M 0 294.624  L 446.4 294.624  L 446.4 0  L 0 0  z " fill="#ffffff" />
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 30.132 245.7432  L 143.5176 245.7432  Q 151.5528 245.7432 151.5528 237.708  L 151.5528 79.6824  Q 151.5528 71.6472 143.5176 71.6472  L 30.132 71.6472  Q 22.0968 71.6472 22.0968 79.6824  L 22.0968 237.708  Q 22.0968 245.7432 30.132 245.7432  z " clip-path="url(#p8f85913cc5)" fill="#d9e6f2" />
+   </g>
+   <g id="patch_3">
+    <path d="M 168.516 245.7432  L 281.9016 245.7432  Q 289.9368 245.7432 289.9368 237.708  L 289.9368 79.6824  Q 289.9368 71.6472 281.9016 71.6472  L 168.516 71.6472  Q 160.4808 71.6472 160.4808 79.6824  L 160.4808 237.708  Q 160.4808 245.7432 168.516 245.7432  z " clip-path="url(#p8f85913cc5)" fill="#d9e6f2" />
+   </g>
+   <g id="patch_4">
+    <path d="M 306.9 245.7432  L 420.2856 245.7432  Q 428.3208 245.7432 428.3208 237.708  L 428.3208 79.6824  Q 428.3208 71.6472 420.2856 71.6472  L 306.9 71.6472  Q 298.8648 71.6472 298.8648 79.6824  L 298.8648 237.708  Q 298.8648 245.7432 306.9 245.7432  z " clip-path="url(#p8f85913cc5)" fill="#d9e6f2" />
+   </g>
+   <g id="patch_5">
+    <path d="M 28.1232 243.288  L 141.5088 243.288  Q 149.544 243.288 149.544 235.2528  L 149.544 77.2272  Q 149.544 69.192 141.5088 69.192  L 28.1232 69.192  Q 20.088 69.192 20.088 77.2272  L 20.088 235.2528  Q 20.088 243.288 28.1232 243.288  z " clip-path="url(#p8f85913cc5)" fill="#f1f7fe" />
+   </g>
+   <g id="patch_6">
+    <path d="M 166.5072 243.288  L 279.8928 243.288  Q 287.928 243.288 287.928 235.2528  L 287.928 77.2272  Q 287.928 69.192 279.8928 69.192  L 166.5072 69.192  Q 158.472 69.192 158.472 77.2272  L 158.472 235.2528  Q 158.472 243.288 166.5072 243.288  z " clip-path="url(#p8f85913cc5)" fill="#f1f7fe" />
+   </g>
+   <g id="patch_7">
+    <path d="M 304.8912 243.288  L 418.2768 243.288  Q 426.312 243.288 426.312 235.2528  L 426.312 77.2272  Q 426.312 69.192 418.2768 69.192  L 304.8912 69.192  Q 296.856 69.192 296.856 77.2272  L 296.856 235.2528  Q 296.856 243.288 304.8912 243.288  z " clip-path="url(#p8f85913cc5)" fill="#f1f7fe" />
+   </g>
+   <g id="line2d_2">
+    <path d="M 29.9088 131.2416  L 139.7232 131.2416  " clip-path="url(#p8f85913cc5)" fill="none" stroke="#dcebfa" stroke-width="1.2" stroke-linecap="square" />
+   </g>
+   <g id="line2d_3">
+    <path d="M 168.2928 131.2416  L 278.1072 131.2416  " clip-path="url(#p8f85913cc5)" fill="none" stroke="#dcebfa" stroke-width="1.2" stroke-linecap="square" />
+   </g>
+   <g id="line2d_4">
+    <path d="M 306.6768 131.2416  L 416.4912 131.2416  " clip-path="url(#p8f85913cc5)" fill="none" stroke="#dcebfa" stroke-width="1.2" stroke-linecap="square" />
+   </g>
+   <g id="patch_8">
+    <path d="M 20.088 76.3344  L 149.544 76.3344  L 149.544 69.192  L 20.088 69.192  z " clip-path="url(#p8f85913cc5)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_9">
+    <path d="M 158.472 76.3344  L 287.928 76.3344  L 287.928 69.192  L 158.472 69.192  z " clip-path="url(#p8f85913cc5)" fill="#e8823c" />
+   </g>
+   <g id="patch_10">
+    <path d="M 296.856 76.3344  L 426.312 76.3344  L 426.312 69.192  L 296.856 69.192  z " clip-path="url(#p8f85913cc5)" fill="#1f6fd0" />
+   </g>
+   <g id="text_3">
+    <text x="29.9088" y="102.407797" transform="rotate(-0 29.9088 102.407797)" font-weight="600" font-size="19px" font-family="MiSans, sans-serif" text-anchor="start" fill="#0b4c9c">① 损耗</text>
+   </g>
+   <g id="text_4">
+    <text x="29.9088" y="123.204477" transform="rotate(-0 29.9088 123.204477)" font-size="14.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">光没走到出口</text>
+   </g>
+   <g id="text_5">
+    <text x="29.9088" y="158.546312" transform="rotate(-0 29.9088 158.546312)" font-weight="600" font-size="20px" font-family="MiSans, sans-serif" text-anchor="start" fill="#0b4c9c">100 → 97</text>
+   </g>
+   <g id="text_6">
+    <text x="29.9088" y="170.954414" transform="rotate(-0 29.9088 170.954414)" font-size="10.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#8a9bab">功率（份）</text>
+   </g>
+   <g id="text_7">
+    <text x="168.2928" y="102.416703" transform="rotate(-0 168.2928 102.416703)" font-weight="600" font-size="19px" font-family="MiSans, sans-serif" text-anchor="start" fill="#e8823c">② 串扰</text>
+   </g>
+   <g id="text_8">
+    <text x="168.2928" y="123.204477" transform="rotate(-0 168.2928 123.204477)" font-size="14.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">光走错出口</text>
+   </g>
+   <g id="text_9">
+    <text x="168.2928" y="158.546312" transform="rotate(-0 168.2928 158.546312)" font-weight="600" font-size="20px" font-family="MiSans, sans-serif" text-anchor="start" fill="#e8823c">100 : 0.1</text>
+   </g>
+   <g id="text_10">
+    <text x="168.2928" y="170.954414" transform="rotate(-0 168.2928 170.954414)" font-size="10.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#8a9bab">主路 : 邻路（功率）</text>
+   </g>
+   <g id="text_11">
+    <text x="306.6768" y="102.407797" transform="rotate(-0 306.6768 102.407797)" font-weight="600" font-size="19px" font-family="MiSans, sans-serif" text-anchor="start" fill="#1f6fd0">③ 面积</text>
+   </g>
+   <g id="text_12">
+    <text x="306.6768" y="123.204477" transform="rotate(-0 306.6768 123.204477)" font-size="14.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">绕得开吗</text>
+   </g>
+   <g id="text_13">
+    <text x="306.6768" y="158.546312" transform="rotate(-0 306.6768 158.546312)" font-weight="600" font-size="20px" font-family="MiSans, sans-serif" text-anchor="start" fill="#1f6fd0">R = 4 / 10</text>
+   </g>
+   <g id="text_14">
+    <text x="306.6768" y="171.016758" transform="rotate(-0 306.6768 171.016758)" font-size="10.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#8a9bab">弯曲半径（μm）</text>
+   </g>
+   <g id="text_15">
+    <text x="223.2" y="264.205503" transform="rotate(-0 223.2 264.205503)" font-size="13px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#12263a">三者互相牵制：省损耗要放大尺寸，压串扰要加结构</text>
+   </g>
+   <g id="text_16">
+    <text x="20.088" y="286.741272" transform="rotate(-0 20.088 286.741272)" font-size="11px" font-family="MiSans, sans-serif" text-anchor="start" fill="#8a9bab">卡片内数字为教学示例，不是本次仿真结果</text>
+   </g>
+   <g id="text_17">
+    <text x="29.9088" y="196.521961" transform="rotate(-0 29.9088 196.521961)" font-size="13.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">每个弯丢一点，累</text>
+   </g>
+   <g id="text_18">
+    <text x="29.9088" y="215.270761" transform="rotate(-0 29.9088 215.270761)" font-size="13.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">积起来很可观</text>
+   </g>
+   <g id="text_19">
+    <text x="168.2928" y="196.535672" transform="rotate(-0 168.2928 196.535672)" font-size="13.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">两根波导靠太近，</text>
+   </g>
+   <g id="text_20">
+    <text x="168.2928" y="215.270761" transform="rotate(-0 168.2928 215.270761)" font-size="13.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">就会互相偷光</text>
+   </g>
+   <g id="text_21">
+    <text x="306.6768" y="196.521961" transform="rotate(-0 306.6768 196.521961)" font-size="13.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">半径放大，布线密</text>
+   </g>
+   <g id="text_22">
+    <text x="306.6768" y="215.270761" transform="rotate(-0 306.6768 215.270761)" font-size="13.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">度就掉下来</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p8f85913cc5">
+   <rect x="0" y="0" width="446.4" height="294.624" />
+  </clipPath>
+ </defs>
+ <g id="text_1">
+  <text x="20.088" y="16.730645" transform="rotate(-0 20.088 16.730645)" font-size="12.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4e9be8">评价指标</text>
+ </g>
+ <g id="text_2" transform="translate(0 10)">
+  <text x="20.088" y="38.818091" transform="rotate(-0 20.088 38.818091)" font-size="25px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a" font-weight="600">布线好坏，看三个量</text>
+ </g>
+ <g id="line2d_1" transform="translate(0 10)">
+  <path d="M 20.088 45.5328  L 58.032 45.5328  " clip-path="url(#p8f85913cc5)" fill="none" stroke="#1f6fd0" stroke-width="3.2" />
+ </g>
+</svg>

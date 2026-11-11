@@ -1,0 +1,295 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="449.769pt" height="386.257pt" viewBox="-3.369 -0.209 449.769 386.257" stroke-linejoin="round" stroke-linecap="butt" font-family="MiSans, sans-serif" font-weight="400">
+ <defs>
+  </defs>
+ <g id="figure_1" transform="translate(0 20)">
+  <g id="patch_1">
+   <path d="M 0 366.048  L 446.4 366.048  L 446.4 0  L 0 0  z " fill="#ffffff" />
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 27.2304 176.328  L 204.8976 176.328  Q 212.04 176.328 212.04 169.1856  L 212.04 67.4064  Q 212.04 60.264 204.8976 60.264  L 27.2304 60.264  Q 20.088 60.264 20.088 67.4064  L 20.088 169.1856  Q 20.088 176.328 27.2304 176.328  z " clip-path="url(#p7fefc91ec1)" fill="#f1f7fe" />
+   </g>
+   <g id="patch_3">
+    <path d="M 241.5024 176.328  L 419.1696 176.328  Q 426.312 176.328 426.312 169.1856  L 426.312 67.4064  Q 426.312 60.264 419.1696 60.264  L 241.5024 60.264  Q 234.36 60.264 234.36 67.4064  L 234.36 169.1856  Q 234.36 176.328 241.5024 176.328  z " clip-path="url(#p7fefc91ec1)" fill="#f1f7fe" />
+   </g>
+   <g id="line2d_2">
+    <path d="M 40.176 158.472  L 116.9568 158.472  L 116.9568 81.6912  L 40.176 81.6912  L 40.176 158.472  " clip-path="url(#p7fefc91ec1)" fill="none" stroke-dasharray="4,3" stroke-dashoffset="0" stroke="#c9dae9" />
+   </g>
+   <g id="line2d_3">
+    <path d="M 254.448 158.472  L 331.2288 158.472  L 331.2288 81.6912  L 254.448 81.6912  L 254.448 158.472  " clip-path="url(#p7fefc91ec1)" fill="none" stroke-dasharray="4,3" stroke-dashoffset="0" stroke="#c9dae9" />
+   </g>
+   <g id="line2d_4">
+    <path d="M 254.448 158.472  L 258.488825 158.365596  L 262.51845 158.046678  L 266.525707 157.516131  L 270.499489 156.775426  L 274.428783 155.826614  L 278.302696 154.672326  L 282.110494 153.315761  L 285.841621 151.760679  L 289.485736 150.01139  L 293.03274 148.072742  L 296.4728 145.950109  L 299.796384 143.649374  L 302.994278 141.176914  L 306.05762 138.539581  L 308.977919 135.744685  L 311.747081 132.799972  L 314.357431 129.713605  L 316.801733 126.494137  L 319.073215 123.150492  L 321.165578 119.691937  L 323.073025 116.128058  L 324.790269 112.468732  L 326.312549 108.724103  L 327.635647 104.904548  L 328.755896 101.020654  L 329.670191 97.083186  L 330.375997 93.103057  L 330.871359 89.091299  L 331.154903 85.05903  L 331.2288 81.6912  L 331.2288 81.6912  " clip-path="url(#p7fefc91ec1)" fill="none" stroke-dasharray="5.2,3.9" stroke-dashoffset="0" stroke="#1f6fd0" stroke-opacity="0.55" stroke-width="1.3" />
+   </g>
+   <g id="line2d_5">
+    <path d="M 23.86008 158.472  L 44.029399 158.375244  L 48.420826 158.028046  L 52.785114 157.429575  L 57.107897 156.581801  L 61.374946 155.487514  L 65.572217 154.150316  L 69.685892 152.574608  L 73.702431 150.765578  L 77.608613 148.72918  L 81.391581 146.472117  L 85.038881 144.001818  L 88.538509 141.326416  L 91.878946 138.454715  L 95.049194 135.39617  L 98.03882 132.160847  L 100.837983 128.759396  L 103.437468 125.203014  L 105.828718 121.503407  L 108.003864 117.672752  L 109.955745 113.723659  L 111.677936 109.669126  L 113.164769 105.5225  L 114.411349 101.29743  L 115.413572 97.007824  L 116.168141 92.6678  L 116.672571 88.291646  L 116.925202 83.893765  L 116.9568 81.6912  L 116.9568 81.6912  " clip-path="url(#p7fefc91ec1)" fill="none" stroke="#1f6fd0" stroke-width="4.4" stroke-linecap="round" />
+   </g>
+   <g id="line2d_6">
+    <path d="M 238.13208 158.472  L 265.534898 158.364958  L 271.425763 158.087283  L 276.359546 157.643416  L 280.798672 157.026222  L 284.735986 156.266135  L 288.396081 155.345685  L 291.96242 154.218484  L 295.237223 152.972857  L 298.428648 151.526924  L 301.524459 149.886229  L 304.512782 148.057065  L 307.38216 146.046445  L 310.121588 143.862079  L 312.720562 141.512344  L 315.169115 139.006251  L 317.457859 136.353409  L 319.578017 133.563991  L 321.521458 130.648694  L 323.28073 127.618697  L 324.849086 124.485619  L 326.220514 121.261475  L 327.489 117.671805  L 328.531126 114.044551  L 329.407005 110.131444  L 330.103682 105.943082  L 330.618056 101.490789  L 330.983112 96.313981  L 331.180696 90.183759  L 331.2288 81.6912  L 331.2288 81.6912  " clip-path="url(#p7fefc91ec1)" fill="none" stroke="#e8823c" stroke-width="4.4" stroke-linecap="round" />
+   </g>
+   <g id="text_3">
+    <text x="31.248" y="78.010192" transform="rotate(-0 31.248 78.010192)" font-weight="600" font-size="15.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#1f6fd0">圆弧弯</text>
+   </g>
+   <g id="text_4">
+    <text x="33.9264" y="161.687898" transform="rotate(-0 33.9264 161.687898)" font-size="9.5px" font-family="MiSans, sans-serif" text-anchor="end" fill="#8a9bab">0</text>
+   </g>
+   <g id="text_5">
+    <text x="113.832" y="170.055872" transform="rotate(-0 113.832 170.055872)" font-weight="600" font-size="10.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#1f6fd0">R = 4 μm</text>
+   </g>
+   <g id="patch_4">
+    <path d="M 116.9568 75.93264  Q 116.9568 70.65396 116.9568 67.611348  " clip-path="url(#p7fefc91ec1)" fill="none" stroke="#1f6fd0" stroke-width="2" stroke-linecap="round" />
+    <path d="M 114.3568 72.811348  L 116.9568 67.611348  L 119.5568 72.811348  z " clip-path="url(#p7fefc91ec1)" fill="#1f6fd0" stroke="#1f6fd0" stroke-width="2" stroke-linecap="round" />
+   </g>
+   <g id="text_6">
+    <text x="245.52" y="78.010192" transform="rotate(-0 245.52 78.010192)" font-weight="600" font-size="15.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#e8823c">Euler 弯</text>
+   </g>
+   <g id="text_7">
+    <text x="248.1984" y="161.687898" transform="rotate(-0 248.1984 161.687898)" font-size="9.5px" font-family="MiSans, sans-serif" text-anchor="end" fill="#8a9bab">0</text>
+   </g>
+   <g id="text_8">
+    <text x="328.104" y="170.055872" transform="rotate(-0 328.104 170.055872)" font-weight="600" font-size="10.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#e8823c">R_min = 2.95 μm</text>
+   </g>
+   <g id="patch_5">
+    <path d="M 331.2288 75.93264  Q 331.2288 70.65396 331.2288 67.611348  " clip-path="url(#p7fefc91ec1)" fill="none" stroke="#e8823c" stroke-width="2" stroke-linecap="round" />
+    <path d="M 328.6288 72.811348  L 331.2288 67.611348  L 333.8288 72.811348  z " clip-path="url(#p7fefc91ec1)" fill="#e8823c" stroke="#e8823c" stroke-width="2" stroke-linecap="round" />
+   </g>
+   <g id="text_9">
+    <text x="223.2" y="196.974691" transform="rotate(-0 223.2 196.974691)" font-size="12.2px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#12263a">Euler 的峰值曲率更高，但两端连续——用更长的过渡换更小的模式失配</text>
+   </g>
+   <g id="text_10">
+    <text x="20.088" y="358.219412" transform="rotate(-0 20.088 358.219412)" font-size="11px" font-family="MiSans, sans-serif" text-anchor="start" fill="#8a9bab">几何取自 Notebook：R_eff = 4 μm、A = 2.4；Euler 最小半径 2.95 μm</text>
+   </g>
+   <g id="patch_6">
+    <path d="M 173.2032 80.352  L 197.105239 80.352  Q 203.801239 80.352 203.801239 73.656  L 203.801239 73.656  Q 203.801239 66.96 197.105239 66.96  L 173.2032 66.96  Q 166.5072 66.96 166.5072 73.656  L 166.5072 73.656  Q 166.5072 80.352 173.2032 80.352  z " clip-path="url(#p7fefc91ec1)" fill="#e8f1fb" />
+   </g>
+   <g id="patch_7">
+    <path d="M 387.4752 80.352  L 411.238177 80.352  Q 417.934177 80.352 417.934177 73.656  L 417.934177 73.656  Q 417.934177 66.96 411.238177 66.96  L 387.4752 66.96  Q 380.7792 66.96 380.7792 73.656  L 380.7792 73.656  Q 380.7792 80.352 387.4752 80.352  z " clip-path="url(#p7fefc91ec1)" fill="#fcebdb" />
+   </g>
+   <g id="text_11">
+    <g transform="translate(170.95422 77.041156)" fill="#1f6fd0">
+     <text>
+      <tspan x="0" y="-0.890625" font-style="oblique" font-size="10px" font-family="MiSans, sans-serif" fill="#1f6fd0">κ</tspan>
+      <tspan x="5.893555" y="-0.890625" font-size="10px" font-family="MiSans, sans-serif" fill="#1f6fd0"> </tspan>
+      <tspan x="8.393539" y="-0.890625" font-size="10px" font-family="MiSans, sans-serif" fill="#1f6fd0">阶</tspan>
+      <tspan x="18.393524" y="-0.890625" font-size="10px" font-family="MiSans, sans-serif" fill="#1f6fd0">跃</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_12">
+    <g transform="translate(385.156688 77.041156)" fill="#e8823c">
+     <text>
+      <tspan x="0" y="-0.015625" font-style="oblique" font-size="10px" font-family="MiSans, sans-serif" fill="#e8823c">κ</tspan>
+      <tspan x="5.893555" y="-0.015625" font-size="10px" font-family="MiSans, sans-serif" fill="#e8823c"> </tspan>
+      <tspan x="8.393539" y="-0.015625" font-size="10px" font-family="MiSans, sans-serif" fill="#e8823c">连</tspan>
+      <tspan x="18.393524" y="-0.015625" font-size="10px" font-family="MiSans, sans-serif" fill="#e8823c">续</tspan>
+     </text>
+    </g>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_8">
+    <path d="M 46.872 307.48032  L 421.848 307.48032  L 421.848 203.15664  L 46.872 203.15664  z " fill="#ffffff" />
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_7">
+      <defs>
+       <path id="mf0ffa265c4" d="M 0 0  L 0 3  " stroke="#4a6076" />
+      </defs>
+      <g>
+       <use xlink:href="#mf0ffa265c4" x="57.484528" y="307.48032" fill="#4a6076" stroke="#4a6076" />
+      </g>
+     </g>
+     <g id="text_13">
+      <text x="57.484528" y="323.70032" transform="rotate(-0 57.484528 323.70032)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">0.0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#mf0ffa265c4" x="128.234717" y="307.48032" fill="#4a6076" stroke="#4a6076" />
+      </g>
+     </g>
+     <g id="text_14">
+      <text x="128.234717" y="323.70032" transform="rotate(-0 128.234717 323.70032)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">0.2</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_9">
+      <g>
+       <use xlink:href="#mf0ffa265c4" x="198.984906" y="307.48032" fill="#4a6076" stroke="#4a6076" />
+      </g>
+     </g>
+     <g id="text_15">
+      <text x="198.984906" y="323.70032" transform="rotate(-0 198.984906 323.70032)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">0.4</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#mf0ffa265c4" x="269.735094" y="307.48032" fill="#4a6076" stroke="#4a6076" />
+      </g>
+     </g>
+     <g id="text_16">
+      <text x="269.735094" y="323.70032" transform="rotate(-0 269.735094 323.70032)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">0.6</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_11">
+      <g>
+       <use xlink:href="#mf0ffa265c4" x="340.485283" y="307.48032" fill="#4a6076" stroke="#4a6076" />
+      </g>
+     </g>
+     <g id="text_17">
+      <text x="340.485283" y="323.70032" transform="rotate(-0 340.485283 323.70032)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">0.8</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_12">
+      <g>
+       <use xlink:href="#mf0ffa265c4" x="411.235472" y="307.48032" fill="#4a6076" stroke="#4a6076" />
+      </g>
+     </g>
+     <g id="text_18">
+      <text x="411.235472" y="323.70032" transform="rotate(-0 411.235472 323.70032)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">1.0</text>
+     </g>
+    </g>
+    <g id="text_19">
+     <text x="234.36" y="338.610945" transform="rotate(-0 234.36 338.610945)" font-size="11.5px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#12263a">沿路径的弧长（归一化）</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_13">
+      <defs>
+       <path id="me7c59da365" d="M 0 0  L -3 0  " stroke="#4a6076" />
+      </defs>
+      <g>
+       <use xlink:href="#me7c59da365" x="46.872" y="307.48032" fill="#4a6076" stroke="#4a6076" />
+      </g>
+     </g>
+     <g id="text_20">
+      <text x="40.372" y="312.34032" transform="rotate(-0 40.372 312.34032)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="end" fill="#4a6076">0.0</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_14">
+      <g>
+       <use xlink:href="#me7c59da365" x="46.872" y="262.122198" fill="#4a6076" stroke="#4a6076" />
+      </g>
+     </g>
+     <g id="text_21">
+      <text x="40.372" y="266.982198" transform="rotate(-0 40.372 266.982198)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="end" fill="#4a6076">0.2</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_15">
+      <g>
+       <use xlink:href="#me7c59da365" x="46.872" y="216.764077" fill="#4a6076" stroke="#4a6076" />
+      </g>
+     </g>
+     <g id="text_22">
+      <text x="40.372" y="221.624077" transform="rotate(-0 40.372 221.624077)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="end" fill="#4a6076">0.4</text>
+     </g>
+    </g>
+    <g id="text_23">
+     <g transform="translate(18.140125 297.58098) rotate(-90)" fill="#12263a">
+      <text>
+       <tspan x="0" y="-0.6875" font-size="11.5px" font-family="MiSans, sans-serif" fill="#12263a">曲</tspan>
+       <tspan x="11.5" y="-0.6875" font-size="11.5px" font-family="MiSans, sans-serif" fill="#12263a">率</tspan>
+       <tspan x="23" y="-0.6875" font-size="11.5px" font-family="MiSans, sans-serif" fill="#12263a"> </tspan>
+       <tspan x="32.652588" y="-0.6875" font-size="11.5px" font-family="MiSans, sans-serif" fill="#12263a">（</tspan>
+       <tspan x="44.152588" y="-0.6875" font-size="11.5px" font-family="MiSans, sans-serif" fill="#12263a">1</tspan>
+       <tspan x="50.523575" y="-0.6875" font-size="11.5px" font-family="MiSans, sans-serif" fill="#12263a">/</tspan>
+       <tspan x="55.549072" y="-0.6875" font-size="11.5px" font-family="MiSans, sans-serif" fill="#12263a">μ</tspan>
+       <tspan x="62.173065" y="-0.6875" font-size="11.5px" font-family="MiSans, sans-serif" fill="#12263a">m</tspan>
+       <tspan x="72.960052" y="-0.6875" font-size="11.5px" font-family="MiSans, sans-serif" fill="#12263a">）</tspan>
+       <tspan x="25.875" y="-0.6875" font-style="oblique" font-size="11.5px" font-family="MiSans, sans-serif" fill="#12263a">κ</tspan>
+      </text>
+     </g>
+    </g>
+   </g>
+   <g id="line2d_16">
+    <path d="M 57.484528 307.48032  L 57.484528 250.782668  L 411.235472 250.782668  L 411.235472 307.48032  " clip-path="url(#p662342582f)" fill="none" stroke="#1f6fd0" stroke-width="2.6" />
+   </g>
+   <g id="line2d_17">
+    <path d="M 57.484528 307.48032  L 162.474207 230.539699  L 306.245793 230.539699  L 411.235472 307.48032  " clip-path="url(#p662342582f)" fill="none" stroke="#e8823c" stroke-width="2.6" stroke-linecap="round" />
+   </g>
+   <g id="line2d_18">
+    <path d="M 46.872 250.782668  L 421.848 250.782668  " clip-path="url(#p662342582f)" fill="none" stroke-dasharray="0.8,1.32" stroke-dashoffset="0" stroke="#1f6fd0" stroke-opacity="0.7" stroke-width="0.8" />
+   </g>
+   <g id="line2d_19">
+    <path d="M 46.872 230.539699  L 421.848 230.539699  " clip-path="url(#p662342582f)" fill="none" stroke-dasharray="0.8,1.32" stroke-dashoffset="0" stroke="#e8823c" stroke-opacity="0.7" stroke-width="0.8" />
+   </g>
+   <g id="patch_9">
+    <path d="M 46.872 307.48032  L 46.872 203.15664  " fill="none" stroke="#d6e2ec" stroke-linejoin="miter" stroke-linecap="square" />
+   </g>
+   <g id="patch_10">
+    <path d="M 421.848 307.48032  L 421.848 203.15664  " fill="none" stroke="#d6e2ec" stroke-linejoin="miter" stroke-linecap="square" />
+   </g>
+   <g id="patch_11">
+    <path d="M 46.872 307.48032  L 421.848 307.48032  " fill="none" stroke="#d6e2ec" stroke-linejoin="miter" stroke-linecap="square" />
+   </g>
+   <g id="patch_12">
+    <path d="M 46.872 203.15664  L 421.848 203.15664  " fill="none" stroke="#d6e2ec" stroke-linejoin="miter" stroke-linecap="square" />
+   </g>
+   <g id="text_24">
+    <text x="234.36" y="247.607599" transform="rotate(-0 234.36 247.607599)" font-size="10px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#1f6fd0">0.25</text>
+   </g>
+   <g id="text_25">
+    <text x="234.36" y="227.36463" transform="rotate(-0 234.36 227.36463)" font-size="10px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#e8823c">0.34</text>
+   </g>
+   <g id="text_26">
+    <text x="109.979368" y="290.471024" transform="rotate(-0 109.979368 290.471024)" font-size="10px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#e8823c">渐变</text>
+   </g>
+   <g id="text_27">
+    <text x="234.36" y="290.471024" transform="rotate(-0 234.36 290.471024)" font-size="10px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#e8823c">恒曲率</text>
+   </g>
+   <g id="text_28">
+    <text x="358.740632" y="290.471024" transform="rotate(-0 358.740632 290.471024)" font-size="10px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#e8823c">渐变</text>
+   </g>
+   <g id="legend_1">
+    <g id="line2d_20">
+     <path d="M 106.833398 215.350166  L 117.333398 215.350166  L 127.833398 215.350166  " fill="none" stroke="#1f6fd0" stroke-width="2.6" />
+    </g>
+    <g id="text_29">
+     <g transform="translate(136.233398 219.025166)" fill="#12263a">
+      <text>
+       <tspan x="0" y="-0.984375" font-size="10.5px" font-family="MiSans, sans-serif" fill="#12263a">圆</tspan>
+       <tspan x="10.5" y="-0.984375" font-size="10.5px" font-family="MiSans, sans-serif" fill="#12263a">弧</tspan>
+       <tspan x="21" y="-0.984375" font-size="10.5px" font-family="MiSans, sans-serif" fill="#12263a">弯</tspan>
+       <tspan x="31.5" y="-0.984375" font-size="10.5px" font-family="MiSans, sans-serif" fill="#12263a">：</tspan>
+       <tspan x="48.188232" y="-0.984375" font-size="10.5px" font-family="MiSans, sans-serif" fill="#12263a"> </tspan>
+       <tspan x="50.813232" y="-0.984375" font-size="10.5px" font-family="MiSans, sans-serif" fill="#12263a">阶</tspan>
+       <tspan x="61.313232" y="-0.984375" font-size="10.5px" font-family="MiSans, sans-serif" fill="#12263a">跃</tspan>
+       <tspan x="42" y="-0.984375" font-style="oblique" font-size="10.5px" font-family="MiSans, sans-serif" fill="#12263a">κ</tspan>
+      </text>
+     </g>
+    </g>
+    <g id="line2d_21">
+     <path d="M 220.653398 215.350166  L 231.153398 215.350166  L 241.653398 215.350166  " fill="none" stroke="#e8823c" stroke-width="2.6" stroke-linecap="round" />
+    </g>
+    <g id="text_30">
+     <text x="250.053398" y="219.025166" transform="rotate(-0 250.053398 219.025166)" font-size="10.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">Euler 弯：渐变 + 恒曲率</text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p7fefc91ec1">
+   <rect x="0" y="0" width="446.4" height="366.048" />
+  </clipPath>
+  <clipPath id="p662342582f">
+   <rect x="46.872" y="203.15664" width="374.976" height="104.32368" />
+  </clipPath>
+ </defs>
+ <g id="text_1">
+  <text x="20.088" y="16.730645" transform="rotate(-0 20.088 16.730645)" font-size="12.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4e9be8">弯曲原理</text>
+ </g>
+ <g id="text_2" transform="translate(0 10)">
+  <text x="20.088" y="38.968481" transform="rotate(-0 20.088 38.968481)" font-size="25px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a" font-weight="600">同样转 90°，曲率怎么变才是关键</text>
+ </g>
+ <g id="line2d_1" transform="translate(0 10)">
+  <path d="M 20.088 45.5328  L 58.032 45.5328  " clip-path="url(#p7fefc91ec1)" fill="none" stroke="#1f6fd0" stroke-width="3.2" />
+ </g>
+</svg>
