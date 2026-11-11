@@ -5,7 +5,7 @@
   "articles": [
     {
       "slug": "01-overview",
-      "authors": [],
+      "authors": ["Frank-DingYC"],
       "summary": "区分光栅接口的三类设计路线和可比较的指标。",
       "sources": [
         "https://www.lingcompute.com/photon/learning-center/example-library"
