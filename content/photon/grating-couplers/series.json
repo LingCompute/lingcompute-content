@@ -5,7 +5,7 @@
   "articles": [
     {
       "slug": "02-uniform",
-      "authors": [],
+      "authors": ["Frank-DingYC"],
       "summary": "理解均匀光栅的相位匹配和主要功率去向。",
       "sources": [
         "https://www.lingcompute.com/photon/learning-center/examples/notebooks/GratingCoupler"
