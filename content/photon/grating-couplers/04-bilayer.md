@@ -10,7 +10,7 @@
 
 案例是学习中心的 [Design optimization of a bilayer SiN/Si grating coupler](https://www.lingcompute.com/photon/learning-center/examples/notebooks/BilayerSiNSiGC)，方法来自 Zou 等人 2015 年 *Optics Express* 那篇 *Ultra efficient silicon nitride grating coupler with bottom grating reflector*。
 
-![图 12：三条路线的结构对照。最右边就是本篇要讲的双层结构——SiN 光栅在上，硅反射光栅埋在下。](figures/04-three-routes.png)
+![图 12：三条路线的结构对照。最右边就是本篇要讲的双层结构——SiN 光栅在上，硅反射光栅埋在下。](figures/04-three-routes.svg)
 
 ## 思路：把"方向性"单独拎出来修
 
@@ -30,7 +30,7 @@
 
 **第二步，单独设计硅反射光栅。** 这一步只关心"反射率"，不关心耦合。扫齿宽 w_gr 和周期 p_gr，用一个通量监视器量反射回来的比例。
 
-![图 13：左：硅反射光栅的反射率地图，最高 95%；右：层间距扫描，8.6 dB 的起伏，周期约 0.55 μm。](figures/13-bilayer-design.png)
+![图 13：左：硅反射光栅的反射率地图，最高 95%；右：层间距扫描，8.6 dB 的起伏，周期约 0.55 μm。](figures/13-bilayer-design.svg)
 
 最好的一组是 w_gr = 0.443 μm、p_gr = 0.871 μm，反射率 **95.2%**。
 

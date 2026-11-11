@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="504.000pt" height="278.080pt" viewBox="0.000 0.000 504.000 278.080" stroke-linejoin="round" stroke-linecap="butt" font-family="MiSans, sans-serif" font-weight="400">
+ <defs>
+  </defs>
+ <g id="figure_1" transform="translate(0 16)">
+  <g id="patch_1">
+   <path d="M 0 262.08  L 504 262.08  L 504 0  L 0 0  z " fill="#ffffff" />
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 30.744 215.712  L 163.296 215.712  Q 171.36 215.712 171.36 207.648  L 171.36 91.728  Q 171.36 83.664 163.296 83.664  L 30.744 83.664  Q 22.68 83.664 22.68 91.728  L 22.68 207.648  Q 22.68 215.712 30.744 215.712  z " clip-path="url(#pf668d34b9f)" fill="#f1f7fe" />
+   </g>
+   <g id="patch_3">
+    <path d="M 186.984 215.712  L 319.536 215.712  Q 327.6 215.712 327.6 207.648  L 327.6 91.728  Q 327.6 83.664 319.536 83.664  L 186.984 83.664  Q 178.92 83.664 178.92 91.728  L 178.92 207.648  Q 178.92 215.712 186.984 215.712  z " clip-path="url(#pf668d34b9f)" fill="#f1f7fe" />
+   </g>
+   <g id="patch_4">
+    <path d="M 343.224 215.712  L 475.776 215.712  Q 483.84 215.712 483.84 207.648  L 483.84 91.728  Q 483.84 83.664 475.776 83.664  L 343.224 83.664  Q 335.16 83.664 335.16 91.728  L 335.16 207.648  Q 335.16 215.712 343.224 215.712  z " clip-path="url(#pf668d34b9f)" fill="#f1f7fe" />
+   </g>
+   <g id="patch_5">
+    <path d="M 30.744 175.392  L 162.792 175.392  L 162.792 162.288  L 30.744 162.288  z " clip-path="url(#pf668d34b9f)" fill="#dce7f2" />
+   </g>
+   <g id="patch_6">
+    <path d="M 186.984 175.392  L 319.032 175.392  L 319.032 162.288  L 186.984 162.288  z " clip-path="url(#pf668d34b9f)" fill="#dce7f2" />
+   </g>
+   <g id="patch_7">
+    <path d="M 343.224 178.416  L 475.272 178.416  L 475.272 170.352  L 343.224 170.352  z " clip-path="url(#pf668d34b9f)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_8">
+    <path d="M 343.224 170.352  L 475.272 170.352  L 475.272 147.168  L 343.224 147.168  z " clip-path="url(#pf668d34b9f)" fill="#e4edf6" />
+   </g>
+   <g id="text_3">
+    <text x="22.68" y="254.702312" transform="rotate(-0 22.68 254.702312)" font-size="10px" font-family="MiSans, sans-serif" text-anchor="start" fill="#8a9bab">示意图。齿宽与周期未按真实比例。</text>
+   </g>
+   <g id="patch_9">
+    <path d="M 30.744 162.288  L 162.792 162.288  L 162.792 150.192  L 30.744 150.192  z " clip-path="url(#pf668d34b9f)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_10">
+    <path d="M 186.984 162.288  L 319.032 162.288  L 319.032 150.192  L 186.984 150.192  z " clip-path="url(#pf668d34b9f)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_11">
+    <path d="M 354.312 164.304  L 362.376 164.304  L 362.376 156.744  L 354.312 156.744  z " clip-path="url(#pf668d34b9f)" fill="#7fa8cc" />
+   </g>
+   <g id="patch_12">
+    <path d="M 368.424 164.304  L 376.488 164.304  L 376.488 156.744  L 368.424 156.744  z " clip-path="url(#pf668d34b9f)" fill="#7fa8cc" />
+   </g>
+   <g id="patch_13">
+    <path d="M 382.536 164.304  L 390.6 164.304  L 390.6 156.744  L 382.536 156.744  z " clip-path="url(#pf668d34b9f)" fill="#7fa8cc" />
+   </g>
+   <g id="patch_14">
+    <path d="M 396.648 164.304  L 404.712 164.304  L 404.712 156.744  L 396.648 156.744  z " clip-path="url(#pf668d34b9f)" fill="#7fa8cc" />
+   </g>
+   <g id="patch_15">
+    <path d="M 410.76 164.304  L 418.824 164.304  L 418.824 156.744  L 410.76 156.744  z " clip-path="url(#pf668d34b9f)" fill="#7fa8cc" />
+   </g>
+   <g id="patch_16">
+    <path d="M 424.872 164.304  L 432.936 164.304  L 432.936 156.744  L 424.872 156.744  z " clip-path="url(#pf668d34b9f)" fill="#7fa8cc" />
+   </g>
+   <g id="patch_17">
+    <path d="M 438.984 164.304  L 447.048 164.304  L 447.048 156.744  L 438.984 156.744  z " clip-path="url(#pf668d34b9f)" fill="#7fa8cc" />
+   </g>
+   <g id="patch_18">
+    <path d="M 453.096 164.304  L 461.16 164.304  L 461.16 156.744  L 453.096 156.744  z " clip-path="url(#pf668d34b9f)" fill="#7fa8cc" />
+   </g>
+   <g id="patch_19">
+    <path d="M 343.224 147.168  L 475.272 147.168  L 475.272 141.12  L 343.224 141.12  z " clip-path="url(#pf668d34b9f)" fill="#bbd5ec" />
+   </g>
+   <g id="patch_20">
+    <path d="M 53.928 150.192  L 61.488 150.192  L 61.488 141.12  L 53.928 141.12  z " clip-path="url(#pf668d34b9f)" fill="#e8823c" />
+   </g>
+   <g id="patch_21">
+    <path d="M 67.032 150.192  L 74.592 150.192  L 74.592 141.12  L 67.032 141.12  z " clip-path="url(#pf668d34b9f)" fill="#e8823c" />
+   </g>
+   <g id="patch_22">
+    <path d="M 80.136 150.192  L 87.696 150.192  L 87.696 141.12  L 80.136 141.12  z " clip-path="url(#pf668d34b9f)" fill="#e8823c" />
+   </g>
+   <g id="patch_23">
+    <path d="M 93.24 150.192  L 100.8 150.192  L 100.8 141.12  L 93.24 141.12  z " clip-path="url(#pf668d34b9f)" fill="#e8823c" />
+   </g>
+   <g id="patch_24">
+    <path d="M 106.344 150.192  L 113.904 150.192  L 113.904 141.12  L 106.344 141.12  z " clip-path="url(#pf668d34b9f)" fill="#e8823c" />
+   </g>
+   <g id="patch_25">
+    <path d="M 119.448 150.192  L 127.008 150.192  L 127.008 141.12  L 119.448 141.12  z " clip-path="url(#pf668d34b9f)" fill="#e8823c" />
+   </g>
+   <g id="patch_26">
+    <path d="M 132.552 150.192  L 140.112 150.192  L 140.112 141.12  L 132.552 141.12  z " clip-path="url(#pf668d34b9f)" fill="#e8823c" />
+   </g>
+   <g id="patch_27">
+    <path d="M 196.056 150.192  L 209.664 150.192  L 209.664 141.12  L 196.056 141.12  z " clip-path="url(#pf668d34b9f)" fill="#e8823c" />
+   </g>
+   <g id="patch_28">
+    <path d="M 213.192 150.192  L 225.4392 150.192  L 225.4392 141.12  L 213.192 141.12  z " clip-path="url(#pf668d34b9f)" fill="#e8823c" />
+   </g>
+   <g id="patch_29">
+    <path d="M 230.6304 150.192  L 241.5168 150.192  L 241.5168 141.12  L 230.6304 141.12  z " clip-path="url(#pf668d34b9f)" fill="#e8823c" />
+   </g>
+   <g id="patch_30">
+    <path d="M 248.3712 150.192  L 257.8968 150.192  L 257.8968 141.12  L 248.3712 141.12  z " clip-path="url(#pf668d34b9f)" fill="#e8823c" />
+   </g>
+   <g id="patch_31">
+    <path d="M 266.4144 150.192  L 274.5792 150.192  L 274.5792 141.12  L 266.4144 141.12  z " clip-path="url(#pf668d34b9f)" fill="#e8823c" />
+   </g>
+   <g id="patch_32">
+    <path d="M 284.76 150.192  L 291.564 150.192  L 291.564 141.12  L 284.76 141.12  z " clip-path="url(#pf668d34b9f)" fill="#e8823c" />
+   </g>
+   <g id="patch_33">
+    <path d="M 303.408 150.192  L 308.8512 150.192  L 308.8512 141.12  L 303.408 141.12  z " clip-path="url(#pf668d34b9f)" fill="#e8823c" />
+   </g>
+   <g id="patch_34">
+    <path d="M 361.368 141.12  L 370.944 141.12  L 370.944 133.56  L 361.368 133.56  z " clip-path="url(#pf668d34b9f)" fill="#e8823c" />
+   </g>
+   <g id="patch_35">
+    <path d="M 378.504 141.12  L 388.08 141.12  L 388.08 133.56  L 378.504 133.56  z " clip-path="url(#pf668d34b9f)" fill="#e8823c" />
+   </g>
+   <g id="patch_36">
+    <path d="M 395.64 141.12  L 405.216 141.12  L 405.216 133.56  L 395.64 133.56  z " clip-path="url(#pf668d34b9f)" fill="#e8823c" />
+   </g>
+   <g id="patch_37">
+    <path d="M 412.776 141.12  L 422.352 141.12  L 422.352 133.56  L 412.776 133.56  z " clip-path="url(#pf668d34b9f)" fill="#e8823c" />
+   </g>
+   <g id="patch_38">
+    <path d="M 429.912 141.12  L 439.488 141.12  L 439.488 133.56  L 429.912 133.56  z " clip-path="url(#pf668d34b9f)" fill="#e8823c" />
+   </g>
+   <g id="patch_39">
+    <path d="M 447.048 141.12  L 456.624 141.12  L 456.624 133.56  L 447.048 133.56  z " clip-path="url(#pf668d34b9f)" fill="#e8823c" />
+   </g>
+   <g id="text_4">
+    <text x="34.776" y="103.361508" transform="rotate(-0 34.776 103.361508)" font-weight="600" font-size="16.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">均匀光栅</text>
+   </g>
+   <g id="text_5">
+    <text x="34.776" y="115.107672" transform="rotate(-0 34.776 115.107672)" font-size="11px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">变量：周期、光纤位置</text>
+   </g>
+   <g id="text_6">
+    <text x="191.016" y="103.361508" transform="rotate(-0 191.016 103.361508)" font-weight="600" font-size="16.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">切趾 + 聚焦</text>
+   </g>
+   <g id="text_7">
+    <text x="191.016" y="115.107672" transform="rotate(-0 191.016 115.107672)" font-size="11px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">变量：填充因子随位置变化</text>
+   </g>
+   <g id="text_8">
+    <text x="347.256" y="103.444008" transform="rotate(-0 347.256 103.444008)" font-weight="600" font-size="16.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">双层 SiN/Si</text>
+   </g>
+   <g id="text_9">
+    <text x="347.256" y="115.107672" transform="rotate(-0 347.256 115.107672)" font-size="11px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">变量：多一层底部反射光栅</text>
+   </g>
+   <g id="patch_40">
+    <path d="M 405.72 154.224  Q 405.72 146.664 405.72 141.116461  " clip-path="url(#pf668d34b9f)" fill="none" stroke="#1f6fd0" stroke-width="1.8" stroke-linecap="round" />
+    <path d="M 403.12 146.316461  L 405.72 141.116461  L 408.32 146.316461  z " clip-path="url(#pf668d34b9f)" fill="#1f6fd0" stroke="#1f6fd0" stroke-width="1.8" stroke-linecap="round" />
+   </g>
+   <g id="text_10">
+    <text x="252" y="235.401961" transform="rotate(-0 252 235.401961)" font-size="13.5px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#12263a">效率的上限不在光栅本身，而在「漏出的场能不能对上光纤的高斯模」</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pf668d34b9f">
+   <rect x="0" y="0" width="504" height="262.08" />
+  </clipPath>
+ </defs>
+ <g id="text_1">
+  <text x="22.68" y="19.689961" transform="rotate(-0 22.68 19.689961)" font-size="13.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4e9be8">设计空间</text>
+ </g>
+ <g id="text_2" transform="translate(0 8)">
+  <text x="22.68" y="43.742891" transform="rotate(-0 22.68 43.742891)" font-size="25px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a" font-weight="600">三条路线，三种花自由度的方式</text>
+ </g>
+ <g id="line2d_1" transform="translate(0 8)">
+  <path d="M 22.68 53.424  L 65.52 53.424  " clip-path="url(#pf668d34b9f)" fill="none" stroke="#1f6fd0" stroke-width="3.2" />
+ </g>
+</svg>
