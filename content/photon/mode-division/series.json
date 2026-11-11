@@ -5,7 +5,7 @@
   "articles": [
     {
       "slug": "02-8channel",
-      "authors": [],
+      "authors": ["Frank-DingYC"],
       "summary": "理解非对称耦合器怎样装配模分器件及已验证入口。",
       "sources": [
         "https://www.lingcompute.com/photon/learning-center/examples/notebooks/8ChannelDemultiplexer",
