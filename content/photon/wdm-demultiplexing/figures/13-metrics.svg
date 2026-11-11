@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="504.000pt" height="276.760pt" viewBox="0.000 0.000 504.000 276.760" stroke-linejoin="round" stroke-linecap="butt" font-family="MiSans, sans-serif" font-weight="400">
+ <defs>
+  </defs>
+ <g id="figure_1" transform="translate(0 55)">
+  <g id="patch_1">
+   <path d="M 0 221.76  L 504 221.76  L 504 0  L 0 0  z " fill="#ffffff" />
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 35.784 93.24  L 236.376 93.24  Q 244.44 93.24 244.44 85.176  L 244.44 38.304  Q 244.44 30.24 236.376 30.24  L 35.784 30.24  Q 27.72 30.24 27.72 38.304  L 27.72 85.176  Q 27.72 93.24 35.784 93.24  z " clip-path="url(#p2a3b38aa99)" fill="#f1f7fe" />
+   </g>
+   <g id="patch_3">
+    <path d="M 262.584 93.24  L 463.176 93.24  Q 471.24 93.24 471.24 85.176  L 471.24 38.304  Q 471.24 30.24 463.176 30.24  L 262.584 30.24  Q 254.52 30.24 254.52 38.304  L 254.52 85.176  Q 254.52 93.24 262.584 93.24  z " clip-path="url(#p2a3b38aa99)" fill="#f1f7fe" />
+   </g>
+   <g id="patch_4">
+    <path d="M 35.784 168.84  L 236.376 168.84  Q 244.44 168.84 244.44 160.776  L 244.44 113.904  Q 244.44 105.84 236.376 105.84  L 35.784 105.84  Q 27.72 105.84 27.72 113.904  L 27.72 160.776  Q 27.72 168.84 35.784 168.84  z " clip-path="url(#p2a3b38aa99)" fill="#fcebdb" />
+   </g>
+   <g id="patch_5">
+    <path d="M 262.584 168.84  L 463.176 168.84  Q 471.24 168.84 471.24 160.776  L 471.24 113.904  Q 471.24 105.84 463.176 105.84  L 262.584 105.84  Q 254.52 105.84 254.52 113.904  L 254.52 160.776  Q 254.52 168.84 262.584 168.84  z " clip-path="url(#p2a3b38aa99)" fill="#fcebdb" />
+   </g>
+   <g id="text_3">
+    <text x="38.808" y="51.107219" transform="rotate(-0 38.808 51.107219)" font-weight="600" font-size="14px" font-family="MiSans, sans-serif" text-anchor="start" fill="#0b4c9c">插损 IL</text>
+   </g>
+   <g id="text_4">
+    <text x="38.808" y="77.166562" transform="rotate(-0 38.808 77.166562)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">目标通道从输入到对应输出的功率比</text>
+   </g>
+   <g id="text_5">
+    <text x="265.608" y="51.107219" transform="rotate(-0 265.608 51.107219)" font-weight="600" font-size="14px" font-family="MiSans, sans-serif" text-anchor="start" fill="#0b4c9c">串扰</text>
+   </g>
+   <g id="text_6">
+    <text transform="translate(265.608 69.264375)" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">其他通道漏进本口的功率 / 本通道功</text>
+    <text transform="translate(265.608 85.44)" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">率</text>
+   </g>
+   <g id="text_7">
+    <text x="38.808" y="126.707219" transform="rotate(-0 38.808 126.707219)" font-weight="600" font-size="14px" font-family="MiSans, sans-serif" text-anchor="start" fill="#e8823c">3 dB 带宽</text>
+   </g>
+   <g id="text_8">
+    <text transform="translate(38.808 144.654375)" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">通带下降 3 dB 的宽度，要与通道间</text>
+    <text transform="translate(38.808 160.83)" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">隔比</text>
+   </g>
+   <g id="text_9">
+    <text x="265.608" y="126.707219" transform="rotate(-0 265.608 126.707219)" font-weight="600" font-size="14px" font-family="MiSans, sans-serif" text-anchor="start" fill="#e8823c">FSR</text>
+   </g>
+   <g id="text_10">
+    <text x="265.608" y="152.742188" transform="rotate(-0 265.608 152.742188)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">传递函数的周期，决定最大通道数</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p2a3b38aa99">
+   <rect x="0" y="0" width="504" height="221.76" />
+  </clipPath>
+ </defs>
+ <g id="text_1">
+  <text x="22.68" y="19.689961" transform="rotate(-0 22.68 19.689961)" font-size="13.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4e9be8">先说清在量什么</text>
+ </g>
+ <g id="text_2" transform="translate(0 8)">
+  <text x="22.68" y="43.742891" transform="rotate(-0 22.68 43.742891)" font-size="25px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a" font-weight="600">四个指标，四种口径</text>
+ </g>
+ <g id="line2d_1" transform="translate(0 8)">
+  <path d="M 22.68 53.424  L 65.52 53.424  " clip-path="url(#p2a3b38aa99)" fill="none" stroke="#1f6fd0" stroke-width="3.2" />
+ </g>
+</svg>
