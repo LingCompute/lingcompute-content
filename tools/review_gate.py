@@ -37,9 +37,13 @@ def approvals(reviews, author, commit):
 
 def missing_reviews(files, reviews, roster, author, commit, authors=None):
     approved = approvals(reviews, author, commit)
+    products = products_changed(files)
+    if not products and any(filename.startswith("content/") for filename in files):
+        reviewers = {login.lower() for names in roster.values() for login in names}
+        return [] if approved.intersection(reviewers) else ["content"]
     return sorted(
         product
-        for product in products_changed(files)
+        for product in products
         if not (approved - (authors or {}).get(product, set())).intersection(
             login.lower() for login in roster.get(product, [])
         )

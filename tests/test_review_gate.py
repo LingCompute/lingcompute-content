@@ -50,6 +50,42 @@ class ReviewTests(unittest.TestCase):
             ["tools/style.css"], [], {}, "author", "current",
         ), [])
 
+    def test_maintenance_needs_no_approval_but_mixed_content_does(self):
+        files = [
+            ".github/workflows/industry-review.yml", "tools/build.py",
+            "tests/test_build.py", "config/reviewers.json", "reviews/legacy.json",
+            "docs/review.md", "assets/brand/logo.svg", "README.md",
+        ]
+        roster = {"photon": ["expert"]}
+        self.assertEqual(
+            review_gate.missing_reviews(files, [], roster, "author", "current"), [],
+        )
+        files.append("content/photon/one/series.json")
+        self.assertEqual(
+            review_gate.missing_reviews(files, [], roster, "author", "current"), ["photon"],
+        )
+        self.assertEqual(
+            review_gate.missing_reviews(files, [review()], roster, "author", "current"), [],
+        )
+
+    def test_content_root_requires_designated_independent_current_approval(self):
+        files = ["content/README.md", "docs/review.md"]
+        roster = {"photon": ["expert"]}
+        cases = [
+            ([], ["content"]),
+            ([review()], []),
+            ([review("author")], ["content"]),
+            ([review("other")], ["content"]),
+            ([review(kind="Bot")], ["content"]),
+            ([review(commit="previous")], ["content"]),
+        ]
+        for reviews, expected in cases:
+            with self.subTest(reviews=reviews):
+                self.assertEqual(
+                    review_gate.missing_reviews(files, reviews, roster, "author", "current"),
+                    expected,
+                )
+
     @patch.object(review_gate, "github_pages")
     @patch.object(review_gate, "urlopen")
     def test_rename_checks_both_old_and_new_product(self, api, pages):
