@@ -5,7 +5,7 @@
   "articles": [
     {
       "slug": "01-overview",
-      "authors": [],
+      "authors": ["Frank-DingYC"],
       "summary": "区分模式、偏振与端口，建立模分器件的选择框架。",
       "sources": [
         "https://www.lingcompute.com/photon/learning-center/examples/notebooks/8ChannelDemultiplexer",
