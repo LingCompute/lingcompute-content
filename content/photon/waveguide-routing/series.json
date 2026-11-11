@@ -5,7 +5,7 @@
   "articles": [
     {
       "slug": "03-crossings",
-      "authors": [],
+      "authors": ["Frank-DingYC"],
       "summary": "区分交叉结构的直通、单侧串扰与模态口径。",
       "sources": [
         "https://www.lingcompute.com/photon/learning-center/examples/notebooks/WaveguideCrossing",
