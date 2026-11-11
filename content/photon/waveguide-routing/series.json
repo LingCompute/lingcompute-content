@@ -5,7 +5,7 @@
   "articles": [
     {
       "slug": "05-comparison",
-      "authors": [],
+      "authors": ["Frank-DingYC"],
       "summary": "将器件级损耗、串扰与工艺约束合入布线预算。",
       "sources": [
         "https://www.lingcompute.com/photon/learning-center/examples/notebooks/EulerWaveguideBend",
