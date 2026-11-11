@@ -5,7 +5,7 @@
   "articles": [
     {
       "slug": "01-overview",
-      "authors": [],
+      "authors": ["Frank-DingYC"],
       "summary": "用谐振和布拉格散射理解波长选择的两类机制。",
       "sources": [
         "https://www.lingcompute.com/photon/learning-center/examples/notebooks/RingResonator",
