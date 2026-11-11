@@ -5,7 +5,7 @@
   "articles": [
     {
       "slug": "05-comparison",
-      "authors": [],
+      "authors": ["Frank-DingYC"],
       "summary": "按通道、带宽、串扰、面积和工艺联合选择分波方案。",
       "sources": [
         "https://www.lingcompute.com/photon/learning-center/example-library",
