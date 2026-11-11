@@ -8,7 +8,7 @@
 
 案例是学习中心的 [Focusing apodized grating coupler](https://www.lingcompute.com/photon/learning-center/examples/notebooks/FocusedApodGC)，设计方法来自 Marchetti 等人 2017 年那篇 *High-efficiency grating-couplers: demonstration of a new design strategy*。
 
-![图 9：切趾修的是「漏出强度沿传播方向怎么变」，聚焦修的是「这些辐射往哪儿走」。](figures/10-apodized-principle.png)
+![图 9：切趾修的是「漏出强度沿传播方向怎么变」，聚焦修的是「这些辐射往哪儿走」。](figures/10-apodized-principle.svg)
 
 ## 切趾：让填充因子变成位置的函数
 
@@ -40,7 +40,7 @@
 
 3D 结果是 **−2.08 dB，峰值在 1554 nm**。与均匀光栅峰值 −4.20 dB 相差 **2.12 dB**，峰值功率比例约为 38% 与 **62%**。两种结构条件不同，这不是只改变切趾的配对增益。
 
-![图 10：左：效率随波长，峰值 −2.08 dB；右：1550 nm 附近向上总反射约 11%，净下行通量约 27%，均非模式回波或吸收功率。](figures/11-apodized-spectrum.png)
+![图 10：左：效率随波长，峰值 −2.08 dB；右：1550 nm 附近向上总反射约 11%，净下行通量约 27%，均非模式回波或吸收功率。](figures/11-apodized-spectrum.svg)
 
 以下统一取 1550 nm，区分已测功率与未分解余项：
 
