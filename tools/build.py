@@ -16,8 +16,10 @@ from PIL import Image
 
 try:
     from .fonts import font_style
+    from .svg import image as svg_image
 except ImportError:
     from fonts import font_style
+    from svg import image as svg_image
 
 ROOT = Path(__file__).resolve().parents[1]
 BUILD = ROOT / "build"
@@ -67,14 +69,16 @@ def attributes(tag, name, value):
 
 
 class ContentHTML(HTMLParser):
-    def __init__(self, base, root=ROOT):
+    def __init__(self, base, root=ROOT, source_ref=SOURCE_REF, source_base=None):
         super().__init__(convert_charrefs=False)
         self.base = base
         self.root = root.resolve()
+        self.source_base = source_base or f"{REPOSITORY}/blob/{quote(source_ref, safe='')}"
         self.parts = []
         self.assets = []
         self.text = []
         self.equations = 0
+        self.vectors = {}
 
     def handle_starttag(self, tag, attrs):
         values = dict(attrs)
@@ -87,7 +91,11 @@ class ContentHTML(HTMLParser):
                 raise ValueError("Article images must be inside their series directory")
             self.assets.append(path)
             self.text.append(alt)
-            self.parts.append(f'<img alt="{html.escape(alt, quote=True)}" src="{data_uri(path)}">')
+            source = f"vector:{len(self.assets)}" if path.suffix.lower() == ".svg" else data_uri(path)
+            image = f'<img alt="{html.escape(alt, quote=True)}" src="{source}">'
+            if path.suffix.lower() == ".svg":
+                self.vectors[image] = svg_image(path, alt, len(self.assets))
+            self.parts.append(image)
             return
         if tag == "a" and values.get("href"):
             target = values["href"]
@@ -100,7 +108,7 @@ class ContentHTML(HTMLParser):
             elif parsed.path:
                 destination = local_path(self.base, target, self.root)
                 values["href"] = (
-                    f"{REPOSITORY}/blob/{SOURCE_REF}/{quote(destination.relative_to(self.root).as_posix())}"
+                    f"{self.source_base}/{quote(destination.relative_to(self.root).as_posix())}"
                     + (f"#{quote(parsed.fragment)}" if parsed.fragment else "")
                 )
                 attributes_html = " ".join(
@@ -131,12 +139,12 @@ class ContentHTML(HTMLParser):
         self.text.append(html.unescape(f"&#{name};"))
 
 
-def render_body(manuscript, base, root=ROOT):
+def render_body(manuscript, base, root=ROOT, source_ref=SOURCE_REF, source_base=None):
     rendered = markdown.markdown(manuscript, extensions=["extra", "sane_lists"])
     cleaned = bleach.clean(
         rendered, tags=TAGS, attributes=attributes, protocols={"https", "http", "mailto"}, strip=True
     )
-    parser = ContentHTML(base, root)
+    parser = ContentHTML(base, root, source_ref, source_base)
     parser.feed(cleaned)
     body = "".join(parser.parts)
 
@@ -154,6 +162,8 @@ def render_body(manuscript, base, root=ROOT):
         lambda match: match.group(1).replace("κ", '<span class="greek">κ</span>'),
         body,
     )
+    for placeholder, vector in parser.vectors.items():
+        body = body.replace(placeholder, vector)
     return body, parser
 
 
@@ -165,7 +175,7 @@ def reading_minutes(text, figures, equations):
     return lower, upper
 
 
-def read_articles(root=ROOT):
+def read_articles(root=ROOT, source_ref=SOURCE_REF, source_base=None):
     root = root.resolve()
     products = json.loads((root / "config/products.json").read_text())
     articles = []
@@ -201,7 +211,7 @@ def read_articles(root=ROOT):
                 for author in entry["authors"]
             ):
                 raise ValueError(f"Article authors must be a list of GitHub logins: {path}")
-            body, parser = render_body(manuscript, path.parent, root)
+            body, parser = render_body(manuscript, path.parent, root, source_ref, source_base)
             minutes = reading_minutes(" ".join(parser.text), len(parser.assets), parser.equations)
             articles.append({
                 "path": path,
@@ -244,7 +254,8 @@ def document(title, content, style):
     )
 
 
-def article_html(article, products, style, logo, reviewed, screens=None, navigation=""):
+def article_html(article, products, style, logo, reviewed, screens=None, navigation="",
+                 root=ROOT, source_ref=SOURCE_REF, notice="", source_base=None):
     lower, upper = article["minutes"]
     screen_text = f"{screens:.1f} 参考屏" if screens is not None else "测量中"
     warning = (
@@ -255,8 +266,10 @@ def article_html(article, products, style, logo, reviewed, screens=None, navigat
         "与历史人审清单中的内容指纹匹配；原审核者署名和日期未提供。"
         if reviewed else "新稿审核以对应GitHub PR记录为准；预览本身不代表审核通过。"
     )
+    source_base = source_base or f"{REPOSITORY}/blob/{quote(source_ref, safe='')}"
     content = (
-        '<article><header class="meta"><p>构建预览 · 正式收录以主分支及PR审核记录为准</p>'
+        '<article>' + notice
+        + '<header class="meta"><p>构建预览 · 正式收录以主分支及PR审核记录为准</p>'
         f"<p>{html.escape(products[article['product']]['name'])} · {html.escape(article['series'])}</p>"
         f"<p>适合：{html.escape(article['audience'])}</p>"
         f"<p>本文解决：{html.escape(article['summary'])}</p>"
@@ -267,7 +280,7 @@ def article_html(article, products, style, logo, reviewed, screens=None, navigat
         '<p>自有文章及插图：CC BY-NC 4.0；商用请另行联系。商标与另有标注的第三方材料除外。</p>'
         '<p>默认系统字体；备用字体：<a href="https://hyperos.mi.com/font/en/download/">MiSans（小米）</a>，按其字体许可使用。</p>'
         f"<p>{review_text}</p>"
-        f'<p><a href="{REPOSITORY}/blob/{SOURCE_REF}/{quote(article["path"].parent.relative_to(ROOT).as_posix())}/SOURCES.md">'
+        f'<p><a href="{source_base}/{quote(article["path"].parent.relative_to(root).as_posix())}/SOURCES.md">'
         "来源、指标口径与素材说明</a></p>"
         f'</footer><nav aria-label="文章导航">{navigation}</nav></article>'
     )
@@ -315,13 +328,13 @@ def build():
     report = []
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch(channel="chromium")
-        page = browser.new_page(viewport={"width": 390, "height": 844}, device_scale_factor=1)
+        page = browser.new_page(viewport={"width": 390, "height": 844}, device_scale_factor=2)
         logo_directory = BUILD / "assets"
         logo_directory.mkdir(exist_ok=True)
         logo_path = logo_directory / "lingcompute-horizontal.png"
         svg_uri = "data:image/svg+xml;base64," + base64.b64encode(brand.read_bytes()).decode()
         page.set_content(f'<img src="{svg_uri}" style="width:720px;height:auto">', wait_until="load")
-        page.locator("img").screenshot(path=str(logo_path), omit_background=True)
+        page.locator("img").screenshot(path=str(logo_path), omit_background=True, scale="css")
         logo = data_uri(logo_path)
         for article in articles:
             destination = BUILD / article["path"].relative_to(ROOT / "content").with_suffix(".html")
@@ -338,7 +351,29 @@ def build():
             page.evaluate("async () => { await document.fonts.ready; await Promise.all(Array.from(document.images, image => image.decode())); }")
             if page.evaluate("document.documentElement.scrollWidth > innerWidth + 1"):
                 raise ValueError(f"Horizontal overflow at reference viewport: {article['key']}")
-            page.screenshot(path=str(destination.with_suffix(".png")), full_page=True, animations="disabled")
+            page.screenshot(path=str(destination.with_suffix(".png")), full_page=True, animations="disabled", scale="css")
+            uploads = {}
+            vector_paths = [path for path in article["assets"] if path.suffix.lower() == ".svg"]
+            vectors = page.locator("svg.vector-image")
+            if vectors.count() != len(vector_paths):
+                raise ValueError(f"SVG source and rendered figure counts differ: {article['key']}")
+            for path in vector_paths:
+                vector = vectors.first
+                data = vector.screenshot(omit_background=True, animations="disabled", scale="device")
+                upload = logo_directory / (hashlib.sha256(data).hexdigest() + ".png")
+                upload.write_bytes(data)
+                vector.evaluate("""(node, source) => {
+                    const image = document.createElement("img");
+                    image.alt = node.getAttribute("aria-label");
+                    image.src = source;
+                    node.replaceWith(image);
+                }""", data_uri(upload))
+                uploads[path] = {
+                    "upload": upload.relative_to(BUILD).as_posix(),
+                    "upload_sha256": digest(upload),
+                    "upload_bytes": upload.stat().st_size,
+                }
+            page.evaluate("async () => { await Promise.all(Array.from(document.images, image => image.decode())); }")
             wechat = export_wechat(page)
             destination.with_suffix(".wechat.html").write_text(document(article["title"], wechat, ""))
             assets = [
@@ -347,6 +382,7 @@ def build():
                     "path": path.relative_to(ROOT).as_posix(),
                     "sha256": digest(path),
                     "bytes": path.stat().st_size,
+                    **uploads.get(path, {}),
                 }
                 for index, path in enumerate(article["assets"])
             ]

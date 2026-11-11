@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="504.000pt" height="237.760pt" viewBox="0.000 0.000 504.000 237.760" stroke-linejoin="round" stroke-linecap="butt" font-family="MiSans, sans-serif" font-weight="400">
+ <defs>
+  </defs>
+ <g id="figure_1" transform="translate(0 16)">
+  <g id="patch_1">
+   <path d="M 0 221.76  L 504 221.76  L 504 0  L 0 0  z " fill="#ffffff" />
+  </g>
+  <g id="axes_1">
+   <g id="text_3">
+    <text x="22.68" y="214.382312" transform="rotate(-0 22.68 214.382312)" font-size="10px" font-family="MiSans, sans-serif" text-anchor="start" fill="#8a9bab">示意：抛物面把输入波导的发散光反射并聚焦到另一根波导</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="line2d_2">
+    <path d="M 52.416 122.85504  L 172.1664 122.85504  " clip-path="url(#p062ef91335)" fill="none" stroke="#0b4c9c" stroke-width="5" stroke-linecap="square" />
+   </g>
+   <g id="line2d_3">
+    <path d="M 331.8336 146.80512  L 451.584 146.80512  " clip-path="url(#p062ef91335)" fill="none" stroke="#0b4c9c" stroke-width="5" stroke-linecap="square" />
+   </g>
+   <g id="line2d_4">
+    <path d="M 181.0368 148.80096  L 182.833337 149.698944  L 184.629873 150.573903  L 186.42641 151.425837  L 188.222947 152.254745  L 190.019484 153.060628  L 191.81602 153.843486  L 193.612557 154.603319  L 195.409094 155.340126  L 197.20563 156.053908  L 199.002167 156.744665  L 200.798704 157.412397  L 202.595241 158.057104  L 204.391777 158.678785  L 206.188314 159.277441  L 207.984851 159.853072  L 209.781387 160.405678  L 211.577924 160.935258  L 213.374461 161.441813  L 215.170997 161.925343  L 216.967534 162.385848  L 218.764071 162.823327  L 220.560608 163.237781  L 222.357144 163.62921  L 224.153681 163.997614  L 225.950218 164.342992  L 227.746754 164.665346  L 229.543291 164.964674  L 231.339828 165.240976  L 233.136365 165.494254  L 234.932901 165.724506  L 236.729438 165.931733  L 238.525975 166.115935  L 240.322511 166.277112  L 242.119048 166.415263  L 243.915585 166.53039  L 245.712122 166.62249  L 247.508658 166.691566  L 249.305195 166.737617  L 251.101732 166.760642  L 252.898268 166.760642  L 254.694805 166.737617  L 256.491342 166.691566  L 258.287878 166.62249  L 260.084415 166.53039  L 261.880952 166.415263  L 263.677489 166.277112  L 265.474025 166.115935  L 267.270562 165.931733  L 269.067099 165.724506  L 270.863635 165.494254  L 272.660172 165.240976  L 274.456709 164.964674  L 276.253246 164.665346  L 278.049782 164.342992  L 279.846319 163.997614  L 281.642856 163.62921  L 283.439392 163.237781  L 285.235929 162.823327  L 287.032466 162.385848  L 288.829003 161.925343  L 290.625539 161.441813  L 292.422076 160.935258  L 294.218613 160.405678  L 296.015149 159.853072  L 297.811686 159.277441  L 299.608223 158.678785  L 301.404759 158.057104  L 303.201296 157.412397  L 304.997833 156.744665  L 306.79437 156.053908  L 308.590906 155.340126  L 310.387443 154.603319  L 312.18398 153.843486  L 313.980516 153.060628  L 315.777053 152.254745  L 317.57359 151.425837  L 319.370127 150.573903  L 321.166663 149.698944  L 322.9632 148.80096  " clip-path="url(#p062ef91335)" fill="none" stroke="#1f6fd0" stroke-width="3" stroke-linecap="square" />
+   </g>
+   <g id="patch_2">
+    <path d="M 178.523893 127.398501  Q 217.87913 138.920835 247.310315 165.513521  " fill="none" opacity="0.75" stroke="#e8823c" stroke-width="1.2" stroke-linecap="round" />
+    <path d="M 244.056148 157.182231  L 247.310315 165.513521  L 238.692783 163.118081  z " fill="#e8823c" opacity="0.75" stroke="#e8823c" stroke-width="1.2" stroke-linecap="round" />
+   </g>
+   <g id="patch_3">
+    <path d="M 252.87376 167.80722  Q 287.92415 149.100466 326.28063 147.529598  " fill="none" opacity="0.75" stroke="#e8823c" stroke-width="1.2" stroke-linecap="round" />
+    <path d="M 318.12365 143.86031  L 326.28063 147.529598  L 318.451011 151.853609  z " fill="#e8823c" opacity="0.75" stroke="#e8823c" stroke-width="1.2" stroke-linecap="round" />
+   </g>
+   <g id="patch_4">
+    <path d="M 178.523893 123.406821  Q 217.87913 134.929155 247.310315 161.521841  " fill="none" opacity="0.75" stroke="#e8823c" stroke-width="1.2" stroke-linecap="round" />
+    <path d="M 244.056148 153.190551  L 247.310315 161.521841  L 238.692783 159.126401  z " fill="#e8823c" opacity="0.75" stroke="#e8823c" stroke-width="1.2" stroke-linecap="round" />
+   </g>
+   <g id="patch_5">
+    <path d="M 252.910964 163.888059  Q 288.3093 146.811667 326.269468 146.795476  " fill="none" opacity="0.75" stroke="#e8823c" stroke-width="1.2" stroke-linecap="round" />
+    <path d="M 318.267763 142.798888  L 326.269468 146.795476  L 318.271175 150.798888  z " fill="#e8823c" opacity="0.75" stroke="#e8823c" stroke-width="1.2" stroke-linecap="round" />
+   </g>
+   <g id="patch_6">
+    <path d="M 178.523893 119.415141  Q 217.87913 130.937475 247.310315 157.530161  " fill="none" opacity="0.75" stroke="#e8823c" stroke-width="1.2" stroke-linecap="round" />
+    <path d="M 244.056148 149.198871  L 247.310315 157.530161  L 238.692783 155.134721  z " fill="#e8823c" opacity="0.75" stroke="#e8823c" stroke-width="1.2" stroke-linecap="round" />
+   </g>
+   <g id="patch_7">
+    <path d="M 252.941665 159.97353  Q 288.699115 144.518513 326.280418 146.058586  " fill="none" opacity="0.75" stroke="#e8823c" stroke-width="1.2" stroke-linecap="round" />
+    <path d="M 318.450909 141.734377  L 326.280418 146.058586  L 318.123345 149.727668  z " fill="#e8823c" opacity="0.75" stroke="#e8823c" stroke-width="1.2" stroke-linecap="round" />
+   </g>
+   <g id="text_4">
+    <text x="74.592" y="100.9008" transform="rotate(-0 74.592 100.9008)" font-size="11.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#0b4c9c">输入波导</text>
+   </g>
+   <g id="text_5">
+    <text x="358.4448" y="128.84256" transform="rotate(-0 358.4448 128.84256)" font-size="11.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#0b4c9c">输出波导</text>
+   </g>
+   <g id="text_6">
+    <text x="252" y="179.73648" transform="rotate(-0 252 179.73648)" font-size="11.5px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#1f6fd0">抛物反射面</text>
+   </g>
+   <g id="text_7">
+    <text x="252" y="82.93824" transform="rotate(-0 252 82.93824)" font-size="11.5px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">发散的模场被重新聚焦成一点</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p6f20b005b2">
+   <rect x="0" y="0" width="504" height="221.76" />
+  </clipPath>
+  <clipPath id="p062ef91335">
+   <rect x="30.24" y="70.9632" width="443.52" height="119.7504" />
+  </clipPath>
+ </defs>
+ <g id="text_1">
+  <text x="22.68" y="19.689961" transform="rotate(-0 22.68 19.689961)" font-size="13.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4e9be8">原理示意</text>
+ </g>
+ <g id="text_2" transform="translate(0 8)">
+  <text x="22.68" y="42.727344" transform="rotate(-0 22.68 42.727344)" font-size="22px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a" font-weight="600">把「耦合」变成「成像」</text>
+ </g>
+ <g id="line2d_1" transform="translate(0 8)">
+  <path d="M 22.68 53.424  L 65.52 53.424  " clip-path="url(#p6f20b005b2)" fill="none" stroke="#1f6fd0" stroke-width="3.2" />
+ </g>
+</svg>
