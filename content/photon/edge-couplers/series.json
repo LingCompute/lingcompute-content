@@ -5,7 +5,7 @@
   "articles": [
     {
       "slug": "01-overview",
-      "authors": [],
+      "authors": ["Frank-DingYC"],
       "summary": "区分端面与面外接口，理解模场匹配的基本约束。",
       "sources": [
         "https://www.lingcompute.com/photon/learning-center/examples/notebooks/EdgeCoupler",
