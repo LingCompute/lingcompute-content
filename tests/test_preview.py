@@ -191,6 +191,28 @@ class PreviewTests(unittest.TestCase):
             self.assertEqual(preview.pull_files(pull), first + last)
         self.assertIn("page=2", api.call_args.args[0])
 
+    def test_site_build_finishes_catalogue_and_manifest_with_no_open_prs(self):
+        site = self.root / "site"
+
+        def main_snapshot(*arguments):
+            (site / "index.html").write_text(build.document("main", "<article>main</article>", ""))
+            return 1
+
+        def assets(*arguments):
+            return preview.asset(site, b"body{color:black}", ".css"), "logo"
+
+        with patch.object(preview, "api", return_value={"sha": "a" * 40}), \
+                patch.object(preview, "pulls", return_value=[]), \
+                patch.object(preview, "command", return_value=("b" * 40).encode()), \
+                patch.object(preview, "prepare_assets", side_effect=assets), \
+                patch.object(preview, "render_snapshot", side_effect=main_snapshot), \
+                patch("playwright.sync_api.sync_playwright"):
+            preview.generate(site)
+        manifest = json.loads((site / "previews.json").read_text())
+        self.assertEqual(manifest, {"main": "a" * 40, "renderer": "b" * 40, "pulls": []})
+        self.assertIn("待审预览目录", (site / "previews/index.html").read_text())
+        preview.validate_site(site, manifest)
+
 
 if __name__ == "__main__":
     unittest.main()

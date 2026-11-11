@@ -267,6 +267,10 @@ def render_articles(root, site, directory, commit, renderer, page, style_path, l
 
 def generate(site):
     from playwright.sync_api import Error, sync_playwright
+    try:
+        from . import build
+    except ImportError:
+        import build
 
     if site.exists():
         raise ValueError("Preview output must be a new directory")
