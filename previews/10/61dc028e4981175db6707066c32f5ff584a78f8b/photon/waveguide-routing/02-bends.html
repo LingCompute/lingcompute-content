@@ -1,0 +1,1261 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; font-src data:; style-src 'self' 'unsafe-inline'; base-uri 'none'; form-action 'none'"><title>同样转 90°，Euler 弯为什么能少丢一点光？</title><link rel="stylesheet" href="../../../../../assets/6fc2a687bf9e2522921dfde84f8adc9ebaeab06d072ec46531eb27f9e7e36fc1.css"><meta name="robots" content="noindex,nofollow"></head><body><article><aside class="meta"><p><strong>待审预览 · PR #10</strong> · <a href="https://github.com/LingCompute/lingcompute-content/pull/10">GitHub 记录</a></p><p>此版本尚待人审，不能作为发布批准。</p><details><summary>版本信息 · 源稿 61dc028</summary><p>源稿版本：<code>61dc028e4981175db6707066c32f5ff584a78f8b</code></p><p>排版工具版本：<code>e8b97a54e657f179a5263291ab69748317425dbd</code>。工具改动合并后生效。</p></details></aside><header class="meta"><p>构建预览 · 正式收录以主分支及PR审核记录为准</p><p>灵算光子 · 图解无源光子器件 · 波导布线</p><p>适合：具有光学基础、需要理解和选择集成光子器件的工程师与科研人员</p><p>本文解决：在配对模型中比较圆弧和 Euler 弯的损耗。</p><p>预计阅读 6–12 分钟，实操另计 · 8.4 参考屏</p><p>阅读时长为编辑模型估计；参考视口390×844 CSS像素，不同设备会有差异。</p></header><main id="article-body"><h1>同样转 90°，Euler 弯为什么能少丢一点光？</h1>
+<blockquote>
+<p><strong>待审稿</strong>：本文处于独立 PR 审核阶段，尚未收录为正式内容。定量结论、素材来源与授权仍需指定业内审核者核查。</p>
+</blockquote>
+<p>一个弯只损失零点零几 dB，看起来不值得专门优化。但如果一条光路要拐几十次、上百次，这点差别就会累积成可观的链路损耗。</p>
+<p>本篇从一个有效半径 <strong>4 μm</strong> 的 90° 弯开始，用同一组仿真条件比较圆弧和 Euler 两条路径。先看它们怎么画，再看模式怎样通过，最后回答：这点改善什么时候值得用？</p>
+<h2>01　路径光滑，不代表模式变化也光滑</h2>
+<p>在直波导中，模式沿传播方向保持相同的横向形状。进入弯道后，内外两侧的传播条件改变，场会偏向外侧，也可能向包层辐射。若直段与弯段的局部模式对不上，还会产生额外散射和反射。</p>
+<p>圆弧弯的方向是连续的，曲率却在接缝处从零跳到固定值。Euler 的想法很直接：让波导先轻轻弯起来，再逐步增加弯曲程度，出弯时反过来走一次。</p>
+<figure><svg width="449.769pt" height="386.257pt" viewBox="-3.369 -0.209 449.769 386.257" stroke-linejoin="round" stroke-linecap="butt" font-family="MiSans, sans-serif" font-weight="400" xmlns="http://www.w3.org/2000/svg" class="vector-image" role="img" aria-label="图 1：圆弧的曲率出现阶跃；本例 Euler 弯两端为渐变曲线，中间接一段恒曲率圆弧。渐变的是曲率，而不只是看起来顺滑的外轮廓。">
+ <defs>
+  </defs>
+ <g id="figure-6f9747f10cb8-1-figure_1" transform="translate(0 20)">
+  <g id="figure-6f9747f10cb8-1-patch_1">
+   <path d="M 0 366.048  L 446.4 366.048  L 446.4 0  L 0 0  z " fill="#ffffff"></path>
+  </g>
+  <g id="figure-6f9747f10cb8-1-axes_1">
+   <g id="figure-6f9747f10cb8-1-patch_2">
+    <path d="M 27.2304 176.328  L 204.8976 176.328  Q 212.04 176.328 212.04 169.1856  L 212.04 67.4064  Q 212.04 60.264 204.8976 60.264  L 27.2304 60.264  Q 20.088 60.264 20.088 67.4064  L 20.088 169.1856  Q 20.088 176.328 27.2304 176.328  z " clip-path="url(#figure-6f9747f10cb8-1-p7fefc91ec1)" fill="#f1f7fe"></path>
+   </g>
+   <g id="figure-6f9747f10cb8-1-patch_3">
+    <path d="M 241.5024 176.328  L 419.1696 176.328  Q 426.312 176.328 426.312 169.1856  L 426.312 67.4064  Q 426.312 60.264 419.1696 60.264  L 241.5024 60.264  Q 234.36 60.264 234.36 67.4064  L 234.36 169.1856  Q 234.36 176.328 241.5024 176.328  z " clip-path="url(#figure-6f9747f10cb8-1-p7fefc91ec1)" fill="#f1f7fe"></path>
+   </g>
+   <g id="figure-6f9747f10cb8-1-line2d_2">
+    <path d="M 40.176 158.472  L 116.9568 158.472  L 116.9568 81.6912  L 40.176 81.6912  L 40.176 158.472  " clip-path="url(#figure-6f9747f10cb8-1-p7fefc91ec1)" fill="none" stroke-dasharray="4,3" stroke-dashoffset="0" stroke="#c9dae9"></path>
+   </g>
+   <g id="figure-6f9747f10cb8-1-line2d_3">
+    <path d="M 254.448 158.472  L 331.2288 158.472  L 331.2288 81.6912  L 254.448 81.6912  L 254.448 158.472  " clip-path="url(#figure-6f9747f10cb8-1-p7fefc91ec1)" fill="none" stroke-dasharray="4,3" stroke-dashoffset="0" stroke="#c9dae9"></path>
+   </g>
+   <g id="figure-6f9747f10cb8-1-line2d_4">
+    <path d="M 254.448 158.472  L 258.488825 158.365596  L 262.51845 158.046678  L 266.525707 157.516131  L 270.499489 156.775426  L 274.428783 155.826614  L 278.302696 154.672326  L 282.110494 153.315761  L 285.841621 151.760679  L 289.485736 150.01139  L 293.03274 148.072742  L 296.4728 145.950109  L 299.796384 143.649374  L 302.994278 141.176914  L 306.05762 138.539581  L 308.977919 135.744685  L 311.747081 132.799972  L 314.357431 129.713605  L 316.801733 126.494137  L 319.073215 123.150492  L 321.165578 119.691937  L 323.073025 116.128058  L 324.790269 112.468732  L 326.312549 108.724103  L 327.635647 104.904548  L 328.755896 101.020654  L 329.670191 97.083186  L 330.375997 93.103057  L 330.871359 89.091299  L 331.154903 85.05903  L 331.2288 81.6912  L 331.2288 81.6912  " clip-path="url(#figure-6f9747f10cb8-1-p7fefc91ec1)" fill="none" stroke-dasharray="5.2,3.9" stroke-dashoffset="0" stroke="#1f6fd0" stroke-opacity="0.55" stroke-width="1.3"></path>
+   </g>
+   <g id="figure-6f9747f10cb8-1-line2d_5">
+    <path d="M 23.86008 158.472  L 44.029399 158.375244  L 48.420826 158.028046  L 52.785114 157.429575  L 57.107897 156.581801  L 61.374946 155.487514  L 65.572217 154.150316  L 69.685892 152.574608  L 73.702431 150.765578  L 77.608613 148.72918  L 81.391581 146.472117  L 85.038881 144.001818  L 88.538509 141.326416  L 91.878946 138.454715  L 95.049194 135.39617  L 98.03882 132.160847  L 100.837983 128.759396  L 103.437468 125.203014  L 105.828718 121.503407  L 108.003864 117.672752  L 109.955745 113.723659  L 111.677936 109.669126  L 113.164769 105.5225  L 114.411349 101.29743  L 115.413572 97.007824  L 116.168141 92.6678  L 116.672571 88.291646  L 116.925202 83.893765  L 116.9568 81.6912  L 116.9568 81.6912  " clip-path="url(#figure-6f9747f10cb8-1-p7fefc91ec1)" fill="none" stroke="#1f6fd0" stroke-width="4.4" stroke-linecap="round"></path>
+   </g>
+   <g id="figure-6f9747f10cb8-1-line2d_6">
+    <path d="M 238.13208 158.472  L 265.534898 158.364958  L 271.425763 158.087283  L 276.359546 157.643416  L 280.798672 157.026222  L 284.735986 156.266135  L 288.396081 155.345685  L 291.96242 154.218484  L 295.237223 152.972857  L 298.428648 151.526924  L 301.524459 149.886229  L 304.512782 148.057065  L 307.38216 146.046445  L 310.121588 143.862079  L 312.720562 141.512344  L 315.169115 139.006251  L 317.457859 136.353409  L 319.578017 133.563991  L 321.521458 130.648694  L 323.28073 127.618697  L 324.849086 124.485619  L 326.220514 121.261475  L 327.489 117.671805  L 328.531126 114.044551  L 329.407005 110.131444  L 330.103682 105.943082  L 330.618056 101.490789  L 330.983112 96.313981  L 331.180696 90.183759  L 331.2288 81.6912  L 331.2288 81.6912  " clip-path="url(#figure-6f9747f10cb8-1-p7fefc91ec1)" fill="none" stroke="#e8823c" stroke-width="4.4" stroke-linecap="round"></path>
+   </g>
+   <g id="figure-6f9747f10cb8-1-text_3">
+    <text x="31.248" y="78.010192" transform="rotate(-0 31.248 78.010192)" font-weight="600" font-size="15.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#1f6fd0">圆弧弯</text>
+   </g>
+   <g id="figure-6f9747f10cb8-1-text_4">
+    <text x="33.9264" y="161.687898" transform="rotate(-0 33.9264 161.687898)" font-size="9.5px" font-family="MiSans, sans-serif" text-anchor="end" fill="#8a9bab">0</text>
+   </g>
+   <g id="figure-6f9747f10cb8-1-text_5">
+    <text x="113.832" y="170.055872" transform="rotate(-0 113.832 170.055872)" font-weight="600" font-size="10.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#1f6fd0">R = 4 μm</text>
+   </g>
+   <g id="figure-6f9747f10cb8-1-patch_4">
+    <path d="M 116.9568 75.93264  Q 116.9568 70.65396 116.9568 67.611348  " clip-path="url(#figure-6f9747f10cb8-1-p7fefc91ec1)" fill="none" stroke="#1f6fd0" stroke-width="2" stroke-linecap="round"></path>
+    <path d="M 114.3568 72.811348  L 116.9568 67.611348  L 119.5568 72.811348  z " clip-path="url(#figure-6f9747f10cb8-1-p7fefc91ec1)" fill="#1f6fd0" stroke="#1f6fd0" stroke-width="2" stroke-linecap="round"></path>
+   </g>
+   <g id="figure-6f9747f10cb8-1-text_6">
+    <text x="245.52" y="78.010192" transform="rotate(-0 245.52 78.010192)" font-weight="600" font-size="15.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#e8823c">Euler 弯</text>
+   </g>
+   <g id="figure-6f9747f10cb8-1-text_7">
+    <text x="248.1984" y="161.687898" transform="rotate(-0 248.1984 161.687898)" font-size="9.5px" font-family="MiSans, sans-serif" text-anchor="end" fill="#8a9bab">0</text>
+   </g>
+   <g id="figure-6f9747f10cb8-1-text_8">
+    <text x="328.104" y="170.055872" transform="rotate(-0 328.104 170.055872)" font-weight="600" font-size="10.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#e8823c">R_min = 2.95 μm</text>
+   </g>
+   <g id="figure-6f9747f10cb8-1-patch_5">
+    <path d="M 331.2288 75.93264  Q 331.2288 70.65396 331.2288 67.611348  " clip-path="url(#figure-6f9747f10cb8-1-p7fefc91ec1)" fill="none" stroke="#e8823c" stroke-width="2" stroke-linecap="round"></path>
+    <path d="M 328.6288 72.811348  L 331.2288 67.611348  L 333.8288 72.811348  z " clip-path="url(#figure-6f9747f10cb8-1-p7fefc91ec1)" fill="#e8823c" stroke="#e8823c" stroke-width="2" stroke-linecap="round"></path>
+   </g>
+   <g id="figure-6f9747f10cb8-1-text_9">
+    <text x="223.2" y="196.974691" transform="rotate(-0 223.2 196.974691)" font-size="12.2px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#12263a">Euler 的峰值曲率更高，但两端连续——用更长的过渡换更小的模式失配</text>
+   </g>
+   <g id="figure-6f9747f10cb8-1-text_10">
+    <text x="20.088" y="358.219412" transform="rotate(-0 20.088 358.219412)" font-size="11px" font-family="MiSans, sans-serif" text-anchor="start" fill="#8a9bab">几何取自 Notebook：R_eff = 4 μm、A = 2.4；Euler 最小半径 2.95 μm</text>
+   </g>
+   <g id="figure-6f9747f10cb8-1-patch_6">
+    <path d="M 173.2032 80.352  L 197.105239 80.352  Q 203.801239 80.352 203.801239 73.656  L 203.801239 73.656  Q 203.801239 66.96 197.105239 66.96  L 173.2032 66.96  Q 166.5072 66.96 166.5072 73.656  L 166.5072 73.656  Q 166.5072 80.352 173.2032 80.352  z " clip-path="url(#figure-6f9747f10cb8-1-p7fefc91ec1)" fill="#e8f1fb"></path>
+   </g>
+   <g id="figure-6f9747f10cb8-1-patch_7">
+    <path d="M 387.4752 80.352  L 411.238177 80.352  Q 417.934177 80.352 417.934177 73.656  L 417.934177 73.656  Q 417.934177 66.96 411.238177 66.96  L 387.4752 66.96  Q 380.7792 66.96 380.7792 73.656  L 380.7792 73.656  Q 380.7792 80.352 387.4752 80.352  z " clip-path="url(#figure-6f9747f10cb8-1-p7fefc91ec1)" fill="#fcebdb"></path>
+   </g>
+   <g id="figure-6f9747f10cb8-1-text_11">
+    <g transform="translate(170.95422 77.041156)" fill="#1f6fd0">
+     <text>
+      <tspan x="0" y="-0.890625" font-style="oblique" font-size="10px" font-family="MiSans, sans-serif" fill="#1f6fd0">κ</tspan>
+      <tspan x="5.893555" y="-0.890625" font-size="10px" font-family="MiSans, sans-serif" fill="#1f6fd0"> </tspan>
+      <tspan x="8.393539" y="-0.890625" font-size="10px" font-family="MiSans, sans-serif" fill="#1f6fd0">阶</tspan>
+      <tspan x="18.393524" y="-0.890625" font-size="10px" font-family="MiSans, sans-serif" fill="#1f6fd0">跃</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="figure-6f9747f10cb8-1-text_12">
+    <g transform="translate(385.156688 77.041156)" fill="#e8823c">
+     <text>
+      <tspan x="0" y="-0.015625" font-style="oblique" font-size="10px" font-family="MiSans, sans-serif" fill="#e8823c">κ</tspan>
+      <tspan x="5.893555" y="-0.015625" font-size="10px" font-family="MiSans, sans-serif" fill="#e8823c"> </tspan>
+      <tspan x="8.393539" y="-0.015625" font-size="10px" font-family="MiSans, sans-serif" fill="#e8823c">连</tspan>
+      <tspan x="18.393524" y="-0.015625" font-size="10px" font-family="MiSans, sans-serif" fill="#e8823c">续</tspan>
+     </text>
+    </g>
+   </g>
+  </g>
+  <g id="figure-6f9747f10cb8-1-axes_2">
+   <g id="figure-6f9747f10cb8-1-patch_8">
+    <path d="M 46.872 307.48032  L 421.848 307.48032  L 421.848 203.15664  L 46.872 203.15664  z " fill="#ffffff"></path>
+   </g>
+   <g id="figure-6f9747f10cb8-1-matplotlib.axis_1">
+    <g id="figure-6f9747f10cb8-1-xtick_1">
+     <g id="figure-6f9747f10cb8-1-line2d_7">
+      <defs>
+       <path id="figure-6f9747f10cb8-1-mf0ffa265c4" d="M 0 0  L 0 3  " stroke="#4a6076"></path>
+      </defs>
+      <g>
+       <use href="#figure-6f9747f10cb8-1-mf0ffa265c4" x="57.484528" y="307.48032" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-6f9747f10cb8-1-text_13">
+      <text x="57.484528" y="323.70032" transform="rotate(-0 57.484528 323.70032)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">0.0</text>
+     </g>
+    </g>
+    <g id="figure-6f9747f10cb8-1-xtick_2">
+     <g id="figure-6f9747f10cb8-1-line2d_8">
+      <g>
+       <use href="#figure-6f9747f10cb8-1-mf0ffa265c4" x="128.234717" y="307.48032" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-6f9747f10cb8-1-text_14">
+      <text x="128.234717" y="323.70032" transform="rotate(-0 128.234717 323.70032)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">0.2</text>
+     </g>
+    </g>
+    <g id="figure-6f9747f10cb8-1-xtick_3">
+     <g id="figure-6f9747f10cb8-1-line2d_9">
+      <g>
+       <use href="#figure-6f9747f10cb8-1-mf0ffa265c4" x="198.984906" y="307.48032" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-6f9747f10cb8-1-text_15">
+      <text x="198.984906" y="323.70032" transform="rotate(-0 198.984906 323.70032)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">0.4</text>
+     </g>
+    </g>
+    <g id="figure-6f9747f10cb8-1-xtick_4">
+     <g id="figure-6f9747f10cb8-1-line2d_10">
+      <g>
+       <use href="#figure-6f9747f10cb8-1-mf0ffa265c4" x="269.735094" y="307.48032" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-6f9747f10cb8-1-text_16">
+      <text x="269.735094" y="323.70032" transform="rotate(-0 269.735094 323.70032)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">0.6</text>
+     </g>
+    </g>
+    <g id="figure-6f9747f10cb8-1-xtick_5">
+     <g id="figure-6f9747f10cb8-1-line2d_11">
+      <g>
+       <use href="#figure-6f9747f10cb8-1-mf0ffa265c4" x="340.485283" y="307.48032" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-6f9747f10cb8-1-text_17">
+      <text x="340.485283" y="323.70032" transform="rotate(-0 340.485283 323.70032)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">0.8</text>
+     </g>
+    </g>
+    <g id="figure-6f9747f10cb8-1-xtick_6">
+     <g id="figure-6f9747f10cb8-1-line2d_12">
+      <g>
+       <use href="#figure-6f9747f10cb8-1-mf0ffa265c4" x="411.235472" y="307.48032" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-6f9747f10cb8-1-text_18">
+      <text x="411.235472" y="323.70032" transform="rotate(-0 411.235472 323.70032)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">1.0</text>
+     </g>
+    </g>
+    <g id="figure-6f9747f10cb8-1-text_19">
+     <text x="234.36" y="338.610945" transform="rotate(-0 234.36 338.610945)" font-size="11.5px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#12263a">沿路径的弧长（归一化）</text>
+    </g>
+   </g>
+   <g id="figure-6f9747f10cb8-1-matplotlib.axis_2">
+    <g id="figure-6f9747f10cb8-1-ytick_1">
+     <g id="figure-6f9747f10cb8-1-line2d_13">
+      <defs>
+       <path id="figure-6f9747f10cb8-1-me7c59da365" d="M 0 0  L -3 0  " stroke="#4a6076"></path>
+      </defs>
+      <g>
+       <use href="#figure-6f9747f10cb8-1-me7c59da365" x="46.872" y="307.48032" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-6f9747f10cb8-1-text_20">
+      <text x="40.372" y="312.34032" transform="rotate(-0 40.372 312.34032)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="end" fill="#4a6076">0.0</text>
+     </g>
+    </g>
+    <g id="figure-6f9747f10cb8-1-ytick_2">
+     <g id="figure-6f9747f10cb8-1-line2d_14">
+      <g>
+       <use href="#figure-6f9747f10cb8-1-me7c59da365" x="46.872" y="262.122198" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-6f9747f10cb8-1-text_21">
+      <text x="40.372" y="266.982198" transform="rotate(-0 40.372 266.982198)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="end" fill="#4a6076">0.2</text>
+     </g>
+    </g>
+    <g id="figure-6f9747f10cb8-1-ytick_3">
+     <g id="figure-6f9747f10cb8-1-line2d_15">
+      <g>
+       <use href="#figure-6f9747f10cb8-1-me7c59da365" x="46.872" y="216.764077" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-6f9747f10cb8-1-text_22">
+      <text x="40.372" y="221.624077" transform="rotate(-0 40.372 221.624077)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="end" fill="#4a6076">0.4</text>
+     </g>
+    </g>
+    <g id="figure-6f9747f10cb8-1-text_23">
+     <g transform="translate(18.140125 297.58098) rotate(-90)" fill="#12263a">
+      <text>
+       <tspan x="0" y="-0.6875" font-size="11.5px" font-family="MiSans, sans-serif" fill="#12263a">曲</tspan>
+       <tspan x="11.5" y="-0.6875" font-size="11.5px" font-family="MiSans, sans-serif" fill="#12263a">率</tspan>
+       <tspan x="23" y="-0.6875" font-size="11.5px" font-family="MiSans, sans-serif" fill="#12263a"> </tspan>
+       <tspan x="32.652588" y="-0.6875" font-size="11.5px" font-family="MiSans, sans-serif" fill="#12263a">（</tspan>
+       <tspan x="44.152588" y="-0.6875" font-size="11.5px" font-family="MiSans, sans-serif" fill="#12263a">1</tspan>
+       <tspan x="50.523575" y="-0.6875" font-size="11.5px" font-family="MiSans, sans-serif" fill="#12263a">/</tspan>
+       <tspan x="55.549072" y="-0.6875" font-size="11.5px" font-family="MiSans, sans-serif" fill="#12263a">μ</tspan>
+       <tspan x="62.173065" y="-0.6875" font-size="11.5px" font-family="MiSans, sans-serif" fill="#12263a">m</tspan>
+       <tspan x="72.960052" y="-0.6875" font-size="11.5px" font-family="MiSans, sans-serif" fill="#12263a">）</tspan>
+       <tspan x="25.875" y="-0.6875" font-style="oblique" font-size="11.5px" font-family="MiSans, sans-serif" fill="#12263a">κ</tspan>
+      </text>
+     </g>
+    </g>
+   </g>
+   <g id="figure-6f9747f10cb8-1-line2d_16">
+    <path d="M 57.484528 307.48032  L 57.484528 250.782668  L 411.235472 250.782668  L 411.235472 307.48032  " clip-path="url(#figure-6f9747f10cb8-1-p662342582f)" fill="none" stroke="#1f6fd0" stroke-width="2.6"></path>
+   </g>
+   <g id="figure-6f9747f10cb8-1-line2d_17">
+    <path d="M 57.484528 307.48032  L 162.474207 230.539699  L 306.245793 230.539699  L 411.235472 307.48032  " clip-path="url(#figure-6f9747f10cb8-1-p662342582f)" fill="none" stroke="#e8823c" stroke-width="2.6" stroke-linecap="round"></path>
+   </g>
+   <g id="figure-6f9747f10cb8-1-line2d_18">
+    <path d="M 46.872 250.782668  L 421.848 250.782668  " clip-path="url(#figure-6f9747f10cb8-1-p662342582f)" fill="none" stroke-dasharray="0.8,1.32" stroke-dashoffset="0" stroke="#1f6fd0" stroke-opacity="0.7" stroke-width="0.8"></path>
+   </g>
+   <g id="figure-6f9747f10cb8-1-line2d_19">
+    <path d="M 46.872 230.539699  L 421.848 230.539699  " clip-path="url(#figure-6f9747f10cb8-1-p662342582f)" fill="none" stroke-dasharray="0.8,1.32" stroke-dashoffset="0" stroke="#e8823c" stroke-opacity="0.7" stroke-width="0.8"></path>
+   </g>
+   <g id="figure-6f9747f10cb8-1-patch_9">
+    <path d="M 46.872 307.48032  L 46.872 203.15664  " fill="none" stroke="#d6e2ec" stroke-linejoin="miter" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-6f9747f10cb8-1-patch_10">
+    <path d="M 421.848 307.48032  L 421.848 203.15664  " fill="none" stroke="#d6e2ec" stroke-linejoin="miter" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-6f9747f10cb8-1-patch_11">
+    <path d="M 46.872 307.48032  L 421.848 307.48032  " fill="none" stroke="#d6e2ec" stroke-linejoin="miter" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-6f9747f10cb8-1-patch_12">
+    <path d="M 46.872 203.15664  L 421.848 203.15664  " fill="none" stroke="#d6e2ec" stroke-linejoin="miter" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-6f9747f10cb8-1-text_24">
+    <text x="234.36" y="247.607599" transform="rotate(-0 234.36 247.607599)" font-size="10px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#1f6fd0">0.25</text>
+   </g>
+   <g id="figure-6f9747f10cb8-1-text_25">
+    <text x="234.36" y="227.36463" transform="rotate(-0 234.36 227.36463)" font-size="10px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#e8823c">0.34</text>
+   </g>
+   <g id="figure-6f9747f10cb8-1-text_26">
+    <text x="109.979368" y="290.471024" transform="rotate(-0 109.979368 290.471024)" font-size="10px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#e8823c">渐变</text>
+   </g>
+   <g id="figure-6f9747f10cb8-1-text_27">
+    <text x="234.36" y="290.471024" transform="rotate(-0 234.36 290.471024)" font-size="10px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#e8823c">恒曲率</text>
+   </g>
+   <g id="figure-6f9747f10cb8-1-text_28">
+    <text x="358.740632" y="290.471024" transform="rotate(-0 358.740632 290.471024)" font-size="10px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#e8823c">渐变</text>
+   </g>
+   <g id="figure-6f9747f10cb8-1-legend_1">
+    <g id="figure-6f9747f10cb8-1-line2d_20">
+     <path d="M 106.833398 215.350166  L 117.333398 215.350166  L 127.833398 215.350166  " fill="none" stroke="#1f6fd0" stroke-width="2.6"></path>
+    </g>
+    <g id="figure-6f9747f10cb8-1-text_29">
+     <g transform="translate(136.233398 219.025166)" fill="#12263a">
+      <text>
+       <tspan x="0" y="-0.984375" font-size="10.5px" font-family="MiSans, sans-serif" fill="#12263a">圆</tspan>
+       <tspan x="10.5" y="-0.984375" font-size="10.5px" font-family="MiSans, sans-serif" fill="#12263a">弧</tspan>
+       <tspan x="21" y="-0.984375" font-size="10.5px" font-family="MiSans, sans-serif" fill="#12263a">弯</tspan>
+       <tspan x="31.5" y="-0.984375" font-size="10.5px" font-family="MiSans, sans-serif" fill="#12263a">：</tspan>
+       <tspan x="48.188232" y="-0.984375" font-size="10.5px" font-family="MiSans, sans-serif" fill="#12263a"> </tspan>
+       <tspan x="50.813232" y="-0.984375" font-size="10.5px" font-family="MiSans, sans-serif" fill="#12263a">阶</tspan>
+       <tspan x="61.313232" y="-0.984375" font-size="10.5px" font-family="MiSans, sans-serif" fill="#12263a">跃</tspan>
+       <tspan x="42" y="-0.984375" font-style="oblique" font-size="10.5px" font-family="MiSans, sans-serif" fill="#12263a">κ</tspan>
+      </text>
+     </g>
+    </g>
+    <g id="figure-6f9747f10cb8-1-line2d_21">
+     <path d="M 220.653398 215.350166  L 231.153398 215.350166  L 241.653398 215.350166  " fill="none" stroke="#e8823c" stroke-width="2.6" stroke-linecap="round"></path>
+    </g>
+    <g id="figure-6f9747f10cb8-1-text_30">
+     <text x="250.053398" y="219.025166" transform="rotate(-0 250.053398 219.025166)" font-size="10.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">Euler 弯：渐变 + 恒曲率</text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="figure-6f9747f10cb8-1-p7fefc91ec1">
+   <rect x="0" y="0" width="446.4" height="366.048"></rect>
+  </clipPath>
+  <clipPath id="figure-6f9747f10cb8-1-p662342582f">
+   <rect x="46.872" y="203.15664" width="374.976" height="104.32368"></rect>
+  </clipPath>
+ </defs>
+ <g id="figure-6f9747f10cb8-1-text_1">
+  <text x="20.088" y="16.730645" transform="rotate(-0 20.088 16.730645)" font-size="12.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4e9be8">弯曲原理</text>
+ </g>
+ <g id="figure-6f9747f10cb8-1-text_2" transform="translate(0 10)">
+  <text x="20.088" y="38.968481" transform="rotate(-0 20.088 38.968481)" font-size="25px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a" font-weight="600">同样转 90°，曲率怎么变才是关键</text>
+ </g>
+ <g id="figure-6f9747f10cb8-1-line2d_1" transform="translate(0 10)">
+  <path d="M 20.088 45.5328  L 58.032 45.5328  " clip-path="url(#figure-6f9747f10cb8-1-p7fefc91ec1)" fill="none" stroke="#1f6fd0" stroke-width="3.2"></path>
+ </g>
+</svg><figcaption><span class="fig-tag">图 1</span>圆弧的曲率出现阶跃；本例 Euler 弯两端为渐变曲线，中间接一段恒曲率圆弧。渐变的是曲率，而不只是看起来顺滑的外轮廓。</figcaption></figure>
+<p>这并不意味着 Euler 内部每一点都弯得更缓。<strong>同样占位下，本例 Euler 的最小半径约 2.95 μm，比圆弧的 4 μm 更小</strong>。设计是在过渡失配与局部弯曲辐射之间重新分配代价。</p>
+<h2>02　先把“同样半径”说准确</h2>
+<p>官方 Notebook 用有效半径描述 90° 转角的端口占位。圆弧与 Euler 都从横向直线进入，再从竖向直线离开，转角两端的相对位置相同。</p>
+<p>本次模型采用宽 <strong>400 nm</strong>、厚 <strong>210 nm</strong> 的硅波导，周围为二氧化硅；两条路径使用相同的源、监视器与自动网格设置。材料在该案例中使用固定折射率，所以这里讨论的是这组模型条件下的结果。</p>
+<figure><svg width="446.400pt" height="395.875pt" viewBox="0.000 -0.899 446.400 395.875" stroke-linejoin="round" stroke-linecap="butt" font-family="MiSans, sans-serif" font-weight="400" xmlns="http://www.w3.org/2000/svg" class="vector-image" role="img" aria-label="图 2：从本次实际仿真读取的器件俯视结构。端口占位相同，但 Euler 中心线会偏离圆弧，不能按相同最小半径理解。">
+ <defs>
+  </defs>
+ <g id="figure-732285751ec5-2-figure_1" transform="translate(0 20)">
+  <g id="figure-732285751ec5-2-patch_1">
+   <path d="M 0 374.976  L 446.4 374.976  L 446.4 0  L 0 0  z " fill="#ffffff"></path>
+  </g>
+  <g id="figure-732285751ec5-2-axes_1">
+   <g id="figure-732285751ec5-2-text_3">
+    <text x="20.088" y="367.1371" transform="rotate(-0 20.088 367.1371)" font-size="11px" font-family="MiSans, sans-serif" text-anchor="start" fill="#8a9bab">Si 400 × 210 nm；SiO2 包层；有效半径 4 μm；俯视 z = 105 nm</text>
+   </g>
+   <g id="figure-732285751ec5-2-text_4">
+    <text x="31.248" y="310.537438" transform="rotate(-0 31.248 310.537438)" font-size="14px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">4 μm 指相同的端口转角占位。Euler 内部最小半径约 2.95 μm</text>
+   </g>
+   <g id="figure-732285751ec5-2-text_5">
+    <text x="31.248" y="332.223219" transform="rotate(-0 31.248 332.223219)" font-size="14px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">，不能把两者当作相同最小半径。</text>
+   </g>
+  </g>
+  <g id="figure-732285751ec5-2-axes_2">
+   <g id="figure-732285751ec5-2-patch_2">
+    <path d="M 62.496 239.44896  L 196.416 239.44896  L 196.416 105.52896  L 62.496 105.52896  z " fill="#ffffff"></path>
+   </g>
+   <g id="figure-732285751ec5-2-patch_3">
+    <path d="M 176.221714 130.125933  L 175.336869 142.545331  L 174.422376 147.815848  L 173.518988 151.779719  L 172.616448 155.092043  L 171.71421 157.986128  L 170.812115 160.581161  L 169.910101 162.947942  L 169.008137 165.13265  L 168.106206 167.167411  L 167.204297 169.075656  L 166.302405 170.875107  L 165.400525 172.579556  L 164.498655 174.199994  L 163.596792 175.745346  L 162.694935 177.222982  L 161.793083 178.639072  L 160.891235 179.998845  L 159.98939 181.306777  L 159.087548 182.566736  L 158.185708 183.782094  L 157.283871 184.955807  L 156.382035 186.09049  L 155.4802 187.188466  L 154.578367 188.251808  L 153.676535 189.28238  L 152.774705 190.281863  L 151.872875 191.251777  L 150.971045 192.193507  L 150.069217 193.108312  L 149.167389 193.997347  L 148.265562 194.861671  L 147.363736 195.702261  L 146.46191 196.520014  L 145.560084 197.315763  L 144.658259 198.090279  L 143.756434 198.844278  L 142.854609 199.578428  L 141.952785 200.29335  L 141.050961 200.989624  L 140.149137 201.667795  L 139.247314 202.328371  L 138.345491 202.971829  L 137.443668 203.59862  L 136.541845 204.209164  L 135.640022 204.80386  L 134.7382 205.383082  L 133.836378 205.947185  L 132.934556 206.496502  L 132.032734 207.031351  L 131.130912 207.55203  L 130.22909 208.058822  L 129.327269 208.551997  L 128.425447 209.03181  L 127.523626 209.498501  L 126.621804 209.952302  L 125.719983 210.39343  L 124.818162 210.822092  L 123.916341 211.238486  L 123.01452 211.642799  L 122.112699 212.035211  L 121.210878 212.415891  L 120.309058 212.785  L 119.407237 213.142693  L 118.505416 213.489117  L 117.603596 213.824411  L 116.701775 214.148709  L 115.799955 214.462136  L 114.898134 214.764814  L 113.996314 215.056856  L 113.094494 215.338373  L 112.192673 215.609469  L 111.290853 215.870241  L 110.389033 216.120783  L 109.487213 216.361185  L 108.585393 216.591531  L 107.683572 216.811901  L 106.781752 217.022371  L 105.879932 217.223012  L 104.978112 217.413892  L 104.076292 217.595075  L 103.174472 217.766621  L 102.272652 217.928587  L 101.370832 218.081024  L 100.469012 218.223983  L 99.567192 218.35751  L 98.665372 218.481646  L 97.763552 218.596433  L 96.861733 218.701905  L 95.959913 218.798096  L 95.058093 218.885037  L 94.156273 218.962754  L 93.254453 219.031271  L 92.352633 219.09061  L 91.450813 219.14079  L 90.548994 219.181824  L 89.647174 219.213727  L 88.745354 219.236508  L 87.843534 219.250174  L 86.95245 219.254674  L 62.496 219.254674  L 62.496 210.751817  L 86.930978 210.751817  L 87.757643 210.747642  L 88.573572 210.735278  L 89.389502 210.714667  L 90.205431 210.685802  L 91.02136 210.648676  L 91.837289 210.603276  L 92.653218 210.549588  L 93.469147 210.487596  L 94.285076 210.417281  L 95.101005 210.338621  L 95.916934 210.251591  L 96.732863 210.156164  L 97.548792 210.05231  L 98.364721 209.939997  L 99.18065 209.819188  L 99.996579 209.689844  L 100.812508 209.551925  L 101.628437 209.405386  L 102.444366 209.250178  L 103.260295 209.086251  L 104.076224 208.913551  L 104.892152 208.732019  L 105.708081 208.541595  L 106.52401 208.342213  L 107.339939 208.133806  L 108.155868 207.916301  L 108.971796 207.68962  L 109.787725 207.453685  L 110.603654 207.20841  L 111.419582 206.953705  L 112.235511 206.689477  L 113.051439 206.415627  L 113.867368 206.132052  L 114.683296 205.838642  L 115.499224 205.535282  L 116.315153 205.221853  L 117.131081 204.898227  L 117.947009 204.564273  L 118.762937 204.219851  L 119.578865 203.864814  L 120.394793 203.499009  L 121.210721 203.122274  L 122.026649 202.734439  L 122.842577 202.335326  L 123.658504 201.924748  L 124.474432 201.502506  L 125.290359 201.068394  L 126.106286 200.622191  L 126.922214 200.163668  L 127.738141 199.692582  L 128.554068 199.208675  L 129.369995 198.711678  L 130.185921 198.201305  L 131.001848 197.677252  L 131.817774 197.139199  L 132.6337 196.586808  L 133.449626 196.019718  L 134.265552 195.437548  L 135.081477 194.839892  L 135.897403 194.226317  L 136.713328 193.596362  L 137.529252 192.949537  L 138.345177 192.285317  L 139.161101 191.603137  L 139.977024 190.902396  L 140.792948 190.182445  L 141.60887 189.442587  L 142.424793 188.682069  L 143.240715 187.900078  L 144.056636 187.09573  L 144.872556 186.268069  L 145.688476 185.41605  L 146.504395 184.538533  L 147.320313 183.634266  L 148.13623 182.701873  L 148.952146 181.739835  L 149.768061 180.746466  L 150.583974 179.719891  L 151.399885 178.658008  L 152.215794 177.558454  L 153.031701 176.418554  L 153.847605 175.235261  L 154.663506 174.005076  L 155.479403 172.723952  L 156.295295 171.387164  L 157.111181 169.989135  L 157.927059 168.523203  L 158.742928 166.981304  L 159.558785 165.353511  L 160.374625 163.627368  L 161.190443 161.78688  L 162.006228 159.810914  L 162.821963 157.670519  L 163.637617 155.324145  L 164.453128 152.708254  L 165.268337 149.716433  L 166.082698 146.143194  L 166.885954 141.513773  L 167.718857 129.823415  L 167.718857 105.52896  L 176.221714 105.52896  L 176.221714 130.125933  " clip-path="url(#figure-732285751ec5-2-pc05af0b372)" fill="#689dbc"></path>
+   </g>
+   <g id="figure-732285751ec5-2-patch_4">
+    <path d="M 65.684571 232.00896  L 65.684571 197.997531  L 65.684571 197.997531  L 65.684571 232.00896  L 65.684571 232.00896  " clip-path="url(#figure-732285751ec5-2-pc05af0b372)" fill="none" opacity="0"></path>
+   </g>
+   <g id="figure-732285751ec5-2-patch_5">
+    <path d="M 188.976 108.717531  L 188.976 108.717531  L 154.964571 108.717531  L 154.964571 108.717531  L 188.976 108.717531  " clip-path="url(#figure-732285751ec5-2-pc05af0b372)" fill="none" opacity="0"></path>
+   </g>
+   <g id="figure-732285751ec5-2-patch_6">
+    <path clip-path="url(#figure-732285751ec5-2-pc05af0b372)" fill="none" opacity="0"></path>
+   </g>
+   <g id="figure-732285751ec5-2-patch_7">
+    <path d="M 58.669714 239.44896  L 62.496 239.44896  L 62.496 105.52896  L 58.669714 105.52896  L 58.669714 239.44896  z " clip-path="url(#figure-732285751ec5-2-pc05af0b372)" fill="none" opacity="0"></path>
+   </g>
+   <g id="figure-732285751ec5-2-patch_8">
+    <path d="M 196.416 239.44896  L 200.242286 239.44896  L 200.242286 105.52896  L 196.416 105.52896  L 196.416 239.44896  z " clip-path="url(#figure-732285751ec5-2-pc05af0b372)" fill="none" opacity="0"></path>
+   </g>
+   <g id="figure-732285751ec5-2-patch_9">
+    <path d="M 62.496 243.275246  L 196.416 243.275246  L 196.416 239.44896  L 62.496 239.44896  L 62.496 243.275246  z " clip-path="url(#figure-732285751ec5-2-pc05af0b372)" fill="none" opacity="0"></path>
+   </g>
+   <g id="figure-732285751ec5-2-patch_10">
+    <path d="M 62.496 105.52896  L 196.416 105.52896  L 196.416 101.702674  L 62.496 101.702674  L 62.496 105.52896  z " clip-path="url(#figure-732285751ec5-2-pc05af0b372)" fill="none" opacity="0"></path>
+   </g>
+   <g id="figure-732285751ec5-2-matplotlib.axis_1">
+    <g id="figure-732285751ec5-2-xtick_1">
+     <g id="figure-732285751ec5-2-line2d_2">
+      <defs>
+       <path id="figure-732285751ec5-2-me6736cb8f3" d="M 0 0  L 0 3  " stroke="#4a6076"></path>
+      </defs>
+      <g>
+       <use href="#figure-732285751ec5-2-me6736cb8f3" x="86.941714" y="239.44896" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-732285751ec5-2-text_6">
+      <text x="86.941714" y="255.66896" transform="rotate(-0 86.941714 255.66896)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">0.00</text>
+     </g>
+    </g>
+    <g id="figure-732285751ec5-2-xtick_2">
+     <g id="figure-732285751ec5-2-line2d_3">
+      <g>
+       <use href="#figure-732285751ec5-2-me6736cb8f3" x="140.084571" y="239.44896" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-732285751ec5-2-text_7">
+      <text x="140.084571" y="255.66896" transform="rotate(-0 140.084571 255.66896)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">2.50</text>
+     </g>
+    </g>
+    <g id="figure-732285751ec5-2-xtick_3">
+     <g id="figure-732285751ec5-2-line2d_4">
+      <g>
+       <use href="#figure-732285751ec5-2-me6736cb8f3" x="193.227429" y="239.44896" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-732285751ec5-2-text_8">
+      <text x="193.227429" y="255.66896" transform="rotate(-0 193.227429 255.66896)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">5.00</text>
+     </g>
+    </g>
+    <g id="figure-732285751ec5-2-text_9">
+     <text x="129.456" y="270.317241" transform="rotate(-0 129.456 270.317241)" font-size="11px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#12263a">x（μm）</text>
+    </g>
+   </g>
+   <g id="figure-732285751ec5-2-matplotlib.axis_2">
+    <g id="figure-732285751ec5-2-ytick_1">
+     <g id="figure-732285751ec5-2-line2d_5">
+      <defs>
+       <path id="figure-732285751ec5-2-me791f8aadd" d="M 0 0  L -3 0  " stroke="#4a6076"></path>
+      </defs>
+      <g>
+       <use href="#figure-732285751ec5-2-me791f8aadd" x="62.496" y="215.003246" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-732285751ec5-2-text_10">
+      <text x="55.996" y="219.863246" transform="rotate(-0 55.996 219.863246)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="end" fill="#4a6076">0.00</text>
+     </g>
+    </g>
+    <g id="figure-732285751ec5-2-ytick_2">
+     <g id="figure-732285751ec5-2-line2d_6">
+      <g>
+       <use href="#figure-732285751ec5-2-me791f8aadd" x="62.496" y="172.48896" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-732285751ec5-2-text_11">
+      <text x="55.996" y="177.34896" transform="rotate(-0 55.996 177.34896)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="end" fill="#4a6076">2.00</text>
+     </g>
+    </g>
+    <g id="figure-732285751ec5-2-ytick_3">
+     <g id="figure-732285751ec5-2-line2d_7">
+      <g>
+       <use href="#figure-732285751ec5-2-me791f8aadd" x="62.496" y="129.974674" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-732285751ec5-2-text_12">
+      <text x="55.996" y="134.834674" transform="rotate(-0 55.996 134.834674)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="end" fill="#4a6076">4.00</text>
+     </g>
+    </g>
+    <g id="figure-732285751ec5-2-text_13">
+     <text x="27.250688" y="172.48896" transform="rotate(-90 27.250688 172.48896)" font-size="11px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#12263a">y（μm）</text>
+    </g>
+   </g>
+   <g id="figure-732285751ec5-2-patch_11">
+    <path d="M 62.496 239.44896  L 62.496 105.52896  " fill="none" stroke="#d6e2ec" stroke-linejoin="miter" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-732285751ec5-2-patch_12">
+    <path d="M 196.416 239.44896  L 196.416 105.52896  " fill="none" stroke="#d6e2ec" stroke-linejoin="miter" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-732285751ec5-2-patch_13">
+    <path d="M 62.496 239.44896  L 196.416 239.44896  " fill="none" stroke="#d6e2ec" stroke-linejoin="miter" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-732285751ec5-2-patch_14">
+    <path d="M 62.496 105.52896  L 196.416 105.52896  " fill="none" stroke="#d6e2ec" stroke-linejoin="miter" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-732285751ec5-2-patch_15">
+    <path d="M 68.873143 220.976143  Q 68.873143 218.98858 68.873143 218.11905  " fill="none" stroke="#e8823c" stroke-linecap="round"></path>
+    <path d="M 66.873143 222.11905  L 68.873143 218.11905  L 70.873143 222.11905  " fill="none" stroke="#e8823c" stroke-linecap="round"></path>
+   </g>
+   <g id="figure-732285751ec5-2-text_14">
+    <text x="68.873143" y="233.071817" transform="rotate(-0 68.873143 233.071817)" font-size="10px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#e8823c">输入</text>
+   </g>
+   <g id="figure-732285751ec5-2-patch_16">
+    <path d="M 165.124884 110.793251  Q 167.559882 111.189107 168.891333 111.40556  " fill="none" stroke="#e8823c" stroke-linecap="round"></path>
+    <path d="M 165.264091 108.789625  L 168.891333 111.40556  L 164.62224 112.737793  " fill="none" stroke="#e8823c" stroke-linecap="round"></path>
+   </g>
+   <g id="figure-732285751ec5-2-text_15">
+    <text x="141.147429" y="111.906103" transform="rotate(-0 141.147429 111.906103)" font-size="10px" font-family="MiSans, sans-serif" text-anchor="start" fill="#e8823c">输出</text>
+   </g>
+   <g id="figure-732285751ec5-2-text_16">
+    <text x="62.496" y="99.52896" transform="rotate(-0 62.496 99.52896)" font-size="15px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">圆弧弯</text>
+   </g>
+   <g id="figure-732285751ec5-2-patch_17">
+    <path d="M 67.685841 213.003246  Q 70.988637 213.003246 74.291432 213.003246  L 74.291432 210.503246  Q 79.790361 212.753246 85.289291 215.003246  Q 79.790361 217.253246 74.291432 219.503246  L 74.291432 217.003246  Q 70.988637 217.003246 67.685841 217.003246  L 67.685841 213.003246  L 67.685841 213.003246  z " clip-path="url(#figure-732285751ec5-2-pc05af0b372)" fill="none" opacity="0"></path>
+   </g>
+   <g id="figure-732285751ec5-2-patch_18">
+    <path d="M 169.970286 106.716262  Q 169.970286 103.413466 169.970286 100.110671  L 167.470286 100.110671  Q 169.720286 94.611741 171.970286 89.112812  Q 174.220286 94.611741 176.470286 100.110671  L 173.970286 100.110671  Q 173.970286 103.413466 173.970286 106.716262  L 169.970286 106.716262  L 169.970286 106.716262  z " clip-path="url(#figure-732285751ec5-2-pc05af0b372)" fill="none" opacity="0"></path>
+   </g>
+   <g id="figure-732285751ec5-2-patch_19">
+    <path d="M 173.970286 110.718801  Q 173.970286 114.021597 173.970286 117.324392  L 176.470286 117.324392  Q 174.220286 122.823321 171.970286 128.322251  Q 169.720286 122.823321 167.470286 117.324392  L 169.970286 117.324392  Q 169.970286 114.021597 169.970286 110.718801  L 173.970286 110.718801  L 173.970286 110.718801  z " clip-path="url(#figure-732285751ec5-2-pc05af0b372)" fill="none" opacity="0"></path>
+   </g>
+   <g id="figure-732285751ec5-2-patch_20">
+    <path d="M 61.964571 253.625713  L 61.964571 99.331888  L 56.298928 99.331888  L 56.298928 253.625713  L 61.964571 253.625713  " clip-path="url(#figure-732285751ec5-2-pc05af0b372)" fill="url(#figure-732285751ec5-2-h34f67f8964)" opacity="0.7" stroke="#808080" stroke-linejoin="miter"></path>
+   </g>
+   <g id="figure-732285751ec5-2-patch_21">
+    <path d="M 210.592753 253.625713  L 210.592753 99.331888  L 196.947429 99.331888  L 196.947429 253.625713  L 210.592753 253.625713  " clip-path="url(#figure-732285751ec5-2-pc05af0b372)" fill="url(#figure-732285751ec5-2-h34f67f8964)" opacity="0.7" stroke="#808080" stroke-linejoin="miter"></path>
+   </g>
+   <g id="figure-732285751ec5-2-patch_22">
+    <path d="M 210.592753 253.625713  L 210.592753 239.980389  L 56.298928 239.980389  L 56.298928 253.625713  L 210.592753 253.625713  " clip-path="url(#figure-732285751ec5-2-pc05af0b372)" fill="url(#figure-732285751ec5-2-h34f67f8964)" opacity="0.7" stroke="#808080" stroke-linejoin="miter"></path>
+   </g>
+   <g id="figure-732285751ec5-2-patch_23">
+    <path d="M 210.592753 104.997531  L 210.592753 99.331888  L 56.298928 99.331888  L 56.298928 104.997531  L 210.592753 104.997531  " clip-path="url(#figure-732285751ec5-2-pc05af0b372)" fill="url(#figure-732285751ec5-2-h34f67f8964)" opacity="0.7" stroke="#808080" stroke-linejoin="miter"></path>
+   </g>
+  </g>
+  <g id="figure-732285751ec5-2-axes_3">
+   <g id="figure-732285751ec5-2-patch_24">
+    <path d="M 281.232 239.44896  L 415.152 239.44896  L 415.152 105.52896  L 281.232 105.52896  z " fill="#ffffff"></path>
+   </g>
+   <g id="figure-732285751ec5-2-patch_25">
+    <path d="M 394.957714 129.974772  L 394.957675 130.823195  L 394.957402 131.672695  L 394.956658 132.523368  L 394.955207 133.375213  L 394.952813 134.228231  L 394.949236 135.082418  L 394.944236 135.937772  L 394.937575 136.794289  L 394.92901 137.651963  L 394.918299 138.510786  L 394.905198 139.37075  L 394.889465 140.231845  L 394.870853 141.094055  L 394.849116 141.957367  L 394.824009 142.821762  L 394.795282 143.687219  L 394.762689 144.553713  L 394.725979 145.421217  L 394.684902 146.289701  L 394.639208 147.159129  L 394.588645 148.029464  L 394.532962 148.900662  L 394.471906 149.772677  L 394.405223 150.645457  L 394.332662 151.518945  L 394.253967 152.393081  L 394.168885 153.267798  L 394.077163 154.143023  L 393.978545 155.01868  L 393.872778 155.894684  L 393.759608 156.770946  L 393.638781 157.64737  L 393.510045 158.523854  L 393.373147 159.400287  L 393.227835 160.276555  L 393.073858 161.152534  L 392.910967 162.028093  L 392.738914 162.903093  L 392.55745 163.77739  L 392.366332 164.650828  L 392.165315 165.523246  L 391.954158 166.394473  L 391.732623 167.26433  L 391.500472 168.13263  L 391.257473 168.999175  L 391.003395 169.863761  L 390.738011 170.726171  L 390.461098 171.586182  L 390.178063 172.426848  L 389.945655 173.105379  L 389.1073 175.376948  L 388.25785 177.451529  L 387.408483 179.348861  L 386.559168 181.102598  L 385.709889 182.736628  L 384.860635 184.268644  L 384.0114 185.712191  L 383.162179 187.077915  L 382.312968 188.374368  L 381.463767 189.608542  L 380.614572 190.786247  L 379.765382 191.912368  L 378.916197 192.991063  L 378.067017 194.025906  L 377.217839 195.019994  L 376.368664 195.976036  L 375.519492 196.896411  L 374.670321 197.783229  L 373.821153 198.638367  L 372.971986 199.463504  L 372.12282 200.260151  L 371.273656 201.029669  L 370.424493 201.773294  L 369.575331 202.49215  L 368.726169 203.187262  L 367.877009 203.859567  L 367.027849 204.509927  L 366.17869 205.139133  L 365.329531 205.747915  L 364.480373 206.336949  L 363.631215 206.90686  L 362.782058 207.458227  L 361.932901 207.991589  L 361.083745 208.507447  L 360.234589 209.006271  L 359.385433 209.488495  L 358.536278 209.954527  L 357.687123 210.404749  L 356.837968 210.839519  L 355.988813 211.259171  L 355.139659 211.664019  L 354.290504 212.054359  L 353.44135 212.430466  L 352.592196 212.792601  L 351.743043 213.14101  L 350.893889 213.47592  L 350.044736 213.79755  L 349.195582 214.106102  L 348.356262 214.398343  L 348.12295 214.477359  L 347.289222 214.758058  L 346.429211 215.034971  L 345.566801 215.300355  L 344.702215 215.554433  L 343.83567 215.797432  L 342.96737 216.029583  L 342.097513 216.251118  L 341.226286 216.462275  L 340.353868 216.663292  L 339.48043 216.85441  L 338.606133 217.035874  L 337.731133 217.207927  L 336.855574 217.370818  L 335.979595 217.524795  L 335.103327 217.670107  L 334.226894 217.807005  L 333.35041 217.935741  L 332.473986 218.056568  L 331.597724 218.169738  L 330.72172 218.275505  L 329.846063 218.374123  L 328.970838 218.465845  L 328.096121 218.550927  L 327.221985 218.629622  L 326.348497 218.702183  L 325.475717 218.768866  L 324.603702 218.829922  L 323.732504 218.885605  L 322.862169 218.936168  L 321.992741 218.981862  L 321.124257 219.022939  L 320.256753 219.059649  L 319.390259 219.092242  L 318.524802 219.120969  L 317.660407 219.146076  L 316.797095 219.167813  L 315.934885 219.186425  L 315.07379 219.202158  L 314.213826 219.215259  L 313.355003 219.22597  L 312.497329 219.234535  L 311.640812 219.241196  L 310.785458 219.246196  L 309.931271 219.249773  L 309.078253 219.252167  L 308.226408 219.253618  L 307.375735 219.254362  L 306.526235 219.254635  L 305.677812 219.254674  L 281.232 219.254674  L 281.232 210.751817  L 305.677616 210.751817  L 306.52467 210.751778  L 307.370648 210.751506  L 308.215451 210.750767  L 309.05908 210.749331  L 309.901533 210.746966  L 310.742807 210.743443  L 311.582901 210.738533  L 312.42181 210.732008  L 313.259528 210.723642  L 314.09605 210.713209  L 314.931365 210.700484  L 315.765464 210.685244  L 316.598335 210.667265  L 317.429962 210.646327  L 318.260328 210.622207  L 319.089414 210.594688  L 319.917197 210.563551  L 320.743652 210.528578  L 321.568751 210.489553  L 322.39246 210.446262  L 323.214747 210.398491  L 324.03557 210.346027  L 324.854889 210.28866  L 325.672656 210.226181  L 326.488822 210.158382  L 327.30333 210.085055  L 328.116123 210.005996  L 328.927136 209.921003  L 329.736301 209.829873  L 330.543544 209.732408  L 331.348789 209.62841  L 332.15195 209.517684  L 332.95294 209.400036  L 333.751665 209.275276  L 334.548026 209.143215  L 335.341916 209.003668  L 336.133226 208.856451  L 336.921839 208.701384  L 337.707631 208.53829  L 338.490475 208.366994  L 339.270235 208.187327  L 340.04677 207.999121  L 340.819932 207.802211  L 341.589568 207.59644  L 342.355516 207.38165  L 343.11761 207.157692  L 343.875676 206.924417  L 344.629533 206.681684  L 345.402644 206.421394  L 345.594475 206.356426  L 346.345541 206.094914  L 347.086774 205.825577  L 347.828008 205.544823  L 348.569241 205.252477  L 349.310474 204.948349  L 350.051707 204.632238  L 350.79294 204.303931  L 351.534173 203.963201  L 352.275405 203.609807  L 353.016637 203.24349  L 353.757869 202.863977  L 354.499101 202.470976  L 355.240332 202.064174  L 355.981563 201.643239  L 356.722794 201.207815  L 357.464024 200.75752  L 358.205255 200.291948  L 358.946484 199.81066  L 359.687713 199.313185  L 360.428942 198.799018  L 361.17017 198.267614  L 361.911398 197.718382  L 362.652625 197.150687  L 363.393851 196.563837  L 364.135077 195.95708  L 364.876301 195.329598  L 365.617525 194.680497  L 366.358747 194.008796  L 367.099969 193.313418  L 367.841188 192.593174  L 368.582407 191.846745  L 369.323623 191.072667  L 370.064838 190.269301  L 370.80605 189.43481  L 371.547259 188.567114  L 372.288465 187.663854  L 373.029667 186.722326  L 373.770864 185.739414  L 374.512056 184.711494  L 375.253241 183.634304  L 375.994417 182.502782  L 376.735583 181.310834  L 377.476735 180.05101  L 378.217868 178.714038  L 378.958976 177.288132  L 379.700048 175.757903  L 380.441067 174.1026  L 381.182004 172.293038  L 381.934036 170.255365  L 382.12677 169.692665  L 382.384724 168.926493  L 382.627457 168.172636  L 382.860732 167.41457  L 383.08469 166.652476  L 383.29948 165.886528  L 383.505251 165.116892  L 383.702161 164.34373  L 383.890367 163.567195  L 384.070034 162.787435  L 384.24133 162.004591  L 384.404424 161.218799  L 384.559491 160.430186  L 384.706708 159.638876  L 384.846255 158.844986  L 384.978316 158.048625  L 385.103076 157.2499  L 385.220724 156.44891  L 385.33145 155.645749  L 385.435448 154.840504  L 385.532913 154.033261  L 385.624043 153.224096  L 385.709036 152.413083  L 385.788095 151.60029  L 385.861422 150.785782  L 385.929221 149.969616  L 385.9917 149.151849  L 386.049067 148.33253  L 386.101531 147.511707  L 386.149302 146.68942  L 386.192593 145.865711  L 386.231618 145.040612  L 386.266591 144.214157  L 386.297728 143.386374  L 386.325247 142.557288  L 386.349367 141.726922  L 386.370305 140.895295  L 386.388284 140.062424  L 386.403524 139.228325  L 386.416249 138.39301  L 386.426682 137.556488  L 386.435048 136.71877  L 386.441573 135.879861  L 386.446483 135.039767  L 386.450006 134.198493  L 386.452371 133.35604  L 386.453807 132.512411  L 386.454546 131.667608  L 386.454818 130.82163  L 386.454857 129.974576  L 386.454857 105.52896  L 394.957714 105.52896  L 394.957714 129.974772  " clip-path="url(#figure-732285751ec5-2-pc34485f6a0)" fill="#689dbc"></path>
+   </g>
+   <g id="figure-732285751ec5-2-patch_26">
+    <path d="M 284.420571 232.00896  L 284.420571 197.997531  L 284.420571 197.997531  L 284.420571 232.00896  L 284.420571 232.00896  " clip-path="url(#figure-732285751ec5-2-pc34485f6a0)" fill="none" opacity="0"></path>
+   </g>
+   <g id="figure-732285751ec5-2-patch_27">
+    <path d="M 407.712 108.717531  L 407.712 108.717531  L 373.700571 108.717531  L 373.700571 108.717531  L 407.712 108.717531  " clip-path="url(#figure-732285751ec5-2-pc34485f6a0)" fill="none" opacity="0"></path>
+   </g>
+   <g id="figure-732285751ec5-2-patch_28">
+    <path clip-path="url(#figure-732285751ec5-2-pc34485f6a0)" fill="none" opacity="0"></path>
+   </g>
+   <g id="figure-732285751ec5-2-patch_29">
+    <path d="M 277.405714 239.44896  L 281.232 239.44896  L 281.232 105.52896  L 277.405714 105.52896  L 277.405714 239.44896  z " clip-path="url(#figure-732285751ec5-2-pc34485f6a0)" fill="none" opacity="0"></path>
+   </g>
+   <g id="figure-732285751ec5-2-patch_30">
+    <path d="M 415.152 239.44896  L 418.978286 239.44896  L 418.978286 105.52896  L 415.152 105.52896  L 415.152 239.44896  z " clip-path="url(#figure-732285751ec5-2-pc34485f6a0)" fill="none" opacity="0"></path>
+   </g>
+   <g id="figure-732285751ec5-2-patch_31">
+    <path d="M 281.232 243.275246  L 415.152 243.275246  L 415.152 239.44896  L 281.232 239.44896  L 281.232 243.275246  z " clip-path="url(#figure-732285751ec5-2-pc34485f6a0)" fill="none" opacity="0"></path>
+   </g>
+   <g id="figure-732285751ec5-2-patch_32">
+    <path d="M 281.232 105.52896  L 415.152 105.52896  L 415.152 101.702674  L 281.232 101.702674  L 281.232 105.52896  z " clip-path="url(#figure-732285751ec5-2-pc34485f6a0)" fill="none" opacity="0"></path>
+   </g>
+   <g id="figure-732285751ec5-2-matplotlib.axis_3">
+    <g id="figure-732285751ec5-2-xtick_4">
+     <g id="figure-732285751ec5-2-line2d_8">
+      <g>
+       <use href="#figure-732285751ec5-2-me6736cb8f3" x="305.677714" y="239.44896" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-732285751ec5-2-text_17">
+      <text x="305.677714" y="255.66896" transform="rotate(-0 305.677714 255.66896)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">0.00</text>
+     </g>
+    </g>
+    <g id="figure-732285751ec5-2-xtick_5">
+     <g id="figure-732285751ec5-2-line2d_9">
+      <g>
+       <use href="#figure-732285751ec5-2-me6736cb8f3" x="358.820571" y="239.44896" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-732285751ec5-2-text_18">
+      <text x="358.820571" y="255.66896" transform="rotate(-0 358.820571 255.66896)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">2.50</text>
+     </g>
+    </g>
+    <g id="figure-732285751ec5-2-xtick_6">
+     <g id="figure-732285751ec5-2-line2d_10">
+      <g>
+       <use href="#figure-732285751ec5-2-me6736cb8f3" x="411.963429" y="239.44896" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-732285751ec5-2-text_19">
+      <text x="411.963429" y="255.66896" transform="rotate(-0 411.963429 255.66896)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">5.00</text>
+     </g>
+    </g>
+    <g id="figure-732285751ec5-2-text_20">
+     <text x="348.192" y="270.317241" transform="rotate(-0 348.192 270.317241)" font-size="11px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#12263a">x（μm）</text>
+    </g>
+   </g>
+   <g id="figure-732285751ec5-2-matplotlib.axis_4">
+    <g id="figure-732285751ec5-2-ytick_4">
+     <g id="figure-732285751ec5-2-line2d_11">
+      <g>
+       <use href="#figure-732285751ec5-2-me791f8aadd" x="281.232" y="215.003246" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-732285751ec5-2-text_21">
+      <text x="274.732" y="219.863246" transform="rotate(-0 274.732 219.863246)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="end" fill="#4a6076">0.00</text>
+     </g>
+    </g>
+    <g id="figure-732285751ec5-2-ytick_5">
+     <g id="figure-732285751ec5-2-line2d_12">
+      <g>
+       <use href="#figure-732285751ec5-2-me791f8aadd" x="281.232" y="172.48896" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-732285751ec5-2-text_22">
+      <text x="274.732" y="177.34896" transform="rotate(-0 274.732 177.34896)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="end" fill="#4a6076">2.00</text>
+     </g>
+    </g>
+    <g id="figure-732285751ec5-2-ytick_6">
+     <g id="figure-732285751ec5-2-line2d_13">
+      <g>
+       <use href="#figure-732285751ec5-2-me791f8aadd" x="281.232" y="129.974674" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-732285751ec5-2-text_23">
+      <text x="274.732" y="134.834674" transform="rotate(-0 274.732 134.834674)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="end" fill="#4a6076">4.00</text>
+     </g>
+    </g>
+    <g id="figure-732285751ec5-2-text_24">
+     <text x="245.986688" y="172.48896" transform="rotate(-90 245.986688 172.48896)" font-size="11px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#12263a">y（μm）</text>
+    </g>
+   </g>
+   <g id="figure-732285751ec5-2-patch_33">
+    <path d="M 281.232 239.44896  L 281.232 105.52896  " fill="none" stroke="#d6e2ec" stroke-linejoin="miter" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-732285751ec5-2-patch_34">
+    <path d="M 415.152 239.44896  L 415.152 105.52896  " fill="none" stroke="#d6e2ec" stroke-linejoin="miter" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-732285751ec5-2-patch_35">
+    <path d="M 281.232 239.44896  L 415.152 239.44896  " fill="none" stroke="#d6e2ec" stroke-linejoin="miter" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-732285751ec5-2-patch_36">
+    <path d="M 281.232 105.52896  L 415.152 105.52896  " fill="none" stroke="#d6e2ec" stroke-linejoin="miter" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-732285751ec5-2-patch_37">
+    <path d="M 287.609143 220.976143  Q 287.609143 218.98858 287.609143 218.11905  " fill="none" stroke="#e8823c" stroke-linecap="round"></path>
+    <path d="M 285.609143 222.11905  L 287.609143 218.11905  L 289.609143 222.11905  " fill="none" stroke="#e8823c" stroke-linecap="round"></path>
+   </g>
+   <g id="figure-732285751ec5-2-text_25">
+    <text x="287.609143" y="233.071817" transform="rotate(-0 287.609143 233.071817)" font-size="10px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#e8823c">输入</text>
+   </g>
+   <g id="figure-732285751ec5-2-patch_38">
+    <path d="M 383.860884 110.793251  Q 386.295882 111.189107 387.627333 111.40556  " fill="none" stroke="#e8823c" stroke-linecap="round"></path>
+    <path d="M 384.000091 108.789625  L 387.627333 111.40556  L 383.35824 112.737793  " fill="none" stroke="#e8823c" stroke-linecap="round"></path>
+   </g>
+   <g id="figure-732285751ec5-2-text_26">
+    <text x="359.883429" y="111.906103" transform="rotate(-0 359.883429 111.906103)" font-size="10px" font-family="MiSans, sans-serif" text-anchor="start" fill="#e8823c">输出</text>
+   </g>
+   <g id="figure-732285751ec5-2-text_27">
+    <text x="281.232" y="99.52896" transform="rotate(-0 281.232 99.52896)" font-size="15px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">Euler 弯</text>
+   </g>
+   <g id="figure-732285751ec5-2-patch_39">
+    <path d="M 286.421841 213.003246  Q 289.724637 213.003246 293.027432 213.003246  L 293.027432 210.503246  Q 298.526361 212.753246 304.025291 215.003246  Q 298.526361 217.253246 293.027432 219.503246  L 293.027432 217.003246  Q 289.724637 217.003246 286.421841 217.003246  L 286.421841 213.003246  L 286.421841 213.003246  z " clip-path="url(#figure-732285751ec5-2-pc34485f6a0)" fill="none" opacity="0"></path>
+   </g>
+   <g id="figure-732285751ec5-2-patch_40">
+    <path d="M 388.706286 106.716262  Q 388.706286 103.413466 388.706286 100.110671  L 386.206286 100.110671  Q 388.456286 94.611741 390.706286 89.112812  Q 392.956286 94.611741 395.206286 100.110671  L 392.706286 100.110671  Q 392.706286 103.413466 392.706286 106.716262  L 388.706286 106.716262  L 388.706286 106.716262  z " clip-path="url(#figure-732285751ec5-2-pc34485f6a0)" fill="none" opacity="0"></path>
+   </g>
+   <g id="figure-732285751ec5-2-patch_41">
+    <path d="M 392.706286 110.718801  Q 392.706286 114.021597 392.706286 117.324392  L 395.206286 117.324392  Q 392.956286 122.823321 390.706286 128.322251  Q 388.456286 122.823321 386.206286 117.324392  L 388.706286 117.324392  Q 388.706286 114.021597 388.706286 110.718801  L 392.706286 110.718801  L 392.706286 110.718801  z " clip-path="url(#figure-732285751ec5-2-pc34485f6a0)" fill="none" opacity="0"></path>
+   </g>
+   <g id="figure-732285751ec5-2-patch_42">
+    <path d="M 280.700571 253.625713  L 280.700571 99.331888  L 275.034928 99.331888  L 275.034928 253.625713  L 280.700571 253.625713  " clip-path="url(#figure-732285751ec5-2-pc34485f6a0)" fill="url(#figure-732285751ec5-2-h34f67f8964)" opacity="0.7" stroke="#808080" stroke-linejoin="miter"></path>
+   </g>
+   <g id="figure-732285751ec5-2-patch_43">
+    <path d="M 429.328753 253.625713  L 429.328753 99.331888  L 415.683429 99.331888  L 415.683429 253.625713  L 429.328753 253.625713  " clip-path="url(#figure-732285751ec5-2-pc34485f6a0)" fill="url(#figure-732285751ec5-2-h34f67f8964)" opacity="0.7" stroke="#808080" stroke-linejoin="miter"></path>
+   </g>
+   <g id="figure-732285751ec5-2-patch_44">
+    <path d="M 429.328753 253.625713  L 429.328753 239.980389  L 275.034928 239.980389  L 275.034928 253.625713  L 429.328753 253.625713  " clip-path="url(#figure-732285751ec5-2-pc34485f6a0)" fill="url(#figure-732285751ec5-2-h34f67f8964)" opacity="0.7" stroke="#808080" stroke-linejoin="miter"></path>
+   </g>
+   <g id="figure-732285751ec5-2-patch_45">
+    <path d="M 429.328753 104.997531  L 429.328753 99.331888  L 275.034928 99.331888  L 275.034928 104.997531  L 429.328753 104.997531  " clip-path="url(#figure-732285751ec5-2-pc34485f6a0)" fill="url(#figure-732285751ec5-2-h34f67f8964)" opacity="0.7" stroke="#808080" stroke-linejoin="miter"></path>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="figure-732285751ec5-2-pfec9f89d1e">
+   <rect x="0" y="0" width="446.4" height="374.976"></rect>
+  </clipPath>
+  <clipPath id="figure-732285751ec5-2-pc05af0b372">
+   <rect x="62.496" y="105.52896" width="133.92" height="133.92"></rect>
+  </clipPath>
+  <clipPath id="figure-732285751ec5-2-pc34485f6a0">
+   <rect x="281.232" y="105.52896" width="133.92" height="133.92"></rect>
+  </clipPath>
+ </defs>
+ <defs>
+  <pattern id="figure-732285751ec5-2-h34f67f8964" patternUnits="userSpaceOnUse" x="0" y="0" width="72" height="72">
+   <rect x="0" y="0" width="73" height="73" fill="#808080"></rect>
+   <path d="M -36 36  L 36 -36  M -24 48  L 48 -24  M -12 60  L 60 -12  M 0 72  L 72 0  M 12 84  L 84 12  M 24 96  L 96 24  M 36 108  L 108 36  M -36 36  L 36 108  M -24 24  L 48 96  M -12 12  L 60 84  M 0 0  L 72 72  M 12 -12  L 84 60  M 24 -24  L 96 48  M 36 -36  L 108 36  " fill="#808080" stroke="#808080" stroke-width="1.0" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="0.7"></path>
+  </pattern>
+ </defs>
+ <g id="figure-732285751ec5-2-text_1">
+  <text x="20.088" y="16.730645" transform="rotate(-0 20.088 16.730645)" font-size="12.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4e9be8">本次模型 · 结构</text>
+ </g>
+ <g id="figure-732285751ec5-2-text_2" transform="translate(0 10)">
+  <text x="20.088" y="38.818091" transform="rotate(-0 20.088 38.818091)" font-size="25px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a" font-weight="600">占位相同，弯曲路径不同</text>
+ </g>
+ <g id="figure-732285751ec5-2-line2d_1" transform="translate(0 10)">
+  <path d="M 20.088 45.5328  L 58.032 45.5328  " clip-path="url(#figure-732285751ec5-2-pfec9f89d1e)" fill="none" stroke="#1f6fd0" stroke-width="3.2"></path>
+ </g>
+</svg><figcaption><span class="fig-tag">图 2</span>从本次实际仿真读取的器件俯视结构。端口占位相同，但 Euler 中心线会偏离圆弧，不能按相同最小半径理解。</figcaption></figure>
+<p>若要把结果迁移到实际工艺，还要核查厚度、波导宽度、刻蚀截面、侧壁和材料色散。4 μm 只是这次比较的起点，并非对所有硅光工艺通用的设计规则。</p>
+<h2>03　场都转过去了，还能看出差别吗？</h2>
+<p>两幅场图里，光都沿着波导完成了 90° 转弯。这有助于检查传播路径与明显泄漏，却不足以判断百分之几以下的功率差异。</p>
+<p>原因是场幅值与功率并不是同一个量，图像的色标、显示范围也会改变视觉感受。要比较损耗，必须回到出口，把场投影到需要的基模上，读取它携带的功率。</p>
+<figure><img alt="图 3：1550 nm 的电场幅值 |E|，两图使用相同线性色标。图像用来确认光走向哪里，微小损耗差异交给模式端口计算。" src="../../../../../assets/6558198244559cd870e9a445dcd5f020a3c42481f9cbc390bcfe24c77487220d.png"><figcaption><span class="fig-tag">图 3</span>1550 nm 的电场幅值 |E|，两图使用相同线性色标。图像用来确认光走向哪里，微小损耗差异交给模式端口计算。</figcaption></figure>
+<figure><img alt="动画：本次 FDTD 圆弧弯的 GUI 原生 3D Carpet 动图，XY 平面 z = 105 nm，Re(Hz)，λ = 1550 nm。Hz 垂直于布线平面，便于观察完整转向；这是单频场相位演示，不是真实脉冲传播，起伏表示场值而非结构形变。" src="../../../../../assets/b9555ea4e56e791a0e40b31972be754e5420de72f23c8f4e12f056f45ca72399.gif"><figcaption><span class="fig-tag">动画</span>本次 FDTD 圆弧弯的 GUI 原生 3D Carpet 动图，XY 平面 z = 105 nm，Re(Hz)，λ = 1550 nm。Hz 垂直于布线平面，便于观察完整转向；这是单频场相位演示，不是真实脉冲传播，起伏表示场值而非结构形变。</figcaption></figure>
+<figure><img alt="动画：本次 FDTD Euler 弯的 GUI 原生 3D Carpet 动图，XY 平面 z = 105 nm，Re(Hz)，λ = 1550 nm。图像用于观察路径与相位；微小损耗差异仍以模式端口读数为准，不能按起伏高度判断。" src="../../../../../assets/5b36f879a1690926a2518ec13ba3ae0b1da9d1f5fc3ab5cffafa5a8f4022e9d2.gif"><figcaption><span class="fig-tag">动画</span>本次 FDTD Euler 弯的 GUI 原生 3D Carpet 动图，XY 平面 z = 105 nm，Re(Hz)，λ = 1550 nm。图像用于观察路径与相位；微小损耗差异仍以模式端口读数为准，不能按起伏高度判断。</figcaption></figure>
+<p>本篇采用输出监视器的前向基模振幅 a，功率透过率为 |a|²，再换算成正值损耗。这个读数包含模型中从源到监视器整段路径的效应；两组设置一致，才让差值具有可比较的意义。</p>
+<h2>04　这次实算：约 0.0200 dB 对 0.0081 dB</h2>
+<p>在 <strong>1550 nm</strong>，圆弧弯的基模透过率约 <strong>99.54%</strong>，Euler 弯约 <strong>99.81%</strong>；对应损耗约为 <strong>0.01995 dB</strong> 与 <strong>0.00814 dB</strong>。</p>
+<p>两者每个弯的绝对差值约 <strong>0.0118 dB</strong>。相对于圆弧，本例的损耗减少约六成，但百分比不该盖过绝对数字：对只有一两个弯的光路，这点改善可能不是首要瓶颈。</p>
+<figure><svg width="446.400pt" height="395.875pt" viewBox="0.000 -0.899 446.400 395.875" stroke-linejoin="round" stroke-linecap="butt" font-family="MiSans, sans-serif" font-weight="400" xmlns="http://www.w3.org/2000/svg" class="vector-image" role="img" aria-label="图 4：1500–1600 nm 的基模损耗谱。本次 Euler 曲线总体更低；中心波长读数不代表所有几何、所有波段都保持同一比例。">
+ <defs>
+  </defs>
+ <g id="figure-862d6d99f81f-6-figure_1" transform="translate(0 20)">
+  <g id="figure-862d6d99f81f-6-patch_1">
+   <path d="M 0 374.976  L 446.4 374.976  L 446.4 0  L 0 0  z " fill="#ffffff"></path>
+  </g>
+  <g id="figure-862d6d99f81f-6-axes_1">
+   <g id="figure-862d6d99f81f-6-text_3">
+    <text x="20.088" y="367.368272" transform="rotate(-0 20.088 367.368272)" font-size="11px" font-family="MiSans, sans-serif" text-anchor="start" fill="#8a9bab">损耗 = −10 log10 |a_out|²；同源、同材料、同有效半径的配对比较</text>
+   </g>
+   <g id="figure-862d6d99f81f-6-text_4">
+    <text x="26.784" y="305.551445" transform="rotate(-0 26.784 305.551445)" font-size="12.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">单弯绝对改善约 0.0118 dB。曲线仍有数值起伏；未做网格与时长收敛，</text>
+   </g>
+   <g id="figure-862d6d99f81f-6-text_5">
+    <text x="26.784" y="324.926445" transform="rotate(-0 26.784 324.926445)" font-size="12.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">不外推小数点后的精度。</text>
+   </g>
+  </g>
+  <g id="figure-862d6d99f81f-6-axes_2">
+   <g id="figure-862d6d99f81f-6-patch_2">
+    <path d="M 62.496 247.48416  L 419.616 247.48416  L 419.616 86.24448  L 62.496 86.24448  z " fill="#ffffff"></path>
+   </g>
+   <g id="figure-862d6d99f81f-6-matplotlib.axis_1">
+    <g id="figure-862d6d99f81f-6-xtick_1">
+     <g id="figure-862d6d99f81f-6-line2d_2">
+      <path d="M 78.728727 247.48416  L 78.728727 86.24448  " clip-path="url(#figure-862d6d99f81f-6-p538e8456c8)" fill="none" stroke="#dcebfa" stroke-opacity="0.65" stroke-width="0.6" stroke-linecap="square"></path>
+     </g>
+     <g id="figure-862d6d99f81f-6-line2d_3">
+      <defs>
+       <path id="figure-862d6d99f81f-6-m18f118f985" d="M 0 0  L 0 3  " stroke="#4a6076"></path>
+      </defs>
+      <g>
+       <use href="#figure-862d6d99f81f-6-m18f118f985" x="78.728727" y="247.48416" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-862d6d99f81f-6-text_6">
+      <text x="78.728727" y="263.70416" transform="rotate(-0 78.728727 263.70416)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">1500</text>
+     </g>
+    </g>
+    <g id="figure-862d6d99f81f-6-xtick_2">
+     <g id="figure-862d6d99f81f-6-line2d_4">
+      <path d="M 143.659636 247.48416  L 143.659636 86.24448  " clip-path="url(#figure-862d6d99f81f-6-p538e8456c8)" fill="none" stroke="#dcebfa" stroke-opacity="0.65" stroke-width="0.6" stroke-linecap="square"></path>
+     </g>
+     <g id="figure-862d6d99f81f-6-line2d_5">
+      <g>
+       <use href="#figure-862d6d99f81f-6-m18f118f985" x="143.659636" y="247.48416" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-862d6d99f81f-6-text_7">
+      <text x="143.659636" y="263.70416" transform="rotate(-0 143.659636 263.70416)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">1520</text>
+     </g>
+    </g>
+    <g id="figure-862d6d99f81f-6-xtick_3">
+     <g id="figure-862d6d99f81f-6-line2d_6">
+      <path d="M 208.590545 247.48416  L 208.590545 86.24448  " clip-path="url(#figure-862d6d99f81f-6-p538e8456c8)" fill="none" stroke="#dcebfa" stroke-opacity="0.65" stroke-width="0.6" stroke-linecap="square"></path>
+     </g>
+     <g id="figure-862d6d99f81f-6-line2d_7">
+      <g>
+       <use href="#figure-862d6d99f81f-6-m18f118f985" x="208.590545" y="247.48416" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-862d6d99f81f-6-text_8">
+      <text x="208.590545" y="263.70416" transform="rotate(-0 208.590545 263.70416)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">1540</text>
+     </g>
+    </g>
+    <g id="figure-862d6d99f81f-6-xtick_4">
+     <g id="figure-862d6d99f81f-6-line2d_8">
+      <path d="M 273.521455 247.48416  L 273.521455 86.24448  " clip-path="url(#figure-862d6d99f81f-6-p538e8456c8)" fill="none" stroke="#dcebfa" stroke-opacity="0.65" stroke-width="0.6" stroke-linecap="square"></path>
+     </g>
+     <g id="figure-862d6d99f81f-6-line2d_9">
+      <g>
+       <use href="#figure-862d6d99f81f-6-m18f118f985" x="273.521455" y="247.48416" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-862d6d99f81f-6-text_9">
+      <text x="273.521455" y="263.70416" transform="rotate(-0 273.521455 263.70416)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">1560</text>
+     </g>
+    </g>
+    <g id="figure-862d6d99f81f-6-xtick_5">
+     <g id="figure-862d6d99f81f-6-line2d_10">
+      <path d="M 338.452364 247.48416  L 338.452364 86.24448  " clip-path="url(#figure-862d6d99f81f-6-p538e8456c8)" fill="none" stroke="#dcebfa" stroke-opacity="0.65" stroke-width="0.6" stroke-linecap="square"></path>
+     </g>
+     <g id="figure-862d6d99f81f-6-line2d_11">
+      <g>
+       <use href="#figure-862d6d99f81f-6-m18f118f985" x="338.452364" y="247.48416" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-862d6d99f81f-6-text_10">
+      <text x="338.452364" y="263.70416" transform="rotate(-0 338.452364 263.70416)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">1580</text>
+     </g>
+    </g>
+    <g id="figure-862d6d99f81f-6-xtick_6">
+     <g id="figure-862d6d99f81f-6-line2d_12">
+      <path d="M 403.383273 247.48416  L 403.383273 86.24448  " clip-path="url(#figure-862d6d99f81f-6-p538e8456c8)" fill="none" stroke="#dcebfa" stroke-opacity="0.65" stroke-width="0.6" stroke-linecap="square"></path>
+     </g>
+     <g id="figure-862d6d99f81f-6-line2d_13">
+      <g>
+       <use href="#figure-862d6d99f81f-6-m18f118f985" x="403.383273" y="247.48416" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-862d6d99f81f-6-text_11">
+      <text x="403.383273" y="263.70416" transform="rotate(-0 403.383273 263.70416)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">1600</text>
+     </g>
+    </g>
+    <g id="figure-862d6d99f81f-6-text_12">
+     <text x="241.056" y="279.031035" transform="rotate(-0 241.056 279.031035)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#12263a">波长（nm）</text>
+    </g>
+   </g>
+   <g id="figure-862d6d99f81f-6-matplotlib.axis_2">
+    <g id="figure-862d6d99f81f-6-ytick_1">
+     <g id="figure-862d6d99f81f-6-line2d_14">
+      <path d="M 62.496 247.48416  L 419.616 247.48416  " clip-path="url(#figure-862d6d99f81f-6-p538e8456c8)" fill="none" stroke="#dcebfa" stroke-opacity="0.65" stroke-width="0.6" stroke-linecap="square"></path>
+     </g>
+     <g id="figure-862d6d99f81f-6-line2d_15">
+      <defs>
+       <path id="figure-862d6d99f81f-6-mf8dad04863" d="M 0 0  L -3 0  " stroke="#4a6076"></path>
+      </defs>
+      <g>
+       <use href="#figure-862d6d99f81f-6-mf8dad04863" x="62.496" y="247.48416" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-862d6d99f81f-6-text_13">
+      <text x="55.996" y="252.34416" transform="rotate(-0 55.996 252.34416)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="end" fill="#4a6076">0.00</text>
+     </g>
+    </g>
+    <g id="figure-862d6d99f81f-6-ytick_2">
+     <g id="figure-862d6d99f81f-6-line2d_16">
+      <path d="M 62.496 201.41568  L 419.616 201.41568  " clip-path="url(#figure-862d6d99f81f-6-p538e8456c8)" fill="none" stroke="#dcebfa" stroke-opacity="0.65" stroke-width="0.6" stroke-linecap="square"></path>
+     </g>
+     <g id="figure-862d6d99f81f-6-line2d_17">
+      <g>
+       <use href="#figure-862d6d99f81f-6-mf8dad04863" x="62.496" y="201.41568" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-862d6d99f81f-6-text_14">
+      <text x="55.996" y="206.27568" transform="rotate(-0 55.996 206.27568)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="end" fill="#4a6076">0.01</text>
+     </g>
+    </g>
+    <g id="figure-862d6d99f81f-6-ytick_3">
+     <g id="figure-862d6d99f81f-6-line2d_18">
+      <path d="M 62.496 155.3472  L 419.616 155.3472  " clip-path="url(#figure-862d6d99f81f-6-p538e8456c8)" fill="none" stroke="#dcebfa" stroke-opacity="0.65" stroke-width="0.6" stroke-linecap="square"></path>
+     </g>
+     <g id="figure-862d6d99f81f-6-line2d_19">
+      <g>
+       <use href="#figure-862d6d99f81f-6-mf8dad04863" x="62.496" y="155.3472" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-862d6d99f81f-6-text_15">
+      <text x="55.996" y="160.2072" transform="rotate(-0 55.996 160.2072)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="end" fill="#4a6076">0.02</text>
+     </g>
+    </g>
+    <g id="figure-862d6d99f81f-6-ytick_4">
+     <g id="figure-862d6d99f81f-6-line2d_20">
+      <path d="M 62.496 109.27872  L 419.616 109.27872  " clip-path="url(#figure-862d6d99f81f-6-p538e8456c8)" fill="none" stroke="#dcebfa" stroke-opacity="0.65" stroke-width="0.6" stroke-linecap="square"></path>
+     </g>
+     <g id="figure-862d6d99f81f-6-line2d_21">
+      <g>
+       <use href="#figure-862d6d99f81f-6-mf8dad04863" x="62.496" y="109.27872" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-862d6d99f81f-6-text_16">
+      <text x="55.996" y="114.13872" transform="rotate(-0 55.996 114.13872)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="end" fill="#4a6076">0.03</text>
+     </g>
+    </g>
+    <g id="figure-862d6d99f81f-6-text_17">
+     <text x="27.12975" y="166.86432" transform="rotate(-90 27.12975 166.86432)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#12263a">基模损耗（dB）</text>
+    </g>
+   </g>
+   <g id="figure-862d6d99f81f-6-line2d_22">
+    <path d="M 78.728727 150.69967  L 82.008066 152.689599  L 85.287405 154.432239  L 88.566744 156.280815  L 91.846083 157.994418  L 95.125421 159.318158  L 98.40476 160.723097  L 101.684099 161.98057  L 104.963438 162.96843  L 108.242777 164.076907  L 111.522116 165.048803  L 114.801455 165.714306  L 118.080793 166.431356  L 121.360132 167.059665  L 124.639471 167.536145  L 127.91881 167.946587  L 131.198149 168.35274  L 134.477488 168.532884  L 137.756826 168.708616  L 141.036165 168.736365  L 144.315504 168.69113  L 147.594843 168.64818  L 150.874182 168.550098  L 154.153521 168.310745  L 157.43286 168.08819  L 160.712198 167.776349  L 163.991537 167.462638  L 167.270876 167.054838  L 170.550215 166.639019  L 173.829554 166.197844  L 177.108893 165.764077  L 180.388231 165.242233  L 183.66757 164.714613  L 186.946909 164.186612  L 190.226248 163.661864  L 193.505587 163.090727  L 196.784926 162.517586  L 200.064264 161.974843  L 203.343603 161.366483  L 206.622942 160.865147  L 209.902281 160.260389  L 213.18162 159.725051  L 216.460959 159.159668  L 219.740298 158.634958  L 223.019636 158.107444  L 226.298975 157.589956  L 229.578314 157.162275  L 232.857653 156.646447  L 236.136992 156.187567  L 239.416331 155.780821  L 242.695669 155.337745  L 245.975008 154.878363  L 249.254347 154.560159  L 252.533686 154.198618  L 255.813025 153.883355  L 259.092364 153.547155  L 262.371702 153.231164  L 265.651041 152.949177  L 268.93038 152.660348  L 272.209719 152.41384  L 275.489058 152.187849  L 278.768397 151.916456  L 282.047736 151.706267  L 285.327074 151.499324  L 288.606413 151.284848  L 291.885752 151.064516  L 295.165091 150.831469  L 298.44443 150.655611  L 301.723769 150.451695  L 305.003107 150.167142  L 308.282446 149.960475  L 311.561785 149.716666  L 314.841124 149.462436  L 318.120463 149.155541  L 321.399802 148.881363  L 324.67914 148.459647  L 327.958479 148.046686  L 331.237818 147.643184  L 334.517157 147.176039  L 337.796496 146.617754  L 341.075835 146.048574  L 344.355174 145.447341  L 347.634512 144.686112  L 350.913851 143.928923  L 354.19319 143.157661  L 357.472529 142.251606  L 360.751868 141.33796  L 364.031207 140.215528  L 367.310545 139.084659  L 370.589884 137.848548  L 373.869223 136.443459  L 377.148562 134.978658  L 380.427901 133.540316  L 383.70724 131.875027  L 386.986579 130.131802  L 390.265917 128.150419  L 393.545256 126.128224  L 396.824595 123.98603  L 400.103934 121.716359  L 403.383273 119.349052  " clip-path="url(#figure-862d6d99f81f-6-p538e8456c8)" fill="none" stroke="#0b4c9c" stroke-width="2.4" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-862d6d99f81f-6-line2d_23">
+    <defs>
+     <path id="figure-862d6d99f81f-6-me577e1c00e" d="M 0 2.5  C 0.663008 2.5 1.29895 2.236584 1.767767 1.767767  C 2.236584 1.29895 2.5 0.663008 2.5 0  C 2.5 -0.663008 2.236584 -1.29895 1.767767 -1.767767  C 1.29895 -2.236584 0.663008 -2.5 0 -2.5  C -0.663008 -2.5 -1.29895 -2.236584 -1.767767 -1.767767  C -2.236584 -1.29895 -2.5 -0.663008 -2.5 0  C -2.5 0.663008 -2.236584 1.29895 -1.767767 1.767767  C -1.29895 2.236584 -0.663008 2.5 0 2.5  z " stroke="#0b4c9c"></path>
+    </defs>
+    <g clip-path="url(#figure-862d6d99f81f-6-p538e8456c8)">
+     <use href="#figure-862d6d99f81f-6-me577e1c00e" x="241.056" y="155.559283" fill="#0b4c9c" stroke="#0b4c9c"></use>
+    </g>
+   </g>
+   <g id="figure-862d6d99f81f-6-line2d_24">
+    <path d="M 78.728727 222.892311  L 82.008066 225.425484  L 85.287405 227.619794  L 88.566744 229.844807  L 91.846083 231.832877  L 95.125421 233.334596  L 98.40476 234.85159  L 101.684099 236.129062  L 104.963438 237.080087  L 108.242777 238.066533  L 111.522116 238.848397  L 114.801455 239.277881  L 118.080793 239.675947  L 121.360132 239.947466  L 124.639471 240.024459  L 127.91881 239.989135  L 131.198149 239.898269  L 134.477488 239.544764  L 137.756826 239.173397  L 141.036165 238.609195  L 144.315504 237.945013  L 147.594843 237.271777  L 150.874182 236.522337  L 154.153521 235.626621  L 157.43286 234.724089  L 160.712198 233.738231  L 163.991537 232.738368  L 167.270876 231.655321  L 170.550215 230.559567  L 173.829554 229.451275  L 177.108893 228.351793  L 180.388231 227.183306  L 183.66757 226.019332  L 186.946909 224.87728  L 190.226248 223.74755  L 193.505587 222.60454  L 196.784926 221.475352  L 200.064264 220.40681  L 203.343603 219.290931  L 206.622942 218.320426  L 209.902281 217.263239  L 213.18162 216.312257  L 216.460959 215.365776  L 219.740298 214.490296  L 223.019636 213.645524  L 226.298975 212.845226  L 229.578314 212.175446  L 232.857653 211.433306  L 236.136992 210.799049  L 239.416331 210.24306  L 242.695669 209.708266  L 245.975008 209.167335  L 249.254347 208.819281  L 252.533686 208.458563  L 255.813025 208.162191  L 259.092364 207.892972  L 262.371702 207.674428  L 265.651041 207.52879  L 268.93038 207.398005  L 272.209719 207.343364  L 275.489058 207.347257  L 278.768397 207.334576  L 282.047736 207.407572  L 285.327074 207.497487  L 288.606413 207.608969  L 291.885752 207.763136  L 295.165091 207.902231  L 298.44443 208.129821  L 301.723769 208.357594  L 305.003107 208.509445  L 308.282446 208.773569  L 311.561785 208.994618  L 314.841124 209.232661  L 318.120463 209.434433  L 321.399802 209.654281  L 324.67914 209.765483  L 327.958479 209.872901  L 331.237818 210.025987  L 334.517157 210.089951  L 337.796496 210.07689  L 341.075835 210.049513  L 344.355174 210.002745  L 347.634512 209.799904  L 350.913851 209.557164  L 354.19319 209.306171  L 357.472529 208.925353  L 360.751868 208.525915  L 364.031207 207.904957  L 367.310545 207.267335  L 370.589884 206.5033  L 373.869223 205.570944  L 377.148562 204.557804  L 380.427901 203.503781  L 383.70724 202.262915  L 386.986579 200.869025  L 390.265917 199.253775  L 393.545256 197.564448  L 396.824595 195.686764  L 400.103934 193.69625  L 403.383273 191.582183  " clip-path="url(#figure-862d6d99f81f-6-p538e8456c8)" fill="none" stroke="#e8823c" stroke-width="2.4" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-862d6d99f81f-6-line2d_25">
+    <defs>
+     <path id="figure-862d6d99f81f-6-mde5089858c" d="M 0 2.5  C 0.663008 2.5 1.29895 2.236584 1.767767 1.767767  C 2.236584 1.29895 2.5 0.663008 2.5 0  C 2.5 -0.663008 2.236584 -1.29895 1.767767 -1.767767  C 1.29895 -2.236584 0.663008 -2.5 0 -2.5  C -0.663008 -2.5 -1.29895 -2.236584 -1.767767 -1.767767  C -2.236584 -1.29895 -2.5 -0.663008 -2.5 0  C -2.5 0.663008 -2.236584 1.29895 -1.767767 1.767767  C -1.29895 2.236584 -0.663008 2.5 0 2.5  z " stroke="#e8823c"></path>
+    </defs>
+    <g clip-path="url(#figure-862d6d99f81f-6-p538e8456c8)">
+     <use href="#figure-862d6d99f81f-6-mde5089858c" x="241.056" y="209.975663" fill="#e8823c" stroke="#e8823c"></use>
+    </g>
+   </g>
+   <g id="figure-862d6d99f81f-6-line2d_26">
+    <path d="M 241.056 247.48416  L 241.056 86.24448  " clip-path="url(#figure-862d6d99f81f-6-p538e8456c8)" fill="none" stroke-dasharray="3.7,1.6" stroke-dashoffset="0" stroke="#8a9bab"></path>
+   </g>
+   <g id="figure-862d6d99f81f-6-patch_3">
+    <path d="M 62.496 247.48416  L 62.496 86.24448  " fill="none" stroke="#d6e2ec" stroke-linejoin="miter" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-862d6d99f81f-6-patch_4">
+    <path d="M 419.616 247.48416  L 419.616 86.24448  " fill="none" stroke="#d6e2ec" stroke-linejoin="miter" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-862d6d99f81f-6-patch_5">
+    <path d="M 62.496 247.48416  L 419.616 247.48416  " fill="none" stroke="#d6e2ec" stroke-linejoin="miter" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-862d6d99f81f-6-patch_6">
+    <path d="M 62.496 86.24448  L 419.616 86.24448  " fill="none" stroke="#d6e2ec" stroke-linejoin="miter" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-862d6d99f81f-6-legend_1">
+    <g id="figure-862d6d99f81f-6-line2d_27">
+     <path d="M 73.296 102.56448  L 85.296 102.56448  L 97.296 102.56448  " fill="none" stroke="#0b4c9c" stroke-width="2.4" stroke-linecap="square"></path>
+    </g>
+    <g id="figure-862d6d99f81f-6-text_18">
+     <text x="106.896" y="106.76448" transform="rotate(-0 106.896 106.76448)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">圆弧弯</text>
+    </g>
+    <g id="figure-862d6d99f81f-6-line2d_28">
+     <path d="M 73.296 119.880105  L 85.296 119.880105  L 97.296 119.880105  " fill="none" stroke="#e8823c" stroke-width="2.4" stroke-linecap="square"></path>
+    </g>
+    <g id="figure-862d6d99f81f-6-text_19">
+     <text x="106.896" y="124.080105" transform="rotate(-0 106.896 124.080105)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">Euler 弯</text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="figure-862d6d99f81f-6-p340166c59c">
+   <rect x="0" y="0" width="446.4" height="374.976"></rect>
+  </clipPath>
+  <clipPath id="figure-862d6d99f81f-6-p538e8456c8">
+   <rect x="62.496" y="86.24448" width="357.12" height="161.23968"></rect>
+  </clipPath>
+ </defs>
+ <g id="figure-862d6d99f81f-6-text_1">
+  <text x="20.088" y="16.730645" transform="rotate(-0 20.088 16.730645)" font-size="12.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4e9be8">本次 FDTD · 基模损耗</text>
+ </g>
+ <g id="figure-862d6d99f81f-6-text_2" transform="translate(0 10)">
+  <text x="20.088" y="38.310317" transform="rotate(-0 20.088 38.310317)" font-size="21px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a" font-weight="600">1550 nm：损耗从 0.020 降到 0.008 dB</text>
+ </g>
+ <g id="figure-862d6d99f81f-6-line2d_1" transform="translate(0 10)">
+  <path d="M 20.088 45.5328  L 58.032 45.5328  " clip-path="url(#figure-862d6d99f81f-6-p340166c59c)" fill="none" stroke="#1f6fd0" stroke-width="3.2"></path>
+ </g>
+</svg><figcaption><span class="fig-tag">图 4</span>1500–1600 nm 的基模损耗谱。本次 Euler 曲线总体更低；中心波长读数不代表所有几何、所有波段都保持同一比例。</figcaption></figure>
+<p>谱线仍有细小起伏。这里沿用案例网格与运行设置，没有额外做网格、边界和时长收敛；因此正文保留足够表达差异的有效数字，不把小数点后更多位当成可靠精度。</p>
+<h2>05　把单弯指标放回链路预算</h2>
+<p>如果各个弯足够独立，可以先用“弯的数量 × 单弯损耗”做预算。按本次 1550 nm 的结果，100 个相同圆弧弯约 <strong>2.00 dB</strong>，100 个 Euler 弯约 <strong>0.81 dB</strong>，差别就接近 <strong>1.18 dB</strong>。</p>
+<figure><svg width="446.400pt" height="404.774pt" viewBox="0.000 -0.870 446.400 404.774" stroke-linejoin="round" stroke-linecap="butt" font-family="MiSans, sans-serif" font-weight="400" xmlns="http://www.w3.org/2000/svg" class="vector-image" role="img" aria-label="图 5：这是单弯读数的线性预算外推，不是含 100 个弯的 FDTD 求解；尚未计入直段损耗、反射相干叠加或器件之间的耦合。">
+ <defs>
+  </defs>
+ <g id="figure-cc24dd507061-7-figure_1" transform="translate(0 20)">
+  <g id="figure-cc24dd507061-7-patch_1">
+   <path d="M 0 383.904  L 446.4 383.904  L 446.4 0  L 0 0  z " fill="#ffffff"></path>
+  </g>
+  <g id="figure-cc24dd507061-7-axes_1">
+   <g id="figure-cc24dd507061-7-text_3">
+    <text x="20.088" y="376.026428" transform="rotate(-0 20.088 376.026428)" font-size="11px" font-family="MiSans, sans-serif" text-anchor="start" fill="#8a9bab">以本次 1550 nm 单弯损耗作 N × IL 外推；不含反射相干叠加、直波导与器件间耦合</text>
+   </g>
+   <g id="figure-cc24dd507061-7-text_4">
+    <text x="31.248" y="310.205016" transform="rotate(-0 31.248 310.205016)" font-size="13px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">100 个弯：圆弧约 2.00 dB，Euler 约 0.81 dB。这里只分配预算，</text>
+   </g>
+   <g id="figure-cc24dd507061-7-text_5">
+    <text x="31.248" y="330.380406" transform="rotate(-0 31.248 330.380406)" font-size="13px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">不声称已模拟完整链路。</text>
+   </g>
+  </g>
+  <g id="figure-cc24dd507061-7-axes_2">
+   <g id="figure-cc24dd507061-7-patch_2">
+    <path d="M 66.96 249.5376  L 419.616 249.5376  L 419.616 88.29792  L 66.96 88.29792  z " fill="#ffffff"></path>
+   </g>
+   <g id="figure-cc24dd507061-7-matplotlib.axis_1">
+    <g id="figure-cc24dd507061-7-xtick_1">
+     <g id="figure-cc24dd507061-7-line2d_2">
+      <path d="M 82.989818 249.5376  L 82.989818 88.29792  " clip-path="url(#figure-cc24dd507061-7-p4ed61c278a)" fill="none" stroke="#dcebfa" stroke-width="0.7" stroke-linecap="square"></path>
+     </g>
+     <g id="figure-cc24dd507061-7-line2d_3">
+      <defs>
+       <path id="figure-cc24dd507061-7-m1a7750147a" d="M 0 0  L 0 3  " stroke="#4a6076"></path>
+      </defs>
+      <g>
+       <use href="#figure-cc24dd507061-7-m1a7750147a" x="82.989818" y="249.5376" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-cc24dd507061-7-text_6">
+      <text x="82.989818" y="265.7576" transform="rotate(-0 82.989818 265.7576)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">0</text>
+     </g>
+    </g>
+    <g id="figure-cc24dd507061-7-xtick_2">
+     <g id="figure-cc24dd507061-7-line2d_4">
+      <path d="M 147.109091 249.5376  L 147.109091 88.29792  " clip-path="url(#figure-cc24dd507061-7-p4ed61c278a)" fill="none" stroke="#dcebfa" stroke-width="0.7" stroke-linecap="square"></path>
+     </g>
+     <g id="figure-cc24dd507061-7-line2d_5">
+      <g>
+       <use href="#figure-cc24dd507061-7-m1a7750147a" x="147.109091" y="249.5376" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-cc24dd507061-7-text_7">
+      <text x="147.109091" y="265.7576" transform="rotate(-0 147.109091 265.7576)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">20</text>
+     </g>
+    </g>
+    <g id="figure-cc24dd507061-7-xtick_3">
+     <g id="figure-cc24dd507061-7-line2d_6">
+      <path d="M 211.228364 249.5376  L 211.228364 88.29792  " clip-path="url(#figure-cc24dd507061-7-p4ed61c278a)" fill="none" stroke="#dcebfa" stroke-width="0.7" stroke-linecap="square"></path>
+     </g>
+     <g id="figure-cc24dd507061-7-line2d_7">
+      <g>
+       <use href="#figure-cc24dd507061-7-m1a7750147a" x="211.228364" y="249.5376" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-cc24dd507061-7-text_8">
+      <text x="211.228364" y="265.7576" transform="rotate(-0 211.228364 265.7576)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">40</text>
+     </g>
+    </g>
+    <g id="figure-cc24dd507061-7-xtick_4">
+     <g id="figure-cc24dd507061-7-line2d_8">
+      <path d="M 275.347636 249.5376  L 275.347636 88.29792  " clip-path="url(#figure-cc24dd507061-7-p4ed61c278a)" fill="none" stroke="#dcebfa" stroke-width="0.7" stroke-linecap="square"></path>
+     </g>
+     <g id="figure-cc24dd507061-7-line2d_9">
+      <g>
+       <use href="#figure-cc24dd507061-7-m1a7750147a" x="275.347636" y="249.5376" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-cc24dd507061-7-text_9">
+      <text x="275.347636" y="265.7576" transform="rotate(-0 275.347636 265.7576)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">60</text>
+     </g>
+    </g>
+    <g id="figure-cc24dd507061-7-xtick_5">
+     <g id="figure-cc24dd507061-7-line2d_10">
+      <path d="M 339.466909 249.5376  L 339.466909 88.29792  " clip-path="url(#figure-cc24dd507061-7-p4ed61c278a)" fill="none" stroke="#dcebfa" stroke-width="0.7" stroke-linecap="square"></path>
+     </g>
+     <g id="figure-cc24dd507061-7-line2d_11">
+      <g>
+       <use href="#figure-cc24dd507061-7-m1a7750147a" x="339.466909" y="249.5376" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-cc24dd507061-7-text_10">
+      <text x="339.466909" y="265.7576" transform="rotate(-0 339.466909 265.7576)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">80</text>
+     </g>
+    </g>
+    <g id="figure-cc24dd507061-7-xtick_6">
+     <g id="figure-cc24dd507061-7-line2d_12">
+      <path d="M 403.586182 249.5376  L 403.586182 88.29792  " clip-path="url(#figure-cc24dd507061-7-p4ed61c278a)" fill="none" stroke="#dcebfa" stroke-width="0.7" stroke-linecap="square"></path>
+     </g>
+     <g id="figure-cc24dd507061-7-line2d_13">
+      <g>
+       <use href="#figure-cc24dd507061-7-m1a7750147a" x="403.586182" y="249.5376" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-cc24dd507061-7-text_11">
+      <text x="403.586182" y="265.7576" transform="rotate(-0 403.586182 265.7576)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">100</text>
+     </g>
+    </g>
+    <g id="figure-cc24dd507061-7-text_12">
+     <text x="243.288" y="281.073225" transform="rotate(-0 243.288 281.073225)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#12263a">相同、相互独立的 90° 弯数量 N</text>
+    </g>
+   </g>
+   <g id="figure-cc24dd507061-7-matplotlib.axis_2">
+    <g id="figure-cc24dd507061-7-ytick_1">
+     <g id="figure-cc24dd507061-7-line2d_14">
+      <path d="M 66.96 249.5376  L 419.616 249.5376  " clip-path="url(#figure-cc24dd507061-7-p4ed61c278a)" fill="none" stroke="#dcebfa" stroke-width="0.7" stroke-linecap="square"></path>
+     </g>
+     <g id="figure-cc24dd507061-7-line2d_15">
+      <defs>
+       <path id="figure-cc24dd507061-7-m199dfffbc9" d="M 0 0  L -3 0  " stroke="#4a6076"></path>
+      </defs>
+      <g>
+       <use href="#figure-cc24dd507061-7-m199dfffbc9" x="66.96" y="249.5376" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-cc24dd507061-7-text_13">
+      <text x="60.46" y="254.3976" transform="rotate(-0 60.46 254.3976)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="end" fill="#4a6076">0.0</text>
+     </g>
+    </g>
+    <g id="figure-cc24dd507061-7-ytick_2">
+     <g id="figure-cc24dd507061-7-line2d_16">
+      <path d="M 66.96 213.70656  L 419.616 213.70656  " clip-path="url(#figure-cc24dd507061-7-p4ed61c278a)" fill="none" stroke="#dcebfa" stroke-width="0.7" stroke-linecap="square"></path>
+     </g>
+     <g id="figure-cc24dd507061-7-line2d_17">
+      <g>
+       <use href="#figure-cc24dd507061-7-m199dfffbc9" x="66.96" y="213.70656" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-cc24dd507061-7-text_14">
+      <text x="60.46" y="218.56656" transform="rotate(-0 60.46 218.56656)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="end" fill="#4a6076">0.5</text>
+     </g>
+    </g>
+    <g id="figure-cc24dd507061-7-ytick_3">
+     <g id="figure-cc24dd507061-7-line2d_18">
+      <path d="M 66.96 177.87552  L 419.616 177.87552  " clip-path="url(#figure-cc24dd507061-7-p4ed61c278a)" fill="none" stroke="#dcebfa" stroke-width="0.7" stroke-linecap="square"></path>
+     </g>
+     <g id="figure-cc24dd507061-7-line2d_19">
+      <g>
+       <use href="#figure-cc24dd507061-7-m199dfffbc9" x="66.96" y="177.87552" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-cc24dd507061-7-text_15">
+      <text x="60.46" y="182.73552" transform="rotate(-0 60.46 182.73552)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="end" fill="#4a6076">1.0</text>
+     </g>
+    </g>
+    <g id="figure-cc24dd507061-7-ytick_4">
+     <g id="figure-cc24dd507061-7-line2d_20">
+      <path d="M 66.96 142.04448  L 419.616 142.04448  " clip-path="url(#figure-cc24dd507061-7-p4ed61c278a)" fill="none" stroke="#dcebfa" stroke-width="0.7" stroke-linecap="square"></path>
+     </g>
+     <g id="figure-cc24dd507061-7-line2d_21">
+      <g>
+       <use href="#figure-cc24dd507061-7-m199dfffbc9" x="66.96" y="142.04448" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-cc24dd507061-7-text_16">
+      <text x="60.46" y="146.90448" transform="rotate(-0 60.46 146.90448)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="end" fill="#4a6076">1.5</text>
+     </g>
+    </g>
+    <g id="figure-cc24dd507061-7-ytick_5">
+     <g id="figure-cc24dd507061-7-line2d_22">
+      <path d="M 66.96 106.21344  L 419.616 106.21344  " clip-path="url(#figure-cc24dd507061-7-p4ed61c278a)" fill="none" stroke="#dcebfa" stroke-width="0.7" stroke-linecap="square"></path>
+     </g>
+     <g id="figure-cc24dd507061-7-line2d_23">
+      <g>
+       <use href="#figure-cc24dd507061-7-m199dfffbc9" x="66.96" y="106.21344" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-cc24dd507061-7-text_17">
+      <text x="60.46" y="111.07344" transform="rotate(-0 60.46 111.07344)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="end" fill="#4a6076">2.0</text>
+     </g>
+    </g>
+    <g id="figure-cc24dd507061-7-text_18">
+     <text x="38.2425" y="168.91776" transform="rotate(-90 38.2425 168.91776)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#12263a">累计弯曲损耗（dB）</text>
+    </g>
+   </g>
+   <g id="figure-cc24dd507061-7-line2d_24">
+    <path d="M 82.989818 249.5376  L 86.195782 248.107657  L 89.401745 246.677715  L 92.607709 245.247772  L 95.813673 243.81783  L 99.019636 242.387887  L 102.2256 240.957945  L 105.431564 239.528002  L 108.637527 238.09806  L 111.843491 236.668117  L 115.049455 235.238175  L 118.255418 233.808232  L 121.461382 232.37829  L 124.667345 230.948347  L 127.873309 229.518405  L 131.079273 228.088462  L 134.285236 226.658519  L 137.4912 225.228577  L 140.697164 223.798634  L 143.903127 222.368692  L 147.109091 220.938749  L 150.315055 219.508807  L 153.521018 218.078864  L 156.726982 216.648922  L 159.932945 215.218979  L 163.138909 213.789037  L 166.344873 212.359094  L 169.550836 210.929152  L 172.7568 209.499209  L 175.962764 208.069267  L 179.168727 206.639324  L 182.374691 205.209381  L 185.580655 203.779439  L 188.786618 202.349496  L 191.992582 200.919554  L 195.198545 199.489611  L 198.404509 198.059669  L 201.610473 196.629726  L 204.816436 195.199784  L 208.0224 193.769841  L 211.228364 192.339899  L 214.434327 190.909956  L 217.640291 189.480014  L 220.846255 188.050071  L 224.052218 186.620129  L 227.258182 185.190186  L 230.464145 183.760244  L 233.670109 182.330301  L 236.876073 180.900358  L 240.082036 179.470416  L 243.288 178.040473  L 246.493964 176.610531  L 249.699927 175.180588  L 252.905891 173.750646  L 256.111855 172.320703  L 259.317818 170.890761  L 262.523782 169.460818  L 265.729745 168.030876  L 268.935709 166.600933  L 272.141673 165.170991  L 275.347636 163.741048  L 278.5536 162.311106  L 281.759564 160.881163  L 284.965527 159.45122  L 288.171491 158.021278  L 291.377455 156.591335  L 294.583418 155.161393  L 297.789382 153.73145  L 300.995345 152.301508  L 304.201309 150.871565  L 307.407273 149.441623  L 310.613236 148.01168  L 313.8192 146.581738  L 317.025164 145.151795  L 320.231127 143.721853  L 323.437091 142.29191  L 326.643055 140.861968  L 329.849018 139.432025  L 333.054982 138.002082  L 336.260945 136.57214  L 339.466909 135.142197  L 342.672873 133.712255  L 345.878836 132.282312  L 349.0848 130.85237  L 352.290764 129.422427  L 355.496727 127.992485  L 358.702691 126.562542  L 361.908655 125.1326  L 365.114618 123.702657  L 368.320582 122.272715  L 371.526545 120.842772  L 374.732509 119.41283  L 377.938473 117.982887  L 381.144436 116.552944  L 384.3504 115.123002  L 387.556364 113.693059  L 390.762327 112.263117  L 393.968291 110.833174  L 397.174255 109.403232  L 400.380218 107.973289  L 403.586182 106.543347  " clip-path="url(#figure-cc24dd507061-7-p4ed61c278a)" fill="none" stroke="#0b4c9c" stroke-width="2.6" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-cc24dd507061-7-line2d_25">
+    <path d="M 82.989818 249.5376  L 86.195782 248.954134  L 89.401745 248.370669  L 92.607709 247.787203  L 95.813673 247.203738  L 99.019636 246.620272  L 102.2256 246.036807  L 105.431564 245.453341  L 108.637527 244.869876  L 111.843491 244.28641  L 115.049455 243.702945  L 118.255418 243.119479  L 121.461382 242.536014  L 124.667345 241.952548  L 127.873309 241.369083  L 131.079273 240.785617  L 134.285236 240.202152  L 137.4912 239.618686  L 140.697164 239.035221  L 143.903127 238.451755  L 147.109091 237.86829  L 150.315055 237.284824  L 153.521018 236.701359  L 156.726982 236.117893  L 159.932945 235.534428  L 163.138909 234.950962  L 166.344873 234.367497  L 169.550836 233.784031  L 172.7568 233.200566  L 175.962764 232.6171  L 179.168727 232.033635  L 182.374691 231.450169  L 185.580655 230.866704  L 188.786618 230.283238  L 191.992582 229.699773  L 195.198545 229.116307  L 198.404509 228.532842  L 201.610473 227.949376  L 204.816436 227.365911  L 208.0224 226.782445  L 211.228364 226.198979  L 214.434327 225.615514  L 217.640291 225.032048  L 220.846255 224.448583  L 224.052218 223.865117  L 227.258182 223.281652  L 230.464145 222.698186  L 233.670109 222.114721  L 236.876073 221.531255  L 240.082036 220.94779  L 243.288 220.364324  L 246.493964 219.780859  L 249.699927 219.197393  L 252.905891 218.613928  L 256.111855 218.030462  L 259.317818 217.446997  L 262.523782 216.863531  L 265.729745 216.280066  L 268.935709 215.6966  L 272.141673 215.113135  L 275.347636 214.529669  L 278.5536 213.946204  L 281.759564 213.362738  L 284.965527 212.779273  L 288.171491 212.195807  L 291.377455 211.612342  L 294.583418 211.028876  L 297.789382 210.445411  L 300.995345 209.861945  L 304.201309 209.27848  L 307.407273 208.695014  L 310.613236 208.111549  L 313.8192 207.528083  L 317.025164 206.944618  L 320.231127 206.361152  L 323.437091 205.777687  L 326.643055 205.194221  L 329.849018 204.610756  L 333.054982 204.02729  L 336.260945 203.443825  L 339.466909 202.860359  L 342.672873 202.276893  L 345.878836 201.693428  L 349.0848 201.109962  L 352.290764 200.526497  L 355.496727 199.943031  L 358.702691 199.359566  L 361.908655 198.7761  L 365.114618 198.192635  L 368.320582 197.609169  L 371.526545 197.025704  L 374.732509 196.442238  L 377.938473 195.858773  L 381.144436 195.275307  L 384.3504 194.691842  L 387.556364 194.108376  L 390.762327 193.524911  L 393.968291 192.941445  L 397.174255 192.35798  L 400.380218 191.774514  L 403.586182 191.191049  " clip-path="url(#figure-cc24dd507061-7-p4ed61c278a)" fill="none" stroke="#e8823c" stroke-width="2.6" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-cc24dd507061-7-patch_3">
+    <path d="M 66.96 249.5376  L 66.96 88.29792  " fill="none" stroke="#d6e2ec" stroke-linejoin="miter" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-cc24dd507061-7-patch_4">
+    <path d="M 419.616 249.5376  L 419.616 88.29792  " fill="none" stroke="#d6e2ec" stroke-linejoin="miter" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-cc24dd507061-7-patch_5">
+    <path d="M 66.96 249.5376  L 419.616 249.5376  " fill="none" stroke="#d6e2ec" stroke-linejoin="miter" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-cc24dd507061-7-patch_6">
+    <path d="M 66.96 88.29792  L 419.616 88.29792  " fill="none" stroke="#d6e2ec" stroke-linejoin="miter" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-cc24dd507061-7-legend_1">
+    <g id="figure-cc24dd507061-7-line2d_26">
+     <path d="M 77.76 104.61792  L 89.76 104.61792  L 101.76 104.61792  " fill="none" stroke="#0b4c9c" stroke-width="2.6" stroke-linecap="square"></path>
+    </g>
+    <g id="figure-cc24dd507061-7-text_19">
+     <text x="111.36" y="108.81792" transform="rotate(-0 111.36 108.81792)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">圆弧弯</text>
+    </g>
+    <g id="figure-cc24dd507061-7-line2d_27">
+     <path d="M 77.76 121.933545  L 89.76 121.933545  L 101.76 121.933545  " fill="none" stroke="#e8823c" stroke-width="2.6" stroke-linecap="square"></path>
+    </g>
+    <g id="figure-cc24dd507061-7-text_20">
+     <text x="111.36" y="126.133545" transform="rotate(-0 111.36 126.133545)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">Euler 弯</text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="figure-cc24dd507061-7-p057f76b66c">
+   <rect x="0" y="0" width="446.4" height="383.904"></rect>
+  </clipPath>
+  <clipPath id="figure-cc24dd507061-7-p4ed61c278a">
+   <rect x="66.96" y="88.29792" width="352.656" height="161.23968"></rect>
+  </clipPath>
+ </defs>
+ <g id="figure-cc24dd507061-7-text_1">
+  <text x="20.088" y="16.743341" transform="rotate(-0 20.088 16.743341)" font-size="12.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4e9be8">预算外推 · 非多弯仿真</text>
+ </g>
+ <g id="figure-cc24dd507061-7-text_2" transform="translate(0 10)">
+  <text x="20.088" y="38.818091" transform="rotate(-0 20.088 38.818091)" font-size="25px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a" font-weight="600">小数点后的损耗，会被弯的数量放大</text>
+ </g>
+ <g id="figure-cc24dd507061-7-line2d_1" transform="translate(0 10)">
+  <path d="M 20.088 45.5328  L 58.032 45.5328  " clip-path="url(#figure-cc24dd507061-7-p057f76b66c)" fill="none" stroke="#1f6fd0" stroke-width="3.2"></path>
+ </g>
+</svg><figcaption><span class="fig-tag">图 5</span>这是单弯读数的线性预算外推，不是含 100 个弯的 FDTD 求解；尚未计入直段损耗、反射相干叠加或器件之间的耦合。</figcaption></figure>
+<p>这类估算适合先筛选方案。当弯道紧邻其他器件、弯与弯之间几乎没有直段，或者反射积累会影响系统时，还要验证组合结构；不能仅凭一张单器件曲线保证整条链路的结果。</p>
+<h2>06　什么时候优先选 Euler？</h2>
+<p>当有效占位已经受限，又需要很多转角时，Euler 值得优先评估。如果半径很充裕、弯的数量很少，圆弧可能已经满足损耗预算。最终选择要把版图实现、工艺规则与系统收益一起看。</p>
+<p>还应区分“固定有效半径比较”和“固定最小半径比较”。这两种约束得到的占位与损耗权衡不同。复用某篇文献或案例的数字之前，先确认作者固定的究竟是哪一个量。</p>
+<figure><svg width="446.400pt" height="351.328pt" viewBox="0.000 -0.992 446.400 351.328" stroke-linejoin="round" stroke-linecap="butt" font-family="MiSans, sans-serif" font-weight="400" xmlns="http://www.w3.org/2000/svg" class="vector-image" role="img" aria-label="图 6：先定可用空间，再分配单弯损耗上限，最后核查工艺与累计效应。选型从约束出发，比单独追求最低损耗更有用。">
+ <defs>
+  </defs>
+ <g id="figure-dd84125a4028-8-figure_1" transform="translate(0 20)">
+  <g id="figure-dd84125a4028-8-patch_1">
+   <path d="M 0 330.336  L 446.4 330.336  L 446.4 0  L 0 0  z " fill="#ffffff"></path>
+  </g>
+  <g id="figure-dd84125a4028-8-axes_1">
+   <g id="figure-dd84125a4028-8-patch_2">
+    <path d="M 73.2096 100.44  L 420.0624 100.44  Q 426.312 100.44 426.312 94.1904  L 426.312 62.0496  Q 426.312 55.8 420.0624 55.8  L 73.2096 55.8  Q 66.96 55.8 66.96 62.0496  L 66.96 94.1904  Q 66.96 100.44 73.2096 100.44  z " clip-path="url(#figure-dd84125a4028-8-p7f234503a9)" fill="#f1f7fe"></path>
+   </g>
+   <g id="figure-dd84125a4028-8-patch_3">
+    <path d="M 73.2096 158.472  L 420.0624 158.472  Q 426.312 158.472 426.312 152.2224  L 426.312 120.0816  Q 426.312 113.832 420.0624 113.832  L 73.2096 113.832  Q 66.96 113.832 66.96 120.0816  L 66.96 152.2224  Q 66.96 158.472 73.2096 158.472  z " clip-path="url(#figure-dd84125a4028-8-p7f234503a9)" fill="#fcebdb"></path>
+   </g>
+   <g id="figure-dd84125a4028-8-patch_4">
+    <path d="M 73.2096 216.504  L 420.0624 216.504  Q 426.312 216.504 426.312 210.2544  L 426.312 178.1136  Q 426.312 171.864 420.0624 171.864  L 73.2096 171.864  Q 66.96 171.864 66.96 178.1136  L 66.96 210.2544  Q 66.96 216.504 73.2096 216.504  z " clip-path="url(#figure-dd84125a4028-8-p7f234503a9)" fill="#f1f7fe"></path>
+   </g>
+   <g id="figure-dd84125a4028-8-patch_5">
+    <path d="M 73.2096 274.536  L 420.0624 274.536  Q 426.312 274.536 426.312 268.2864  L 426.312 236.1456  Q 426.312 229.896 420.0624 229.896  L 73.2096 229.896  Q 66.96 229.896 66.96 236.1456  L 66.96 268.2864  Q 66.96 274.536 73.2096 274.536  z " clip-path="url(#figure-dd84125a4028-8-p7f234503a9)" fill="#fcebdb"></path>
+   </g>
+   <g id="figure-dd84125a4028-8-line2d_2">
+    <path d="M 20.088 45.5328  L 58.032 45.5328  " clip-path="url(#figure-dd84125a4028-8-p7f234503a9)" fill="none" stroke="#1f6fd0" stroke-width="3.2"></path>
+   </g>
+   <g id="figure-dd84125a4028-8-patch_6">
+    <path d="M 66.96 95.0832  L 69.8616 95.0832  L 69.8616 61.1568  L 66.96 61.1568  z " clip-path="url(#figure-dd84125a4028-8-p7f234503a9)" fill="#0b4c9c"></path>
+   </g>
+   <g id="figure-dd84125a4028-8-patch_7">
+    <path d="M 66.96 153.1152  L 69.8616 153.1152  L 69.8616 119.1888  L 66.96 119.1888  z " clip-path="url(#figure-dd84125a4028-8-p7f234503a9)" fill="#e8823c"></path>
+   </g>
+   <g id="figure-dd84125a4028-8-patch_8">
+    <path d="M 66.96 211.1472  L 69.8616 211.1472  L 69.8616 177.2208  L 66.96 177.2208  z " clip-path="url(#figure-dd84125a4028-8-p7f234503a9)" fill="#0b4c9c"></path>
+   </g>
+   <g id="figure-dd84125a4028-8-patch_9">
+    <path d="M 66.96 269.1792  L 69.8616 269.1792  L 69.8616 235.2528  L 66.96 235.2528  z " clip-path="url(#figure-dd84125a4028-8-p7f234503a9)" fill="#e8823c"></path>
+   </g>
+   <g id="figure-dd84125a4028-8-patch_10">
+    <path d="M 42.408 90.6192  C 45.722827 90.6192 48.902333 89.302205 51.246269 86.958269  C 53.590205 84.614333 54.9072 81.434827 54.9072 78.12  C 54.9072 74.805173 53.590205 71.625667 51.246269 69.281731  C 48.902333 66.937795 45.722827 65.6208 42.408 65.6208  C 39.093173 65.6208 35.913667 66.937795 33.569731 69.281731  C 31.225795 71.625667 29.9088 74.805173 29.9088 78.12  C 29.9088 81.434827 31.225795 84.614333 33.569731 86.958269  C 35.913667 89.302205 39.093173 90.6192 42.408 90.6192  z " clip-path="url(#figure-dd84125a4028-8-p7f234503a9)" fill="#0b4c9c" stroke="#ffffff" stroke-width="2" stroke-linejoin="miter"></path>
+   </g>
+   <g id="figure-dd84125a4028-8-patch_11">
+    <path d="M 42.408 148.6512  C 45.722827 148.6512 48.902333 147.334205 51.246269 144.990269  C 53.590205 142.646333 54.9072 139.466827 54.9072 136.152  C 54.9072 132.837173 53.590205 129.657667 51.246269 127.313731  C 48.902333 124.969795 45.722827 123.6528 42.408 123.6528  C 39.093173 123.6528 35.913667 124.969795 33.569731 127.313731  C 31.225795 129.657667 29.9088 132.837173 29.9088 136.152  C 29.9088 139.466827 31.225795 142.646333 33.569731 144.990269  C 35.913667 147.334205 39.093173 148.6512 42.408 148.6512  z " clip-path="url(#figure-dd84125a4028-8-p7f234503a9)" fill="#e8823c" stroke="#ffffff" stroke-width="2" stroke-linejoin="miter"></path>
+   </g>
+   <g id="figure-dd84125a4028-8-patch_12">
+    <path d="M 42.408 206.6832  C 45.722827 206.6832 48.902333 205.366205 51.246269 203.022269  C 53.590205 200.678333 54.9072 197.498827 54.9072 194.184  C 54.9072 190.869173 53.590205 187.689667 51.246269 185.345731  C 48.902333 183.001795 45.722827 181.6848 42.408 181.6848  C 39.093173 181.6848 35.913667 183.001795 33.569731 185.345731  C 31.225795 187.689667 29.9088 190.869173 29.9088 194.184  C 29.9088 197.498827 31.225795 200.678333 33.569731 203.022269  C 35.913667 205.366205 39.093173 206.6832 42.408 206.6832  z " clip-path="url(#figure-dd84125a4028-8-p7f234503a9)" fill="#0b4c9c" stroke="#ffffff" stroke-width="2" stroke-linejoin="miter"></path>
+   </g>
+   <g id="figure-dd84125a4028-8-patch_13">
+    <path d="M 42.408 264.7152  C 45.722827 264.7152 48.902333 263.398205 51.246269 261.054269  C 53.590205 258.710333 54.9072 255.530827 54.9072 252.216  C 54.9072 248.901173 53.590205 245.721667 51.246269 243.377731  C 48.902333 241.033795 45.722827 239.7168 42.408 239.7168  C 39.093173 239.7168 35.913667 241.033795 33.569731 243.377731  C 31.225795 245.721667 29.9088 248.901173 29.9088 252.216  C 29.9088 255.530827 31.225795 258.710333 33.569731 261.054269  C 35.913667 263.398205 39.093173 264.7152 42.408 264.7152  z " clip-path="url(#figure-dd84125a4028-8-p7f234503a9)" fill="#e8823c" stroke="#ffffff" stroke-width="2" stroke-linejoin="miter"></path>
+   </g>
+   <g id="figure-dd84125a4028-8-text_3">
+    <text x="42.408" y="82.01293" transform="rotate(-0 42.408 82.01293)" font-weight="600" font-size="11.5px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#ffffff">01</text>
+   </g>
+   <g id="figure-dd84125a4028-8-text_4">
+    <text x="80.352" y="83.705508" transform="rotate(-0 80.352 83.705508)" font-weight="600" font-size="16.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">先定半径</text>
+   </g>
+   <g id="figure-dd84125a4028-8-text_5">
+    <text x="42.408" y="140.04493" transform="rotate(-0 42.408 140.04493)" font-weight="600" font-size="11.5px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#ffffff">02</text>
+   </g>
+   <g id="figure-dd84125a4028-8-text_6">
+    <text x="80.352" y="141.737508" transform="rotate(-0 80.352 141.737508)" font-weight="600" font-size="16.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">再看损耗预算</text>
+   </g>
+   <g id="figure-dd84125a4028-8-text_7">
+    <text x="42.408" y="198.07693" transform="rotate(-0 42.408 198.07693)" font-weight="600" font-size="11.5px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#ffffff">03</text>
+   </g>
+   <g id="figure-dd84125a4028-8-text_8">
+    <text x="80.352" y="199.769508" transform="rotate(-0 80.352 199.769508)" font-weight="600" font-size="16.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">算串扰上限</text>
+   </g>
+   <g id="figure-dd84125a4028-8-text_9">
+    <text x="42.408" y="256.10893" transform="rotate(-0 42.408 256.10893)" font-weight="600" font-size="11.5px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#ffffff">04</text>
+   </g>
+   <g id="figure-dd84125a4028-8-text_10">
+    <text x="80.352" y="257.801508" transform="rotate(-0 80.352 257.801508)" font-weight="600" font-size="16.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">最后核工艺</text>
+   </g>
+   <g id="figure-dd84125a4028-8-text_11">
+    <text x="223.2" y="299.985206" transform="rotate(-0 223.2 299.985206)" font-size="13.2px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#12263a">顺序不能反：先约束几何，再分配指标，最后落到工艺</text>
+   </g>
+   <g id="figure-dd84125a4028-8-text_12">
+    <text x="20.088" y="322.453272" transform="rotate(-0 20.088 322.453272)" font-size="11px" font-family="MiSans, sans-serif" text-anchor="start" fill="#8a9bab">本篇为方法建议；具体数值见第 5 篇的实测对照</text>
+   </g>
+   <g id="figure-dd84125a4028-8-text_13">
+    <text x="187.488" y="82.908438" transform="rotate(-0 187.488 82.908438)" font-size="14px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">版图能给出多大的转弯空间？</text>
+   </g>
+   <g id="figure-dd84125a4028-8-text_14">
+    <text x="187.488" y="140.891219" transform="rotate(-0 187.488 140.891219)" font-size="14px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">链路里允许每个弯丢多少 dB？</text>
+   </g>
+   <g id="figure-dd84125a4028-8-text_15">
+    <text x="187.488" y="198.923219" transform="rotate(-0 187.488 198.923219)" font-size="14px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">相邻波导、交叉点要压到多少 dB？</text>
+   </g>
+   <g id="figure-dd84125a4028-8-text_16">
+    <text x="187.488" y="248.920019" transform="rotate(-0 187.488 248.920019)" font-size="14px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">最小线宽、对准精度、刻蚀深度是否</text>
+   </g>
+   <g id="figure-dd84125a4028-8-text_17">
+    <text x="187.488" y="264.990419" transform="rotate(-0 187.488 264.990419)" font-size="14px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">做得出？</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="figure-dd84125a4028-8-p7f234503a9">
+   <rect x="0" y="0" width="446.4" height="330.336"></rect>
+  </clipPath>
+ </defs>
+ <g id="figure-dd84125a4028-8-text_1">
+  <text x="20.088" y="16.730645" transform="rotate(-0 20.088 16.730645)" font-size="12.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4e9be8">选型流程</text>
+ </g>
+ <g id="figure-dd84125a4028-8-text_2" transform="translate(0 10)">
+  <text x="20.088" y="38.818091" transform="rotate(-0 20.088 38.818091)" font-size="25px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a" font-weight="600">布线选型，按这四步走</text>
+ </g>
+ <g id="figure-dd84125a4028-8-line2d_1" transform="translate(0 10)">
+  <path d="M 42.408 78.12  L 42.408 252.216  " clip-path="url(#figure-dd84125a4028-8-p7f234503a9)" fill="none" stroke="#dcebfa" stroke-width="2.6" stroke-linecap="square"></path>
+ </g>
+</svg><figcaption><span class="fig-tag">图 6</span>先定可用空间，再分配单弯损耗上限，最后核查工艺与累计效应。选型从约束出发，比单独追求最低损耗更有用。</figcaption></figure>
+<p>下一篇进入十字交叉：波导到了节点，横向约束突然打开，要怎样让光继续直行？</p>
+<h2>自己改一个参数试试</h2>
+<p><a href="https://www.lingcompute.com/photon/learning-center/examples/notebooks/EulerWaveguideBend">学习中心：Euler waveguide bend</a>提供了几何构造与端口处理代码。建议先保持材料、宽度和厚度不变，比较一对固定有效半径的弯道；改半径后重新检查端口与网格，先估价，再运行。</p>
+<p><a href="https://tidy3d.fangzhen.cloud/">国内产品入口</a>。本文结果来自本次案例求解；学习中心案例与国内产品的具体导入路径，以实际页面提供的功能为准。</p></main><footer class="brand"><img src="../../../../../assets/20199c0cc188b4515acc1932da068a8e47aecf7b34c5dbf330faedb4b736a2a2.png" alt="灵算科技 LingCompute"><p>自有文章及插图：CC BY-NC 4.0；商用请另行联系。商标与另有标注的第三方材料除外。</p><p>默认系统字体；备用字体：<a href="https://hyperos.mi.com/font/en/download/">MiSans（小米）</a>，按其字体许可使用。</p><p>新稿审核以对应GitHub PR记录为准；预览本身不代表审核通过。</p><p><a href="https://github.com/LingCompute/lingcompute-content/blob/61dc028e4981175db6707066c32f5ff584a78f8b/content/photon/waveguide-routing/SOURCES.md">来源、指标口径与素材说明</a></p></footer><nav aria-label="文章导航"><a href="../../index.html">返回文章目录</a></nav></article></body></html>

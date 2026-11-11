@@ -1,0 +1,754 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; font-src data:; style-src 'self' 'unsafe-inline'; base-uri 'none'; form-action 'none'"><title>片内模斑怎么转换：线性锥、Luneburg 与半透镜</title><link rel="stylesheet" href="../../../../../assets/6fc2a687bf9e2522921dfde84f8adc9ebaeab06d072ec46531eb27f9e7e36fc1.css"><meta name="robots" content="noindex,nofollow"></head><body><article><aside class="meta"><p><strong>待审预览 · PR #17</strong> · <a href="https://github.com/LingCompute/lingcompute-content/pull/17">GitHub 记录</a></p><p>此版本尚待人审，不能作为发布批准。</p><details><summary>版本信息 · 源稿 3ef2abb</summary><p>源稿版本：<code>3ef2abbba266dd942473d0bcb0fc8d9e7af82ea6</code></p><p>排版工具版本：<code>e8b97a54e657f179a5263291ab69748317425dbd</code>。工具改动合并后生效。</p></details></aside><header class="meta"><p>构建预览 · 正式收录以主分支及PR审核记录为准</p><p>灵算光子 · 图解无源光子器件 · 端面与模斑接口</p><p>适合：具有光学基础、需要理解和选择集成光子器件的工程师与科研人员</p><p>本文解决：区分线性锥、Luneburg 与半透镜的模斑转换条件。</p><p>预计阅读 7–12 分钟，实操另计 · 8.4 参考屏</p><p>阅读时长为编辑模型估计；参考视口390×844 CSS像素，不同设备会有差异。</p></header><main id="article-body"><h1>片内模斑怎么转换：线性锥、Luneburg 与半透镜</h1>
+<blockquote>
+<p><strong>待审稿</strong>：本文处于独立 PR 审核阶段，尚未收录为正式内容。定量结论、素材来源与授权仍需指定业内审核者核查。</p>
+</blockquote>
+<p>倒锥的思路是「慢慢来」：让截面变化足够慢，模式就能一路跟上。</p>
+<p>但慢意味着长。50 μm 的锥长，对单器件不算什么，对需要几十个接口的阵列就很占地方。</p>
+<p>这一篇讲<strong>波前整形</strong>。同一个 Notebook 给出 50 μm 线性锥、11 μm Luneburg 与 9.5 μm 半透镜。前两者与半透镜的截面和激励方向不同，读数要连同端口条件理解。</p>
+<h2>01　绝热是充分条件，不是必要条件</h2>
+<p>倒锥之所以要那么长，是因为它只用了「让截面连续变化」这一个自由度。模式跟不上，是因为变化太快。</p>
+<p>但如果在中途主动给波前加一个相位修正呢？</p>
+<p>这就从「绝热」跳到了「成像」：不去追求每一步都跟得上，而是在末端一次性把场型纠正过来。需要的长度，从「拍长的许多倍」变成了「一个透镜的尺寸」。</p>
+<p>实现方式并不相同：Luneburg 通过厚度分布调有效折射率，半透镜通过多段平面轮廓整形；后者并不要求同样的厚度渐变工艺。</p>
+<figure><svg width="504.000pt" height="268.000pt" viewBox="0.000 0.000 504.000 268.000" stroke-linejoin="round" stroke-linecap="butt" font-family="MiSans, sans-serif" font-weight="400" xmlns="http://www.w3.org/2000/svg" class="vector-image" role="img" aria-label="图 1：上为绝热锥，宽度变化一路都很慢；下为透镜，用相位把不同位置的光推向宽波导的模式。">
+ <defs>
+  </defs>
+ <g id="figure-7d5a322d460b-1-figure_1" transform="translate(0 16)">
+  <g id="figure-7d5a322d460b-1-patch_1">
+   <path d="M 0 252  L 504 252  L 504 0  L 0 0  z " fill="#ffffff"></path>
+  </g>
+  <g id="figure-7d5a322d460b-1-axes_1">
+   <g id="figure-7d5a322d460b-1-text_3">
+    <text x="22.68" y="244.622312" transform="rotate(-0 22.68 244.622312)" font-size="10px" font-family="MiSans, sans-serif" text-anchor="start" fill="#8a9bab">通用扩束示意；本例线性锥与 Luneburg 实际按宽到窄激励，半透镜按窄到宽激励</text>
+   </g>
+  </g>
+  <g id="figure-7d5a322d460b-1-axes_2">
+   <g id="figure-7d5a322d460b-1-line2d_2">
+    <path d="M 43.344 93.744  L 48.281924 93.743955  L 53.219848 93.74364  L 58.157772 93.742786  L 63.095696 93.741121  L 68.03362 93.738378  L 72.971544 93.734285  L 77.909468 93.728572  L 82.847392 93.720971  L 87.785316 93.711211  L 92.723241 93.699022  L 97.661165 93.684134  L 102.599089 93.666278  L 107.537013 93.645183  L 112.474937 93.62058  L 117.412861 93.592199  L 122.350785 93.559769  L 127.288709 93.523022  L 132.226633 93.481687  L 137.164557 93.435495  L 142.102481 93.384175  L 147.040405 93.327457  L 151.978329 93.265072  L 156.916253 93.19675  L 161.854177 93.122222  L 166.792101 93.041216  L 171.730025 92.953463  L 176.667949 92.858694  L 181.605873 92.756639  L 186.543797 92.647027  L 191.481722 92.529589  L 196.419646 92.404055  L 201.35757 92.270155  L 206.295494 92.127619  L 211.233418 91.976177  L 216.171342 91.81556  L 221.109266 91.645498  L 226.04719 91.46572  L 230.985114 91.275957  L 235.923038 91.075939  L 240.860962 90.865396  L 245.798886 90.644058  L 250.73681 90.411656  L 255.674734 90.167919  L 260.612658 89.912578  L 265.550582 89.645363  L 270.488506 89.366003  L 275.42643 89.07423  L 280.364354 88.769772  L 285.302278 88.452361  L 290.240203 88.121727  L 295.178127 87.777599  L 300.116051 87.419707  L 305.053975 87.047783  L 309.991899 86.661555  L 314.929823 86.260754  L 319.867747 85.845111  L 324.805671 85.414355  L 329.743595 84.968216  L 334.681519 84.506425  L 339.619443 84.028712  L 344.557367 83.534806  L 349.495291 83.024439  L 354.433215 82.497339  L 359.371139 81.953238  L 364.309063 81.391866  L 369.246987 80.812951  L 374.184911 80.216226  L 379.122835 79.601419  L 384.060759 78.968261  L 388.998684 78.316482  L 393.936608 77.645812  L 398.874532 76.955982  L 403.812456 76.246721  L 408.75038 75.517759  L 413.688304 74.768828  L 418.626228 73.999656  L 423.564152 73.209974  L 428.502076 72.399512  L 433.44 71.568  " clip-path="url(#figure-7d5a322d460b-1-p8ceee29354)" fill="none" stroke="#1f6fd0" stroke-width="2.2" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-7d5a322d460b-1-line2d_3">
+    <path d="M 43.344 97.776  L 48.281924 97.776045  L 53.219848 97.77636  L 58.157772 97.777214  L 63.095696 97.778879  L 68.03362 97.781622  L 72.971544 97.785715  L 77.909468 97.791428  L 82.847392 97.799029  L 87.785316 97.808789  L 92.723241 97.820978  L 97.661165 97.835866  L 102.599089 97.853722  L 107.537013 97.874817  L 112.474937 97.89942  L 117.412861 97.927801  L 122.350785 97.960231  L 127.288709 97.996978  L 132.226633 98.038313  L 137.164557 98.084505  L 142.102481 98.135825  L 147.040405 98.192543  L 151.978329 98.254928  L 156.916253 98.32325  L 161.854177 98.397778  L 166.792101 98.478784  L 171.730025 98.566537  L 176.667949 98.661306  L 181.605873 98.763361  L 186.543797 98.872973  L 191.481722 98.990411  L 196.419646 99.115945  L 201.35757 99.249845  L 206.295494 99.392381  L 211.233418 99.543823  L 216.171342 99.70444  L 221.109266 99.874502  L 226.04719 100.05428  L 230.985114 100.244043  L 235.923038 100.444061  L 240.860962 100.654604  L 245.798886 100.875942  L 250.73681 101.108344  L 255.674734 101.352081  L 260.612658 101.607422  L 265.550582 101.874637  L 270.488506 102.153997  L 275.42643 102.44577  L 280.364354 102.750228  L 285.302278 103.067639  L 290.240203 103.398273  L 295.178127 103.742401  L 300.116051 104.100293  L 305.053975 104.472217  L 309.991899 104.858445  L 314.929823 105.259246  L 319.867747 105.674889  L 324.805671 106.105645  L 329.743595 106.551784  L 334.681519 107.013575  L 339.619443 107.491288  L 344.557367 107.985194  L 349.495291 108.495561  L 354.433215 109.022661  L 359.371139 109.566762  L 364.309063 110.128134  L 369.246987 110.707049  L 374.184911 111.303774  L 379.122835 111.918581  L 384.060759 112.551739  L 388.998684 113.203518  L 393.936608 113.874188  L 398.874532 114.564018  L 403.812456 115.273279  L 408.75038 116.002241  L 413.688304 116.751172  L 418.626228 117.520344  L 423.564152 118.310026  L 428.502076 119.120488  L 433.44 119.952  " clip-path="url(#figure-7d5a322d460b-1-p8ceee29354)" fill="none" stroke="#1f6fd0" stroke-width="2.2" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-7d5a322d460b-1-line2d_4">
+    <path d="M 70.56 100.1952  L 70.56 91.3248  " clip-path="url(#figure-7d5a322d460b-1-p8ceee29354)" fill="none" stroke="#e8823c" stroke-opacity="0.55" stroke-width="1.2" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-7d5a322d460b-1-line2d_5">
+    <path d="M 139.5072 100.1952  L 139.5072 91.3248  " clip-path="url(#figure-7d5a322d460b-1-p8ceee29354)" fill="none" stroke="#e8823c" stroke-opacity="0.55" stroke-width="1.2" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-7d5a322d460b-1-line2d_6">
+    <path d="M 208.4544 100.1952  L 208.4544 91.3248  " clip-path="url(#figure-7d5a322d460b-1-p8ceee29354)" fill="none" stroke="#e8823c" stroke-opacity="0.55" stroke-width="1.2" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-7d5a322d460b-1-line2d_7">
+    <path d="M 277.4016 100.1952  L 277.4016 91.3248  " clip-path="url(#figure-7d5a322d460b-1-p8ceee29354)" fill="none" stroke="#e8823c" stroke-opacity="0.55" stroke-width="1.2" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-7d5a322d460b-1-line2d_8">
+    <path d="M 346.3488 100.1952  L 346.3488 91.3248  " clip-path="url(#figure-7d5a322d460b-1-p8ceee29354)" fill="none" stroke="#e8823c" stroke-opacity="0.55" stroke-width="1.2" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-7d5a322d460b-1-line2d_9">
+    <path d="M 415.296 100.1952  L 415.296 91.3248  " clip-path="url(#figure-7d5a322d460b-1-p8ceee29354)" fill="none" stroke="#e8823c" stroke-opacity="0.55" stroke-width="1.2" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-7d5a322d460b-1-text_4">
+    <text x="442.512" y="79.632" transform="rotate(-0 442.512 79.632)" font-size="11px" font-family="MiSans, sans-serif" text-anchor="end" fill="#e8823c">波前一路跟随</text>
+   </g>
+   <g id="figure-7d5a322d460b-1-text_5">
+    <text x="43.344" y="122.976" transform="rotate(-0 43.344 122.976)" font-size="11.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">绝热锥：每一点的宽度变化都足够慢</text>
+   </g>
+  </g>
+  <g id="figure-7d5a322d460b-1-axes_3">
+   <g id="figure-7d5a322d460b-1-patch_2">
+    <path d="M 189.729809 214.473956  C 200.763037 216.220555 212.706629 217.1232 224.784 217.1232  C 236.861371 217.1232 248.804963 216.220555 259.838191 214.473956  L 248.399455 205.339086  C 240.966544 206.515742 232.920334 207.12384 224.784 207.12384  C 216.647666 207.12384 208.601456 206.515742 201.168545 205.339086  z " clip-path="url(#figure-7d5a322d460b-1-pd19562b0d7)" fill="#1f6fd0" opacity="0.95"></path>
+   </g>
+   <g id="figure-7d5a322d460b-1-line2d_10">
+    <path d="M 43.344 186.48  L 170.352 186.48  " clip-path="url(#figure-7d5a322d460b-1-pd19562b0d7)" fill="none" stroke="#0b4c9c" stroke-width="4" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-7d5a322d460b-1-line2d_11">
+    <path d="M 261.072 196.1568  L 460.656 196.1568  " clip-path="url(#figure-7d5a322d460b-1-pd19562b0d7)" fill="none" stroke="#0b4c9c" stroke-opacity="0.35" stroke-width="10" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-7d5a322d460b-1-line2d_12">
+    <path d="M 261.072 176.8032  L 460.656 176.8032  " clip-path="url(#figure-7d5a322d460b-1-pd19562b0d7)" fill="none" stroke="#0b4c9c" stroke-opacity="0.35" stroke-width="10" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-7d5a322d460b-1-patch_3">
+    <path d="M 272.140266 186.573393  Q 356.326561 190.511933 439.061 194.38255  " fill="none" opacity="0.8" stroke="#e8823c" stroke-width="1.3" stroke-linecap="round"></path>
+    <path d="M 431.256671 190.01306  L 439.061 194.38255  L 430.882811 198.004319  z " fill="#e8823c" opacity="0.8" stroke="#e8823c" stroke-width="1.3" stroke-linecap="round"></path>
+   </g>
+   <g id="figure-7d5a322d460b-1-patch_4">
+    <path d="M 272.145527 186.48  Q 356.329222 186.48 439.059474 186.48  " fill="none" opacity="0.8" stroke="#e8823c" stroke-width="1.3" stroke-linecap="round"></path>
+    <path d="M 431.059474 182.48  L 439.059474 186.48  L 431.059474 190.48  z " fill="#e8823c" opacity="0.8" stroke="#e8823c" stroke-width="1.3" stroke-linecap="round"></path>
+   </g>
+   <g id="figure-7d5a322d460b-1-patch_5">
+    <path d="M 272.140266 186.386607  Q 356.326561 182.448067 439.061 178.57745  " fill="none" opacity="0.8" stroke="#e8823c" stroke-width="1.3" stroke-linecap="round"></path>
+    <path d="M 430.882811 174.955681  L 439.061 178.57745  L 431.256671 182.94694  z " fill="#e8823c" opacity="0.8" stroke="#e8823c" stroke-width="1.3" stroke-linecap="round"></path>
+   </g>
+   <g id="figure-7d5a322d460b-1-text_6">
+    <text x="43.344" y="221.1552" transform="rotate(-0 43.344 221.1552)" font-size="11.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">透镜：让不同位置的相位差刚好把光「推」到宽波导的模式上</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="figure-7d5a322d460b-1-paa749ff001">
+   <rect x="0" y="0" width="504" height="252"></rect>
+  </clipPath>
+  <clipPath id="figure-7d5a322d460b-1-p8ceee29354">
+   <rect x="25.2" y="65.52" width="453.6" height="60.48"></rect>
+  </clipPath>
+  <clipPath id="figure-7d5a322d460b-1-pd19562b0d7">
+   <rect x="25.2" y="146.16" width="453.6" height="80.64"></rect>
+  </clipPath>
+ </defs>
+ <g id="figure-7d5a322d460b-1-text_1">
+  <text x="22.68" y="19.689961" transform="rotate(-0 22.68 19.689961)" font-size="13.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4e9be8">原理示意</text>
+ </g>
+ <g id="figure-7d5a322d460b-1-text_2" transform="translate(0 8)">
+  <text x="22.68" y="42.410156" transform="rotate(-0 22.68 42.410156)" font-size="21px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a" font-weight="500">绝热靠「慢慢来」，透镜靠「把波前掰弯」</text>
+ </g>
+ <g id="figure-7d5a322d460b-1-line2d_1" transform="translate(0 8)">
+  <path d="M 22.68 53.424  L 65.52 53.424  " clip-path="url(#figure-7d5a322d460b-1-paa749ff001)" fill="none" stroke="#1f6fd0" stroke-width="3.2"></path>
+ </g>
+</svg><figcaption><span class="fig-tag">图 1</span>上为绝热锥，宽度变化一路都很慢；下为透镜，用相位把不同位置的光推向宽波导的模式。</figcaption></figure>
+<h2>02　三种做法，长度差 4 倍以上</h2>
+<p>同一个 Notebook 给了三个设计点：</p>
+<ul>
+<li><strong>线性锥</strong>：长度 50 μm，作为基准</li>
+<li><strong>Luneburg 透镜</strong>：直径 11 μm，通过渐变厚度让局部有效折射率按 Luneburg 分布</li>
+<li><strong>半透镜扩束</strong>：六段长度 1、3.61、0.05、0.7、3.11、1.03 μm，总长 <strong>9.5 μm</strong></li>
+</ul>
+<p>线性锥与 Luneburg 的波导厚 110 nm，按宽 10 μm 输入、0.5 μm 输出激励；半透镜厚 260 nm，按宽 0.45 μm 输入、9 μm 输出激励。这里的宽度均为几何宽度。前两者收束、后者扩束，源模场和输出监视器尺寸不同。</p>
+<figure><svg width="504.305pt" height="257.920pt" viewBox="-0.305 0.000 504.305 257.920" stroke-linejoin="round" stroke-linecap="butt" font-family="MiSans, sans-serif" font-weight="400" xmlns="http://www.w3.org/2000/svg" class="vector-image" role="img" aria-label="图 2：三个设计点的总通量传输谱。各自归一到模式源功率；半透镜与前两者的截面和端口不同，不作统一性能排名。">
+ <defs>
+  </defs>
+ <g id="figure-a4de671750ef-2-figure_1" transform="translate(0 16)">
+  <g id="figure-a4de671750ef-2-patch_1">
+   <path d="M 0 241.92  L 504 241.92  L 504 0  L 0 0  z " fill="#ffffff"></path>
+  </g>
+  <g id="figure-a4de671750ef-2-axes_1">
+   <g id="figure-a4de671750ef-2-text_3">
+    <text x="22.68" y="234.542312" transform="rotate(-0 22.68 234.542312)" font-size="10px" font-family="MiSans, sans-serif" text-anchor="start" fill="#8a9bab">总通量各自归一；半透镜截面及方向不同，不作统一排名</text>
+   </g>
+  </g>
+  <g id="figure-a4de671750ef-2-axes_2">
+   <g id="figure-a4de671750ef-2-patch_2">
+    <path d="M 55.44 176.6016  L 478.8 176.6016  L 478.8 72.576  L 55.44 72.576  z " fill="#ffffff"></path>
+   </g>
+   <g id="figure-a4de671750ef-2-matplotlib.axis_1">
+    <g id="figure-a4de671750ef-2-xtick_1">
+     <g id="figure-a4de671750ef-2-line2d_2">
+      <defs>
+       <path id="figure-a4de671750ef-2-m76c208e3a3" d="M 0 0  L 0 3  " stroke="#4a6076"></path>
+      </defs>
+      <g>
+       <use href="#figure-a4de671750ef-2-m76c208e3a3" x="55.44" y="176.6016" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-a4de671750ef-2-text_4">
+      <text x="55.44" y="192.8216" transform="rotate(-0 55.44 192.8216)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">1500</text>
+     </g>
+    </g>
+    <g id="figure-a4de671750ef-2-xtick_2">
+     <g id="figure-a4de671750ef-2-line2d_3">
+      <g>
+       <use href="#figure-a4de671750ef-2-m76c208e3a3" x="140.112" y="176.6016" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-a4de671750ef-2-text_5">
+      <text x="140.112" y="192.8216" transform="rotate(-0 140.112 192.8216)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">1520</text>
+     </g>
+    </g>
+    <g id="figure-a4de671750ef-2-xtick_3">
+     <g id="figure-a4de671750ef-2-line2d_4">
+      <g>
+       <use href="#figure-a4de671750ef-2-m76c208e3a3" x="224.784" y="176.6016" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-a4de671750ef-2-text_6">
+      <text x="224.784" y="192.8216" transform="rotate(-0 224.784 192.8216)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">1540</text>
+     </g>
+    </g>
+    <g id="figure-a4de671750ef-2-xtick_4">
+     <g id="figure-a4de671750ef-2-line2d_5">
+      <g>
+       <use href="#figure-a4de671750ef-2-m76c208e3a3" x="309.456" y="176.6016" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-a4de671750ef-2-text_7">
+      <text x="309.456" y="192.8216" transform="rotate(-0 309.456 192.8216)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">1560</text>
+     </g>
+    </g>
+    <g id="figure-a4de671750ef-2-xtick_5">
+     <g id="figure-a4de671750ef-2-line2d_6">
+      <g>
+       <use href="#figure-a4de671750ef-2-m76c208e3a3" x="394.128" y="176.6016" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-a4de671750ef-2-text_8">
+      <text x="394.128" y="192.8216" transform="rotate(-0 394.128 192.8216)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">1580</text>
+     </g>
+    </g>
+    <g id="figure-a4de671750ef-2-xtick_6">
+     <g id="figure-a4de671750ef-2-line2d_7">
+      <g>
+       <use href="#figure-a4de671750ef-2-m76c208e3a3" x="478.8" y="176.6016" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-a4de671750ef-2-text_9">
+      <text x="478.8" y="192.8216" transform="rotate(-0 478.8 192.8216)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">1600</text>
+     </g>
+    </g>
+    <g id="figure-a4de671750ef-2-text_10">
+     <text x="267.12" y="208.663006" transform="rotate(-0 267.12 208.663006)" font-size="11.5px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">波长 (nm)</text>
+    </g>
+   </g>
+   <g id="figure-a4de671750ef-2-matplotlib.axis_2">
+    <g id="figure-a4de671750ef-2-ytick_1">
+     <g id="figure-a4de671750ef-2-line2d_8">
+      <defs>
+       <path id="figure-a4de671750ef-2-m074c91f762" d="M 0 0  L -3 0  " stroke="#4a6076"></path>
+      </defs>
+      <g>
+       <use href="#figure-a4de671750ef-2-m074c91f762" x="55.44" y="155.79648" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-a4de671750ef-2-text_11">
+      <text x="48.94" y="160.65648" transform="rotate(-0 48.94 160.65648)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="end" fill="#4a6076">-1.00</text>
+     </g>
+    </g>
+    <g id="figure-a4de671750ef-2-ytick_2">
+     <g id="figure-a4de671750ef-2-line2d_9">
+      <g>
+       <use href="#figure-a4de671750ef-2-m074c91f762" x="55.44" y="129.79008" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-a4de671750ef-2-text_12">
+      <text x="48.94" y="134.65008" transform="rotate(-0 48.94 134.65008)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="end" fill="#4a6076">-0.75</text>
+     </g>
+    </g>
+    <g id="figure-a4de671750ef-2-ytick_3">
+     <g id="figure-a4de671750ef-2-line2d_10">
+      <g>
+       <use href="#figure-a4de671750ef-2-m074c91f762" x="55.44" y="103.78368" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-a4de671750ef-2-text_13">
+      <text x="48.94" y="108.64368" transform="rotate(-0 48.94 108.64368)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="end" fill="#4a6076">-0.50</text>
+     </g>
+    </g>
+    <g id="figure-a4de671750ef-2-ytick_4">
+     <g id="figure-a4de671750ef-2-line2d_11">
+      <g>
+       <use href="#figure-a4de671750ef-2-m074c91f762" x="55.44" y="77.77728" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-a4de671750ef-2-text_14">
+      <text x="48.94" y="82.63728" transform="rotate(-0 48.94 82.63728)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="end" fill="#4a6076">-0.25</text>
+     </g>
+    </g>
+    <g id="figure-a4de671750ef-2-text_15">
+     <text x="16.155859" y="124.5888" transform="rotate(-90 16.155859 124.5888)" font-size="11.5px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">总通量传输 (dB)</text>
+    </g>
+   </g>
+   <g id="figure-a4de671750ef-2-line2d_12">
+    <path d="M 55.44 127.206977  L 59.6736 127.360673  L 63.9072 127.517376  L 68.1408 127.674581  L 72.3744 127.839555  L 76.608 128.011573  L 80.8416 128.175742  L 85.0752 128.346736  L 89.3088 128.515016  L 93.5424 128.690189  L 97.776 128.861959  L 102.0096 129.034523  L 106.2432 129.220833  L 110.4768 129.394531  L 114.7104 129.575509  L 118.944 129.746014  L 123.1776 129.932869  L 127.4112 130.118144  L 131.6448 130.30769  L 135.8784 130.494719  L 140.112 130.690677  L 144.3456 130.88315  L 148.5792 131.084316  L 152.8128 131.288334  L 157.0464 131.493506  L 161.28 131.70667  L 165.5136 131.921898  L 169.7472 132.133401  L 173.9808 132.359033  L 178.2144 132.582757  L 182.448 132.810609  L 186.6816 133.039553  L 190.9152 133.270258  L 195.1488 133.50224  L 199.3824 133.743665  L 203.616 133.979566  L 207.8496 134.219057  L 212.0832 134.462101  L 216.3168 134.699514  L 220.5504 134.944598  L 224.784 135.192205  L 229.0176 135.437617  L 233.2512 135.687512  L 237.4848 135.941338  L 241.7184 136.191959  L 245.952 136.452853  L 250.1856 136.710133  L 254.4192 136.974457  L 258.6528 137.243158  L 262.8864 137.509676  L 267.12 137.784924  L 271.3536 138.064507  L 275.5872 138.345045  L 279.8208 138.632155  L 284.0544 138.921441  L 288.288 139.209673  L 292.5216 139.506549  L 296.7552 139.805725  L 300.9888 140.108962  L 305.2224 140.413079  L 309.456 140.718425  L 313.6896 141.028086  L 317.9232 141.341857  L 322.1568 141.654339  L 326.3904 141.96648  L 330.624 142.285045  L 334.8576 142.60157  L 339.0912 142.918875  L 343.3248 143.243337  L 347.5584 143.565839  L 351.792 143.889705  L 356.0256 144.217539  L 360.2592 144.541864  L 364.4928 144.879866  L 368.7264 145.214633  L 372.96 145.554062  L 377.1936 145.888909  L 381.4272 146.239932  L 385.6608 146.589028  L 389.8944 146.940163  L 394.128 147.301151  L 398.3616 147.661698  L 402.5952 148.028099  L 406.8288 148.393266  L 411.0624 148.77017  L 415.296 149.142375  L 419.5296 149.527867  L 423.7632 149.911746  L 427.9968 150.29859  L 432.2304 150.685396  L 436.464 151.072277  L 440.6976 151.464955  L 444.9312 151.860088  L 449.1648 152.254397  L 453.3984 152.654807  L 457.632 153.05102  L 461.8656 153.445087  L 466.0992 153.841795  L 470.3328 154.252733  L 474.5664 154.657924  L 478.8 155.059115  " clip-path="url(#figure-a4de671750ef-2-p35389a4802)" fill="none" stroke="#8a9bab" stroke-width="2.2" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-a4de671750ef-2-line2d_13">
+    <path d="M 55.44 108.867191  L 59.6736 109.124911  L 63.9072 109.153829  L 68.1408 109.024551  L 72.3744 108.817662  L 76.608 108.621927  L 80.8416 108.510103  L 85.0752 108.545768  L 89.3088 108.749625  L 93.5424 109.123503  L 97.776 109.638435  L 102.0096 110.254222  L 106.2432 110.925981  L 110.4768 111.613953  L 114.7104 112.293704  L 118.944 112.959901  L 123.1776 113.613312  L 127.4112 114.25999  L 131.6448 114.898248  L 135.8784 115.526002  L 140.112 116.135533  L 144.3456 116.722253  L 148.5792 117.285238  L 152.8128 117.823613  L 157.0464 118.337416  L 161.28 118.823516  L 165.5136 119.271105  L 169.7472 119.669723  L 173.9808 120.014032  L 178.2144 120.303665  L 182.448 120.559246  L 186.6816 120.805997  L 190.9152 121.073192  L 195.1488 121.386288  L 199.3824 121.755832  L 203.616 122.183028  L 207.8496 122.667038  L 212.0832 123.2172  L 216.3168 123.850274  L 220.5504 124.600722  L 224.784 125.50592  L 229.0176 126.574839  L 233.2512 127.780515  L 237.4848 129.048449  L 241.7184 130.27174  L 245.952 131.321476  L 250.1856 132.092806  L 254.4192 132.540476  L 258.6528 132.684884  L 262.8864 132.617702  L 267.12 132.467069  L 271.3536 132.368439  L 275.5872 132.418204  L 279.8208 132.659859  L 284.0544 133.073984  L 288.288 133.608992  L 292.5216 134.203543  L 296.7552 134.831831  L 300.9888 135.489049  L 305.2224 136.221826  L 309.456 137.091539  L 313.6896 138.137002  L 317.9232 139.364491  L 322.1568 140.719603  L 326.3904 142.107936  L 330.624 143.407431  L 334.8576 144.506713  L 339.0912 145.338833  L 343.3248 145.892189  L 347.5584 146.210022  L 351.792 146.381543  L 356.0256 146.504008  L 360.2592 146.664208  L 364.4928 146.916639  L 368.7264 147.274812  L 372.96 147.727838  L 377.1936 148.246583  L 381.4272 148.809822  L 385.6608 149.406084  L 389.8944 150.040485  L 394.128 150.731924  L 398.3616 151.501692  L 402.5952 152.357944  L 406.8288 153.295508  L 411.0624 154.292131  L 415.296 155.309909  L 419.5296 156.304703  L 423.7632 157.240072  L 427.9968 158.105339  L 432.2304 158.879522  L 436.464 159.58395  L 440.6976 160.239482  L 444.9312 160.86901  L 449.1648 161.487786  L 453.3984 162.108881  L 457.632 162.729951  L 461.8656 163.355324  L 466.0992 163.976915  L 470.3328 164.602536  L 474.5664 165.239157  L 478.8 165.900369  " clip-path="url(#figure-a4de671750ef-2-p35389a4802)" fill="none" stroke="#1f6fd0" stroke-width="2.6" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-a4de671750ef-2-line2d_14">
+    <path d="M 55.44 97.108549  L 59.6736 98.329093  L 63.9072 99.467346  L 68.1408 100.440404  L 72.3744 101.179118  L 76.608 101.634696  L 80.8416 101.783267  L 85.0752 101.626366  L 89.3088 101.189572  L 93.5424 100.52463  L 97.776 99.694963  L 102.0096 98.771672  L 106.2432 97.826439  L 110.4768 96.921033  L 114.7104 96.108144  L 118.944 95.425358  L 123.1776 94.89775  L 127.4112 94.536883  L 131.6448 94.345489  L 135.8784 94.320011  L 140.112 94.453621  L 144.3456 94.732649  L 148.5792 95.144005  L 152.8128 95.670953  L 157.0464 96.291695  L 161.28 96.980821  L 165.5136 97.710823  L 169.7472 98.449381  L 173.9808 99.161182  L 178.2144 99.816872  L 182.448 100.383035  L 186.6816 100.841443  L 190.9152 101.177915  L 195.1488 101.390198  L 199.3824 101.487737  L 203.616 101.484429  L 207.8496 101.406099  L 212.0832 101.277059  L 216.3168 101.121745  L 220.5504 100.963331  L 224.784 100.814847  L 229.0176 100.688888  L 233.2512 100.580006  L 237.4848 100.487822  L 241.7184 100.401571  L 245.952 100.310862  L 250.1856 100.199106  L 254.4192 100.05219  L 258.6528 99.859376  L 262.8864 99.607484  L 267.12 99.288721  L 271.3536 98.891449  L 275.5872 98.411131  L 279.8208 97.840991  L 284.0544 97.179231  L 288.288 96.424309  L 292.5216 95.580892  L 296.7552 94.660485  L 300.9888 93.682262  L 305.2224 92.666471  L 309.456 91.646699  L 313.6896 90.657008  L 317.9232 89.73705  L 322.1568 88.924047  L 326.3904 88.25253  L 330.624 87.751301  L 334.8576 87.437557  L 339.0912 87.317868  L 343.3248 87.386277  L 347.5584 87.622841  L 351.792 87.99786  L 356.0256 88.470356  L 360.2592 88.9939  L 364.4928 89.522591  L 368.7264 90.006967  L 372.96 90.409875  L 377.1936 90.691467  L 381.4272 90.835983  L 385.6608 90.829407  L 389.8944 90.669747  L 394.128 90.37028  L 398.3616 89.948125  L 402.5952 89.428658  L 406.8288 88.837228  L 411.0624 88.200769  L 415.296 87.541777  L 419.5296 86.887935  L 423.7632 86.249568  L 427.9968 85.649598  L 432.2304 85.095561  L 436.464 84.598982  L 440.6976 84.171684  L 444.9312 83.83113  L 449.1648 83.584031  L 453.3984 83.448689  L 457.632 83.441583  L 461.8656 83.579843  L 466.0992 83.866745  L 470.3328 84.310049  L 474.5664 84.908268  L 478.8 85.644607  " clip-path="url(#figure-a4de671750ef-2-p35389a4802)" fill="none" stroke="#e8823c" stroke-width="2.6" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-a4de671750ef-2-patch_3">
+    <path d="M 55.44 176.6016  L 55.44 72.576  " fill="none" stroke="#d6e2ec" stroke-linejoin="miter" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-a4de671750ef-2-patch_4">
+    <path d="M 478.8 176.6016  L 478.8 72.576  " fill="none" stroke="#d6e2ec" stroke-linejoin="miter" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-a4de671750ef-2-patch_5">
+    <path d="M 55.44 176.6016  L 478.8 176.6016  " fill="none" stroke="#d6e2ec" stroke-linejoin="miter" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-a4de671750ef-2-patch_6">
+    <path d="M 55.44 72.576  L 478.8 72.576  " fill="none" stroke="#d6e2ec" stroke-linejoin="miter" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-a4de671750ef-2-legend_1">
+    <g id="figure-a4de671750ef-2-line2d_15">
+     <path d="M 65.34 129.607538  L 76.34 129.607538  L 87.34 129.607538  " fill="none" stroke="#8a9bab" stroke-width="2.2" stroke-linecap="square"></path>
+    </g>
+    <g id="figure-a4de671750ef-2-text_16">
+     <text x="96.14" y="133.457538" transform="rotate(-0 96.14 133.457538)" font-size="11px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">线性锥 50 μm</text>
+    </g>
+    <g id="figure-a4de671750ef-2-line2d_16">
+     <path d="M 65.34 145.492225  L 76.34 145.492225  L 87.34 145.492225  " fill="none" stroke="#1f6fd0" stroke-width="2.6" stroke-linecap="square"></path>
+    </g>
+    <g id="figure-a4de671750ef-2-text_17">
+     <text x="96.14" y="149.342225" transform="rotate(-0 96.14 149.342225)" font-size="11px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">Luneburg 11 μm</text>
+    </g>
+    <g id="figure-a4de671750ef-2-line2d_17">
+     <path d="M 65.34 161.376913  L 76.34 161.376913  L 87.34 161.376913  " fill="none" stroke="#e8823c" stroke-width="2.6" stroke-linecap="square"></path>
+    </g>
+    <g id="figure-a4de671750ef-2-text_18">
+     <text x="96.14" y="165.226912" transform="rotate(-0 96.14 165.226912)" font-size="11px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">半透镜 9.5 μm</text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="figure-a4de671750ef-2-p560971a8e8">
+   <rect x="0" y="0" width="504" height="241.92"></rect>
+  </clipPath>
+  <clipPath id="figure-a4de671750ef-2-p35389a4802">
+   <rect x="55.44" y="72.576" width="423.36" height="104.0256"></rect>
+  </clipPath>
+ </defs>
+ <g id="figure-a4de671750ef-2-text_1">
+  <text x="22.68" y="19.689961" transform="rotate(-0 22.68 19.689961)" font-size="13.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4e9be8">本次求解</text>
+ </g>
+ <g id="figure-a4de671750ef-2-text_2" transform="translate(0 8)">
+  <text x="22.68" y="42.76" transform="rotate(-0 22.68 42.76)" font-size="22px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a" font-weight="600">线性锥与两类紧凑转换器的传输谱</text>
+ </g>
+ <g id="figure-a4de671750ef-2-line2d_1" transform="translate(0 8)">
+  <path d="M 22.68 53.424  L 65.52 53.424  " clip-path="url(#figure-a4de671750ef-2-p560971a8e8)" fill="none" stroke="#1f6fd0" stroke-width="3.2"></path>
+ </g>
+</svg><figcaption><span class="fig-tag">图 2</span>三个设计点的总通量传输谱。各自归一到模式源功率；半透镜与前两者的截面和端口不同，不作统一性能排名。</figcaption></figure>
+<p>1500–1600 nm 内，三者的表现是：</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>方案</th>
+<th>长度</th>
+<th>1550 nm 插损</th>
+<th>全band 最差</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>线性锥</td>
+<td>50 μm</td>
+<td>−0.83 dB</td>
+<td>−0.99 dB</td>
+</tr>
+<tr>
+<td>Luneburg 透镜</td>
+<td>11 μm</td>
+<td>−0.78 dB</td>
+<td>−1.10 dB</td>
+</tr>
+<tr>
+<td>半透镜扩束</td>
+<td>9.5 μm</td>
+<td><strong>−0.46 dB</strong></td>
+<td>−0.48 dB</td>
+</tr>
+</tbody>
+</table></div>
+<p>表中半透镜的总通量曲线较平，但它输出到宽多模波导。1550 nm 仅取 TE0 的传输为 <strong>−1.45 dB</strong>，不能用总通量数字证明它优于单模收束器。</p>
+<h2>03　场图上能看出两种机制</h2>
+<figure><img alt="图 3：三种结构的 |Ey|。线性锥与 Luneburg 从宽到窄，半透镜从窄到宽；各图坐标和色标分别显示，不按亮度排名。" src="../../../../../assets/a7c853720b2943fc7b92e26abb528a0ee6cd415edabb971d3c5586e521a3039c.png"><figcaption><span class="fig-tag">图 3</span>三种结构的 |Ey|。线性锥与 Luneburg 从宽到窄，半透镜从窄到宽；各图坐标和色标分别显示，不按亮度排名。</figcaption></figure>
+<figure><img alt="动画 1：本次 FDTD 线性锥的 GUI 原生场动画，field 监视器，XY 平面 z = 0.055 μm，1550 nm，Re(Ey)。3D Carpet 起伏表示场值；播放展示单频场的相位变化，不是真实脉冲传播录像。" src="../../../../../assets/0cf8c4e1d4d13d065372112a07547f1764d81c235256433222f33f329b3e21cc.gif"><figcaption><span class="fig-tag">动画 1</span>本次 FDTD 线性锥的 GUI 原生场动画，field 监视器，XY 平面 z = 0.055 μm，1550 nm，Re(Ey)。3D Carpet 起伏表示场值；播放展示单频场的相位变化，不是真实脉冲传播录像。</figcaption></figure>
+<figure><img alt="动画 2：本次 FDTD Luneburg 转换器的 GUI 原生场动画，field 监视器，XY 平面 z = 0.055 μm，1550 nm，Re(Ey)。可观察该平面内的干涉图样；起伏表示场值，不代表结构形变。" src="../../../../../assets/28eae20870bd0eb9e17c601a282818770352193cee620c6bfa3fda4f82079649.gif"><figcaption><span class="fig-tag">动画 2</span>本次 FDTD Luneburg 转换器的 GUI 原生场动画，field 监视器，XY 平面 z = 0.055 μm，1550 nm，Re(Ey)。可观察该平面内的干涉图样；起伏表示场值，不代表结构形变。</figcaption></figure>
+<figure><img alt="动画 3：本次 FDTD 半透镜转换器的 GUI 原生场动画，field 监视器，XY 平面 z = 0.13 μm，1550 nm，Re(Ey)。该监视器高度与前两图不同，Carpet 高度不作跨图定量比较；播放为单频相位演示。" src="../../../../../assets/bd85f91e254ce115695df34a140b4023007c4dea9f47df2a3c80c4813b50afd9.gif"><figcaption><span class="fig-tag">动画 3</span>本次 FDTD 半透镜转换器的 GUI 原生场动画，field 监视器，XY 平面 z = 0.13 μm，1550 nm，Re(Ey)。该监视器高度与前两图不同，Carpet 高度不作跨图定量比较；播放为单频相位演示。</figcaption></figure>
+<p>三张图的差别很直观。</p>
+<p>线性锥的场随结构收束；Luneburg 通过渐变有效折射率组织波前；半透镜通过多段轮廓扩束。Luneburg 使用 TE0 模式源，不能仅凭场条纹就认定输入端同时激励了多个导模；反射、干涉与局部模式转换需要端口分解来区分。</p>
+<p>顺带说一句：Luneburg 的谱线在三者里起伏最大（−0.55 到 −1.10 dB）。它对波长更敏感，因为厚度渐变带来的相位是按设计波长算的。</p>
+<h2>04　出口 9 μm 宽，光其实分成好几个模式</h2>
+<p>这里有个容易被忽略的口径问题。</p>
+<p>半透镜的输出波导宽 9 μm。这么宽的波导支持多个模式，所以「插损」只是总功率比，还需要看功率落在哪个模式上。</p>
+<figure><svg width="504.000pt" height="257.920pt" viewBox="0.000 0.000 504.000 257.920" stroke-linejoin="round" stroke-linecap="butt" font-family="MiSans, sans-serif" font-weight="400" xmlns="http://www.w3.org/2000/svg" class="vector-image" role="img" aria-label="图 4：截面 |Ey|² 的二阶矩等效直径 D=4σ，仅截取实际转换段，器件起点对齐为 0。收束与扩束方向不同，不能解读成同一任务的快慢对照。">
+ <defs>
+  </defs>
+ <g id="figure-d6403405f38d-7-figure_1" transform="translate(0 16)">
+  <g id="figure-d6403405f38d-7-patch_1">
+   <path d="M 0 241.92  L 504 241.92  L 504 0  L 0 0  z " fill="#ffffff"></path>
+  </g>
+  <g id="figure-d6403405f38d-7-axes_1">
+   <g id="figure-d6403405f38d-7-text_3">
+    <text x="22.68" y="234.542312" transform="rotate(-0 22.68 234.542312)" font-size="10px" font-family="MiSans, sans-serif" text-anchor="start" fill="#8a9bab">器件起点对齐到 0；D=4σ 为 |Ey|² 二阶矩等效直径，不等于几何线宽</text>
+   </g>
+  </g>
+  <g id="figure-d6403405f38d-7-axes_2">
+   <g id="figure-d6403405f38d-7-patch_2">
+    <path d="M 60.48 174.1824  L 473.76 174.1824  L 473.76 72.576  L 60.48 72.576  z " fill="#ffffff"></path>
+   </g>
+   <g id="figure-d6403405f38d-7-matplotlib.axis_1">
+    <g id="figure-d6403405f38d-7-xtick_1">
+     <g id="figure-d6403405f38d-7-line2d_2">
+      <defs>
+       <path id="figure-d6403405f38d-7-mc15efbda02" d="M 0 0  L 0 3  " stroke="#4a6076"></path>
+      </defs>
+      <g>
+       <use href="#figure-d6403405f38d-7-mc15efbda02" x="60.48" y="174.1824" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-d6403405f38d-7-text_4">
+      <text x="60.48" y="190.4024" transform="rotate(-0 60.48 190.4024)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">0</text>
+     </g>
+    </g>
+    <g id="figure-d6403405f38d-7-xtick_2">
+     <g id="figure-d6403405f38d-7-line2d_3">
+      <g>
+       <use href="#figure-d6403405f38d-7-mc15efbda02" x="143.136" y="174.1824" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-d6403405f38d-7-text_5">
+      <text x="143.136" y="190.4024" transform="rotate(-0 143.136 190.4024)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">10</text>
+     </g>
+    </g>
+    <g id="figure-d6403405f38d-7-xtick_3">
+     <g id="figure-d6403405f38d-7-line2d_4">
+      <g>
+       <use href="#figure-d6403405f38d-7-mc15efbda02" x="225.792" y="174.1824" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-d6403405f38d-7-text_6">
+      <text x="225.792" y="190.4024" transform="rotate(-0 225.792 190.4024)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">20</text>
+     </g>
+    </g>
+    <g id="figure-d6403405f38d-7-xtick_4">
+     <g id="figure-d6403405f38d-7-line2d_5">
+      <g>
+       <use href="#figure-d6403405f38d-7-mc15efbda02" x="308.448" y="174.1824" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-d6403405f38d-7-text_7">
+      <text x="308.448" y="190.4024" transform="rotate(-0 308.448 190.4024)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">30</text>
+     </g>
+    </g>
+    <g id="figure-d6403405f38d-7-xtick_5">
+     <g id="figure-d6403405f38d-7-line2d_6">
+      <g>
+       <use href="#figure-d6403405f38d-7-mc15efbda02" x="391.104" y="174.1824" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-d6403405f38d-7-text_8">
+      <text x="391.104" y="190.4024" transform="rotate(-0 391.104 190.4024)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">40</text>
+     </g>
+    </g>
+    <g id="figure-d6403405f38d-7-xtick_6">
+     <g id="figure-d6403405f38d-7-line2d_7">
+      <g>
+       <use href="#figure-d6403405f38d-7-mc15efbda02" x="473.76" y="174.1824" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-d6403405f38d-7-text_9">
+      <text x="473.76" y="190.4024" transform="rotate(-0 473.76 190.4024)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">50</text>
+     </g>
+    </g>
+    <g id="figure-d6403405f38d-7-text_10">
+     <text x="267.12" y="206.382166" transform="rotate(-0 267.12 206.382166)" font-size="11.5px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">距器件起点的距离 (μm)</text>
+    </g>
+   </g>
+   <g id="figure-d6403405f38d-7-matplotlib.axis_2">
+    <g id="figure-d6403405f38d-7-ytick_1">
+     <g id="figure-d6403405f38d-7-line2d_8">
+      <defs>
+       <path id="figure-d6403405f38d-7-m81c1285a8d" d="M 0 0  L -3 0  " stroke="#4a6076"></path>
+      </defs>
+      <g>
+       <use href="#figure-d6403405f38d-7-m81c1285a8d" x="60.48" y="174.1824" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-d6403405f38d-7-text_11">
+      <text x="53.98" y="179.0424" transform="rotate(-0 53.98 179.0424)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="end" fill="#4a6076">0</text>
+     </g>
+    </g>
+    <g id="figure-d6403405f38d-7-ytick_2">
+     <g id="figure-d6403405f38d-7-line2d_9">
+      <g>
+       <use href="#figure-d6403405f38d-7-m81c1285a8d" x="60.48" y="127.997673" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-d6403405f38d-7-text_12">
+      <text x="53.98" y="132.857673" transform="rotate(-0 53.98 132.857673)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="end" fill="#4a6076">5</text>
+     </g>
+    </g>
+    <g id="figure-d6403405f38d-7-ytick_3">
+     <g id="figure-d6403405f38d-7-line2d_10">
+      <g>
+       <use href="#figure-d6403405f38d-7-m81c1285a8d" x="60.48" y="81.812945" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-d6403405f38d-7-text_13">
+      <text x="53.98" y="86.672945" transform="rotate(-0 53.98 86.672945)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="end" fill="#4a6076">10</text>
+     </g>
+    </g>
+    <g id="figure-d6403405f38d-7-text_14">
+     <text x="35.140781" y="123.3792" transform="rotate(-90 35.140781 123.3792)" font-size="11.5px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">等效直径 (μm)</text>
+    </g>
+   </g>
+   <g id="figure-d6403405f38d-7-line2d_11">
+    <path d="M 60.55018 107.352745  L 61.470312 107.234388  L 63.678631 107.305352  L 64.414738 107.232642  L 66.43903 107.338834  L 67.359163 107.236024  L 69.199428 107.376114  L 70.303588 107.241044  L 71.959827 107.412328  L 73.248013 107.253131  L 74.720225 107.448152  L 76.192438 107.271988  L 77.66465 107.459985  L 79.136863 107.297215  L 80.425049 107.495899  L 82.265314 107.362689  L 83.185447 107.524171  L 84.10558 107.362584  L 84.841686 107.322308  L 86.497925 107.506553  L 87.602085 107.338267  L 89.626377 107.493027  L 90.54651 107.37915  L 92.386776 107.566146  L 93.490935 107.423646  L 95.331201 107.603654  L 96.251333 107.463367  L 96.98744 107.601183  L 97.723546 107.720347  L 98.643679 107.56723  L 99.379785 107.53561  L 101.036024 107.734007  L 102.140184 107.578403  L 104.164476 107.753418  L 105.084609 107.648205  L 107.108901 107.819272  L 108.029034 107.730807  L 109.869299 107.933497  L 110.789432 107.801914  L 111.525538 107.947383  L 112.261645 108.077272  L 113.181778 107.936106  L 113.917884 107.914406  L 115.574123 108.136982  L 116.678282 107.993745  L 118.702574 108.197438  L 119.622707 108.103853  L 121.647 108.302113  L 122.567132 108.219862  L 124.407398 108.452373  L 125.327531 108.333707  L 126.063637 108.490546  L 126.799743 108.635272  L 127.719876 108.509608  L 128.455982 108.495428  L 130.112222 108.749259  L 131.216381 108.620345  L 133.240673 108.856688  L 134.160806 108.770351  L 136.185098 109.003029  L 137.105231 108.93535  L 138.945497 109.202619  L 139.86563 109.093357  L 140.601736 109.267082  L 141.337842 109.427286  L 142.257975 109.312373  L 142.994081 109.312339  L 144.65032 109.598266  L 145.75448 109.482886  L 146.674613 109.735098  L 147.410719 109.812954  L 148.882931 109.725698  L 150.355144 110.019306  L 151.64333 109.908176  L 153.483595 110.207958  L 154.403728 110.113978  L 155.139835 110.299071  L 155.875941 110.471942  L 156.612047 110.402599  L 157.348153 110.352394  L 158.08426 110.553899  L 158.820366 110.720162  L 159.740499 110.617304  L 160.476605 110.648234  L 161.948818 110.979691  L 163.42103 110.92205  L 164.893243 111.244805  L 166.181429 111.165271  L 168.021694 111.501973  L 168.941827 111.428376  L 169.677933 111.63193  L 170.41404 111.81673  L 171.334172 111.735326  L 172.070279 111.765976  L 173.726518 112.110065  L 174.830677 112.042767  L 176.854969 112.392679  L 177.775102 112.36938  L 179.615368 112.738204  L 180.719527 112.706627  L 182.559793 113.069426  L 183.479926 113.027307  L 184.400059 113.308053  L 185.136165 113.442903  L 186.792404 113.486429  L 187.896563 113.804644  L 189.920856 113.951739  L 190.840988 114.196151  L 192.681254 114.29963  L 193.601387 114.584594  L 194.52152 114.55608  L 195.257626 114.607652  L 196.913865 115.011117  L 198.202051 115.033681  L 199.674264 115.431812  L 201.146476 115.475329  L 202.618689 115.865456  L 204.090901 115.92773  L 205.379087 116.302526  L 207.035326 116.390092  L 208.323512 116.752086  L 209.979751 116.855471  L 211.083911 117.194118  L 213.108203 117.40417  L 214.028336 117.666198  L 215.868601 117.830297  L 216.972761 118.154444  L 218.629 118.274563  L 219.917186 118.657554  L 221.573425 118.799304  L 222.677584 119.160163  L 224.701877 119.421173  L 225.622009 119.702797  L 227.462275 119.915715  L 228.566434 120.266183  L 230.222674 120.438973  L 231.510859 120.859154  L 233.167099 121.060256  L 234.271258 121.453164  L 236.29555 121.78175  L 237.215683 122.085519  L 239.055949 122.356522  L 240.160108 122.728741  L 241.816347 122.949158  L 243.104533 123.387263  L 244.760772 123.628575  L 245.864932 124.029794  L 247.889224 124.397657  L 248.809357 124.705522  L 250.649622 125.012261  L 251.753782 125.386976  L 253.410021 125.634815  L 254.698207 126.068142  L 256.170419 126.253012  L 257.642632 126.73472  L 259.114844 126.929036  L 260.40303 127.373409  L 262.059269 127.598896  L 263.347455 128.031299  L 265.003694 128.269874  L 266.107854 128.662959  L 268.132146 129.017276  L 269.052279 129.32155  L 270.892545 129.609664  L 271.996704 129.985554  L 273.652943 130.211431  L 274.941129 130.659865  L 276.413342 130.827879  L 277.885554 131.337496  L 279.357767 131.507369  L 280.829979 132.008579  L 282.118165 132.125906  L 283.958431 132.706437  L 284.878564 132.778514  L 285.61467 133.091353  L 286.350776 133.38454  L 287.270909 133.452546  L 288.007015 133.610923  L 289.663254 134.229107  L 290.767414 134.355263  L 292.791706 135.073437  L 293.711839 135.226924  L 295.736131 135.979069  L 296.472237 136.088601  L 297.208344 136.449185  L 298.128476 136.865763  L 299.784715 137.255364  L 301.072901 137.894725  L 302.729141 138.328317  L 303.8333 138.923032  L 305.857592 139.550911  L 306.777725 140.02316  L 308.802017 140.672258  L 309.72215 141.136384  L 311.562416 141.717462  L 312.666575 142.306265  L 314.322814 142.834893  L 315.611 143.553209  L 317.083213 144.029175  L 318.739452 144.916117  L 319.843611 145.26743  L 321.867903 146.323508  L 322.788036 146.675198  L 324.812328 147.752445  L 325.732461 148.127289  L 327.572727 149.152532  L 328.49286 149.520632  L 330.885205 150.789401  L 331.805338 151.286865  L 332.909497 151.968899  L 334.749763 152.843494  L 335.853922 153.484017  L 337.694188 154.335771  L 338.798347 154.91013  L 340.454587 155.603178  L 341.742773 156.205079  L 343.214985 156.75244  L 344.503171 157.304544  L 346.343437 157.930151  L 347.447596 158.295673  L 349.103835 158.750554  L 350.207995 159.04773  L 352.04826 159.426814  L 353.15242 159.613791  L 354.992685 159.853651  L 356.096845 159.917485  L 361.617642 159.750151  L 366.954412 158.76073  L 372.475209 156.915027  L 374.499501 156.174461  L 381.860564 153.85375  L 384.989016 153.28227  L 387.565387 153.169081  L 391.245919 153.52205  L 395.110477 153.938885  L 397.134769 154.15153  L 399.895167 154.516733  L 402.103486 155.024675  L 404.679858 156.146292  L 405.784018 156.959323  L 407.80831 158.494811  L 411.672868 161.998832  L 414.24924 163.892885  L 415.721452 164.711867  L 417.377691 165.482666  L 418.665877 165.757309  L 419.58601 165.792467  L 420.506143 165.597771  L 421.794329 165.091955  L 423.266541 164.203301  L 427.131099 161.876496  L 428.971365 161.055432  L 430.443577 160.680863  L 432.099816 160.582621  L 433.756056 160.958868  L 434.492162 161.313326  L 436.700481 162.924362  L 437.988667 164.208443  L 439.460879 165.776194  L 440.933092 167.036598  L 441.669198 167.294604  L 442.405304 167.258633  L 443.14141 166.924249  L 444.24557 166.042322  L 446.637915 164.170243  L 447.558048 163.73312  L 448.294154 163.651748  L 449.398314 163.652075  L 449.950393 163.879488  L 452.158712 165.363901  L 454.183004 166.887814  L 455.287164 167.340229  L 456.207297 167.517159  L 457.311456 167.449496  L 461.728094 167.000638  L 463.568359 167.202687  L 464.488492 167.393132  L 465.592651 167.642178  L 466.512784 167.744332  L 467.432917 167.88359  L 468.35305 167.988721  L 470.377342 167.933139  L 471.297475 167.771561  L 472.217608 167.59247  L 472.953714 167.462854  L 473.68982 167.481108  L 473.68982 167.481108  " clip-path="url(#figure-d6403405f38d-7-p094854f78e)" fill="none" stroke="#8a9bab" stroke-width="2.4" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-d6403405f38d-7-line2d_12">
+    <path d="M 60.48 113.064936  L 60.9392 106.144511  L 61.551467 97.750017  L 61.704533 96.961363  L 61.8576 97.040212  L 62.010667 98.09831  L 62.3168 102.964619  L 62.929067 113.75976  L 63.082133 114.29178  L 63.2352 113.716179  L 63.541333 110.049535  L 64.459733 95.959775  L 64.6128 95.415964  L 64.765867 95.901752  L 65.072 100.053456  L 65.684267 112.631934  L 65.837333 114.024441  L 65.9904 114.177514  L 66.143467 113.158478  L 66.4496 108.504078  L 67.214933 94.944292  L 67.368 94.109931  L 67.521067 94.394809  L 67.8272 98.262571  L 68.592533 112.680197  L 68.7456 113.28092  L 68.898667 112.658924  L 69.2048 108.32106  L 69.970133 94.707157  L 70.1232 94.144084  L 70.276267 94.654902  L 70.5824 98.333918  L 71.347733 110.034698  L 71.5008 110.609912  L 71.653867 110.200221  L 71.96 106.689044  L 72.572267 97.252661  L 72.725333 96.29364  L 72.8784 96.128781  L 73.031467 96.643948  L 73.3376 98.997869  L 73.949867 104.460579  L 74.256 105.794478  L 74.409067 105.882338  L 74.562133 105.577972  L 74.868267 104.092668  L 75.480533 100.754976  L 76.0928 98.720494  L 76.398933 98.196914  L 76.552 98.235532  L 76.705067 98.599722  L 77.0112 100.600023  L 77.623467 106.75973  L 77.776533 107.199253  L 77.9296 106.828077  L 78.235733 103.96338  L 79.001067 93.59508  L 79.154133 92.843871  L 79.3072 93.076222  L 79.460267 94.404077  L 79.7664 99.932887  L 80.2256 109.207426  L 80.378667 110.461647  L 80.531733 110.245798  L 80.837867 105.772881  L 81.6032 90.474642  L 81.756267 90.147358  L 81.909333 91.161615  L 82.215467 96.432083  L 82.827733 109.190864  L 82.9808 110.229788  L 83.133867 109.704123  L 83.44 104.404563  L 83.8992 94.310022  L 84.205333 92.197851  L 84.3584 92.772722  L 84.664533 96.061513  L 85.2768 104.293918  L 85.429867 105.297869  L 85.582933 105.425689  L 85.736 104.622679  L 86.501333 97.357624  L 86.6544 97.067166  L 86.807467 97.134515  L 87.266667 98.239696  L 87.725867 99.216498  L 88.797333 100.593844  L 88.9504 100.449191  L 89.256533 99.557393  L 90.021867 95.839738  L 90.174933 95.923024  L 90.328 96.679419  L 91.093333 103.243321  L 91.2464 103.255265  L 91.399467 102.645375  L 91.7056 99.897489  L 92.317867 93.772022  L 92.470933 93.904492  L 92.777067 97.108621  L 93.236267 103.512995  L 93.5424 104.883263  L 93.695467 104.391204  L 94.0016 101.386372  L 94.4608 95.448069  L 94.613867 94.575614  L 94.766933 94.696801  L 95.073067 97.262402  L 95.532267 101.799035  L 95.8384 102.783982  L 95.991467 102.522364  L 96.2976 100.900967  L 96.603733 99.115269  L 96.7568 98.748892  L 96.909867 98.857178  L 97.522133 100.701908  L 97.6752 100.716603  L 97.981333 99.994251  L 98.287467 98.980069  L 98.440533 98.824432  L 98.5936 99.184635  L 98.899733 101.668812  L 99.358933 105.901492  L 99.512 106.192696  L 99.665067 105.757485  L 99.9712 103.115126  L 100.583467 96.770079  L 100.736533 96.73236  L 100.8896 97.787222  L 101.808 109.220524  L 101.961067 108.752296  L 102.2672 105.529593  L 102.7264 99.490419  L 102.879467 98.659518  L 103.032533 98.821516  L 103.338667 101.572172  L 103.797867 106.654512  L 104.104 107.720228  L 104.257067 107.383416  L 105.0224 104.030984  L 105.175467 104.45253  L 105.787733 107.323692  L 105.9408 107.407399  L 106.093867 107.106317  L 106.706133 104.611224  L 106.8592 104.767724  L 107.165333 106.96311  L 107.624533 111.639986  L 107.7776 112.415413  L 107.930667 112.539812  L 108.083733 112.010842  L 108.389867 109.424366  L 108.849067 105.498446  L 109.002133 105.433003  L 109.1552 106.244581  L 110.0736 114.856778  L 110.226667 114.684922  L 110.5328 112.67817  L 110.992 109.121634  L 111.145067 108.979379  L 111.298133 109.54529  L 112.063467 115.054758  L 112.216533 115.267512  L 112.3696 115.020534  L 113.134933 111.983054  L 113.288 112.434698  L 114.2064 117.182183  L 114.359467 116.984235  L 114.971733 114.880434  L 115.1248 115.009271  L 115.430933 116.777278  L 115.890133 120.137018  L 116.0432 120.598897  L 116.196267 120.594275  L 116.349333 120.145681  L 117.114667 116.330816  L 117.267733 116.802569  L 117.573867 119.592346  L 118.033067 124.212989  L 118.186133 124.910136  L 118.3392 125.042776  L 118.492267 124.64125  L 118.7984 122.658414  L 119.104533 120.483578  L 119.2576 119.999041  L 119.410667 120.18057  L 119.7168 122.311781  L 120.176 126.260625  L 120.482133 127.177298  L 120.6352 126.971962  L 120.941333 125.59321  L 121.247467 124.108237  L 121.400533 123.890497  L 121.5536 124.20793  L 121.859733 126.106124  L 122.318933 128.970435  L 122.472 129.320729  L 122.625067 129.301356  L 122.9312 128.339755  L 123.3904 126.685746  L 123.543467 126.850166  L 123.8496 128.673396  L 124.3088 132.258916  L 124.614933 133.161164  L 124.768 133.014504  L 125.074133 131.784803  L 125.533333 129.78765  L 125.6864 129.868505  L 125.992533 131.604651  L 126.6048 136.209403  L 126.757867 136.628133  L 126.910933 136.653573  L 127.064 136.325376  L 127.829333 133.54979  L 127.9824 133.916356  L 128.288533 135.827675  L 128.747733 138.876227  L 129.053867 139.574839  L 129.206933 139.447651  L 129.513067 138.492238  L 129.8192 137.416214  L 129.972267 137.254624  L 130.125333 137.515818  L 130.431467 139.18569  L 130.890667 142.158837  L 131.1968 143.011714  L 131.349867 142.998322  L 131.656 142.238983  L 132.1152 140.679776  L 132.268267 140.631273  L 132.421333 141.002385  L 132.880533 143.793229  L 133.339733 145.995141  L 133.4928 146.231528  L 133.645867 146.215627  L 133.952 145.576706  L 134.4112 144.340682  L 134.564267 144.344175  L 134.717333 144.708527  L 135.176533 147.259461  L 135.635733 149.318741  L 135.7888 149.567763  L 135.941867 149.59205  L 136.248 149.084054  L 136.7072 147.93627  L 136.860267 147.879887  L 137.013333 148.147507  L 137.319467 149.54711  L 137.931733 152.561731  L 138.237867 153.031505  L 138.390933 152.982634  L 138.697067 152.445354  L 139.156267 151.428783  L 139.309333 151.409712  L 139.4624 151.686061  L 139.768533 152.998722  L 140.3808 155.792149  L 140.686933 156.349333  L 140.84 156.408585  L 141.146133 156.188216  L 141.605333 155.613775  L 141.7584 155.613435  L 141.911467 155.812872  L 142.2176 156.781849  L 142.829867 159.05925  L 143.136 159.630052  L 143.442133 159.778118  L 143.748267 159.595585  L 144.207467 159.162902  L 144.360533 159.167942  L 144.666667 159.645549  L 145.738133 162.549162  L 146.197333 163.088965  L 146.8096 163.402508  L 147.2688 163.725032  L 148.034133 164.752343  L 149.258667 166.490287  L 149.5648 166.71558  L 149.870933 166.615661  L 150.4832 166.195116  L 150.789333 166.168571  L 151.248533 166.583048  L 151.248533 166.583048  " clip-path="url(#figure-d6403405f38d-7-p094854f78e)" fill="none" stroke="#1f6fd0" stroke-width="2.4" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-d6403405f38d-7-line2d_13">
+    <path d="M 60.589915 169.460153  L 61.69434 168.801383  L 62.982835 167.704945  L 63.719119 166.538017  L 65.007614 164.255546  L 65.559827 163.880552  L 66.112039 163.644881  L 66.480181 163.167668  L 67.216464 161.496679  L 67.768676 160.481577  L 68.320889 160.042686  L 68.873101 159.703445  L 69.977526 158.737817  L 71.081951 158.114512  L 72.738588 156.680965  L 73.658942 156.361433  L 74.211155 156.135692  L 74.763367 155.566427  L 75.49965 154.646681  L 75.867792 154.533055  L 76.235934 154.743386  L 76.604075 155.007385  L 76.788146 155.026966  L 77.156288 154.709112  L 78.076642 153.137739  L 78.260713 153.080869  L 78.628854 153.368649  L 79.181067 153.921928  L 79.365137 153.86584  L 79.733279 153.286205  L 80.285491 152.068378  L 80.653633 151.787981  L 81.021775 152.127781  L 81.389916 152.641177  L 81.573987 152.744603  L 81.758058 152.665528  L 82.126199 151.987603  L 82.678412 150.640163  L 83.046554 150.292979  L 83.230624 150.36233  L 83.966908 151.108672  L 84.150978 151.053272  L 84.51912 150.50401  L 85.071332 149.421193  L 85.439474 149.101691  L 85.807616 149.16827  L 86.175757 149.320524  L 86.543899 149.203193  L 87.096111 148.51694  L 87.648324 147.920252  L 88.200536 147.661716  L 88.936819 147.311666  L 90.409386 146.407337  L 91.32974 145.49539  L 91.697882 145.492267  L 92.250094 145.575188  L 92.618236 145.298442  L 93.72266 143.734655  L 94.090802 143.761633  L 94.458944 143.848546  L 94.827085 143.609692  L 95.379298 142.581247  L 95.747439 141.975581  L 96.115581 141.758163  L 96.667793 141.736415  L 97.035935 141.30828  L 97.588147 139.850528  L 98.876643 135.912219  L 99.060714 134.680818  L 99.244785 134.361385  L 99.428855 134.804187  L 100.165139 139.297473  L 100.34921 139.128315  L 100.717351 136.505829  L 101.085493 133.506551  L 101.269564 132.786743  L 101.453634 132.824068  L 101.637705 133.621185  L 102.373988 139.050724  L 102.558059 138.825787  L 102.926201 135.780476  L 103.294342 132.304067  L 103.478413 131.40168  L 103.662484 131.292387  L 103.846555 131.964553  L 104.582838 137.260993  L 104.766909 137.202298  L 105.135051 134.614854  L 105.503192 131.522143  L 105.687263 130.770001  L 105.871334 130.772755  L 106.055405 131.520789  L 106.791688 136.560305  L 106.975759 136.340677  L 107.3439 133.550272  L 107.712042 130.492508  L 107.896113 129.79502  L 108.080183 129.871357  L 108.264254 130.678876  L 109.000538 135.684111  L 109.184608 135.416934  L 109.55275 132.650697  L 109.920892 129.751516  L 110.104962 129.13294  L 110.289033 129.247124  L 110.657175 131.34169  L 111.025316 133.978029  L 111.209387 134.465846  L 111.393458 134.058281  L 112.313812 128.240081  L 112.497883 128.440291  L 112.866025 130.477013  L 113.234166 132.744931  L 113.418237 133.018033  L 113.602308 132.471764  L 114.338591 127.709099  L 114.522662 127.444197  L 114.706733 127.789418  L 115.443016 131.472033  L 115.627087 131.387261  L 115.995228 129.339033  L 116.36337 127.029873  L 116.547441 126.540266  L 116.731511 126.659587  L 117.099653 128.451084  L 117.467795 130.626198  L 117.651866 130.911851  L 117.835936 130.346826  L 118.57222 125.187278  L 118.75629 124.917163  L 118.940361 125.342361  L 119.308503 127.833637  L 119.676644 130.400269  L 119.860715 130.572006  L 120.044786 129.688962  L 120.781069 123.518133  L 120.96514 123.285343  L 121.149211 123.832697  L 121.517353 126.776502  L 121.885494 129.893746  L 122.069565 130.191246  L 122.253636 129.2507  L 122.989919 122.2814  L 123.17399 121.892714  L 123.358061 122.276812  L 123.726202 124.831233  L 124.094344 127.572755  L 124.278415 127.792997  L 124.462485 126.903956  L 125.198769 121.212144  L 125.382839 121.234746  L 125.56691 122.026749  L 125.935052 125.380619  L 126.303194 128.660455  L 126.487264 128.809701  L 126.671335 127.580287  L 127.407618 120.241241  L 127.591689 120.058278  L 127.77576 120.668831  L 128.143902 123.703435  L 128.512043 126.824213  L 128.696114 127.122443  L 128.880185 126.246469  L 129.432397 121.633175  L 129.616468 121.152643  L 129.800539 121.56836  L 129.98461 122.871055  L 130.720893 131.146726  L 131.089035 133.142948  L 131.457176 133.785329  L 131.641247 133.770837  L 132.009389 133.391377  L 133.666026 131.026377  L 134.218238 130.748314  L 134.770451 130.735718  L 135.690805 131.033359  L 136.79523 131.34266  L 137.531513 131.312727  L 138.635938 130.984297  L 138.820009 130.917385  L 138.820009 130.917385  " clip-path="url(#figure-d6403405f38d-7-p094854f78e)" fill="none" stroke="#e8823c" stroke-width="2.4" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-d6403405f38d-7-patch_3">
+    <path d="M 60.48 174.1824  L 60.48 72.576  " fill="none" stroke="#d6e2ec" stroke-linejoin="miter" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-d6403405f38d-7-patch_4">
+    <path d="M 473.76 174.1824  L 473.76 72.576  " fill="none" stroke="#d6e2ec" stroke-linejoin="miter" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-d6403405f38d-7-patch_5">
+    <path d="M 60.48 174.1824  L 473.76 174.1824  " fill="none" stroke="#d6e2ec" stroke-linejoin="miter" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-d6403405f38d-7-patch_6">
+    <path d="M 60.48 72.576  L 473.76 72.576  " fill="none" stroke="#d6e2ec" stroke-linejoin="miter" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-d6403405f38d-7-legend_1">
+    <g id="figure-d6403405f38d-7-line2d_14">
+     <path d="M 353.892656 129.324431  L 364.392656 129.324431  L 374.892656 129.324431  " fill="none" stroke="#8a9bab" stroke-width="2.4" stroke-linecap="square"></path>
+    </g>
+    <g id="figure-d6403405f38d-7-text_15">
+     <text x="383.292656" y="132.999431" transform="rotate(-0 383.292656 132.999431)" font-size="10.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">线性锥 50 μm</text>
+    </g>
+    <g id="figure-d6403405f38d-7-line2d_15">
+     <path d="M 353.892656 144.487087  L 364.392656 144.487087  L 374.892656 144.487087  " fill="none" stroke="#1f6fd0" stroke-width="2.4" stroke-linecap="square"></path>
+    </g>
+    <g id="figure-d6403405f38d-7-text_16">
+     <text x="383.292656" y="148.162087" transform="rotate(-0 383.292656 148.162087)" font-size="10.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">Luneburg 11 μm</text>
+    </g>
+    <g id="figure-d6403405f38d-7-line2d_16">
+     <path d="M 353.892656 159.649744  L 364.392656 159.649744  L 374.892656 159.649744  " fill="none" stroke="#e8823c" stroke-width="2.4" stroke-linecap="square"></path>
+    </g>
+    <g id="figure-d6403405f38d-7-text_17">
+     <text x="383.292656" y="163.324744" transform="rotate(-0 383.292656 163.324744)" font-size="10.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">半透镜 9.5 μm</text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="figure-d6403405f38d-7-pb58acd8b5f">
+   <rect x="0" y="0" width="504" height="241.92"></rect>
+  </clipPath>
+  <clipPath id="figure-d6403405f38d-7-p094854f78e">
+   <rect x="60.48" y="72.576" width="413.28" height="101.6064"></rect>
+  </clipPath>
+ </defs>
+ <g id="figure-d6403405f38d-7-text_1">
+  <text x="22.68" y="19.689961" transform="rotate(-0 22.68 19.689961)" font-size="13.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4e9be8">本次求解</text>
+ </g>
+ <g id="figure-d6403405f38d-7-text_2" transform="translate(0 8)">
+  <text x="22.68" y="42.388828" transform="rotate(-0 22.68 42.388828)" font-size="21px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a" font-weight="500">沿传播方向的二阶矩模场直径</text>
+ </g>
+ <g id="figure-d6403405f38d-7-line2d_1" transform="translate(0 8)">
+  <path d="M 22.68 53.424  L 65.52 53.424  " clip-path="url(#figure-d6403405f38d-7-pb58acd8b5f)" fill="none" stroke="#1f6fd0" stroke-width="3.2"></path>
+ </g>
+</svg><figcaption><span class="fig-tag">图 4</span>截面 |Ey|² 的二阶矩等效直径 D=4σ，仅截取实际转换段，器件起点对齐为 0。收束与扩束方向不同，不能解读成同一任务的快慢对照。</figcaption></figure>
+<p>这些曲线显示每个设计内部的模场变化。互易性适用于对应端口模式之间的传输系数，不能把正向总通量自动等同于反向高斯光纤的耦合效率。</p>
+<figure><svg width="504.000pt" height="255.916pt" viewBox="0.000 0.000 504.000 255.916" stroke-linejoin="round" stroke-linecap="butt" font-family="MiSans, sans-serif" font-weight="400" xmlns="http://www.w3.org/2000/svg" class="vector-image" role="img" aria-label="图 5：出口各模式的功率占比。TE0 占绝大部分，但高阶模也分到了可观的份额。">
+ <defs>
+  </defs>
+ <g id="figure-5a4a8853c769-8-figure_1" transform="translate(0 16)">
+  <g id="figure-5a4a8853c769-8-patch_1">
+   <path d="M 0 201.6  L 504 201.6  L 504 0  L 0 0  z " fill="#ffffff"></path>
+  </g>
+  <g id="figure-5a4a8853c769-8-axes_1">
+   <g id="figure-5a4a8853c769-8-text_3" transform="translate(0 38)">
+    <text x="22.68" y="194.211375" transform="rotate(-0 22.68 194.211375)" font-size="10px" font-family="MiSans, sans-serif" text-anchor="start" fill="#8a9bab">模式占比 = 该模式功率 ÷ 同一点总通量；出口 9 μm 支持多个模式</text>
+   </g>
+  </g>
+  <g id="figure-5a4a8853c769-8-axes_2">
+   <g id="figure-5a4a8853c769-8-patch_2">
+    <path d="M 60.48 169.344  L 478.8 169.344  L 478.8 68.544  L 60.48 68.544  z " fill="#ffffff"></path>
+   </g>
+   <g id="figure-5a4a8853c769-8-matplotlib.axis_1">
+    <g id="figure-5a4a8853c769-8-xtick_1">
+     <g id="figure-5a4a8853c769-8-line2d_2">
+      <defs>
+       <path id="figure-5a4a8853c769-8-mc5fd9c8406" d="M 0 0  L 0 3  " stroke="#4a6076"></path>
+      </defs>
+      <g>
+       <use href="#figure-5a4a8853c769-8-mc5fd9c8406" x="60.48" y="169.344" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-5a4a8853c769-8-text_4">
+      <text x="60.48" y="185.564" transform="rotate(-0 60.48 185.564)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">1500</text>
+     </g>
+    </g>
+    <g id="figure-5a4a8853c769-8-xtick_2">
+     <g id="figure-5a4a8853c769-8-line2d_3">
+      <g>
+       <use href="#figure-5a4a8853c769-8-mc5fd9c8406" x="144.144" y="169.344" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-5a4a8853c769-8-text_5">
+      <text x="144.144" y="185.564" transform="rotate(-0 144.144 185.564)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">1520</text>
+     </g>
+    </g>
+    <g id="figure-5a4a8853c769-8-xtick_3">
+     <g id="figure-5a4a8853c769-8-line2d_4">
+      <g>
+       <use href="#figure-5a4a8853c769-8-mc5fd9c8406" x="227.808" y="169.344" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-5a4a8853c769-8-text_6">
+      <text x="227.808" y="185.564" transform="rotate(-0 227.808 185.564)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">1540</text>
+     </g>
+    </g>
+    <g id="figure-5a4a8853c769-8-xtick_4">
+     <g id="figure-5a4a8853c769-8-line2d_5">
+      <g>
+       <use href="#figure-5a4a8853c769-8-mc5fd9c8406" x="311.472" y="169.344" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-5a4a8853c769-8-text_7">
+      <text x="311.472" y="185.564" transform="rotate(-0 311.472 185.564)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">1560</text>
+     </g>
+    </g>
+    <g id="figure-5a4a8853c769-8-xtick_5">
+     <g id="figure-5a4a8853c769-8-line2d_6">
+      <g>
+       <use href="#figure-5a4a8853c769-8-mc5fd9c8406" x="395.136" y="169.344" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-5a4a8853c769-8-text_8">
+      <text x="395.136" y="185.564" transform="rotate(-0 395.136 185.564)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">1580</text>
+     </g>
+    </g>
+    <g id="figure-5a4a8853c769-8-xtick_6">
+     <g id="figure-5a4a8853c769-8-line2d_7">
+      <g>
+       <use href="#figure-5a4a8853c769-8-mc5fd9c8406" x="478.8" y="169.344" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-5a4a8853c769-8-text_9">
+      <text x="478.8" y="185.564" transform="rotate(-0 478.8 185.564)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">1600</text>
+     </g>
+    </g>
+    <g id="figure-5a4a8853c769-8-text_10">
+     <text x="269.64" y="201.405406" transform="rotate(-0 269.64 201.405406)" font-size="11.5px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">波长 (nm)</text>
+    </g>
+   </g>
+   <g id="figure-5a4a8853c769-8-matplotlib.axis_2">
+    <g id="figure-5a4a8853c769-8-ytick_1">
+     <g id="figure-5a4a8853c769-8-line2d_8">
+      <defs>
+       <path id="figure-5a4a8853c769-8-m451d8ca5b2" d="M 0 0  L -3 0  " stroke="#4a6076"></path>
+      </defs>
+      <g>
+       <use href="#figure-5a4a8853c769-8-m451d8ca5b2" x="60.48" y="169.344" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-5a4a8853c769-8-text_11" transform="translate(-7 0)">
+      <text x="53.98" y="174.204" transform="rotate(-0 53.98 174.204)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="end" fill="#4a6076">0</text>
+     </g>
+    </g>
+    <g id="figure-5a4a8853c769-8-ytick_2">
+     <g id="figure-5a4a8853c769-8-line2d_9">
+      <g>
+       <use href="#figure-5a4a8853c769-8-m451d8ca5b2" x="60.48" y="121.344" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-5a4a8853c769-8-text_12" transform="translate(-7 0)">
+      <text x="53.98" y="126.204" transform="rotate(-0 53.98 126.204)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="end" fill="#4a6076">50</text>
+     </g>
+    </g>
+    <g id="figure-5a4a8853c769-8-ytick_3">
+     <g id="figure-5a4a8853c769-8-line2d_10">
+      <g>
+       <use href="#figure-5a4a8853c769-8-m451d8ca5b2" x="60.48" y="73.344" fill="#4a6076" stroke="#4a6076"></use>
+      </g>
+     </g>
+     <g id="figure-5a4a8853c769-8-text_13" transform="translate(-7 0)">
+      <text x="53.98" y="78.204" transform="rotate(-0 53.98 78.204)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="end" fill="#4a6076">100</text>
+     </g>
+    </g>
+    <g id="figure-5a4a8853c769-8-text_14">
+     <text x="28.504609" y="118.944" transform="rotate(-90 28.504609 118.944)" font-size="11.5px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">占输出总功率 (%)</text>
+    </g>
+   </g>
+   <g id="figure-5a4a8853c769-8-line2d_11">
+    <path d="M 60.48 93.650469  L 64.6632 93.481137  L 68.8464 93.281574  L 73.0296 93.066113  L 77.2128 92.851951  L 81.396 92.657017  L 85.5792 92.498175  L 89.7624 92.388678  L 93.9456 92.337453  L 98.1288 92.347274  L 102.312 92.415926  L 106.4952 92.536507  L 110.6784 92.698719  L 114.8616 92.8905  L 119.0448 93.099673  L 123.228 93.31449  L 127.4112 93.525066  L 131.5944 93.722973  L 135.7776 93.901798  L 139.9608 94.056416  L 144.144 94.183218  L 148.3272 94.279414  L 152.5104 94.34367  L 156.6936 94.375568  L 160.8768 94.375966  L 165.06 94.34791  L 169.2432 94.295646  L 173.4264 94.225436  L 177.6096 94.144499  L 181.7928 94.061053  L 185.976 93.982645  L 190.1592 93.915891  L 194.3424 93.865571  L 198.5256 93.833928  L 202.7088 93.820591  L 206.892 93.822897  L 211.0752 93.836295  L 215.2584 93.855273  L 219.4416 93.873915  L 223.6248 93.886936  L 227.808 93.889803  L 231.9912 93.879487  L 236.1744 93.853601  L 240.3576 93.811044  L 244.5408 93.75086  L 248.724 93.672527  L 252.9072 93.57454  L 257.0904 93.455568  L 261.2736 93.314079  L 265.4568 93.148615  L 269.64 92.95856  L 273.8232 92.744336  L 278.0064 92.508201  L 282.1896 92.254156  L 286.3728 91.988018  L 290.556 91.716759  L 294.7392 91.44825  L 298.9224 91.189957  L 303.1056 90.94865  L 307.2888 90.728823  L 311.472 90.533026  L 315.6552 90.361429  L 319.8384 90.211569  L 324.0216 90.079254  L 328.2048 89.95919  L 332.388 89.845677  L 336.5712 89.733564  L 340.7544 89.619178  L 344.9376 89.500782  L 349.1208 89.378738  L 353.304 89.255959  L 357.4872 89.137299  L 361.6704 89.029295  L 365.8536 88.939546  L 370.0368 88.875438  L 374.22 88.844198  L 378.4032 88.850938  L 382.5864 88.899224  L 386.7696 88.989909  L 390.9528 89.12128  L 395.136 89.289383  L 399.3192 89.488053  L 403.5024 89.710153  L 407.6856 89.947199  L 411.8688 90.191168  L 416.052 90.43436  L 420.2352 90.670358  L 424.4184 90.893852  L 428.6016 91.101514  L 432.7848 91.290773  L 436.968 91.460594  L 441.1512 91.610911  L 445.3344 91.741771  L 449.5176 91.853496  L 453.7008 91.94613  L 457.884 92.019492  L 462.0672 92.073345  L 466.2504 92.106985  L 470.4336 92.120725  L 474.6168 92.115554  L 478.8 92.093447  " clip-path="url(#figure-5a4a8853c769-8-peb3f32f0cd)" fill="none" stroke="#0b4c9c" stroke-width="2.3" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-5a4a8853c769-8-line2d_12">
+    <path d="M 60.48 152.344823  L 64.6632 152.525842  L 68.8464 152.703255  L 73.0296 152.861183  L 77.2128 152.983661  L 81.396 153.056585  L 85.5792 153.069354  L 89.7624 153.016351  L 93.9456 152.896919  L 98.1288 152.716324  L 102.312 152.483693  L 106.4952 152.211522  L 110.6784 151.913818  L 114.8616 151.604906  L 119.0448 151.297865  L 123.228 151.004614  L 127.4112 150.73467  L 131.5944 150.496065  L 135.7776 150.294825  L 139.9608 150.135908  L 144.144 150.022652  L 148.3272 149.957537  L 152.5104 149.941253  L 156.6936 149.972911  L 160.8768 150.049763  L 165.06 150.166278  L 169.2432 150.315099  L 173.4264 150.486585  L 177.6096 150.670004  L 181.7928 150.853882  L 185.976 151.027688  L 190.1592 151.18253  L 194.3424 151.311912  L 198.5256 151.412646  L 202.7088 151.48473  L 206.892 151.530978  L 211.0752 151.556476  L 215.2584 151.567633  L 219.4416 151.571378  L 223.6248 151.574215  L 227.808 151.581928  L 231.9912 151.598885  L 236.1744 151.628732  L 240.3576 151.673676  L 244.5408 151.735657  L 248.724 151.815662  L 252.9072 151.915247  L 257.0904 152.03517  L 261.2736 152.175983  L 265.4568 152.337451  L 269.64 152.518342  L 273.8232 152.716209  L 278.0064 152.926875  L 282.1896 153.14493  L 286.3728 153.363752  L 290.556 153.576487  L 294.7392 153.776143  L 298.9224 153.957074  L 303.1056 154.115034  L 307.2888 154.248231  L 311.472 154.357231  L 315.6552 154.444677  L 319.8384 154.515318  L 324.0216 154.575299  L 328.2048 154.63081  L 332.388 154.688006  L 336.5712 154.751708  L 340.7544 154.824857  L 344.9376 154.908134  L 349.1208 154.999893  L 353.304 155.09599  L 357.4872 155.190406  L 361.6704 155.275592  L 365.8536 155.343147  L 370.0368 155.385059  L 374.22 155.39357  L 378.4032 155.363234  L 382.5864 155.290237  L 386.7696 155.173418  L 390.9528 155.014515  L 395.136 154.817434  L 399.3192 154.588544  L 403.5024 154.335242  L 407.6856 154.066486  L 411.8688 153.790947  L 416.052 153.517011  L 420.2352 153.251805  L 424.4184 153.001415  L 428.6016 152.769806  L 432.7848 152.560041  L 436.968 152.373643  L 441.1512 152.211035  L 445.3344 152.072342  L 449.5176 151.957659  L 453.7008 151.867232  L 457.884 151.801831  L 462.0672 151.76242  L 466.2504 151.750575  L 470.4336 151.767048  L 474.6168 151.81197  L 478.8 151.884292  " clip-path="url(#figure-5a4a8853c769-8-peb3f32f0cd)" fill="none" stroke="#1f6fd0" stroke-width="1.7" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-5a4a8853c769-8-line2d_13">
+    <path d="M 60.48 168.039262  L 64.6632 168.105271  L 68.8464 168.191922  L 73.0296 168.296512  L 77.2128 168.414684  L 81.396 168.540896  L 85.5792 168.668962  L 89.7624 168.792721  L 93.9456 168.906718  L 98.1288 169.006625  L 102.312 169.089636  L 106.4952 169.154513  L 110.6784 169.201459  L 114.8616 169.231846  L 119.0448 169.247845  L 123.228 169.25205  L 127.4112 169.247174  L 131.5944 169.235818  L 135.7776 169.220331  L 139.9608 169.20277  L 144.144 169.184926  L 148.3272 169.168348  L 152.5104 169.154406  L 156.6936 169.144276  L 160.8768 169.138918  L 165.06 169.139015  L 169.2432 169.144855  L 173.4264 169.156277  L 177.6096 169.172599  L 181.7928 169.192653  L 185.976 169.214823  L 190.1592 169.237228  L 194.3424 169.257897  L 198.5256 169.274956  L 202.7088 169.286861  L 206.892 169.292513  L 211.0752 169.291345  L 215.2584 169.283326  L 219.4416 169.268869  L 223.6248 169.248728  L 227.808 169.223833  L 231.9912 169.195146  L 236.1744 169.163566  L 240.3576 169.129827  L 244.5408 169.094497  L 248.724 169.058007  L 252.9072 169.020698  L 257.0904 168.982915  L 261.2736 168.94507  L 265.4568 168.907688  L 269.64 168.871435  L 273.8232 168.837077  L 278.0064 168.805452  L 282.1896 168.777385  L 286.3728 168.753604  L 290.556 168.73468  L 294.7392 168.720989  L 298.9224 168.712679  L 303.1056 168.709711  L 307.2888 168.711906  L 311.472 168.71899  L 315.6552 168.730711  L 319.8384 168.746836  L 324.0216 168.76721  L 328.2048 168.791788  L 332.388 168.820543  L 336.5712 168.853461  L 340.7544 168.890435  L 344.9376 168.931203  L 349.1208 168.975269  L 353.304 169.021853  L 357.4872 169.069888  L 361.6704 169.118076  L 365.8536 169.164899  L 370.0368 169.208781  L 374.22 169.248189  L 378.4032 169.281777  L 382.5864 169.308525  L 386.7696 169.327799  L 390.9528 169.339428  L 395.136 169.343706  L 399.3192 169.341341  L 403.5024 169.333384  L 407.6856 169.321121  L 411.8688 169.305955  L 416.052 169.289309  L 420.2352 169.272515  L 424.4184 169.256773  L 428.6016 169.243077  L 432.7848 169.232221  L 436.968 169.224773  L 441.1512 169.221099  L 445.3344 169.221342  L 449.5176 169.225435  L 453.7008 169.233088  L 457.884 169.243747  L 462.0672 169.256573  L 466.2504 169.27044  L 470.4336 169.28389  L 474.6168 169.295175  L 478.8 169.302309  " clip-path="url(#figure-5a4a8853c769-8-peb3f32f0cd)" fill="none" stroke="#4e9be8" stroke-width="1.7" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-5a4a8853c769-8-line2d_14">
+    <path d="M 60.48 168.90771  L 64.6632 168.879855  L 68.8464 168.857952  L 73.0296 168.842878  L 77.2128 168.835008  L 81.396 168.834112  L 85.5792 168.839413  L 89.7624 168.849685  L 93.9456 168.8634  L 98.1288 168.878888  L 102.312 168.894506  L 106.4952 168.908766  L 110.6784 168.920364  L 114.8616 168.928205  L 119.0448 168.931361  L 123.228 168.929  L 127.4112 168.920352  L 131.5944 168.904696  L 135.7776 168.881374  L 139.9608 168.849871  L 144.144 168.809947  L 148.3272 168.761727  L 152.5104 168.70584  L 156.6936 168.643486  L 160.8768 168.576464  L 165.06 168.507078  L 169.2432 168.438046  L 173.4264 168.372254  L 177.6096 168.312581  L 181.7928 168.261576  L 185.976 168.221317  L 190.1592 168.19318  L 194.3424 168.177776  L 198.5256 168.174958  L 202.7088 168.183924  L 206.892 168.203366  L 211.0752 168.231647  L 215.2584 168.267045  L 219.4416 168.307931  L 223.6248 168.352855  L 227.808 168.40068  L 231.9912 168.450569  L 236.1744 168.501959  L 240.3576 168.554482  L 244.5408 168.607878  L 248.724 168.661924  L 252.9072 168.716379  L 257.0904 168.770892  L 261.2736 168.825017  L 265.4568 168.878222  L 269.64 168.929917  L 273.8232 168.979503  L 278.0064 169.026398  L 282.1896 169.070099  L 286.3728 169.1102  L 290.556 169.146425  L 294.7392 169.178619  L 298.9224 169.206764  L 303.1056 169.230941  L 307.2888 169.251347  L 311.472 169.268244  L 315.6552 169.281962  L 319.8384 169.292863  L 324.0216 169.301331  L 328.2048 169.307767  L 332.388 169.312558  L 336.5712 169.31608  L 340.7544 169.318686  L 344.9376 169.320692  L 349.1208 169.322377  L 353.304 169.323975  L 357.4872 169.325662  L 361.6704 169.327562  L 365.8536 169.329731  L 370.0368 169.332161  L 374.22 169.334779  L 378.4032 169.337441  L 382.5864 169.33995  L 386.7696 169.342057  L 390.9528 169.34348  L 395.136 169.343922  L 399.3192 169.343086  L 403.5024 169.340702  L 407.6856 169.336542  L 411.8688 169.330431  L 416.052 169.322261  L 420.2352 169.31199  L 424.4184 169.299643  L 428.6016 169.28529  L 432.7848 169.26905  L 436.968 169.251057  L 441.1512 169.231466  L 445.3344 169.210426  L 449.5176 169.188101  L 453.7008 169.164659  L 457.884 169.140291  L 462.0672 169.115244  L 466.2504 169.089818  L 470.4336 169.064413  L 474.6168 169.039512  L 478.8 169.015707  " clip-path="url(#figure-5a4a8853c769-8-peb3f32f0cd)" fill="none" stroke="#e8823c" stroke-width="1.7" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-5a4a8853c769-8-line2d_15">
+    <path d="M 60.48 168.938151  L 64.6632 168.937117  L 68.8464 168.939937  L 73.0296 168.946936  L 77.2128 168.958129  L 81.396 168.973258  L 85.5792 168.991771  L 89.7624 169.012933  L 93.9456 169.035873  L 98.1288 169.05969  L 102.312 169.083536  L 106.4952 169.10667  L 110.6784 169.128506  L 114.8616 169.148635  L 119.0448 169.166806  L 123.228 169.182908  L 127.4112 169.19695  L 131.5944 169.20901  L 135.7776 169.219225  L 139.9608 169.227749  L 144.144 169.234748  L 148.3272 169.240378  L 152.5104 169.244788  L 156.6936 169.248108  L 160.8768 169.250454  L 165.06 169.251925  L 169.2432 169.252603  L 173.4264 169.252557  L 177.6096 169.251848  L 181.7928 169.250519  L 185.976 169.248617  L 190.1592 169.246176  L 194.3424 169.24324  L 198.5256 169.239855  L 202.7088 169.236078  L 206.892 169.231976  L 211.0752 169.227629  L 215.2584 169.223122  L 219.4416 169.218545  L 223.6248 169.213989  L 227.808 169.20953  L 231.9912 169.20524  L 236.1744 169.20117  L 240.3576 169.19735  L 244.5408 169.193792  L 248.724 169.190499  L 252.9072 169.187453  L 257.0904 169.184638  L 261.2736 169.182038  L 265.4568 169.179646  L 269.64 169.177475  L 273.8232 169.175548  L 278.0064 169.173915  L 282.1896 169.172636  L 286.3728 169.171789  L 290.556 169.171454  L 294.7392 169.171707  L 298.9224 169.172611  L 303.1056 169.174208  L 307.2888 169.176519  L 311.472 169.17953  L 315.6552 169.183201  L 319.8384 169.187464  L 324.0216 169.192225  L 328.2048 169.197384  L 332.388 169.20282  L 336.5712 169.208418  L 340.7544 169.214061  L 344.9376 169.219649  L 349.1208 169.225087  L 353.304 169.230296  L 357.4872 169.235212  L 361.6704 169.239791  L 365.8536 169.243996  L 370.0368 169.247815  L 374.22 169.251246  L 378.4032 169.254303  L 382.5864 169.257017  L 386.7696 169.259431  L 390.9528 169.2616  L 395.136 169.263588  L 399.3192 169.265451  L 403.5024 169.26725  L 407.6856 169.269026  L 411.8688 169.270802  L 416.052 169.272578  L 420.2352 169.274319  L 424.4184 169.275958  L 428.6016 169.277406  L 432.7848 169.278538  L 436.968 169.279218  L 441.1512 169.2793  L 445.3344 169.278632  L 449.5176 169.277076  L 453.7008 169.274498  L 457.884 169.270782  L 462.0672 169.265824  L 466.2504 169.259535  L 470.4336 169.251831  L 474.6168 169.242636  L 478.8 169.231879  " clip-path="url(#figure-5a4a8853c769-8-peb3f32f0cd)" fill="none" stroke="#fcebdb" stroke-width="1.7" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-5a4a8853c769-8-patch_3">
+    <path d="M 60.48 169.344  L 60.48 68.544  " fill="none" stroke="#d6e2ec" stroke-linejoin="miter" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-5a4a8853c769-8-patch_4">
+    <path d="M 478.8 169.344  L 478.8 68.544  " fill="none" stroke="#d6e2ec" stroke-linejoin="miter" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-5a4a8853c769-8-patch_5">
+    <path d="M 60.48 169.344  L 478.8 169.344  " fill="none" stroke="#d6e2ec" stroke-linejoin="miter" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-5a4a8853c769-8-patch_6">
+    <path d="M 60.48 68.544  L 478.8 68.544  " fill="none" stroke="#d6e2ec" stroke-linejoin="miter" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-5a4a8853c769-8-legend_1">
+    <g id="figure-5a4a8853c769-8-line2d_16">
+     <path d="M 184.900937 141.084625  L 194.900937 141.084625  L 204.900937 141.084625  " fill="none" stroke="#0b4c9c" stroke-width="2.3" stroke-linecap="square"></path>
+    </g>
+    <g id="figure-5a4a8853c769-8-text_15">
+     <text x="212.900937" y="144.584625" transform="rotate(-0 212.900937 144.584625)" font-size="10px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">TE0</text>
+    </g>
+    <g id="figure-5a4a8853c769-8-line2d_17">
+     <path d="M 184.900937 155.514312  L 194.900937 155.514312  L 204.900937 155.514312  " fill="none" stroke="#1f6fd0" stroke-width="1.7" stroke-linecap="square"></path>
+    </g>
+    <g id="figure-5a4a8853c769-8-text_16">
+     <text x="212.900937" y="159.014312" transform="rotate(-0 212.900937 159.014312)" font-size="10px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">TE2</text>
+    </g>
+    <g id="figure-5a4a8853c769-8-line2d_18">
+     <path d="M 248.060312 141.084625  L 258.060312 141.084625  L 268.060312 141.084625  " fill="none" stroke="#4e9be8" stroke-width="1.7" stroke-linecap="square"></path>
+    </g>
+    <g id="figure-5a4a8853c769-8-text_17">
+     <text x="276.060312" y="144.584625" transform="rotate(-0 276.060312 144.584625)" font-size="10px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">TE4</text>
+    </g>
+    <g id="figure-5a4a8853c769-8-line2d_19">
+     <path d="M 248.060312 155.514312  L 258.060312 155.514312  L 268.060312 155.514312  " fill="none" stroke="#e8823c" stroke-width="1.7" stroke-linecap="square"></path>
+    </g>
+    <g id="figure-5a4a8853c769-8-text_18">
+     <text x="276.060312" y="159.014312" transform="rotate(-0 276.060312 159.014312)" font-size="10px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">TE6</text>
+    </g>
+    <g id="figure-5a4a8853c769-8-line2d_20">
+     <path d="M 311.219687 141.084625  L 321.219687 141.084625  L 331.219687 141.084625  " fill="none" stroke="#fcebdb" stroke-width="1.7" stroke-linecap="square"></path>
+    </g>
+    <g id="figure-5a4a8853c769-8-text_19">
+     <text x="339.219687" y="144.584625" transform="rotate(-0 339.219687 144.584625)" font-size="10px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">TE8</text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="figure-5a4a8853c769-8-p07160260fa">
+   <rect x="0" y="0" width="504" height="201.6"></rect>
+  </clipPath>
+  <clipPath id="figure-5a4a8853c769-8-peb3f32f0cd">
+   <rect x="60.48" y="68.544" width="418.32" height="100.8"></rect>
+  </clipPath>
+ </defs>
+ <g id="figure-5a4a8853c769-8-text_1">
+  <text x="22.68" y="19.689961" transform="rotate(-0 22.68 19.689961)" font-size="13.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4e9be8">本次求解</text>
+ </g>
+ <g id="figure-5a4a8853c769-8-text_2" transform="translate(0 8)">
+  <text x="22.68" y="42.815" transform="rotate(-0 22.68 42.815)" font-size="22px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a" font-weight="600">出口 9 μm 宽，高阶模也分到功率</text>
+ </g>
+ <g id="figure-5a4a8853c769-8-line2d_1" transform="translate(0 8)">
+  <path d="M 22.68 53.424  L 65.52 53.424  " clip-path="url(#figure-5a4a8853c769-8-p07160260fa)" fill="none" stroke="#1f6fd0" stroke-width="3.2"></path>
+ </g>
+</svg><figcaption><span class="fig-tag">图 5</span>出口各模式的功率占比。TE0 占绝大部分，但高阶模也分到了可观的份额。</figcaption></figure>
+<p>1550 nm 处，TE0 占总通量约 <strong>79.57%</strong>。其余功率包含所记录的高阶模及未完成分解的部分。总通量 −0.46 dB 与 TE0 传输 −1.45 dB 是两个指标；后续连接单模波导会如何转换，还取决于过渡设计。</p>
+<p>如果下游只接收某一模式，应检查该模式的功率与连接段传输，不能只看总通量。</p>
+<p>这也解释了为什么「透镜型方案能到 −0.46 dB」这种数字要谨慎对待：如果只统计 TE0，插损会明显更高。本期的 −0.46 dB 是总通量口径，与倒锥那篇的基模口径<strong>不是同一个量</strong>——倒锥的输出是 0.5 μm 单模波导，两者在这件事上没有可比性。</p>
+<h2>05　什么时候值得用</h2>
+<p>透镜型方案的适用条件其实很窄：</p>
+<ul>
+<li>面积紧张（阵列、多通道并行）</li>
+<li>能接受更复杂的设计流程（厚度渐变、多段曲线、需要 GDS）</li>
+<li>波段相对固定（谱线比线性锥更敏感）</li>
+</ul>
+<p>Luneburg 的厚度渐变需要相应加工能力；半透镜使用不同的平面轮廓，工艺要求应分别核查。线性锥的设计与制造流程相对直接。</p>
+<p>本次仅演示三个设计点，没有统计产业采用率或制造成本。</p>
+<p>阵列面积要同时考虑传播长度、横向节距与布线。32 个并排通道不会把传播长度乘以 32；只有明确相同端口、节距和排布后，才能估算紧凑转换器节省的总面积。</p>
+<h3>配套案例</h3>
+<p><a href="https://www.lingcompute.com/photon/learning-center/examples/notebooks/WaveguideSizeConverter">Waveguide mode size converters</a></p>
+<p>更多案例见<a href="https://www.lingcompute.com/photon/learning-center/example-library">灵算光子学习中心</a>，国内产品入口为 <a href="https://tidy3d.fangzhen.cloud/">Tidy3D 平台</a>。本次未验证国内注册、Notebook 导入与浏览器执行流程，请以平台当前指引为准。</p>
+<p>本次跑的是三个最终设计，其他长度与优化过程未重跑。线性锥与 Luneburg 共享名义输入/输出截面，半透镜的厚度、宽度及激励方向不同；倒锥另用高斯光束激励。所有读数均需按各自条件解读。</p>
+<p>数据重载时，Luneburg 模型首个半径为 0 的圆柱触发退化几何警告；本次未改变已有求解，也未验证该项的数值影响。精确引用前还需核查几何和网格收敛。</p></main><footer class="brand"><img src="../../../../../assets/20199c0cc188b4515acc1932da068a8e47aecf7b34c5dbf330faedb4b736a2a2.png" alt="灵算科技 LingCompute"><p>自有文章及插图：CC BY-NC 4.0；商用请另行联系。商标与另有标注的第三方材料除外。</p><p>默认系统字体；备用字体：<a href="https://hyperos.mi.com/font/en/download/">MiSans（小米）</a>，按其字体许可使用。</p><p>新稿审核以对应GitHub PR记录为准；预览本身不代表审核通过。</p><p><a href="https://github.com/LingCompute/lingcompute-content/blob/3ef2abbba266dd942473d0bcb0fc8d9e7af82ea6/content/photon/edge-couplers/SOURCES.md">来源、指标口径与素材说明</a></p></footer><nav aria-label="文章导航"><a href="../../index.html">返回文章目录</a></nav></article></body></html>
