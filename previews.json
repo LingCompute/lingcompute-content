@@ -1,11 +1,11 @@
 {
   "main": "1ba2b7c965ef4d2cf59ccaa792db2bd5c78080f6",
-  "renderer": "e2d37c110c923fe325d9f7168c4152d44a6367ee",
+  "renderer": "1ba2b7c965ef4d2cf59ccaa792db2bd5c78080f6",
   "pulls": [
     {
       "number": 43,
-      "sha": "e2d37c110c923fe325d9f7168c4152d44a6367ee",
-      "path": "previews/43/e2d37c110c923fe325d9f7168c4152d44a6367ee/",
+      "sha": "d9af1a8841b1668b65555cc6421c9b10e5aa6db2",
+      "path": "previews/43/d9af1a8841b1668b65555cc6421c9b10e5aa6db2/",
       "state": "success",
       "articles": 0
     },
@@ -245,14 +245,14 @@
       "sha": "52f0b29de2379a86bdf63cdedba12900d90bbdf1",
       "path": "previews/3/52f0b29de2379a86bdf63cdedba12900d90bbdf1/",
       "state": "success",
-      "articles": 3
+      "articles": 1
     },
     {
       "number": 2,
       "sha": "dd320093d5a8811ba7b074383f121ba16c9e4643",
       "path": "previews/2/dd320093d5a8811ba7b074383f121ba16c9e4643/",
       "state": "success",
-      "articles": 3
+      "articles": 1
     }
   ]
 }
