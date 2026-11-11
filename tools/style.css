@@ -15,6 +15,8 @@ ul,ol{padding-left:1.5em}
 li{margin:9px 0}
 figure{margin:28px 0}
 figure img{display:block;width:100%;height:auto;border-radius:8px}
+svg.vector-image{max-width:100%;height:auto;vertical-align:middle}
+figure svg.vector-image{display:block;width:100%;border-radius:8px}
 figcaption{margin-top:12px;color:var(--muted);font-size:14px;line-height:1.75}
 .fig-tag{font-weight:600;margin-right:6px;color:var(--brand)}
 .eq{padding:16px;background:#F3F7FC;border-left:3px solid var(--brand);overflow-wrap:anywhere;font-family:Georgia,"Times New Roman",serif;font-size:17px}
@@ -28,6 +30,7 @@ pre{white-space:pre-wrap;overflow-wrap:anywhere;padding:14px;background:#F3F7FC;
 pre,code{font-family:ui-monospace,"SFMono-Regular",Consolas,"Liberation Mono",monospace}
 .meta{margin-bottom:28px;padding:16px;background:#F3F7FC;border-radius:8px;font-size:14px;color:var(--muted)}
 .meta p{margin:6px 0}
+.meta code{overflow-wrap:anywhere}
 .warning{color:#784900}
 .brand{padding-top:24px;border-top:1px solid #D8E2ED;margin-top:36px;font-size:14px;color:var(--muted)}
 .brand img{display:block;width:180px;max-width:100%;height:auto;margin-bottom:16px}
