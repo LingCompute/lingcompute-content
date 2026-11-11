@@ -21,7 +21,7 @@
     },
     {
       "slug": "04-comparison",
-      "authors": [],
+      "authors": ["Frank-DingYC"],
       "summary": "按带宽、比例、面积和工艺边界选择分光结构。",
       "sources": [
         "https://www.lingcompute.com/photon/learning-center/example-library",
