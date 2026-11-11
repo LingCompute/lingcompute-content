@@ -4,6 +4,8 @@
 
 面向工程师、科研人员和学习者的灵算官方技术内容。按产品和系列阅读，每篇说明读者前提、原理、证据和适用条件。
 
+**[打开 HTML 阅读版](https://lingcompute.github.io/lingcompute-content/)** · [查看待审 PR 预览](https://lingcompute.github.io/lingcompute-content/previews/)
+
 ## 按产品阅读
 
 <!-- BEGIN GENERATED CATALOG -->
@@ -51,7 +53,9 @@ python tools/build.py
 python tools/catalog.py
 ```
 
-打开生成的 `build/index.html` 查看文章。CI 的 `article-preview` 附件包含相同产物；下载后在本地打开。生成目录不入库。投稿方式见 [CONTRIBUTING.md](CONTRIBUTING.md)，默认排版与篇幅见 [编辑规范](docs/editorial.md)，审核流程见 [审核规则](docs/review.md)。
+在线审阅优先打开 PR 检查列表中的 **html-preview → Details**，直接查看当前提交的 HTML 与手机长图；主分支文章见 [HTML 阅读版](https://lingcompute.github.io/lingcompute-content/)。流程及版本边界见 [HTML 预览说明](docs/previews.md)。
+
+本地可打开生成的 `build/index.html`。CI 的 `article-preview` 附件继续提供独立 HTML、公众号排版材料及清单；下载后可离线查看。生成物只由发布任务更新 `gh-pages`，不提交到源稿分支。投稿方式见 [CONTRIBUTING.md](CONTRIBUTING.md)，默认排版与篇幅见 [编辑规范](docs/editorial.md)，审核流程见 [审核规则](docs/review.md)。
 
 首页标记区由 `series.json`、当前源稿和构建报告生成，提供读者前提、文章问题、预计阅读时长及长文提示。增删文章或修改正文、随文图后，重新构建并运行 `python tools/catalog.py`，将 README 更新随同一 PR 提交；CI 用 `python tools/catalog.py --check` 拦截遗漏或过期信息。
 
