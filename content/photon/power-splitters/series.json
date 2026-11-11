@@ -21,7 +21,7 @@
     },
     {
       "slug": "03-mmi",
-      "authors": [],
+      "authors": ["Frank-DingYC"],
       "summary": "理解多模自成像如何分光，以及成像相位和端口透射的口径。",
       "sources": [
         "https://www.lingcompute.com/photon/learning-center/examples/notebooks/MMIPowerSplitter2x2",
