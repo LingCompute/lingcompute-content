@@ -5,7 +5,7 @@
   "articles": [
     {
       "slug": "02-mmi",
-      "authors": [],
+      "authors": ["Frank-DingYC"],
       "summary": "理解多模干涉如何将两个波长送往不同端口。",
       "sources": [
         "https://www.lingcompute.com/photon/learning-center/examples/notebooks/MultiplexingMMI",
