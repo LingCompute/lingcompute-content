@@ -5,7 +5,7 @@
   "articles": [
     {
       "slug": "04-inverse-design",
-      "authors": [],
+      "authors": ["Frank-DingYC"],
       "summary": "区分逆向设计目标、优化过程与最终器件验证。",
       "sources": [
         "https://www.lingcompute.com/photon/learning-center/examples/notebooks/Autograd9WDM",
