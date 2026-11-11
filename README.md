@@ -4,6 +4,8 @@
 
 面向工程师、科研人员和学习者的灵算官方技术内容。按产品和系列阅读，每篇说明读者前提、原理、证据和适用条件。
 
+**[打开 HTML 阅读版](https://lingcompute.github.io/lingcompute-content/)** · [查看待审 PR 预览](https://lingcompute.github.io/lingcompute-content/previews/)
+
 ## 按产品阅读
 
 <!-- BEGIN GENERATED CATALOG -->
@@ -43,6 +45,10 @@
 
 人维护 Markdown 和随文素材；工具生成 HTML、手机截图、阅读时长和上传清单。技术结论由指定业内审核者审批，微信公众号最终发送由人操作。
 
+新制或重绘的技术插图以可编辑 SVG 随文维护，保留文字和矢量对象。HTML 预览直接显示 SVG，公众号构建自动导出 PNG 上传副本；源图规则见[可编辑图片](docs/editorial.md#可编辑图片)。
+
+写作时运行 `python tools/dev.py`，打开终端输出的本地链接（默认 `http://127.0.0.1:8000/`）。保存正文、图片、来源、系列信息或 CSS 后自动重建并刷新；未提交和新增文件也会参与预览，无需 GitHub 登录。首次使用先完成下面的依赖、Chromium 与字体准备。完整命令和故障说明见 [实时预览](docs/previews.md#本地保存即预览)。
+
 ```sh
 python3 -m venv .venv
 source .venv/bin/activate
@@ -52,9 +58,14 @@ python -m unittest discover -s tests
 python tools/build.py --check
 python tools/fonts.py
 python tools/build.py
+python tools/catalog.py
 ```
 
-打开生成的 `build/index.html` 查看文章。CI 的 `article-preview` 附件包含相同产物；下载后在本地打开。生成目录不入库。投稿方式见 [CONTRIBUTING.md](CONTRIBUTING.md)，默认排版与篇幅见 [编辑规范](docs/editorial.md)，审核流程见 [审核规则](docs/review.md)。
+在线审阅优先打开 PR 检查列表中的 **html-preview → Details**，直接查看当前提交的 HTML 与手机长图；主分支文章见 [HTML 阅读版](https://lingcompute.github.io/lingcompute-content/)。流程及版本边界见 [HTML 预览说明](docs/previews.md)。
+
+本地可打开生成的 `build/index.html`。CI 的 `article-preview` 附件继续提供独立 HTML、公众号排版材料及清单；下载后可离线查看。生成物只由发布任务更新 `gh-pages`，不提交到源稿分支。投稿方式见 [CONTRIBUTING.md](CONTRIBUTING.md)，默认排版与篇幅见 [编辑规范](docs/editorial.md)，审核流程见 [审核规则](docs/review.md)。
+
+首页标记区由 `series.json`、当前源稿和构建报告生成，提供读者前提、文章问题、预计阅读时长及长文提示。增删文章或修改正文、随文图后，重新构建并运行 `python tools/catalog.py`，将 README 更新随同一 PR 提交；CI 用 `python tools/catalog.py --check` 拦截遗漏或过期信息。
 
 默认使用设备的系统字体：先匹配系统界面字体（`system-ui`、`-apple-system`、`BlinkMacSystemFont`），中文依次匹配苹方、冬青黑体、微软雅黑、Noto Sans CJK SC；随后回退到小米 MiSans，最后使用通用无衬线字体。正文采用常规字重（400）、小标题及表头采用中等字重（500）、标题及强调采用半粗字重（600）；MiSans 对应使用 Regular、Medium、Semibold。`tools/fonts.py` 首次从[小米官方](https://hyperos.mi.com/font/en/download/)下载约 228 MB 字体包，仅在本机缓存三份未经修改、经 SHA256 校验的原始 WOFF2；后续复用缓存。备用字体嵌入独立 HTML 预览，不单独随仓库或 CI 附件分发。GitHub Markdown 的字体由 GitHub 控制；公众号编辑器可能过滤字体设置，发送前需真机检查。详见[字体与授权](docs/rights.md#字体)。
 

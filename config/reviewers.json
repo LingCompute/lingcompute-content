@@ -1,5 +1,8 @@
 {
-  "photon": [],
+  "photon": [
+    "mwn123",
+    "tomflexcompute"
+  ],
   "fluid": [],
   "rf": [],
   "insight": []
