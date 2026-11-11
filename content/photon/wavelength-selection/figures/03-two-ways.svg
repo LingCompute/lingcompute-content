@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="504.000pt" height="318.400pt" viewBox="0.000 0.000 504.000 318.400" stroke-linejoin="round" stroke-linecap="butt" font-family="MiSans, sans-serif" font-weight="400">
+ <defs>
+  </defs>
+ <g id="figure_1" transform="translate(0 16)">
+  <g id="patch_1">
+   <path d="M 0 302.4  L 504 302.4  L 504 0  L 0 0  z " fill="#ffffff" />
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 30.744 249.48  L 238.896 249.48  Q 246.96 249.48 246.96 241.416  L 246.96 106.344  Q 246.96 98.28 238.896 98.28  L 30.744 98.28  Q 22.68 98.28 22.68 106.344  L 22.68 241.416  Q 22.68 249.48 30.744 249.48  z " clip-path="url(#p376bcf0fbf)" fill="#f1f7fe" />
+   </g>
+   <g id="patch_3">
+    <path d="M 267.624 249.48  L 473.256 249.48  Q 481.32 249.48 481.32 241.416  L 481.32 106.344  Q 481.32 98.28 473.256 98.28  L 267.624 98.28  Q 259.56 98.28 259.56 106.344  L 259.56 241.416  Q 259.56 249.48 267.624 249.48  z " clip-path="url(#p376bcf0fbf)" fill="#fcebdb" />
+   </g>
+   <g id="patch_4">
+    <path d="M 287.28 169.848  L 297.36 169.848  L 297.36 160.776  L 287.28 160.776  z " clip-path="url(#p376bcf0fbf)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_5">
+    <path d="M 287.28 207.144  L 297.36 207.144  L 297.36 198.072  L 287.28 198.072  z " clip-path="url(#p376bcf0fbf)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_6">
+    <path d="M 307.44 169.848  L 317.52 169.848  L 317.52 160.776  L 307.44 160.776  z " clip-path="url(#p376bcf0fbf)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_7">
+    <path d="M 307.44 207.144  L 317.52 207.144  L 317.52 198.072  L 307.44 198.072  z " clip-path="url(#p376bcf0fbf)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_8">
+    <path d="M 327.6 169.848  L 337.68 169.848  L 337.68 160.776  L 327.6 160.776  z " clip-path="url(#p376bcf0fbf)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_9">
+    <path d="M 327.6 207.144  L 337.68 207.144  L 337.68 198.072  L 327.6 198.072  z " clip-path="url(#p376bcf0fbf)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_10">
+    <path d="M 347.76 169.848  L 357.84 169.848  L 357.84 160.776  L 347.76 160.776  z " clip-path="url(#p376bcf0fbf)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_11">
+    <path d="M 347.76 207.144  L 357.84 207.144  L 357.84 198.072  L 347.76 198.072  z " clip-path="url(#p376bcf0fbf)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_12">
+    <path d="M 367.92 169.848  L 378 169.848  L 378 160.776  L 367.92 160.776  z " clip-path="url(#p376bcf0fbf)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_13">
+    <path d="M 367.92 207.144  L 378 207.144  L 378 198.072  L 367.92 198.072  z " clip-path="url(#p376bcf0fbf)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_14">
+    <path d="M 388.08 169.848  L 398.16 169.848  L 398.16 160.776  L 388.08 160.776  z " clip-path="url(#p376bcf0fbf)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_15">
+    <path d="M 388.08 207.144  L 398.16 207.144  L 398.16 198.072  L 388.08 198.072  z " clip-path="url(#p376bcf0fbf)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_16">
+    <path d="M 408.24 169.848  L 418.32 169.848  L 418.32 160.776  L 408.24 160.776  z " clip-path="url(#p376bcf0fbf)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_17">
+    <path d="M 408.24 207.144  L 418.32 207.144  L 418.32 198.072  L 408.24 198.072  z " clip-path="url(#p376bcf0fbf)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_18">
+    <path d="M 428.4 169.848  L 438.48 169.848  L 438.48 160.776  L 428.4 160.776  z " clip-path="url(#p376bcf0fbf)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_19">
+    <path d="M 428.4 207.144  L 438.48 207.144  L 438.48 198.072  L 428.4 198.072  z " clip-path="url(#p376bcf0fbf)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_20">
+    <path d="M 448.56 169.848  L 458.64 169.848  L 458.64 160.776  L 448.56 160.776  z " clip-path="url(#p376bcf0fbf)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_21">
+    <path d="M 448.56 207.144  L 458.64 207.144  L 458.64 198.072  L 448.56 198.072  z " clip-path="url(#p376bcf0fbf)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_22">
+    <path d="M 35.28 148.68  L 234.36 148.68  L 234.36 138.6  L 35.28 138.6  z " clip-path="url(#p376bcf0fbf)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_23">
+    <path d="M 128.52 206.64  C 135.87143 206.64 142.922754 203.719246 148.121 198.521  C 153.319246 193.322754 156.24 186.27143 156.24 178.92  C 156.24 171.56857 153.319246 164.517246 148.121 159.319  C 142.922754 154.120754 135.87143 151.2 128.52 151.2  C 121.16857 151.2 114.117246 154.120754 108.919 159.319  C 103.720754 164.517246 100.8 171.56857 100.8 178.92  C 100.8 186.27143 103.720754 193.322754 108.919 198.521  C 114.117246 203.719246 121.16857 206.64 128.52 206.64  L 128.52 206.64  z " clip-path="url(#p376bcf0fbf)" fill="none" stroke="#0b4c9c" stroke-width="4.6" stroke-linejoin="miter" />
+   </g>
+   <g id="patch_24">
+    <path d="M 279.72 190.008  L 466.2 190.008  L 466.2 177.912  L 279.72 177.912  z " clip-path="url(#p376bcf0fbf)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_25">
+    <path d="M 103.32 162.288  Q 106.3944 154.2744 112.249197 153.546881  " clip-path="url(#p376bcf0fbf)" fill="none" stroke="#e8823c" stroke-width="2.4" stroke-linecap="round" />
+    <path d="M 105.503444 151.1605  L 112.249197 153.546881  L 106.292641 157.511655  z " clip-path="url(#p376bcf0fbf)" fill="#e8823c" stroke="#e8823c" stroke-width="2.4" stroke-linecap="round" />
+   </g>
+   <g id="patch_26">
+    <path d="M 289.8 211.68  Q 332.64 211.68 373.020325 211.68  " clip-path="url(#p376bcf0fbf)" fill="none" stroke="#1f6fd0" stroke-width="2.2" stroke-linecap="round" />
+    <path d="M 366.620325 208.48  L 373.020325 211.68  L 366.620325 214.88  z " clip-path="url(#p376bcf0fbf)" fill="#1f6fd0" stroke="#1f6fd0" stroke-width="2.2" stroke-linecap="round" />
+   </g>
+   <g id="patch_27">
+    <path d="M 375.48 211.68  Q 333.9 188.3952 294.466081 210.478195  " clip-path="url(#p376bcf0fbf)" fill="none" stroke="#e8823c" stroke-width="2.2" stroke-linecap="round" />
+    <path d="M 301.61365 210.143152  L 294.466081 210.478195  L 298.486589 204.559114  z " clip-path="url(#p376bcf0fbf)" fill="#e8823c" stroke="#e8823c" stroke-width="2.2" stroke-linecap="round" />
+   </g>
+   <g id="text_3">
+    <text x="35.28" y="120.158992" transform="rotate(-0 35.28 120.158992)" font-size="15.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#0b4c9c">谐振型（IIR）</text>
+   </g>
+   <g id="text_4">
+    <text transform="translate(35.28 235.107)" font-size="11.5px" font-family="MiSans, sans-serif" fill="#4a6076">只在 mλ = nL 的波长上建场，</text>
+    <text transform="translate(35.28 251.540141)" font-size="11.5px" font-family="MiSans, sans-serif" fill="#4a6076">其余从直通口走掉。</text>
+   </g>
+   <g id="text_5">
+    <text x="272.16" y="120.158992" transform="rotate(-0 272.16 120.158992)" font-size="15.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#e8823c">反向耦合型</text>
+   </g>
+   <g id="text_6">
+    <text transform="translate(272.16 235.107)" font-size="11.5px" font-family="MiSans, sans-serif" fill="#4a6076">周期结构把某个波长反射回去</text>
+    <text transform="translate(272.16 251.632141)" font-size="11.5px" font-family="MiSans, sans-serif" fill="#4a6076">（λ = 2nΛ），其余通过。</text>
+   </g>
+   <g id="text_7">
+    <text x="22.68" y="276.429531" transform="rotate(-0 22.68 276.429531)" font-size="12.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#8a9bab">一条靠「留」，一条靠「退」；后面的案例都落在这两条线上。</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p376bcf0fbf">
+   <rect x="0" y="0" width="504" height="302.4" />
+  </clipPath>
+ </defs>
+ <g id="text_1">
+  <text x="22.68" y="19.689961" transform="rotate(-0 22.68 19.689961)" font-size="13.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4e9be8">机制</text>
+ </g>
+ <g id="text_2" transform="translate(0 8)">
+  <text x="22.68" y="43.742891" transform="rotate(-0 22.68 43.742891)" font-size="25px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a" font-weight="600">本组聚焦两条选波路线</text>
+ </g>
+ <g id="line2d_1" transform="translate(0 8)">
+  <path d="M 22.68 53.424  L 65.52 53.424  " clip-path="url(#p376bcf0fbf)" fill="none" stroke="#1f6fd0" stroke-width="3.2" />
+ </g>
+</svg>

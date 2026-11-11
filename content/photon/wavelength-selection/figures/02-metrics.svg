@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="504.000pt" height="363.760pt" viewBox="0.000 0.000 504.000 363.760" stroke-linejoin="round" stroke-linecap="butt" font-family="MiSans, sans-serif" font-weight="400">
+ <defs>
+  </defs>
+ <g id="figure_1" transform="translate(0 16)">
+  <g id="patch_1">
+   <path d="M 0 347.76  L 504 347.76  L 504 0  L 0 0  z " fill="#ffffff" />
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 33.012 155.988  L 165.564 155.988  Q 173.628 155.988 173.628 147.924  L 173.628 80.388  Q 173.628 72.324 165.564 72.324  L 33.012 72.324  Q 24.948 72.324 24.948 80.388  L 24.948 147.924  Q 24.948 155.988 33.012 155.988  z " clip-path="url(#p1f5b0377f5)" fill="#d9e6f2" />
+   </g>
+   <g id="patch_3">
+    <path d="M 191.772 155.988  L 324.324 155.988  Q 332.388 155.988 332.388 147.924  L 332.388 80.388  Q 332.388 72.324 324.324 72.324  L 191.772 72.324  Q 183.708 72.324 183.708 80.388  L 183.708 147.924  Q 183.708 155.988 191.772 155.988  z " clip-path="url(#p1f5b0377f5)" fill="#d9e6f2" />
+   </g>
+   <g id="patch_4">
+    <path d="M 350.532 155.988  L 483.084 155.988  Q 491.148 155.988 491.148 147.924  L 491.148 80.388  Q 491.148 72.324 483.084 72.324  L 350.532 72.324  Q 342.468 72.324 342.468 80.388  L 342.468 147.924  Q 342.468 155.988 350.532 155.988  z " clip-path="url(#p1f5b0377f5)" fill="#d9e6f2" />
+   </g>
+   <g id="patch_5">
+    <path d="M 33.012 252.756  L 165.564 252.756  Q 173.628 252.756 173.628 244.692  L 173.628 177.156  Q 173.628 169.092 165.564 169.092  L 33.012 169.092  Q 24.948 169.092 24.948 177.156  L 24.948 244.692  Q 24.948 252.756 33.012 252.756  z " clip-path="url(#p1f5b0377f5)" fill="#d9e6f2" />
+   </g>
+   <g id="patch_6">
+    <path d="M 191.772 252.756  L 324.324 252.756  Q 332.388 252.756 332.388 244.692  L 332.388 177.156  Q 332.388 169.092 324.324 169.092  L 191.772 169.092  Q 183.708 169.092 183.708 177.156  L 183.708 244.692  Q 183.708 252.756 191.772 252.756  z " clip-path="url(#p1f5b0377f5)" fill="#d9e6f2" />
+   </g>
+   <g id="patch_7">
+    <path d="M 350.532 252.756  L 483.084 252.756  Q 491.148 252.756 491.148 244.692  L 491.148 177.156  Q 491.148 169.092 483.084 169.092  L 350.532 169.092  Q 342.468 169.092 342.468 177.156  L 342.468 244.692  Q 342.468 252.756 350.532 252.756  z " clip-path="url(#p1f5b0377f5)" fill="#d9e6f2" />
+   </g>
+   <g id="patch_8">
+    <path d="M 30.744 153.216  L 163.296 153.216  Q 171.36 153.216 171.36 145.152  L 171.36 77.616  Q 171.36 69.552 163.296 69.552  L 30.744 69.552  Q 22.68 69.552 22.68 77.616  L 22.68 145.152  Q 22.68 153.216 30.744 153.216  z " clip-path="url(#p1f5b0377f5)" fill="#f1f7fe" />
+   </g>
+   <g id="patch_9">
+    <path d="M 189.504 153.216  L 322.056 153.216  Q 330.12 153.216 330.12 145.152  L 330.12 77.616  Q 330.12 69.552 322.056 69.552  L 189.504 69.552  Q 181.44 69.552 181.44 77.616  L 181.44 145.152  Q 181.44 153.216 189.504 153.216  z " clip-path="url(#p1f5b0377f5)" fill="#f1f7fe" />
+   </g>
+   <g id="patch_10">
+    <path d="M 348.264 153.216  L 480.816 153.216  Q 488.88 153.216 488.88 145.152  L 488.88 77.616  Q 488.88 69.552 480.816 69.552  L 348.264 69.552  Q 340.2 69.552 340.2 77.616  L 340.2 145.152  Q 340.2 153.216 348.264 153.216  z " clip-path="url(#p1f5b0377f5)" fill="#f1f7fe" />
+   </g>
+   <g id="patch_11">
+    <path d="M 30.744 249.984  L 163.296 249.984  Q 171.36 249.984 171.36 241.92  L 171.36 174.384  Q 171.36 166.32 163.296 166.32  L 30.744 166.32  Q 22.68 166.32 22.68 174.384  L 22.68 241.92  Q 22.68 249.984 30.744 249.984  z " clip-path="url(#p1f5b0377f5)" fill="#f1f7fe" />
+   </g>
+   <g id="patch_12">
+    <path d="M 189.504 249.984  L 322.056 249.984  Q 330.12 249.984 330.12 241.92  L 330.12 174.384  Q 330.12 166.32 322.056 166.32  L 189.504 166.32  Q 181.44 166.32 181.44 174.384  L 181.44 241.92  Q 181.44 249.984 189.504 249.984  z " clip-path="url(#p1f5b0377f5)" fill="#f1f7fe" />
+   </g>
+   <g id="patch_13">
+    <path d="M 348.264 249.984  L 480.816 249.984  Q 488.88 249.984 488.88 241.92  L 488.88 174.384  Q 488.88 166.32 480.816 166.32  L 348.264 166.32  Q 340.2 166.32 340.2 174.384  L 340.2 241.92  Q 340.2 249.984 348.264 249.984  z " clip-path="url(#p1f5b0377f5)" fill="#f1f7fe" />
+   </g>
+   <g id="text_3">
+    <text x="33.768" y="92.942992" transform="rotate(-0 33.768 92.942992)" font-size="15.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#0b4c9c">插损 IL</text>
+   </g>
+   <g id="text_4">
+    <text transform="translate(33.768 108.864)" font-size="11.2px" font-family="MiSans, sans-serif" fill="#4a6076">目标通道从输入到输出</text>
+    <text transform="translate(33.768 124.41485)" font-size="11.2px" font-family="MiSans, sans-serif" fill="#4a6076">损失了多少功率</text>
+   </g>
+   <g id="text_5">
+    <text x="192.528" y="92.942992" transform="rotate(-0 192.528 92.942992)" font-size="15.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#0b4c9c">通道间隔</text>
+   </g>
+   <g id="text_6">
+    <text transform="translate(192.528 108.864)" font-size="11.2px" font-family="MiSans, sans-serif" fill="#4a6076">相邻通道的波长差</text>
+    <text transform="translate(192.528 124.41485)" font-size="11.2px" font-family="MiSans, sans-serif" fill="#4a6076">CWDM 记 nm</text>
+    <text transform="translate(192.528 139.9657)" font-size="11.2px" font-family="MiSans, sans-serif" fill="#4a6076">DWDM 记 GHz</text>
+   </g>
+   <g id="text_7">
+    <text x="351.288" y="92.942992" transform="rotate(-0 351.288 92.942992)" font-size="15.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#0b4c9c">串扰</text>
+   </g>
+   <g id="text_8">
+    <text transform="translate(351.288 108.864)" font-size="11.2px" font-family="MiSans, sans-serif" fill="#4a6076">别的通道漏进来多少</text>
+    <text transform="translate(351.288 124.41485)" font-size="11.2px" font-family="MiSans, sans-serif" fill="#4a6076">相邻、非相邻、求和</text>
+    <text transform="translate(351.288 139.9657)" font-size="11.2px" font-family="MiSans, sans-serif" fill="#4a6076">是三个不同的数</text>
+   </g>
+   <g id="text_9">
+    <text x="33.768" y="189.710992" transform="rotate(-0 33.768 189.710992)" font-size="15.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#0b4c9c">3 dB 带宽</text>
+   </g>
+   <g id="text_10">
+    <text transform="translate(33.768 205.632)" font-size="11.2px" font-family="MiSans, sans-serif" fill="#4a6076">相对通带峰值的半高宽</text>
+    <text transform="translate(33.768 221.18285)" font-size="11.2px" font-family="MiSans, sans-serif" fill="#4a6076">需另看边沿与通道隔离</text>
+   </g>
+   <g id="text_11">
+    <text x="192.528" y="189.710992" transform="rotate(-0 192.528 189.710992)" font-size="15.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#0b4c9c">FSR</text>
+   </g>
+   <g id="text_12">
+    <text transform="translate(192.528 205.632)" font-size="11.2px" font-family="MiSans, sans-serif" fill="#4a6076">相邻谐振级次的间距</text>
+    <text transform="translate(192.528 221.18285)" font-size="11.2px" font-family="MiSans, sans-serif" fill="#4a6076">需核查输入光谱内的假通</text>
+    <text transform="translate(192.528 236.7337)" font-size="11.2px" font-family="MiSans, sans-serif" fill="#4a6076">道</text>
+   </g>
+   <g id="text_13">
+    <text x="351.288" y="189.710992" transform="rotate(-0 351.288 189.710992)" font-size="15.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#0b4c9c">消光比</text>
+   </g>
+   <g id="text_14">
+    <text transform="translate(351.288 205.632)" font-size="11.2px" font-family="MiSans, sans-serif" fill="#4a6076">通带峰值与阻带</text>
+    <text transform="translate(351.288 221.18285)" font-size="11.2px" font-family="MiSans, sans-serif" fill="#4a6076">最低点之差</text>
+    <text transform="translate(351.288 236.7337)" font-size="11.2px" font-family="MiSans, sans-serif" fill="#4a6076">决定隔离得多干净</text>
+   </g>
+   <g id="text_15">
+    <text x="22.68" y="319.231445" transform="rotate(-0 22.68 319.231445)" font-size="12.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#8a9bab">六个量必须同时报；只报其中一两个，等于没有定义口径。</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p1f5b0377f5">
+   <rect x="0" y="0" width="504" height="347.76" />
+  </clipPath>
+ </defs>
+ <g id="text_1">
+  <text x="22.68" y="19.689961" transform="rotate(-0 22.68 19.689961)" font-size="13.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4e9be8">口径</text>
+ </g>
+ <g id="text_2" transform="translate(0 8)">
+  <text x="22.68" y="43.742891" transform="rotate(-0 22.68 43.742891)" font-size="25px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a" font-weight="600">六个指标，先定义再比较</text>
+ </g>
+ <g id="line2d_1" transform="translate(0 8)">
+  <path d="M 22.68 53.424  L 65.52 53.424  " clip-path="url(#p1f5b0377f5)" fill="none" stroke="#1f6fd0" stroke-width="3.2" />
+ </g>
+</svg>
