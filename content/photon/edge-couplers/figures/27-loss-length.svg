@@ -1,0 +1,299 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="504.000pt" height="276.016pt" viewBox="0.000 0.000 504.000 276.016" stroke-linejoin="round" stroke-linecap="butt" font-family="MiSans, sans-serif" font-weight="400">
+ <defs>
+  </defs>
+ <g id="figure_1" transform="translate(0 16)">
+  <g id="patch_1">
+   <path d="M 0 221.76  L 504 221.76  L 504 0  L 0 0  z " fill="#ffffff" />
+  </g>
+  <g id="axes_1">
+   <g id="text_3" transform="translate(0 38)">
+    <text x="22.68" y="214.382312" transform="rotate(-0 22.68 214.382312)" font-size="10px" font-family="MiSans, sans-serif" text-anchor="start" fill="#8a9bab">倒锥/双层/自由曲面为基模口径，半透镜为总通量；不作长度与损耗的配对权衡</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_2">
+    <path d="M 60.48 177.408  L 473.76 177.408  L 473.76 66.528  L 60.48 66.528  z " fill="#ffffff" />
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_2">
+      <path d="M 82.781585 177.408  L 82.781585 66.528  " clip-path="url(#p2a369ea6ce)" fill="none" stroke="#e8eff6" stroke-width="0.8" stroke-linecap="square" />
+     </g>
+     <g id="line2d_3">
+      <defs>
+       <path id="m6d0adf29e9" d="M 0 0  L 0 3  " stroke="#4a6076" />
+      </defs>
+      <g>
+       <use xlink:href="#m6d0adf29e9" x="82.781585" y="177.408" fill="#4a6076" stroke="#4a6076" />
+      </g>
+     </g>
+     <g id="text_4">
+      <g transform="translate(73.541585 194.072375)" fill="#4a6076">
+       <text>
+        <tspan x="0" y="-0.264063" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">1</tspan>
+        <tspan x="6.647995" y="-0.264063" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">0</tspan>
+        <tspan x="13.423138" y="-5.35" font-size="8.4px" font-family="MiSans, sans-serif" fill="#4a6076">1</tspan>
+       </text>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_4">
+      <path d="M 312.908317 177.408  L 312.908317 66.528  " clip-path="url(#p2a369ea6ce)" fill="none" stroke="#e8eff6" stroke-width="0.8" stroke-linecap="square" />
+     </g>
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="#m6d0adf29e9" x="312.908317" y="177.408" fill="#4a6076" stroke="#4a6076" />
+      </g>
+     </g>
+     <g id="text_5">
+      <g transform="translate(303.668317 194.312375)" fill="#4a6076">
+       <text>
+        <tspan x="0" y="-0.110938" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">1</tspan>
+        <tspan x="6.647995" y="-0.110938" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">0</tspan>
+        <tspan x="13.423138" y="-5.196875" font-size="8.4px" font-family="MiSans, sans-serif" fill="#4a6076">2</tspan>
+       </text>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_6">
+      <defs>
+       <path id="mdb059cc34e" d="M 0 0  L 0 2  " stroke="#4a6076" stroke-width="0.6" />
+      </defs>
+      <g>
+       <use xlink:href="#mdb059cc34e" x="60.48" y="177.408" fill="#4a6076" stroke="#4a6076" stroke-width="0.6" />
+      </g>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_7">
+      <g>
+       <use xlink:href="#mdb059cc34e" x="72.251563" y="177.408" fill="#4a6076" stroke="#4a6076" stroke-width="0.6" />
+      </g>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#mdb059cc34e" x="152.056634" y="177.408" fill="#4a6076" stroke="#4a6076" stroke-width="0.6" />
+      </g>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_9">
+      <g>
+       <use xlink:href="#mdb059cc34e" x="192.57994" y="177.408" fill="#4a6076" stroke="#4a6076" stroke-width="0.6" />
+      </g>
+     </g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#mdb059cc34e" x="221.331683" y="177.408" fill="#4a6076" stroke="#4a6076" stroke-width="0.6" />
+      </g>
+     </g>
+    </g>
+    <g id="xtick_8">
+     <g id="line2d_11">
+      <g>
+       <use xlink:href="#mdb059cc34e" x="243.633268" y="177.408" fill="#4a6076" stroke="#4a6076" stroke-width="0.6" />
+      </g>
+     </g>
+    </g>
+    <g id="xtick_9">
+     <g id="line2d_12">
+      <g>
+       <use xlink:href="#mdb059cc34e" x="261.854989" y="177.408" fill="#4a6076" stroke="#4a6076" stroke-width="0.6" />
+      </g>
+     </g>
+    </g>
+    <g id="xtick_10">
+     <g id="line2d_13">
+      <g>
+       <use xlink:href="#mdb059cc34e" x="277.261235" y="177.408" fill="#4a6076" stroke="#4a6076" stroke-width="0.6" />
+      </g>
+     </g>
+    </g>
+    <g id="xtick_11">
+     <g id="line2d_14">
+      <g>
+       <use xlink:href="#mdb059cc34e" x="290.606732" y="177.408" fill="#4a6076" stroke="#4a6076" stroke-width="0.6" />
+      </g>
+     </g>
+    </g>
+    <g id="xtick_12">
+     <g id="line2d_15">
+      <g>
+       <use xlink:href="#mdb059cc34e" x="302.378295" y="177.408" fill="#4a6076" stroke="#4a6076" stroke-width="0.6" />
+      </g>
+     </g>
+    </g>
+    <g id="xtick_13">
+     <g id="line2d_16">
+      <g>
+       <use xlink:href="#mdb059cc34e" x="382.183366" y="177.408" fill="#4a6076" stroke="#4a6076" stroke-width="0.6" />
+      </g>
+     </g>
+    </g>
+    <g id="xtick_14">
+     <g id="line2d_17">
+      <g>
+       <use xlink:href="#mdb059cc34e" x="422.706672" y="177.408" fill="#4a6076" stroke="#4a6076" stroke-width="0.6" />
+      </g>
+     </g>
+    </g>
+    <g id="xtick_15">
+     <g id="line2d_18">
+      <g>
+       <use xlink:href="#mdb059cc34e" x="451.458415" y="177.408" fill="#4a6076" stroke="#4a6076" stroke-width="0.6" />
+      </g>
+     </g>
+    </g>
+    <g id="xtick_16">
+     <g id="line2d_19">
+      <g>
+       <use xlink:href="#mdb059cc34e" x="473.76" y="177.408" fill="#4a6076" stroke="#4a6076" stroke-width="0.6" />
+      </g>
+     </g>
+    </g>
+    <g id="text_6">
+     <text x="267.12" y="210.292141" transform="rotate(-0 267.12 210.292141)" font-size="11.5px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">器件长度 (μm，对数轴)</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_20">
+      <path d="M 60.48 177.408  L 473.76 177.408  " clip-path="url(#p2a369ea6ce)" fill="none" stroke="#e8eff6" stroke-width="0.8" stroke-linecap="square" />
+     </g>
+     <g id="line2d_21">
+      <defs>
+       <path id="m31a6a627b6" d="M 0 0  L -3 0  " stroke="#4a6076" />
+      </defs>
+      <g>
+       <use xlink:href="#m31a6a627b6" x="60.48" y="177.408" fill="#4a6076" stroke="#4a6076" />
+      </g>
+     </g>
+     <g id="text_7">
+      <text x="53.98" y="182.268" transform="rotate(-0 53.98 182.268)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="end" fill="#4a6076">0.0</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_22">
+      <path d="M 60.48 146.608  L 473.76 146.608  " clip-path="url(#p2a369ea6ce)" fill="none" stroke="#e8eff6" stroke-width="0.8" stroke-linecap="square" />
+     </g>
+     <g id="line2d_23">
+      <g>
+       <use xlink:href="#m31a6a627b6" x="60.48" y="146.608" fill="#4a6076" stroke="#4a6076" />
+      </g>
+     </g>
+     <g id="text_8">
+      <text x="53.98" y="151.468" transform="rotate(-0 53.98 151.468)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="end" fill="#4a6076">0.5</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_24">
+      <path d="M 60.48 115.808  L 473.76 115.808  " clip-path="url(#p2a369ea6ce)" fill="none" stroke="#e8eff6" stroke-width="0.8" stroke-linecap="square" />
+     </g>
+     <g id="line2d_25">
+      <g>
+       <use xlink:href="#m31a6a627b6" x="60.48" y="115.808" fill="#4a6076" stroke="#4a6076" />
+      </g>
+     </g>
+     <g id="text_9">
+      <text x="53.98" y="120.668" transform="rotate(-0 53.98 120.668)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="end" fill="#4a6076">1.0</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_26">
+      <path d="M 60.48 85.008  L 473.76 85.008  " clip-path="url(#p2a369ea6ce)" fill="none" stroke="#e8eff6" stroke-width="0.8" stroke-linecap="square" />
+     </g>
+     <g id="line2d_27">
+      <g>
+       <use xlink:href="#m31a6a627b6" x="60.48" y="85.008" fill="#4a6076" stroke="#4a6076" />
+      </g>
+     </g>
+     <g id="text_10">
+      <text x="53.98" y="89.868" transform="rotate(-0 53.98 89.868)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="end" fill="#4a6076">1.5</text>
+     </g>
+    </g>
+    <g id="text_11">
+     <text x="31.828984" y="121.968" transform="rotate(-90 31.828984 121.968)" font-size="11.5px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">设计点损耗 (dB)</text>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 60.48 177.408  L 60.48 66.528  " fill="none" stroke="#d6e2ec" stroke-linejoin="miter" stroke-linecap="square" />
+   </g>
+   <g id="patch_4">
+    <path d="M 473.76 177.408  L 473.76 66.528  " fill="none" stroke="#d6e2ec" stroke-linejoin="miter" stroke-linecap="square" />
+   </g>
+   <g id="patch_5">
+    <path d="M 60.48 177.408  L 473.76 177.408  " fill="none" stroke="#d6e2ec" stroke-linejoin="miter" stroke-linecap="square" />
+   </g>
+   <g id="patch_6">
+    <path d="M 60.48 66.528  L 473.76 66.528  " fill="none" stroke="#d6e2ec" stroke-linejoin="miter" stroke-linecap="square" />
+   </g>
+   <g id="text_12">
+    <text x="253.633268" y="156.912" transform="rotate(-0 253.633268 156.912)" font-size="11px" font-family="MiSans, sans-serif" text-anchor="start" fill="#0b4c9c">倒锥</text>
+   </g>
+   <g id="text_13">
+    <text x="87.655191" y="141.072" transform="rotate(-0 87.655191 141.072)" font-size="11px" font-family="MiSans, sans-serif" text-anchor="start" fill="#1f6fd0">模斑转换</text>
+   </g>
+   <g id="text_14">
+    <text x="352.010514" y="79.936" transform="rotate(-0 352.010514 79.936)" font-size="11px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4e9be8">双层 SiN</text>
+   </g>
+   <g id="text_15">
+    <text x="213.331683" y="122.136" transform="rotate(-0 213.331683 122.136)" font-size="11px" font-family="MiSans, sans-serif" text-anchor="start" fill="#e8823c">自由曲面</text>
+   </g>
+   <g id="line2d_28">
+    <defs>
+     <path id="mfafffedc40" d="M 0 5.5  C 1.458617 5.5 2.857689 4.920485 3.889087 3.889087  C 4.920485 2.857689 5.5 1.458617 5.5 0  C 5.5 -1.458617 4.920485 -2.857689 3.889087 -3.889087  C 2.857689 -4.920485 1.458617 -5.5 0 -5.5  C -1.458617 -5.5 -2.857689 -4.920485 -3.889087 -3.889087  C -4.920485 -2.857689 -5.5 -1.458617 -5.5 0  C -5.5 1.458617 -4.920485 2.857689 -3.889087 3.889087  C -2.857689 4.920485 -1.458617 5.5 0 5.5  z " stroke="#ffffff" stroke-width="1.5" />
+    </defs>
+    <g clip-path="url(#p2a369ea6ce)">
+     <use xlink:href="#mfafffedc40" x="243.633268" y="142.912" fill="#0b4c9c" stroke="#ffffff" stroke-width="1.5" />
+    </g>
+   </g>
+   <g id="line2d_29">
+    <defs>
+     <path id="m4514fb8920" d="M 0 5.5  C 1.458617 5.5 2.857689 4.920485 3.889087 3.889087  C 4.920485 2.857689 5.5 1.458617 5.5 0  C 5.5 -1.458617 4.920485 -2.857689 3.889087 -3.889087  C 2.857689 -4.920485 1.458617 -5.5 0 -5.5  C -1.458617 -5.5 -2.857689 -4.920485 -3.889087 -3.889087  C -4.920485 -2.857689 -5.5 -1.458617 -5.5 0  C -5.5 1.458617 -4.920485 2.857689 -3.889087 3.889087  C -2.857689 4.920485 -1.458617 5.5 0 5.5  z " stroke="#ffffff" stroke-width="1.5" />
+    </defs>
+    <g clip-path="url(#p2a369ea6ce)">
+     <use xlink:href="#m4514fb8920" x="77.655191" y="149.072" fill="#1f6fd0" stroke="#ffffff" stroke-width="1.5" />
+    </g>
+   </g>
+   <g id="line2d_30">
+    <defs>
+     <path id="me9bee42e7b" d="M 0 5.5  C 1.458617 5.5 2.857689 4.920485 3.889087 3.889087  C 4.920485 2.857689 5.5 1.458617 5.5 0  C 5.5 -1.458617 4.920485 -2.857689 3.889087 -3.889087  C 2.857689 -4.920485 1.458617 -5.5 0 -5.5  C -1.458617 -5.5 -2.857689 -4.920485 -3.889087 -3.889087  C -4.920485 -2.857689 -5.5 -1.458617 -5.5 0  C -5.5 1.458617 -4.920485 2.857689 -3.889087 3.889087  C -2.857689 4.920485 -1.458617 5.5 0 5.5  z " stroke="#ffffff" stroke-width="1.5" />
+    </defs>
+    <g clip-path="url(#p2a369ea6ce)">
+     <use xlink:href="#me9bee42e7b" x="414.010514" y="89.936" fill="#4e9be8" stroke="#ffffff" stroke-width="1.5" />
+    </g>
+   </g>
+   <g id="line2d_31">
+    <defs>
+     <path id="m3b8befab4d" d="M 0 5.5  C 1.458617 5.5 2.857689 4.920485 3.889087 3.889087  C 4.920485 2.857689 5.5 1.458617 5.5 0  C 5.5 -1.458617 4.920485 -2.857689 3.889087 -3.889087  C 2.857689 -4.920485 1.458617 -5.5 0 -5.5  C -1.458617 -5.5 -2.857689 -4.920485 -3.889087 -3.889087  C -4.920485 -2.857689 -5.5 -1.458617 -5.5 0  C -5.5 1.458617 -4.920485 2.857689 -3.889087 3.889087  C -2.857689 4.920485 -1.458617 5.5 0 5.5  z " stroke="#ffffff" stroke-width="1.5" />
+    </defs>
+    <g clip-path="url(#p2a369ea6ce)">
+     <use xlink:href="#m3b8befab4d" x="221.331683" y="136.136" fill="#e8823c" stroke="#ffffff" stroke-width="1.5" />
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p8b6147a467">
+   <rect x="0" y="0" width="504" height="221.76" />
+  </clipPath>
+  <clipPath id="p2a369ea6ce">
+   <rect x="60.48" y="66.528" width="413.28" height="110.88" />
+  </clipPath>
+ </defs>
+ <g id="text_1">
+  <text x="22.68" y="19.689961" transform="rotate(-0 22.68 19.689961)" font-size="13.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4e9be8">案例尺寸</text>
+ </g>
+ <g id="text_2" transform="translate(0 8)">
+  <text x="22.68" y="42.452812" transform="rotate(-0 22.68 42.452812)" font-size="21px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a" font-weight="500">不同条件下的器件长度与传输读数</text>
+ </g>
+ <g id="line2d_1" transform="translate(0 8)">
+  <path d="M 22.68 53.424  L 65.52 53.424  " clip-path="url(#p8b6147a467)" fill="none" stroke="#1f6fd0" stroke-width="3.2" />
+ </g>
+</svg>
