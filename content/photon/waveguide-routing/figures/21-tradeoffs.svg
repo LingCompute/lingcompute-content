@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="446.400pt" height="427.069pt" viewBox="0.000 -0.845 446.400 427.069" stroke-linejoin="round" stroke-linecap="butt" font-family="MiSans, sans-serif" font-weight="400">
+ <defs>
+  </defs>
+ <g id="figure_1" transform="translate(0 20)">
+  <g id="patch_1">
+   <path d="M 0 406.224  L 446.4 406.224  L 446.4 0  L 0 0  z " fill="#ffffff" />
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 29.016 120.528  L 417.384 120.528  Q 424.08 120.528 424.08 113.832  L 424.08 72.7632  Q 424.08 66.0672 417.384 66.0672  L 29.016 66.0672  Q 22.32 66.0672 22.32 72.7632  L 22.32 113.832  Q 22.32 120.528 29.016 120.528  z " clip-path="url(#p6af5cda4ad)" fill="#f1f7fe" />
+   </g>
+   <g id="patch_3">
+    <path d="M 29.016 186.1488  L 417.384 186.1488  Q 424.08 186.1488 424.08 179.4528  L 424.08 138.384  Q 424.08 131.688 417.384 131.688  L 29.016 131.688  Q 22.32 131.688 22.32 138.384  L 22.32 179.4528  Q 22.32 186.1488 29.016 186.1488  z " clip-path="url(#p6af5cda4ad)" fill="#f1f7fe" />
+   </g>
+   <g id="patch_4">
+    <path d="M 29.016 251.7696  L 417.384 251.7696  Q 424.08 251.7696 424.08 245.0736  L 424.08 204.0048  Q 424.08 197.3088 417.384 197.3088  L 29.016 197.3088  Q 22.32 197.3088 22.32 204.0048  L 22.32 245.0736  Q 22.32 251.7696 29.016 251.7696  z " clip-path="url(#p6af5cda4ad)" fill="#f1f7fe" />
+   </g>
+   <g id="patch_5">
+    <path d="M 29.016 317.3904  L 417.384 317.3904  Q 424.08 317.3904 424.08 310.6944  L 424.08 269.6256  Q 424.08 262.9296 417.384 262.9296  L 29.016 262.9296  Q 22.32 262.9296 22.32 269.6256  L 22.32 310.6944  Q 22.32 317.3904 29.016 317.3904  z " clip-path="url(#p6af5cda4ad)" fill="#f1f7fe" />
+   </g>
+   <g id="text_3">
+    <text x="33.48" y="88.554534" transform="rotate(-0 33.48 88.554534)" font-weight="600" font-size="15px" font-family="MiSans, sans-serif" text-anchor="start" fill="#0b4c9c">弯太多</text>
+   </g>
+   <g id="text_4">
+    <text x="171.864" y="88.384456" transform="rotate(-0 171.864 88.384456)" font-size="14px" font-family="MiSans, sans-serif" text-anchor="start" fill="#e8823c">先比较圆弧 / Euler</text>
+   </g>
+   <g id="text_5">
+    <text x="33.48" y="154.175334" transform="rotate(-0 33.48 154.175334)" font-weight="600" font-size="15px" font-family="MiSans, sans-serif" text-anchor="start" fill="#0b4c9c">十字节点漏光</text>
+   </g>
+   <g id="text_6">
+    <text x="171.864" y="153.836819" transform="rotate(-0 171.864 153.836819)" font-size="14px" font-family="MiSans, sans-serif" text-anchor="start" fill="#e8823c">先试余弦锥形</text>
+   </g>
+   <g id="text_7">
+    <text x="33.48" y="220.0809" transform="rotate(-0 33.48 220.0809)" font-weight="600" font-size="15px" font-family="MiSans, sans-serif" text-anchor="start" fill="#0b4c9c">宽波段 / 多模需求</text>
+   </g>
+   <g id="text_8">
+    <text x="171.864" y="219.457619" transform="rotate(-0 171.864 219.457619)" font-size="14px" font-family="MiSans, sans-serif" text-anchor="start" fill="#e8823c">再看二维 SWG 交叉</text>
+   </g>
+   <g id="text_9">
+    <text x="33.48" y="285.416934" transform="rotate(-0 33.48 285.416934)" font-weight="600" font-size="15px" font-family="MiSans, sans-serif" text-anchor="start" fill="#0b4c9c">长距离靠近走线</text>
+   </g>
+   <g id="text_10">
+    <text x="171.864" y="285.078419" transform="rotate(-0 171.864 285.078419)" font-size="14px" font-family="MiSans, sans-serif" text-anchor="start" fill="#e8823c">评估各向异性包层</text>
+   </g>
+   <g id="text_11">
+    <text x="20.088" y="398.341272" transform="rotate(-0 20.088 398.341272)" font-size="11px" font-family="MiSans, sans-serif" text-anchor="start" fill="#8a9bab">不同案例的波长、材料、厚度和端口统计不同；本图不给性能排名</text>
+   </g>
+   <g id="text_12">
+    <text x="33.48" y="110.028245" transform="rotate(-0 33.48 110.028245)" font-size="12.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">查有效半径、最小半径、整段基模损耗</text>
+   </g>
+   <g id="text_13">
+    <text x="33.48" y="175.649045" transform="rotate(-0 33.48 175.649045)" font-size="12.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">查中心宽度、锥长、两侧串扰及反射</text>
+   </g>
+   <g id="text_14">
+    <text x="33.48" y="241.269845" transform="rotate(-0 33.48 241.269845)" font-size="12.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">逐个激励模式，统计所有相关输出模式</text>
+   </g>
+   <g id="text_15">
+    <text x="33.48" y="306.890645" transform="rotate(-0 33.48 306.890645)" font-size="12.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">查细栅可制造性、工作带宽和串扰深谷稳定性</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p6af5cda4ad">
+   <rect x="0" y="0" width="446.4" height="406.224" />
+  </clipPath>
+ </defs>
+ <g id="text_1">
+  <text x="20.088" y="16.730645" transform="rotate(-0 20.088 16.730645)" font-size="12.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4e9be8">选型建议 · 机制对照</text>
+ </g>
+ <g id="text_2" transform="translate(0 10)">
+  <text x="20.088" y="38.818091" transform="rotate(-0 20.088 38.818091)" font-size="25px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a" font-weight="600">先找瓶颈，再增加结构复杂度</text>
+ </g>
+ <g id="line2d_1" transform="translate(0 10)">
+  <path d="M 20.088 45.5328  L 58.032 45.5328  " clip-path="url(#p6af5cda4ad)" fill="none" stroke="#1f6fd0" stroke-width="3.2" />
+ </g>
+</svg>
