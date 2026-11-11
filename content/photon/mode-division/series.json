@@ -6,7 +6,7 @@
     {
       "slug": "03-invdes",
       "authors": [],
-      "summary": "理解逆向模式转换的优化目标与实测功率口径。",
+      "summary": "理解逆向模式转换的优化目标与仿真功率口径。",
       "sources": [
         "https://www.lingcompute.com/photon/learning-center/examples/notebooks/8ChannelDemultiplexer",
         "https://www.lingcompute.com/photon/learning-center/examples/notebooks/Autograd3InverseDesign",
