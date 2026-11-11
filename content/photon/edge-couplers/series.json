@@ -5,7 +5,7 @@
   "articles": [
     {
       "slug": "04-mode-converter",
-      "authors": [],
+      "authors": ["Frank-DingYC"],
       "summary": "区分线性锥、Luneburg 与半透镜的模斑转换条件。",
       "sources": [
         "https://www.lingcompute.com/photon/learning-center/examples/notebooks/WaveguideSizeConverter",
