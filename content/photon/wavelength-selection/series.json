@@ -5,7 +5,7 @@
   "articles": [
     {
       "slug": "06-comparison",
-      "authors": [],
+      "authors": ["Frank-DingYC"],
       "summary": "联合评估 Q、带宽、面积和可调性选择选波器件。",
       "sources": [
         "https://www.lingcompute.com/photon/learning-center/examples/notebooks/RingResonator",
