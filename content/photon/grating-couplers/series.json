@@ -5,7 +5,7 @@
   "articles": [
     {
       "slug": "04-bilayer",
-      "authors": [],
+      "authors": ["Frank-DingYC"],
       "summary": "理解双层结构调节衬底泄漏的机制及二维/三维差别。",
       "sources": [
         "https://www.lingcompute.com/photon/learning-center/examples/notebooks/BilayerSiNSiGC"
