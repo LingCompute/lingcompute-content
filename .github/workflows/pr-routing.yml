@@ -1,0 +1,23 @@
+name: PR defaults
+
+on:
+  pull_request_target:
+    types: [opened]
+
+permissions:
+  pull-requests: write
+
+jobs:
+  assign:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 2
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      PR_NUMBER: ${{ github.event.pull_request.number }}
+    steps:
+      - name: Assign maintainer
+        run: gh api --method POST "repos/$GH_REPO/issues/$PR_NUMBER/assignees" -f 'assignees[]=Frank-DingYC' --silent
+      - name: Request reviewer
+        if: github.event.pull_request.user.login != 'mwn123'
+        run: gh api --method POST "repos/$GH_REPO/pulls/$PR_NUMBER/requested_reviewers" -f 'reviewers[]=mwn123' --silent
