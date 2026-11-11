@@ -5,7 +5,7 @@
   "articles": [
     {
       "slug": "04-strip-slot",
-      "authors": [],
+      "authors": ["Frank-DingYC"],
       "summary": "比较条波导到槽波导的三种模式转移路线。",
       "sources": [
         "https://www.lingcompute.com/photon/learning-center/examples/notebooks/8ChannelDemultiplexer",
