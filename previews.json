@@ -1,7 +1,14 @@
 {
   "main": "03822d6454b571658b6a8e48208a195cee3a4e06",
-  "renderer": "91b513db30654c9cb059375902c73b894742d119",
+  "renderer": "c7a457c2c161a529f01b24c84681d59c52e4b591",
   "pulls": [
+    {
+      "number": 42,
+      "sha": "c7a457c2c161a529f01b24c84681d59c52e4b591",
+      "path": "previews/42/c7a457c2c161a529f01b24c84681d59c52e4b591/",
+      "state": "success",
+      "articles": 0
+    },
     {
       "number": 38,
       "sha": "3ba3108939dc22e9338740f70dde1a22f1e1dace",
