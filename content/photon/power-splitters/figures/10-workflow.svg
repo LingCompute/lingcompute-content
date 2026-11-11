@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="504.000pt" height="285.640pt" viewBox="0.000 0.000 504.000 285.640" stroke-linejoin="round" stroke-linecap="butt" font-family="MiSans, sans-serif" font-weight="400">
+ <defs>
+  </defs>
+ <g id="figure_1" transform="translate(0 16)">
+  <g id="patch_1">
+   <path d="M 0 269.64  L 504 269.64  L 504 0  L 0 0  z " fill="#ffffff" />
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 28.224 187.992  L 113.904 187.992  Q 120.96 187.992 120.96 180.936  L 120.96 73.08  Q 120.96 66.024 113.904 66.024  L 28.224 66.024  Q 21.168 66.024 21.168 73.08  L 21.168 180.936  Q 21.168 187.992 28.224 187.992  z " clip-path="url(#pd6720f0426)" fill="#f1f7fe" />
+   </g>
+   <g id="patch_3">
+    <path d="M 148.176 187.992  L 233.856 187.992  Q 240.912 187.992 240.912 180.936  L 240.912 73.08  Q 240.912 66.024 233.856 66.024  L 148.176 66.024  Q 141.12 66.024 141.12 73.08  L 141.12 180.936  Q 141.12 187.992 148.176 187.992  z " clip-path="url(#pd6720f0426)" fill="#f1f7fe" />
+   </g>
+   <g id="patch_4">
+    <path d="M 268.128 187.992  L 353.808 187.992  Q 360.864 187.992 360.864 180.936  L 360.864 73.08  Q 360.864 66.024 353.808 66.024  L 268.128 66.024  Q 261.072 66.024 261.072 73.08  L 261.072 180.936  Q 261.072 187.992 268.128 187.992  z " clip-path="url(#pd6720f0426)" fill="#f1f7fe" />
+   </g>
+   <g id="patch_5">
+    <path d="M 388.08 187.992  L 473.76 187.992  Q 480.816 187.992 480.816 180.936  L 480.816 73.08  Q 480.816 66.024 473.76 66.024  L 388.08 66.024  Q 381.024 66.024 381.024 73.08  L 381.024 180.936  Q 381.024 187.992 388.08 187.992  z " clip-path="url(#pd6720f0426)" fill="#f1f7fe" />
+   </g>
+   <g id="patch_6">
+    <path d="M 453.096 190.008  Q 370.944 132.5016 290.165894 189.046274  " fill="none" stroke-dasharray="7.5,4.5" stroke-dashoffset="0" stroke="#e8823c" stroke-width="1.5" stroke-linecap="round" />
+    <path d="M 296.801672 188.063196  L 290.165894 189.046274  L 293.360898 183.147805  z " fill="#e8823c" stroke-dasharray="7.5,4.5" stroke-dashoffset="0" stroke="#e8823c" stroke-width="1.5" stroke-linecap="round" />
+   </g>
+   <g id="patch_7">
+    <path d="M 123.984 127.008  Q 131.04 127.008 135.859932 127.008  " clip-path="url(#pd6720f0426)" fill="none" stroke="#4e9be8" stroke-width="2" stroke-linecap="round" />
+    <path d="M 129.859932 124.008  L 135.859932 127.008  L 129.859932 130.008  z " clip-path="url(#pd6720f0426)" fill="#4e9be8" stroke="#4e9be8" stroke-width="2" stroke-linecap="round" />
+   </g>
+   <g id="patch_8">
+    <path d="M 243.936 127.008  Q 250.992 127.008 255.811932 127.008  " clip-path="url(#pd6720f0426)" fill="none" stroke="#4e9be8" stroke-width="2" stroke-linecap="round" />
+    <path d="M 249.811932 124.008  L 255.811932 127.008  L 249.811932 130.008  z " clip-path="url(#pd6720f0426)" fill="#4e9be8" stroke="#4e9be8" stroke-width="2" stroke-linecap="round" />
+   </g>
+   <g id="patch_9">
+    <path d="M 363.888 127.008  Q 370.944 127.008 375.763932 127.008  " clip-path="url(#pd6720f0426)" fill="none" stroke="#4e9be8" stroke-width="2" stroke-linecap="round" />
+    <path d="M 369.763932 124.008  L 375.763932 127.008  L 369.763932 130.008  z " clip-path="url(#pd6720f0426)" fill="#4e9be8" stroke="#4e9be8" stroke-width="2" stroke-linecap="round" />
+   </g>
+   <g id="text_3">
+    <text x="33.264" y="85.101844" transform="rotate(-0 33.264 85.101844)" font-size="10.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4e9be8">01</text>
+   </g>
+   <g id="text_4">
+    <text x="33.264" y="105.377594" transform="rotate(-0 33.264 105.377594)" font-size="14.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">写清需求</text>
+   </g>
+   <g id="text_5">
+    <text transform="translate(33.264 122.507212)" font-size="10.8px" font-family="MiSans, sans-serif" fill="#4a6076">端口与偏振</text>
+    <text transform="translate(33.264 137.946487)" font-size="10.8px" font-family="MiSans, sans-serif" fill="#4a6076">波段与温区</text>
+    <text transform="translate(33.264 153.385762)" font-size="10.8px" font-family="MiSans, sans-serif" fill="#4a6076">比例与损耗</text>
+    <text transform="translate(33.264 168.825037)" font-size="10.8px" font-family="MiSans, sans-serif" fill="#4a6076">占地与布线</text>
+   </g>
+   <g id="text_6">
+    <text x="153.216" y="85.101844" transform="rotate(-0 153.216 85.101844)" font-size="10.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4e9be8">02</text>
+   </g>
+   <g id="text_7">
+    <text x="153.216" y="105.377594" transform="rotate(-0 153.216 105.377594)" font-size="14.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">选结构</text>
+   </g>
+   <g id="text_8">
+    <text transform="translate(153.216 122.507212)" font-size="10.8px" font-family="MiSans, sans-serif" fill="#4a6076">按机制筛选</text>
+    <text transform="translate(153.216 137.946487)" font-size="10.8px" font-family="MiSans, sans-serif" fill="#4a6076">Y 分支</text>
+    <text transform="translate(153.216 153.385762)" font-size="10.8px" font-family="MiSans, sans-serif" fill="#4a6076">定向耦合器</text>
+    <text transform="translate(153.216 168.825037)" font-size="10.8px" font-family="MiSans, sans-serif" fill="#4a6076">多模干涉 MMI</text>
+   </g>
+   <g id="text_9">
+    <text x="273.168" y="85.101844" transform="rotate(-0 273.168 85.101844)" font-size="10.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4e9be8">03</text>
+   </g>
+   <g id="text_10">
+    <text x="273.168" y="105.377594" transform="rotate(-0 273.168 105.377594)" font-size="14.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">估算与扫描</text>
+   </g>
+   <g id="text_11">
+    <text transform="translate(273.168 122.507212)" font-size="10.8px" font-family="MiSans, sans-serif" fill="#4a6076">解析与仿真结合</text>
+    <text transform="translate(273.168 137.946487)" font-size="10.8px" font-family="MiSans, sans-serif" fill="#4a6076">扫描光谱</text>
+    <text transform="translate(273.168 153.385762)" font-size="10.8px" font-family="MiSans, sans-serif" fill="#4a6076">评估工艺偏差</text>
+    <text transform="translate(273.168 168.825037)" font-size="10.8px" font-family="MiSans, sans-serif" fill="#4a6076">与温度影响</text>
+   </g>
+   <g id="text_12">
+    <text x="393.12" y="85.101844" transform="rotate(-0 393.12 85.101844)" font-size="10.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4e9be8">04</text>
+   </g>
+   <g id="text_13">
+    <text x="393.12" y="105.377594" transform="rotate(-0 393.12 105.377594)" font-size="14.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">验收</text>
+   </g>
+   <g id="text_14">
+    <text transform="translate(393.12 130.22685)" font-size="10.8px" font-family="MiSans, sans-serif" fill="#4a6076">核对目标指标</text>
+    <text transform="translate(393.12 145.666125)" font-size="10.8px" font-family="MiSans, sans-serif" fill="#4a6076">检查数值收敛</text>
+    <text transform="translate(393.12 161.1054)" font-size="10.8px" font-family="MiSans, sans-serif" fill="#4a6076">评估带宽与容差</text>
+   </g>
+   <g id="text_15">
+    <text x="336.168" y="225.365484" transform="rotate(-0 336.168 225.365484)" font-size="11px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#e8823c">不达标就回到 03，改参数再扫一次</text>
+   </g>
+   <g id="text_16">
+    <text x="22.68" y="255.603094" transform="rotate(-0 22.68 255.603094)" font-size="10.8px" font-family="MiSans, sans-serif" text-anchor="start" fill="#8a9bab">流程建议，不是某个 Notebook 的操作步骤；每一步的判据都要用同条件的仿真结果确认</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pd6720f0426">
+   <rect x="0" y="0" width="504" height="269.64" />
+  </clipPath>
+ </defs>
+ <g id="text_1">
+  <text x="22.68" y="18.912656" transform="rotate(-0 22.68 18.912656)" font-size="13.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4e9be8">设计流程 · 四步</text>
+ </g>
+ <g id="text_2" transform="translate(0 8)">
+  <text x="22.68" y="42.416719" transform="rotate(-0 22.68 42.416719)" font-size="25px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a" font-weight="600">一个分光器，是怎么被定下来的</text>
+ </g>
+ <g id="line2d_1" transform="translate(0 8)">
+  <path d="M 22.68 53.424  L 65.52 53.424  " clip-path="url(#pd6720f0426)" fill="none" stroke="#1f6fd0" stroke-width="3.2" />
+ </g>
+</svg>
