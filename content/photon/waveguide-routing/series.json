@@ -5,7 +5,7 @@
   "articles": [
     {
       "slug": "02-bends",
-      "authors": [],
+      "authors": ["Frank-DingYC"],
       "summary": "在配对模型中比较圆弧和 Euler 弯的损耗。",
       "sources": [
         "https://www.lingcompute.com/photon/learning-center/examples/notebooks/EulerWaveguideBend",
