@@ -5,7 +5,7 @@
   "articles": [
     {
       "slug": "06-comparison",
-      "authors": [],
+      "authors": ["Frank-DingYC"],
       "summary": "按波段、接口尺寸、占地与端口口径选择方案。",
       "sources": [
         "https://www.lingcompute.com/photon/learning-center/examples/notebooks/EdgeCoupler",
