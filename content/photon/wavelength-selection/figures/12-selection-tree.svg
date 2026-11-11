@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="504.000pt" height="348.640pt" viewBox="0.000 0.000 504.000 348.640" stroke-linejoin="round" stroke-linecap="butt" font-family="MiSans, sans-serif" font-weight="400">
+ <defs>
+  </defs>
+ <g id="figure_1" transform="translate(0 16)">
+  <g id="patch_1">
+   <path d="M 0 332.64  L 504 332.64  L 504 0  L 0 0  z " fill="#ffffff" />
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 30.744 128.52  L 223.776 128.52  Q 231.84 128.52 231.84 120.456  L 231.84 86.184  Q 231.84 78.12 223.776 78.12  L 30.744 78.12  Q 22.68 78.12 22.68 86.184  L 22.68 120.456  Q 22.68 128.52 30.744 128.52  z " clip-path="url(#p3c6a19423b)" fill="#f1f7fe" />
+   </g>
+   <g id="patch_3">
+    <path d="M 30.744 196.56  L 223.776 196.56  Q 231.84 196.56 231.84 188.496  L 231.84 154.224  Q 231.84 146.16 223.776 146.16  L 30.744 146.16  Q 22.68 146.16 22.68 154.224  L 22.68 188.496  Q 22.68 196.56 30.744 196.56  z " clip-path="url(#p3c6a19423b)" fill="#f1f7fe" />
+   </g>
+   <g id="patch_4">
+    <path d="M 30.744 264.6  L 223.776 264.6  Q 231.84 264.6 231.84 256.536  L 231.84 222.264  Q 231.84 214.2 223.776 214.2  L 30.744 214.2  Q 22.68 214.2 22.68 222.264  L 22.68 256.536  Q 22.68 264.6 30.744 264.6  z " clip-path="url(#p3c6a19423b)" fill="#f1f7fe" />
+   </g>
+   <g id="patch_5">
+    <path d="M 236.88 102.312  Q 248.22 102.312 257.323932 102.312  " clip-path="url(#p3c6a19423b)" fill="none" stroke="#4e9be8" stroke-width="2" stroke-linecap="round" />
+    <path d="M 251.323932 99.312  L 257.323932 102.312  L 251.323932 105.312  z " clip-path="url(#p3c6a19423b)" fill="#4e9be8" stroke="#4e9be8" stroke-width="2" stroke-linecap="round" />
+   </g>
+   <g id="patch_6">
+    <path d="M 236.88 170.352  Q 248.22 170.352 257.323932 170.352  " clip-path="url(#p3c6a19423b)" fill="none" stroke="#4e9be8" stroke-width="2" stroke-linecap="round" />
+    <path d="M 251.323932 167.352  L 257.323932 170.352  L 251.323932 173.352  z " clip-path="url(#p3c6a19423b)" fill="#4e9be8" stroke="#4e9be8" stroke-width="2" stroke-linecap="round" />
+   </g>
+   <g id="patch_7">
+    <path d="M 236.88 238.392  Q 248.22 238.392 257.323932 238.392  " clip-path="url(#p3c6a19423b)" fill="none" stroke="#4e9be8" stroke-width="2" stroke-linecap="round" />
+    <path d="M 251.323932 235.392  L 257.323932 238.392  L 251.323932 241.392  z " clip-path="url(#p3c6a19423b)" fill="#4e9be8" stroke="#4e9be8" stroke-width="2" stroke-linecap="round" />
+   </g>
+   <g id="text_3">
+    <text x="34.272" y="106.543445" transform="rotate(-0 34.272 106.543445)" font-size="12.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#0b4c9c">① 要挑一个，还是分多个？</text>
+   </g>
+   <g id="text_4">
+    <text transform="translate(264.6 97.832)" font-size="11.2px" font-family="MiSans, sans-serif" fill="#4a6076">挑一个 → 微环 / Bragg</text>
+    <text transform="translate(264.6 113.887375)" font-size="11.2px" font-family="MiSans, sans-serif" fill="#4a6076">分多个 → MMI / AWG</text>
+   </g>
+   <g id="text_5">
+    <text x="34.272" y="174.583445" transform="rotate(-0 34.272 174.583445)" font-size="12.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#0b4c9c">② 通道间隔有多密？</text>
+   </g>
+   <g id="text_6">
+    <text transform="translate(264.6 165.312)" font-size="11.2px" font-family="MiSans, sans-serif" fill="#4a6076">≥20 nm → MMI、EDG</text>
+    <text transform="translate(264.6 180.86285)" font-size="11.2px" font-family="MiSans, sans-serif" fill="#4a6076">≤0.8 nm → AWG、级联微环</text>
+   </g>
+   <g id="text_7">
+    <text x="34.272" y="242.636141" transform="rotate(-0 34.272 242.636141)" font-size="12.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#0b4c9c">③ 漂移预算与控制资源？</text>
+   </g>
+   <g id="text_8">
+    <text transform="translate(264.6 233.352)" font-size="11.2px" font-family="MiSans, sans-serif" fill="#4a6076">需要补偿 → 核查调谐方案</text>
+    <text transform="translate(264.6 248.90285)" font-size="11.2px" font-family="MiSans, sans-serif" fill="#4a6076">无控制资源 → 先验证温度与工艺余量</text>
+   </g>
+   <g id="text_9">
+    <text x="22.68" y="298.76168" transform="rotate(-0 22.68 298.76168)" font-size="11.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#8a9bab">三个问题都回答完，结构基本就定了；剩下的只是带宽与工艺的细调。</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p3c6a19423b">
+   <rect x="0" y="0" width="504" height="332.64" />
+  </clipPath>
+ </defs>
+ <g id="text_1">
+  <text x="22.68" y="19.689961" transform="rotate(-0 22.68 19.689961)" font-size="13.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4e9be8">流程</text>
+ </g>
+ <g id="text_2" transform="translate(0 8)">
+  <text x="22.68" y="43.742891" transform="rotate(-0 22.68 43.742891)" font-size="25px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a" font-weight="600">先问三个问题，再选结构</text>
+ </g>
+ <g id="line2d_1" transform="translate(0 8)">
+  <path d="M 22.68 53.424  L 65.52 53.424  " clip-path="url(#p3c6a19423b)" fill="none" stroke="#1f6fd0" stroke-width="3.2" />
+ </g>
+</svg>

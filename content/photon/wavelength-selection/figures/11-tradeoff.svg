@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="504.000pt" height="316.800pt" viewBox="0.000 0.000 504.000 316.800" stroke-linejoin="round" stroke-linecap="butt" font-family="MiSans, sans-serif" font-weight="400">
+ <defs>
+  </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 316.8  L 504 316.8  L 504 0  L 0 0  z " fill="#ffffff" />
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 63 281.952  L 453.6 281.952  L 453.6 38.016  L 63 38.016  z " fill="#ffffff" />
+   </g>
+   <g id="patch_3">
+    <path d="M 102.6459 131.72808  L 187.0155 131.72808  Q 193.2651 131.72808 193.2651 125.22312  L 193.2651 73.18344  Q 193.2651 66.67848 187.0155 66.67848  L 102.6459 66.67848  Q 96.3963 66.67848 96.3963 73.18344  L 96.3963 125.22312  Q 96.3963 131.72808 102.6459 131.72808  z " clip-path="url(#p7494f8ea4c)" fill="#d9e6f2" />
+   </g>
+   <g id="patch_4">
+    <path d="M 118.2699 253.69608  L 202.6395 253.69608  Q 208.8891 253.69608 208.8891 247.19112  L 208.8891 195.15144  Q 208.8891 188.64648 202.6395 188.64648  L 118.2699 188.64648  Q 112.0203 188.64648 112.0203 195.15144  L 112.0203 247.19112  Q 112.0203 253.69608 118.2699 253.69608  z " clip-path="url(#p7494f8ea4c)" fill="#d9e6f2" />
+   </g>
+   <g id="patch_5">
+    <path d="M 262.7919 229.30248  L 347.1615 229.30248  Q 353.4111 229.30248 353.4111 222.79752  L 353.4111 170.75784  Q 353.4111 164.25288 347.1615 164.25288  L 262.7919 164.25288  Q 256.5423 164.25288 256.5423 170.75784  L 256.5423 222.79752  Q 256.5423 229.30248 262.7919 229.30248  z " clip-path="url(#p7494f8ea4c)" fill="#d9e6f2" />
+   </g>
+   <g id="patch_6">
+    <path d="M 317.4759 139.85928  L 401.8455 139.85928  Q 408.0951 139.85928 408.0951 133.35432  L 408.0951 81.31464  Q 408.0951 74.80968 401.8455 74.80968  L 317.4759 74.80968  Q 311.2263 74.80968 311.2263 81.31464  L 311.2263 133.35432  Q 311.2263 139.85928 317.4759 139.85928  z " clip-path="url(#p7494f8ea4c)" fill="#d9e6f2" />
+   </g>
+   <g id="patch_7">
+    <path d="M 100.8882 129.492  L 185.2578 129.492  Q 191.5074 129.492 191.5074 122.98704  L 191.5074 70.94736  Q 191.5074 64.4424 185.2578 64.4424  L 100.8882 64.4424  Q 94.6386 64.4424 94.6386 70.94736  L 94.6386 122.98704  Q 94.6386 129.492 100.8882 129.492  z " clip-path="url(#p7494f8ea4c)" fill="#fcebdb" />
+   </g>
+   <g id="patch_8">
+    <path d="M 116.5122 251.46  L 200.8818 251.46  Q 207.1314 251.46 207.1314 244.95504  L 207.1314 192.91536  Q 207.1314 186.4104 200.8818 186.4104  L 116.5122 186.4104  Q 110.2626 186.4104 110.2626 192.91536  L 110.2626 244.95504  Q 110.2626 251.46 116.5122 251.46  z " clip-path="url(#p7494f8ea4c)" fill="#f1f7fe" />
+   </g>
+   <g id="patch_9">
+    <path d="M 261.0342 227.0664  L 345.4038 227.0664  Q 351.6534 227.0664 351.6534 220.56144  L 351.6534 168.52176  Q 351.6534 162.0168 345.4038 162.0168  L 261.0342 162.0168  Q 254.7846 162.0168 254.7846 168.52176  L 254.7846 220.56144  Q 254.7846 227.0664 261.0342 227.0664  z " clip-path="url(#p7494f8ea4c)" fill="#f1f7fe" />
+   </g>
+   <g id="patch_10">
+    <path d="M 315.7182 137.6232  L 400.0878 137.6232  Q 406.3374 137.6232 406.3374 131.11824  L 406.3374 79.07856  Q 406.3374 72.5736 400.0878 72.5736  L 315.7182 72.5736  Q 309.4686 72.5736 309.4686 79.07856  L 309.4686 131.11824  Q 309.4686 137.6232 315.7182 137.6232  z " clip-path="url(#p7494f8ea4c)" fill="#dcebfa" />
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="text_1">
+     <text x="258.3" y="296.482" transform="rotate(-0 258.3 296.482)" font-size="13px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">面积  →</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="text_2">
+     <text x="57.271406" y="159.984" transform="rotate(-90 57.271406 159.984)" font-size="13px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">控制与调谐复杂度（示意） →</text>
+    </g>
+   </g>
+   <g id="line2d_1">
+    <path d="M 63 159.984  L 453.6 159.984  " clip-path="url(#p7494f8ea4c)" fill="none" stroke-dasharray="0.9,1.485" stroke-dashoffset="0" stroke="#8a9bab" stroke-width="0.9" />
+   </g>
+   <g id="line2d_2">
+    <path d="M 258.3 281.952  L 258.3 38.016  " clip-path="url(#p7494f8ea4c)" fill="none" stroke-dasharray="0.9,1.485" stroke-dashoffset="0" stroke="#8a9bab" stroke-width="0.9" />
+   </g>
+   <g id="patch_11">
+    <path d="M 63 281.952  L 63 38.016  " fill="none" stroke="#000000" stroke-width="0.8" stroke-linejoin="miter" stroke-linecap="square" />
+   </g>
+   <g id="patch_12">
+    <path d="M 63 281.952  L 453.6 281.952  " fill="none" stroke="#000000" stroke-width="0.8" stroke-linejoin="miter" stroke-linecap="square" />
+   </g>
+   <g id="text_3">
+    <text x="68.859" y="56.3112" transform="rotate(-0 68.859 56.3112)" font-size="11px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">尺寸与控制要求随平台和指标改变</text>
+   </g>
+   <g id="text_4">
+    <text x="258.3" y="26.016" transform="rotate(-0 258.3 26.016)" font-size="13px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#12263a">四条路线在「面积—调谐」平面上的位置（定性示意，非性能排名）</text>
+   </g>
+   <g id="text_5">
+    <text x="143.073" y="81.378419" transform="rotate(-0 143.073 81.378419)" font-size="14px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#e8823c">微环</text>
+   </g>
+   <g id="text_6">
+    <text transform="translate(122.073 104.65908)" font-size="10.5px" font-family="MiSans, sans-serif" fill="#4a6076">紧凑环路</text>
+    <text transform="translate(111.573 118.812752)" font-size="10.5px" font-family="MiSans, sans-serif" fill="#4a6076">核查波长漂移</text>
+   </g>
+   <g id="text_7">
+    <text x="158.697" y="203.346419" transform="rotate(-0 158.697 203.346419)" font-size="14px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#1f6fd0">Bragg</text>
+   </g>
+   <g id="text_8">
+    <text transform="translate(127.197 226.62708)" font-size="10.5px" font-family="MiSans, sans-serif" fill="#4a6076">分布反射结构</text>
+    <text transform="translate(121.947 240.780752)" font-size="10.5px" font-family="MiSans, sans-serif" fill="#4a6076">也可能需要温控</text>
+   </g>
+   <g id="text_9">
+    <text x="303.219" y="178.952819" transform="rotate(-0 303.219 178.952819)" font-size="14px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#0b4c9c">MMI 色散</text>
+   </g>
+   <g id="text_10">
+    <text transform="translate(282.219 202.23348)" font-size="10.5px" font-family="MiSans, sans-serif" fill="#4a6076">干涉分波</text>
+    <text transform="translate(266.469 216.387152)" font-size="10.5px" font-family="MiSans, sans-serif" fill="#4a6076">尺寸依设计而变</text>
+   </g>
+   <g id="text_11">
+    <text x="357.903" y="89.509619" transform="rotate(-0 357.903 89.509619)" font-size="14px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#0b4c9c">AWG / EDG</text>
+   </g>
+   <g id="text_12">
+    <text transform="translate(331.653 112.79028)" font-size="10.5px" font-family="MiSans, sans-serif" fill="#4a6076">多通道阵列</text>
+    <text transform="translate(326.403 126.943952)" font-size="10.5px" font-family="MiSans, sans-serif" fill="#4a6076">相位误差敏感</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p7494f8ea4c">
+   <rect x="63" y="38.016" width="390.6" height="243.936" />
+  </clipPath>
+ </defs>
+</svg>
