@@ -1,6 +1,6 @@
 {
   "main": "46ee554be20ac2c345c6ee69eb8961808bc24161",
-  "renderer": "46ee554be20ac2c345c6ee69eb8961808bc24161",
+  "renderer": "e2d37c110c923fe325d9f7168c4152d44a6367ee",
   "pulls": [
     {
       "number": 43,
@@ -245,14 +245,14 @@
       "sha": "52f0b29de2379a86bdf63cdedba12900d90bbdf1",
       "path": "previews/3/52f0b29de2379a86bdf63cdedba12900d90bbdf1/",
       "state": "success",
-      "articles": 1
+      "articles": 3
     },
     {
       "number": 2,
       "sha": "dd320093d5a8811ba7b074383f121ba16c9e4643",
       "path": "previews/2/dd320093d5a8811ba7b074383f121ba16c9e4643/",
       "state": "success",
-      "articles": 1
+      "articles": 3
     }
   ]
 }

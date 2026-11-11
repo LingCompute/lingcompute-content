@@ -1,0 +1,63 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; font-src data:; style-src 'self' 'unsafe-inline'; base-uri 'none'; form-action 'none'"><title>一束光，怎么被“掰”成两路？</title><link rel="stylesheet" href="../../../../../assets/b36dd3d84de32be902bbbd2e8fafd513223968511e393a50f710fcf619229855.css"><meta name="robots" content="noindex,nofollow"></head><body><article><aside class="meta"><p><strong>待审预览 · PR #3</strong> · <a href="https://github.com/LingCompute/lingcompute-content/pull/3">GitHub 记录</a></p><p>此版本尚待人审，不能作为发布批准。</p><details><summary>版本信息 · 源稿 52f0b29</summary><p>源稿版本：<code>52f0b29de2379a86bdf63cdedba12900d90bbdf1</code></p><p>排版工具版本：<code>e2d37c110c923fe325d9f7168c4152d44a6367ee</code>。工具改动合并后生效。</p></details></aside><header class="meta"><p>构建预览 · 正式收录以主分支及PR审核记录为准</p><p>灵算光子 · 图解无源光子器件 · 功率分配</p><p>适合：具有光学基础、需要理解和选择集成光子器件的工程师与科研人员</p><p>本文解决：区分分光比和总透射，理解对称Y分支如何实现宽带等分。</p><p>预计阅读 6–11 分钟，实操另计 · 7.9 参考屏</p><p>阅读时长为编辑模型估计；参考视口390×844 CSS像素，不同设备会有差异。</p></header><main id="article-body"><h1>一束光，怎么被“掰”成两路？</h1>
+<p>光子芯片上，光经常要分叉。</p>
+<p>一部分进测量通道，一部分留作参考；或者把功率摊给后面一排器件。做这件事的元件，叫<strong>光功率分光器</strong>。</p>
+<p>听上去很简单：一条路变两条路。真做设计，问题立刻来了——</p>
+<ul>
+<li>两路要各占一半，还是按 70∶30 分？</li>
+<li>换个波长，比例会不会跑？</li>
+<li>光进去 100 份，出来还剩几份？</li>
+</ul>
+<p>片上能实现分光的结构主要有三种：<strong>Y 分支、定向耦合器、多模干涉器（MMI）</strong>。它们不是三个可以互相替代的选项，而是三条不同的物理路径。</p>
+<p>这是系列的第一篇。我们从最直观的一种讲起——Y 分支。它会顺带把“怎么评价一个分光器”这件事说清楚，后面两篇都会用到。</p>
+<figure><img alt="图 1：同一束光在芯片上被分成三路，分别去测量、参考和下一级器件。" src="../../../../../assets/e025ef8a6f042f3e8723f7f8ede231fbf34de061602acb34ebcdb38d7b32ddfe.png"><figcaption><span class="fig-tag">图 1</span>同一束光在芯片上被分成三路，分别去测量、参考和下一级器件。</figcaption></figure>
+<h2>先把两个指标说清楚</h2>
+<p>刚接触分光器的人，最常犯的错是把“分得匀”当成“做得好”。</p>
+<p>想象输入是 100 份功率。第一种情况，两路各出 48 份，剩下 4 份损耗掉了；第二种情况，两路各出 24 份，剩下 52 份没了。两种情况下比例都是 50∶50——<strong>但第二种器件明显更差</strong>。</p>
+<p>只看比例，你看不出这个差别。</p>
+<p>所以有两个数必须同时盯。</p>
+<p><strong>分光比</strong>回答“怎么分”。它是两路输出功率之比，与损耗无关。理想均分是 50∶50，用分贝写就是各 −3.01 dB。</p>
+<p><strong>总透射</strong>回答“到得了多少”。它是两路输出之和除以输入。取对数就是插入损耗：总透射 96% 约合 0.18 dB，48% 则是 3.2 dB。</p>
+<p>工程上还会用第三个词：<strong>均匀性</strong>（imbalance）。它只关心两路之间差多少，也用 dB 表示。48∶52 的均匀性是 0.35 dB，45∶55 是 0.87 dB。</p>
+<figure><img alt="图 2：同样是 50∶50，总透射可以差一倍。图中为教学数值，不是本文案例的仿真数据。" src="../../../../../assets/69290446f27e96144fd541690ceb328f988e6b7c0c3eec520b9e149faebacdc1.png"><figcaption><span class="fig-tag">图 2</span>同样是 50∶50，总透射可以差一倍。图中为教学数值，不是本文案例的仿真数据。</figcaption></figure>
+<p>还有一个容易被忽略的口径问题：<strong>这里的“输出”，是端面上的全部光功率，还是只算你要的基模？</strong></p>
+<p>杂散光、高阶模、衬底泄漏都会打到端面上，却不进入后级波导。工业上更常用模式分辨的口径。本文所有数字只统计前向基模功率——这也是 Tidy3D 模式监视器给出的口径。</p>
+<h2>三条路线，分野在设计自由度</h2>
+<p>指标清楚了，再看结构。三种做法的差别不在“谁更先进”，而在于<strong>你把设计自由度放在哪里</strong>。</p>
+<p><strong>改变几何。</strong> 让一条波导慢慢张开成两条。光在里面始终是同一个模式，只是通道变宽了。这是 Y 分支。</p>
+<p><strong>让能量交换。</strong> 两条波导靠得很近，倏逝场重叠，功率在两条波导之间来回“换手”。这是定向耦合器。</p>
+<p><strong>让模式干涉。</strong> 把光送进一段很宽的波导，激发多个模式，走一段距离后重新聚成两个像。这是多模干涉器。</p>
+<figure><img alt="图 3：三条路线——Y 分支、定向耦合器、多模干涉器。缩略轮廓取自各自 Notebook 的真实几何。" src="../../../../../assets/95e95db986a75671c33c3c9efc4e6350283b2b8324416e9d39c995155d65d448.png"><figcaption><span class="fig-tag">图 3</span>三条路线——Y 分支、定向耦合器、多模干涉器。缩略轮廓取自各自 Notebook 的真实几何。</figcaption></figure>
+<h2>Y 分支：让几何把光掰开</h2>
+<p>Y 分支最容易从外形理解。输入波导经过一段分叉区，接到两条输出支路。</p>
+<p>当结构和激励都满足镜像对称时，两路功率必然相同。这不是调出来的，是算出来的——对称性本身就保证了这一点。</p>
+<figure><img alt="图 4：Y 分支的实际 FDTD 场图，分叉区里能看到模式在重新分配。" src="../../../../../assets/93077034f55d7fa6288708099aff04d0050abaeb48a921674f5694dd5f5bfea2.png"><figcaption><span class="fig-tag">图 4</span>Y 分支的实际 FDTD 场图，分叉区里能看到模式在重新分配。</figcaption></figure>
+<h3>关键在“慢慢张开”</h3>
+<p>设计 Y 分支的全部功夫，都花在那个“慢”字上。</p>
+<p>分叉处的过渡越突然，光越容易激发出不需要的成分，多出来的部分就变成辐射损耗。所以真实的 Y 分支会用一条缓慢变化的轮廓：分叉前先把波导加宽，再让两条支路以平缓的角度分开。</p>
+<p>这种过渡叫<strong>绝热</strong>。意思是让光在每一步都“来不及”察觉结构在变——模式形状始终跟着波导走，不产生新的模式。判断标准很朴素：把分叉区拉长一倍，损耗还在明显下降，说明它还不够绝热。</p>
+<p>代价是面积。过渡越平缓，器件越长。<strong>Y 分支的核心权衡就是用面积换损耗。</strong></p>
+<h3>三个容易被忽略的细节</h3>
+<p><strong>分叉前的加宽量。</strong> 加得太少，模式被挤在尖端；加得太多，又会激发高阶模。官方案例用多个宽度参数描述这段轮廓，就是为了把这个平衡点调出来。</p>
+<p><strong>输出弯曲半径。</strong> 分叉之后两条支路通常要拉开距离，好让后级器件有地方放。这段弯曲本身也带来损耗和串扰：弯得太急，光往包层里漏；两条支路靠得太近，又会重新耦合。<strong>Y 分支的实际面积，往往由输出弯曲决定，而不是分叉区。</strong></p>
+<p><strong>对称性能不能兑现。</strong> 器件设计完全对称，但刻蚀出来的两条支路未必。加工偏差打破对称，50∶50 就会偏离。这一条在另外两种结构上同样成立，只是 Y 分支对它的依赖最直接。</p>
+<h3>实测：97% 的总透射</h3>
+<p>官方案例在本地的求解结果：</p>
+<ul>
+<li>1.55 μm 处，两路基模总透射约 <strong>97.0%</strong>；</li>
+<li>1.53–1.57 μm 内，总透射稳定在 <strong>96.6%–97.0%</strong>，几乎不随波长变化；</li>
+<li>两路各 50%。</li>
+</ul>
+<p>那个“几乎不随波长变化”，是 Y 分支最值钱的地方。第四篇会把三种结构的波长响应放在一起看，那时差别会非常明显。</p>
+<p>需要说明：这次只在上路放置了模式监视器，下路的 50% 是由镜像对称推得的，不是两个独立测量。</p>
+<figure><img alt="动图 1：Y 分支的 3D Carpet 动画。Re(Ey)，λ = 1.55 μm；起伏高度代表场值，不是器件表面形变。" src="../../../../../assets/3b81e51df283b6eb9ab479bf529f060c7c2408e7e84c06bac47a4e66ac652c37.gif"><figcaption><span class="fig-tag">动图 1</span>Y 分支的 3D Carpet 动画。Re(Ey)，λ = 1.55 μm；起伏高度代表场值，不是器件表面形变。</figcaption></figure>
+<p>动画里能看清一件事：光在分叉区是<strong>连续摊开</strong>的，没有突变，也没有来回振荡。这就是绝热过渡的直观样子。</p>
+<h3>什么时候选它</h3>
+<p>需要宽带等分、结构越简单越好的场合。1×2、1×4 的分光树，基本都用它。</p>
+<p>本例的对称 Y 分支由对称性保证等分。非对称 Y 分支可以通过截面与绝热模式演化设计实现 70∶30 等比例；打破对称并不必然带来额外损耗，具体仍需优化验证。</p>
+<h2>下一篇</h2>
+<p>下一篇讨论另一种控制分光比的机制：让两条波导靠近，通过倏逝场交换功率。它适合构成 2×2，也提供不同于非对称 Y 的设计自由度。</p>
+<p>下一篇讲定向耦合器：它的比例可以连续调，代价是敏感。</p>
+<h3>配套案例</h3>
+<p><a href="https://www.lingcompute.com/photon/learning-center/examples/notebooks/YJunction">Y 分支：Waveguide Y junction</a></p>
+<p>更多案例见<a href="https://www.lingcompute.com/photon/learning-center/example-library">灵算光子学习中心</a>，国内产品入口为 <a href="https://tidy3d.fangzhen.cloud/">Tidy3D 平台</a>。本次未验证新用户注册与浏览器直接执行 Notebook 的完整路径，请按当前平台文档操作。</p>
+<p>本文数值来自本地实际求解。各 Notebook 的材料模型、端口配置及统计条件不完全相同，不构成同条件下的定量性能排名。</p></main><footer class="brand"><img src="../../../../../assets/510b9dc6fc4142dea696bba38799a59fbad636eb6dee1e46604eca8aaa5271d0.png" alt="灵算科技 LingCompute"><p>自有文章及插图：CC BY-NC 4.0；商用请另行联系。商标与另有标注的第三方材料除外。</p><p>默认系统字体；备用字体：<a href="https://hyperos.mi.com/font/en/download/">MiSans（小米）</a>，按其字体许可使用。</p><p>与历史人审清单中的内容指纹匹配；原审核者署名和日期未提供。</p><p><a href="https://github.com/LingCompute/lingcompute-content/blob/52f0b29de2379a86bdf63cdedba12900d90bbdf1/content/photon/power-splitters/SOURCES.md">来源、指标口径与素材说明</a></p></footer><nav aria-label="文章导航"><a href="../../index.html">返回文章目录</a></nav></article></body></html>
