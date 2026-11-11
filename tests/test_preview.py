@@ -17,6 +17,7 @@ class PreviewTests(unittest.TestCase):
     def test_snapshot_accepts_only_content_data_and_rejects_links(self):
         self.assertTrue(preview.source_file("100644", "blob", "content/photon/series/one.md"))
         self.assertTrue(preview.source_file("100644", "blob", "content/photon/series/figure.png"))
+        self.assertTrue(preview.source_file("100644", "blob", "content/photon/series/figure.svg"))
         self.assertFalse(preview.source_file("100644", "blob", "content/photon/series/run.py"))
         for mode, kind, path in (
             ("120000", "blob", "content/linked.png"),
@@ -76,6 +77,21 @@ class PreviewTests(unittest.TestCase):
         (series / "SOURCES.md").write_text("source")
         rendered, _ = build.render_body("[source](SOURCES.md)", series, self.root, "a" * 40)
         self.assertIn("/blob/" + "a" * 40 + "/content/photon/example/SOURCES.md", rendered)
+
+    def test_online_preview_keeps_editable_inline_svg(self):
+        series = self.root / "content/photon/example"
+        series.mkdir(parents=True)
+        (series / "figure.svg").write_text(
+            '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 50">'
+            '<text x="10" y="20">可修改</text></svg>'
+        )
+        body, _ = build.render_body("![图 1：矢量图](figure.svg)", series, self.root)
+        style = preview.asset(self.root, b"body{color:black}", ".css")
+        target = self.root / "index.html"
+        preview.web_document(build.document("test", body, ""), target, self.root, style, True)
+        self.assertIn('class="vector-image"', target.read_text())
+        self.assertIn("可修改", target.read_text())
+        self.assertEqual(len(list((self.root / "assets").iterdir())), 1)
 
     def test_no_stale_or_closed_pr_gets_preview_status(self):
         records = [

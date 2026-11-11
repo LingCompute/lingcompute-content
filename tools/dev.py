@@ -111,7 +111,7 @@ class PreviewHandler(BaseHTTPRequestHandler):
                 self.send_error(404)
                 return
             path = (base / relative).resolve()
-            if path.suffix.lower() not in {".md", ".json", ".png", ".jpg", ".jpeg", ".gif", ".webp"}:
+            if path.suffix.lower() not in {".md", ".json", ".svg", ".png", ".jpg", ".jpeg", ".gif", ".webp"}:
                 self.send_error(404)
                 return
         else:
@@ -134,7 +134,7 @@ class PreviewHandler(BaseHTTPRequestHandler):
         if path.suffix == ".html":
             self.respond(live_document(path.read_text(), version).encode(), "text/html")
             return
-        media = "text/plain" if path.suffix in {".md", ".json"} else mimetypes.guess_type(path.name)[0]
+        media = "text/plain" if path.suffix.lower() in {".md", ".json", ".svg"} else mimetypes.guess_type(path.name)[0]
         self.respond(path.read_bytes(), media or "application/octet-stream", requested.startswith("assets/"))
 
     def respond(self, data, media, immutable=False):
