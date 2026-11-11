@@ -5,7 +5,7 @@
   "articles": [
     {
       "slug": "03-bilayer",
-      "authors": [],
+      "authors": ["Frank-DingYC"],
       "summary": "理解薄层接光与厚层布线之间的绝热模式转移。",
       "sources": [
         "https://www.lingcompute.com/photon/learning-center/examples/notebooks/BilayerSiNEdgeCoupler",
