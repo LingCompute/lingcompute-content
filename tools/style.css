@@ -28,6 +28,7 @@ pre{white-space:pre-wrap;overflow-wrap:anywhere;padding:14px;background:#F3F7FC;
 pre,code{font-family:ui-monospace,"SFMono-Regular",Consolas,"Liberation Mono",monospace}
 .meta{margin-bottom:28px;padding:16px;background:#F3F7FC;border-radius:8px;font-size:14px;color:var(--muted)}
 .meta p{margin:6px 0}
+.meta code{overflow-wrap:anywhere}
 .warning{color:#784900}
 .brand{padding-top:24px;border-top:1px solid #D8E2ED;margin-top:36px;font-size:14px;color:var(--muted)}
 .brand img{display:block;width:180px;max-width:100%;height:auto;margin-bottom:16px}

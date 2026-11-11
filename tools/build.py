@@ -67,10 +67,11 @@ def attributes(tag, name, value):
 
 
 class ContentHTML(HTMLParser):
-    def __init__(self, base, root=ROOT):
+    def __init__(self, base, root=ROOT, source_ref=SOURCE_REF):
         super().__init__(convert_charrefs=False)
         self.base = base
         self.root = root.resolve()
+        self.source_ref = quote(source_ref, safe="")
         self.parts = []
         self.assets = []
         self.text = []
@@ -100,7 +101,7 @@ class ContentHTML(HTMLParser):
             elif parsed.path:
                 destination = local_path(self.base, target, self.root)
                 values["href"] = (
-                    f"{REPOSITORY}/blob/{SOURCE_REF}/{quote(destination.relative_to(self.root).as_posix())}"
+                    f"{REPOSITORY}/blob/{self.source_ref}/{quote(destination.relative_to(self.root).as_posix())}"
                     + (f"#{quote(parsed.fragment)}" if parsed.fragment else "")
                 )
                 attributes_html = " ".join(
@@ -131,12 +132,12 @@ class ContentHTML(HTMLParser):
         self.text.append(html.unescape(f"&#{name};"))
 
 
-def render_body(manuscript, base, root=ROOT):
+def render_body(manuscript, base, root=ROOT, source_ref=SOURCE_REF):
     rendered = markdown.markdown(manuscript, extensions=["extra", "sane_lists"])
     cleaned = bleach.clean(
         rendered, tags=TAGS, attributes=attributes, protocols={"https", "http", "mailto"}, strip=True
     )
-    parser = ContentHTML(base, root)
+    parser = ContentHTML(base, root, source_ref)
     parser.feed(cleaned)
     body = "".join(parser.parts)
 
@@ -165,7 +166,7 @@ def reading_minutes(text, figures, equations):
     return lower, upper
 
 
-def read_articles(root=ROOT):
+def read_articles(root=ROOT, source_ref=SOURCE_REF):
     root = root.resolve()
     products = json.loads((root / "config/products.json").read_text())
     articles = []
@@ -201,7 +202,7 @@ def read_articles(root=ROOT):
                 for author in entry["authors"]
             ):
                 raise ValueError(f"Article authors must be a list of GitHub logins: {path}")
-            body, parser = render_body(manuscript, path.parent, root)
+            body, parser = render_body(manuscript, path.parent, root, source_ref)
             minutes = reading_minutes(" ".join(parser.text), len(parser.assets), parser.equations)
             articles.append({
                 "path": path,
@@ -244,7 +245,8 @@ def document(title, content, style):
     )
 
 
-def article_html(article, products, style, logo, reviewed, screens=None, navigation=""):
+def article_html(article, products, style, logo, reviewed, screens=None, navigation="",
+                 root=ROOT, source_ref=SOURCE_REF, notice=""):
     lower, upper = article["minutes"]
     screen_text = f"{screens:.1f} 参考屏" if screens is not None else "测量中"
     warning = (
@@ -256,7 +258,8 @@ def article_html(article, products, style, logo, reviewed, screens=None, navigat
         if reviewed else "新稿审核以对应GitHub PR记录为准；预览本身不代表审核通过。"
     )
     content = (
-        '<article><header class="meta"><p>构建预览 · 正式收录以主分支及PR审核记录为准</p>'
+        '<article>' + notice
+        + '<header class="meta"><p>构建预览 · 正式收录以主分支及PR审核记录为准</p>'
         f"<p>{html.escape(products[article['product']]['name'])} · {html.escape(article['series'])}</p>"
         f"<p>适合：{html.escape(article['audience'])}</p>"
         f"<p>本文解决：{html.escape(article['summary'])}</p>"
@@ -267,7 +270,7 @@ def article_html(article, products, style, logo, reviewed, screens=None, navigat
         '<p>自有文章及插图：CC BY-NC 4.0；商用请另行联系。商标与另有标注的第三方材料除外。</p>'
         '<p>默认系统字体；备用字体：<a href="https://hyperos.mi.com/font/en/download/">MiSans（小米）</a>，按其字体许可使用。</p>'
         f"<p>{review_text}</p>"
-        f'<p><a href="{REPOSITORY}/blob/{SOURCE_REF}/{quote(article["path"].parent.relative_to(ROOT).as_posix())}/SOURCES.md">'
+        f'<p><a href="{REPOSITORY}/blob/{quote(source_ref, safe="")}/{quote(article["path"].parent.relative_to(root).as_posix())}/SOURCES.md">'
         "来源、指标口径与素材说明</a></p>"
         f'</footer><nav aria-label="文章导航">{navigation}</nav></article>'
     )
