@@ -5,7 +5,7 @@
   "articles": [
     {
       "slug": "05-freeform",
-      "authors": [],
+      "authors": ["Frank-DingYC"],
       "summary": "理解介质抛物面怎样连接波导及其验证边界。",
       "sources": [
         "https://www.lingcompute.com/photon/learning-center/examples/notebooks/FreeFormCoupler",
