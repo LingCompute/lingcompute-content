@@ -191,6 +191,64 @@ class ReviewTests(unittest.TestCase):
                     )
 
     @patch.object(review_gate, "urlopen")
+    def test_invalid_manifest_structure_fails_closed(self, api):
+        for manifest in (None, [], "manifest", {}, {"articles": None}, {"articles": {}},
+                         {"articles": "article"}, {"articles": [None]}, {"articles": [[]]},
+                         {"articles": ["article"]}, {"articles": [{}]}):
+            with self.subTest(manifest=manifest):
+                api.return_value = response(manifest)
+                with self.assertRaises(ValueError):
+                    review_gate.series_authors(
+                        [{"filename": "content/photon/one/series.json", "status": "modified"}],
+                        {"head": {"sha": "current"}}, "owner/repo", "token",
+                    )
+
+    @patch.object(review_gate, "urlopen")
+    def test_invalid_article_slugs_fail_closed_even_without_authors(self, api):
+        for slug in (None, 17, [], {}, "", " article", "../article", "Article", "one--two", "article\n"):
+            with self.subTest(slug=slug):
+                api.return_value = response({"articles": [{"slug": slug, "authors": []}]})
+                with self.assertRaises(ValueError):
+                    review_gate.series_authors(
+                        [{"filename": "content/photon/one/series.json", "status": "modified"}],
+                        {"head": {"sha": "current"}}, "owner/repo", "token",
+                    )
+
+    @patch.object(review_gate, "urlopen")
+    def test_refresh_rejects_malformed_first_pr_and_continues_to_next(self, api):
+        first = {"state": "open", "head": {"sha": "malformed"}, "changed_files": 1,
+                 "user": {"login": "editor"}}
+        second = dict(first, head={"sha": "valid"})
+        changed = [{"filename": "content/photon/one/article.md", "status": "modified"}]
+        manifests = [
+            {"articles": [None]},
+            {"articles": [{"slug": "article", "authors": ["writer"]}]},
+        ]
+        responses = [response([{"number": 1}, {"number": 2}])]
+        for pull, manifest in zip((first, second), manifests):
+            responses.extend(response(data) for data in (
+                pull, {}, changed, [review(commit=pull["head"]["sha"])], manifest, pull, {},
+            ))
+        api.side_effect = responses
+        with patch.dict(review_gate.os.environ, {
+            "GITHUB_EVENT_PATH": "event.json", "GITHUB_REPOSITORY": "owner/repo", "GH_TOKEN": "token",
+        }), patch.object(review_gate.Path, "read_text", side_effect=[
+            json.dumps({"workflow_run": {"pull_requests": []}}),
+            json.dumps({"photon": ["expert"]}),
+        ]):
+            self.assertEqual(review_gate.main(), 0)
+        statuses = [
+            (request.full_url.rsplit("/", 1)[-1], json.loads(request.data))
+            for call in api.call_args_list
+            if (request := call.args[0]).data is not None
+        ]
+        self.assertEqual([(commit, status["state"]) for commit, status in statuses], [
+            ("malformed", "pending"), ("malformed", "failure"),
+            ("valid", "pending"), ("valid", "success"),
+        ])
+        self.assertIn("Invalid article", statuses[1][1]["description"])
+
+    @patch.object(review_gate, "urlopen")
     def test_contents_path_is_encoded_and_series_fetched_once(self, api):
         api.return_value = response({"articles": []})
         review_gate.series_authors(

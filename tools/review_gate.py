@@ -1,5 +1,6 @@
 import json
 import os
+import re
 import sys
 from pathlib import Path
 from urllib.error import HTTPError
@@ -88,7 +89,14 @@ def series_authors(changed, pull, repository, token):
                 if error.code != 404:
                     raise
                 manifest = {"articles": []}
+        if not isinstance(manifest, dict) or not isinstance(manifest.get("articles"), list):
+            raise ValueError(f"Invalid series manifest in {directory}: articles must be a list")
         for article in manifest["articles"]:
+            if not isinstance(article, dict):
+                raise ValueError(f"Invalid article entry in {directory}")
+            slug = article.get("slug")
+            if not isinstance(slug, str) or not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", slug):
+                raise ValueError(f"Invalid article slug in {directory}")
             authors = article.get("authors", [])
             if not isinstance(authors, list) or any(
                 not isinstance(login, str) or not login or login != login.strip() for login in authors
@@ -96,7 +104,7 @@ def series_authors(changed, pull, repository, token):
                 raise ValueError(f"Invalid author declaration in {directory}")
             excluded.setdefault(directory.split("/")[1], set()).update(login.lower() for login in authors)
             if authors:
-                required.discard(article["slug"])
+                required.discard(slug)
         if required:
             raise ValueError(f"Missing authors for changed articles in {directory}: {sorted(required)}")
     return excluded
