@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="504.000pt" height="307.035pt" viewBox="0.000 0.000 504.000 307.035" stroke-linejoin="round" stroke-linecap="butt" font-family="MiSans, sans-serif" font-weight="400">
+ <defs>
+  </defs>
+ <g id="figure_1" transform="translate(0 16)">
+  <g id="patch_1">
+   <path d="M 0 289.8  L 504 289.8  L 504 0  L 0 0  z " fill="#ffffff" />
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 30.744 123.48  L 163.296 123.48  Q 171.36 123.48 171.36 115.416  L 171.36 78.624  Q 171.36 70.56 163.296 70.56  L 30.744 70.56  Q 22.68 70.56 22.68 78.624  L 22.68 115.416  Q 22.68 123.48 30.744 123.48  z " clip-path="url(#pfbb1bb9987)" fill="#dcebfa" />
+   </g>
+   <g id="patch_3">
+    <path d="M 207.144 123.48  L 319.536 123.48  Q 327.6 123.48 327.6 115.416  L 327.6 78.624  Q 327.6 70.56 319.536 70.56  L 207.144 70.56  Q 199.08 70.56 199.08 78.624  L 199.08 115.416  Q 199.08 123.48 207.144 123.48  z " clip-path="url(#pfbb1bb9987)" fill="#ffffff" stroke="#cfe2f5" stroke-width="1.3" stroke-linejoin="miter" />
+   </g>
+   <g id="patch_4">
+    <path d="M 363.384 123.48  L 475.776 123.48  Q 483.84 123.48 483.84 115.416  L 483.84 78.624  Q 483.84 70.56 475.776 70.56  L 363.384 70.56  Q 355.32 70.56 355.32 78.624  L 355.32 115.416  Q 355.32 123.48 363.384 123.48  z " clip-path="url(#pfbb1bb9987)" fill="#f1f7fe" />
+   </g>
+   <g id="patch_5">
+    <path d="M 207.144 191.52  L 319.536 191.52  Q 327.6 191.52 327.6 183.456  L 327.6 146.664  Q 327.6 138.6 319.536 138.6  L 207.144 138.6  Q 199.08 138.6 199.08 146.664  L 199.08 183.456  Q 199.08 191.52 207.144 191.52  z " clip-path="url(#pfbb1bb9987)" fill="#ffffff" stroke="#cfe2f5" stroke-width="1.3" stroke-linejoin="miter" />
+   </g>
+   <g id="patch_6">
+    <path d="M 363.384 191.52  L 475.776 191.52  Q 483.84 191.52 483.84 183.456  L 483.84 146.664  Q 483.84 138.6 475.776 138.6  L 363.384 138.6  Q 355.32 138.6 355.32 146.664  L 355.32 183.456  Q 355.32 191.52 363.384 191.52  z " clip-path="url(#pfbb1bb9987)" fill="#f1f7fe" />
+   </g>
+   <g id="patch_7">
+    <path d="M 207.144 259.56  L 319.536 259.56  Q 327.6 259.56 327.6 251.496  L 327.6 214.704  Q 327.6 206.64 319.536 206.64  L 207.144 206.64  Q 199.08 206.64 199.08 214.704  L 199.08 251.496  Q 199.08 259.56 207.144 259.56  z " clip-path="url(#pfbb1bb9987)" fill="#ffffff" stroke="#cfe2f5" stroke-width="1.3" stroke-linejoin="miter" />
+   </g>
+   <g id="patch_8">
+    <path d="M 363.384 259.56  L 475.776 259.56  Q 483.84 259.56 483.84 251.496  L 483.84 214.704  Q 483.84 206.64 475.776 206.64  L 363.384 206.64  Q 355.32 206.64 355.32 214.704  L 355.32 251.496  Q 355.32 259.56 363.384 259.56  z " clip-path="url(#pfbb1bb9987)" fill="#f1f7fe" />
+   </g>
+   <g id="text_3">
+    <text x="22.68" y="283.952422" transform="rotate(-0 22.68 283.952422)" font-size="12.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#8a9bab">示意图：这是编辑建议的判断顺序，不是平台限制，也不构成性能排名。</text>
+   </g>
+   <g id="patch_9">
+    <path d="M 172.368 97.272  Q 184.464 97.272 194.659342 97.272  " clip-path="url(#pfbb1bb9987)" fill="none" stroke="#4e9be8" stroke-width="1.7" stroke-linecap="round" />
+    <path d="M 189.859342 94.872  L 194.659342 97.272  L 189.859342 99.672  z " clip-path="url(#pfbb1bb9987)" fill="#4e9be8" stroke="#4e9be8" stroke-width="1.7" stroke-linecap="round" />
+   </g>
+   <g id="patch_10">
+    <path d="M 328.608 97.272  Q 340.704 97.272 351.122949 97.272  " clip-path="url(#pfbb1bb9987)" fill="none" stroke="#8a9bab" stroke-width="1.5" stroke-linecap="round" />
+    <path d="M 346.722949 95.072  L 351.122949 97.272  L 346.722949 99.472  z " clip-path="url(#pfbb1bb9987)" fill="#8a9bab" stroke="#8a9bab" stroke-width="1.5" stroke-linecap="round" />
+   </g>
+   <g id="patch_11">
+    <path d="M 172.368 97.272  Q 176.2992 134.19504 195.522913 163.719219  " clip-path="url(#pfbb1bb9987)" fill="none" stroke="#4e9be8" stroke-width="1.7" stroke-linecap="round" />
+    <path d="M 194.915046 158.387194  L 195.522913 163.719219  L 190.892572 161.006297  z " clip-path="url(#pfbb1bb9987)" fill="#4e9be8" stroke="#4e9be8" stroke-width="1.7" stroke-linecap="round" />
+   </g>
+   <g id="patch_12">
+    <path d="M 328.608 165.312  Q 340.704 165.312 351.122949 165.312  " clip-path="url(#pfbb1bb9987)" fill="none" stroke="#8a9bab" stroke-width="1.5" stroke-linecap="round" />
+    <path d="M 346.722949 163.112  L 351.122949 165.312  L 346.722949 167.512  z " clip-path="url(#pfbb1bb9987)" fill="#8a9bab" stroke="#8a9bab" stroke-width="1.5" stroke-linecap="round" />
+   </g>
+   <g id="patch_13">
+    <path d="M 172.368 97.272  Q 168.1344 168.21504 195.799793 231.609994  " clip-path="url(#pfbb1bb9987)" fill="none" stroke="#4e9be8" stroke-width="1.7" stroke-linecap="round" />
+    <path d="M 196.079602 226.25073  L 195.799793 231.609994  L 191.680268 228.170588  z " clip-path="url(#pfbb1bb9987)" fill="#4e9be8" stroke="#4e9be8" stroke-width="1.7" stroke-linecap="round" />
+   </g>
+   <g id="patch_14">
+    <path d="M 328.608 233.352  Q 340.704 233.352 351.122949 233.352  " clip-path="url(#pfbb1bb9987)" fill="none" stroke="#8a9bab" stroke-width="1.5" stroke-linecap="round" />
+    <path d="M 346.722949 231.152  L 351.122949 233.352  L 346.722949 235.552  z " clip-path="url(#pfbb1bb9987)" fill="#8a9bab" stroke="#8a9bab" stroke-width="1.5" stroke-linecap="round" />
+   </g>
+   <g id="text_4">
+    <text x="35.28" y="102.011219" transform="rotate(-0 35.28 102.011219)" font-weight="600" font-size="14px" font-family="MiSans, sans-serif" text-anchor="start" fill="#0b4c9c">要同时跑几个模式？</text>
+   </g>
+   <g id="text_5">
+    <text x="209.16" y="101.503445" transform="rotate(-0 209.16 101.503445)" font-size="12.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">4 个以上、要宽带</text>
+   </g>
+   <g id="text_6">
+    <text x="365.4" y="101.605" transform="rotate(-0 365.4 101.605)" font-size="12.8px" font-family="MiSans, sans-serif" text-anchor="start" fill="#0b4c9c">级联非对称耦合器</text>
+   </g>
+   <g id="text_7">
+    <text x="209.16" y="169.543445" transform="rotate(-0 209.16 169.543445)" font-size="12.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">1–2 个、面积最小</text>
+   </g>
+   <g id="text_8">
+    <text x="365.4" y="169.645" transform="rotate(-0 365.4 169.645)" font-size="12.8px" font-family="MiSans, sans-serif" text-anchor="start" fill="#e8823c">逆向设计</text>
+   </g>
+   <g id="text_9">
+    <text x="209.16" y="237.583445" transform="rotate(-0 209.16 237.583445)" font-size="12.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">要把场推进缝里</text>
+   </g>
+   <g id="text_10">
+    <text x="365.4" y="237.743" transform="rotate(-0 365.4 237.743)" font-size="12.8px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4e9be8">条–槽转换器</text>
+   </g>
+   <g id="text_11">
+    <text x="252" y="60.845828" transform="rotate(-0 252 60.845828)" font-size="11.5px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#8a9bab">三条分支对应本期三个案例；两个条件同时成立时没有现成答案。</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pfbb1bb9987">
+   <rect x="0" y="0" width="504" height="289.8" />
+  </clipPath>
+ </defs>
+ <g id="text_1">
+  <text x="22.68" y="19.689961" transform="rotate(-0 22.68 19.689961)" font-size="13.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4e9be8">选型</text>
+ </g>
+ <g id="text_2" transform="translate(0 8)">
+  <text x="22.68" y="43.742891" transform="rotate(-0 22.68 43.742891)" font-size="25px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a" font-weight="600">怎么选：先问模式数，再问要不要改模场</text>
+ </g>
+ <g id="line2d_1" transform="translate(0 8)">
+  <path d="M 22.68 53.424  L 65.52 53.424  " clip-path="url(#pfbb1bb9987)" fill="none" stroke="#1f6fd0" stroke-width="3.2" />
+ </g>
+</svg>
