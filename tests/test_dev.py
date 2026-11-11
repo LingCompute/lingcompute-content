@@ -102,6 +102,18 @@ class DevTests(unittest.TestCase):
                 self.assertEqual(self.request(server, path)[0], 404)
         self.assertEqual(self.request(server, "/", "attacker.example")[0], 403)
 
+    def test_svg_source_is_watched_and_served_as_inert_text(self):
+        original = dev.fingerprint(self.root)
+        image = self.content / "figure.svg"
+        image.write_text('<svg xmlns="http://www.w3.org/2000/svg"><script>alert(1)</script></svg>')
+        self.assertNotEqual(original, dev.fingerprint(self.root))
+        server = self.start_server()
+        status, headers, body = self.request(server, "/__preview__/source/content/photon/example/figure.svg")
+        self.assertEqual(status, 200)
+        self.assertIn("text/plain", headers["Content-Type"])
+        self.assertEqual(headers["X-Content-Type-Options"], "nosniff")
+        self.assertEqual(body, image.read_bytes())
+
     def test_last_successful_page_remains_available_after_a_build_error(self):
         server = self.start_server()
         with server.lock:
