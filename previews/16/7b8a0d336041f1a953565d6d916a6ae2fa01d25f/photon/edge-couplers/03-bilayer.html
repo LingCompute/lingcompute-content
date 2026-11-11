@@ -1,0 +1,65 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; font-src data:; style-src 'self' 'unsafe-inline'; base-uri 'none'; form-action 'none'"><title>双层 SiN 端面耦合：薄层接光，厚层布线</title><link rel="stylesheet" href="../../../../../assets/b36dd3d84de32be902bbbd2e8fafd513223968511e393a50f710fcf619229855.css"><meta name="robots" content="noindex,nofollow"></head><body><article><aside class="meta"><p><strong>待审预览 · PR #16</strong> · <a href="https://github.com/LingCompute/lingcompute-content/pull/16">GitHub 记录</a></p><p>此版本尚待人审，不能作为发布批准。</p><details><summary>版本信息 · 源稿 7b8a0d3</summary><p>源稿版本：<code>7b8a0d336041f1a953565d6d916a6ae2fa01d25f</code></p><p>排版工具版本：<code>91b513db30654c9cb059375902c73b894742d119</code>。工具改动合并后生效。</p></details></aside><header class="meta"><p>构建预览 · 正式收录以主分支及PR审核记录为准</p><p>灵算光子 · 图解无源光子器件 · 端面与模斑接口</p><p>适合：具有光学基础、需要理解和选择集成光子器件的工程师与科研人员</p><p>本文解决：理解薄层接光与厚层布线之间的绝热模式转移。</p><p>预计阅读 6–10 分钟，实操另计 · 7.2 参考屏</p><p>阅读时长为编辑模型估计；参考视口390×844 CSS像素，不同设备会有差异。</p></header><main id="article-body"><h1>双层 SiN 端面耦合：薄层接光，厚层布线</h1>
+<blockquote>
+<p><strong>待审稿</strong>：本文处于独立 PR 审核阶段，尚未收录为正式内容。定量结论、素材来源与授权仍需指定业内审核者核查。</p>
+</blockquote>
+<p>前面两篇关注 1550 nm 的硅光接口。这一篇转向 400–640 nm 的 SiN：怎样同时满足端面的大模场匹配与片内布线的强约束？</p>
+<p>换到可见光，规则全变了。</p>
+<p>本例将薄上层与厚下层分工：薄层用于端面模场扩展，厚层用于片内约束。材料折射率、截面与目标光纤模共同决定设计，不能由折射率差直接判定所有单层方案不可用。</p>
+<p>官方案例给的解法是：<strong>叠两层，中间隔 100 nm</strong>。</p>
+<h2>01　低对比度带来的两难</h2>
+<p>先理解困难在哪。</p>
+<p>端面需要较大的模场以匹配光纤，片内布线则希望约束较强，以控制弯曲和串扰。材料和截面共同决定模式束缚。</p>
+<p>这对端面耦合意味着两件事。</p>
+<p>一是<strong>端面匹配</strong>。薄上层配合窄尖端，使模式延伸到包层，接近光纤模场。</p>
+<p>二是<strong>后续布线</strong>。较厚的下层提供更强约束，通过重叠锥形区接手输入模式。</p>
+<p>这是一种把两项需求分开实现的路线，不是双层结构唯一可行的证明。</p>
+<h2>02　两层的分工：一层接光，一层接手布线</h2>
+<p>这个双层结构的几何是这样的：</p>
+<ul>
+<li>上层 SiN 厚 0.075 μm，从 0.15 μm 的尖端张开到 1 μm，负责把光纤的模场接住并撑大</li>
+<li>下层 SiN 厚 0.15 μm，在 x = 200 μm 处接手，再收窄到 0.38 μm 的波导</li>
+<li>两层间隔 0.1 μm</li>
+<li>锥长 200 μm，之后接一段 75 μm 的过渡区</li>
+</ul>
+<figure><img alt="图 1：双层的对接关系。上层负责把模场撑开，下层在 200 μm 处接手送到波导。上层画得更透明，便于看出相对位置。" src="../../../../../assets/a4321443330af86ec11ee4284d871ec6bd87387a646b1f64323edf51ca07f6cd.png"><figcaption><span class="fig-tag">图 1</span>双层的对接关系。上层负责把模场撑开，下层在 200 μm 处接手送到波导。上层画得更透明，便于看出相对位置。</figcaption></figure>
+<p>上层较薄，有利于端面模场扩展；下层较厚，用于把模式带入约束更强的片内波导。</p>
+<p>两层靠近时，局部模式随截面变化重新分布；在 75 μm 过渡区，上层逐步退出、下层逐步接手。100 nm 间距影响层间模式耦合，本例没有用上下衍射相消来工作。</p>
+<figure><img alt="图 2：薄上层的端面模式经重叠锥形区转移到厚下层。两层均为 SiN，图为非等比例侧视示意。" src="../../../../../assets/5ceb99271c2365dabf5ed6cd4b655ad4197a5c1186f0bc4feef863d9c7eb4f1d.png"><figcaption><span class="fig-tag">图 2</span>薄上层的端面模式经重叠锥形区转移到厚下层。两层均为 SiN，图为非等比例侧视示意。</figcaption></figure>
+<p>这与上一组的 SiN/Si 底反射光栅机制不同。本模型没有底部硅衬底，也没有可支持「衬底泄漏降到某百分比」的测量。</p>
+<h2>03　代价：两层都要对准</h2>
+<p>这个方案最现实的代价是工艺。</p>
+<p>两层 SiN 需要层间对准与间隔控制。误差可能改变局部模式及转移效率，但本次没有扫描制造偏差，不能给出允许误差或泄漏比例。</p>
+<p>换句话说：<strong>它把光学上的宽容，换成了工艺上的严格</strong>。</p>
+<p>本例增加一层来分配光学功能，同时增加制造步骤；与倒锥的性能差别不能跨波段直接比较。</p>
+<h2>04　这一次的读数</h2>
+<p>本次复现 Notebook 给定的那一个设计：200 μm 锥长、75 μm 过渡、层间距 100 nm，波段 400–640 nm，51 个频点。</p>
+<p>激励方式与倒锥不同：这里显式建模了光纤（芯半径 1.5 μm、NA 0.12），从光纤端面直接注入模式，而不是用高斯光束近似。这个差别会影响绝对读数——显式光纤模更接近真实封装，但也把光纤本身的失配算了进来。</p>
+<p>模型规模是本期最大的：<strong>13.5 亿个网格点</strong>，仿真时长 3 ps。</p>
+<figure><img alt="图 3：y = 0 截面的模场。光从左侧光纤进入，在上层 SiN 中逐渐被约束，到 200 μm 之后交给下层。" src="../../../../../assets/03a02d760fcaf333e291e24be693e8d7bb0e8c3cb12330c569271894b07fe569.png"><figcaption><span class="fig-tag">图 3</span>y = 0 截面的模场。光从左侧光纤进入，在上层 SiN 中逐渐被约束，到 200 μm 之后交给下层。</figcaption></figure>
+<p>本次已有任务仅记录了 y = 0 的 XZ 场截面，没有 XY 场监视器，因此这一篇保留静态场图，不提供 XY 动画。</p>
+<p>结果是：</p>
+<ul>
+<li>峰值 <strong>−1.42 dB @ 558 nm</strong></li>
+<li>520 nm：−1.62 dB</li>
+<li>600 nm：−1.57 dB</li>
+<li>640 nm：−1.85 dB</li>
+<li>450 nm：−3.95 dB</li>
+<li>400 nm：<strong>−6.99 dB</strong></li>
+</ul>
+<p>把 x = 170–290 μm 这一段放大，能看到两层是怎么交接的。</p>
+<figure><img alt="图 4：交接处的放大场图。上层在 200 μm 处开始收窄，下层同时接住模场，到 275 μm 完全交给 0.38 μm 波导。" src="../../../../../assets/4df9083e9ae984a048061901bb6cd15665f3aee436ada919f5c2d0065a70f294.png"><figcaption><span class="fig-tag">图 4</span>交接处的放大场图。上层在 200 μm 处开始收窄，下层同时接住模场，到 275 μm 完全交给 0.38 μm 波导。</figcaption></figure>
+<p>交接区间约 75 μm。这个长度不是随便定的：太短，模场来不及从「1 μm 宽的上层」过渡到「0.38 μm 宽的下层」，中间会有一段模场失配；太长，器件面积继续涨。原文选 75 μm，是这两者之间的折中。</p>
+<figure><img alt="图 5：耦合谱。450–640 nm 内都在 −4 dB 以内，但 400 nm 端明显恶化。" src="../../../../../assets/401115a040e58de76e5ddf065f65066cd1e8018b12c959aac915275c16f0da25.png"><figcaption><span class="fig-tag">图 5</span>耦合谱。450–640 nm 内都在 −4 dB 以内，但 400 nm 端明显恶化。</figcaption></figure>
+<p>这里必须说清一件事：原文的表述是 400–640 nm 内耦合损耗不超过 4 dB，而本次在 400 nm 处得到 −7 dB，只有 450 nm 之后才进入 −4 dB 以内。</p>
+<p>差异原因尚未分离。网格、材料与模式求解设置等都需要核查；<code>min_steps_per_wvl=12</code> 和参考波长 520 nm 本身不足以证明差异由网格造成，实际网格还受自动加密和几何约束影响。</p>
+<p><strong>所以本次只能声称「450–640 nm 内不超过 4 dB」</strong>，不能替原文背书 400 nm 那个端点。要确认这一点，需要把参考波长改到 400 nm 重算一次——那是一次新的求解，本次没有做。</p>
+<h2>05　什么时候值得上双层</h2>
+<p>判断顺序很直接：</p>
+<p><strong>第一，是否需要同时优化端面匹配与片内约束。</strong> 本例针对可见光 SiN，两层分工值得评估；单层或其他接口是否足够，需要单独设计验证。</p>
+<p><strong>第二，工艺线能不能支持两层。</strong> 如果不能，应重新评估单层、其他模式转换或光栅路线。本次没有复现单层与双层的配对比较。</p>
+<p><strong>第三，能不能接受偏振依赖。</strong> 双层结构对 TE/TM 的响应不同，如果系统要求偏振无关，需要分别设计或者加偏振管理。本次只算 TE。</p>
+<p>这三项用于筛选候选路线；成本、性能与容差仍需按具体工艺验证。</p>
+<h3>配套案例</h3>
+<p><a href="https://www.lingcompute.com/photon/learning-center/examples/notebooks/BilayerSiNEdgeCoupler">Bi-layer SiN edge coupler</a></p>
+<p>更多案例见<a href="https://www.lingcompute.com/photon/learning-center/example-library">灵算光子学习中心</a>，国内产品入口为 <a href="https://tidy3d.fangzhen.cloud/">Tidy3D 平台</a>。本次未验证国内注册、Notebook 导入与浏览器执行流程，请以平台当前指引为准。</p>
+<p>本次只跑 TE 偏振，TM 与参数扫描未复现；400 nm 端点差异的原因尚未通过收敛研究确认，正文已限定可声称的波段范围。该案例不作跨平台排名。</p></main><footer class="brand"><img src="../../../../../assets/510b9dc6fc4142dea696bba38799a59fbad636eb6dee1e46604eca8aaa5271d0.png" alt="灵算科技 LingCompute"><p>自有文章及插图：CC BY-NC 4.0；商用请另行联系。商标与另有标注的第三方材料除外。</p><p>默认系统字体；备用字体：<a href="https://hyperos.mi.com/font/en/download/">MiSans（小米）</a>，按其字体许可使用。</p><p>新稿审核以对应GitHub PR记录为准；预览本身不代表审核通过。</p><p><a href="https://github.com/LingCompute/lingcompute-content/blob/7b8a0d336041f1a953565d6d916a6ae2fa01d25f/content/photon/edge-couplers/SOURCES.md">来源、指标口径与素材说明</a></p></footer><nav aria-label="文章导航"><a href="../../index.html">返回文章目录</a></nav></article></body></html>

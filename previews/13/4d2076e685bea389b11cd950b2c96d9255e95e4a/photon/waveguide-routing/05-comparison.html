@@ -1,0 +1,84 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; font-src data:; style-src 'self' 'unsafe-inline'; base-uri 'none'; form-action 'none'"><title>布线该选什么？把损耗、串扰和工艺一起算</title><link rel="stylesheet" href="../../../../../assets/b36dd3d84de32be902bbbd2e8fafd513223968511e393a50f710fcf619229855.css"><meta name="robots" content="noindex,nofollow"></head><body><article><aside class="meta"><p><strong>待审预览 · PR #13</strong> · <a href="https://github.com/LingCompute/lingcompute-content/pull/13">GitHub 记录</a></p><p>此版本尚待人审，不能作为发布批准。</p><details><summary>版本信息 · 源稿 4d2076e</summary><p>源稿版本：<code>4d2076e685bea389b11cd950b2c96d9255e95e4a</code></p><p>排版工具版本：<code>91b513db30654c9cb059375902c73b894742d119</code>。工具改动合并后生效。</p></details></aside><header class="meta"><p>构建预览 · 正式收录以主分支及PR审核记录为准</p><p>灵算光子 · 图解无源光子器件 · 波导布线</p><p>适合：具有光学基础、需要理解和选择集成光子器件的工程师与科研人员</p><p>本文解决：将器件级损耗、串扰与工艺约束合入布线预算。</p><p>预计阅读 6–11 分钟，实操另计 · 8.3 参考屏</p><p>阅读时长为编辑模型估计；参考视口390×844 CSS像素，不同设备会有差异。</p></header><main id="article-body"><h1>布线该选什么？把损耗、串扰和工艺一起算</h1>
+<blockquote>
+<p><strong>待审稿</strong>：本文处于独立 PR 审核阶段，尚未收录为正式内容。定量结论、素材来源与授权仍需指定业内审核者核查。</p>
+</blockquote>
+<p>前面几篇讲了圆弧与 Euler 弯、余弦锥形交叉、SWG 交叉，以及抑制并行串扰的各向异性包层。它们都帮助光走到目标端口，但出问题的位置不同，解决问题的方法也不同。</p>
+<p>选型时，先在版图上标出<strong>哪里转弯、哪里交叉、哪里长距离并行</strong>，再看损耗与串扰的预算。这样，仿真数字才能变成布线规则。</p>
+<figure><img alt="图 1：四种改进做法与一个圆弧基准。先找到几何位置和物理机制，再决定该比较哪一组模型。" src="../../../../../assets/249779a8ec738d3dc515e002e47e1f97576624b5eafc3049d105bf63dc0f9ffa.png"><figcaption><span class="fig-tag">图 1</span>四种改进做法与一个圆弧基准。先找到几何位置和物理机制，再决定该比较哪一组模型。</figcaption></figure>
+<h2>01　弯曲多：先给每个弯分配损耗预算</h2>
+<p>同材料、同端口设置和 <strong>4 μm 有效半径</strong>下，本次 1550 nm 的圆弧弯损耗约 <strong>0.0200 dB</strong>，Euler 弯约 <strong>0.0081 dB</strong>。这是一组可以配对比较的结果。</p>
+<p>但单弯减少了多少，还要乘上光路中弯的数量。当只有一两个弯时，光纤接口或其他器件可能占据更大损耗；当弯很多、占位又受限时，平滑曲率过渡的价值就更突出。</p>
+<figure><img alt="图 2：本次两种弯的基模损耗谱。比较约束是相同有效半径；Euler 的内部最小半径更小，不能换成“相同最小半径”的结论。" src="../../../../../assets/9fd24fb394ed424900b81b3804527d7c94a5d63ce1305c79c00db0ccb8f40579.png"><figcaption><span class="fig-tag">图 2</span>本次两种弯的基模损耗谱。比较约束是相同有效半径；Euler 的内部最小半径更小，不能换成“相同最小半径”的结论。</figcaption></figure>
+<p>选定单弯之后，还要检查它与邻近器件组合时的反射、模式失配和间距。独立元件的 dB 相加可用来做预算，不能替代密集连接区的整体验证。</p>
+<h2>02　十字节点：同时看直行、侧口和模式</h2>
+<p>余弦锥形交叉通过中心展宽控制束形。本次在 <strong>1310 nm</strong> 得到约 <strong>0.176 dB</strong> 的正值插损，以及约 <strong>−27.89 dB</strong> 的单侧串扰。</p>
+<figure><img alt="图 3：余弦锥形交叉采用净通量取数；串扰是 +y 侧口 / 直行口。另一个侧口、反射与输出模式需要按设计目标补充统计。" src="../../../../../assets/9aaa3fdcf06f37909dcda8ece380847ac60b95822277e8f748b4721d479bae27.png"><figcaption><span class="fig-tag">图 3</span>余弦锥形交叉采用净通量取数；串扰是 +y 侧口 / 直行口。另一个侧口、反射与输出模式需要按设计目标补充统计。</figcaption></figure>
+<p>这条路线适合先建立清楚的交叉模型：四臂结构、场的整形和端口功率关系较直观。实际工艺中仍要核查薄硅层、中心宽度、锥形长度与允许的刻蚀截面，不能只复制一条曲线。</p>
+<p>若要更细地调节方向和模式，SWG 孔阵提供了另一组设计变量。代价是细结构、过渡区和更复杂的模式统计。</p>
+<figure><img alt="图 4：SWG 在 1950 nm 的 TE0 插损约 0.461 dB，TE0 单侧串扰约 −42.66 dB；统计所存三个模式后，单侧串扰约 −39.92 dB。" src="../../../../../assets/b39a31653dc809e95ed51d8dc7f75458bc952ffcc2fb632a897a840771ea2aab.png"><figcaption><span class="fig-tag">图 4</span>SWG 在 1950 nm 的 TE0 插损约 0.461 dB，TE0 单侧串扰约 −42.66 dB；统计所存三个模式后，单侧串扰约 −39.92 dB。</figcaption></figure>
+<p>这两个交叉案例的<strong>波段、硅厚度、材料模型和端口定义不同</strong>。SWG 的某个串扰数字更负，只能说明该模型、该波长、该口径下侧口更弱；不能据此宣布它在所有情况下优于余弦锥形。</p>
+<h2>03　长距离并行：带宽比一个深谷更重要</h2>
+<p>本次裸波导与各向异性包层的中央并行长度同为 <strong>100 μm</strong>，完整模型包含两端弯曲引线。1550 nm 时，邻路 / 主路的功率比从约 <strong>−11.06 dB</strong> 降到约 <strong>−63.84 dB</strong>。</p>
+<figure><img alt="图 5：包层显著压低了本例串扰，但深谷随波长变化明显。最低点不是整个工作带宽的代表，也未经过网格和加工容差收敛证明。" src="../../../../../assets/14d5e590b77e50d2ef8c21bc1a24125245c861082f0c148b6f985af4f91e7b50.png"><figcaption><span class="fig-tag">图 5</span>包层显著压低了本例串扰，但深谷随波长变化明显。最低点不是整个工作带宽的代表，也未经过网格和加工容差收敛证明。</figcaption></figure>
+<p>如果产品要求跨带宽稳定隔离，就应看波段内的最差串扰、工艺偏差后的最差情况，而不是只记录最佳点。50 nm 细栅能否稳定加工，同样会影响这种结构是否值得采用。</p>
+<h2>04　把本次读数放在各自条件旁边</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>结构</th>
+<th>读数波长</th>
+<th>本次读数</th>
+<th>统计口径</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>圆弧弯</td>
+<td>1550 nm</td>
+<td>损耗 0.0200 dB</td>
+<td>输出前向基模</td>
+</tr>
+<tr>
+<td>Euler 弯</td>
+<td>1550 nm</td>
+<td>损耗 0.0081 dB</td>
+<td>输出前向基模</td>
+</tr>
+<tr>
+<td>余弦锥形交叉</td>
+<td>1310 nm</td>
+<td>插损 0.176 dB；串扰 −27.89 dB</td>
+<td>净通量，单侧交叉口</td>
+</tr>
+<tr>
+<td>SWG 交叉</td>
+<td>1950 nm</td>
+<td>插损 0.461 dB；串扰 −42.66 dB</td>
+<td>TE0 入射与输出，单侧交叉口</td>
+</tr>
+<tr>
+<td>裸并行波导</td>
+<td>1550 nm</td>
+<td>串扰 −11.06 dB</td>
+<td>邻路 / 主路基模</td>
+</tr>
+<tr>
+<td>各向异性包层</td>
+<td>1550 nm</td>
+<td>串扰 −63.84 dB</td>
+<td>邻路 / 主路基模</td>
+</tr>
+</tbody>
+</table></div>
+<p>表格方便查数，<strong>只有两种弯之间、以及有无包层之间属于本组配对对照</strong>。跨案例做选择时，应先统一工艺平台、波段、激励模式、输出统计方式和精度要求，再比较损耗、面积与加工代价。</p>
+<h2>05　四个问题，形成一条可执行的选择顺序</h2>
+<p>第一，版图给出多大空间？确认有效半径、实际最小半径、交叉过渡区和并行长度。第二，光路能损失多少？把总预算分给单弯与节点，保留连接及工艺余量。</p>
+<p>第三，错误端口允许收到多少功率？把串扰指标写清楚：分母是输入还是主路，是单个模式还是多个模式，是一个侧口还是所有侧口。第四，结构是否符合工艺？细栅和孔阵需要连同带宽、容差一起验收。</p>
+<figure><img alt="图 6：优先采用能解决当前瓶颈的结构。增加设计自由度时，也要加入相应的加工与验证工作。" src="../../../../../assets/93d2c4e2b82cc74fa41288396645869eb11ba43305caaa1446d1b0e8cc35f8fd.png"><figcaption><span class="fig-tag">图 6</span>优先采用能解决当前瓶颈的结构。增加设计自由度时，也要加入相应的加工与验证工作。</figcaption></figure>
+<p>一个实用起点是先建立简单的基准：圆弧弯、余弦交叉或裸并行波导。保持材料、源、边界与端口定义，再只改变目标结构，才能更清楚地知道改善从哪里来。</p>
+<p>最后给仿真设置一个验收门槛：至少检查网格变化、运行时长与端口位置对关键指标的影响，再根据加工误差扫线宽和间距。本组结果用于解释案例机制；把毫米级布线或极深串扰谷变成产品承诺之前，还需要补齐这些证据。</p>
+<figure><img alt="图 7：几何 → 损耗预算 → 串扰上限 → 工艺核查。对候选结构完成同条件验证后，再把它放进完整链路。" src="../../../../../assets/70e8a879998dd46503a1d9c3a3cd0f2dc841b63fafb7294ab3a89de1d79368cf.png"><figcaption><span class="fig-tag">图 7</span>几何 → 损耗预算 → 串扰上限 → 工艺核查。对候选结构完成同条件验证后，再把它放进完整链路。</figcaption></figure>
+<h2>用一个小案例完成第一次闭环</h2>
+<p>可以从<a href="https://www.lingcompute.com/photon/learning-center/examples/notebooks/EulerWaveguideBend">学习中心的 Euler 弯案例</a>开始：下载 Notebook，核查材料、源与端口，先估价，再运行，最后读取基模损耗并对照场图。</p>
+<p>进一步的案例：<a href="https://www.lingcompute.com/photon/learning-center/examples/notebooks/WaveguideCrossing">余弦锥形交叉</a>、<a href="https://www.lingcompute.com/photon/learning-center/examples/notebooks/SWGWaveguideCrossing">SWG 交叉</a>、<a href="https://www.lingcompute.com/photon/learning-center/examples/notebooks/ZeroCrossTalkTE">并行串扰抑制</a>。</p>
+<p><a href="https://tidy3d.fangzhen.cloud/">国内产品入口</a>。本文没有验证新用户完整注册与国内站导入流程，具体入口和运行方式请以实际页面为准；本组图文中的 FDTD 数值来自已经完成的本次任务。</p></main><footer class="brand"><img src="../../../../../assets/510b9dc6fc4142dea696bba38799a59fbad636eb6dee1e46604eca8aaa5271d0.png" alt="灵算科技 LingCompute"><p>自有文章及插图：CC BY-NC 4.0；商用请另行联系。商标与另有标注的第三方材料除外。</p><p>默认系统字体；备用字体：<a href="https://hyperos.mi.com/font/en/download/">MiSans（小米）</a>，按其字体许可使用。</p><p>新稿审核以对应GitHub PR记录为准；预览本身不代表审核通过。</p><p><a href="https://github.com/LingCompute/lingcompute-content/blob/4d2076e685bea389b11cd950b2c96d9255e95e4a/content/photon/waveguide-routing/SOURCES.md">来源、指标口径与素材说明</a></p></footer><nav aria-label="文章导航"><a href="../../index.html">返回文章目录</a></nav></article></body></html>

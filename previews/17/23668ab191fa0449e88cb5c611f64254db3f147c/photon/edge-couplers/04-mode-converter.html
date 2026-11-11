@@ -1,0 +1,86 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; font-src data:; style-src 'self' 'unsafe-inline'; base-uri 'none'; form-action 'none'"><title>片内模斑怎么转换：线性锥、Luneburg 与半透镜</title><link rel="stylesheet" href="../../../../../assets/b36dd3d84de32be902bbbd2e8fafd513223968511e393a50f710fcf619229855.css"><meta name="robots" content="noindex,nofollow"></head><body><article><aside class="meta"><p><strong>待审预览 · PR #17</strong> · <a href="https://github.com/LingCompute/lingcompute-content/pull/17">GitHub 记录</a></p><p>此版本尚待人审，不能作为发布批准。</p><details><summary>版本信息 · 源稿 23668ab</summary><p>源稿版本：<code>23668ab191fa0449e88cb5c611f64254db3f147c</code></p><p>排版工具版本：<code>91b513db30654c9cb059375902c73b894742d119</code>。工具改动合并后生效。</p></details></aside><header class="meta"><p>构建预览 · 正式收录以主分支及PR审核记录为准</p><p>灵算光子 · 图解无源光子器件 · 端面与模斑接口</p><p>适合：具有光学基础、需要理解和选择集成光子器件的工程师与科研人员</p><p>本文解决：区分线性锥、Luneburg 与半透镜的模斑转换条件。</p><p>预计阅读 7–12 分钟，实操另计 · 8.5 参考屏</p><p>阅读时长为编辑模型估计；参考视口390×844 CSS像素，不同设备会有差异。</p></header><main id="article-body"><h1>片内模斑怎么转换：线性锥、Luneburg 与半透镜</h1>
+<blockquote>
+<p><strong>待审稿</strong>：本文处于独立 PR 审核阶段，尚未收录为正式内容。定量结论、素材来源与授权仍需指定业内审核者核查。</p>
+</blockquote>
+<p>倒锥的思路是「慢慢来」：让截面变化足够慢，模式就能一路跟上。</p>
+<p>但慢意味着长。50 μm 的锥长，对单器件不算什么，对需要几十个接口的阵列就很占地方。</p>
+<p>这一篇讲<strong>波前整形</strong>。同一个 Notebook 给出 50 μm 线性锥、11 μm Luneburg 与 9.5 μm 半透镜。前两者与半透镜的截面和激励方向不同，读数要连同端口条件理解。</p>
+<h2>01　绝热是充分条件，不是必要条件</h2>
+<p>倒锥之所以要那么长，是因为它只用了「让截面连续变化」这一个自由度。模式跟不上，是因为变化太快。</p>
+<p>但如果在中途主动给波前加一个相位修正呢？</p>
+<p>这就从「绝热」跳到了「成像」：不去追求每一步都跟得上，而是在末端一次性把场型纠正过来。需要的长度，从「拍长的许多倍」变成了「一个透镜的尺寸」。</p>
+<p>实现方式并不相同：Luneburg 通过厚度分布调有效折射率，半透镜通过多段平面轮廓整形；后者并不要求同样的厚度渐变工艺。</p>
+<figure><img alt="图 1：上为绝热锥，宽度变化一路都很慢；下为透镜，用相位把不同位置的光推向宽波导的模式。" src="../../../../../assets/e9a1a85e4ec91648c7e9b6a002c5c19679d151486741b3847c86fa57d071deab.png"><figcaption><span class="fig-tag">图 1</span>上为绝热锥，宽度变化一路都很慢；下为透镜，用相位把不同位置的光推向宽波导的模式。</figcaption></figure>
+<h2>02　三种做法，长度差 4 倍以上</h2>
+<p>同一个 Notebook 给了三个设计点：</p>
+<ul>
+<li><strong>线性锥</strong>：长度 50 μm，作为基准</li>
+<li><strong>Luneburg 透镜</strong>：直径 11 μm，通过渐变厚度让局部有效折射率按 Luneburg 分布</li>
+<li><strong>半透镜扩束</strong>：六段长度 1、3.61、0.05、0.7、3.11、1.03 μm，总长 <strong>9.5 μm</strong></li>
+</ul>
+<p>线性锥与 Luneburg 的波导厚 110 nm，按宽 10 μm 输入、0.5 μm 输出激励；半透镜厚 260 nm，按宽 0.45 μm 输入、9 μm 输出激励。这里的宽度均为几何宽度。前两者收束、后者扩束，源模场和输出监视器尺寸不同。</p>
+<figure><img alt="图 2：三个设计点的总通量传输谱。各自归一到模式源功率；半透镜与前两者的截面和端口不同，不作统一性能排名。" src="../../../../../assets/f7f25a80ebd2e2a39f310785c42a21b2b37875fcf4737e70475cfb42002814df.png"><figcaption><span class="fig-tag">图 2</span>三个设计点的总通量传输谱。各自归一到模式源功率；半透镜与前两者的截面和端口不同，不作统一性能排名。</figcaption></figure>
+<p>1500–1600 nm 内，三者的表现是：</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>方案</th>
+<th>长度</th>
+<th>1550 nm 插损</th>
+<th>全band 最差</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>线性锥</td>
+<td>50 μm</td>
+<td>−0.83 dB</td>
+<td>−0.99 dB</td>
+</tr>
+<tr>
+<td>Luneburg 透镜</td>
+<td>11 μm</td>
+<td>−0.78 dB</td>
+<td>−1.10 dB</td>
+</tr>
+<tr>
+<td>半透镜扩束</td>
+<td>9.5 μm</td>
+<td><strong>−0.46 dB</strong></td>
+<td>−0.48 dB</td>
+</tr>
+</tbody>
+</table></div>
+<p>表中半透镜的总通量曲线较平，但它输出到宽多模波导。1550 nm 仅取 TE0 的传输为 <strong>−1.45 dB</strong>，不能用总通量数字证明它优于单模收束器。</p>
+<h2>03　场图上能看出两种机制</h2>
+<figure><img alt="图 3：三种结构的 |Ey|。线性锥与 Luneburg 从宽到窄，半透镜从窄到宽；各图坐标和色标分别显示，不按亮度排名。" src="../../../../../assets/a7c853720b2943fc7b92e26abb528a0ee6cd415edabb971d3c5586e521a3039c.png"><figcaption><span class="fig-tag">图 3</span>三种结构的 |Ey|。线性锥与 Luneburg 从宽到窄，半透镜从窄到宽；各图坐标和色标分别显示，不按亮度排名。</figcaption></figure>
+<figure><img alt="动画 1：本次 FDTD 线性锥的 GUI 原生场动画，field 监视器，XY 平面 z = 0.055 μm，1550 nm，Re(Ey)。3D Carpet 起伏表示场值；播放展示单频场的相位变化，不是真实脉冲传播录像。" src="../../../../../assets/0cf8c4e1d4d13d065372112a07547f1764d81c235256433222f33f329b3e21cc.gif"><figcaption><span class="fig-tag">动画 1</span>本次 FDTD 线性锥的 GUI 原生场动画，field 监视器，XY 平面 z = 0.055 μm，1550 nm，Re(Ey)。3D Carpet 起伏表示场值；播放展示单频场的相位变化，不是真实脉冲传播录像。</figcaption></figure>
+<figure><img alt="动画 2：本次 FDTD Luneburg 转换器的 GUI 原生场动画，field 监视器，XY 平面 z = 0.055 μm，1550 nm，Re(Ey)。可观察该平面内的干涉图样；起伏表示场值，不代表结构形变。" src="../../../../../assets/28eae20870bd0eb9e17c601a282818770352193cee620c6bfa3fda4f82079649.gif"><figcaption><span class="fig-tag">动画 2</span>本次 FDTD Luneburg 转换器的 GUI 原生场动画，field 监视器，XY 平面 z = 0.055 μm，1550 nm，Re(Ey)。可观察该平面内的干涉图样；起伏表示场值，不代表结构形变。</figcaption></figure>
+<figure><img alt="动画 3：本次 FDTD 半透镜转换器的 GUI 原生场动画，field 监视器，XY 平面 z = 0.13 μm，1550 nm，Re(Ey)。该监视器高度与前两图不同，Carpet 高度不作跨图定量比较；播放为单频相位演示。" src="../../../../../assets/bd85f91e254ce115695df34a140b4023007c4dea9f47df2a3c80c4813b50afd9.gif"><figcaption><span class="fig-tag">动画 3</span>本次 FDTD 半透镜转换器的 GUI 原生场动画，field 监视器，XY 平面 z = 0.13 μm，1550 nm，Re(Ey)。该监视器高度与前两图不同，Carpet 高度不作跨图定量比较；播放为单频相位演示。</figcaption></figure>
+<p>三张图的差别很直观。</p>
+<p>线性锥的场随结构收束；Luneburg 通过渐变有效折射率组织波前；半透镜通过多段轮廓扩束。Luneburg 使用 TE0 模式源，不能仅凭场条纹就认定输入端同时激励了多个导模；反射、干涉与局部模式转换需要端口分解来区分。</p>
+<p>顺带说一句：Luneburg 的谱线在三者里起伏最大（−0.55 到 −1.10 dB）。它对波长更敏感，因为厚度渐变带来的相位是按设计波长算的。</p>
+<h2>04　出口 9 μm 宽，光其实分成好几个模式</h2>
+<p>这里有个容易被忽略的口径问题。</p>
+<p>半透镜的输出波导宽 9 μm。这么宽的波导支持多个模式，所以「插损」只是总功率比，还需要看功率落在哪个模式上。</p>
+<figure><img alt="图 4：截面 |Ey|² 的二阶矩等效直径 D=4σ，仅截取实际转换段，器件起点对齐为 0。收束与扩束方向不同，不能解读成同一任务的快慢对照。" src="../../../../../assets/7e2a4fa1377faaa950e7566ef3d5f9928f49e922b76001075a2d08a63f898ada.png"><figcaption><span class="fig-tag">图 4</span>截面 |Ey|² 的二阶矩等效直径 D=4σ，仅截取实际转换段，器件起点对齐为 0。收束与扩束方向不同，不能解读成同一任务的快慢对照。</figcaption></figure>
+<p>这些曲线显示每个设计内部的模场变化。互易性适用于对应端口模式之间的传输系数，不能把正向总通量自动等同于反向高斯光纤的耦合效率。</p>
+<figure><img alt="图 5：出口各模式的功率占比。TE0 占绝大部分，但高阶模也分到了可观的份额。" src="../../../../../assets/49cedf092d97a72bf5e6deb790c12c283b4497fcd32b6fca43b80d433046efb0.png"><figcaption><span class="fig-tag">图 5</span>出口各模式的功率占比。TE0 占绝大部分，但高阶模也分到了可观的份额。</figcaption></figure>
+<p>1550 nm 处，TE0 占总通量约 <strong>79.57%</strong>。其余功率包含所记录的高阶模及未完成分解的部分。总通量 −0.46 dB 与 TE0 传输 −1.45 dB 是两个指标；后续连接单模波导会如何转换，还取决于过渡设计。</p>
+<p>如果下游只接收某一模式，应检查该模式的功率与连接段传输，不能只看总通量。</p>
+<p>这也解释了为什么「透镜型方案能到 −0.46 dB」这种数字要谨慎对待：如果只统计 TE0，插损会明显更高。本期的 −0.46 dB 是总通量口径，与倒锥那篇的基模口径<strong>不是同一个量</strong>——倒锥的输出是 0.5 μm 单模波导，两者在这件事上没有可比性。</p>
+<h2>05　什么时候值得用</h2>
+<p>透镜型方案的适用条件其实很窄：</p>
+<ul>
+<li>面积紧张（阵列、多通道并行）</li>
+<li>能接受更复杂的设计流程（厚度渐变、多段曲线、需要 GDS）</li>
+<li>波段相对固定（谱线比线性锥更敏感）</li>
+</ul>
+<p>Luneburg 的厚度渐变需要相应加工能力；半透镜使用不同的平面轮廓，工艺要求应分别核查。线性锥的设计与制造流程相对直接。</p>
+<p>本次仅演示三个设计点，没有统计产业采用率或制造成本。</p>
+<p>阵列面积要同时考虑传播长度、横向节距与布线。32 个并排通道不会把传播长度乘以 32；只有明确相同端口、节距和排布后，才能估算紧凑转换器节省的总面积。</p>
+<h3>配套案例</h3>
+<p><a href="https://www.lingcompute.com/photon/learning-center/examples/notebooks/WaveguideSizeConverter">Waveguide mode size converters</a></p>
+<p>更多案例见<a href="https://www.lingcompute.com/photon/learning-center/example-library">灵算光子学习中心</a>，国内产品入口为 <a href="https://tidy3d.fangzhen.cloud/">Tidy3D 平台</a>。本次未验证国内注册、Notebook 导入与浏览器执行流程，请以平台当前指引为准。</p>
+<p>本次跑的是三个最终设计，其他长度与优化过程未重跑。线性锥与 Luneburg 共享名义输入/输出截面，半透镜的厚度、宽度及激励方向不同；倒锥另用高斯光束激励。所有读数均需按各自条件解读。</p>
+<p>数据重载时，Luneburg 模型首个半径为 0 的圆柱触发退化几何警告；本次未改变已有求解，也未验证该项的数值影响。精确引用前还需核查几何和网格收敛。</p></main><footer class="brand"><img src="../../../../../assets/510b9dc6fc4142dea696bba38799a59fbad636eb6dee1e46604eca8aaa5271d0.png" alt="灵算科技 LingCompute"><p>自有文章及插图：CC BY-NC 4.0；商用请另行联系。商标与另有标注的第三方材料除外。</p><p>默认系统字体；备用字体：<a href="https://hyperos.mi.com/font/en/download/">MiSans（小米）</a>，按其字体许可使用。</p><p>新稿审核以对应GitHub PR记录为准；预览本身不代表审核通过。</p><p><a href="https://github.com/LingCompute/lingcompute-content/blob/23668ab191fa0449e88cb5c611f64254db3f147c/content/photon/edge-couplers/SOURCES.md">来源、指标口径与素材说明</a></p></footer><nav aria-label="文章导航"><a href="../../index.html">返回文章目录</a></nav></article></body></html>

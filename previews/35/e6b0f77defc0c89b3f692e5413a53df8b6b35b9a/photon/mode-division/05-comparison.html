@@ -1,0 +1,87 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; font-src data:; style-src 'self' 'unsafe-inline'; base-uri 'none'; form-action 'none'"><title>模分该选什么？三条路线的边界</title><link rel="stylesheet" href="../../../../../assets/b36dd3d84de32be902bbbd2e8fafd513223968511e393a50f710fcf619229855.css"><meta name="robots" content="noindex,nofollow"></head><body><article><aside class="meta"><p><strong>待审预览 · PR #35</strong> · <a href="https://github.com/LingCompute/lingcompute-content/pull/35">GitHub 记录</a></p><p>此版本尚待人审，不能作为发布批准。</p><details><summary>版本信息 · 源稿 e6b0f77</summary><p>源稿版本：<code>e6b0f77defc0c89b3f692e5413a53df8b6b35b9a</code></p><p>排版工具版本：<code>91b513db30654c9cb059375902c73b894742d119</code>。工具改动合并后生效。</p></details></aside><header class="meta"><p>构建预览 · 正式收录以主分支及PR审核记录为准</p><p>灵算光子 · 图解无源光子器件 · 模分复用</p><p>适合：具有光学基础、需要理解和选择集成光子器件的工程师与科研人员</p><p>本文解决：在模式纯度、透射、占地与工艺边界之间选路线。</p><p>预计阅读 5–8 分钟，实操另计 · 5.9 参考屏</p><p>阅读时长为编辑模型估计；参考视口390×844 CSS像素，不同设备会有差异。</p></header><main id="article-body"><h1>模分该选什么？三条路线的边界</h1>
+<blockquote>
+<p><strong>待审稿</strong>：本文处于独立 PR 审核阶段，尚未收录为正式内容。定量结论、素材来源与授权仍需指定业内审核者核查。</p>
+</blockquote>
+<p>三个案例讲完，最后这篇把它们的数字放进同一张表。先说明一件事：<strong>这张表不是排名</strong>。三个案例的维度、波段、指标定义都不一样，把它们按某个数字排序，等于把不同口径的测量混在一起。</p>
+<p>能比的只有机制与代价。所以下面先给指标口径，再给定位，最后给判断顺序。</p>
+<figure><img alt="图 22：评价一个模分器件，先问这五个数。卡片中的定义是通用口径，不针对某一具体器件。" src="../../../../../assets/fc3762eac2dda11d1f15b3e0981dc28553fe6ff366dd0815548db0d0d44417bb.png"><figcaption><span class="fig-tag">图 22</span>评价一个模分器件，先问这五个数。卡片中的定义是通用口径，不针对某一具体器件。</figcaption></figure>
+<h2>01　三个案例放在一起</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th></th>
+<th>8 通道模分</th>
+<th>逆向模式转换</th>
+<th>条–槽转换</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>维度</td>
+<td>3D</td>
+<td>2D</td>
+<td>3D</td>
+</tr>
+<tr>
+<td>波段</td>
+<td>1500–1600 nm</td>
+<td>1.0 μm 单点</td>
+<td>1500–1600 nm</td>
+</tr>
+<tr>
+<td>器件长度</td>
+<td>约 200 μm</td>
+<td>7 μm（含缓冲区）</td>
+<td>6 / 8 / 20 μm</td>
+</tr>
+<tr>
+<td>目标</td>
+<td>TE0→TE1/TE2/TE3</td>
+<td>TE0→TE1</td>
+<td>条模→槽模</td>
+</tr>
+<tr>
+<td>本次读数</td>
+<td>整器件 98.56%（TE1 占 99.80%）</td>
+<td>96.5%</td>
+<td>97.41 / 99.51 / 99.47%</td>
+</tr>
+<tr>
+<td>验证范围</td>
+<td>八个入口中的两个</td>
+<td>单波长、理想几何</td>
+<td>三种设计、理想几何</td>
+</tr>
+</tbody>
+</table></div>
+<p>表格里最容易被误读的是最后一行。8 通道器件只验了两个入口，逆向设计只验了一个波长，条–槽只验了理想形状。这三个「只」都不是省略，而是本次求解的实际边界。</p>
+<h2>02　定位：面积、自由度、工艺</h2>
+<p>把三个案例放进「器件长度—设计自由度」这张平面，位置就清楚了。</p>
+<figure><img alt="图 23：三条路线的定位。纵轴是定性排序，不是实测指标。" src="../../../../../assets/6b7fe95f6ae47227ae6d6df90ce53c4e99457c8631278eafe5d7bc40112af91b.png"><figcaption><span class="fig-tag">图 23</span>三条路线的定位。纵轴是定性排序，不是实测指标。</figcaption></figure>
+<p><strong>级联耦合器</strong>在右上角：面积最大，但设计自由度高——每一段的宽度和长度都可以独立调，而且每一段的行为都能用耦合模理论算清楚。它的可预测性是三者里最好的。</p>
+<p><strong>逆向设计</strong>在左上角：面积最小，自由度也最高（每个像素都是变量），但代价是结果不可解释、依赖初值、带宽要靠额外约束去换。</p>
+<p><strong>条–槽转换</strong>在左下：面积小，自由度低——本质上只是几何过渡，没有多少可调的余地。它解决的问题不是「模式阶数」，而是「场待在哪里」，所以和前两者不在同一个任务上。</p>
+<p>三者其实回答三个不同的问题：<strong>分几个通道</strong>、<strong>怎么用最小面积换模式</strong>、<strong>怎么换模场的介质</strong>。选型的第一步是认清自己要回答哪一个。</p>
+<p>把它们和另外两个维度放在一起看会更清楚。波长维度的器件（上一组讲的微环、Bragg）靠频率选择性工作，通道之间不会因为传播距离而互相串；模式维度的器件靠几何正交性工作，一旦版图里有不对称，串扰会随长度累积。偏振维度的器件介于两者之间——正交性来自材料的各向异性或结构的双折射，同样怕工艺偏差。这就是为什么模分器件对版图质量格外敏感：它的隔离度不是一个滤波器的指标，而是整条路径的累积结果。</p>
+<h2>03　判断顺序</h2>
+<figure><img alt="图 24：先问模式数，再问要不要改模场。示意图，编辑建议。" src="../../../../../assets/bcecb434bef49e9ca7a3b9a28404078cb0d850ca8d94ce8fd8a3576ceb9e3b1e.png"><figcaption><span class="fig-tag">图 24</span>先问模式数，再问要不要改模场。示意图，编辑建议。</figcaption></figure>
+<p><strong>第一问：要同时跑几个模式？</strong></p>
+<p>四个以上、并且要宽带，走级联非对称耦合器。它的版图规整、每段可独立验证，代价是长度随通道数线性增长。8 通道做到 200 μm，16 通道大致翻倍。</p>
+<p>一到两个模式、面积敏感，走逆向设计。它能把器件压到几个微米，但要接受三件事：只在一个波长上优化过、形状不规则、结果依赖初值。</p>
+<p><strong>第二问：是不是要把场推进另一种材料？</strong></p>
+<p>如果是，那前两条路都不解决问题——需要的是条–槽转换。它不改阶数，只改模场位置，是后面接调制器、传感器、非线性波导的前置器件。</p>
+<p><strong>两问都成立时没有现成答案。</strong> 例如「四个通道 + 每个通道都要接槽波导」，需要级联耦合器后面再接四组条–槽转换，本期的三个案例都没有覆盖这种组合。</p>
+<h2>04　三条实践建议</h2>
+<p><strong>先定口径，再看数字。</strong> 模式纯度的分母是哪些模式、插损含不含辐射、带宽按什么阈值算——这三件事不定清楚，任何比较都没有意义。本篇的来源入口与已知口径边界见<a href="https://github.com/LingCompute/lingcompute-content/blob/e6b0f77defc0c89b3f692e5413a53df8b6b35b9a/content/photon/mode-division/sources/05-comparison.md">来源与证据记录</a>；原始读数与制作工程由制作方保留，审核需要时由维护者安排核查。</p>
+<p><strong>耦合长度不要凭感觉调。</strong> 它由相位匹配和耦合强度共同决定，前者靠有效折射率曲线查，后者靠扫描或理论估。本期六个长度直接用了文献值，正是因为扫描的代价（六段 × 十几个点）远超收益。</p>
+<p><strong>逆向设计的结果要当成「一个可行解」，不是「最优解」。</strong> 换初值、换罚项权重、换步数，都会得到不同结构。它的价值在于给出人想不到的形状，而不是给出一个可以写进规格书的数字。</p>
+<h2>05　本组的交付说明</h2>
+<p>三篇深度解读加这篇比较，共四个 Notebook、十四个云端求解任务。所有读数来自本次执行，图片由本次数据重绘，没有引用 Notebook 内嵌截图。</p>
+<p>想自己跑一遍，从学习中心的案例页进；注册入口在国内平台。</p>
+<ul>
+<li><a href="https://www.lingcompute.com/photon/learning-center/examples/notebooks/8ChannelDemultiplexer">8-Channel mode and polarization de-multiplexer</a></li>
+<li><a href="https://www.lingcompute.com/photon/learning-center/examples/notebooks/Autograd3InverseDesign">Inverse design optimization of a mode converter</a></li>
+<li><a href="https://www.lingcompute.com/photon/learning-center/examples/notebooks/StripToSlotConverters">Strip to slot waveguide converters</a></li>
+</ul>
+<p>注册入口：<a href="https://tidy3d.fangzhen.cloud/">https://tidy3d.fangzhen.cloud/</a></p>
+<p>下一组换一个维度：偏振。分束与旋转解决的是不同的问题，指标也另有一套。</p></main><footer class="brand"><img src="../../../../../assets/510b9dc6fc4142dea696bba38799a59fbad636eb6dee1e46604eca8aaa5271d0.png" alt="灵算科技 LingCompute"><p>自有文章及插图：CC BY-NC 4.0；商用请另行联系。商标与另有标注的第三方材料除外。</p><p>默认系统字体；备用字体：<a href="https://hyperos.mi.com/font/en/download/">MiSans（小米）</a>，按其字体许可使用。</p><p>新稿审核以对应GitHub PR记录为准；预览本身不代表审核通过。</p><p><a href="https://github.com/LingCompute/lingcompute-content/blob/e6b0f77defc0c89b3f692e5413a53df8b6b35b9a/content/photon/mode-division/SOURCES.md">来源、指标口径与素材说明</a></p></footer><nav aria-label="文章导航"><a href="../../index.html">返回文章目录</a></nav></article></body></html>

@@ -1,0 +1,39 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; font-src data:; style-src 'self' 'unsafe-inline'; base-uri 'none'; form-action 'none'"><title>同一根波导里的光，怎么按模式分开？</title><link rel="stylesheet" href="../../../../../assets/b36dd3d84de32be902bbbd2e8fafd513223968511e393a50f710fcf619229855.css"><meta name="robots" content="noindex,nofollow"></head><body><article><aside class="meta"><p><strong>待审预览 · PR #31</strong> · <a href="https://github.com/LingCompute/lingcompute-content/pull/31">GitHub 记录</a></p><p>此版本尚待人审，不能作为发布批准。</p><details><summary>版本信息 · 源稿 3b0a1b8</summary><p>源稿版本：<code>3b0a1b8751ca5d04dfe217919eaf8b60d7654024</code></p><p>排版工具版本：<code>91b513db30654c9cb059375902c73b894742d119</code>。工具改动合并后生效。</p></details></aside><header class="meta"><p>构建预览 · 正式收录以主分支及PR审核记录为准</p><p>灵算光子 · 图解无源光子器件 · 模分复用</p><p>适合：具有光学基础、需要理解和选择集成光子器件的工程师与科研人员</p><p>本文解决：区分模式、偏振与端口，建立模分器件的选择框架。</p><p>预计阅读 5–10 分钟，实操另计 · 6.0 参考屏</p><p>阅读时长为编辑模型估计；参考视口390×844 CSS像素，不同设备会有差异。</p></header><main id="article-body"><h1>同一根波导里的光，怎么按模式分开？</h1>
+<blockquote>
+<p><strong>待审稿</strong>：本文处于独立 PR 审核阶段，尚未收录为正式内容。定量结论、素材来源与授权仍需指定业内审核者核查。</p>
+</blockquote>
+<p>一根单模波导只能跑一个通道。想加容量，最直接的办法是换更宽的波导——宽波导能同时容纳好几个横向分布不同的模式，每个模式都是一个独立的通道。这就是<strong>模分复用</strong>。</p>
+<p>难点不在「怎么让多个模式同时存在」，那自然会。难在<strong>怎么在需要的地方把它们分开，并且保证分开之后还是原来那个模式</strong>。本组三篇围绕三个官方 Notebook，把 8 通道模分解复用器、逆向设计的模式转换器、条–槽转换器逐个跑通，最后给一套判断顺序。</p>
+<figure><img alt="图 1：同一根波导可以并排承载波长、模式、偏振三个维度，三者靠正交性互不干扰。示意图。" src="../../../../../assets/a3b30eac0b9abc05007818fcb39b420195f4591e02aae46a054fc9695d4c012f.png"><figcaption><span class="fig-tag">图 1</span>同一根波导可以并排承载波长、模式、偏振三个维度，三者靠正交性互不干扰。示意图。</figcaption></figure>
+<h2>01　模式是什么：一根波导里的几个「形状」</h2>
+<p>光在波导里的横向分布不是任意的。给定宽度和厚度，只有有限几种分布能稳定传播，它们叫<strong>模式</strong>，按零点个数从低到高编号：TE0 是基模，TE1 有一个零点，依此类推。</p>
+<p>这些形状彼此正交。正交的意思是：一个纯 TE1 的光，不会被一个只认 TE0 的接收端读到。正因如此，它们才能当作独立通道使用。</p>
+<figure><img alt="图 2：同一根 1.63 μm 宽的总线里，TE0–TE3 的横向分布。本地模式求解结果，不是示意。" src="../../../../../assets/b3b12ad8f12a43cff59a9f75d8349ecb9ab51b92fe4b49cc958102061fdfe73c.png"><figcaption><span class="fig-tag">图 2</span>同一根 1.63 μm 宽的总线里，TE0–TE3 的横向分布。本地模式求解结果，不是示意。</figcaption></figure>
+<p>模式数由波导尺寸决定。1550 nm、220 nm 厚的硅波导，宽度做到 1.6 μm 左右就能支持 TE0–TE3 四个 TE 模。这是本期所有设计的物理基础。</p>
+<p>正交性也解释了模分最麻烦的地方。波长通道之间靠滤波器隔离，滤波器的抑制比可以做到几十 dB，而且是「单向」的——不同波长之间不会因为传播距离而互相转换。模式不一样：只要波导里有一点不对称、一个急弯、一处宽度抖动，模式之间就会耦合。这种耦合是累积的，走的路越长，漏过去的越多。所以模分器件的难点往往不在「怎么分」，而在「分开之后怎么保持」。</p>
+<h2>02　怎么把光「搬」到另一个模式上</h2>
+<p>有了几个模式，下一个问题是怎么把一个通道的光从 TE0 换成 TE1。最常用的办法是<strong>非对称定向耦合器</strong>：两根宽度不同的波导靠近到几百纳米，让它们的模场重叠。</p>
+<p>两根等宽波导靠在一起，会周期性交换功率，但交换不完全——因为两根波导里同一个模式的相位速度一样，来回摆动的幅度取决于耦合强度，光会在两根波导之间来回跑。</p>
+<p>把其中一根做宽，让它支持的模式变成高阶模，情况就变了：<strong>当宽波导里高阶模的有效折射率，正好等于窄波导里基模的有效折射率时，两个模式同步</strong>，功率才会单向地、完整地从一根搬到另一根。</p>
+<figure><img alt="图 3：有效折射率随宽度变化。把总线宽度选在交点上，高阶模就与 400 nm 波导里的基模同步。本次宽度扫描结果。" src="../../../../../assets/24adfe6feef61e7d7601e4cdcfbba3f1448f63875d12232da33a056bae45a127.png"><figcaption><span class="fig-tag">图 3</span>有效折射率随宽度变化。把总线宽度选在交点上，高阶模就与 400 nm 波导里的基模同步。本次宽度扫描结果。</figcaption></figure>
+<p>这张图是本期最基础的一张：横轴是波导宽度，纵轴是有效折射率，四条曲线对应四个 TE 模。400 nm 输入波导的基模折射率画成一条水平虚线，它与 TE1、TE2、TE3 三条曲线的交点，就给出了三段耦合器各自需要的总线宽度。</p>
+<p>注意这三个交点分散在 0.8 到 1.7 μm 之间，跨度很大。这意味着一个「八通道」器件不可能用一根等宽总线把所有模式都接上——每接一个高阶模，总线就得换一次宽度，中间靠锥形过渡衔接。这正是 8 通道器件要做到 200 μm 长的原因。</p>
+<figure><img alt="图 4：相位失配时功率来回摆但转不干净；相位匹配时能整段搬完。解析示意，非本次仿真。" src="../../../../../assets/ebac347c6d7a47bbd47238e1ff88b39dbd19f80517193e6a72c845b1c8a35d1b.png"><figcaption><span class="fig-tag">图 4</span>相位失配时功率来回摆但转不干净；相位匹配时能整段搬完。解析示意，非本次仿真。</figcaption></figure>
+<h2>03　本期三个案例，代表三种做法</h2>
+<p><strong>级联非对称耦合器</strong>：把上面这种「一段耦合器搬一个模式」的结构串起来。8 通道模分复用器就是六段耦合器加锥形过渡，全长约 200 μm。它的优点是版图规整、带宽宽；代价是面积随通道数线性增长。</p>
+<p><strong>逆向设计</strong>：不画结构，只写目标函数——「让输出端的 TE1 功率最大」。优化器通过伴随法算出每个像素该怎么改，二十步之后自己长出一个形状。它的优点是面积可以做到极小；代价是结果依赖初值与罚项，形状不规则，可解释性差。</p>
+<p><strong>条–槽转换</strong>：换一个方向——不改模式的阶数，改模场的位置。槽波导由两条硅脊夹一条低折射率缝组成，场集中在缝里，适合做光与物质的强相互作用。条–槽转换器负责把光从「关在硅里」搬到「关在缝里」。</p>
+<figure><img alt="图 5：三条路线在面积、工艺与设计自由度上各占一个位置，不能只按效率排序。示意图。" src="../../../../../assets/36e535c83a16dae10ef4c03f75b011e023d81ec8cb0ba3faf72e7835445c6ab1.png"><figcaption><span class="fig-tag">图 5</span>三条路线在面积、工艺与设计自由度上各占一个位置，不能只按效率排序。示意图。</figcaption></figure>
+<p>三个案例的波段、维度、指标定义都不同：8 通道器件是 3D、1550 nm；逆向设计是 2D、1.0 μm；条–槽是 3D、1550 nm。所以本组只讲机制与各自的取舍，<strong>不做跨案例的性能排名</strong>。</p>
+<h2>04　接下来三篇怎么读</h2>
+<p>第二篇讲 8 通道模分：相位匹配怎么落到版图上，六段耦合器各自的谱线长什么样，整器件为什么只验了两个入口。</p>
+<p>第三篇讲逆向设计：目标函数怎么写、二十步里发生了什么、为什么最终结构的效率不能直接当作器件的规格。</p>
+<p>第四篇讲条–槽：为什么要把场推进低折射率区，三种过渡结构各差在哪里。</p>
+<p>第五篇把三个案例放进同一张指标表，给出选型顺序与各自的边界。</p>
+<p>想先动手的话，可以直接打开学习中心的对应案例页，注册国内平台后按 Notebook 跑一遍——本期所有读数都来自这些 Notebook 的求解结果。</p>
+<ul>
+<li><a href="https://www.lingcompute.com/photon/learning-center/examples/notebooks/8ChannelDemultiplexer">8-Channel mode and polarization de-multiplexer</a></li>
+<li><a href="https://www.lingcompute.com/photon/learning-center/examples/notebooks/Autograd3InverseDesign">Inverse design optimization of a mode converter</a></li>
+<li><a href="https://www.lingcompute.com/photon/learning-center/examples/notebooks/StripToSlotConverters">Strip to slot waveguide converters</a></li>
+</ul>
+<p>注册入口：<a href="https://tidy3d.fangzhen.cloud/">https://tidy3d.fangzhen.cloud/</a></p></main><footer class="brand"><img src="../../../../../assets/510b9dc6fc4142dea696bba38799a59fbad636eb6dee1e46604eca8aaa5271d0.png" alt="灵算科技 LingCompute"><p>自有文章及插图：CC BY-NC 4.0；商用请另行联系。商标与另有标注的第三方材料除外。</p><p>默认系统字体；备用字体：<a href="https://hyperos.mi.com/font/en/download/">MiSans（小米）</a>，按其字体许可使用。</p><p>新稿审核以对应GitHub PR记录为准；预览本身不代表审核通过。</p><p><a href="https://github.com/LingCompute/lingcompute-content/blob/3b0a1b8751ca5d04dfe217919eaf8b60d7654024/content/photon/mode-division/SOURCES.md">来源、指标口径与素材说明</a></p></footer><nav aria-label="文章导航"><a href="../../index.html">返回文章目录</a></nav></article></body></html>

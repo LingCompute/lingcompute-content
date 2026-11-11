@@ -1,0 +1,56 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; font-src data:; style-src 'self' 'unsafe-inline'; base-uri 'none'; form-action 'none'"><title>两个介质抛物面，怎样连接两根波导</title><link rel="stylesheet" href="../../../../../assets/b36dd3d84de32be902bbbd2e8fafd513223968511e393a50f710fcf619229855.css"><meta name="robots" content="noindex,nofollow"></head><body><article><aside class="meta"><p><strong>待审预览 · PR #18</strong> · <a href="https://github.com/LingCompute/lingcompute-content/pull/18">GitHub 记录</a></p><p>此版本尚待人审，不能作为发布批准。</p><details><summary>版本信息 · 源稿 47c2138</summary><p>源稿版本：<code>47c21382ed0e1f53596a224c805160f34b16d726</code></p><p>排版工具版本：<code>91b513db30654c9cb059375902c73b894742d119</code>。工具改动合并后生效。</p></details></aside><header class="meta"><p>构建预览 · 正式收录以主分支及PR审核记录为准</p><p>灵算光子 · 图解无源光子器件 · 端面与模斑接口</p><p>适合：具有光学基础、需要理解和选择集成光子器件的工程师与科研人员</p><p>本文解决：理解介质抛物面怎样连接波导及其验证边界。</p><p>预计阅读 6–10 分钟，实操另计 · 7.0 参考屏</p><p>阅读时长为编辑模型估计；参考视口390×844 CSS像素，不同设备会有差异。</p></header><main id="article-body"><h1>两个介质抛物面，怎样连接两根波导</h1>
+<blockquote>
+<p><strong>待审稿</strong>：本文处于独立 PR 审核阶段，尚未收录为正式内容。定量结论、素材来源与授权仍需指定业内审核者核查。</p>
+</blockquote>
+<p>前面几篇讲的都是「光纤—芯片」接口。但还有一类接口完全不用光纤：两块芯片面对面放着，让光直接从一片进另一片。</p>
+<p>本例以两个抛物反射面组织光路，两个焦点的 y 坐标差为 25 μm。这个参数不是两芯片之间空气传播长度的直接测量。</p>
+<p>输入端先准直，输出端再聚焦。模型使用 STL 导入的介质实体及其与空气的边界，没有铝或其他金属反射面。</p>
+<h2>01　这不是光纤接口，是芯片间接口</h2>
+<p>先说清楚定位，否则后面的数字会被套错场景。</p>
+<p>这个案例的平台是低折射率对比波导（芯 1.543、包层 1.525），芯层 2.3 μm 见方——不是硅光，更像是聚合物或玻璃波导。波段 650–1050 nm，也不是通信窗口。</p>
+<p>它的应用场景是：两块光子芯片需要光互连，但中间不能有光纤（比如共封装、堆叠封装、或者在片测试）。</p>
+<figure><img alt="图 1：自由曲面耦合器的结构与光路。输入波导的发散光打到抛物面上，反射并聚焦到对面波导。" src="../../../../../assets/58ce5be9be642f751ce854cb877d12564e0de6d05ff45294220b2bdf3ee1f4b7.png"><figcaption><span class="fig-tag">图 1</span>自由曲面耦合器的结构与光路。输入波导的发散光打到抛物面上，反射并聚焦到对面波导。</figcaption></figure>
+<p>这里使用外部 CAD 曲面并以 STL 导入。实际芯片边缘处理与装配方式需按封装设计确定，不能由这一模型排除这些工序。</p>
+<h2>02　为什么是抛物面</h2>
+<p>抛物面有一个几何性质：从焦点发出的光，经抛物面反射后平行射出；反过来，平行光入射会汇聚到焦点。</p>
+<p>射线近似把输入波导出口视为点源，经第一抛物面准直，再由第二抛物面聚焦到输出。实际波导模具有有限尺寸，光在介质结构及其边界中传播、反射，需由波动仿真检验，不能把两焦点坐标差解释为全程在空气中传播。</p>
+<figure><img alt="图 2：抛物面把「耦合」变成了「成像」。发散的光被准直、再被聚焦。" src="../../../../../assets/71702f23a375e118fc856d9512675c3bd44904820311f5938568dad8b435a741.png"><figcaption><span class="fig-tag">图 2</span>抛物面把「耦合」变成了「成像」。发散的光被准直、再被聚焦。</figcaption></figure>
+<p>本例使用外部 CAD/STL 表达曲面；也可以采用其他几何表示，但需验证离散误差。</p>
+<p>代价是：<strong>它不好做</strong>。硅光的平面工艺做不出这种三维曲面，需要灰度曝光、3D 打印、或者特殊的刻蚀工艺。所以这类结构在硅光里很少见，更多出现在聚合物光子学或封装级的互连件上。</p>
+<h2>03　这一次的读数</h2>
+<p>3 μm 偏移（原文给出的最佳点）下：</p>
+<ul>
+<li>850 nm 处 <strong>−0.67 dB</strong></li>
+<li>峰值 <strong>−0.44 dB @ 650 nm</strong></li>
+<li>650–1050 nm 全band 最差 <strong>−1.16 dB</strong></li>
+</ul>
+<figure><img alt="图 3：耦合谱。400 nm 带宽内都在 −1.2 dB 以内，谱线朝短波侧略高。" src="../../../../../assets/5166bbc9418ceb467b695a606e3a86e125f3a1d512618856ba1889b4692b17a4.png"><figcaption><span class="fig-tag">图 3</span>耦合谱。400 nm 带宽内都在 −1.2 dB 以内，谱线朝短波侧略高。</figcaption></figure>
+<p>这个扫描窗口宽 400 nm。本模型芯层与包层使用常数折射率，没有验证真实材料色散；0.018 的折射率差不能推出色散小。</p>
+<p>倒锥与光栅的扫描窗口和阈值不同。这里只能报告本设计在 650–1050 nm 的结果，不能据此认定低对比度平台普遍更宽带。</p>
+<h2>04　场图上，聚焦点在哪</h2>
+<figure><img alt="图 4：3 μm 偏移下的场分布。左侧波导出射后发散，经抛物面反射在右侧重新汇聚。" src="../../../../../assets/9763bd7e09c4df559502c5df7d7f05b90790d693ed62d7885773f684c2f7875a.png"><figcaption><span class="fig-tag">图 4</span>3 μm 偏移下的场分布。左侧波导出射后发散，经抛物面反射在右侧重新汇聚。</figcaption></figure>
+<figure><img alt="动画 1：本次 FDTD 自由曲面耦合器的 GUI 原生场动画，field 监视器，XY 平面 z = 0 μm，850 nm，Re(Ez)。3D Carpet 的起伏表示场值，展示单频场的相位变化，不是真实脉冲飞行或反射录像。" src="../../../../../assets/4c5c32765615255886f4643a2f50fb9d6743a297fc536e7270897f545d317332.gif"><figcaption><span class="fig-tag">动画 1</span>本次 FDTD 自由曲面耦合器的 GUI 原生场动画，field 监视器，XY 平面 z = 0 μm，850 nm，Re(Ez)。3D Carpet 的起伏表示场值，展示单频场的相位变化，不是真实脉冲飞行或反射录像。</figcaption></figure>
+<p>场图显示能量从输入波导经曲面区域传到输出波导。传播介质和反射位置应结合 STL 几何理解；仅看色图不能把中间区域都认定为空气。</p>
+<p>原文扫了 −1 到 4 μm 的六个偏移量，结论是 3–4 μm 时耦合效率约 0.5 dB。这个扫描本次没有重跑，只复现了 3 μm 这一个点。</p>
+<p>把入口与出口的横向场剖面对比，能看出反射面做了两件事。</p>
+<figure><img alt="图 5：入口与出口的横向场剖面。入口是波导内的紧凑模场，出口已经展宽到接近波导宽度。" src="../../../../../assets/3d18f04d8ce985ee57bc3d5127e128e87363d9db7a70713f3c7481b67d1b8792.png"><figcaption><span class="fig-tag">图 5</span>入口与出口的横向场剖面。入口是波导内的紧凑模场，出口已经展宽到接近波导宽度。</figcaption></figure>
+<p>入口处模场宽度约等于 2.3 μm 的波导芯；出口处场分布更宽、更平，说明反射面确实把光重新分配到了对面波导的模式上。两条曲线各自归一，只能比形状，不能比绝对场强。</p>
+<h2>05　偏移为什么能「调」耦合</h2>
+<p>这里有个反直觉的地方：偏移 3 μm 反而比 0 偏移好。</p>
+<p>官方案例将这一优化归因于有限尺寸波导模与点光源射线近似的差异：波动光学的最佳位置与初始几何焦点不同。本模型没有模拟制造、CAD 误定位或装配偏差。</p>
+<p><strong>3 μm 是相对于射线初始设计的位置优化量。</strong> 原文的 3–4 μm 两个良好扫描点不能代替围绕最佳设计的独立装配容差研究。</p>
+<h2>06　什么时候会用到它</h2>
+<p>可以评估这类结构的条件包括：</p>
+<ul>
+<li>两块芯片之间必须无光纤互连</li>
+<li>平台是低折射率对比（聚合物、玻璃、部分 SiN）</li>
+<li>波段宽（可见到近红外）</li>
+<li>能接受非平面工艺</li>
+</ul>
+<p>还应与其他芯片间互连方式一起评估；本次没有穷尽替代路线。</p>
+<p>两个反射面的制造与定位都要纳入封装方案。能否连接异质平台需另行设计模式过渡，本例未验证这种连接，也不能证明它原则上不可行。</p>
+<p>从成本角度看，这类器件的价值不在器件本身，而在<strong>省掉的那套光纤耦合与封装</strong>。如果两块芯片本来就靠得很近（比如共封装光学里的交换芯片与光引擎），用一片抛物面换掉一整组光纤阵列，省下的是封装工序和体积，不是几个 dB。</p>
+<h3>配套案例</h3>
+<p><a href="https://www.lingcompute.com/photon/learning-center/examples/notebooks/FreeFormCoupler">Free-form chip-to-chip coupler</a></p>
+<p>更多案例见<a href="https://www.lingcompute.com/photon/learning-center/example-library">灵算光子学习中心</a>，国内产品入口为 <a href="https://tidy3d.fangzhen.cloud/">Tidy3D 平台</a>。本次未验证国内注册、Notebook 导入与浏览器执行流程，请以平台当前指引为准。</p>
+<p>本次只跑 3 μm 偏移一个点；−1 至 4 μm 的偏移扫描是原 Notebook 的结论，未重跑。该案例的几何依赖外部 STL 文件，取自 Tidy3D 官方 notebooks 仓库的 <code>misc/chip_to_chip_coupler.stl</code>，与学习中心下载包内的 Notebook 配套。波段与平台均与其余案例不同，不作跨案例排名。</p></main><footer class="brand"><img src="../../../../../assets/510b9dc6fc4142dea696bba38799a59fbad636eb6dee1e46604eca8aaa5271d0.png" alt="灵算科技 LingCompute"><p>自有文章及插图：CC BY-NC 4.0；商用请另行联系。商标与另有标注的第三方材料除外。</p><p>默认系统字体；备用字体：<a href="https://hyperos.mi.com/font/en/download/">MiSans（小米）</a>，按其字体许可使用。</p><p>新稿审核以对应GitHub PR记录为准；预览本身不代表审核通过。</p><p><a href="https://github.com/LingCompute/lingcompute-content/blob/47c21382ed0e1f53596a224c805160f34b16d726/content/photon/edge-couplers/SOURCES.md">来源、指标口径与素材说明</a></p></footer><nav aria-label="文章导航"><a href="../../index.html">返回文章目录</a></nav></article></body></html>

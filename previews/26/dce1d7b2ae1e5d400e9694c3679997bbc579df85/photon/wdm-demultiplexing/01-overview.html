@@ -1,0 +1,40 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; font-src data:; style-src 'self' 'unsafe-inline'; base-uri 'none'; form-action 'none'"><title>多个波长怎么一次分开？</title><link rel="stylesheet" href="../../../../../assets/b36dd3d84de32be902bbbd2e8fafd513223968511e393a50f710fcf619229855.css"><meta name="robots" content="noindex,nofollow"></head><body><article><aside class="meta"><p><strong>待审预览 · PR #26</strong> · <a href="https://github.com/LingCompute/lingcompute-content/pull/26">GitHub 记录</a></p><p>此版本尚待人审，不能作为发布批准。</p><details><summary>版本信息 · 源稿 dce1d7b</summary><p>源稿版本：<code>dce1d7b2ae1e5d400e9694c3679997bbc579df85</code></p><p>排版工具版本：<code>91b513db30654c9cb059375902c73b894742d119</code>。工具改动合并后生效。</p></details></aside><header class="meta"><p>构建预览 · 正式收录以主分支及PR审核记录为准</p><p>灵算光子 · 图解无源光子器件 · 波分解复用</p><p>适合：具有光学基础、需要理解和选择集成光子器件的工程师与科研人员</p><p>本文解决：建立多波长分离的机制、端口与性能指标地图。</p><p>预计阅读 5–10 分钟，实操另计 · 6.3 参考屏</p><p>阅读时长为编辑模型估计；参考视口390×844 CSS像素，不同设备会有差异。</p></header><main id="article-body"><h1>多个波长怎么一次分开？</h1>
+<blockquote>
+<p><strong>待审稿</strong>：本文处于独立 PR 审核阶段，尚未收录为正式内容。定量结论、素材来源与授权仍需指定业内审核者核查。</p>
+</blockquote>
+<p>上一组讲的是「挑一个」：微环和 Bragg 光栅从一片光谱里选出一个波长，其余丢掉或直通。这一组要难一档——一根波导里同时跑着好几个波长，要把它们各自送到对应的出口，一个都不能丢。</p>
+<p>这就是波分复用（WDM）里的分波器，也就是解复用器（demux）。它是光通信能把一根光纤的容量翻几十倍的根本原因：不是把光传得更快，而是同时传好几路。</p>
+<p>本期两个核心案例都按本次求解结果重绘：MMI 色散自成像，和逆向设计 WDM。AWG 与 EDG 是工业界的主力，但官方没有对应 Notebook，只能讲原理——这一点会在第 3 篇里明确标注。</p>
+<figure><img alt="图 1：WDM 链路。N 个激光器经合波器进入一根波导，到对端再由分波器分回 N 路。示意，不是本次仿真结果。" src="../../../../../assets/bb35602de129a721687854f6c68e74e3658ef3716643d211d9b3ab365a410976.png"><figcaption><span class="fig-tag">图 1</span>WDM 链路。N 个激光器经合波器进入一根波导，到对端再由分波器分回 N 路。示意，不是本次仿真结果。</figcaption></figure>
+<h2>01　滤波与分波，差的不是难度而是端口数</h2>
+<p>上一组的器件是 1 进 1 出（微环 add-drop 算四口，但一次只处理一个波长）。分波器是 1 进 N 出，这一条就把问题变了性质。</p>
+<p>选波只关心「这个波长能不能挑出来」，指标是 Q、消光比、滚降。分波要关心「N 个波长能不能各就各位」，指标变成通道数、通道间隔、串扰、插损、FSR 和面积。同一类结构两种都能做，但设计问题和验收标准不同，所以分两组讲。</p>
+<p>最容易混淆的是串扰。它是「别的通道漏进本口的功率」与本通道功率之比，听起来简单，实际上至少有三种算法：只看相邻通道、看所有非相邻通道、或者全部求和。写文章、看数据手册时必须问清是哪一种，否则差 10 dB 很正常。</p>
+<h2>02　两条路线：用面积换稳定，或用调谐换面积</h2>
+<p>文献把片上 WDM 滤波器分成两类，这个分法比按结构罗列更能解释「为什么它又小又难用」。</p>
+<p><strong>FIR（有限冲激响应）</strong>：把光分到多条路径，路径长度差给出与波长成正比的相位差，再在输出端干涉重组。AWG、EDG、级联 MZI 都属于这一类。它的传递函数由有限个抽头决定，没有谐振腔、不积累光子寿命，原则上对温度不敏感。</p>
+<p><strong>IIR（无限冲激响应）</strong>：靠谐振腔反复循环，只在谐振波长上建立场。微环、Bragg 光栅属于这一类。单个腔就能给出极陡的边沿，面积极小，但每个通道的中心波长都要单独对准、单独稳频。</p>
+<figure><img alt="图 2：两条路线的代价不同。左边 FIR 靠延迟线造相位差，右边 IIR 靠腔反复循环。示意。" src="../../../../../assets/079ced228996f8393be173e18ffe4a0af8387b1b7a62c9094c05cad9b8b9109a.png"><figcaption><span class="fig-tag">图 2</span>两条路线的代价不同。左边 FIR 靠延迟线造相位差，右边 IIR 靠腔反复循环。示意。</figcaption></figure>
+<p>一句话概括：<strong>FIR 用面积换稳定，IIR 用调谐换面积</strong>。这句话可以直接当选型的起点——如果你的系统没有温控预算，FIR 结构更省心；如果面积是硬约束，就得接受每个通道都要锁波长。</p>
+<p>硅的热光系数约 1.8×10⁻⁴/K，对应 0.08–0.1 nm/K 的漂移。这意味着温度变 1 ℃，波长就挪了大约十分之一个纳米。对 20 nm 间隔的 CWDM 还能忍，对 0.8 nm 间隔的 DWDM 就是灾难。</p>
+<h2>03　两种栅格，差了 25 倍</h2>
+<p>通道间隔不是一个可以随便取的数字，它由标准规定，也决定了能用什么结构。</p>
+<p><strong>CWDM</strong> 用 20 nm 间隔，O 波段常见的四波是 1271 / 1291 / 1311 / 1331 nm。间隔宽，激光器不需要制冷，成本低，是数据中心短距的主力。</p>
+<p><strong>DWDM</strong> 用 ITU-T G.694.1 栅格，C 波段 100 GHz（约 0.8 nm）或 50 GHz（约 0.4 nm）。间隔密，通道数可以做到几十上百，但需要温控与精确对准。</p>
+<figure><img alt="图 3：同样一段光谱，CWDM 只放得下四个通道，DWDM 能塞几十个。示意，纵轴不对应具体功率。" src="../../../../../assets/4b66991a969f6ffda8d0278c693117511499e1042d3210a0c667c129b4b54a0d.png"><figcaption><span class="fig-tag">图 3</span>同样一段光谱，CWDM 只放得下四个通道，DWDM 能塞几十个。示意，纵轴不对应具体功率。</figcaption></figure>
+<p>这个差别直接决定结构选型：20 nm 间隔用 MMI、EDG 或级联 MZI 就够；0.8 nm 间隔基本只有 AWG 和级联微环能打。本期两个案例恰好落在这条线的两端——MMI 是 1.55 / 2.0 μm 的双波长（间隔 450 nm），逆向设计是 20 nm 间隔的四通道。</p>
+<h2>04　六类实现，本期只做两个</h2>
+<p>把常见的六类实现按「通道间隔」和「通道数」两个轴摆开，各自的舒适区很清楚。</p>
+<figure><img alt="图 4：六类实现的定位。横轴越左间隔越密，纵轴越高通道数越多。位置为定性示意，不是实测数据。" src="../../../../../assets/01da03252cf0034e111b2da34bc69f0172375965fce3ca243641ad713fe35e46.png"><figcaption><span class="fig-tag">图 4</span>六类实现的定位。横轴越左间隔越密，纵轴越高通道数越多。位置为定性示意，不是实测数据。</figcaption></figure>
+<p>本期只求解两个：</p>
+<ul>
+<li><strong>MMI 色散自成像</strong>：1.55 / 2.0 μm 双波长，MMI 宽 6 μm、长 287 μm。只跑 EME（本征模展开），不跑原 Notebook 的 3D FDTD 段——那一段估价 67.7 FC，是前几期任何单期总花费的两倍以上。</li>
+<li><strong>逆向设计 WDM</strong>：4 通道、1270 / 1290 / 1310 / 1330 nm，设计区 4.5×4.5 μm，2D，完整跑 50 步伴随优化。</li>
+</ul>
+<p>原计划的第三个案例是「工艺感知逆向设计」，需要 PreFab 账号做虚拟制造。本次开工前确认本机没有可用授权，按预案取消，本期由 6 篇压到 5 篇，该案例只在综述里点名。</p>
+<h2>05　本期的证据边界</h2>
+<p>三件事先说清楚，后面的文章不再重复。</p>
+<p>第一，<strong>AWG 与 EDG 没有本次仿真</strong>。官方目录里没有对应 Notebook，所以第 3 篇只能给机制、公式和量级，不能出图、不能给读数。文中会逐段标注「机制说明，非本次仿真」。</p>
+<p>第二，<strong>两个核心案例不可互相排名</strong>。MMI 是 3D 肋波导、双波长、间隔 450 nm；逆向设计是 2D、四通道、间隔 20 nm。波段、维度、指标口径都不同，只能各自讲机制与适用条件。</p>
+<p>第三，<strong>MMI 的端口命名与 Notebook 正文相反</strong>。本次 EME 复算给出 1.55 μm 从与输入同侧的口输出、2.0 μm 从对侧口输出；官方 Notebook 的文字把 2 μm 的出口写作 top。两者的对比度与插损量级一致（约 20 dB、小于 2 dB），第 2 篇会把这个差异写清楚，并以本次复算的端口为准。</p>
+<p>下一篇从 MMI 开始：一块没有任何周期结构的方块，凭什么能把两个波长分开。</p></main><footer class="brand"><img src="../../../../../assets/510b9dc6fc4142dea696bba38799a59fbad636eb6dee1e46604eca8aaa5271d0.png" alt="灵算科技 LingCompute"><p>自有文章及插图：CC BY-NC 4.0；商用请另行联系。商标与另有标注的第三方材料除外。</p><p>默认系统字体；备用字体：<a href="https://hyperos.mi.com/font/en/download/">MiSans（小米）</a>，按其字体许可使用。</p><p>新稿审核以对应GitHub PR记录为准；预览本身不代表审核通过。</p><p><a href="https://github.com/LingCompute/lingcompute-content/blob/dce1d7b2ae1e5d400e9694c3679997bbc579df85/content/photon/wdm-demultiplexing/SOURCES.md">来源、指标口径与素材说明</a></p></footer><nav aria-label="文章导航"><a href="../../index.html">返回文章目录</a></nav></article></body></html>

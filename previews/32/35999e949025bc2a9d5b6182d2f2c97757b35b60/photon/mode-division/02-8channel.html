@@ -1,0 +1,40 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; font-src data:; style-src 'self' 'unsafe-inline'; base-uri 'none'; form-action 'none'"><title>八个入口，一根总线：模分复用器怎么装配</title><link rel="stylesheet" href="../../../../../assets/b36dd3d84de32be902bbbd2e8fafd513223968511e393a50f710fcf619229855.css"><meta name="robots" content="noindex,nofollow"></head><body><article><aside class="meta"><p><strong>待审预览 · PR #32</strong> · <a href="https://github.com/LingCompute/lingcompute-content/pull/32">GitHub 记录</a></p><p>此版本尚待人审，不能作为发布批准。</p><details><summary>版本信息 · 源稿 35999e9</summary><p>源稿版本：<code>35999e949025bc2a9d5b6182d2f2c97757b35b60</code></p><p>排版工具版本：<code>91b513db30654c9cb059375902c73b894742d119</code>。工具改动合并后生效。</p></details></aside><header class="meta"><p>构建预览 · 正式收录以主分支及PR审核记录为准</p><p>灵算光子 · 图解无源光子器件 · 模分复用</p><p>适合：具有光学基础、需要理解和选择集成光子器件的工程师与科研人员</p><p>本文解决：理解非对称耦合器怎样装配模分器件及已验证入口。</p><p>预计阅读 7–13 分钟，实操另计 · 8.0 参考屏</p><p>阅读时长为编辑模型估计；参考视口390×844 CSS像素，不同设备会有差异。</p></header><main id="article-body"><h1>八个入口，一根总线：模分复用器怎么装配</h1>
+<blockquote>
+<p><strong>待审稿</strong>：本文处于独立 PR 审核阶段，尚未收录为正式内容。定量结论、素材来源与授权仍需指定业内审核者核查。</p>
+</blockquote>
+<p>把四段非对称耦合器串起来，再配上锥形过渡和八条入口波导，就得到一个约 200 μm 长的 8 通道模分（与偏振）解复用器。这一篇讲它怎么装起来、每一段各自表现如何，以及为什么本期的验证只覆盖了两个入口。</p>
+<figure><img alt="图 6：整器件版图，八条入口波导在约 200 μm 内逐级并入中央总线。从本次求解的仿真结构直接绘制。" src="../../../../../assets/f33769c2e7bc374237e00e0168b18dd6ccab3e7fe37c9c699cea52510e879ffa.png"><figcaption><span class="fig-tag">图 6</span>整器件版图，八条入口波导在约 200 μm 内逐级并入中央总线。从本次求解的仿真结构直接绘制。</figcaption></figure>
+<h2>01　一段耦合器长什么样</h2>
+<p>先看最小单元。两条波导在中间一段平行靠近，间隙 200 nm；输入端是一根 400 nm 的窄波导，只走 TE0；总线端宽 1.631 μm，能同时支持 TE0–TE3。两端的余弦弯曲把波导拉开，避免非耦合区互相干扰。</p>
+<figure><img alt="图 7：TE0→TE3 耦合器的几何。耦合长度 17.6 μm，间隙 200 nm。真实多边形，非示意。" src="../../../../../assets/a2c6b6ea9440fe7edb22c3e59bef15e06b741a7aa41e5009b1e740bd502bbada.png"><figcaption><span class="fig-tag">图 7</span>TE0→TE3 耦合器的几何。耦合长度 17.6 μm，间隙 200 nm。真实多边形，非示意。</figcaption></figure>
+<p>耦合长度不是随便定的。它要满足两个条件：相位匹配（总线宽度由上一期的有效折射率曲线定），以及<strong>长度刚好让功率搬完</strong>——短了搬不过去，长了又搬回来。本期六个耦合器的长度直接取自参考文献，没有重跑参数扫描。</p>
+<h2>02　六段各自的表现</h2>
+<p>每一段单独求解一次，看两个量：总线出口的总功率，以及目标模式在四个已存模式里的占比。</p>
+<figure><img alt="图 8：六个耦合器的总透射谱。TE 三档在 95% 以上，TM 三档略低。本次求解结果。" src="../../../../../assets/e4638a8cbd79af7a81ae9ba83523912ff4f7354856ff9de4f0f98cc22afe7320.png"><figcaption><span class="fig-tag">图 8</span>六个耦合器的总透射谱。TE 三档在 95% 以上，TM 三档略低。本次求解结果。</figcaption></figure>
+<figure><img alt="图 9：目标模式占比。整条 C 波段都在 99% 以上。本次求解结果。" src="../../../../../assets/162910be2f6a2acd98509e0057c8444b110d5b16992581417cd3979ddb8f2fb0.png"><figcaption><span class="fig-tag">图 9</span>目标模式占比。整条 C 波段都在 99% 以上。本次求解结果。</figcaption></figure>
+<p>两个量要一起看。总功率回答「有多少光到了总线」，模式占比回答「到的那部分是不是想要的那一阶」。总功率 95% 而占比 60%，说明光到了但形状不对，属于没搬干净；反过来总功率 80% 而占比 99%，说明搬得很干净但路上漏了。</p>
+<p>本次六个耦合器在 1550 nm 的表现是：TE1 总透射 97.81%、TE2 98.45%、TE3 95.49%；TM1 94.53%、TM2 95.88%、TM3 94.41%。对应的目标模式占比都在 99.78% 以上。</p>
+<p>需要说明口径：这里的占比分母是<strong>四个已存模式的功率之和</strong>，不含辐射模与未统计的端口。所以「99.9%」不等于「没有损耗」，只等于「在导模里没有跑错」。TE3 那一段总透射 95.49%，意味着约 4.5% 的光既不在四个导模里，也不是目标模式——它辐射掉了或反射回去了。</p>
+<p>还有一个容易被忽略的细节：总透射曲线在 1520 nm 以下和 1575 nm 以上掉得很快，到 1600 nm 只剩 45% 左右。这不是辐射，而是<strong>耦合长度固定</strong>带来的带宽限制——波长偏离设计点后，相位匹配条件被破坏，功率搬不完，剩下一部分留在输入波导里从原路出去。我们的监视器只放在总线端，所以看到的是「总功率下降」。换句话说，这六个耦合器的模式纯度是宽带的，但功率转移不是。</p>
+<figure><img alt="图 10：TE0→TE3 耦合器在 1550 nm 的 |E|²（dB，相对峰值）。耦合区走完，能量已从窄波导转到宽波导的高阶模上。本次求解结果。" src="../../../../../assets/3ae30177d0e5e503ed1e7dd68f304a284886fabf6858608954ca197ed34cc393.png"><figcaption><span class="fig-tag">图 10</span>TE0→TE3 耦合器在 1550 nm 的 |E|²（dB，相对峰值）。耦合区走完，能量已从窄波导转到宽波导的高阶模上。本次求解结果。</figcaption></figure>
+<figure><img alt="动画 1：本次 FDTD TE0→TE3 单段耦合器的 GUI 原生动图，field 监视器，XY 平面 z = 0 μm，1550 nm，Re(Ey)。3D Carpet 的起伏表示场值，播放为单频场的相位变化，不是真实脉冲传播录像。" src="../../../../../assets/1a454362a0f85ba22a47c92d32330fa5f48c66423b1fb7cb35a7b43b4e8f8f87.gif"><figcaption><span class="fig-tag">动画 1</span>本次 FDTD TE0→TE3 单段耦合器的 GUI 原生动图，field 监视器，XY 平面 z = 0 μm，1550 nm，Re(Ey)。3D Carpet 的起伏表示场值，播放为单频场的相位变化，不是真实脉冲传播录像。</figcaption></figure>
+<h2>03　整器件：两个入口各走一遍</h2>
+<p>六段拼起来之后，全器件长 200 μm、宽约 35 μm。八条入口在左侧，四条走 TE0、四条走 TM0，经 1.8° 的锥形过渡汇入中央总线。</p>
+<p>原 Notebook 只激励两个入口作为演示：I3（注 TE0，应转成 TE1）与 I7（注 TM0，应转成 TM2）。本期照做，没有扩到八口全表征。</p>
+<figure><img alt="图 11：整器件在两个入口下的 |E|²。上图 I3 注 TE0，下图 I7 注 TM0。本次求解结果。" src="../../../../../assets/ced38691e59083e7856b75b10e26f891e476629ddf92b85b0167a0c264d59528.png"><figcaption><span class="fig-tag">图 11</span>整器件在两个入口下的 |E|²。上图 I3 注 TE0，下图 I7 注 TM0。本次求解结果。</figcaption></figure>
+<figure><img alt="动画 2：本次 FDTD 整器件 I3 入口的 GUI 原生动图，field 监视器，XY 平面 z = 0 μm，1550 nm，Re(Ey)。仅展示 I3 注入 TE0 的这条路径，不能据此声称八个入口均已验证；播放为单频相位演示。" src="../../../../../assets/4266708cbbe1bd5cd4ca91d3129585ea122549ab860782d506123b7037b66ac7.gif"><figcaption><span class="fig-tag">动画 2</span>本次 FDTD 整器件 I3 入口的 GUI 原生动图，field 监视器，XY 平面 z = 0 μm，1550 nm，Re(Ey)。仅展示 I3 注入 TE0 的这条路径，不能据此声称八个入口均已验证；播放为单频相位演示。</figcaption></figure>
+<figure><img alt="动画 3：本次 FDTD 整器件 I7 入口的 GUI 原生动图，field 监视器，XY 平面 z = 0 μm，1550 nm，Re(Ez)。该 TM 激励在此平面的 Ey 为零，因此选用 Ez。Carpet 起伏表示场值，不代表结构形变，跨图高度不作定量比较。" src="../../../../../assets/e2c47ca7d2228347809bd31b9b20a8fffe496c41fbc9e0842970dfaa3c87d6ee.gif"><figcaption><span class="fig-tag">动画 3</span>本次 FDTD 整器件 I7 入口的 GUI 原生动图，field 监视器，XY 平面 z = 0 μm，1550 nm，Re(Ez)。该 TM 激励在此平面的 Ey 为零，因此选用 Ez。Carpet 起伏表示场值，不代表结构形变，跨图高度不作定量比较。</figcaption></figure>
+<p>读数：I3 出口的四个模式功率之和为 98.56%，其中 TE1 占 99.80%，其余三个模式合计 0.18%。I7 出口合计 95.57%，TM2 占 99.65%，其余合计 0.21%。</p>
+<p>I7 的总功率比 I3 低约 3.0 个百分点，主要差在弯曲段的泄漏——场图上能直接看到拐角处的散射亮点。原 Notebook 也指出了这一点，并建议改用 Euler 弯来改善。</p>
+<p>从单段到整器件，效率会掉一点，这几乎是必然的：单段模型两端只有一对弯曲，整器件里有八条入口、七段锥形过渡和若干级联节点，每一处都贡献一点散射。把六个耦合器的单段结果（94–98%）与整器件的 98.56% 放在一起看，差的那几个百分点就是这些「装配开销」。</p>
+<h2>04　六个长度为什么差这么多</h2>
+<p>TE1 / TE2 / TE3 三段分别是 15.5 / 21.3 / 17.6 μm，TM 三段只有 4.6 / 6.8 / 9.0 μm。差距不是笔误，而是耦合强度的差别。</p>
+<p>TM 模的模场在垂直方向更集中，两根波导靠近时重叠更强，功率交换得快，需要的长度就短。TE 模场更铺展，交换慢，需要更长的距离才搬得完。TE2 比 TE3 还长，是因为它对应的总线宽度（1.29 μm）离输入波导最近，相位匹配做得最「松」，耦合系数最小。</p>
+<figure><img alt="图 12：六个耦合器的长度对比。TM 族明显更短，说明它的模式重叠更强。文献值，本次未扫描。" src="../../../../../assets/42e0f1bd40fd1a2da844bbdeeef7a1138b8eb8bedab49adfacccbdfb4853850f.png"><figcaption><span class="fig-tag">图 12</span>六个耦合器的长度对比。TM 族明显更短，说明它的模式重叠更强。文献值，本次未扫描。</figcaption></figure>
+<p>这也解释了为什么版图上 TE 段占了大半长度：器件的总长基本由最长的 TE2 段决定。</p>
+<h2>05　这篇不能说什么</h2>
+<p><strong>不能说「八通道全部验证」。</strong> 只激励了 I3 与 I7 两个入口，其余六个入口的行为没有本次数据。整器件的结论只覆盖这两条路径。</p>
+<p><strong>不能说「耦合长度已优化」。</strong> 六个长度是文献值，本次没有扫描。谱线平坦说明这些值可用，不代表它们是最优。</p>
+<p><strong>不能说「纯度 99.9% 等于没有串扰」。</strong> 口径只统计四个导模。真实系统里还要算上辐射、反射与相邻通道的串扰，这些本次没有测。</p>
+<p><strong>I7 的 95.6% 不能直接和 I3 的 98.6% 比优劣。</strong> 两者是不同的偏振、不同的弯曲路径、不同的对称边界，只能各自说明「这条路径通了」。</p>
+<p>下一篇换一个完全不同的思路：不写几何，只写目标，让优化器自己长出结构。</p></main><footer class="brand"><img src="../../../../../assets/510b9dc6fc4142dea696bba38799a59fbad636eb6dee1e46604eca8aaa5271d0.png" alt="灵算科技 LingCompute"><p>自有文章及插图：CC BY-NC 4.0；商用请另行联系。商标与另有标注的第三方材料除外。</p><p>默认系统字体；备用字体：<a href="https://hyperos.mi.com/font/en/download/">MiSans（小米）</a>，按其字体许可使用。</p><p>新稿审核以对应GitHub PR记录为准；预览本身不代表审核通过。</p><p><a href="https://github.com/LingCompute/lingcompute-content/blob/35999e949025bc2a9d5b6182d2f2c97757b35b60/content/photon/mode-division/SOURCES.md">来源、指标口径与素材说明</a></p></footer><nav aria-label="文章导航"><a href="../../index.html">返回文章目录</a></nav></article></body></html>

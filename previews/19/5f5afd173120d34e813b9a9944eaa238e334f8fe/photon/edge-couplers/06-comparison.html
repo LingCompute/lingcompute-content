@@ -1,0 +1,102 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; font-src data:; style-src 'self' 'unsafe-inline'; base-uri 'none'; form-action 'none'"><title>端面接口怎么选：先定波段，再定面积，最后才比 dB</title><link rel="stylesheet" href="../../../../../assets/b36dd3d84de32be902bbbd2e8fafd513223968511e393a50f710fcf619229855.css"><meta name="robots" content="noindex,nofollow"></head><body><article><aside class="meta"><p><strong>待审预览 · PR #19</strong> · <a href="https://github.com/LingCompute/lingcompute-content/pull/19">GitHub 记录</a></p><p>此版本尚待人审，不能作为发布批准。</p><details><summary>版本信息 · 源稿 5f5afd1</summary><p>源稿版本：<code>5f5afd173120d34e813b9a9944eaa238e334f8fe</code></p><p>排版工具版本：<code>91b513db30654c9cb059375902c73b894742d119</code>。工具改动合并后生效。</p></details></aside><header class="meta"><p>构建预览 · 正式收录以主分支及PR审核记录为准</p><p>灵算光子 · 图解无源光子器件 · 端面与模斑接口</p><p>适合：具有光学基础、需要理解和选择集成光子器件的工程师与科研人员</p><p>本文解决：按波段、接口尺寸、占地与端口口径选择方案。</p><p>预计阅读 6–10 分钟，实操另计 · 7.7 参考屏</p><p>阅读时长为编辑模型估计；参考视口390×844 CSS像素，不同设备会有差异。</p></header><main id="article-body"><h1>端面接口怎么选：先定波段，再定面积，最后才比 dB</h1>
+<blockquote>
+<p><strong>待审稿</strong>：本文处于独立 PR 审核阶段，尚未收录为正式内容。定量结论、素材来源与授权仍需指定业内审核者核查。</p>
+</blockquote>
+<p>四个案例讲完，最后这一篇不重复原理，只回答一个问题：手上这个项目，该选哪种？</p>
+<p>先把一件事说清：这四个案例的读数<strong>不能放一起排名</strong>。它们工作在四个不同波段、三种不同材料平台，激励方式也不一样。硬排名会得出「半透镜比倒锥好」这类没有意义的结论。</p>
+<figure><img alt="图 1：四个案例的扫描窗口。倒锥与模斑转换为 1500–1600 nm，双层 SiN 为 400–640 nm，自由曲面为 650–1050 nm。" src="../../../../../assets/a9727ac01d5ec3b0a47945a807ff8e8fa47e3337c774c4fe763013f1ea47b5cd.png"><figcaption><span class="fig-tag">图 1</span>四个案例的扫描窗口。倒锥与模斑转换为 1500–1600 nm，双层 SiN 为 400–640 nm，自由曲面为 650–1050 nm。</figcaption></figure>
+<p>能比较的只有「同一个设计问题下，哪种机制更合适」。</p>
+<h2>01　四条路线各自的关键数字</h2>
+<p>先把本次仿真结果摆出来，都注明口径。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>案例</th>
+<th>平台 / 波段</th>
+<th>器件长度</th>
+<th>设计点损耗</th>
+<th>全band 最差</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>倒锥（二次轮廓）</td>
+<td>SOI / 1550 nm</td>
+<td>50 μm</td>
+<td>−0.56 dB</td>
+<td>−0.71 dB</td>
+</tr>
+<tr>
+<td>双层 SiN</td>
+<td>SiN / 400–640 nm</td>
+<td>275 μm</td>
+<td>−1.42 dB @558 nm</td>
+<td>−6.99 dB @400 nm</td>
+</tr>
+<tr>
+<td>模斑转换（半透镜）</td>
+<td>SOI / 1550 nm</td>
+<td>9.5 μm</td>
+<td>−0.46 dB（总通量）</td>
+<td>−0.48 dB</td>
+</tr>
+<tr>
+<td>自由曲面</td>
+<td>低对比度 / 650–1050 nm</td>
+<td>40 μm</td>
+<td>−0.67 dB @850 nm</td>
+<td>−1.16 dB</td>
+</tr>
+</tbody>
+</table></div>
+<p>读这张表要注意三件事。</p>
+<p>第一，双层 SiN 的「全band 最差」是 400 nm 端，与原文差异的原因尚未确认；本次只能报告 450–640 nm 内 ≤4 dB。</p>
+<p>第二，半透镜的 −0.46 dB 为总通量；1550 nm 的 TE0 占总通量约 79.57%，TE0 传输为 −1.45 dB。</p>
+<p>第三，倒锥由高斯光束激励，半透镜由波导模式激励，输入/输出截面也不同。不能把二者的读数差当作相同光纤接口的性能提升。</p>
+<figure><img alt="图 3：线性锥、Luneburg 和半透镜的总通量谱。前两者收束、后者扩束，厚度与端口条件不同。" src="../../../../../assets/f7f25a80ebd2e2a39f310785c42a21b2b37875fcf4737e70475cfb42002814df.png"><figcaption><span class="fig-tag">图 3</span>线性锥、Luneburg 和半透镜的总通量谱。前两者收束、后者扩束，厚度与端口条件不同。</figcaption></figure>
+<p>把长度和损耗放在一张图上，会看到一件反直觉的事。</p>
+<figure><img alt="图 4：器件长度与设计点损耗。长度与损耗之间没有单调关系——最长的双层 SiN 损耗最高，最短的模斑转换损耗最低。" src="../../../../../assets/1bc5ee41dcd595ee9115b87303571b94975e8b872ba27541f130f74914f2746b.png"><figcaption><span class="fig-tag">图 4</span>器件长度与设计点损耗。长度与损耗之间没有单调关系——最长的双层 SiN 损耗最高，最短的模斑转换损耗最低。</figcaption></figure>
+<p>这四点的平台、源与端口定义不同，长度不是配对扫描中的唯一自变量。图中只展示案例尺寸，不支持「缩短就能减小损耗」的因果判断。</p>
+<h2>02　选型顺序：三个问题，一条路径</h2>
+<figure><img alt="图 2：按界面位置、波段、面积三个问题走，大多数项目能落到一个答案上。" src="../../../../../assets/c78157de01e3d42e592fed4d4c4747274f2f7ab07451ce812dbb71b336ff3cae.png"><figcaption><span class="fig-tag">图 2</span>按界面位置、波段、面积三个问题走，大多数项目能落到一个答案上。</figcaption></figure>
+<p><strong>第一步：界面在芯片表面，还是边缘？</strong></p>
+<p>如果是表面，没有别的选择，只能上光栅耦合器——那不是本期内容，上一组讲过。如果一定要端面，往下走。</p>
+<p><strong>第二步：波段在哪？</strong></p>
+<p>1550 nm 的 SOI 可评估倒锥；片内宽窄转换可评估透镜型结构；可见光 SiN 可评估双层；芯片间互连可评估自由曲面。它们都只是候选，不排除单层或光栅等其他路线。</p>
+<p>这一步就把四个案例分到三个互不重叠的格子里了。</p>
+<p><strong>第三步：面积紧不紧张？</strong></p>
+<p>先固定相同端口与目标模式，再比较可制造的器件长度和总面积。本例的 50 μm 倒锥、11 μm Luneburg、9.5 μm 半透镜不能直接互换。</p>
+<p><strong>第四步：能不能接受严格的工艺？</strong></p>
+<p>双层的两层对准、自由曲面的三维曲面，都不是标准平面工艺能做的。如果产线做不了，光学设计再漂亮也没用。</p>
+<h2>03　四个维度的真实取舍</h2>
+<p>把「损耗」之外的三个维度摆出来，取舍会清楚很多。</p>
+<p><strong>对准容差。</strong> 取决于接口模场和装配误差类型，本次没有独立容差扫描。自由曲面的 3 μm 是相对射线初始设计的优化量，不能当作装配容差。</p>
+<figure><img alt="图 5：两个假设高斯模式的横向偏移损失，仅说明模场尺寸影响，不提供接口容差保证。" src="../../../../../assets/61ce121aed841fc1301ef70e68ee11357590f0a8c7f1506d050f09efa32bf4a7.png"><figcaption><span class="fig-tag">图 5</span>两个假设高斯模式的横向偏移损失，仅说明模场尺寸影响，不提供接口容差保证。</figcaption></figure>
+<p><strong>带宽。</strong> 自由曲面、双层 SiN、倒锥与模斑转换的扫描窗口分别宽 400、240、100、100 nm；这些不是统一损耗阈值下的可用带宽。材料色散和带边仍需验证。</p>
+<p><strong>工艺复杂度。</strong> 倒锥最简单（一条轮廓、一次刻蚀），模斑转换次之（多段曲线或灰度），双层需要两次对准，自由曲面需要三维成型。</p>
+<p><strong>偏振。</strong> 几何模式转换也可能有明显偏振依赖。本期没有各结构的完整 TE/TM 对照，不能据此排序。</p>
+<h2>04　几条容易踩的坑</h2>
+<p><strong>坑一：把「耦合效率」当成一个统一指标。</strong> 本期的四个案例，有的是「光纤模到波导模」的功率比，有的是「高斯光束到波导模」，有的是「波导到波导」。这三种数的绝对值不能互换。</p>
+<p><strong>坑二：忽略归一化。</strong> 倒锥的源是高斯光束，用 <code>normalize_index</code> 归一到源功率；双层是显式光纤模激励，光纤本身的失配已经算进去了。两者都叫「耦合损耗」，但一个是「器件损耗」，一个是「器件 + 光纤失配」。</p>
+<p><strong>坑三：拿全band 最差去比峰值。</strong> 表里两列要分开看。峰值说明设计点做得多好，全band 最差说明能用多宽。混着比会得出相反结论。</p>
+<p><strong>坑四：忽略收敛。</strong> 本次六项任务都达到了自动终止阈值，但达到终止阈值不等于完成网格收敛研究。要在论文级精度上引用，需要自己做网格与时间步的收敛测试。</p>
+<h2>05　回到模式匹配</h2>
+<p>端面接口要匹配光纤与导模；片内转换和芯片间接口则要匹配各自端口。几何宽度不能直接替代模场直径。</p>
+<p>四篇下来，四种补法：</p>
+<ul>
+<li>用长度补（倒锥）</li>
+<li>用薄层匹配、厚层约束及层间模式转移（双层 SiN）</li>
+<li>用相位补（模斑转换）</li>
+<li>用反射面补方向（自由曲面）</li>
+</ul>
+<p>这些案例展示不同约束下的设计方法，没有证明各自是该场景的最优解。</p>
+<p>选型的本质不是比 dB，是<strong>先认清自己的约束是哪一个</strong>。</p>
+<h3>配套案例</h3>
+<ul>
+<li><a href="https://www.lingcompute.com/photon/learning-center/examples/notebooks/EdgeCoupler">Inverse taper edge coupler</a></li>
+<li><a href="https://www.lingcompute.com/photon/learning-center/examples/notebooks/BilayerSiNEdgeCoupler">Bi-layer SiN edge coupler</a></li>
+<li><a href="https://www.lingcompute.com/photon/learning-center/examples/notebooks/WaveguideSizeConverter">Waveguide mode size converters</a></li>
+<li><a href="https://www.lingcompute.com/photon/learning-center/examples/notebooks/FreeFormCoupler">Free-form chip-to-chip coupler</a></li>
+</ul>
+<p>更多案例见<a href="https://www.lingcompute.com/photon/learning-center/example-library">灵算光子学习中心</a>，国内产品入口为 <a href="https://tidy3d.fangzhen.cloud/">Tidy3D 平台</a>。本次未验证国内注册、Notebook 导入与浏览器执行流程，请以平台当前指引为准。</p>
+<p>本篇为选型建议，不是性能排名。各案例的波段、平台、激励或端口不同，倒锥与半透镜也不构成同条件对照。所有数值取自已有本地求解结果，工艺可行性需按实际产线核查。</p></main><footer class="brand"><img src="../../../../../assets/510b9dc6fc4142dea696bba38799a59fbad636eb6dee1e46604eca8aaa5271d0.png" alt="灵算科技 LingCompute"><p>自有文章及插图：CC BY-NC 4.0；商用请另行联系。商标与另有标注的第三方材料除外。</p><p>默认系统字体；备用字体：<a href="https://hyperos.mi.com/font/en/download/">MiSans（小米）</a>，按其字体许可使用。</p><p>新稿审核以对应GitHub PR记录为准；预览本身不代表审核通过。</p><p><a href="https://github.com/LingCompute/lingcompute-content/blob/5f5afd173120d34e813b9a9944eaa238e334f8fe/content/photon/edge-couplers/SOURCES.md">来源、指标口径与素材说明</a></p></footer><nav aria-label="文章导航"><a href="../../index.html">返回文章目录</a></nav></article></body></html>
