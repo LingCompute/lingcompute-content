@@ -5,7 +5,7 @@
   "articles": [
     {
       "slug": "05-pcm",
-      "authors": [],
+      "authors": ["Frank-DingYC"],
       "summary": "理解材料相变如何移动布拉格阻带及 EME 口径。",
       "sources": [
         "https://www.lingcompute.com/photon/learning-center/examples/notebooks/RingResonator",
