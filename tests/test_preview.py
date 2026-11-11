@@ -130,6 +130,67 @@ class PreviewTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "manifest"):
             preview.validate_site(self.root, manifest)
 
+    def article(self, key):
+        path = self.root / key
+        return {"key": key, "path": path, "assets": [path.parent / "figures/one.png"]}
+
+    def test_pr_scope_uses_file_changes_even_if_main_has_newer_articles(self):
+        first = self.article("content/photon/example/one.md")
+        unrelated = self.article("content/photon/another/two.md")
+        changes = [{"filename": first["key"], "status": "modified"}]
+        self.assertEqual(preview.affected_articles([first, unrelated], changes, self.root), [first])
+        self.assertEqual(preview.removed_articles(changes), [])
+
+    def test_image_metadata_and_evidence_changes_include_related_articles(self):
+        first = self.article("content/photon/example/one.md")
+        unrelated = self.article("content/photon/another/two.md")
+        for path in ("figures/one.png", "series.json", "SOURCES.md"):
+            with self.subTest(path=path):
+                changes = [{"filename": "content/photon/example/" + path, "status": "modified"}]
+                self.assertEqual(preview.affected_articles([first, unrelated], changes, self.root), [first])
+
+    def test_changed_manuscripts_appear_before_related_articles(self):
+        first = self.article("content/photon/example/one.md")
+        second = self.article("content/photon/example/two.md")
+        changes = [
+            {"filename": second["key"], "status": "added"},
+            {"filename": "content/photon/example/series.json", "status": "modified"},
+        ]
+        self.assertEqual(preview.affected_articles([first, second], changes, self.root), [second, first])
+
+    def test_removed_and_renamed_articles_are_explicit_and_tools_do_not_select_content(self):
+        first = self.article("content/photon/example/one.md")
+        changes = [
+            {"filename": "production/moved.md", "previous_filename": first["key"], "status": "renamed"},
+            {"filename": "content/photon/example/two.md", "status": "removed"},
+            {"filename": "content/photon/example/SOURCES.md", "status": "removed"},
+        ]
+        self.assertEqual(preview.removed_articles(changes), [
+            "content/photon/example/one.md", "content/photon/example/two.md",
+        ])
+        self.assertEqual(preview.affected_articles([first], [{"filename": "tools/build.py", "status": "modified"}], self.root), [])
+
+    def test_incomplete_or_stale_pr_diff_fails_closed(self):
+        pull = {"number": 1, "head": {"sha": "a" * 40}}
+        with patch.object(preview, "api", side_effect=[
+            {"head": {"sha": "b" * 40}},
+        ]), self.assertRaisesRegex(ValueError, "PR changed"):
+            preview.pull_files(pull)
+        with patch.object(preview, "api", side_effect=[
+            {"head": {"sha": "a" * 40}, "changed_files": 2}, [{"filename": "one"}],
+        ]), self.assertRaisesRegex(ValueError, "Incomplete"):
+            preview.pull_files(pull)
+
+    def test_pr_file_pagination_keeps_changes_after_the_first_hundred(self):
+        pull = {"number": 1, "head": {"sha": "a" * 40}}
+        first = [{"filename": f"content/photon/example/{index}.png"} for index in range(100)]
+        last = [{"filename": "content/photon/example/one.md"}]
+        with patch.object(preview, "api", side_effect=[
+            {"head": {"sha": "a" * 40}, "changed_files": 101}, first, last,
+        ]) as api:
+            self.assertEqual(preview.pull_files(pull), first + last)
+        self.assertIn("page=2", api.call_args.args[0])
+
 
 if __name__ == "__main__":
     unittest.main()

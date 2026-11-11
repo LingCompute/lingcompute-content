@@ -76,12 +76,52 @@ def snapshot(commit, destination):
     shutil.copyfile(ROOT / "config/products.json", destination / "config/products.json")
 
 
-def signature(article):
-    return (
-        hashlib.sha256(article["path"].read_bytes()).hexdigest(),
-        tuple(hashlib.sha256(path.read_bytes()).hexdigest() for path in article["assets"]),
-        article["summary"], article["series"], article["audience"], article["product"],
-    )
+def pull_files(pull):
+    detail = api(f"pulls/{pull['number']}")
+    if detail["head"]["sha"] != pull["head"]["sha"]:
+        raise ValueError("PR changed while loading its file list")
+    files = []
+    page = 1
+    while True:
+        batch = api(f"pulls/{pull['number']}/files?per_page=100&page={page}")
+        files.extend(batch)
+        if len(batch) < 100:
+            break
+        page += 1
+    if len(files) != detail["changed_files"]:
+        raise ValueError("Incomplete PR file list")
+    return files
+
+
+def affected_articles(articles, changes, root):
+    paths = {
+        name for change in changes
+        for name in (change["filename"], change.get("previous_filename", change["filename"]))
+    }
+    selected = []
+    for article in articles:
+        series = PurePosixPath(article["key"]).parent
+        dependencies = {
+            article["key"], str(series / "series.json"), str(series / "SOURCES.md"),
+            *(path.relative_to(root).as_posix() for path in article["assets"]),
+        }
+        if paths.intersection(dependencies) or any(PurePosixPath(path).parent == PurePosixPath("content") for path in paths):
+            selected.append(article)
+    return sorted(selected, key=lambda article: (article["key"] not in paths, article["key"]))
+
+
+def removed_articles(changes):
+    removed = set()
+    for change in changes:
+        names = [change["filename"]] if change["status"] == "removed" else []
+        if change["status"] == "renamed":
+            names.append(change["previous_filename"])
+        for name in names:
+            path = PurePosixPath(name)
+            if (len(path.parts) == 4 and path.parts[0] == "content" and path.suffix == ".md"
+                    and path.name not in {"README.md", "SOURCES.md"}):
+                removed.add(name)
+    return sorted(removed)
 
 
 def asset(site, data, suffix):
@@ -114,7 +154,9 @@ def web_document(output, destination, site, style_path, draft):
     destination.write_text(output)
 
 
-def notice(commit, renderer, number=None):
+def notice(commit, renderer, number=None, local=False):
+    if local:
+        return '<aside class="meta"><strong>本地实时预览 · 未提交工作区</strong><p>保存后自动重建；此页面不是人审或发布记录。</p></aside>'
     title = f"待审预览 · PR #{number}" if number else "正式内容 · 主分支"
     target = f"{REPOSITORY}/pull/{number}" if number else f"{REPOSITORY}/tree/{commit}"
     warning = "此版本尚待人审，不能作为发布批准。" if number else "正式收录不等于已经在公众号发送。"
@@ -126,76 +168,105 @@ def notice(commit, renderer, number=None):
     )
 
 
-def render_snapshot(site, directory, commit, renderer, reference, page, style_path, logo, number=None):
+def prepare_assets(site, page, root=ROOT):
     try:
         from . import build
     except ImportError:
         import build
 
+    style = build.font_style(root / ".cache/fonts") + "\n" + (root / "tools/style.css").read_text()
+    style_path = asset(site, style.encode(), ".css")
+    svg = base64.b64encode((root / "assets/brand/lingcompute-horizontal.svg").read_bytes()).decode()
+    page.set_content(f'<img src="data:image/svg+xml;base64,{svg}" style="width:720px;height:auto">')
+    logo = "data:image/png;base64," + base64.b64encode(page.locator("img").screenshot(omit_background=True)).decode()
+    return style_path, logo
+
+
+def render_snapshot(site, directory, commit, renderer, page, style_path, logo, number=None, changes=None):
     with tempfile.TemporaryDirectory() as temporary:
         root = Path(temporary).resolve()
         snapshot(commit, root)
-        products, articles = build.read_articles(root, commit)
-        signatures = {article["key"]: signature(article) for article in articles}
-        if number:
-            articles = [article for article in articles if signatures[article["key"]] != reference.get(article["key"])]
-        ledger = json.loads((ROOT / "reviews/legacy.json").read_text())
-        banner = notice(commit, renderer, number)
-        cards = []
-        for article in articles:
-            relative = article["path"].relative_to(root / "content").with_suffix(".html")
-            destination = site / directory / relative
-            back = os.path.relpath(site / directory / "index.html", destination.parent).replace(os.sep, "/")
-            navigation = f'<a href="{back}">返回文章目录</a>'
+        return render_articles(root, site, directory, commit, renderer, page, style_path, logo, number, changes)
 
-            def render(screens=None):
-                output = build.article_html(
-                    article, products, "", logo, build.legacy_review(article, ledger, root),
-                    screens, navigation, root, commit, banner,
-                )
-                web_document(output, destination, site, style_path, number is not None)
 
-            render()
-            page.goto(destination.as_uri(), wait_until="load")
-            page.evaluate("async () => { await document.fonts.ready; await Promise.all(Array.from(document.images, image => image.decode())); }")
-            screens = page.locator("#article-body").evaluate("element => element.getBoundingClientRect().height / 844")
-            render(screens)
-            page.goto(destination.as_uri(), wait_until="load")
-            page.evaluate("async () => { await document.fonts.ready; await Promise.all(Array.from(document.images, image => image.decode())); }")
-            if page.evaluate("document.documentElement.scrollWidth > innerWidth + 1"):
-                raise ValueError(f"Horizontal overflow: {article['key']}")
-            screenshot = asset(site, page.screenshot(full_page=True, animations="disabled"), ".png")
-            screen_link = os.path.relpath(screenshot, (site / directory)).replace(os.sep, "/")
-            lower, upper = article["minutes"]
-            warning = " · 长文提示：超过10参考屏，建议分段阅读" if screens > 10 else ""
-            source = f"{REPOSITORY}/blob/{commit}/{quote(article['key'])}"
-            cards.append(
-                f'<section class="card"><h2><a href="{quote(relative.as_posix())}">{html.escape(article["title"])}</a></h2>'
-                f'<p>{html.escape(article["series"])} · {html.escape(article["summary"])}</p>'
-                f'<p>预计 {lower}–{upper} 分钟 · {screens:.1f} 参考屏{warning}</p>'
-                f'<p><a href="{screen_link}">手机长图</a> · <a href="{source}">Markdown 源稿</a></p></section>'
+def render_articles(root, site, directory, commit, renderer, page, style_path, logo,
+                    number=None, changes=None, local=False):
+    try:
+        from . import build
+    except ImportError:
+        import build
+
+    source_base = "/__preview__/source" if local else f"{REPOSITORY}/blob/{commit}"
+    products, articles = build.read_articles(root, commit, source_base)
+    if changes is not None:
+        articles = affected_articles(articles, changes, root)
+    ledger = json.loads((ROOT / "reviews/legacy.json").read_text())
+    banner = notice(commit, renderer, number, local)
+    cards = []
+    direct = {change["filename"] for change in changes or []}
+    for article in articles:
+        relative = article["path"].relative_to(root / "content").with_suffix(".html")
+        destination = site / directory / relative
+        back = os.path.relpath(site / directory / "index.html", destination.parent).replace(os.sep, "/")
+        navigation = f'<a href="{back}">返回文章目录</a>'
+
+        def render(screens=None):
+            output = build.article_html(
+                article, products, "", logo, build.legacy_review(article, ledger, root),
+                screens, navigation, root, commit, banner, source_base,
             )
-        removed = sorted(set(reference) - set(signatures)) if number else []
-        removal = "".join(f"<li>{html.escape(key)}</li>" for key in removed)
-        if removal:
-            cards.append("<section><h2>此版本删除的文章</h2><ul>" + removal + "</ul></section>")
-        title = f"PR #{number} · 待审文章" if number else "灵算技术内容库"
-        message = "" if cards else "<p>此 PR 没有与主分支不同的文章。工具和样式改动请查看 Content CI 附件。</p>"
-        home = os.path.relpath(site / "index.html", site / directory).replace(os.sep, "/")
-        output = build.document(
-            title, f'<article>{banner}<h1>{title}</h1>{message}{"".join(cards)}'
-            f'<nav><a href="{home}">正式内容首页</a></nav>{CREDITS}</article>', "",
+            web_document(output, destination, site, style_path, number is not None or local)
+
+        render()
+        page.goto(destination.as_uri(), wait_until="load")
+        page.evaluate("async () => { await document.fonts.ready; await Promise.all(Array.from(document.images, image => image.decode())); }")
+        screens = page.locator("#article-body").evaluate("element => element.getBoundingClientRect().height / 844")
+        render(screens)
+        page.goto(destination.as_uri(), wait_until="load")
+        page.evaluate("async () => { await document.fonts.ready; await Promise.all(Array.from(document.images, image => image.decode())); }")
+        if page.evaluate("document.documentElement.scrollWidth > innerWidth + 1"):
+            raise ValueError(f"Horizontal overflow: {article['key']}")
+        screenshot_link = ""
+        if not local:
+            screenshot = asset(site, page.screenshot(full_page=True, animations="disabled"), ".png")
+            screen_link = os.path.relpath(screenshot, site / directory).replace(os.sep, "/")
+            screenshot_link = f'<a href="{screen_link}">手机长图</a> · '
+        lower, upper = article["minutes"]
+        warning = " · 长文提示：超过10参考屏，建议分段阅读" if screens > 10 else ""
+        source = f"{source_base}/{quote(article['key'])}"
+        relation = ("正文变更 · " if article["key"] in direct else "关联文章 · ") if number else ""
+        cards.append(
+            f'<section class="card"><h2><a href="{quote(relative.as_posix())}">{html.escape(article["title"])}</a></h2>'
+            f'<p>{relation}{html.escape(article["series"])} · {html.escape(article["summary"])}</p>'
+            f'<p>预计 {lower}–{upper} 分钟 · {screens:.1f} 参考屏{warning}</p>'
+            f'<p>{screenshot_link}<a href="{source}">Markdown 源稿</a></p></section>'
         )
-        web_document(output, site / directory / "index.html", site, style_path, number is not None)
-        return signatures, len(articles)
+    removed = removed_articles(changes or [])
+    if removed:
+        cards.append("<section><h2>此 PR 删除或移走的文章</h2><ul>"
+                     + "".join(f"<li>{html.escape(key)}</li>" for key in removed) + "</ul></section>")
+    title = "本地实时预览" if local else f"PR #{number} · 待审文章" if number else "灵算技术内容库"
+    message = "" if cards else "<p>此 PR 未改动文章或关联素材。工具和样式改动请查看 Content CI 附件。</p>"
+    if number:
+        changed_content = [change for change in changes or [] if any(
+            name.startswith("content/") for name in (change["filename"], change.get("previous_filename", ""))
+        )]
+        scope = "".join(f'<li>{html.escape(change["status"])} · {html.escape(change["filename"])}</li>'
+                        for change in changed_content)
+        message += (f'<p>按此 PR 的实际文件差异生成，包含正文及受图片、来源或目录变更影响的关联文章。'
+                    f'<a href="{REPOSITORY}/pull/{number}/files">查看文件差异</a></p>'
+                    f'<details><summary>内容改动范围（{len(changed_content)} 个文件）</summary><ul>{scope}</ul></details>')
+    home = os.path.relpath(site / "index.html", site / directory).replace(os.sep, "/")
+    output = build.document(
+        title, f'<article>{banner}<h1>{title}</h1>{message}{"".join(cards)}'
+        f'<nav><a href="{home}">{"本地目录" if local else "正式内容首页"}</a></nav>{CREDITS}</article>', "",
+    )
+    web_document(output, site / directory / "index.html", site, style_path, number is not None or local)
+    return len(articles)
 
 
 def generate(site):
     from playwright.sync_api import Error, sync_playwright
-    try:
-        from . import build
-    except ImportError:
-        import build
 
     if site.exists():
         raise ValueError("Preview output must be a new directory")
@@ -205,16 +276,12 @@ def generate(site):
     pending = pulls()
     command("git", "fetch", "--no-tags", "origin", "main",
             *(f"refs/pull/{pull['number']}/head" for pull in pending))
-    style = build.font_style() + "\n" + (ROOT / "tools/style.css").read_text()
-    style_path = asset(site, style.encode(), ".css")
     records = []
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch(channel="chromium")
         page = browser.new_page(viewport={"width": 390, "height": 844}, device_scale_factor=1)
-        svg = base64.b64encode((ROOT / "assets/brand/lingcompute-horizontal.svg").read_bytes()).decode()
-        page.set_content(f'<img src="data:image/svg+xml;base64,{svg}" style="width:720px;height:auto">')
-        logo = "data:image/png;base64," + base64.b64encode(page.locator("img").screenshot(omit_background=True)).decode()
-        reference, count = render_snapshot(site, Path("."), main, renderer, {}, page, style_path, logo)
+        style_path, logo = prepare_assets(site, page)
+        count = render_snapshot(site, Path("."), main, renderer, page, style_path, logo)
         print(f"main {main[:7]}: {count} articles", flush=True)
         for pull in pending:
             number, commit = pull["number"], pull["head"]["sha"]
@@ -223,7 +290,8 @@ def generate(site):
             directory = Path("previews") / str(number) / commit
             record = {"number": number, "sha": commit, "path": directory.as_posix() + "/"}
             try:
-                _, count = render_snapshot(site, directory, commit, renderer, reference, page, style_path, logo, number)
+                changes = pull_files(pull)
+                count = render_snapshot(site, directory, commit, renderer, page, style_path, logo, number, changes)
                 record["state"] = "success"
                 record["articles"] = count
                 print(f"PR #{number} {commit[:7]}: {count} changed articles", flush=True)
@@ -333,7 +401,8 @@ def publish(site):
         target = SITE_URL + "/" + (record["path"] if record["state"] == "success" else "previews/")
         api(f"statuses/{record['sha']}", {
             "state": record["state"], "context": "html-preview", "target_url": target,
-            "description": "Open HTML preview · unreviewed" if record["state"] == "success" else "HTML preview failed · see preview index",
+            "description": (f"HTML 预览：{record['articles']} 篇正文或关联文章（待审）"
+                            if record["state"] == "success" else "HTML preview failed · see preview index"),
         })
     print(f"Published {SITE_URL}/ and {len(records)} PR preview statuses", flush=True)
 
