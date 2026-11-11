@@ -5,7 +5,7 @@
   "articles": [
     {
       "slug": "04-crosstalk",
-      "authors": [],
+      "authors": ["Frank-DingYC"],
       "summary": "理解邻线耦合与包层设计怎样影响串扰。",
       "sources": [
         "https://www.lingcompute.com/photon/learning-center/examples/notebooks/ZeroCrossTalkTE",
