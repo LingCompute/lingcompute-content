@@ -41,6 +41,8 @@
 
 人维护 Markdown 和随文素材；工具生成 HTML、手机截图、阅读时长和上传清单。技术结论由指定业内审核者审批，微信公众号最终发送由人操作。
 
+写作时运行 `python tools/dev.py`，打开终端输出的本地链接（默认 `http://127.0.0.1:8000/`）。保存正文、图片、来源、系列信息或 CSS 后自动重建并刷新；未提交和新增文件也会参与预览，无需 GitHub 登录。首次使用先完成下面的依赖、Chromium 与字体准备。完整命令和故障说明见 [实时预览](docs/previews.md#本地保存即预览)。
+
 ```sh
 python3 -m venv .venv
 source .venv/bin/activate
