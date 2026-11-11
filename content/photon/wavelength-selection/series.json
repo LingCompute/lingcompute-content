@@ -5,7 +5,7 @@
   "articles": [
     {
       "slug": "04-bragg",
-      "authors": [],
+      "authors": ["Frank-DingYC"],
       "summary": "理解周期结构的阻带与相位匹配条件。",
       "sources": [
         "https://www.lingcompute.com/photon/learning-center/examples/notebooks/RingResonator",
