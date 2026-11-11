@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="504.000pt" height="268.000pt" viewBox="0.000 0.000 504.000 268.000" stroke-linejoin="round" stroke-linecap="butt" font-family="MiSans, sans-serif" font-weight="400">
+ <defs>
+  </defs>
+ <g id="figure_1" transform="translate(0 16)">
+  <g id="patch_1">
+   <path d="M 0 252  L 504 252  L 504 0  L 0 0  z " fill="#ffffff" />
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 30.744 194.04  L 231.336 194.04  Q 239.4 194.04 239.4 185.976  L 239.4 91.224  Q 239.4 83.16 231.336 83.16  L 30.744 83.16  Q 22.68 83.16 22.68 91.224  L 22.68 185.976  Q 22.68 194.04 30.744 194.04  z " clip-path="url(#p3482214bcd)" fill="#f1f7fe" />
+   </g>
+   <g id="patch_3">
+    <path d="M 262.584 194.04  L 473.256 194.04  Q 481.32 194.04 481.32 185.976  L 481.32 91.224  Q 481.32 83.16 473.256 83.16  L 262.584 83.16  Q 254.52 83.16 254.52 91.224  L 254.52 185.976  Q 254.52 194.04 262.584 194.04  z " clip-path="url(#p3482214bcd)" fill="#fcebdb" />
+   </g>
+   <g id="patch_4">
+    <path d="M 359.856 161.28  C 366.806443 161.28 373.473149 158.51856 378.387855 153.603855  C 383.30256 148.689149 386.064 142.022443 386.064 135.072  C 386.064 128.121557 383.30256 121.454851 378.387855 116.540145  C 373.473149 111.62544 366.806443 108.864 359.856 108.864  C 352.905557 108.864 346.238851 111.62544 341.324145 116.540145  C 336.40944 121.454851 333.648 128.121557 333.648 135.072  C 333.648 142.022443 336.40944 148.689149 341.324145 153.603855  C 346.238851 158.51856 352.905557 161.28 359.856 161.28  z " clip-path="url(#p3482214bcd)" fill="#ffffff" stroke="#e8823c" stroke-width="2.4" stroke-linejoin="miter" />
+   </g>
+   <g id="line2d_2">
+    <path d="M 47.88 119.952  L 118.44 124.992  L 199.08 119.952  " clip-path="url(#p3482214bcd)" fill="none" stroke="#1f6fd0" stroke-width="2.2" stroke-linecap="round" />
+   </g>
+   <g id="line2d_3">
+    <path d="M 47.88 135.072  L 118.44 142.884  L 199.08 135.072  " clip-path="url(#p3482214bcd)" fill="none" stroke="#1f6fd0" stroke-width="2.2" stroke-linecap="round" />
+   </g>
+   <g id="line2d_4">
+    <path d="M 47.88 150.192  L 118.44 160.776  L 199.08 150.192  " clip-path="url(#p3482214bcd)" fill="none" stroke="#1f6fd0" stroke-width="2.2" stroke-linecap="round" />
+   </g>
+   <g id="line2d_5">
+    <path d="M 284.76 135.072  L 333.648 135.072  " clip-path="url(#p3482214bcd)" fill="none" stroke="#e8823c" stroke-width="2.4" stroke-linecap="square" />
+   </g>
+   <g id="line2d_6">
+    <path d="M 386.064 135.072  L 425.88 135.072  " clip-path="url(#p3482214bcd)" fill="none" stroke="#e8823c" stroke-width="2.4" stroke-linecap="square" />
+   </g>
+   <g id="text_3">
+    <text x="36.288" y="103.019219" transform="rotate(-0 36.288 103.019219)" font-weight="600" font-size="14px" font-family="MiSans, sans-serif" text-anchor="start" fill="#0b4c9c">FIR：延迟线 + 干涉</text>
+   </g>
+   <g id="text_4">
+    <text x="200.592" y="123.506414" transform="rotate(-0 200.592 123.506414)" font-size="10.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4e9be8">ΔL短</text>
+   </g>
+   <g id="text_5">
+    <text x="200.592" y="138.626414" transform="rotate(-0 200.592 138.626414)" font-size="10.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4e9be8">ΔL中</text>
+   </g>
+   <g id="text_6">
+    <text x="200.592" y="153.746414" transform="rotate(-0 200.592 153.746414)" font-size="10.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4e9be8">ΔL长</text>
+   </g>
+   <g id="text_7">
+    <text x="47.88" y="183.16875" transform="rotate(-0 47.88 183.16875)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">AWG / EDG / 级联 MZI</text>
+   </g>
+   <g id="text_8">
+    <text x="268.128" y="103.019219" transform="rotate(-0 268.128 103.019219)" font-weight="600" font-size="14px" font-family="MiSans, sans-serif" text-anchor="start" fill="#e8823c">IIR：谐振腔反复循环</text>
+   </g>
+   <g id="text_9">
+    <text x="359.856" y="139.134187" transform="rotate(-0 359.856 139.134187)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#e8823c">环</text>
+   </g>
+   <g id="text_10">
+    <text x="268.128" y="183.282187" transform="rotate(-0 268.128 183.282187)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">微环 / Bragg 光栅</text>
+   </g>
+   <g id="text_11">
+    <text transform="translate(25.2 214.82475)" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">FIR 的传递函数由有限个抽头决定，没有光子寿命，温度敏感性低；IIR 靠腔建立场，边</text>
+    <text transform="translate(25.2 231.000375)" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">沿陡、面积小，但每个通道都要单独对准与稳频。</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p3482214bcd">
+   <rect x="0" y="0" width="504" height="252" />
+  </clipPath>
+ </defs>
+ <g id="text_1">
+  <text x="22.68" y="19.689961" transform="rotate(-0 22.68 19.689961)" font-size="13.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4e9be8">FIR 用面积换稳定，IIR 用调谐换面积</text>
+ </g>
+ <g id="text_2" transform="translate(0 8)">
+  <text x="22.68" y="43.742891" transform="rotate(-0 22.68 43.742891)" font-size="25px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a" font-weight="600">两条物理路线，两种代价</text>
+ </g>
+ <g id="line2d_1" transform="translate(0 8)">
+  <path d="M 22.68 53.424  L 65.52 53.424  " clip-path="url(#p3482214bcd)" fill="none" stroke="#1f6fd0" stroke-width="3.2" />
+ </g>
+</svg>
