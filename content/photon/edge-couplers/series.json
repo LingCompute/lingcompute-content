@@ -5,7 +5,7 @@
   "articles": [
     {
       "slug": "02-inverse-taper",
-      "authors": [],
+      "authors": ["Frank-DingYC"],
       "summary": "比较相同长度倒锥轮廓的模式演化与传输。",
       "sources": [
         "https://www.lingcompute.com/photon/learning-center/examples/notebooks/EdgeCoupler",

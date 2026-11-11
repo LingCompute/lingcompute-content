@@ -1,5 +1,10 @@
 .DS_Store
 .venv/
+.cache/
+*.woff
+*.woff2
+*.ttf
+*.otf
 __pycache__/
 *.py[cod]
 build/
