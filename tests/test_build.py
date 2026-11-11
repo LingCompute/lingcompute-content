@@ -67,6 +67,10 @@ class BuildTests(unittest.TestCase):
         self.assertGreater(with_figures[1], upper)
         self.assertEqual(build.reading_minutes("", 0, 0), (1, 2))
 
+    def test_generated_figure_caption_contributes_to_reading_time(self):
+        _, parser = build.render_body(f'![{"中" * 900}](figure.png)', self.series, self.root)
+        self.assertEqual(build.reading_minutes(" ".join(parser.text), len(parser.assets), 0), (3, 5))
+
     def test_historical_approval_is_bound_to_text_and_assets(self):
         manuscript = self.series / "one.md"
         manuscript.write_text("# 正文")
