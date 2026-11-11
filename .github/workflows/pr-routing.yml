@@ -18,6 +18,12 @@ jobs:
     steps:
       - name: Assign maintainer
         run: gh api --method POST "repos/$GH_REPO/issues/$PR_NUMBER/assignees" -f 'assignees[]=Frank-DingYC' --silent
+      - name: Detect content changes
+        id: content
+        run: |
+          changed="$(gh api --paginate --slurp "repos/$GH_REPO/pulls/$PR_NUMBER/files?per_page=100" \
+            --jq '[.[][] | (.filename, (.previous_filename // empty)) | startswith("content/")] | any')"
+          echo "changed=$changed" >> "$GITHUB_OUTPUT"
       - name: Request reviewer
-        if: github.event.pull_request.user.login != 'mwn123'
+        if: steps.content.outputs.changed == 'true' && github.event.pull_request.user.login != 'mwn123'
         run: gh api --method POST "repos/$GH_REPO/pulls/$PR_NUMBER/requested_reviewers" -f 'reviewers[]=mwn123' --silent
