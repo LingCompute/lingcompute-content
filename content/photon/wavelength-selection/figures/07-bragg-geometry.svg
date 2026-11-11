@@ -1,0 +1,195 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="504.000pt" height="328.480pt" viewBox="0.000 0.000 504.000 328.480" stroke-linejoin="round" stroke-linecap="butt" font-family="MiSans, sans-serif" font-weight="400">
+ <defs>
+  </defs>
+ <g id="figure_1" transform="translate(0 16)">
+  <g id="patch_1">
+   <path d="M 0 312.48  L 504 312.48  L 504 0  L 0 0  z " fill="#ffffff" />
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 57.96 106.344  L 71.064 106.344  L 71.064 94.248  L 57.96 94.248  z " clip-path="url(#pa5f038807c)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_3">
+    <path d="M 57.96 135.576  L 71.064 135.576  L 71.064 123.48  L 57.96 123.48  z " clip-path="url(#pa5f038807c)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_4">
+    <path d="M 84.168 106.344  L 97.272 106.344  L 97.272 94.248  L 84.168 94.248  z " clip-path="url(#pa5f038807c)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_5">
+    <path d="M 84.168 135.576  L 97.272 135.576  L 97.272 123.48  L 84.168 123.48  z " clip-path="url(#pa5f038807c)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_6">
+    <path d="M 110.376 106.344  L 123.48 106.344  L 123.48 94.248  L 110.376 94.248  z " clip-path="url(#pa5f038807c)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_7">
+    <path d="M 110.376 135.576  L 123.48 135.576  L 123.48 123.48  L 110.376 123.48  z " clip-path="url(#pa5f038807c)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_8">
+    <path d="M 136.584 106.344  L 149.688 106.344  L 149.688 94.248  L 136.584 94.248  z " clip-path="url(#pa5f038807c)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_9">
+    <path d="M 136.584 135.576  L 149.688 135.576  L 149.688 123.48  L 136.584 123.48  z " clip-path="url(#pa5f038807c)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_10">
+    <path d="M 162.792 106.344  L 175.896 106.344  L 175.896 94.248  L 162.792 94.248  z " clip-path="url(#pa5f038807c)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_11">
+    <path d="M 162.792 135.576  L 175.896 135.576  L 175.896 123.48  L 162.792 123.48  z " clip-path="url(#pa5f038807c)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_12">
+    <path d="M 189 106.344  L 202.104 106.344  L 202.104 94.248  L 189 94.248  z " clip-path="url(#pa5f038807c)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_13">
+    <path d="M 189 135.576  L 202.104 135.576  L 202.104 123.48  L 189 123.48  z " clip-path="url(#pa5f038807c)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_14">
+    <path d="M 215.208 106.344  L 228.312 106.344  L 228.312 94.248  L 215.208 94.248  z " clip-path="url(#pa5f038807c)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_15">
+    <path d="M 215.208 135.576  L 228.312 135.576  L 228.312 123.48  L 215.208 123.48  z " clip-path="url(#pa5f038807c)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_16">
+    <path d="M 241.416 106.344  L 254.52 106.344  L 254.52 94.248  L 241.416 94.248  z " clip-path="url(#pa5f038807c)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_17">
+    <path d="M 241.416 135.576  L 254.52 135.576  L 254.52 123.48  L 241.416 123.48  z " clip-path="url(#pa5f038807c)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_18">
+    <path d="M 267.624 106.344  L 280.728 106.344  L 280.728 94.248  L 267.624 94.248  z " clip-path="url(#pa5f038807c)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_19">
+    <path d="M 267.624 135.576  L 280.728 135.576  L 280.728 123.48  L 267.624 123.48  z " clip-path="url(#pa5f038807c)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_20">
+    <path d="M 293.832 106.344  L 306.936 106.344  L 306.936 94.248  L 293.832 94.248  z " clip-path="url(#pa5f038807c)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_21">
+    <path d="M 293.832 135.576  L 306.936 135.576  L 306.936 123.48  L 293.832 123.48  z " clip-path="url(#pa5f038807c)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_22">
+    <path d="M 320.04 106.344  L 333.144 106.344  L 333.144 94.248  L 320.04 94.248  z " clip-path="url(#pa5f038807c)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_23">
+    <path d="M 320.04 135.576  L 333.144 135.576  L 333.144 123.48  L 320.04 123.48  z " clip-path="url(#pa5f038807c)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_24">
+    <path d="M 346.248 106.344  L 359.352 106.344  L 359.352 94.248  L 346.248 94.248  z " clip-path="url(#pa5f038807c)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_25">
+    <path d="M 346.248 135.576  L 359.352 135.576  L 359.352 123.48  L 346.248 123.48  z " clip-path="url(#pa5f038807c)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_26">
+    <path d="M 372.456 106.344  L 385.56 106.344  L 385.56 94.248  L 372.456 94.248  z " clip-path="url(#pa5f038807c)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_27">
+    <path d="M 372.456 135.576  L 385.56 135.576  L 385.56 123.48  L 372.456 123.48  z " clip-path="url(#pa5f038807c)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_28">
+    <path d="M 398.664 106.344  L 411.768 106.344  L 411.768 94.248  L 398.664 94.248  z " clip-path="url(#pa5f038807c)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_29">
+    <path d="M 398.664 135.576  L 411.768 135.576  L 411.768 123.48  L 398.664 123.48  z " clip-path="url(#pa5f038807c)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_30">
+    <path d="M 424.872 106.344  L 437.976 106.344  L 437.976 94.248  L 424.872 94.248  z " clip-path="url(#pa5f038807c)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_31">
+    <path d="M 424.872 135.576  L 437.976 135.576  L 437.976 123.48  L 424.872 123.48  z " clip-path="url(#pa5f038807c)" fill="#0b4c9c" />
+   </g>
+   <g id="line2d_2">
+    <path d="M 57.96 89.712  L 57.96 79.632  " clip-path="url(#pa5f038807c)" fill="none" stroke="#4a6076" stroke-width="1.1" stroke-linecap="square" />
+   </g>
+   <g id="line2d_3">
+    <path d="M 84.168 89.712  L 84.168 79.632  " clip-path="url(#pa5f038807c)" fill="none" stroke="#4a6076" stroke-width="1.1" stroke-linecap="square" />
+   </g>
+   <g id="patch_32">
+    <path d="M 30.24 123.48  L 473.76 123.48  L 473.76 106.344  L 30.24 106.344  z " clip-path="url(#pa5f038807c)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_33">
+    <path d="M 59.413444 84.672  Q 71.064 84.672 82.714556 84.672  " fill="none" stroke="#4a6076" stroke-width="1.3" stroke-linecap="round" />
+    <path d="M 63.013444 86.472  L 59.413444 84.672  L 63.013444 82.872  z " fill="#4a6076" stroke="#4a6076" stroke-width="1.3" stroke-linecap="round" />
+    <path d="M 79.114556 82.872  L 82.714556 84.672  L 79.114556 86.472  z " fill="#4a6076" stroke="#4a6076" stroke-width="1.3" stroke-linecap="round" />
+   </g>
+   <g id="text_3">
+    <text x="71.064" y="75.250438" transform="rotate(-0 71.064 75.250438)" font-size="14px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">Λ</text>
+   </g>
+   <g id="text_4">
+    <text x="30.24" y="164.514766" transform="rotate(-0 30.24 164.514766)" font-size="17px" font-family="MiSans, sans-serif" text-anchor="start" fill="#0b4c9c" font-weight="500">λ_B = 2 n_eff Λ</text>
+   </g>
+   <g id="text_5">
+    <g transform="translate(30.24 195.582188)" fill="#4a6076">
+     <text>
+      <tspan x="0" y="-0.203125" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">齿</tspan>
+      <tspan x="11.999985" y="-0.203125" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">对</tspan>
+      <tspan x="23.999969" y="-0.203125" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">齐</tspan>
+      <tspan x="35.999954" y="-0.203125" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">：</tspan>
+      <tspan x="47.999939" y="-0.203125" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">两</tspan>
+      <tspan x="59.999924" y="-0.203125" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">个</tspan>
+      <tspan x="71.999908" y="-0.203125" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">方</tspan>
+      <tspan x="83.999893" y="-0.203125" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">向</tspan>
+      <tspan x="95.999878" y="-0.203125" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">的</tspan>
+      <tspan x="107.999863" y="-0.203125" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">散</tspan>
+      <tspan x="119.999847" y="-0.203125" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">射</tspan>
+      <tspan x="131.999832" y="-0.203125" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">同</tspan>
+      <tspan x="143.999817" y="-0.203125" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">相</tspan>
+      <tspan x="155.999802" y="-0.203125" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">，</tspan>
+      <tspan x="175.072052" y="-0.203125" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076"> </tspan>
+      <tspan x="178.072037" y="-0.203125" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">最</tspan>
+      <tspan x="190.072021" y="-0.203125" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">大</tspan>
+      <tspan x="202.072006" y="-0.203125" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076"> </tspan>
+      <tspan x="205.071991" y="-0.203125" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">→</tspan>
+      <tspan x="217.071976" y="-0.203125" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076"> </tspan>
+      <tspan x="220.07196" y="-0.203125" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">强</tspan>
+      <tspan x="232.071945" y="-0.203125" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">反</tspan>
+      <tspan x="244.07193" y="-0.203125" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">射</tspan>
+      <tspan x="167.999786" y="-0.203125" font-style="oblique" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">κ</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_6">
+    <g transform="translate(30.24 218.262188)" fill="#4a6076">
+     <text>
+      <tspan x="0" y="-0.25" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">错</tspan>
+      <tspan x="11.999985" y="-0.25" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">开</tspan>
+      <tspan x="23.999969" y="-0.25" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">半</tspan>
+      <tspan x="35.999954" y="-0.25" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">周</tspan>
+      <tspan x="47.999939" y="-0.25" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">期</tspan>
+      <tspan x="59.999924" y="-0.25" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">：</tspan>
+      <tspan x="71.999908" y="-0.25" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">散</tspan>
+      <tspan x="83.999893" y="-0.25" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">射</tspan>
+      <tspan x="95.999878" y="-0.25" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">相</tspan>
+      <tspan x="107.999863" y="-0.25" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">消</tspan>
+      <tspan x="119.999847" y="-0.25" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">，</tspan>
+      <tspan x="161.437332" y="-0.25" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076"> </tspan>
+      <tspan x="164.437317" y="-0.25" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">→</tspan>
+      <tspan x="176.437302" y="-0.25" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076"> </tspan>
+      <tspan x="179.437286" y="-0.25" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">几</tspan>
+      <tspan x="191.437271" y="-0.25" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">乎</tspan>
+      <tspan x="203.437256" y="-0.25" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">全</tspan>
+      <tspan x="215.437241" y="-0.25" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">透</tspan>
+      <tspan x="131.999832" y="-0.25" font-style="oblique" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">κ</tspan>
+      <tspan x="141.409988" y="-0.25" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">≈</tspan>
+      <tspan x="153.802567" y="-0.25" font-size="12px" font-family="MiSans, sans-serif" fill="#4a6076">0</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_7">
+    <text x="22.68" y="263.622187" transform="rotate(-0 22.68 263.622187)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="start" fill="#8a9bab">同一个周期，只改齿的相位，就能把「镜子」变回「透明波导」。</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pa5f038807c">
+   <rect x="0" y="0" width="504" height="312.48" />
+  </clipPath>
+ </defs>
+ <g id="text_1">
+  <text x="22.68" y="19.689961" transform="rotate(-0 22.68 19.689961)" font-size="13.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4e9be8">结构</text>
+ </g>
+ <g id="text_2" transform="translate(0 8)">
+  <text x="22.68" y="43.830781" transform="rotate(-0 22.68 43.830781)" font-size="25px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a" font-weight="600">Bragg 光栅：周期决定反射哪个波长</text>
+ </g>
+ <g id="line2d_1" transform="translate(0 8)">
+  <path d="M 22.68 53.424  L 65.52 53.424  " clip-path="url(#pa5f038807c)" fill="none" stroke="#1f6fd0" stroke-width="3.2" />
+ </g>
+</svg>

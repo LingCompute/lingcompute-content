@@ -1,0 +1,230 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="475.200pt" height="273.600pt" viewBox="0.000 0.000 475.200 273.600" stroke-linejoin="round" stroke-linecap="butt" font-family="MiSans, sans-serif" font-weight="400">
+ <defs>
+  </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 273.6  L 475.2 273.6  L 475.2 0  L 0 0  z " fill="#ffffff" />
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 67.7625 208.425  L 453.2 208.425  L 453.2 45.847656  L 67.7625 45.847656  z " fill="#ffffff" />
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <path d="M 85.282386 208.425  L 85.282386 45.847656  " clip-path="url(#pe3884cb081)" fill="none" stroke="#d6e2ec" stroke-opacity="0.2" stroke-width="0.8" stroke-linecap="square" />
+     </g>
+     <g id="line2d_2">
+      <defs>
+       <path id="m8d1b91a4a2" d="M 0 0  L 0 3.5  " stroke="#4a6076" stroke-width="0.8" />
+      </defs>
+      <g>
+       <use xlink:href="#m8d1b91a4a2" x="85.282386" y="208.425" fill="#4a6076" stroke="#4a6076" stroke-width="0.8" />
+      </g>
+     </g>
+     <g id="text_1">
+      <text x="85.282386" y="231.625" transform="rotate(-0 85.282386 231.625)" font-size="20px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076" font-weight="500">0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_3">
+      <path d="M 172.881818 208.425  L 172.881818 45.847656  " clip-path="url(#pe3884cb081)" fill="none" stroke="#d6e2ec" stroke-opacity="0.2" stroke-width="0.8" stroke-linecap="square" />
+     </g>
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m8d1b91a4a2" x="172.881818" y="208.425" fill="#4a6076" stroke="#4a6076" stroke-width="0.8" />
+      </g>
+     </g>
+     <g id="text_2">
+      <text x="172.881818" y="231.625" transform="rotate(-0 172.881818 231.625)" font-size="20px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076" font-weight="500">2</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <path d="M 260.48125 208.425  L 260.48125 45.847656  " clip-path="url(#pe3884cb081)" fill="none" stroke="#d6e2ec" stroke-opacity="0.2" stroke-width="0.8" stroke-linecap="square" />
+     </g>
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#m8d1b91a4a2" x="260.48125" y="208.425" fill="#4a6076" stroke="#4a6076" stroke-width="0.8" />
+      </g>
+     </g>
+     <g id="text_3">
+      <text x="260.48125" y="231.625" transform="rotate(-0 260.48125 231.625)" font-size="20px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076" font-weight="500">4</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_7">
+      <path d="M 348.080682 208.425  L 348.080682 45.847656  " clip-path="url(#pe3884cb081)" fill="none" stroke="#d6e2ec" stroke-opacity="0.2" stroke-width="0.8" stroke-linecap="square" />
+     </g>
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#m8d1b91a4a2" x="348.080682" y="208.425" fill="#4a6076" stroke="#4a6076" stroke-width="0.8" />
+      </g>
+     </g>
+     <g id="text_4">
+      <text x="348.080682" y="231.625" transform="rotate(-0 348.080682 231.625)" font-size="20px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076" font-weight="500">6</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_9">
+      <path d="M 435.680114 208.425  L 435.680114 45.847656  " clip-path="url(#pe3884cb081)" fill="none" stroke="#d6e2ec" stroke-opacity="0.2" stroke-width="0.8" stroke-linecap="square" />
+     </g>
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#m8d1b91a4a2" x="435.680114" y="208.425" fill="#4a6076" stroke="#4a6076" stroke-width="0.8" />
+      </g>
+     </g>
+     <g id="text_5">
+      <text x="435.680114" y="231.625" transform="rotate(-0 435.680114 231.625)" font-size="20px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076" font-weight="500">8</text>
+     </g>
+    </g>
+    <g id="text_6">
+     <g transform="translate(193.01125 248.905781)" fill="#12263a">
+      <text>
+       <tspan x="0" y="-0.296875" font-style="oblique" font-size="13px" font-family="MiSans, sans-serif" fill="#12263a">κ</tspan>
+       <tspan x="7.661621" y="-0.296875" font-style="oblique" font-size="13px" font-family="MiSans, sans-serif" fill="#12263a">L</tspan>
+       <tspan x="14.904297" y="-0.296875" font-size="13px" font-family="MiSans, sans-serif" fill="#12263a">（</tspan>
+       <tspan x="27.904297" y="-0.296875" font-size="13px" font-family="MiSans, sans-serif" fill="#12263a">耦</tspan>
+       <tspan x="40.904297" y="-0.296875" font-size="13px" font-family="MiSans, sans-serif" fill="#12263a">合</tspan>
+       <tspan x="53.904297" y="-0.296875" font-size="13px" font-family="MiSans, sans-serif" fill="#12263a">强</tspan>
+       <tspan x="66.904297" y="-0.296875" font-size="13px" font-family="MiSans, sans-serif" fill="#12263a">度</tspan>
+       <tspan x="79.904297" y="-0.296875" font-size="13px" font-family="MiSans, sans-serif" fill="#12263a"> </tspan>
+       <tspan x="83.154297" y="-0.296875" font-size="13px" font-family="MiSans, sans-serif" fill="#12263a">×</tspan>
+       <tspan x="92.631302" y="-0.296875" font-size="13px" font-family="MiSans, sans-serif" fill="#12263a"> </tspan>
+       <tspan x="95.881302" y="-0.296875" font-size="13px" font-family="MiSans, sans-serif" fill="#12263a">长</tspan>
+       <tspan x="108.881302" y="-0.296875" font-size="13px" font-family="MiSans, sans-serif" fill="#12263a">度</tspan>
+       <tspan x="121.881302" y="-0.296875" font-size="13px" font-family="MiSans, sans-serif" fill="#12263a">）</tspan>
+      </text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_11">
+      <path d="M 67.7625 208.425  L 453.2 208.425  " clip-path="url(#pe3884cb081)" fill="none" stroke="#d6e2ec" stroke-opacity="0.2" stroke-width="0.8" stroke-linecap="square" />
+     </g>
+     <g id="line2d_12">
+      <defs>
+       <path id="m51e4789cbb" d="M 0 0  L -3.5 0  " stroke="#4a6076" stroke-width="0.8" />
+      </defs>
+      <g>
+       <use xlink:href="#m51e4789cbb" x="67.7625" y="208.425" fill="#4a6076" stroke="#4a6076" stroke-width="0.8" />
+      </g>
+     </g>
+     <g id="text_7">
+      <text x="60.7625" y="216.525" transform="rotate(-0 60.7625 216.525)" font-size="20px" font-family="MiSans, sans-serif" text-anchor="end" fill="#4a6076" font-weight="500">0</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_13">
+      <path d="M 67.7625 161.97433  L 453.2 161.97433  " clip-path="url(#pe3884cb081)" fill="none" stroke="#d6e2ec" stroke-opacity="0.2" stroke-width="0.8" stroke-linecap="square" />
+     </g>
+     <g id="line2d_14">
+      <g>
+       <use xlink:href="#m51e4789cbb" x="67.7625" y="161.97433" fill="#4a6076" stroke="#4a6076" stroke-width="0.8" />
+      </g>
+     </g>
+     <g id="text_8">
+      <text x="60.7625" y="170.07433" transform="rotate(-0 60.7625 170.07433)" font-size="20px" font-family="MiSans, sans-serif" text-anchor="end" fill="#4a6076" font-weight="500">20</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_15">
+      <path d="M 67.7625 115.523661  L 453.2 115.523661  " clip-path="url(#pe3884cb081)" fill="none" stroke="#d6e2ec" stroke-opacity="0.2" stroke-width="0.8" stroke-linecap="square" />
+     </g>
+     <g id="line2d_16">
+      <g>
+       <use xlink:href="#m51e4789cbb" x="67.7625" y="115.523661" fill="#4a6076" stroke="#4a6076" stroke-width="0.8" />
+      </g>
+     </g>
+     <g id="text_9">
+      <text x="60.7625" y="123.623661" transform="rotate(-0 60.7625 123.623661)" font-size="20px" font-family="MiSans, sans-serif" text-anchor="end" fill="#4a6076" font-weight="500">40</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_17">
+      <path d="M 67.7625 69.072991  L 453.2 69.072991  " clip-path="url(#pe3884cb081)" fill="none" stroke="#d6e2ec" stroke-opacity="0.2" stroke-width="0.8" stroke-linecap="square" />
+     </g>
+     <g id="line2d_18">
+      <g>
+       <use xlink:href="#m51e4789cbb" x="67.7625" y="69.072991" fill="#4a6076" stroke="#4a6076" stroke-width="0.8" />
+      </g>
+     </g>
+     <g id="text_10">
+      <text x="60.7625" y="77.172991" transform="rotate(-0 60.7625 77.172991)" font-size="20px" font-family="MiSans, sans-serif" text-anchor="end" fill="#4a6076" font-weight="500">60</text>
+     </g>
+    </g>
+    <g id="text_11">
+     <text x="32.871406" y="127.136328" transform="rotate(-90 32.871406 127.136328)" font-size="13px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#12263a">阻带消光比（dB）</text>
+    </g>
+   </g>
+   <g id="line2d_19">
+    <path d="M 85.282386 208.425  L 89.673335 208.323797  L 94.064284 208.022198  L 98.455233 207.526078  L 103.724372 206.687254  L 108.993511 205.602993  L 114.26265 204.298172  L 120.409978 202.532669  L 126.557307 200.545364  L 133.582825 198.053027  L 142.364723 194.68082  L 152.903 190.363691  L 166.075847 184.698238  L 183.639643 176.881846  L 211.741717 164.100857  L 275.849571 134.633272  L 435.680114 61.021887  L 435.680114 61.021887  " clip-path="url(#pe3884cb081)" fill="none" stroke="#0b4c9c" stroke-width="2.6" stroke-linecap="square" />
+   </g>
+   <g id="line2d_20">
+    <path d="M 67.7625 138.748996  L 453.2 138.748996  " clip-path="url(#pe3884cb081)" fill="none" stroke-dasharray="1.1,1.815" stroke-dashoffset="0" stroke="#8a9bab" stroke-width="1.1" />
+   </g>
+   <g id="patch_3">
+    <path d="M 67.7625 208.425  L 67.7625 45.847656  " fill="none" stroke="#000000" stroke-width="0.8" stroke-linejoin="miter" stroke-linecap="square" />
+   </g>
+   <g id="patch_4">
+    <path d="M 67.7625 208.425  L 453.2 208.425  " fill="none" stroke="#000000" stroke-width="0.8" stroke-linejoin="miter" stroke-linecap="square" />
+   </g>
+   <g id="text_12">
+    <text x="91.852344" y="135.265195" transform="rotate(-0 91.852344 135.265195)" font-size="11px" font-family="MiSans, sans-serif" text-anchor="start" fill="#8a9bab">30 dB 参考线</text>
+   </g>
+   <g id="text_13">
+    <g transform="translate(84.29375 33.847656)" fill="#12263a">
+     <text>
+      <tspan x="0" y="-0.265625" font-size="12.5px" font-family="MiSans, sans-serif" fill="#12263a">均</tspan>
+      <tspan x="12.499985" y="-0.265625" font-size="12.5px" font-family="MiSans, sans-serif" fill="#12263a">匀</tspan>
+      <tspan x="24.999969" y="-0.265625" font-size="12.5px" font-family="MiSans, sans-serif" fill="#12263a">无</tspan>
+      <tspan x="37.499954" y="-0.265625" font-size="12.5px" font-family="MiSans, sans-serif" fill="#12263a">损</tspan>
+      <tspan x="49.999939" y="-0.265625" font-size="12.5px" font-family="MiSans, sans-serif" fill="#12263a">光</tspan>
+      <tspan x="62.499924" y="-0.265625" font-size="12.5px" font-family="MiSans, sans-serif" fill="#12263a">栅</tspan>
+      <tspan x="74.999908" y="-0.265625" font-size="12.5px" font-family="MiSans, sans-serif" fill="#12263a">中</tspan>
+      <tspan x="87.499893" y="-0.265625" font-size="12.5px" font-family="MiSans, sans-serif" fill="#12263a">心</tspan>
+      <tspan x="99.999878" y="-0.265625" font-size="12.5px" font-family="MiSans, sans-serif" fill="#12263a">深</tspan>
+      <tspan x="112.499863" y="-0.265625" font-size="12.5px" font-family="MiSans, sans-serif" fill="#12263a">度</tspan>
+      <tspan x="124.999847" y="-0.265625" font-size="12.5px" font-family="MiSans, sans-serif" fill="#12263a">：</tspan>
+      <tspan x="137.499832" y="-0.265625" font-size="12.5px" font-family="MiSans, sans-serif" fill="#12263a">E</tspan>
+      <tspan x="144.199814" y="-0.265625" font-size="12.5px" font-family="MiSans, sans-serif" fill="#12263a">R</tspan>
+      <tspan x="151.787292" y="-0.265625" font-size="12.5px" font-family="MiSans, sans-serif" fill="#12263a"> </tspan>
+      <tspan x="154.912277" y="-0.265625" font-size="12.5px" font-family="MiSans, sans-serif" fill="#12263a">=</tspan>
+      <tspan x="162.487259" y="-0.265625" font-size="12.5px" font-family="MiSans, sans-serif" fill="#12263a"> </tspan>
+      <tspan x="165.612244" y="-0.265625" font-size="12.5px" font-family="MiSans, sans-serif" fill="#12263a">2</tspan>
+      <tspan x="172.537231" y="-0.265625" font-size="12.5px" font-family="MiSans, sans-serif" fill="#12263a">0</tspan>
+      <tspan x="179.462219" y="-0.265625" font-size="12.5px" font-family="MiSans, sans-serif" fill="#12263a"> </tspan>
+      <tspan x="182.587204" y="-0.265625" font-size="12.5px" font-family="MiSans, sans-serif" fill="#12263a">l</tspan>
+      <tspan x="185.087189" y="-0.265625" font-size="12.5px" font-family="MiSans, sans-serif" fill="#12263a">o</tspan>
+      <tspan x="193.274673" y="-0.265625" font-size="12.5px" font-family="MiSans, sans-serif" fill="#12263a">g</tspan>
+      <tspan x="201.687164" y="-0.265625" font-size="12.5px" font-family="MiSans, sans-serif" fill="#12263a">1</tspan>
+      <tspan x="208.612152" y="-0.265625" font-size="12.5px" font-family="MiSans, sans-serif" fill="#12263a">0</tspan>
+      <tspan x="215.53714" y="-0.265625" font-size="12.5px" font-family="MiSans, sans-serif" fill="#12263a">(</tspan>
+      <tspan x="220.149628" y="-0.265625" font-size="12.5px" font-family="MiSans, sans-serif" fill="#12263a">c</tspan>
+      <tspan x="228.237106" y="-0.265625" font-size="12.5px" font-family="MiSans, sans-serif" fill="#12263a">o</tspan>
+      <tspan x="236.424591" y="-0.265625" font-size="12.5px" font-family="MiSans, sans-serif" fill="#12263a">s</tspan>
+      <tspan x="241.274582" y="-0.265625" font-size="12.5px" font-family="MiSans, sans-serif" fill="#12263a">h</tspan>
+      <tspan x="248.899567" y="-0.265625" font-size="12.5px" font-family="MiSans, sans-serif" fill="#12263a"> </tspan>
+      <tspan x="266.355606" y="-0.265625" font-size="12.5px" font-family="MiSans, sans-serif" fill="#12263a">)</tspan>
+      <tspan x="270.968094" y="-0.265625" font-size="12.5px" font-family="MiSans, sans-serif" fill="#12263a">，</tspan>
+      <tspan x="283.468079" y="-0.265625" font-size="12.5px" font-family="MiSans, sans-serif" fill="#12263a">d</tspan>
+      <tspan x="292.030563" y="-0.265625" font-size="12.5px" font-family="MiSans, sans-serif" fill="#12263a">B</tspan>
+      <tspan x="299.205551" y="-0.265625" font-size="12.5px" font-family="MiSans, sans-serif" fill="#12263a"> </tspan>
+      <tspan x="302.330536" y="-0.265625" font-size="12.5px" font-family="MiSans, sans-serif" fill="#12263a">值</tspan>
+      <tspan x="314.830521" y="-0.265625" font-size="12.5px" font-family="MiSans, sans-serif" fill="#12263a">不</tspan>
+      <tspan x="327.330505" y="-0.265625" font-size="12.5px" font-family="MiSans, sans-serif" fill="#12263a">饱</tspan>
+      <tspan x="339.83049" y="-0.265625" font-size="12.5px" font-family="MiSans, sans-serif" fill="#12263a">和</tspan>
+      <tspan x="252.024551" y="-0.265625" font-style="oblique" font-size="12.5px" font-family="MiSans, sans-serif" fill="#12263a">κ</tspan>
+      <tspan x="259.391495" y="-0.265625" font-style="oblique" font-size="12.5px" font-family="MiSans, sans-serif" fill="#12263a">L</tspan>
+     </text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pe3884cb081">
+   <rect x="67.7625" y="45.847656" width="385.4375" height="162.577344" />
+  </clipPath>
+ </defs>
+</svg>
