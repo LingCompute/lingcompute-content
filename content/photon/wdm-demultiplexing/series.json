@@ -5,7 +5,7 @@
   "articles": [
     {
       "slug": "03-awg-edg",
-      "authors": [],
+      "authors": ["Frank-DingYC"],
       "summary": "理解阵列波导与衍射光栅分波的相位机制。",
       "sources": [
         "https://www.lingcompute.com/photon/learning-center/example-library",
