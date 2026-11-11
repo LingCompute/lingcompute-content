@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="504.000pt" height="288.160pt" viewBox="0.000 0.000 504.000 288.160" stroke-linejoin="round" stroke-linecap="butt" font-family="MiSans, sans-serif" font-weight="400">
+ <defs>
+  </defs>
+ <g id="figure_1" transform="translate(0 16)">
+  <g id="patch_1">
+   <path d="M 0 272.16  L 504 272.16  L 504 0  L 0 0  z " fill="#ffffff" />
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 27.72 206.64  L 476.28 206.64  L 476.28 100.8  L 27.72 100.8  z " clip-path="url(#p5bcef58453)" fill="#eef3f8" />
+   </g>
+   <g id="patch_3">
+    <path d="M 27.72 206.64  L 476.28 206.64  L 476.28 178.92  L 27.72 178.92  z " clip-path="url(#p5bcef58453)" fill="#dce7f2" />
+   </g>
+   <g id="line2d_2">
+    <path d="M 255.528 136.584  L 255.528 126.504  " clip-path="url(#p5bcef58453)" fill="none" stroke="#0b4c9c" stroke-width="1.1" stroke-linecap="square" />
+   </g>
+   <g id="line2d_3">
+    <path d="M 276.696 136.584  L 276.696 126.504  " clip-path="url(#p5bcef58453)" fill="none" stroke="#0b4c9c" stroke-width="1.1" stroke-linecap="square" />
+   </g>
+   <g id="patch_4">
+    <path d="M 35.784 258.048  L 468.216 258.048  Q 476.28 258.048 476.28 249.984  L 476.28 224.784  Q 476.28 216.72 468.216 216.72  L 35.784 216.72  Q 27.72 216.72 27.72 224.784  L 27.72 249.984  Q 27.72 258.048 35.784 258.048  z " clip-path="url(#p5bcef58453)" fill="#f1f7fe" />
+   </g>
+   <g id="text_3">
+    <text x="22.68" y="264.782312" transform="rotate(-0 22.68 264.782312)" font-size="10px" font-family="MiSans, sans-serif" text-anchor="start" fill="#8a9bab">示意图。实际器件的齿宽与周期在数百纳米量级。</text>
+   </g>
+   <g id="patch_5">
+    <path d="M 27.72 178.92  L 476.28 178.92  L 476.28 157.752  L 27.72 157.752  z " clip-path="url(#p5bcef58453)" fill="#0b4c9c" stroke="#0a3f82" stroke-width="0.8" stroke-linejoin="miter" />
+   </g>
+   <g id="patch_6">
+    <path d="M 256.981444 131.544  Q 266.112 131.544 275.242556 131.544  " fill="none" stroke="#0b4c9c" stroke-width="1.3" stroke-linecap="round" />
+    <path d="M 260.581444 133.344  L 256.981444 131.544  L 260.581444 129.744  z " fill="#0b4c9c" stroke="#0b4c9c" stroke-width="1.3" stroke-linecap="round" />
+    <path d="M 271.642556 129.744  L 275.242556 131.544  L 271.642556 133.344  z " fill="#0b4c9c" stroke="#0b4c9c" stroke-width="1.3" stroke-linecap="round" />
+   </g>
+   <g id="text_4">
+    <text x="266.112" y="120.610438" transform="rotate(-0 266.112 120.610438)" font-size="14px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#0b4c9c">Λ</text>
+   </g>
+   <g id="line2d_4">
+    <path d="M 255.528 145.656  L 276.696 92.232  " clip-path="url(#p5bcef58453)" fill="none" stroke="#4e9be8" stroke-opacity="0.45" stroke-width="1.1" stroke-linecap="square" />
+   </g>
+   <g id="line2d_5">
+    <path d="M 276.696 145.656  L 297.864 92.232  " clip-path="url(#p5bcef58453)" fill="none" stroke="#4e9be8" stroke-opacity="0.45" stroke-width="1.1" stroke-linecap="square" />
+   </g>
+   <g id="line2d_6">
+    <path d="M 297.864 145.656  L 319.032 92.232  " clip-path="url(#p5bcef58453)" fill="none" stroke="#4e9be8" stroke-opacity="0.45" stroke-width="1.1" stroke-linecap="square" />
+   </g>
+   <g id="line2d_7">
+    <path d="M 319.032 145.656  L 340.2 92.232  " clip-path="url(#p5bcef58453)" fill="none" stroke="#4e9be8" stroke-opacity="0.45" stroke-width="1.1" stroke-linecap="square" />
+   </g>
+   <g id="line2d_8">
+    <path d="M 340.2 145.656  L 361.368 92.232  " clip-path="url(#p5bcef58453)" fill="none" stroke="#4e9be8" stroke-opacity="0.45" stroke-width="1.1" stroke-linecap="square" />
+   </g>
+   <g id="line2d_9">
+    <path d="M 361.368 145.656  L 382.536 92.232  " clip-path="url(#p5bcef58453)" fill="none" stroke="#4e9be8" stroke-opacity="0.45" stroke-width="1.1" stroke-linecap="square" />
+   </g>
+   <g id="line2d_10">
+    <path d="M 382.536 145.656  L 403.704 92.232  " clip-path="url(#p5bcef58453)" fill="none" stroke="#4e9be8" stroke-opacity="0.45" stroke-width="1.1" stroke-linecap="square" />
+   </g>
+   <g id="line2d_11">
+    <path d="M 403.704 145.656  L 424.872 92.232  " clip-path="url(#p5bcef58453)" fill="none" stroke="#4e9be8" stroke-opacity="0.45" stroke-width="1.1" stroke-linecap="square" />
+   </g>
+   <g id="line2d_12">
+    <path d="M 424.872 145.656  L 446.04 92.232  " clip-path="url(#p5bcef58453)" fill="none" stroke="#4e9be8" stroke-opacity="0.45" stroke-width="1.1" stroke-linecap="square" />
+   </g>
+   <g id="line2d_13">
+    <path d="M 27.72 168.336  L 246.96 168.336  " clip-path="url(#p5bcef58453)" fill="none" stroke="#7fb2e0" stroke-opacity="0.85" stroke-width="7" stroke-linecap="round" />
+   </g>
+   <g id="patch_7">
+    <path d="M 78.12 168.336  Q 108.36 168.336 135.916718 168.336  " clip-path="url(#p5bcef58453)" fill="none" stroke="#0b4c9c" stroke-width="2.4" stroke-linecap="round" />
+    <path d="M 129.116718 164.936  L 135.916718 168.336  L 129.116718 171.736  z " clip-path="url(#p5bcef58453)" fill="#0b4c9c" stroke="#0b4c9c" stroke-width="2.4" stroke-linecap="round" />
+   </g>
+   <g id="text_5">
+    <text x="50.4" y="193.231445" transform="rotate(-0 50.4 193.231445)" font-size="12.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#0b4c9c">导模沿 +x 传播</text>
+   </g>
+   <g id="patch_8">
+    <path d="M 249.48 159.768  L 261.576 159.768  L 261.576 146.664  L 249.48 146.664  z " clip-path="url(#p5bcef58453)" fill="#e8823c" />
+   </g>
+   <g id="patch_9">
+    <path d="M 270.648 159.768  L 282.744 159.768  L 282.744 146.664  L 270.648 146.664  z " clip-path="url(#p5bcef58453)" fill="#e8823c" />
+   </g>
+   <g id="patch_10">
+    <path d="M 291.816 159.768  L 303.912 159.768  L 303.912 146.664  L 291.816 146.664  z " clip-path="url(#p5bcef58453)" fill="#e8823c" />
+   </g>
+   <g id="patch_11">
+    <path d="M 312.984 159.768  L 325.08 159.768  L 325.08 146.664  L 312.984 146.664  z " clip-path="url(#p5bcef58453)" fill="#e8823c" />
+   </g>
+   <g id="patch_12">
+    <path d="M 334.152 159.768  L 346.248 159.768  L 346.248 146.664  L 334.152 146.664  z " clip-path="url(#p5bcef58453)" fill="#e8823c" />
+   </g>
+   <g id="patch_13">
+    <path d="M 355.32 159.768  L 367.416 159.768  L 367.416 146.664  L 355.32 146.664  z " clip-path="url(#p5bcef58453)" fill="#e8823c" />
+   </g>
+   <g id="patch_14">
+    <path d="M 376.488 159.768  L 388.584 159.768  L 388.584 146.664  L 376.488 146.664  z " clip-path="url(#p5bcef58453)" fill="#e8823c" />
+   </g>
+   <g id="patch_15">
+    <path d="M 397.656 159.768  L 409.752 159.768  L 409.752 146.664  L 397.656 146.664  z " clip-path="url(#p5bcef58453)" fill="#e8823c" />
+   </g>
+   <g id="patch_16">
+    <path d="M 418.824 159.768  L 430.92 159.768  L 430.92 146.664  L 418.824 146.664  z " clip-path="url(#p5bcef58453)" fill="#e8823c" />
+   </g>
+   <g id="text_6">
+    <text x="45.36" y="89.749734" transform="rotate(-0 45.36 89.749734)" font-weight="600" font-size="15px" font-family="MiSans, sans-serif" text-anchor="start" fill="#0b4c9c">散射波同相叠加</text>
+   </g>
+   <g id="text_7">
+    <text x="45.36" y="104.023445" transform="rotate(-0 45.36 104.023445)" font-size="12.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">合成一束往斜上方走的光</text>
+   </g>
+   <g id="text_8">
+    <text x="42.84" y="241.615445" transform="rotate(-0 42.84 241.615445)" font-size="12.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#0b4c9c">相位条件</text>
+   </g>
+   <g id="text_9">
+    <text x="123.48" y="243.138766" transform="rotate(-0 123.48 243.138766)" font-size="17px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a" font-weight="500">n_eff − n_clad·sin θ = λ / Λ</text>
+   </g>
+   <g id="text_10">
+    <text x="370.44" y="241.446187" transform="rotate(-0 370.44 241.446187)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="start" fill="#e8823c">波长一变，匹配就散</text>
+   </g>
+   <g id="line2d_14">
+    <path d="M 304.8192 142.632  L 321.855055 76.759235  " clip-path="url(#p5bcef58453)" fill="none" stroke="#1f6fd0" stroke-opacity="0.72" stroke-width="2.4" stroke-linecap="round" />
+   </g>
+   <g id="line2d_15">
+    <path d="M 311.1696 142.632  L 328.205455 76.759235  " clip-path="url(#p5bcef58453)" fill="none" stroke="#1f6fd0" stroke-opacity="0.72" stroke-width="2.4" stroke-linecap="round" />
+   </g>
+   <g id="line2d_16">
+    <path d="M 317.52 142.632  L 334.555855 76.759235  " clip-path="url(#p5bcef58453)" fill="none" stroke="#1f6fd0" stroke-opacity="0.72" stroke-width="2.4" stroke-linecap="round" />
+   </g>
+   <g id="line2d_17">
+    <path d="M 323.8704 142.632  L 340.906255 76.759235  " clip-path="url(#p5bcef58453)" fill="none" stroke="#1f6fd0" stroke-opacity="0.72" stroke-width="2.4" stroke-linecap="round" />
+   </g>
+   <g id="line2d_18">
+    <path d="M 330.2208 142.632  L 347.256655 76.759235  " clip-path="url(#p5bcef58453)" fill="none" stroke="#1f6fd0" stroke-opacity="0.72" stroke-width="2.4" stroke-linecap="round" />
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p5bcef58453">
+   <rect x="0" y="0" width="504" height="272.16" />
+  </clipPath>
+ </defs>
+ <g id="text_1">
+  <text x="22.68" y="19.689961" transform="rotate(-0 22.68 19.689961)" font-size="13.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4e9be8">原理</text>
+ </g>
+ <g id="text_2" transform="translate(0 8)">
+  <text x="22.68" y="43.742891" transform="rotate(-0 22.68 43.742891)" font-size="25px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a" font-weight="600">光栅耦合器靠相位匹配工作</text>
+ </g>
+ <g id="line2d_1" transform="translate(0 8)">
+  <path d="M 22.68 53.424  L 65.52 53.424  " clip-path="url(#p5bcef58453)" fill="none" stroke="#1f6fd0" stroke-width="3.2" />
+ </g>
+</svg>

@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="504.000pt" height="328.480pt" viewBox="0.000 0.000 504.000 328.480" stroke-linejoin="round" stroke-linecap="butt" font-family="MiSans, sans-serif" font-weight="400">
+ <defs>
+  </defs>
+ <g id="figure_1" transform="translate(0 16)">
+  <g id="patch_1">
+   <path d="M 0 312.48  L 504 312.48  L 504 0  L 0 0  z " fill="#ffffff" />
+  </g>
+  <g id="axes_1">
+   <g id="text_3">
+    <text x="22.68" y="305.091375" transform="rotate(-0 22.68 305.091375)" font-size="10px" font-family="MiSans, sans-serif" text-anchor="start" fill="#8a9bab">本次均匀光栅 3D，λ = 1.55 μm；三项已测功率约 84%，余项未作模式与辐射分解。</text>
+   </g>
+   <g id="patch_2">
+    <path d="M 42.84 75.6  L 48.888 75.6  L 48.888 57.456  L 42.84 57.456  z " clip-path="url(#pbc195216a5)" fill="#0b4c9c" />
+   </g>
+   <g id="patch_3">
+    <path d="M 42.84 108.864  L 48.888 108.864  L 48.888 90.72  L 42.84 90.72  z " clip-path="url(#pbc195216a5)" fill="#1f6fd0" />
+   </g>
+   <g id="patch_4">
+    <path d="M 42.84 142.128  L 48.888 142.128  L 48.888 123.984  L 42.84 123.984  z " clip-path="url(#pbc195216a5)" fill="#5e93c4" />
+   </g>
+   <g id="patch_5">
+    <path d="M 42.84 175.392  L 48.888 175.392  L 48.888 157.248  L 42.84 157.248  z " clip-path="url(#pbc195216a5)" fill="#e8823c" />
+   </g>
+   <g id="patch_6">
+    <path d="M 42.84 234.36  L 200.96496 234.36  L 200.96496 198.072  L 42.84 198.072  z " clip-path="url(#pbc195216a5)" fill="#0b4c9c" stroke="#ffffff" stroke-width="1.6" stroke-linejoin="miter" />
+   </g>
+   <g id="patch_7">
+    <path d="M 200.96496 234.36  L 310.98312 234.36  L 310.98312 198.072  L 200.96496 198.072  z " clip-path="url(#pbc195216a5)" fill="#8fb6d9" stroke="#ffffff" stroke-width="1.6" stroke-linejoin="miter" />
+   </g>
+   <g id="patch_8">
+    <path d="M 310.98312 234.36  L 393.81048 234.36  L 393.81048 198.072  L 310.98312 198.072  z " clip-path="url(#pbc195216a5)" fill="#e8823c" stroke="#ffffff" stroke-width="1.6" stroke-linejoin="miter" />
+   </g>
+   <g id="patch_9">
+    <path d="M 393.81048 234.36  L 461.16 234.36  L 461.16 198.072  L 393.81048 198.072  z " clip-path="url(#pbc195216a5)" fill="#d9e3ec" stroke="#ffffff" stroke-width="1.6" stroke-linejoin="miter" />
+   </g>
+   <g id="text_4">
+    <text x="57.96" y="71.605734" transform="rotate(-0 57.96 71.605734)" font-weight="600" font-size="15px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">耦合效率</text>
+   </g>
+   <g id="text_5">
+    <text x="166.32" y="70.42093" transform="rotate(-0 166.32 70.42093)" font-size="11.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">进入波导目标基模的功率比例。</text>
+   </g>
+   <g id="text_6">
+    <text x="57.96" y="104.869734" transform="rotate(-0 57.96 104.869734)" font-weight="600" font-size="15px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">带宽</text>
+   </g>
+   <g id="text_7">
+    <text transform="translate(166.32 97.331359)" font-size="11.5px" font-family="MiSans, sans-serif" fill="#4a6076">本例 3 dB 宽 69 nm、1 dB 宽 39 nm；</text>
+    <text transform="translate(166.32 110.0385)" font-size="11.5px" font-family="MiSans, sans-serif" fill="#4a6076">均相对峰值定义。</text>
+   </g>
+   <g id="text_8">
+    <text x="57.96" y="138.133734" transform="rotate(-0 57.96 138.133734)" font-weight="600" font-size="15px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">净下行通量</text>
+   </g>
+   <g id="text_9">
+    <text x="166.32" y="136.94893" transform="rotate(-0 166.32 136.94893)" font-size="11.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">下方平面净功率，不等于材料吸收。</text>
+   </g>
+   <g id="text_10">
+    <text x="57.96" y="171.397734" transform="rotate(-0 57.96 171.397734)" font-weight="600" font-size="15px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">向上总反射</text>
+   </g>
+   <g id="text_11">
+    <text transform="translate(166.32 163.859359)" font-size="11.5px" font-family="MiSans, sans-serif" fill="#4a6076">高斯入射的总反射，</text>
+    <text transform="translate(166.32 176.5665)" font-size="11.5px" font-family="MiSans, sans-serif" fill="#4a6076">不等于光纤或激光器模式回波。</text>
+   </g>
+   <g id="text_12">
+    <text x="121.90248" y="221.293734" transform="rotate(-0 121.90248 221.293734)" font-weight="600" font-size="15px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#ffffff">38%</text>
+   </g>
+   <g id="text_13">
+    <text x="255.97404" y="221.293734" transform="rotate(-0 255.97404 221.293734)" font-weight="600" font-size="15px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#ffffff">26%</text>
+   </g>
+   <g id="text_14">
+    <text x="352.3968" y="221.293734" transform="rotate(-0 352.3968 221.293734)" font-weight="600" font-size="15px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#ffffff">20%</text>
+   </g>
+   <g id="text_15">
+    <text x="427.48524" y="221.293734" transform="rotate(-0 427.48524 221.293734)" font-weight="600" font-size="15px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#12263a">16%</text>
+   </g>
+   <g id="text_16">
+    <text x="42.84" y="190.514086" transform="rotate(-0 42.84 190.514086)" font-size="12.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">入射功率 100%</text>
+   </g>
+   <g id="text_17">
+    <text x="42.84" y="256.072172" transform="rotate(-0 42.84 256.072172)" font-size="12.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">进到波导的只有 38% —— 漏进衬底的那一块，比反射回去的还大</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pbc195216a5">
+   <rect x="0" y="0" width="504" height="312.48" />
+  </clipPath>
+ </defs>
+ <g id="text_1">
+  <text x="22.68" y="19.689961" transform="rotate(-0 22.68 19.689961)" font-size="13.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4e9be8">四个指标</text>
+ </g>
+ <g id="text_2" transform="translate(0 8)">
+  <text x="22.68" y="43.742891" transform="rotate(-0 22.68 43.742891)" font-size="25px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a" font-weight="600">入射功率到底去了哪</text>
+ </g>
+ <g id="line2d_1" transform="translate(0 8)">
+  <path d="M 22.68 53.424  L 65.52 53.424  " clip-path="url(#pbc195216a5)" fill="none" stroke="#1f6fd0" stroke-width="3.2" />
+ </g>
+</svg>

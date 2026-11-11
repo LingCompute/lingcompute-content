@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="504.000pt" height="298.240pt" viewBox="0.000 0.000 504.000 298.240" stroke-linejoin="round" stroke-linecap="butt" font-family="MiSans, sans-serif" font-weight="400">
+ <defs>
+  </defs>
+ <g id="figure_1" transform="translate(0 16)">
+  <g id="patch_1">
+   <path d="M 0 282.24  L 504 282.24  L 504 0  L 0 0  z " fill="#ffffff" />
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 30.744 234.36  L 243.936 234.36  Q 252 234.36 252 226.296  L 252 76.104  Q 252 68.04 243.936 68.04  L 30.744 68.04  Q 22.68 68.04 22.68 76.104  L 22.68 226.296  Q 22.68 234.36 30.744 234.36  z " clip-path="url(#pfb216f8d9c)" fill="#f1f7fe" />
+   </g>
+   <g id="patch_3">
+    <path d="M 270.144 234.36  L 473.256 234.36  Q 481.32 234.36 481.32 226.296  L 481.32 76.104  Q 481.32 68.04 473.256 68.04  L 270.144 68.04  Q 262.08 68.04 262.08 76.104  L 262.08 226.296  Q 262.08 234.36 270.144 234.36  z " clip-path="url(#pfb216f8d9c)" fill="#f1f7fe" />
+   </g>
+   <g id="patch_4">
+    <path d="M 65.52 206.64  L 239.4 206.64  L 239.4 178.92  L 65.52 178.92  z " clip-path="url(#pfb216f8d9c)" fill="#dce7f2" />
+   </g>
+   <g id="patch_5">
+    <path d="M 279.72 206.64  L 468.72 206.64  L 468.72 178.92  L 279.72 178.92  z " clip-path="url(#pfb216f8d9c)" fill="#dce7f2" />
+   </g>
+   <g id="text_3">
+    <text x="22.68" y="274.862312" transform="rotate(-0 22.68 274.862312)" font-size="10px" font-family="MiSans, sans-serif" text-anchor="start" fill="#8a9bab">示意图，未按真实比例。</text>
+   </g>
+   <g id="patch_6">
+    <path d="M 65.52 178.92  L 239.4 178.92  L 239.4 157.752  L 65.52 157.752  z " clip-path="url(#pfb216f8d9c)" fill="#0b4c9c" stroke="#0a3f82" stroke-width="0.8" stroke-linejoin="miter" />
+   </g>
+   <g id="patch_7">
+    <path d="M 279.72 178.92  L 468.72 178.92  L 468.72 157.752  L 279.72 157.752  z " clip-path="url(#pfb216f8d9c)" fill="#0b4c9c" stroke="#0a3f82" stroke-width="0.8" stroke-linejoin="miter" />
+   </g>
+   <g id="patch_8">
+    <path d="M 33.264 195.552  Q 49.392 195.552 63.060325 195.552  " clip-path="url(#pfb216f8d9c)" fill="none" stroke="#1f6fd0" stroke-width="2.2" stroke-linecap="round" />
+    <path d="M 54.260325 191.152  L 63.060325 195.552  L 54.260325 199.952  z " clip-path="url(#pfb216f8d9c)" fill="#1f6fd0" stroke="#1f6fd0" stroke-width="2.2" stroke-linecap="round" />
+   </g>
+   <g id="line2d_2">
+    <path d="M 327.6 140.616  L 365.4 140.616  " clip-path="url(#pfb216f8d9c)" fill="none" stroke-dasharray="4,3" stroke-dashoffset="0" stroke="#4e9be8" stroke-opacity="0.8" />
+   </g>
+   <g id="text_4">
+    <text x="36.792" y="87.071797" transform="rotate(-0 36.792 87.071797)" font-weight="600" font-size="19px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">端面耦合</text>
+   </g>
+   <g id="text_5">
+    <text x="36.792" y="99.991445" transform="rotate(-0 36.792 99.991445)" font-size="12.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">光水平进出，芯片边缘就是接口</text>
+   </g>
+   <g id="text_6">
+    <text x="276.192" y="87.071797" transform="rotate(-0 276.192 87.071797)" font-weight="600" font-size="19px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">光栅耦合</text>
+   </g>
+   <g id="text_7">
+    <text x="276.192" y="99.991445" transform="rotate(-0 276.192 99.991445)" font-size="12.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">光垂直进出，表面就是接口</text>
+   </g>
+   <g id="patch_9">
+    <path d="M 65.52 176.904  L 65.52 159.768  L 132.048 165.816  L 132.048 170.856  z " clip-path="url(#pfb216f8d9c)" fill="#e8823c" />
+   </g>
+   <g id="line2d_3">
+    <path d="M 132.048 168.336  L 229.32 168.336  " clip-path="url(#pfb216f8d9c)" fill="none" stroke="#e8823c" stroke-width="3.4" stroke-linecap="round" />
+   </g>
+   <g id="text_8">
+    <text x="33.264" y="209.694187" transform="rotate(-0 33.264 209.694187)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="start" fill="#1f6fd0">水平对准</text>
+   </g>
+   <g id="text_9">
+    <text x="153.72" y="222.798187" transform="rotate(-0 153.72 222.798187)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">需要解理、抛光，只能逐片测试</text>
+   </g>
+   <g id="line2d_4">
+    <path d="M 279.72 168.336  L 340.2 168.336  " clip-path="url(#pfb216f8d9c)" fill="none" stroke="#e8823c" stroke-width="3.4" stroke-linecap="round" />
+   </g>
+   <g id="patch_10">
+    <path d="M 339.192 159.768  L 346.752 159.768  L 346.752 149.688  L 339.192 149.688  z " clip-path="url(#pfb216f8d9c)" fill="#e8823c" />
+   </g>
+   <g id="patch_11">
+    <path d="M 352.8 159.768  L 360.36 159.768  L 360.36 149.688  L 352.8 149.688  z " clip-path="url(#pfb216f8d9c)" fill="#e8823c" />
+   </g>
+   <g id="patch_12">
+    <path d="M 366.408 159.768  L 373.968 159.768  L 373.968 149.688  L 366.408 149.688  z " clip-path="url(#pfb216f8d9c)" fill="#e8823c" />
+   </g>
+   <g id="patch_13">
+    <path d="M 380.016 159.768  L 387.576 159.768  L 387.576 149.688  L 380.016 149.688  z " clip-path="url(#pfb216f8d9c)" fill="#e8823c" />
+   </g>
+   <g id="patch_14">
+    <path d="M 393.624 159.768  L 401.184 159.768  L 401.184 149.688  L 393.624 149.688  z " clip-path="url(#pfb216f8d9c)" fill="#e8823c" />
+   </g>
+   <g id="patch_15">
+    <path d="M 407.232 159.768  L 414.792 159.768  L 414.792 149.688  L 407.232 149.688  z " clip-path="url(#pfb216f8d9c)" fill="#e8823c" />
+   </g>
+   <g id="patch_16">
+    <path d="M 420.84 159.768  L 428.4 159.768  L 428.4 149.688  L 420.84 149.688  z " clip-path="url(#pfb216f8d9c)" fill="#e8823c" />
+   </g>
+   <g id="patch_17">
+    <path d="M 434.448 159.768  L 442.008 159.768  L 442.008 149.688  L 434.448 149.688  z " clip-path="url(#pfb216f8d9c)" fill="#e8823c" />
+   </g>
+   <g id="text_10">
+    <text x="329.112" y="136.614187" transform="rotate(-0 329.112 136.614187)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="start" fill="#1f6fd0">14.5°</text>
+   </g>
+   <g id="text_11">
+    <text x="375.48" y="222.798187" transform="rotate(-0 375.48 222.798187)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">晶圆级探针测试，不需要解理</text>
+   </g>
+   <g id="line2d_5">
+    <path d="M 31.248 168.336  L 66.528 168.336  " clip-path="url(#pfb216f8d9c)" fill="none" stroke="#8a9bab" stroke-width="20.25" stroke-linecap="round" />
+    <path d="M 31.248 168.336  L 66.528 168.336  " clip-path="url(#pfb216f8d9c)" fill="none" stroke="#e6ecf3" stroke-width="17.85" stroke-linecap="round" />
+   </g>
+   <g id="line2d_6">
+    <path d="M 441.031694 121.056314  L 365.4 140.616  " clip-path="url(#pfb216f8d9c)" fill="none" stroke="#8a9bab" stroke-width="20.25" stroke-linecap="round" />
+    <path d="M 441.031694 121.056314  L 365.4 140.616  " clip-path="url(#pfb216f8d9c)" fill="none" stroke="#e6ecf3" stroke-width="17.85" stroke-linecap="round" />
+   </g>
+   <g id="line2d_7">
+    <path d="M 31.248 168.336  L 66.528 168.336  " clip-path="url(#pfb216f8d9c)" fill="none" stroke="#f3c08a" stroke-width="7.14" stroke-linecap="round" />
+   </g>
+   <g id="line2d_8">
+    <path d="M 441.031694 121.056314  L 365.4 140.616  " clip-path="url(#pfb216f8d9c)" fill="none" stroke="#f3c08a" stroke-width="7.14" stroke-linecap="round" />
+   </g>
+   <g id="line2d_9">
+    <path d="M 31.248 168.336  L 66.528 168.336  " clip-path="url(#pfb216f8d9c)" fill="none" stroke="#e8823c" stroke-opacity="0.85" stroke-width="2.38" stroke-linecap="round" />
+   </g>
+   <g id="line2d_10">
+    <path d="M 441.031694 121.056314  L 365.4 140.616  " clip-path="url(#pfb216f8d9c)" fill="none" stroke="#e8823c" stroke-opacity="0.85" stroke-width="2.38" stroke-linecap="round" />
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pfb216f8d9c">
+   <rect x="0" y="0" width="504" height="282.24" />
+  </clipPath>
+ </defs>
+ <g id="text_1">
+  <text x="22.68" y="19.717383" transform="rotate(-0 22.68 19.717383)" font-size="13.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4e9be8">入口之争</text>
+ </g>
+ <g id="text_2" transform="translate(0 8)">
+  <text x="22.68" y="43.742891" transform="rotate(-0 22.68 43.742891)" font-size="25px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a" font-weight="600">两种把光送进芯片的方式</text>
+ </g>
+ <g id="line2d_1" transform="translate(0 8)">
+  <path d="M 22.68 53.424  L 65.52 53.424  " clip-path="url(#pfb216f8d9c)" fill="none" stroke="#1f6fd0" stroke-width="3.2" />
+ </g>
+</svg>
