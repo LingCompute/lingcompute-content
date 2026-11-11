@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0.000 0.000 720.000 400.000" font-family="MiSans, sans-serif" font-weight="400" width="720.000pt" height="400.000pt">
+ <title>AWG 与 EDG 的定性占地趋势</title>
+ <rect width="720" height="400" fill="#ffffff" />
+ <text x="32" y="26" font-size="16" fill="#4e9be8">定性趋势，非本次仿真</text>
+ <text x="32" y="63" font-size="28" font-weight="600" fill="#12263a">通道少时 EDG 省地，通道多时 AWG 反超</text>
+ <path d="M32 81 H94" stroke="#1f6fd0" stroke-width="4" />
+ <path d="M104 116 V310 H662" fill="none" stroke="#4a6076" stroke-width="2" />
+ <text x="32" y="117" font-size="17" fill="#4a6076">占地</text>
+ <text x="32" y="141" font-size="14" fill="#8a9bab">（定性）</text>
+ <path d="M112 225 C268 205 440 183 651 164" fill="none" stroke="#1f6fd0" stroke-width="4" stroke-linecap="round" />
+ <path d="M112 280 C296 265 428 194 651 111" fill="none" stroke="#e8823c" stroke-width="4" stroke-linecap="round" />
+ <text x="552" y="206" font-size="20" font-weight="500" fill="#1f6fd0">AWG</text>
+ <text x="552" y="121" font-size="20" font-weight="500" fill="#e8823c">EDG</text>
+ <text x="112" y="340" font-size="17" fill="#4a6076">少</text>
+ <text x="652" y="340" text-anchor="end" font-size="17" fill="#4a6076">多</text>
+ <text x="385" y="340" text-anchor="middle" font-size="17" fill="#4a6076">通道数（定性）</text>
+ <text x="32" y="382" font-size="15" fill="#4a6076">曲线只表达图题中的趋势；交点、斜率与面积均不代表定量结果。</text>
+</svg>
