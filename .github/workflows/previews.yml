@@ -2,7 +2,7 @@ name: HTML previews
 
 on:
   push:
-    branches: [main, codex/html-previews]
+    branches: [main]
   pull_request_target:
     branches: [main]
     types: [opened, synchronize, reopened, closed, edited]
