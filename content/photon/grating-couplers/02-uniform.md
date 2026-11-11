@@ -8,7 +8,7 @@
 
 我们用的是学习中心里的 [Uniform linear grating coupler](https://www.lingcompute.com/photon/learning-center/examples/notebooks/GratingCoupler) 案例，SOI 平台，器件层 260 nm，部分刻蚀 160 nm，占空比 0.8，20 个齿。
 
-![图 5：均匀光栅的截面。器件层 260 nm，刻蚀 160 nm，20 个齿，光纤以 14.5° 斜入射。](figures/06-uniform-structure.png)
+![图 5：均匀光栅的截面。器件层 260 nm，刻蚀 160 nm，20 个齿，光纤以 14.5° 斜入射。](figures/06-uniform-structure.svg)
 
 ## 先算周期，再谈别的
 
@@ -29,7 +29,7 @@
 
 案例的做法很直接：周期取 600–630 nm 七档，光纤位置取 3–5 μm 十一档，一共 77 个 2D 仿真，跑一个批处理。每个仿真只做一件事——在波导端放一个模式监视器，量出有多少光变成了基模。
 
-![图 6：周期与光纤位置的二维扫描。颜色是 2D 耦合效率，白色轮廓是等效率线。](figures/07-uniform-sweep.png)
+![图 6：周期与光纤位置的二维扫描。颜色是 2D 耦合效率，白色轮廓是等效率线。](figures/07-uniform-sweep.svg)
 
 结果有意思的地方不在最优点，而在**形状**。
 
@@ -67,7 +67,7 @@
 - 向上反射总通量：**19.8%**（不是返回光纤模式的功率）
 - 三项之和之外约 16%，未做完整模式、辐射与闭合面分解
 
-![图 8：左：效率随波长的变化，虚线是 −1 dB 与 −3 dB 参考；右：三条去路随波长的此消彼长。](figures/09-uniform-spectrum.png)
+![图 8：左：效率随波长的变化，虚线是 −1 dB 与 −3 dB 参考；右：三条去路随波长的此消彼长。](figures/09-uniform-spectrum.svg)
 
 这张图说清了三件事。
 

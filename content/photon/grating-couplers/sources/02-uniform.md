@@ -18,12 +18,37 @@
 
 | 文件 | 原稿图注（待核查） |
 | --- | --- |
-| `figures/06-uniform-structure.png` | 图 5：均匀光栅的截面。器件层 260 nm，刻蚀 160 nm，20 个齿，光纤以 14.5° 斜入射。 |
-| `figures/07-uniform-sweep.png` | 图 6：周期与光纤位置的二维扫描。颜色是 2D 耦合效率，白色轮廓是等效率线。 |
+| `figures/06-uniform-structure.svg` | 图 5：均匀光栅的截面。器件层 260 nm，刻蚀 160 nm，20 个齿，光纤以 14.5° 斜入射。 |
+| `figures/07-uniform-sweep.svg` | 图 6：周期与光纤位置的二维扫描。颜色是 2D 耦合效率，白色轮廓是等效率线。 |
 | `figures/08-uniform-field.png` | 图 7：3D 求解的 ／Ey／ 分布。上：全线，可以看到入射光束、光栅区和 50 μm 锥形；下：放大到光栅区，齿上的散射与向下的泄漏都清楚。 |
 | `video/GratingCoupler-GUI-3D-crop.gif` | 动画：均匀光栅的 GUI 原生 3D Carpet 动图，field_xy 监视器（固定 z 的 XY 平面），Re(Ey)，λ = 1.55 μm。展示频域单频场的相位变化；起伏表示场值，不代表结构形变，也不是脉冲传播录像。 |
-| `figures/09-uniform-spectrum.png` | 图 8：左：效率随波长的变化，虚线是 −1 dB 与 −3 dB 参考；右：三条去路随波长的此消彼长。 |
+| `figures/09-uniform-spectrum.svg` | 图 8：左：效率随波长的变化，虚线是 −1 dB 与 −3 dB 参考；右：三条去路随波长的此消彼长。 |
 
-PNG/GIF 来自原制作工程；图注不是来源链或许可证明。合并前逐项确认示意/解析/仿真分类、原始案例、制作或裁剪关系、第三方权利条件。GUI 动画若为单频相位展示，不解释成脉冲传播；公司及第三方标识不纳入内容 CC 许可。本 PR 的公开审阅不授予额外的第三方权利。
+SVG 与保留的 PNG/GIF 来自原制作工程；图注不是来源链或许可证明。合并前逐项确认示意/解析/仿真分类、原始案例、制作或裁剪关系、第三方权利条件。GUI 动画若为单频相位展示，不解释成脉冲传播；公司及第三方标识不纳入内容 CC 许可。本 PR 的公开审阅不授予额外的第三方权利。
 
 原稿指纹（加入待审标识之前的 SHA256）：`531fcc9f69568150f7a8405b363dd3da99c3463918e12fc0321d381dd618a1a5`。
+
+## 可编辑图片迁移（2026-11-11）
+
+本篇示意图、流程图和曲线图以 SVG 作为发布源图，正文直接引用。复用原制作工程的矢量几何、曲线与文字，去掉 DTD、非视觉元数据和全局样式；文字保留为 `text` / `tspan`，统一使用 MiSans（小米）Regular、Medium、Semibold，字重为 400、500、600。字体来源及许可见[字体说明](../../../../docs/rights.md#字体)。原始字体文件不随源图分发，HTML 共用构建工具嵌入的官方原字库。图内排版按手机参考宽度复核，数值、单位、归一化与审核边界仍按本篇证据记录。
+
+| SVG 源图 | 迁移前 PNG SHA256 | 原工程 SVG SHA256 |
+| --- | --- | --- |
+| `figures/06-uniform-structure.svg` | `60b3f5f5371cbd106dfe6133df93220f77578817b7d43f82db6f69fe1ffb26c9` | `2de17052bf328aa452cc5c567e351b87c92dda231fcf3a3f32612e1163bd8c50` |
+| `figures/07-uniform-sweep.svg` | `03d6d936ceb02ac0235eefc2802dfaa8f06fef27719616eacb0457200228b32a` | `42c548fde916fe01c517bb6c47b15022c47d12ca3fbe9ecd95f77c41b86683aa` |
+| `figures/09-uniform-spectrum.svg` | `acffd770ecd08a67d8ecf49e6dc2e19612f99f5938f3b0d5e65765779ca45499` | `e42cb7d1ab462e822e664d3c8be7b5304036ca95511e3c280d207d7184c28be0` |
+
+下列数据图复用原工程绘图函数与保存的数据重新导出，色块及色标均为矢量对象，未重新运行求解：
+
+- `figures/07-uniform-sweep.svg`：数据 `gc_2d_sweep.npz`，SHA256 `c4a449823c485a4f23289517fac5441bc466644f9da95032eeafbb43bae749d0`；沿用 `fig_uniform_sweep` 的坐标、数值及色标。
+
+以下原生场图、采样结构图或 GUI 动画保留栅格格式；不把 PNG/GIF 嵌入 SVG 充当可编辑矢量图：
+
+- `figures/08-uniform-field.png`
+- `video/GratingCoupler-GUI-3D-crop.gif`
+
+公众号需要的 PNG 上传副本及手机长图由完整构建从 SVG 生成，仅留在忽略的 `build/`。SVG 原图与上传副本的路径、哈希均由素材清单记录。格式迁移与自查不构成专业批准，本次新提交仍须指定非作者业内审核者批准。
+
+## 本轮版面复核
+
+按 MiSans 实际文字占位调整了标题、图注与内容区的间隔，并扩展画布以保留完整坐标和标签；曲线和数值保留原有口径。手机预览与公众号上传副本来自同一 SVG。排版复核不替代逐图技术审核，最小字号与理解难度还需目标读者在真机上试读。
