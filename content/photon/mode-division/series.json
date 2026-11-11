@@ -5,7 +5,7 @@
   "articles": [
     {
       "slug": "05-comparison",
-      "authors": [],
+      "authors": ["Frank-DingYC"],
       "summary": "在模式纯度、透射、占地与工艺边界之间选路线。",
       "sources": [
         "https://www.lingcompute.com/photon/learning-center/examples/notebooks/8ChannelDemultiplexer",
