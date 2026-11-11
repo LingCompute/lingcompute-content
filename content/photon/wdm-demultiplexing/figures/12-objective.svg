@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="504.000pt" height="278.080pt" viewBox="0.000 0.000 504.000 278.080" stroke-linejoin="round" stroke-linecap="butt" font-family="MiSans, sans-serif" font-weight="400">
+ <defs>
+  </defs>
+ <g id="figure_1" transform="translate(0 16)">
+  <g id="patch_1">
+   <path d="M 0 262.08  L 504 262.08  L 504 0  L 0 0  z " fill="#ffffff" />
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 35.784 112.392  L 468.216 112.392  Q 476.28 112.392 476.28 104.328  L 476.28 89.208  Q 476.28 81.144 468.216 81.144  L 35.784 81.144  Q 27.72 81.144 27.72 89.208  L 27.72 104.328  Q 27.72 112.392 35.784 112.392  z " clip-path="url(#p88ceaa3152)" fill="#dcebfa" />
+   </g>
+   <g id="patch_3">
+    <path d="M 35.784 148.68  L 468.216 148.68  Q 476.28 148.68 476.28 140.616  L 476.28 125.496  Q 476.28 117.432 468.216 117.432  L 35.784 117.432  Q 27.72 117.432 27.72 125.496  L 27.72 140.616  Q 27.72 148.68 35.784 148.68  z " clip-path="url(#p88ceaa3152)" fill="#dcebfa" />
+   </g>
+   <g id="patch_4">
+    <path d="M 35.784 184.968  L 468.216 184.968  Q 476.28 184.968 476.28 176.904  L 476.28 161.784  Q 476.28 153.72 468.216 153.72  L 35.784 153.72  Q 27.72 153.72 27.72 161.784  L 27.72 176.904  Q 27.72 184.968 35.784 184.968  z " clip-path="url(#p88ceaa3152)" fill="#dcebfa" />
+   </g>
+   <g id="patch_5">
+    <path d="M 35.784 221.256  L 468.216 221.256  Q 476.28 221.256 476.28 213.192  L 476.28 198.072  Q 476.28 190.008 468.216 190.008  L 35.784 190.008  Q 27.72 190.008 27.72 198.072  L 27.72 213.192  Q 27.72 221.256 35.784 221.256  z " clip-path="url(#p88ceaa3152)" fill="#fcebdb" />
+   </g>
+   <g id="text_3">
+    <text x="41.328" y="101.168703" transform="rotate(-0 41.328 101.168703)" font-weight="600" font-size="13px" font-family="MiSans, sans-serif" text-anchor="start" fill="#0b4c9c">本通道功率</text>
+   </g>
+   <g id="text_4">
+    <text x="229.32" y="100.66632" transform="rotate(-0 229.32 100.66632)" font-size="11.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">在自己带宽内取 5 个频点求平均</text>
+   </g>
+   <g id="text_5">
+    <text x="41.328" y="137.456703" transform="rotate(-0 41.328 137.456703)" font-weight="600" font-size="13px" font-family="MiSans, sans-serif" text-anchor="start" fill="#0b4c9c">− 泄漏惩罚</text>
+   </g>
+   <g id="text_6">
+    <text x="229.32" y="137.000141" transform="rotate(-0 229.32 137.000141)" font-size="11.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">其余三波长漏进本口的平均功率 × 权重</text>
+   </g>
+   <g id="text_7">
+    <text x="41.328" y="173.744703" transform="rotate(-0 41.328 173.744703)" font-weight="600" font-size="13px" font-family="MiSans, sans-serif" text-anchor="start" fill="#0b4c9c">− 制造惩罚</text>
+   </g>
+   <g id="text_8">
+    <text x="229.32" y="173.43818" transform="rotate(-0 229.32 173.43818)" font-size="11.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">腐蚀/膨胀不变性，保证最小特征尺寸</text>
+   </g>
+   <g id="text_9">
+    <text x="41.328" y="210.032703" transform="rotate(-0 41.328 210.032703)" font-weight="600" font-size="13px" font-family="MiSans, sans-serif" text-anchor="start" fill="#e8823c">四个通道取平滑最小值</text>
+   </g>
+   <g id="text_10">
+    <text x="229.32" y="209.52493" transform="rotate(-0 229.32 209.52493)" font-size="11.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">保证最差通道也不掉队</text>
+   </g>
+   <g id="text_11">
+    <text transform="translate(27.72 232.301609)" font-size="11.5px" font-family="MiSans, sans-serif" fill="#8a9bab">前 1/3 迭代把 leak_weight 设为 0（先提透射），之后升到 1（再压串扰）——这是官方</text>
+    <text transform="translate(27.72 247.80325)" font-size="11.5px" font-family="MiSans, sans-serif" fill="#8a9bab">Notebook 的做法，不是通用最优。</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p88ceaa3152">
+   <rect x="0" y="0" width="504" height="262.08" />
+  </clipPath>
+ </defs>
+ <g id="text_1">
+  <text x="22.68" y="19.689961" transform="rotate(-0 22.68 19.689961)" font-size="13.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4e9be8">逆向设计</text>
+ </g>
+ <g id="text_2" transform="translate(0 8)">
+  <text x="22.68" y="43.742891" transform="rotate(-0 22.68 43.742891)" font-size="25px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a" font-weight="600">目标函数就是「把话说明白」</text>
+ </g>
+ <g id="line2d_1" transform="translate(0 8)">
+  <path d="M 22.68 53.424  L 65.52 53.424  " clip-path="url(#p88ceaa3152)" fill="none" stroke="#1f6fd0" stroke-width="3.2" />
+ </g>
+</svg>
