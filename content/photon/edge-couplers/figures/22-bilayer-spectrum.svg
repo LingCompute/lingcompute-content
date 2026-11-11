@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="504.000pt" height="230.899pt" viewBox="0.000 0.000 504.000 230.899" stroke-linejoin="round" stroke-linecap="butt" font-family="MiSans, sans-serif" font-weight="400">
+ <defs>
+  </defs>
+ <g id="figure_1" transform="translate(0 16)">
+  <g id="patch_1">
+   <path d="M 0 211.68  L 504 211.68  L 504 0  L 0 0  z " fill="#ffffff" />
+  </g>
+  <g id="axes_1">
+   </g>
+  <g id="axes_2">
+   <g id="patch_2">
+    <path d="M 55.44 175.6944  L 478.8 175.6944  L 478.8 65.6208  L 55.44 65.6208  z " fill="#ffffff" />
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_2">
+      <defs>
+       <path id="m165313f999" d="M 0 0  L 0 3  " stroke="#4a6076" />
+      </defs>
+      <g>
+       <use xlink:href="#m165313f999" x="55.44" y="175.6944" fill="#4a6076" stroke="#4a6076" />
+      </g>
+     </g>
+     <g id="text_3">
+      <text x="55.44" y="191.9144" transform="rotate(-0 55.44 191.9144)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">400</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#m165313f999" x="143.64" y="175.6944" fill="#4a6076" stroke="#4a6076" />
+      </g>
+     </g>
+     <g id="text_4">
+      <text x="143.64" y="191.9144" transform="rotate(-0 143.64 191.9144)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">450</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m165313f999" x="231.84" y="175.6944" fill="#4a6076" stroke="#4a6076" />
+      </g>
+     </g>
+     <g id="text_5">
+      <text x="231.84" y="191.9144" transform="rotate(-0 231.84 191.9144)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">500</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="#m165313f999" x="320.04" y="175.6944" fill="#4a6076" stroke="#4a6076" />
+      </g>
+     </g>
+     <g id="text_6">
+      <text x="320.04" y="191.9144" transform="rotate(-0 320.04 191.9144)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">550</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#m165313f999" x="408.24" y="175.6944" fill="#4a6076" stroke="#4a6076" />
+      </g>
+     </g>
+     <g id="text_7">
+      <text x="408.24" y="191.9144" transform="rotate(-0 408.24 191.9144)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">600</text>
+     </g>
+    </g>
+    <g id="text_8">
+     <text x="267.12" y="207.755806" transform="rotate(-0 267.12 207.755806)" font-size="11.5px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">波长 (nm)</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_7">
+      <defs>
+       <path id="m4de967216e" d="M 0 0  L -3 0  " stroke="#4a6076" />
+      </defs>
+      <g>
+       <use xlink:href="#m4de967216e" x="55.44" y="152.1072" fill="#4a6076" stroke="#4a6076" />
+      </g>
+     </g>
+     <g id="text_9">
+      <text x="48.94" y="156.9672" transform="rotate(-0 48.94 156.9672)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="end" fill="#4a6076">-6</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#m4de967216e" x="55.44" y="120.6576" fill="#4a6076" stroke="#4a6076" />
+      </g>
+     </g>
+     <g id="text_10">
+      <text x="48.94" y="125.5176" transform="rotate(-0 48.94 125.5176)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="end" fill="#4a6076">-4</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_9">
+      <g>
+       <use xlink:href="#m4de967216e" x="55.44" y="89.208" fill="#4a6076" stroke="#4a6076" />
+      </g>
+     </g>
+     <g id="text_11">
+      <text x="48.94" y="94.068" transform="rotate(-0 48.94 94.068)" font-size="12px" font-family="MiSans, sans-serif" text-anchor="end" fill="#4a6076">-2</text>
+     </g>
+    </g>
+    <g id="text_12">
+     <text x="32.777734" y="120.6576" transform="rotate(-90 32.777734 120.6576)" font-size="11.5px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">耦合损耗 (dB)</text>
+    </g>
+   </g>
+   <g id="line2d_10">
+    <path d="M 55.44 167.630869  L 63.9072 159.985736  L 72.3744 152.7522  L 80.8416 146.217161  L 89.3088 141.45682  L 97.776 138.250595  L 106.2432 135.754576  L 114.7104 133.061109  L 123.1776 129.483762  L 131.6448 124.964456  L 140.112 119.857366  L 148.5792 114.927353  L 157.0464 110.981853  L 165.5136 108.20094  L 173.9808 106.007285  L 182.448 103.255873  L 190.9152 99.644459  L 199.3824 96.049409  L 207.8496 93.534074  L 216.3168 91.71309  L 224.784 89.846955  L 233.2512 88.353329  L 241.7184 86.751824  L 250.1856 85.298606  L 258.6528 84.408565  L 267.12 83.23867  L 275.5872 82.553986  L 284.0544 81.67588  L 292.5216 81.284474  L 300.9888 80.602089  L 309.456 80.606444  L 317.9232 80.219376  L 326.3904 80.09412  L 334.8576 80.066299  L 343.3248 80.108347  L 351.792 80.241369  L 360.2592 80.316369  L 368.7264 80.637068  L 377.1936 80.886173  L 385.6608 81.183439  L 394.128 81.452184  L 402.5952 82.145065  L 411.0624 82.399167  L 419.5296 82.772525  L 427.9968 83.39996  L 436.464 84.095181  L 444.9312 84.382983  L 453.3984 85.047956  L 461.8656 85.534596  L 470.3328 86.545833  L 478.8 86.806865  " clip-path="url(#peedfd7e50a)" fill="none" stroke="#1f6fd0" stroke-width="2.6" stroke-linecap="square" />
+   </g>
+   <g id="line2d_11">
+    <path d="M 55.44 120.6576  L 478.8 120.6576  " clip-path="url(#peedfd7e50a)" fill="none" stroke-dasharray="3,3" stroke-dashoffset="0" stroke="#8a9bab" />
+   </g>
+   <g id="patch_3">
+    <path d="M 55.44 175.6944  L 55.44 65.6208  " fill="none" stroke="#d6e2ec" stroke-linejoin="miter" stroke-linecap="square" />
+   </g>
+   <g id="patch_4">
+    <path d="M 478.8 175.6944  L 478.8 65.6208  " fill="none" stroke="#d6e2ec" stroke-linejoin="miter" stroke-linecap="square" />
+   </g>
+   <g id="patch_5">
+    <path d="M 55.44 175.6944  L 478.8 175.6944  " fill="none" stroke="#d6e2ec" stroke-linejoin="miter" stroke-linecap="square" />
+   </g>
+   <g id="patch_6">
+    <path d="M 55.44 65.6208  L 478.8 65.6208  " fill="none" stroke="#d6e2ec" stroke-linejoin="miter" stroke-linecap="square" />
+   </g>
+   <g id="text_13">
+    <text x="62.496" y="118.29888" transform="rotate(-0 62.496 118.29888)" font-size="10.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#8a9bab">−4 dB</text>
+   </g>
+   <g id="patch_7">
+    <path d="M 277.683336 74.992836  Q 304.923332 77.440231 332.163327 79.887625  " fill="none" stroke="#e8823c" stroke-width="1.1" stroke-linecap="round" />
+   </g>
+   <g id="text_14">
+    <text x="178.92" y="74.26944" transform="rotate(-0 178.92 74.26944)" font-size="11.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#e8823c">558 nm：-1.42 dB</text>
+   </g>
+   <g id="patch_8">
+    <path d="M 90.800476 162.196002  Q 75.869288 164.745255 62.040187 167.106344  " fill="none" stroke="#4a6076" stroke-linecap="round" />
+    <path d="M 66.747682 168.534452  L 62.040187 167.106344  L 66.00717 164.197213  z " fill="#4a6076" stroke="#4a6076" stroke-linecap="round" />
+   </g>
+   <g id="text_15">
+    <text x="81.9" y="158.39712" transform="rotate(-0 81.9 158.39712)" font-size="11px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">400 nm 处掉到 −7 dB</text>
+   </g>
+   <g id="line2d_12">
+    <defs>
+     <path id="mcb8f69dd48" d="M 0 3.5  C 0.928211 3.5 1.81853 3.131218 2.474874 2.474874  C 3.131218 1.81853 3.5 0.928211 3.5 0  C 3.5 -0.928211 3.131218 -1.81853 2.474874 -2.474874  C 1.81853 -3.131218 0.928211 -3.5 0 -3.5  C -0.928211 -3.5 -1.81853 -3.131218 -2.474874 -2.474874  C -3.131218 -1.81853 -3.5 -0.928211 -3.5 0  C -3.5 0.928211 -3.131218 1.81853 -2.474874 2.474874  C -1.81853 3.131218 -0.928211 3.5 0 3.5  z " stroke="#e8823c" />
+    </defs>
+    <g clip-path="url(#peedfd7e50a)">
+     <use xlink:href="#mcb8f69dd48" x="334.152" y="80.066299" fill="#e8823c" stroke="#e8823c" />
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pbe400945d0">
+   <rect x="0" y="0" width="504" height="211.68" />
+  </clipPath>
+  <clipPath id="peedfd7e50a">
+   <rect x="55.44" y="65.6208" width="423.36" height="110.0736" />
+  </clipPath>
+ </defs>
+ <g id="text_1">
+  <text x="22.68" y="19.689961" transform="rotate(-0 22.68 19.689961)" font-size="13.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4e9be8">本次求解</text>
+ </g>
+ <g id="text_2" transform="translate(0 8)">
+  <text x="22.68" y="42.727344" transform="rotate(-0 22.68 42.727344)" font-size="22px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a" font-weight="600">峰值 −1.42 dB，但短波端掉得快</text>
+ </g>
+ <g id="line2d_1" transform="translate(0 8)">
+  <path d="M 22.68 53.424  L 65.52 53.424  " clip-path="url(#pbe400945d0)" fill="none" stroke="#1f6fd0" stroke-width="3.2" />
+ </g>
+</svg>

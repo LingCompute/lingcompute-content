@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="504.000pt" height="257.920pt" viewBox="0.000 0.000 504.000 257.920" stroke-linejoin="round" stroke-linecap="butt" font-family="MiSans, sans-serif" font-weight="400">
+ <defs>
+  </defs>
+ <g id="figure_1" transform="translate(0 16)">
+  <g id="patch_1">
+   <path d="M 0 241.92  L 504 241.92  L 504 0  L 0 0  z " fill="#ffffff" />
+  </g>
+  <g id="axes_1">
+   <g id="text_3">
+    <text x="22.68" y="234.542312" transform="rotate(-0 22.68 234.542312)" font-size="10px" font-family="MiSans, sans-serif" text-anchor="start" fill="#8a9bab">侧视示意，未按比例：两层均为 SiN；本模型未包含底部硅衬底</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_2">
+    <path d="M 58.464 181.44  L 445.536 181.44  L 445.536 86.688  L 58.464 86.688  z " clip-path="url(#p2956e6eaa3)" fill="#f1f7fe" />
+   </g>
+   <g id="patch_3">
+    <path d="M 82.656 131.04  L 328.608 131.04  L 328.608 124.992  L 82.656 124.992  z " clip-path="url(#p2956e6eaa3)" fill="#4e9be8" />
+   </g>
+   <g id="patch_4">
+    <path d="M 252 151.2  L 421.344 151.2  L 421.344 139.104  L 252 139.104  z " clip-path="url(#p2956e6eaa3)" fill="#0b4c9c" />
+   </g>
+   <g id="line2d_2">
+    <path d="M 66.528 128.016  L 247.968 128.016  L 328.608 145.152  L 425.376 145.152  " clip-path="url(#p2956e6eaa3)" fill="none" stroke="#e8823c" stroke-opacity="0.35" stroke-width="8" stroke-linecap="round" />
+   </g>
+   <g id="line2d_3">
+    <path d="M 381.024 120.96  L 381.024 138.096  " clip-path="url(#p2956e6eaa3)" fill="none" stroke="#0b4c9c" stroke-width="0.8" stroke-linecap="square" />
+   </g>
+   <g id="line2d_4">
+    <path d="M 252 176.4  L 252 172.368  " clip-path="url(#p2956e6eaa3)" fill="none" stroke="#4a6076" stroke-width="1.1" stroke-linecap="square" />
+   </g>
+   <g id="line2d_5">
+    <path d="M 328.608 176.4  L 328.608 172.368  " clip-path="url(#p2956e6eaa3)" fill="none" stroke="#4a6076" stroke-width="1.1" stroke-linecap="square" />
+   </g>
+   <g id="patch_5">
+    <path d="M 338.672496 145.152  Q 381.02539 145.152 421.142216 145.152  " fill="none" stroke="#e8823c" stroke-width="2" stroke-linecap="round" />
+    <path d="M 413.142216 141.152  L 421.142216 145.152  L 413.142216 149.152  z " fill="#e8823c" stroke="#e8823c" stroke-width="2" stroke-linecap="round" />
+   </g>
+   <g id="text_4">
+    <text x="82.656" y="100.8" transform="rotate(-0 82.656 100.8)" font-size="11.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a">光纤 → 薄上层：扩展端面模场</text>
+   </g>
+   <g id="text_5">
+    <text x="82.656" y="119.952" transform="rotate(-0 82.656 119.952)" font-size="11px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4e9be8">上层 SiN 75 nm</text>
+   </g>
+   <g id="text_6">
+    <text transform="translate(336.672 104.773344)" font-size="11px" font-family="MiSans, sans-serif" fill="#0b4c9c">下层 SiN</text>
+    <text transform="translate(336.672 116.928)" font-size="11px" font-family="MiSans, sans-serif" fill="#0b4c9c">150 nm</text>
+   </g>
+   <g id="patch_6">
+    <path d="M 191.52 134.154346  Q 191.52 135.070232 191.52 135.986118  " fill="none" stroke="#4a6076" stroke-linecap="round" />
+    <path d="M 187.52 142.154346  L 191.52 134.154346  L 195.52 142.154346  " fill="none" stroke="#4a6076" stroke-linecap="round" />
+    <path d="M 195.52 127.986118  L 191.52 135.986118  L 187.52 127.986118  " fill="none" stroke="#4a6076" stroke-linecap="round" />
+   </g>
+   <g id="text_7">
+    <text x="82.656" y="148.176" transform="rotate(-0 82.656 148.176)" font-size="10px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4a6076">层间距 100 nm</text>
+   </g>
+   <g id="patch_7">
+    <path d="M 253.453444 174.384  Q 290.304 174.384 327.154556 174.384  " fill="none" stroke="#4a6076" stroke-width="1.3" stroke-linecap="round" />
+    <path d="M 257.053444 176.184  L 253.453444 174.384  L 257.053444 172.584  z " fill="#4a6076" stroke="#4a6076" stroke-width="1.3" stroke-linecap="round" />
+    <path d="M 323.554556 172.584  L 327.154556 174.384  L 323.554556 176.184  z " fill="#4a6076" stroke="#4a6076" stroke-width="1.3" stroke-linecap="round" />
+   </g>
+   <g id="text_8">
+    <text x="290.304" y="170.422575" transform="rotate(-0 290.304 170.422575)" font-size="10px" font-family="MiSans, sans-serif" text-anchor="middle" fill="#4a6076">75 μm 过渡区</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pd0a6d7d616">
+   <rect x="0" y="0" width="504" height="241.92" />
+  </clipPath>
+  <clipPath id="p2956e6eaa3">
+   <rect x="50.4" y="72.576" width="403.2" height="120.96" />
+  </clipPath>
+ </defs>
+ <g id="text_1">
+  <text x="22.68" y="19.731094" transform="rotate(-0 22.68 19.731094)" font-size="13.5px" font-family="MiSans, sans-serif" text-anchor="start" fill="#4e9be8">模式转移示意</text>
+ </g>
+ <g id="text_2" transform="translate(0 8)">
+  <text x="22.68" y="42.727344" transform="rotate(-0 22.68 42.727344)" font-size="22px" font-family="MiSans, sans-serif" text-anchor="start" fill="#12263a" font-weight="600">薄上层接光，厚下层接手布线</text>
+ </g>
+ <g id="line2d_1" transform="translate(0 8)">
+  <path d="M 22.68 53.424  L 65.52 53.424  " clip-path="url(#pd0a6d7d616)" fill="none" stroke="#1f6fd0" stroke-width="3.2" />
+ </g>
+</svg>
