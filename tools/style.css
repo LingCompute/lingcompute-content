@@ -1,7 +1,7 @@
 :root{--brand:#0649AD;--ink:#2C4459;--heading:#12263A;--muted:#52687A}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;padding:32px 16px;background:#F3F7FC;color:var(--ink);font-family:"MiSans","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",sans-serif;font-size:17px;font-weight:400;line-height:1.75}
+body{margin:0;padding:32px 16px;background:#F3F7FC;color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","MiSans",sans-serif;font-size:17px;font-weight:400;line-height:1.75}
 article{max-width:750px;margin:auto;padding:42px 48px;background:white;border-radius:12px}
 h1{margin:0 0 24px;color:var(--heading);font-size:30px;line-height:1.45}
 h2{margin:44px 0 20px;padding-left:14px;border-left:4px solid var(--brand);color:var(--heading);font-size:23px;line-height:1.5}

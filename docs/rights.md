@@ -12,7 +12,7 @@
 
 ## 字体
 
-2026-11-10 核对[小米官方 MiSans 下载页及许可](https://hyperos.mi.com/font/en/download/)和[官方 FAQ](https://hyperos.mi.com/font/en/faq/)。FAQ 允许嵌入使用并要求注明使用 MiSans；许可不允许单独再分发字体文件或改编字体，但允许分发使用字体创作的作品。本库采用原始 Regular、Medium、Semibold WOFF2，页尾明确注明 MiSans（小米）。CSS 的 400、500、600 是本库的字重选择，不改写字体文件。
+2026-11-10 核对[小米官方 MiSans 下载页及许可](https://hyperos.mi.com/font/en/download/)和[官方 FAQ](https://hyperos.mi.com/font/en/faq/)。FAQ 允许嵌入使用并要求注明使用 MiSans；许可不允许单独再分发字体文件或改编字体，但允许分发使用字体创作的作品。本库默认使用系统界面字体，以原始 MiSans Regular、Medium、Semibold WOFF2 作为备用字体，页尾明确注明 MiSans（小米）。CSS 的 400、500、600 是本库的字重选择，不改写字体文件。
 
 字体文件从官方站点获取到忽略的 `.cache/fonts/`，不纳入 Git 或作为独立文件上传 CI 附件；独立预览 HTML 将其嵌入作品中，手机截图保留渲染结果。公众号内联 HTML 仅提供字体名称及常见回退字体，不含可下载字体文件。字体本身仍适用小米许可，不受本库 MIT 或 CC 许可覆盖；不得将嵌入字体抽出另行分发。字体版本由 `tools/fonts.py` 中逐文件 SHA256 固定，官方文件改变时需核查后单独更新。
 

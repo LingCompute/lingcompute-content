@@ -39,7 +39,7 @@ python tools/build.py
 
 打开生成的 `build/index.html` 查看文章。CI 的 `article-preview` 附件包含相同产物；下载后在本地打开。生成目录不入库。投稿方式见 [CONTRIBUTING.md](CONTRIBUTING.md)，默认排版与篇幅见 [编辑规范](docs/editorial.md)，审核流程见 [审核规则](docs/review.md)。
 
-默认字体为小米 MiSans：正文 Regular、小标题及表头 Medium、标题及强调 Semibold。`tools/fonts.py` 首次从[小米官方](https://hyperos.mi.com/font/en/download/)下载约 228 MB 字体包，仅在本机缓存三份未经修改、经 SHA256 校验的原始 WOFF2；后续复用缓存。字体嵌入独立 HTML 预览，不单独随仓库或 CI 附件分发。GitHub Markdown 的字体由 GitHub 控制；公众号编辑器和读者设备可能回退为苹方、微软雅黑或其他中文无衬线字体，发送前需真机检查。详见[字体与授权](docs/rights.md#字体)。
+默认使用设备的系统字体：先匹配系统界面字体（`system-ui`、`-apple-system`、`BlinkMacSystemFont`），中文依次匹配苹方、冬青黑体、微软雅黑、Noto Sans CJK SC；随后回退到小米 MiSans，最后使用通用无衬线字体。正文采用常规字重（400）、小标题及表头采用中等字重（500）、标题及强调采用半粗字重（600）；MiSans 对应使用 Regular、Medium、Semibold。`tools/fonts.py` 首次从[小米官方](https://hyperos.mi.com/font/en/download/)下载约 228 MB 字体包，仅在本机缓存三份未经修改、经 SHA256 校验的原始 WOFF2；后续复用缓存。备用字体嵌入独立 HTML 预览，不单独随仓库或 CI 附件分发。GitHub Markdown 的字体由 GitHub 控制；公众号编辑器可能过滤字体设置，发送前需真机检查。详见[字体与授权](docs/rights.md#字体)。
 
 | 目录 | 用途 |
 | --- | --- |

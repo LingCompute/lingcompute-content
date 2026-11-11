@@ -17,7 +17,7 @@ class FontTests(unittest.TestCase):
         self.data = b"original-font"
         self.weights = {"Regular": (400, hashlib.sha256(self.data).hexdigest())}
 
-    def test_missing_or_changed_font_cannot_silently_use_system_fallback(self):
+    def test_missing_or_changed_embedded_font_is_rejected(self):
         with patch.object(fonts, "WEIGHTS", self.weights):
             with self.assertRaisesRegex(ValueError, "fonts missing"):
                 fonts.font_style(self.cache)

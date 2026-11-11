@@ -265,7 +265,7 @@ def article_html(article, products, style, logo, reviewed, screens=None, navigat
         f'</header><main id="article-body">{article["body"]}</main>'
         f'<footer class="brand"><img src="{logo}" alt="灵算科技 LingCompute">'
         '<p>自有文章及插图：CC BY-NC 4.0；商用请另行联系。商标与另有标注的第三方材料除外。</p>'
-        '<p>字体：<a href="https://hyperos.mi.com/font/en/download/">MiSans（小米）</a>，按其字体许可使用。</p>'
+        '<p>默认系统字体；备用字体：<a href="https://hyperos.mi.com/font/en/download/">MiSans（小米）</a>，按其字体许可使用。</p>'
         f"<p>{review_text}</p>"
         f'<p><a href="{REPOSITORY}/blob/{SOURCE_REF}/{quote(article["path"].parent.relative_to(ROOT).as_posix())}/SOURCES.md">'
         "来源、指标口径与素材说明</a></p>"
@@ -384,7 +384,7 @@ def build():
     (BUILD / "index.html").write_text(document(
         "灵算技术内容库",
         "<article><h1>灵算技术内容库</h1>" + "".join(cards)
-        + '<footer class="brand">字体：<a href="https://hyperos.mi.com/font/en/download/">MiSans（小米）</a>，按其字体许可使用。</footer></article>',
+        + '<footer class="brand">默认系统字体；备用字体：<a href="https://hyperos.mi.com/font/en/download/">MiSans（小米）</a>，按其字体许可使用。</footer></article>',
         style,
     ))
     (BUILD / "report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
