@@ -59,7 +59,7 @@ python tools/catalog.py
 
 在线审阅优先打开 PR 检查列表中的 **html-preview → Details**，直接查看当前提交的 HTML 与手机长图；主分支文章见 [HTML 阅读版](https://lingcompute.github.io/lingcompute-content/)。流程及版本边界见 [HTML 预览说明](docs/previews.md)。
 
-本地可打开生成的 `build/index.html`。CI 的 `article-preview` 附件继续提供独立 HTML、公众号排版材料及清单；下载后可离线查看。生成物只由发布任务更新 `gh-pages`，不提交到源稿分支。投稿方式见 [CONTRIBUTING.md](CONTRIBUTING.md)，默认排版与篇幅见 [编辑规范](docs/editorial.md)，审核流程见 [审核规则](docs/review.md)。
+本地可打开生成的 `build/index.html`。CI 的 `article-preview` 附件继续提供独立 HTML、公众号排版材料及清单；下载后可离线查看。生成物只由发布任务更新 `gh-pages`，不提交到源稿分支。投稿方式见 [CONTRIBUTING.md](CONTRIBUTING.md)，默认排版与篇幅见 [编辑规范](docs/editorial.md)，公众号版式与生成要求见 [版式规范](docs/wechat-template.md)，审核流程见 [审核规则](docs/review.md)。
 
 首页标记区由 `series.json`、当前源稿和构建报告生成，提供读者前提、文章问题、预计阅读时长及长文提示。增删文章或修改正文、随文图后，重新构建并运行 `python tools/catalog.py`，将 README 更新随同一 PR 提交；CI 用 `python tools/catalog.py --check` 拦截遗漏或过期信息。
 
@@ -70,7 +70,7 @@ python tools/catalog.py
 | `content/<产品>/<系列>/` | Markdown、随文图与最小证据记录；主分支只收录已审内容 |
 | `production/` | 投稿者可选择附带的制作材料，独立于文章审核 |
 | `tools/`、`tests/` | 共享生成、检查与测试 |
-| `assets/brand/` | 公司标识及单独的商标说明 |
+| `assets/brand/` | 公司标识、公众号载体图（关注横幅、签名卡、阅读原文条）及商标说明 |
 | `build/` | 自动生成的预览和公众号排版材料 |
 
 自有工具代码采用 [MIT](LICENSE)，自有文章和插图采用 [CC BY-NC 4.0](LICENSE-CONTENT.md)，允许署名的非商业转载和改编，商业使用另行授权。商标、产品界面及另有标注的第三方材料按[各自权利说明](docs/rights.md)处理。来源页面和产品功能可能更新，请以当前官方文档为准。

@@ -42,9 +42,9 @@ update();
 
 def fingerprint(root):
     paths = list((root / "content").rglob("*")) + list((root / ".cache/fonts").glob("*.woff2"))
+    paths += list((root / "assets/brand").glob("*"))
     paths += [root / name for name in (
         "tools/style.css", "config/products.json", "reviews/legacy.json",
-        "assets/brand/lingcompute-horizontal.svg",
     )]
     return tuple(
         (path.relative_to(root).as_posix(), stat.st_mtime_ns, stat.st_size, stat.st_ino)
