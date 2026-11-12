@@ -51,6 +51,79 @@ class PreviewTests(unittest.TestCase):
         self.assertEqual(command.call_count, 1)
         self.assertEqual(list(self.root.iterdir()), [])
 
+    def render_cached(self, site, commit="a" * 40, renderer="b" * 40, number=7, changes=None):
+        directory = Path("previews") / str(number) / commit
+        style = self.root / "style.css"
+        style.write_text("body{color:black}")
+        return preview.render_snapshot(
+            site, directory, commit, renderer, None, style, "logo", number, changes,
+            cache=self.root / "cache",
+        )
+
+    def write_snapshot(self, root, site, directory, *arguments):
+        destination = site / directory / "index.html"
+        destination.parent.mkdir(parents=True)
+        destination.write_text("snapshot")
+        preview.asset(site, b"shared image", ".png")
+        return 1
+
+    def test_identical_snapshots_reuse_html_and_assets_without_rendering(self):
+        with patch.object(preview, "snapshot") as source, \
+                patch.object(preview, "render_articles", side_effect=self.write_snapshot) as render:
+            self.render_cached(self.root / "first")
+            self.render_cached(self.root / "second")
+        self.assertEqual(source.call_count, 1)
+        self.assertEqual(render.call_count, 1)
+        first = self.root / "first"
+        second = self.root / "second"
+        self.assertEqual(
+            {path.relative_to(first): path.read_bytes() for path in first.rglob("*") if path.is_file()},
+            {path.relative_to(second): path.read_bytes() for path in second.rglob("*") if path.is_file()},
+        )
+        self.assertFalse((second / "manifest.json").exists())
+
+    def test_source_tools_pr_identity_and_diff_each_invalidate_snapshot_cache(self):
+        with patch.object(preview, "snapshot"), \
+                patch.object(preview, "render_articles", side_effect=self.write_snapshot) as render:
+            self.render_cached(self.root / "original")
+            for index, change in enumerate((
+                {"commit": "c" * 40}, {"renderer": "d" * 40}, {"number": 8},
+                {"changes": [{"filename": "content/one.md", "status": "modified"}]},
+            )):
+                with self.subTest(change=change):
+                    self.render_cached(self.root / str(index), **change)
+            self.assertEqual(render.call_count, 5)
+
+    def test_invalid_snapshot_cache_is_rebuilt(self):
+        with patch.object(preview, "snapshot"), \
+                patch.object(preview, "render_articles", side_effect=self.write_snapshot) as render:
+            self.render_cached(self.root / "original")
+            entry = next((self.root / "cache").iterdir())
+            (entry / "manifest.json").write_text("incomplete")
+            self.render_cached(self.root / "repaired")
+        self.assertEqual(render.call_count, 2)
+
+    def test_cached_snapshot_cannot_introduce_links_or_executable_files(self):
+        for number, name in enumerate(("run.py", "linked.html"), start=7):
+            with self.subTest(name=name), patch.object(preview, "snapshot"), \
+                    patch.object(preview, "render_articles", side_effect=self.write_snapshot) as render:
+                self.render_cached(self.root / ("first-" + name), number=number)
+                entry = self.root / f"cache/{number}/site" / name
+                if name == "linked.html":
+                    entry.symlink_to(self.root / "style.css")
+                else:
+                    entry.write_text("unexpected executable")
+                self.render_cached(self.root / ("second-" + name), number=number)
+                self.assertEqual(render.call_count, 2)
+                self.assertFalse(entry.exists())
+
+    def test_failed_snapshot_is_not_cached(self):
+        with patch.object(preview, "snapshot"), \
+                patch.object(preview, "render_articles", side_effect=ValueError("invalid source")):
+            with self.assertRaisesRegex(ValueError, "invalid source"):
+                self.render_cached(self.root / "failed")
+        self.assertFalse((self.root / "cache").exists())
+
     def test_online_html_shares_assets_and_pins_preview_identity(self):
         style = preview.asset(self.root, b"body{color:black}", ".css")
         encoded = base64.b64encode(b"example raster").decode()
@@ -209,8 +282,10 @@ class PreviewTests(unittest.TestCase):
 
     def test_site_build_finishes_catalogue_and_manifest_with_no_open_prs(self):
         site = self.root / "site"
+        cache = self.root / "cache"
+        (cache / "7").mkdir(parents=True)
 
-        def main_snapshot(*arguments):
+        def main_snapshot(*arguments, **keywords):
             (site / "index.html").write_text(build.document("main", "<article>main</article>", ""))
             return 1
 
@@ -223,10 +298,11 @@ class PreviewTests(unittest.TestCase):
                 patch.object(preview, "prepare_assets", side_effect=assets), \
                 patch.object(preview, "render_snapshot", side_effect=main_snapshot), \
                 patch("playwright.sync_api.sync_playwright"):
-            preview.generate(site)
+            preview.generate(site, cache)
         manifest = json.loads((site / "previews.json").read_text())
         self.assertEqual(manifest, {"main": "a" * 40, "renderer": "b" * 40, "pulls": []})
         self.assertIn("待审预览目录", (site / "previews/index.html").read_text())
+        self.assertFalse((cache / "7").exists())
         preview.validate_site(site, manifest)
 
 
