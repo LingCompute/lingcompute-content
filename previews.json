@@ -1,5 +1,20 @@
 {
   "main": "68bffe0d388cfa6c77ebae5467b3fa7bddee8cc1",
   "renderer": "68bffe0d388cfa6c77ebae5467b3fa7bddee8cc1",
-  "pulls": []
+  "pulls": [
+    {
+      "number": 49,
+      "sha": "3d82142e0b1dddea02a39cd4819a78b4a2509e75",
+      "path": "previews/49/3d82142e0b1dddea02a39cd4819a78b4a2509e75/",
+      "state": "success",
+      "articles": 0
+    },
+    {
+      "number": 48,
+      "sha": "c990b07d5391797bf743abb578e1263b943e28eb",
+      "path": "previews/48/c990b07d5391797bf743abb578e1263b943e28eb/",
+      "state": "success",
+      "articles": 0
+    }
+  ]
 }
