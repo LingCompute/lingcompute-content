@@ -182,11 +182,41 @@ def prepare_assets(site, page, root=ROOT):
     return style_path, logo
 
 
-def render_snapshot(site, directory, commit, renderer, page, style_path, logo, number=None, changes=None):
+def render_snapshot(site, directory, commit, renderer, page, style_path, logo, number=None, changes=None,
+                    cache=None):
+    cached = cache / ("main" if number is None else str(number)) if cache is not None else None
+    identity = hashlib.sha256(json.dumps(
+        [commit, renderer, number, changes, directory.as_posix(), style_path.name, logo],
+        sort_keys=True,
+    ).encode()).hexdigest()
+    if cached is not None and (cached / "manifest.json").is_file():
+        try:
+            manifest = json.loads((cached / "manifest.json").read_text())
+            if manifest["identity"] == identity:
+                validate_site(cached / "site", {"main": commit, "renderer": renderer, "pulls": []})
+                if not (cached / "site" / directory / "index.html").is_file():
+                    raise ValueError("Cached snapshot index is missing")
+                if type(manifest["articles"]) is not int or manifest["articles"] < 0:
+                    raise ValueError("Invalid cached article count")
+                shutil.copytree(cached / "site", site, dirs_exist_ok=True)
+                print(f"Reused snapshot: {number or 'main'} {commit[:7]}", flush=True)
+                return manifest["articles"]
+        except (ValueError, OSError, KeyError, TypeError) as error:
+            print(f"Ignoring invalid snapshot cache: {error}", flush=True)
     with tempfile.TemporaryDirectory() as temporary:
         root = Path(temporary).resolve()
         snapshot(commit, root)
-        return render_articles(root, site, directory, commit, renderer, page, style_path, logo, number, changes)
+        rendered = root / "site"
+        (rendered / "assets").mkdir(parents=True)
+        shutil.copyfile(style_path, rendered / "assets" / style_path.name)
+        count = render_articles(root, rendered, directory, commit, renderer, page, style_path, logo, number, changes)
+        shutil.copytree(rendered, site, dirs_exist_ok=True)
+        if cached is not None:
+            if cached.exists():
+                shutil.rmtree(cached)
+            shutil.copytree(rendered, cached / "site")
+            (cached / "manifest.json").write_text(json.dumps({"identity": identity, "articles": count}))
+        return count
 
 
 def render_articles(root, site, directory, commit, renderer, page, style_path, logo,
@@ -265,7 +295,7 @@ def render_articles(root, site, directory, commit, renderer, page, style_path, l
     return len(articles)
 
 
-def generate(site):
+def generate(site, cache=None):
     from playwright.sync_api import Error, sync_playwright
     try:
         from . import build
@@ -285,7 +315,7 @@ def generate(site):
         browser = playwright.chromium.launch(channel="chromium")
         page = browser.new_page(viewport={"width": 390, "height": 844}, device_scale_factor=1)
         style_path, logo = prepare_assets(site, page)
-        count = render_snapshot(site, Path("."), main, renderer, page, style_path, logo)
+        count = render_snapshot(site, Path("."), main, renderer, page, style_path, logo, cache=cache)
         print(f"main {main[:7]}: {count} articles", flush=True)
         for pull in pending:
             number, commit = pull["number"], pull["head"]["sha"]
@@ -295,7 +325,8 @@ def generate(site):
             record = {"number": number, "sha": commit, "path": directory.as_posix() + "/"}
             try:
                 changes = pull_files(pull)
-                count = render_snapshot(site, directory, commit, renderer, page, style_path, logo, number, changes)
+                count = render_snapshot(site, directory, commit, renderer, page, style_path, logo, number, changes,
+                                        cache=cache)
                 record["state"] = "success"
                 record["articles"] = count
                 print(f"PR #{number} {commit[:7]}: {count} changed articles", flush=True)
@@ -327,6 +358,11 @@ def generate(site):
     size = sum(path.stat().st_size for path in site.rglob("*") if path.is_file())
     if size > 900 * 1024 * 1024:
         raise ValueError("Generated site exceeds the 900 MiB budget")
+    if cache is not None and cache.exists():
+        active = {"main", *(str(pull["number"]) for pull in pending)}
+        for entry in cache.iterdir():
+            if entry.is_dir() and entry.name not in active:
+                shutil.rmtree(entry)
     print(f"Site: {size / 1024 ** 2:.1f} MiB", flush=True)
 
 
@@ -415,5 +451,9 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("operation", choices=["build", "publish"])
     parser.add_argument("--output", type=Path, default=ROOT / "build/site")
+    parser.add_argument("--cache", type=Path)
     options = parser.parse_args()
-    (generate if options.operation == "build" else publish)(options.output.resolve())
+    if options.operation == "build":
+        generate(options.output.resolve(), options.cache.resolve() if options.cache is not None else None)
+    else:
+        publish(options.output.resolve())
