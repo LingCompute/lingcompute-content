@@ -21,18 +21,20 @@
 
 | 文件 | 制作与解释边界 |
 | --- | --- |
-| `figures/01-application.png` | 本项目原创应用解释图，线长和亮度不表示功率 |
-| `figures/03-metrics.png` | 本项目教学图，数字为人为示例，不是仿真 |
-| `figures/02-three-families.png` | 从三个官方案例对应模型提取几何后由本项目绘制，缩略图比例不统一 |
+| `figures/01-application.svg` | 本项目原创应用解释图，线长和亮度不表示功率 |
+| `figures/03-metrics.svg` | 本项目教学图，数字为人为示例，不是仿真 |
+| `figures/02-three-families.svg` | 从三个官方案例对应模型提取几何后由本项目绘制，缩略图比例不统一 |
 | `figures/04-y-junction.png` | 本项目 FDTD 结果重绘，约 1.55 μm，频域总 `\|E\|²` |
-| `figures/12-supermode.png` | 双高斯峰构造的偶奇场教学示意，不是实际截面的数值超模 |
-| `figures/11-coupler-length.png` | 理想无损、相位匹配模型的解析功率曲线 |
-| `figures/13-mismatch.png` | 固定 κ 改变 Δβ 的解析示例，不是几何扫描 |
-| `figures/15-sensitivity.png` | 单点标定及指数间距示例，不是间距扫描 FDTD |
+| `figures/12-supermode.svg` | 双高斯峰构造的偶奇场教学示意，不是实际截面的数值超模 |
+| `figures/11-coupler-length.svg` | 理想无损、相位匹配模型的解析功率曲线 |
+| `figures/13-mismatch.svg` | 固定 κ 改变 Δβ 的解析示例，不是几何扫描 |
+| `figures/15-sensitivity.svg` | 单点标定及指数间距示例，不是间距扫描 FDTD |
 | `figures/05-directional-coupler.png` | 本项目 FDTD 结果重绘，约 1.5505 μm，频域总 `\|E\|²` 与同模型介电结构 |
-| `figures/14-validation.png` | 读取本项目两端基模复振幅，功率占比与相对相位；直通占比低于 1% 的点标灰 |
+| `figures/14-validation.svg` | 读取本项目两端基模复振幅，功率占比与相对相位；直通占比低于 1% 的点标灰 |
 | `video/YJunction-GUI-3D-crop.gif` | 同名无 `-crop` GUI 原生导出件经裁剪、缩放、补白和量化；Re(Ey)，约 1.55 μm |
 | `video/DirectionalCoupler-GUI-3D-crop.gif` | 同上；Re(Ey)，约 1.55049 μm |
+
+示意图与数据图以 SVG 为随文源图，由本地 matplotlib 脚本生成：导出后去掉 DOCTYPE、`metadata` 与全局样式表，把 `*{stroke-linejoin…}` 提升为根元素展示属性，样式写成展示属性，文字保留为 `<text>` 而不转轮廓。图内字体为小米 MiSans（Regular / Medium / Semibold），字体文件不入库、不随图分发；公众号上传副本由构建从 SVG 渲染生成，不单独维护。仿真场图（`04-y-junction.png`、`05-directional-coupler.png`）是原生栅格：场按监视器真实网格重采样后绘制，避免非均匀网格被线性拉伸而与器件轮廓错位。
 
 GIF 是 3D Carpet 单频场的相位变化演示，起伏表示场值，不是器件形变或脉冲传播。裁剪版不保证完整底部色标，定量读数以正文及静态结果为准。没有把第三方现成 PNG 当成本项目重绘。
 

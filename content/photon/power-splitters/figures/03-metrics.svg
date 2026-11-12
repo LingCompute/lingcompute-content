@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+
+<svg stroke-linejoin="round" stroke-linecap="butt" xmlns:xlink="http://www.w3.org/1999/xlink" width="504pt" height="330.12pt" viewBox="0 0 504 330.12" xmlns="http://www.w3.org/2000/svg">
+ 
+ <defs>
+  
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 330.12 
+L 504 330.12 
+L 504 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 49.392 284.76 
+L 60.48 284.76 
+L 60.48 277.2 
+L 49.392 277.2 
+z
+" clip-path="url(#p633f31b908)" style="fill: #0b4c9c"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 107.352 284.76 
+L 118.44 284.76 
+L 118.44 277.2 
+L 107.352 277.2 
+z
+" clip-path="url(#p633f31b908)" style="fill: #4e9be8"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 165.312 284.76 
+L 176.4 284.76 
+L 176.4 277.2 
+L 165.312 277.2 
+z
+" clip-path="url(#p633f31b908)" style="fill: url(#h95b45424fb); stroke: #c9d6e2; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 22.68 53.424 
+L 65.52 53.424 
+" clip-path="url(#p633f31b908)" style="fill: none; stroke: #1f6fd0; stroke-width: 3.2"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 47.88 73.08 
+L 389.088 73.08 
+" clip-path="url(#p633f31b908)" style="fill: none; stroke: #cbd9e6; stroke-width: 1.2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 47.88 75.096 
+L 47.88 71.064 
+" clip-path="url(#p633f31b908)" style="fill: none; stroke: #cbd9e6; stroke-width: 1.2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 218.484 75.096 
+L 218.484 71.064 
+" clip-path="url(#p633f31b908)" style="fill: none; stroke: #cbd9e6; stroke-width: 1.2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_5">
+    <path d="M 389.088 75.096 
+L 389.088 71.064 
+" clip-path="url(#p633f31b908)" style="fill: none; stroke: #cbd9e6; stroke-width: 1.2; stroke-linecap: square"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 13.5px; font-family: 'MiSans'; text-anchor: start; fill: #4e9be8" x="22.68" y="18.6975" transform="rotate(-0 22.68 18.6975)">指标 · 分光比与总透射</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 25px; font-family: 'MiSans'; text-anchor: start; fill: #12263a" x="22.68" y="42.817109" transform="rotate(-0 22.68 42.817109)">分得均匀，和分得多，是两件事</text>
+   </g>
+   <g id="patch_5">
+    <path d="M 47.88 127.512 
+L 211.65984 127.512 
+L 211.65984 105.336 
+L 47.88 105.336 
+z
+" clip-path="url(#p633f31b908)" style="fill: #0b4c9c"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 211.65984 127.512 
+L 375.43968 127.512 
+L 375.43968 105.336 
+L 211.65984 105.336 
+z
+" clip-path="url(#p633f31b908)" style="fill: #4e9be8"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 375.43968 127.512 
+L 389.088 127.512 
+L 389.088 105.336 
+L 375.43968 105.336 
+z
+" clip-path="url(#p633f31b908)" style="fill: url(#h95b45424fb); stroke: #c9d6e2; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 47.88 190.008 
+L 129.76992 190.008 
+L 129.76992 167.832 
+L 47.88 167.832 
+z
+" clip-path="url(#p633f31b908)" style="fill: #0b4c9c"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 129.76992 190.008 
+L 211.65984 190.008 
+L 211.65984 167.832 
+L 129.76992 167.832 
+z
+" clip-path="url(#p633f31b908)" style="fill: #4e9be8"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 211.65984 190.008 
+L 389.088 190.008 
+L 389.088 167.832 
+L 211.65984 167.832 
+z
+" clip-path="url(#p633f31b908)" style="fill: url(#h95b45424fb); stroke: #c9d6e2; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 47.88 252.504 
+L 283.31352 252.504 
+L 283.31352 230.328 
+L 47.88 230.328 
+z
+" clip-path="url(#p633f31b908)" style="fill: #0b4c9c"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 283.31352 252.504 
+L 382.26384 252.504 
+L 382.26384 230.328 
+L 283.31352 230.328 
+z
+" clip-path="url(#p633f31b908)" style="fill: #4e9be8"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 382.26384 252.504 
+L 389.088 252.504 
+L 389.088 230.328 
+L 382.26384 230.328 
+z
+" clip-path="url(#p633f31b908)" style="fill: url(#h95b45424fb); stroke: #c9d6e2; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 13.5px; font-family: 'MiSans'; text-anchor: middle; fill: #ffffff" x="129.76992" y="120.0015" transform="rotate(-0 129.76992 120.0015)">48</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 13.5px; font-family: 'MiSans'; text-anchor: middle; fill: #ffffff" x="293.54976" y="120.0015" transform="rotate(-0 293.54976 120.0015)">48</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 13.5px; font-family: 'MiSans'; text-anchor: middle; fill: #ffffff" x="88.82496" y="182.4975" transform="rotate(-0 88.82496 182.4975)">24</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 13.5px; font-family: 'MiSans'; text-anchor: middle; fill: #ffffff" x="170.71488" y="182.4975" transform="rotate(-0 170.71488 182.4975)">24</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 12.5px; font-family: 'MiSans'; text-anchor: middle; fill: #7c8fa1" x="300.37392" y="182.2325" transform="rotate(-0 300.37392 182.2325)">损耗 52</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 13.5px; font-family: 'MiSans'; text-anchor: middle; fill: #ffffff" x="165.59676" y="244.9935" transform="rotate(-0 165.59676 244.9935)">69</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 13.5px; font-family: 'MiSans'; text-anchor: middle; fill: #ffffff" x="332.78868" y="244.9935" transform="rotate(-0 332.78868 244.9935)">29</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 11px; font-family: 'MiSans'; text-anchor: middle; fill: #8a9bab" x="47.88" y="67.931" transform="rotate(-0 47.88 67.931)">0</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 11px; font-family: 'MiSans'; text-anchor: middle; fill: #8a9bab" x="218.484" y="67.931" transform="rotate(-0 218.484 67.931)">50</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 11px; font-family: 'MiSans'; text-anchor: middle; fill: #8a9bab" x="389.088" y="67.931" transform="rotate(-0 389.088 67.931)">100</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 11px; font-family: 'MiSans'; text-anchor: start; fill: #8a9bab" x="404.208" y="67.931" transform="rotate(-0 404.208 67.931)">输入功率（份）</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 14px; font-family: 'MiSans'; text-anchor: start; fill: #12263a" x="47.88" y="96.438562" transform="rotate(-0 47.88 96.438562)">① 均匀分光，几乎没损失</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 15px; font-family: 'MiSans'; text-anchor: start; fill: #0b4c9c" x="404.208" y="116.85084" transform="rotate(-0 404.208 116.85084)">50 ∶ 50</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 11px; font-family: 'MiSans'; text-anchor: start; fill: #4a6076" x="404.208" y="125.9918" transform="rotate(-0 404.208 125.9918)">96% · 0.18 dB</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 14px; font-family: 'MiSans'; text-anchor: start; fill: #12263a" x="47.88" y="158.934562" transform="rotate(-0 47.88 158.934562)">② 也是均匀分光，一半丢了</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 15px; font-family: 'MiSans'; text-anchor: start; fill: #0b4c9c" x="404.208" y="179.34684" transform="rotate(-0 404.208 179.34684)">50 ∶ 50</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 11px; font-family: 'MiSans'; text-anchor: start; fill: #4a6076" x="404.208" y="188.4878" transform="rotate(-0 404.208 188.4878)">48% · 3.2 dB</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 14px; font-family: 'MiSans'; text-anchor: start; fill: #12263a" x="47.88" y="221.395563" transform="rotate(-0 47.88 221.395563)">③ 分得不均，但基本都到了</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 15px; font-family: 'MiSans'; text-anchor: start; fill: #0b4c9c" x="404.208" y="241.84284" transform="rotate(-0 404.208 241.84284)">70 ∶ 30</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 11px; font-family: 'MiSans'; text-anchor: start; fill: #4a6076" x="404.208" y="250.9838" transform="rotate(-0 404.208 250.9838)">98% · 0.09 dB</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 11.5px; font-family: 'MiSans'; text-anchor: start; fill: #4a6076" x="64.512" y="284.0275" transform="rotate(-0 64.512 284.0275)">输出 1</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 11.5px; font-family: 'MiSans'; text-anchor: start; fill: #4a6076" x="122.472" y="284.0275" transform="rotate(-0 122.472 284.0275)">输出 2</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 11.5px; font-family: 'MiSans'; text-anchor: start; fill: #4a6076" x="180.432" y="284.0275" transform="rotate(-0 180.432 284.0275)">没到这两个端口的功率</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 11.5px; font-family: 'MiSans'; text-anchor: start; fill: #8a9bab" x="22.68" y="313.0075" transform="rotate(-0 22.68 313.0075)">教学数值示例 · 不是本文案例的仿真数据</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p633f31b908">
+   <rect x="0" y="0" width="504" height="330.12"/>
+  </clipPath>
+ </defs>
+ <defs>
+  <pattern id="h95b45424fb" patternUnits="userSpaceOnUse" x="0" y="0" width="72" height="72">
+   <rect x="0" y="0" width="73" height="73" fill="#eff3f7"/>
+   <path d="M -36 36 
+L 36 -36 
+M -32 40 
+L 40 -32 
+M -28 44 
+L 44 -28 
+M -24 48 
+L 48 -24 
+M -20 52 
+L 52 -20 
+M -16 56 
+L 56 -16 
+M -12 60 
+L 60 -12 
+M -8 64 
+L 64 -8 
+M -4 68 
+L 68 -4 
+M 0 72 
+L 72 0 
+M 4 76 
+L 76 4 
+M 8 80 
+L 80 8 
+M 12 84 
+L 84 12 
+M 16 88 
+L 88 16 
+M 20 92 
+L 92 20 
+M 24 96 
+L 96 24 
+M 28 100 
+L 100 28 
+M 32 104 
+L 104 32 
+M 36 108 
+L 108 36 
+" style="fill: #c9d6e2; stroke: #c9d6e2; stroke-width: 1.0; stroke-linecap: butt; stroke-linejoin: miter"/>
+  </pattern>
+ </defs>
+</svg>
