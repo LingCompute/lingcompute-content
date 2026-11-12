@@ -51,7 +51,7 @@ def source_file(mode, kind, name):
     if (mode != "100644" or kind != "blob" or path.is_absolute()
             or ".." in path.parts or not path.parts or path.parts[0] != "content"):
         raise ValueError(f"Unsafe content entry: {name}")
-    return path.suffix.lower() in {".md", ".json", ".png", ".jpg", ".jpeg", ".gif", ".webp"}
+    return path.suffix.lower() in {".md", ".json", ".svg", ".png", ".jpg", ".jpeg", ".gif", ".webp"}
 
 
 def snapshot(commit, destination):

@@ -16,8 +16,10 @@ from PIL import Image
 
 try:
     from .fonts import font_style
+    from .svg import image as svg_image
 except ImportError:
     from fonts import font_style
+    from svg import image as svg_image
 
 ROOT = Path(__file__).resolve().parents[1]
 BUILD = ROOT / "build"
@@ -76,6 +78,7 @@ class ContentHTML(HTMLParser):
         self.assets = []
         self.text = []
         self.equations = 0
+        self.vectors = {}
 
     def handle_starttag(self, tag, attrs):
         values = dict(attrs)
@@ -88,7 +91,11 @@ class ContentHTML(HTMLParser):
                 raise ValueError("Article images must be inside their series directory")
             self.assets.append(path)
             self.text.append(alt)
-            self.parts.append(f'<img alt="{html.escape(alt, quote=True)}" src="{data_uri(path)}">')
+            source = f"vector:{len(self.assets)}" if path.suffix.lower() == ".svg" else data_uri(path)
+            image = f'<img alt="{html.escape(alt, quote=True)}" src="{source}">'
+            if path.suffix.lower() == ".svg":
+                self.vectors[image] = svg_image(path, alt, len(self.assets))
+            self.parts.append(image)
             return
         if tag == "a" and values.get("href"):
             target = values["href"]
@@ -155,6 +162,8 @@ def render_body(manuscript, base, root=ROOT, source_ref=SOURCE_REF, source_base=
         lambda match: match.group(1).replace("κ", '<span class="greek">κ</span>'),
         body,
     )
+    for placeholder, vector in parser.vectors.items():
+        body = body.replace(placeholder, vector)
     return body, parser
 
 
@@ -319,13 +328,13 @@ def build():
     report = []
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch(channel="chromium")
-        page = browser.new_page(viewport={"width": 390, "height": 844}, device_scale_factor=1)
+        page = browser.new_page(viewport={"width": 390, "height": 844}, device_scale_factor=2)
         logo_directory = BUILD / "assets"
         logo_directory.mkdir(exist_ok=True)
         logo_path = logo_directory / "lingcompute-horizontal.png"
         svg_uri = "data:image/svg+xml;base64," + base64.b64encode(brand.read_bytes()).decode()
         page.set_content(f'<img src="{svg_uri}" style="width:720px;height:auto">', wait_until="load")
-        page.locator("img").screenshot(path=str(logo_path), omit_background=True)
+        page.locator("img").screenshot(path=str(logo_path), omit_background=True, scale="css")
         logo = data_uri(logo_path)
         for article in articles:
             destination = BUILD / article["path"].relative_to(ROOT / "content").with_suffix(".html")
@@ -342,7 +351,29 @@ def build():
             page.evaluate("async () => { await document.fonts.ready; await Promise.all(Array.from(document.images, image => image.decode())); }")
             if page.evaluate("document.documentElement.scrollWidth > innerWidth + 1"):
                 raise ValueError(f"Horizontal overflow at reference viewport: {article['key']}")
-            page.screenshot(path=str(destination.with_suffix(".png")), full_page=True, animations="disabled")
+            page.screenshot(path=str(destination.with_suffix(".png")), full_page=True, animations="disabled", scale="css")
+            uploads = {}
+            vector_paths = [path for path in article["assets"] if path.suffix.lower() == ".svg"]
+            vectors = page.locator("svg.vector-image")
+            if vectors.count() != len(vector_paths):
+                raise ValueError(f"SVG source and rendered figure counts differ: {article['key']}")
+            for path in vector_paths:
+                vector = vectors.first
+                data = vector.screenshot(omit_background=True, animations="disabled", scale="device")
+                upload = logo_directory / (hashlib.sha256(data).hexdigest() + ".png")
+                upload.write_bytes(data)
+                vector.evaluate("""(node, source) => {
+                    const image = document.createElement("img");
+                    image.alt = node.getAttribute("aria-label");
+                    image.src = source;
+                    node.replaceWith(image);
+                }""", data_uri(upload))
+                uploads[path] = {
+                    "upload": upload.relative_to(BUILD).as_posix(),
+                    "upload_sha256": digest(upload),
+                    "upload_bytes": upload.stat().st_size,
+                }
+            page.evaluate("async () => { await Promise.all(Array.from(document.images, image => image.decode())); }")
             wechat = export_wechat(page)
             destination.with_suffix(".wechat.html").write_text(document(article["title"], wechat, ""))
             assets = [
@@ -351,6 +382,7 @@ def build():
                     "path": path.relative_to(ROOT).as_posix(),
                     "sha256": digest(path),
                     "bytes": path.stat().st_size,
+                    **uploads.get(path, {}),
                 }
                 for index, path in enumerate(article["assets"])
             ]
