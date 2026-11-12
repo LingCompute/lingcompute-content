@@ -1,6 +1,6 @@
 {
-  "main": "e8b97a54e657f179a5263291ab69748317425dbd",
-  "renderer": "e8b97a54e657f179a5263291ab69748317425dbd",
+  "main": "67b6c8281fc4601101020bdd1a3833aaa24cb9c5",
+  "renderer": "67b6c8281fc4601101020bdd1a3833aaa24cb9c5",
   "pulls": [
     {
       "number": 47,
@@ -8,13 +8,6 @@
       "path": "previews/47/4361181d0a23910889194272ef65174247761283/",
       "state": "success",
       "articles": 2
-    },
-    {
-      "number": 46,
-      "sha": "0ca5b9b8cab571e887ad1e19ac95ff163e3fa416",
-      "path": "previews/46/0ca5b9b8cab571e887ad1e19ac95ff163e3fa416/",
-      "state": "success",
-      "articles": 0
     },
     {
       "number": 38,
