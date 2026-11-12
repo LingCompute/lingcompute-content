@@ -32,6 +32,15 @@ class DevTests(unittest.TestCase):
         (self.root / "production/private.md").write_text("private")
         self.assertEqual(dev.fingerprint(self.root), changed)
 
+    def test_brand_assets_trigger_rebuild(self):
+        original = dev.fingerprint(self.root)
+        brand = self.root / "assets/brand"
+        brand.mkdir(parents=True)
+        (brand / "wechat-signature.png").write_bytes(b"png")
+        self.assertNotEqual(dev.fingerprint(self.root), original)
+        (brand / "wechat-signature.png").write_bytes(b"png2")
+        self.assertNotEqual(dev.fingerprint(self.root), original)
+
     def test_only_local_responses_receive_live_reload_script_and_csp(self):
         document = build.document("test", "<article>body</article>", "")
         live = dev.live_document(document, 7)
