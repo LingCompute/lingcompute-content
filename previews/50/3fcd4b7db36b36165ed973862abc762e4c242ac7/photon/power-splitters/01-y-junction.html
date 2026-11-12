@@ -1,0 +1,499 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; font-src data:; style-src 'self' 'unsafe-inline'; base-uri 'none'; form-action 'none'"><title>一束光，怎么被“掰”成两路？</title><link rel="stylesheet" href="../../../../../assets/581ac02fb5e3a7fefe5b73ef97500daf97bcf4295605ed0adfeb614ed1eec74e.css"><meta name="robots" content="noindex,nofollow"></head><body><article><aside class="meta"><p><strong>待审预览 · PR #50</strong> · <a href="https://github.com/LingCompute/lingcompute-content/pull/50">GitHub 记录</a></p><p>此版本尚待人审，不能作为发布批准。</p><details><summary>版本信息 · 源稿 3fcd4b7</summary><p>源稿版本：<code>3fcd4b7db36b36165ed973862abc762e4c242ac7</code></p><p>排版工具版本：<code>b18bdb8a8c07d81c8bf08df4776f45fd76cfb98c</code>。工具改动合并后生效。</p></details></aside><header class="meta"><p>构建预览 · 正式收录以主分支及PR审核记录为准</p><p>灵算光子 · 图解无源光子器件 · 功率分配</p><p>适合：具有光学基础、需要理解和选择集成光子器件的工程师与科研人员</p><p>本文解决：区分分光比和总透射，理解对称Y分支如何实现宽带等分。</p><p>预计阅读 6–11 分钟，实操另计 · 6.7 参考屏</p><p>阅读时长为编辑模型估计；参考视口390×844 CSS像素，不同设备会有差异。</p></header><main id="article-body"><h1>一束光，怎么被“掰”成两路？</h1>
+<p>光子芯片上，光经常要分叉。</p>
+<p>一部分进测量通道，一部分留作参考；或者把功率摊给后面一排器件。做这件事的元件，叫<strong>光功率分光器</strong>。</p>
+<p>听上去很简单：一条路变两条路。真做设计，问题立刻来了——</p>
+<ul>
+<li>两路要各占一半，还是按 70∶30 分？</li>
+<li>换个波长，比例会不会跑？</li>
+<li>光进去 100 份，出来还剩几份？</li>
+</ul>
+<p>片上能实现分光的结构主要有三种：<strong>Y 分支、定向耦合器、多模干涉器（MMI）</strong>。它们不是三个可以互相替代的选项，而是三条不同的物理路径。</p>
+<p>这是系列的第一篇。我们从最直观的一种讲起——Y 分支。它会顺带把“怎么评价一个分光器”这件事说清楚，后面两篇都会用到。</p>
+<figure><svg stroke-linejoin="round" stroke-linecap="butt" width="504pt" height="302.4pt" viewBox="0 0 504 302.4" xmlns="http://www.w3.org/2000/svg" class="vector-image" role="img" aria-label="图 1：同一束光在芯片上被分成三路，分别去测量、参考和下一级器件。" font-family="MiSans, sans-serif">
+ 
+ <defs>
+  
+ </defs>
+ <g id="figure-98bcc8d8929f-1-figure_1">
+  <g id="figure-98bcc8d8929f-1-patch_1">
+   <path d="M 0 302.4  L 504 302.4  L 504 0  L 0 0  z " fill="#ffffff"></path>
+  </g>
+  <g id="figure-98bcc8d8929f-1-axes_1">
+   <g id="figure-98bcc8d8929f-1-patch_2">
+    <path d="M 154.728 263.592  L 291.563478 184.59  L 291.563478 208.53  L 196.193296 153.468  L 59.357818 232.47  L 59.357818 208.53  z " clip-path="url(#figure-98bcc8d8929f-1-p1bb5c4f1d4)" fill="#c9dcef" opacity="0.55"></path>
+   </g>
+   <g id="figure-98bcc8d8929f-1-patch_3">
+    <path d="M 313.236 150.948  L 480.06 150.948  Q 486.108 150.948 486.108 144.9  L 486.108 119.7  Q 486.108 113.652 480.06 113.652  L 313.236 113.652  Q 307.188 113.652 307.188 119.7  L 307.188 144.9  Q 307.188 150.948 313.236 150.948  z " clip-path="url(#figure-98bcc8d8929f-1-p1bb5c4f1d4)" fill="#d9e6f2"></path>
+   </g>
+   <g id="figure-98bcc8d8929f-1-patch_4">
+    <path d="M 313.236 196.308  L 480.06 196.308  Q 486.108 196.308 486.108 190.26  L 486.108 165.06  Q 486.108 159.012 480.06 159.012  L 313.236 159.012  Q 307.188 159.012 307.188 165.06  L 307.188 190.26  Q 307.188 196.308 313.236 196.308  z " clip-path="url(#figure-98bcc8d8929f-1-p1bb5c4f1d4)" fill="#d9e6f2"></path>
+   </g>
+   <g id="figure-98bcc8d8929f-1-patch_5">
+    <path d="M 313.236 241.668  L 480.06 241.668  Q 486.108 241.668 486.108 235.62  L 486.108 210.42  Q 486.108 204.372 480.06 204.372  L 313.236 204.372  Q 307.188 204.372 307.188 210.42  L 307.188 235.62  Q 307.188 241.668 313.236 241.668  z " clip-path="url(#figure-98bcc8d8929f-1-p1bb5c4f1d4)" fill="#d9e6f2"></path>
+   </g>
+   <g id="figure-98bcc8d8929f-1-patch_6">
+    <path d="M 151.2 258.048  L 288.035478 179.046  L 288.035478 202.986  L 192.665296 147.924  L 55.829818 226.926  L 55.829818 202.986  z " clip-path="url(#figure-98bcc8d8929f-1-p1bb5c4f1d4)" fill="#c3d9ee" stroke="#a9c6e2" stroke-width="1.2" stroke-linejoin="miter"></path>
+   </g>
+   <g id="figure-98bcc8d8929f-1-patch_7">
+    <path d="M 23.184 117.936  L 95.76 117.936  Q 102.816 117.936 102.816 110.88  L 102.816 83.664  Q 102.816 76.608 95.76 76.608  L 23.184 76.608  Q 16.128 76.608 16.128 83.664  L 16.128 110.88  Q 16.128 117.936 23.184 117.936  z " clip-path="url(#figure-98bcc8d8929f-1-p1bb5c4f1d4)" fill="#f1f7fe"></path>
+   </g>
+   <g id="figure-98bcc8d8929f-1-patch_8">
+    <path d="M 310.968 148.176  L 477.792 148.176  Q 483.84 148.176 483.84 142.128  L 483.84 116.928  Q 483.84 110.88 477.792 110.88  L 310.968 110.88  Q 304.92 110.88 304.92 116.928  L 304.92 142.128  Q 304.92 148.176 310.968 148.176  z " clip-path="url(#figure-98bcc8d8929f-1-p1bb5c4f1d4)" fill="#ffffff" stroke="#dcebfa" stroke-width="1.4" stroke-linejoin="miter"></path>
+   </g>
+   <g id="figure-98bcc8d8929f-1-patch_9">
+    <path d="M 310.968 193.536  L 477.792 193.536  Q 483.84 193.536 483.84 187.488  L 483.84 162.288  Q 483.84 156.24 477.792 156.24  L 310.968 156.24  Q 304.92 156.24 304.92 162.288  L 304.92 187.488  Q 304.92 193.536 310.968 193.536  z " clip-path="url(#figure-98bcc8d8929f-1-p1bb5c4f1d4)" fill="#ffffff" stroke="#dcebfa" stroke-width="1.4" stroke-linejoin="miter"></path>
+   </g>
+   <g id="figure-98bcc8d8929f-1-patch_10">
+    <path d="M 310.968 238.896  L 477.792 238.896  Q 483.84 238.896 483.84 232.848  L 483.84 207.648  Q 483.84 201.6 477.792 201.6  L 310.968 201.6  Q 304.92 201.6 304.92 207.648  L 304.92 232.848  Q 304.92 238.896 310.968 238.896  z " clip-path="url(#figure-98bcc8d8929f-1-p1bb5c4f1d4)" fill="#ffffff" stroke="#dcebfa" stroke-width="1.4" stroke-linejoin="miter"></path>
+   </g>
+   <g id="figure-98bcc8d8929f-1-line2d_1">
+    <path d="M 22.68 53.424  L 65.52 53.424  " clip-path="url(#figure-98bcc8d8929f-1-p1bb5c4f1d4)" fill="none" stroke="#1f6fd0" stroke-width="3.2"></path>
+   </g>
+   <g id="figure-98bcc8d8929f-1-patch_11">
+    <path d="M 151.2 281.988  L 288.035478 202.986  L 192.665296 147.924  L 55.829818 226.926  z " clip-path="url(#figure-98bcc8d8929f-1-p1bb5c4f1d4)" fill="#e9f2fb" stroke="#a9c6e2" stroke-width="1.2" stroke-linejoin="miter"></path>
+   </g>
+   <g id="figure-98bcc8d8929f-1-text_1">
+    <text font-size="13.5px" font-family="'MiSans'" text-anchor="start" fill="#4e9be8" x="22.68" y="18.6975" transform="rotate(-0 22.68 18.6975)">应用 · 分光器在链路里的位置</text>
+   </g>
+   <g id="figure-98bcc8d8929f-1-text_2">
+    <text font-size="25px" font-family="'MiSans'" text-anchor="start" fill="#12263a" x="22.68" y="42.791719" transform="rotate(-0 22.68 42.791719)">一束光，为什么要分成几路？</text>
+   </g>
+   <g id="figure-98bcc8d8929f-1-line2d_2">
+    <path d="M 103.514909 257.3298  L 157.419794 226.2078  " clip-path="url(#figure-98bcc8d8929f-1-p1bb5c4f1d4)" fill="none" stroke="#bfe0f5" stroke-opacity="0.75" stroke-width="22.4" stroke-linecap="round"></path>
+   </g>
+   <g id="figure-98bcc8d8929f-1-line2d_3">
+    <path d="M 157.419794 226.2078  L 159.489949 224.947619  L 161.451475 223.624722  L 163.310245 222.242499  L 165.07213 220.80434  L 166.743003 219.313634  L 168.328734 217.773772  L 169.835197 216.188144  L 171.268263 214.56014  L 172.633802 212.89315  L 173.937688 211.190564  L 175.185793 209.455773  L 176.383986 207.692166  L 177.538142 205.903133  L 178.654131 204.092065  L 179.737825 202.262352  L 180.795096 200.417383  L 181.831816 198.560549  L 182.853856 196.695239  L 183.867089 194.824845  L 184.877385 192.952755  L 185.890618 191.082361  L 186.912658 189.217051  L 187.949378 187.360217  L 189.006649 185.515248  L 190.090343 183.685535  L 191.206332 181.874467  L 192.360488 180.085434  L 193.558682 178.321827  L 194.806786 176.587036  L 196.110672 174.88445  L 197.476212 173.21746  L 198.909277 171.589456  L 200.41574 170.003828  L 202.001471 168.463966  L 203.672344 166.97326  L 205.43423 165.535101  L 207.292999 164.152878  L 209.254526 162.829981  L 211.32468 161.5698  " clip-path="url(#figure-98bcc8d8929f-1-p1bb5c4f1d4)" fill="none" stroke="#bfe0f5" stroke-opacity="0.75" stroke-width="16.64" stroke-linecap="round"></path>
+   </g>
+   <g id="figure-98bcc8d8929f-1-line2d_4">
+    <path d="M 157.419794 226.2078  L 159.54622 224.980108  L 161.672645 223.752415  L 163.799071 222.524723  L 165.925496 221.297031  L 168.051922 220.069338  L 170.178347 218.841646  L 172.304773 217.613954  L 174.431198 216.386262  L 176.557624 215.158569  L 178.684049 213.930877  L 180.810474 212.703185  L 182.9369 211.475492  L 185.063325 210.2478  L 187.189751 209.020108  L 189.316176 207.792415  L 191.442602 206.564723  L 193.569027 205.337031  L 195.695453 204.109338  L 197.821878 202.881646  L 199.948304 201.653954  L 202.074729 200.426262  L 204.201154 199.198569  L 206.32758 197.970877  L 208.454005 196.743185  L 210.580431 195.515492  L 212.706856 194.2878  L 214.833282 193.060108  L 216.959707 191.832415  L 219.086133 190.604723  L 221.212558 189.377031  L 223.338983 188.149338  L 225.465409 186.921646  L 227.591834 185.693954  L 229.71826 184.466262  L 231.844685 183.238569  L 233.971111 182.010877  L 236.097536 180.783185  L 238.223962 179.555492  L 240.350387 178.3278  " clip-path="url(#figure-98bcc8d8929f-1-p1bb5c4f1d4)" fill="none" stroke="#bfe0f5" stroke-opacity="0.75" stroke-width="16.64" stroke-linecap="round"></path>
+   </g>
+   <g id="figure-98bcc8d8929f-1-line2d_5">
+    <path d="M 157.419794 226.2078  L 159.602491 225.012596  L 161.893816 223.880108  L 164.287897 222.806947  L 166.778863 221.789722  L 169.360841 220.825043  L 172.02796 219.909521  L 174.774348 219.039764  L 177.594134 218.212383  L 180.481445 217.423988  L 183.43041 216.671189  L 186.435156 215.950596  L 189.489813 215.258819  L 192.588509 214.592467  L 195.725371 213.94815  L 198.894528 213.322479  L 202.090107 212.712063  L 205.306239 212.113513  L 208.537049 211.523438  L 211.776667 210.938448  L 215.019222 210.355152  L 218.25884 209.770162  L 221.48965 209.180087  L 224.705782 208.581537  L 227.901361 207.971121  L 231.070518 207.34545  L 234.20738 206.701133  L 237.306076 206.034781  L 240.360733 205.343004  L 243.365479 204.622411  L 246.314444 203.869612  L 249.201755 203.081217  L 252.021541 202.253836  L 254.767929 201.384079  L 257.435048 200.468557  L 260.017026 199.503878  L 262.507992 198.486653  L 264.902073 197.413492  L 267.193398 196.281004  L 269.376095 195.0858  " clip-path="url(#figure-98bcc8d8929f-1-p1bb5c4f1d4)" fill="none" stroke="#bfe0f5" stroke-opacity="0.75" stroke-width="16.64" stroke-linecap="round"></path>
+   </g>
+   <g id="figure-98bcc8d8929f-1-line2d_6">
+    <path d="M 103.514909 257.3298  L 157.419794 226.2078  " clip-path="url(#figure-98bcc8d8929f-1-p1bb5c4f1d4)" fill="none" stroke="#0b4c9c" stroke-width="7" stroke-linecap="round"></path>
+   </g>
+   <g id="figure-98bcc8d8929f-1-line2d_7">
+    <path d="M 157.419794 226.2078  L 159.489949 224.947619  L 161.451475 223.624722  L 163.310245 222.242499  L 165.07213 220.80434  L 166.743003 219.313634  L 168.328734 217.773772  L 169.835197 216.188144  L 171.268263 214.56014  L 172.633802 212.89315  L 173.937688 211.190564  L 175.185793 209.455773  L 176.383986 207.692166  L 177.538142 205.903133  L 178.654131 204.092065  L 179.737825 202.262352  L 180.795096 200.417383  L 181.831816 198.560549  L 182.853856 196.695239  L 183.867089 194.824845  L 184.877385 192.952755  L 185.890618 191.082361  L 186.912658 189.217051  L 187.949378 187.360217  L 189.006649 185.515248  L 190.090343 183.685535  L 191.206332 181.874467  L 192.360488 180.085434  L 193.558682 178.321827  L 194.806786 176.587036  L 196.110672 174.88445  L 197.476212 173.21746  L 198.909277 171.589456  L 200.41574 170.003828  L 202.001471 168.463966  L 203.672344 166.97326  L 205.43423 165.535101  L 207.292999 164.152878  L 209.254526 162.829981  L 211.32468 161.5698  " clip-path="url(#figure-98bcc8d8929f-1-p1bb5c4f1d4)" fill="none" stroke="#1f6fd0" stroke-width="5.2" stroke-linecap="round"></path>
+   </g>
+   <g id="figure-98bcc8d8929f-1-line2d_8">
+    <path d="M 157.419794 226.2078  L 159.54622 224.980108  L 161.672645 223.752415  L 163.799071 222.524723  L 165.925496 221.297031  L 168.051922 220.069338  L 170.178347 218.841646  L 172.304773 217.613954  L 174.431198 216.386262  L 176.557624 215.158569  L 178.684049 213.930877  L 180.810474 212.703185  L 182.9369 211.475492  L 185.063325 210.2478  L 187.189751 209.020108  L 189.316176 207.792415  L 191.442602 206.564723  L 193.569027 205.337031  L 195.695453 204.109338  L 197.821878 202.881646  L 199.948304 201.653954  L 202.074729 200.426262  L 204.201154 199.198569  L 206.32758 197.970877  L 208.454005 196.743185  L 210.580431 195.515492  L 212.706856 194.2878  L 214.833282 193.060108  L 216.959707 191.832415  L 219.086133 190.604723  L 221.212558 189.377031  L 223.338983 188.149338  L 225.465409 186.921646  L 227.591834 185.693954  L 229.71826 184.466262  L 231.844685 183.238569  L 233.971111 182.010877  L 236.097536 180.783185  L 238.223962 179.555492  L 240.350387 178.3278  " clip-path="url(#figure-98bcc8d8929f-1-p1bb5c4f1d4)" fill="none" stroke="#1f6fd0" stroke-width="5.2" stroke-linecap="round"></path>
+   </g>
+   <g id="figure-98bcc8d8929f-1-line2d_9">
+    <path d="M 157.419794 226.2078  L 159.602491 225.012596  L 161.893816 223.880108  L 164.287897 222.806947  L 166.778863 221.789722  L 169.360841 220.825043  L 172.02796 219.909521  L 174.774348 219.039764  L 177.594134 218.212383  L 180.481445 217.423988  L 183.43041 216.671189  L 186.435156 215.950596  L 189.489813 215.258819  L 192.588509 214.592467  L 195.725371 213.94815  L 198.894528 213.322479  L 202.090107 212.712063  L 205.306239 212.113513  L 208.537049 211.523438  L 211.776667 210.938448  L 215.019222 210.355152  L 218.25884 209.770162  L 221.48965 209.180087  L 224.705782 208.581537  L 227.901361 207.971121  L 231.070518 207.34545  L 234.20738 206.701133  L 237.306076 206.034781  L 240.360733 205.343004  L 243.365479 204.622411  L 246.314444 203.869612  L 249.201755 203.081217  L 252.021541 202.253836  L 254.767929 201.384079  L 257.435048 200.468557  L 260.017026 199.503878  L 262.507992 198.486653  L 264.902073 197.413492  L 267.193398 196.281004  L 269.376095 195.0858  " clip-path="url(#figure-98bcc8d8929f-1-p1bb5c4f1d4)" fill="none" stroke="#1f6fd0" stroke-width="5.2" stroke-linecap="round"></path>
+   </g>
+   <g id="figure-98bcc8d8929f-1-patch_12">
+    <path d="M 81.648 120.96  Q 82.81728 148.55904 98.417945 168.587922  " clip-path="url(#figure-98bcc8d8929f-1-p1bb5c4f1d4)" fill="none" stroke="#4e9be8" stroke-width="2" stroke-linecap="round"></path>
+    <path d="M 97.097726 162.010915  L 98.417945 168.587922  L 92.364208 165.697892  z " clip-path="url(#figure-98bcc8d8929f-1-p1bb5c4f1d4)" fill="#4e9be8" stroke="#4e9be8" stroke-width="2" stroke-linecap="round"></path>
+   </g>
+   <g id="figure-98bcc8d8929f-1-line2d_10">
+    <path d="M 157.419794 225.2502  L 84.672 199.08  " clip-path="url(#figure-98bcc8d8929f-1-p1bb5c4f1d4)" fill="none" stroke="#e8823c" stroke-width="1.4" stroke-linecap="round"></path>
+   </g>
+   <g id="figure-98bcc8d8929f-1-line2d_11">
+    <path d="M 304.92 143.64  L 304.92 115.416  " clip-path="url(#figure-98bcc8d8929f-1-p1bb5c4f1d4)" fill="none" stroke="#4e9be8" stroke-width="3.2" stroke-linecap="round"></path>
+   </g>
+   <g id="figure-98bcc8d8929f-1-line2d_12">
+    <path d="M 304.92 189  L 304.92 160.776  " clip-path="url(#figure-98bcc8d8929f-1-p1bb5c4f1d4)" fill="none" stroke="#4e9be8" stroke-width="3.2" stroke-linecap="round"></path>
+   </g>
+   <g id="figure-98bcc8d8929f-1-line2d_13">
+    <path d="M 304.92 234.36  L 304.92 206.136  " clip-path="url(#figure-98bcc8d8929f-1-p1bb5c4f1d4)" fill="none" stroke="#4e9be8" stroke-width="3.2" stroke-linecap="round"></path>
+   </g>
+   <g id="figure-98bcc8d8929f-1-patch_13">
+    <path d="M 283.248 144.648  Q 292.32 137.592 299.979964 131.63425  " clip-path="url(#figure-98bcc8d8929f-1-p1bb5c4f1d4)" fill="none" stroke="#4e9be8" stroke-width="1.6" stroke-linecap="round"></path>
+    <path d="M 294.279087 132.774426  L 299.979964 131.63425  L 297.471578 136.879057  z " clip-path="url(#figure-98bcc8d8929f-1-p1bb5c4f1d4)" fill="#4e9be8" stroke="#4e9be8" stroke-width="1.6" stroke-linecap="round"></path>
+   </g>
+   <g id="figure-98bcc8d8929f-1-patch_14">
+    <path d="M 283.248 190.008  Q 292.32 182.952 299.979964 176.99425  " clip-path="url(#figure-98bcc8d8929f-1-p1bb5c4f1d4)" fill="none" stroke="#4e9be8" stroke-width="1.6" stroke-linecap="round"></path>
+    <path d="M 294.279087 178.134426  L 299.979964 176.99425  L 297.471578 182.239057  z " clip-path="url(#figure-98bcc8d8929f-1-p1bb5c4f1d4)" fill="#4e9be8" stroke="#4e9be8" stroke-width="1.6" stroke-linecap="round"></path>
+   </g>
+   <g id="figure-98bcc8d8929f-1-patch_15">
+    <path d="M 283.248 235.368  Q 292.32 228.312 299.979964 222.35425  " clip-path="url(#figure-98bcc8d8929f-1-p1bb5c4f1d4)" fill="none" stroke="#4e9be8" stroke-width="1.6" stroke-linecap="round"></path>
+    <path d="M 294.279087 223.494426  L 299.979964 222.35425  L 297.471578 227.599057  z " clip-path="url(#figure-98bcc8d8929f-1-p1bb5c4f1d4)" fill="#4e9be8" stroke="#4e9be8" stroke-width="1.6" stroke-linecap="round"></path>
+   </g>
+   <g id="figure-98bcc8d8929f-1-text_3">
+    <text font-size="15px" font-family="'MiSans'" text-anchor="middle" fill="#12263a" x="59.472" y="101.247" transform="rotate(-0 59.472 101.247)">片上光源</text>
+   </g>
+   <g id="figure-98bcc8d8929f-1-line2d_14">
+    <defs>
+     <path id="figure-98bcc8d8929f-1-mb26bba6647" d="M 0 2.3  C 0.609967 2.3 1.195034 2.057657 1.626346 1.626346  C 2.057657 1.195034 2.3 0.609967 2.3 0  C 2.3 -0.609967 2.057657 -1.195034 1.626346 -1.626346  C 1.195034 -2.057657 0.609967 -2.3 0 -2.3  C -0.609967 -2.3 -1.195034 -2.057657 -1.626346 -1.626346  C -2.057657 -1.195034 -2.3 -0.609967 -2.3 0  C -2.3 0.609967 -2.057657 1.195034 -1.626346 1.626346  C -1.195034 2.057657 -0.609967 2.3 0 2.3  z " stroke="#e8823c"></path>
+    </defs>
+    <g clip-path="url(#figure-98bcc8d8929f-1-p1bb5c4f1d4)">
+     <use href="#figure-98bcc8d8929f-1-mb26bba6647" x="157.419794" y="225.2502" fill="#e8823c" stroke="#e8823c"></use>
+    </g>
+   </g>
+   <g id="figure-98bcc8d8929f-1-text_4">
+    <text font-size="13.5px" font-family="'MiSans'" text-anchor="end" fill="#e8823c" x="81.648" y="202.6575" transform="rotate(-0 81.648 202.6575)">分光点</text>
+   </g>
+   <g id="figure-98bcc8d8929f-1-text_5">
+    <text font-size="15.5px" font-family="'MiSans'" text-anchor="start" fill="#12263a" x="316.512" y="127.0835" transform="rotate(-0 316.512 127.0835)">测量通道</text>
+   </g>
+   <g id="figure-98bcc8d8929f-1-text_6">
+    <text font-size="12.5px" font-family="'MiSans'" text-anchor="start" fill="#8a9bab" x="316.512" y="139.3925" transform="rotate(-0 316.512 139.3925)">干涉、传感、光谱分析</text>
+   </g>
+   <g id="figure-98bcc8d8929f-1-text_7">
+    <text font-size="15.5px" font-family="'MiSans'" text-anchor="start" fill="#12263a" x="316.512" y="172.4435" transform="rotate(-0 316.512 172.4435)">参考通道</text>
+   </g>
+   <g id="figure-98bcc8d8929f-1-text_8">
+    <text font-size="12.5px" font-family="'MiSans'" text-anchor="start" fill="#8a9bab" x="316.512" y="184.7525" transform="rotate(-0 316.512 184.7525)">功率监控、闭环反馈</text>
+   </g>
+   <g id="figure-98bcc8d8929f-1-text_9">
+    <text font-size="15.5px" font-family="'MiSans'" text-anchor="start" fill="#12263a" x="316.512" y="217.8035" transform="rotate(-0 316.512 217.8035)">下一级器件</text>
+   </g>
+   <g id="figure-98bcc8d8929f-1-text_10">
+    <text font-size="12.5px" font-family="'MiSans'" text-anchor="start" fill="#8a9bab" x="316.512" y="230.1125" transform="rotate(-0 316.512 230.1125)">阵列馈电、级联扩展</text>
+   </g>
+   <g id="figure-98bcc8d8929f-1-text_11">
+    <text font-size="12.5px" font-family="'MiSans'" text-anchor="start" fill="#8a9bab" x="22.68" y="285.019109" transform="rotate(-0 22.68 285.019109)">功能示意 · 三路的目标功率比例由应用决定，图中长度与亮度不代表功率数值</text>
+   </g>
+   <g id="figure-98bcc8d8929f-1-line2d_15">
+    <defs>
+     <path id="figure-98bcc8d8929f-1-maa0a1c1d61" d="M 0 10  C 2.652031 10 5.195799 8.946337 7.071068 7.071068  C 8.946337 5.195799 10 2.652031 10 0  C 10 -2.652031 8.946337 -5.195799 7.071068 -7.071068  C 5.195799 -8.946337 2.652031 -10 0 -10  C -2.652031 -10 -5.195799 -8.946337 -7.071068 -7.071068  C -8.946337 -5.195799 -10 -2.652031 -10 0  C -10 2.652031 -8.946337 5.195799 -7.071068 7.071068  C -5.195799 8.946337 -2.652031 10 0 10  z " stroke="#e8823c" stroke-opacity="0.16"></path>
+    </defs>
+    <g clip-path="url(#figure-98bcc8d8929f-1-p1bb5c4f1d4)">
+     <use href="#figure-98bcc8d8929f-1-maa0a1c1d61" x="157.419794" y="225.2502" fill="#e8823c" fill-opacity="0.16" stroke="#e8823c" stroke-opacity="0.16"></use>
+    </g>
+   </g>
+   <g id="figure-98bcc8d8929f-1-line2d_16">
+    <defs>
+     <path id="figure-98bcc8d8929f-1-m05c935994d" d="M 0 5  C 1.326016 5 2.597899 4.473168 3.535534 3.535534  C 4.473168 2.597899 5 1.326016 5 0  C 5 -1.326016 4.473168 -2.597899 3.535534 -3.535534  C 2.597899 -4.473168 1.326016 -5 0 -5  C -1.326016 -5 -2.597899 -4.473168 -3.535534 -3.535534  C -4.473168 -2.597899 -5 -1.326016 -5 0  C -5 1.326016 -4.473168 2.597899 -3.535534 3.535534  C -2.597899 4.473168 -1.326016 5 0 5  z " stroke="#e8823c"></path>
+    </defs>
+    <g clip-path="url(#figure-98bcc8d8929f-1-p1bb5c4f1d4)">
+     <use href="#figure-98bcc8d8929f-1-m05c935994d" x="157.419794" y="225.2502" fill="#e8823c" stroke="#e8823c"></use>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="figure-98bcc8d8929f-1-p1bb5c4f1d4">
+   <rect x="0" y="0" width="504" height="302.4"></rect>
+  </clipPath>
+ </defs>
+</svg><figcaption><span class="fig-tag">图 1</span>同一束光在芯片上被分成三路，分别去测量、参考和下一级器件。</figcaption></figure>
+<h2>先把两个指标说清楚</h2>
+<p>刚接触分光器的人，最常犯的错是把“分得匀”当成“做得好”。</p>
+<p>想象输入是 100 份功率。第一种情况，两路各出 48 份，剩下 4 份损耗掉了；第二种情况，两路各出 24 份，剩下 52 份没了。两种情况下比例都是 50∶50——<strong>但第二种器件明显更差</strong>。</p>
+<p>只看比例，你看不出这个差别。</p>
+<p>所以有两个数必须同时盯。</p>
+<p><strong>分光比</strong>回答“怎么分”。它是两路输出功率之比，与损耗无关。理想均分是 50∶50，用分贝写就是各 −3.01 dB。</p>
+<p><strong>总透射</strong>回答“到得了多少”。它是两路输出之和除以输入。取对数就是插入损耗：总透射 96% 约合 0.18 dB，48% 则是 3.2 dB。</p>
+<p>工程上还会用第三个词：<strong>均匀性</strong>（imbalance）。它只关心两路之间差多少，也用 dB 表示。48∶52 的均匀性是 0.35 dB，45∶55 是 0.87 dB。</p>
+<figure><svg stroke-linejoin="round" stroke-linecap="butt" width="504pt" height="330.12pt" viewBox="0 0 504 330.12" xmlns="http://www.w3.org/2000/svg" class="vector-image" role="img" aria-label="图 2：同样是 50∶50，总透射可以差一倍。图中为教学数值，不是本文案例的仿真数据。" font-family="MiSans, sans-serif">
+ 
+ <defs>
+  
+ </defs>
+ <g id="figure-b3e525deb658-2-figure_1">
+  <g id="figure-b3e525deb658-2-patch_1">
+   <path d="M 0 330.12  L 504 330.12  L 504 0  L 0 0  z " fill="#ffffff"></path>
+  </g>
+  <g id="figure-b3e525deb658-2-axes_1">
+   <g id="figure-b3e525deb658-2-patch_2">
+    <path d="M 49.392 284.76  L 60.48 284.76  L 60.48 277.2  L 49.392 277.2  z " clip-path="url(#figure-b3e525deb658-2-p633f31b908)" fill="#0b4c9c"></path>
+   </g>
+   <g id="figure-b3e525deb658-2-patch_3">
+    <path d="M 107.352 284.76  L 118.44 284.76  L 118.44 277.2  L 107.352 277.2  z " clip-path="url(#figure-b3e525deb658-2-p633f31b908)" fill="#4e9be8"></path>
+   </g>
+   <g id="figure-b3e525deb658-2-patch_4">
+    <path d="M 165.312 284.76  L 176.4 284.76  L 176.4 277.2  L 165.312 277.2  z " clip-path="url(#figure-b3e525deb658-2-p633f31b908)" fill="url(#figure-b3e525deb658-2-h95b45424fb)" stroke="#c9d6e2" stroke-width="0.8" stroke-linejoin="miter"></path>
+   </g>
+   <g id="figure-b3e525deb658-2-line2d_1">
+    <path d="M 22.68 53.424  L 65.52 53.424  " clip-path="url(#figure-b3e525deb658-2-p633f31b908)" fill="none" stroke="#1f6fd0" stroke-width="3.2"></path>
+   </g>
+   <g id="figure-b3e525deb658-2-line2d_2">
+    <path d="M 47.88 73.08  L 389.088 73.08  " clip-path="url(#figure-b3e525deb658-2-p633f31b908)" fill="none" stroke="#cbd9e6" stroke-width="1.2" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-b3e525deb658-2-line2d_3">
+    <path d="M 47.88 75.096  L 47.88 71.064  " clip-path="url(#figure-b3e525deb658-2-p633f31b908)" fill="none" stroke="#cbd9e6" stroke-width="1.2" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-b3e525deb658-2-line2d_4">
+    <path d="M 218.484 75.096  L 218.484 71.064  " clip-path="url(#figure-b3e525deb658-2-p633f31b908)" fill="none" stroke="#cbd9e6" stroke-width="1.2" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-b3e525deb658-2-line2d_5">
+    <path d="M 389.088 75.096  L 389.088 71.064  " clip-path="url(#figure-b3e525deb658-2-p633f31b908)" fill="none" stroke="#cbd9e6" stroke-width="1.2" stroke-linecap="square"></path>
+   </g>
+   <g id="figure-b3e525deb658-2-text_1">
+    <text font-size="13.5px" font-family="'MiSans'" text-anchor="start" fill="#4e9be8" x="22.68" y="18.6975" transform="rotate(-0 22.68 18.6975)">指标 · 分光比与总透射</text>
+   </g>
+   <g id="figure-b3e525deb658-2-text_2">
+    <text font-size="25px" font-family="'MiSans'" text-anchor="start" fill="#12263a" x="22.68" y="42.817109" transform="rotate(-0 22.68 42.817109)">分得均匀，和分得多，是两件事</text>
+   </g>
+   <g id="figure-b3e525deb658-2-patch_5">
+    <path d="M 47.88 127.512  L 211.65984 127.512  L 211.65984 105.336  L 47.88 105.336  z " clip-path="url(#figure-b3e525deb658-2-p633f31b908)" fill="#0b4c9c"></path>
+   </g>
+   <g id="figure-b3e525deb658-2-patch_6">
+    <path d="M 211.65984 127.512  L 375.43968 127.512  L 375.43968 105.336  L 211.65984 105.336  z " clip-path="url(#figure-b3e525deb658-2-p633f31b908)" fill="#4e9be8"></path>
+   </g>
+   <g id="figure-b3e525deb658-2-patch_7">
+    <path d="M 375.43968 127.512  L 389.088 127.512  L 389.088 105.336  L 375.43968 105.336  z " clip-path="url(#figure-b3e525deb658-2-p633f31b908)" fill="url(#figure-b3e525deb658-2-h95b45424fb)" stroke="#c9d6e2" stroke-width="0.8" stroke-linejoin="miter"></path>
+   </g>
+   <g id="figure-b3e525deb658-2-patch_8">
+    <path d="M 47.88 190.008  L 129.76992 190.008  L 129.76992 167.832  L 47.88 167.832  z " clip-path="url(#figure-b3e525deb658-2-p633f31b908)" fill="#0b4c9c"></path>
+   </g>
+   <g id="figure-b3e525deb658-2-patch_9">
+    <path d="M 129.76992 190.008  L 211.65984 190.008  L 211.65984 167.832  L 129.76992 167.832  z " clip-path="url(#figure-b3e525deb658-2-p633f31b908)" fill="#4e9be8"></path>
+   </g>
+   <g id="figure-b3e525deb658-2-patch_10">
+    <path d="M 211.65984 190.008  L 389.088 190.008  L 389.088 167.832  L 211.65984 167.832  z " clip-path="url(#figure-b3e525deb658-2-p633f31b908)" fill="url(#figure-b3e525deb658-2-h95b45424fb)" stroke="#c9d6e2" stroke-width="0.8" stroke-linejoin="miter"></path>
+   </g>
+   <g id="figure-b3e525deb658-2-patch_11">
+    <path d="M 47.88 252.504  L 283.31352 252.504  L 283.31352 230.328  L 47.88 230.328  z " clip-path="url(#figure-b3e525deb658-2-p633f31b908)" fill="#0b4c9c"></path>
+   </g>
+   <g id="figure-b3e525deb658-2-patch_12">
+    <path d="M 283.31352 252.504  L 382.26384 252.504  L 382.26384 230.328  L 283.31352 230.328  z " clip-path="url(#figure-b3e525deb658-2-p633f31b908)" fill="#4e9be8"></path>
+   </g>
+   <g id="figure-b3e525deb658-2-patch_13">
+    <path d="M 382.26384 252.504  L 389.088 252.504  L 389.088 230.328  L 382.26384 230.328  z " clip-path="url(#figure-b3e525deb658-2-p633f31b908)" fill="url(#figure-b3e525deb658-2-h95b45424fb)" stroke="#c9d6e2" stroke-width="0.8" stroke-linejoin="miter"></path>
+   </g>
+   <g id="figure-b3e525deb658-2-text_3">
+    <text font-size="13.5px" font-family="'MiSans'" text-anchor="middle" fill="#ffffff" x="129.76992" y="120.0015" transform="rotate(-0 129.76992 120.0015)">48</text>
+   </g>
+   <g id="figure-b3e525deb658-2-text_4">
+    <text font-size="13.5px" font-family="'MiSans'" text-anchor="middle" fill="#ffffff" x="293.54976" y="120.0015" transform="rotate(-0 293.54976 120.0015)">48</text>
+   </g>
+   <g id="figure-b3e525deb658-2-text_5">
+    <text font-size="13.5px" font-family="'MiSans'" text-anchor="middle" fill="#ffffff" x="88.82496" y="182.4975" transform="rotate(-0 88.82496 182.4975)">24</text>
+   </g>
+   <g id="figure-b3e525deb658-2-text_6">
+    <text font-size="13.5px" font-family="'MiSans'" text-anchor="middle" fill="#ffffff" x="170.71488" y="182.4975" transform="rotate(-0 170.71488 182.4975)">24</text>
+   </g>
+   <g id="figure-b3e525deb658-2-text_7">
+    <text font-size="12.5px" font-family="'MiSans'" text-anchor="middle" fill="#7c8fa1" x="300.37392" y="182.2325" transform="rotate(-0 300.37392 182.2325)">损耗 52</text>
+   </g>
+   <g id="figure-b3e525deb658-2-text_8">
+    <text font-size="13.5px" font-family="'MiSans'" text-anchor="middle" fill="#ffffff" x="165.59676" y="244.9935" transform="rotate(-0 165.59676 244.9935)">69</text>
+   </g>
+   <g id="figure-b3e525deb658-2-text_9">
+    <text font-size="13.5px" font-family="'MiSans'" text-anchor="middle" fill="#ffffff" x="332.78868" y="244.9935" transform="rotate(-0 332.78868 244.9935)">29</text>
+   </g>
+   <g id="figure-b3e525deb658-2-text_10">
+    <text font-size="11px" font-family="'MiSans'" text-anchor="middle" fill="#8a9bab" x="47.88" y="67.931" transform="rotate(-0 47.88 67.931)">0</text>
+   </g>
+   <g id="figure-b3e525deb658-2-text_11">
+    <text font-size="11px" font-family="'MiSans'" text-anchor="middle" fill="#8a9bab" x="218.484" y="67.931" transform="rotate(-0 218.484 67.931)">50</text>
+   </g>
+   <g id="figure-b3e525deb658-2-text_12">
+    <text font-size="11px" font-family="'MiSans'" text-anchor="middle" fill="#8a9bab" x="389.088" y="67.931" transform="rotate(-0 389.088 67.931)">100</text>
+   </g>
+   <g id="figure-b3e525deb658-2-text_13">
+    <text font-size="11px" font-family="'MiSans'" text-anchor="start" fill="#8a9bab" x="404.208" y="67.931" transform="rotate(-0 404.208 67.931)">输入功率（份）</text>
+   </g>
+   <g id="figure-b3e525deb658-2-text_14">
+    <text font-size="14px" font-family="'MiSans'" text-anchor="start" fill="#12263a" x="47.88" y="96.438562" transform="rotate(-0 47.88 96.438562)">① 均匀分光，几乎没损失</text>
+   </g>
+   <g id="figure-b3e525deb658-2-text_15">
+    <text font-size="15px" font-family="'MiSans'" text-anchor="start" fill="#0b4c9c" x="404.208" y="116.85084" transform="rotate(-0 404.208 116.85084)">50 ∶ 50</text>
+   </g>
+   <g id="figure-b3e525deb658-2-text_16">
+    <text font-size="11px" font-family="'MiSans'" text-anchor="start" fill="#4a6076" x="404.208" y="125.9918" transform="rotate(-0 404.208 125.9918)">96% · 0.18 dB</text>
+   </g>
+   <g id="figure-b3e525deb658-2-text_17">
+    <text font-size="14px" font-family="'MiSans'" text-anchor="start" fill="#12263a" x="47.88" y="158.934562" transform="rotate(-0 47.88 158.934562)">② 也是均匀分光，一半丢了</text>
+   </g>
+   <g id="figure-b3e525deb658-2-text_18">
+    <text font-size="15px" font-family="'MiSans'" text-anchor="start" fill="#0b4c9c" x="404.208" y="179.34684" transform="rotate(-0 404.208 179.34684)">50 ∶ 50</text>
+   </g>
+   <g id="figure-b3e525deb658-2-text_19">
+    <text font-size="11px" font-family="'MiSans'" text-anchor="start" fill="#4a6076" x="404.208" y="188.4878" transform="rotate(-0 404.208 188.4878)">48% · 3.2 dB</text>
+   </g>
+   <g id="figure-b3e525deb658-2-text_20">
+    <text font-size="14px" font-family="'MiSans'" text-anchor="start" fill="#12263a" x="47.88" y="221.395563" transform="rotate(-0 47.88 221.395563)">③ 分得不均，但基本都到了</text>
+   </g>
+   <g id="figure-b3e525deb658-2-text_21">
+    <text font-size="15px" font-family="'MiSans'" text-anchor="start" fill="#0b4c9c" x="404.208" y="241.84284" transform="rotate(-0 404.208 241.84284)">70 ∶ 30</text>
+   </g>
+   <g id="figure-b3e525deb658-2-text_22">
+    <text font-size="11px" font-family="'MiSans'" text-anchor="start" fill="#4a6076" x="404.208" y="250.9838" transform="rotate(-0 404.208 250.9838)">98% · 0.09 dB</text>
+   </g>
+   <g id="figure-b3e525deb658-2-text_23">
+    <text font-size="11.5px" font-family="'MiSans'" text-anchor="start" fill="#4a6076" x="64.512" y="284.0275" transform="rotate(-0 64.512 284.0275)">输出 1</text>
+   </g>
+   <g id="figure-b3e525deb658-2-text_24">
+    <text font-size="11.5px" font-family="'MiSans'" text-anchor="start" fill="#4a6076" x="122.472" y="284.0275" transform="rotate(-0 122.472 284.0275)">输出 2</text>
+   </g>
+   <g id="figure-b3e525deb658-2-text_25">
+    <text font-size="11.5px" font-family="'MiSans'" text-anchor="start" fill="#4a6076" x="180.432" y="284.0275" transform="rotate(-0 180.432 284.0275)">没到这两个端口的功率</text>
+   </g>
+   <g id="figure-b3e525deb658-2-text_26">
+    <text font-size="11.5px" font-family="'MiSans'" text-anchor="start" fill="#8a9bab" x="22.68" y="313.0075" transform="rotate(-0 22.68 313.0075)">教学数值示例 · 不是本文案例的仿真数据</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="figure-b3e525deb658-2-p633f31b908">
+   <rect x="0" y="0" width="504" height="330.12"></rect>
+  </clipPath>
+ </defs>
+ <defs>
+  <pattern id="figure-b3e525deb658-2-h95b45424fb" patternUnits="userSpaceOnUse" x="0" y="0" width="72" height="72">
+   <rect x="0" y="0" width="73" height="73" fill="#eff3f7"></rect>
+   <path d="M -36 36  L 36 -36  M -32 40  L 40 -32  M -28 44  L 44 -28  M -24 48  L 48 -24  M -20 52  L 52 -20  M -16 56  L 56 -16  M -12 60  L 60 -12  M -8 64  L 64 -8  M -4 68  L 68 -4  M 0 72  L 72 0  M 4 76  L 76 4  M 8 80  L 80 8  M 12 84  L 84 12  M 16 88  L 88 16  M 20 92  L 92 20  M 24 96  L 96 24  M 28 100  L 100 28  M 32 104  L 104 32  M 36 108  L 108 36  " fill="#c9d6e2" stroke="#c9d6e2" stroke-width="1.0" stroke-linecap="butt" stroke-linejoin="miter"></path>
+  </pattern>
+ </defs>
+</svg><figcaption><span class="fig-tag">图 2</span>同样是 50∶50，总透射可以差一倍。图中为教学数值，不是本文案例的仿真数据。</figcaption></figure>
+<p>还有一个容易被忽略的口径问题：<strong>这里的“输出”，是端面上的全部光功率，还是只算你要的基模？</strong></p>
+<p>杂散光、高阶模、衬底泄漏都会打到端面上，却不进入后级波导。工业上更常用模式分辨的口径。本文所有数字只统计前向基模功率——这也是 Tidy3D 模式监视器给出的口径。</p>
+<h2>三条路线，分野在设计自由度</h2>
+<p>指标清楚了，再看结构。三种做法的差别不在“谁更先进”，而在于<strong>你把设计自由度放在哪里</strong>。</p>
+<p><strong>改变几何。</strong> 让一条波导慢慢张开成两条。光在里面始终是同一个模式，只是通道变宽了。这是 Y 分支。</p>
+<p><strong>让能量交换。</strong> 两条波导靠得很近，倏逝场重叠，功率在两条波导之间来回“换手”。这是定向耦合器。</p>
+<p><strong>让模式干涉。</strong> 把光送进一段很宽的波导，激发多个模式，走一段距离后重新聚成两个像。这是多模干涉器。</p>
+<figure><svg stroke-linejoin="round" stroke-linecap="butt" width="504pt" height="355.32pt" viewBox="0 0 504 355.32" xmlns="http://www.w3.org/2000/svg" class="vector-image" role="img" aria-label="图 3：三条路线——Y 分支、定向耦合器、多模干涉器。缩略轮廓取自各自 Notebook 的真实几何。" font-family="MiSans, sans-serif">
+ 
+ <defs>
+  
+ </defs>
+ <g id="figure-8daff0497094-3-figure_1">
+  <g id="figure-8daff0497094-3-patch_1">
+   <path d="M 0 355.32  L 504 355.32  L 504 0  L 0 0  z " fill="#ffffff"></path>
+  </g>
+  <g id="figure-8daff0497094-3-axes_1">
+   <g id="figure-8daff0497094-3-patch_2">
+    <path d="M 29.232 308.952  L 160.272 308.952  Q 168.336 308.952 168.336 300.888  L 168.336 77.112  Q 168.336 69.048 160.272 69.048  L 29.232 69.048  Q 21.168 69.048 21.168 77.112  L 21.168 300.888  Q 21.168 308.952 29.232 308.952  z " clip-path="url(#figure-8daff0497094-3-pda0d969520)" fill="#f1f7fe"></path>
+   </g>
+   <g id="figure-8daff0497094-3-patch_3">
+    <path d="M 187.488 308.952  L 318.528 308.952  Q 326.592 308.952 326.592 300.888  L 326.592 77.112  Q 326.592 69.048 318.528 69.048  L 187.488 69.048  Q 179.424 69.048 179.424 77.112  L 179.424 300.888  Q 179.424 308.952 187.488 308.952  z " clip-path="url(#figure-8daff0497094-3-pda0d969520)" fill="#f1f7fe"></path>
+   </g>
+   <g id="figure-8daff0497094-3-patch_4">
+    <path d="M 345.744 308.952  L 476.784 308.952  Q 484.848 308.952 484.848 300.888  L 484.848 77.112  Q 484.848 69.048 476.784 69.048  L 345.744 69.048  Q 337.68 69.048 337.68 77.112  L 337.68 300.888  Q 337.68 308.952 345.744 308.952  z " clip-path="url(#figure-8daff0497094-3-pda0d969520)" fill="#f1f7fe"></path>
+   </g>
+   <g id="figure-8daff0497094-3-line2d_1">
+    <path d="M 22.68 53.424  L 65.52 53.424  " clip-path="url(#figure-8daff0497094-3-pda0d969520)" fill="none" stroke="#1f6fd0" stroke-width="3.2"></path>
+   </g>
+   <g id="figure-8daff0497094-3-line2d_2">
+    <path d="M 35.28 106.344  L 61.488 106.344  " clip-path="url(#figure-8daff0497094-3-pda0d969520)" fill="none" stroke="#1f6fd0" stroke-width="3"></path>
+   </g>
+   <g id="figure-8daff0497094-3-line2d_3">
+    <path d="M 193.536 106.344  L 219.744 106.344  " clip-path="url(#figure-8daff0497094-3-pda0d969520)" fill="none" stroke="#1f6fd0" stroke-width="3"></path>
+   </g>
+   <g id="figure-8daff0497094-3-line2d_4">
+    <path d="M 351.792 106.344  L 378 106.344  " clip-path="url(#figure-8daff0497094-3-pda0d969520)" fill="none" stroke="#1f6fd0" stroke-width="3"></path>
+   </g>
+   <g id="figure-8daff0497094-3-text_1">
+    <text font-size="13.5px" font-family="'MiSans'" text-anchor="start" fill="#4e9be8" x="22.68" y="18.6975" transform="rotate(-0 22.68 18.6975)">结构总览 · 三条路线</text>
+   </g>
+   <g id="figure-8daff0497094-3-text_2">
+    <text font-size="25px" font-family="'MiSans'" text-anchor="start" fill="#12263a" x="22.68" y="41.905" transform="rotate(-0 22.68 41.905)">三种把光分成两路的办法</text>
+   </g>
+   <g id="figure-8daff0497094-3-text_3">
+    <text font-size="16px" font-family="'MiSans'" text-anchor="start" fill="#12263a" x="34.272" y="95.464" transform="rotate(-0 34.272 95.464)">Y 分支</text>
+   </g>
+   <g id="figure-8daff0497094-3-text_4">
+    <text font-size="12px" font-family="'MiSans'" text-anchor="start" fill="#e8823c" x="35.28" y="121.62" transform="rotate(-0 35.28 121.62)">分叉过渡</text>
+   </g>
+   <g id="figure-8daff0497094-3-text_5">
+    <text font-size="11.8px" font-family="'MiSans'" fill="#4a6076" transform="translate(34.272 227.718094)">一条波导逐渐张开，</text>
+    <text font-size="11.8px" font-family="'MiSans'" fill="#4a6076" transform="translate(34.272 244.291931)">对称就等分</text>
+   </g>
+   <g id="figure-8daff0497094-3-text_6">
+    <text font-size="11.8px" font-family="'MiSans'" fill="#0b4c9c" transform="translate(34.272 273.883938)">尺寸紧凑、天然等分</text>
+    <text font-size="11.8px" font-family="'MiSans'" fill="#0b4c9c" transform="translate(34.272 290.457775)">轮廓决定额外损耗</text>
+   </g>
+   <g id="figure-8daff0497094-3-text_7">
+    <text font-size="16px" font-family="'MiSans'" text-anchor="start" fill="#12263a" x="192.528" y="95.464" transform="rotate(-0 192.528 95.464)">定向耦合器</text>
+   </g>
+   <g id="figure-8daff0497094-3-text_8">
+    <text font-size="12px" font-family="'MiSans'" text-anchor="start" fill="#e8823c" x="193.536" y="121.62" transform="rotate(-0 193.536 121.62)">倏逝场耦合</text>
+   </g>
+   <g id="figure-8daff0497094-3-text_9">
+    <text font-size="11.8px" font-family="'MiSans'" fill="#4a6076" transform="translate(192.528 227.707031)">两条波导贴近，</text>
+    <text font-size="11.8px" font-family="'MiSans'" fill="#4a6076" transform="translate(192.528 244.280869)">功率来回换手</text>
+   </g>
+   <g id="figure-8daff0497094-3-text_10">
+    <text font-size="11.8px" font-family="'MiSans'" fill="#0b4c9c" transform="translate(192.528 273.883938)">比例连续可调</text>
+    <text font-size="11.8px" font-family="'MiSans'" fill="#0b4c9c" transform="translate(192.528 290.457775)">对波长与间距敏感</text>
+   </g>
+   <g id="figure-8daff0497094-3-text_11">
+    <text font-size="16px" font-family="'MiSans'" text-anchor="start" fill="#12263a" x="350.784" y="95.464" transform="rotate(-0 350.784 95.464)">多模干涉（MMI）</text>
+   </g>
+   <g id="figure-8daff0497094-3-text_12">
+    <text font-size="12px" font-family="'MiSans'" text-anchor="start" fill="#e8823c" x="351.792" y="121.62" transform="rotate(-0 351.792 121.62)">多模相干</text>
+   </g>
+   <g id="figure-8daff0497094-3-text_13">
+    <text font-size="11.8px" font-family="'MiSans'" fill="#4a6076" transform="translate(350.784 227.011937)">宽区里多个模式</text>
+    <text font-size="11.8px" font-family="'MiSans'" fill="#4a6076" transform="translate(350.784 243.585775)">干涉成自成像</text>
+   </g>
+   <g id="figure-8daff0497094-3-text_14">
+    <text font-size="11.8px" font-family="'MiSans'" fill="#0b4c9c" transform="translate(350.784 273.883938)">结构最短、容差较宽</text>
+    <text font-size="11.8px" font-family="'MiSans'" fill="#0b4c9c" transform="translate(350.784 290.457775)">长度需按波长设计</text>
+   </g>
+   <g id="figure-8daff0497094-3-text_15">
+    <text font-size="11px" font-family="'MiSans'" text-anchor="start" fill="#8a9bab" x="22.68" y="335.972656" transform="rotate(-0 22.68 335.972656)">缩略轮廓取自三个 Notebook 的真实几何；各图按自身视野缩放，未在同一比例下绘制</text>
+   </g>
+  </g>
+  <g id="figure-8daff0497094-3-axes_2">
+   <g id="figure-8daff0497094-3-patch_5">
+    <path d="M -1127.392 172.993333  L 41.514667 172.993333  L 41.514667 167.206667  L -1127.392 167.206667  z " clip-path="url(#figure-8daff0497094-3-p898c532f24)" fill="#0b4c9c"></path>
+   </g>
+   <g id="figure-8daff0497094-3-patch_6">
+    <path d="M 41.514667 172.993333  L 43.443556 172.993333  L 45.372444 173.572  L 47.301333 174.150667  L 49.230222 175.308  L 51.159111 177.3912  L 53.088 178.201333  L 55.016889 178.201333  L 56.945778 178.201333  L 58.874667 178.201333  L 60.803556 177.680533  L 62.732444 177.044  L 64.661333 177.044  L 64.661333 163.156  L 62.732444 163.156  L 60.803556 162.519467  L 58.874667 161.998667  L 56.945778 161.998667  L 55.016889 161.998667  L 53.088 161.998667  L 51.159111 162.8088  L 49.230222 164.892  L 47.301333 166.049333  L 45.372444 166.628  L 43.443556 167.206667  L 41.514667 167.206667  z " clip-path="url(#figure-8daff0497094-3-p898c532f24)" fill="#0b4c9c"></path>
+   </g>
+   <g id="figure-8daff0497094-3-patch_7">
+    <path d="M 134.101333 194.404  L 131.150133 194.322987  L 128.22208 194.09152  L 125.294027 193.698027  L 122.400693 193.142507  L 119.54208 192.436533  L 116.718187 191.580107  L 113.95216 190.573227  L 111.232427 189.427467  L 108.582133 188.11968  L 106.012853 186.684587  L 103.524587 185.110613  L 101.117333 183.409333  L 98.455467 181.52288  L 95.701013 179.78688  L 92.865547 178.201333  L 89.937493 176.76624  L 86.94 175.493173  L 83.873067 174.37056  L 80.75984 173.43312  L 77.60032 172.646133  L 74.394507 172.04432  L 71.165547 171.604533  L 67.91344 171.34992  L 64.661333 171.257333  L 64.661333 177.044  L 67.612533 177.125013  L 70.540587 177.35648  L 73.46864 177.749973  L 76.361973 178.305493  L 79.220587 179.011467  L 82.04448 179.867893  L 84.810507 180.874773  L 87.53024 182.020533  L 90.180533 183.32832  L 92.749813 184.763413  L 95.23808 186.337387  L 97.645333 188.038667  L 100.3072 189.92512  L 103.061653 191.66112  L 105.89712 193.246667  L 108.825173 194.68176  L 111.822667 195.954827  L 114.8896 197.07744  L 118.002827 198.01488  L 121.162347 198.801867  L 124.36816 199.40368  L 127.59712 199.843467  L 130.849227 200.09808  L 134.101333 200.190667  L 1291.434667 200.190667  L 1291.434667 194.404  z " clip-path="url(#figure-8daff0497094-3-p898c532f24)" fill="#0b4c9c"></path>
+   </g>
+   <g id="figure-8daff0497094-3-patch_8">
+    <path d="M 134.101333 140.009333  L 130.849227 140.10192  L 127.59712 140.356533  L 124.36816 140.79632  L 121.162347 141.398133  L 118.002827 142.18512  L 114.8896 143.12256  L 111.822667 144.245173  L 108.825173 145.51824  L 105.89712 146.953333  L 103.061653 148.53888  L 100.3072 150.27488  L 97.645333 152.161333  L 95.23808 153.862613  L 92.749813 155.436587  L 90.180533 156.87168  L 87.53024 158.179467  L 84.810507 159.325227  L 82.04448 160.332107  L 79.220587 161.188533  L 76.361973 161.894507  L 73.46864 162.450027  L 70.540587 162.84352  L 67.612533 163.074987  L 64.661333 163.156  L 64.661333 168.942667  L 67.91344 168.85008  L 71.165547 168.595467  L 74.394507 168.15568  L 77.60032 167.553867  L 80.75984 166.76688  L 83.873067 165.82944  L 86.94 164.706827  L 89.937493 163.43376  L 92.865547 161.998667  L 95.701013 160.41312  L 98.455467 158.67712  L 101.117333 156.790667  L 103.524587 155.089387  L 106.012853 153.515413  L 108.582133 152.08032  L 111.232427 150.772533  L 113.95216 149.626773  L 116.718187 148.619893  L 119.54208 147.763467  L 122.400693 147.057493  L 125.294027 146.501973  L 128.22208 146.10848  L 131.150133 145.877013  L 134.101333 145.796  L 1291.434667 145.796  L 1291.434667 140.009333  z " clip-path="url(#figure-8daff0497094-3-p898c532f24)" fill="#0b4c9c"></path>
+   </g>
+  </g>
+  <g id="figure-8daff0497094-3-axes_3">
+   <g id="figure-8daff0497094-3-patch_9">
+    <path d="M 150.054063 155.668358  L 159.469579 155.668358  L 168.720632 155.668358  L 177.971684 155.668358  L 187.154183 155.668358  L 190.319803 155.774972  L 193.391731 156.094453  L 196.546201 156.659799  L 199.495672 157.397167  L 202.47779 158.363897  L 205.312176 159.518951  L 208.171718 160.920044  L 210.880463 162.496042  L 213.714431 164.135459  L 216.77537 165.628801  L 219.952057 166.92423  L 223.170178 167.96393  L 226.527873 168.805416  L 229.771039 169.38308  L 233.170562 169.737884  L 236.493043 169.853305  L 244.784842 169.853305  L 253.008 169.853305  L 261.231158 169.853305  L 269.523153 169.853305  L 272.853878 169.72964  L 276.244779 169.374874  L 279.487883 168.805474  L 282.854121 167.963915  L 286.055763 166.924206  L 289.240563 165.628834  L 292.30173 164.135381  L 295.135624 162.487768  L 297.835909 160.920125  L 300.703663 159.519022  L 303.546478 158.363873  L 306.512183 157.397151  L 309.469546 156.659859  L 312.624085 156.102693  L 315.688201 155.783173  L 318.862022 155.668358  L 328.044316 155.668358  L 337.295368 155.668358  L 346.546421 155.668358  L 355.961937 155.668358  L 355.961937 151.639011  L 346.546421 151.639011  L 337.295368 151.639011  L 328.044316 151.639011  L 318.724622 151.639011  L 315.402141 151.754432  L 312.002618 152.109236  L 308.759452 152.686899  L 305.401756 153.528386  L 302.183636 154.568086  L 299.007057 155.86347  L 296.036311 157.307583  L 293.112082 159.012697  L 290.321548 160.621358  L 287.543955 161.973284  L 284.709369 163.128418  L 281.727251 164.095149  L 278.777779 164.832517  L 275.62331 165.397863  L 272.551382 165.717344  L 269.385762 165.823958  L 261.231158 165.823958  L 253.008 165.823958  L 244.784842 165.823958  L 236.630443 165.823958  L 233.456622 165.709143  L 230.392506 165.389623  L 227.237967 164.832457  L 224.280604 164.095165  L 221.314899 163.128443  L 218.471971 161.973247  L 215.694615 160.621437  L 212.904012 159.004529  L 209.98777 157.307506  L 207.008793 155.863404  L 203.824185 154.56811  L 200.622542 153.528401  L 197.256304 152.686842  L 194.0132 152.117442  L 190.622299 151.762676  L 187.291574 151.639011  L 177.971684 151.639011  L 168.720632 151.639011  L 159.469579 151.639011  L 150.054063 151.639011  z " clip-path="url(#figure-8daff0497094-3-pa8e8e0a22b)" fill="#0b4c9c"></path>
+   </g>
+   <g id="figure-8daff0497094-3-patch_10">
+    <path d="M 150.054063 188.560989  L 159.469579 188.560989  L 168.720632 188.560989  L 177.971684 188.560989  L 187.291574 188.560989  L 190.622299 188.437324  L 194.0132 188.082558  L 197.256304 187.513158  L 200.622542 186.671599  L 203.824185 185.63189  L 207.008793 184.336596  L 209.98777 182.892494  L 212.904012 181.195471  L 215.694615 179.578563  L 218.471971 178.226753  L 221.314899 177.071557  L 224.280604 176.104835  L 227.237967 175.367543  L 230.392506 174.810377  L 233.456622 174.490857  L 236.630443 174.376042  L 244.784842 174.376042  L 253.008 174.376042  L 261.231158 174.376042  L 269.385762 174.376042  L 272.551382 174.482656  L 275.62331 174.802137  L 278.777779 175.367483  L 281.727251 176.104851  L 284.709369 177.071582  L 287.543955 178.226716  L 290.321548 179.578642  L 293.112082 181.187303  L 296.036311 182.892417  L 299.007057 184.33653  L 302.183636 185.631914  L 305.401756 186.671614  L 308.759452 187.513101  L 312.002618 188.090764  L 315.402141 188.445568  L 318.724622 188.560989  L 328.044316 188.560989  L 337.295368 188.560989  L 346.546421 188.560989  L 355.961937 188.560989  L 355.961937 184.531642  L 346.546421 184.531642  L 337.295368 184.531642  L 328.044316 184.531642  L 318.862022 184.531642  L 315.688201 184.416827  L 312.624085 184.097307  L 309.469546 183.540141  L 306.512183 182.802849  L 303.546478 181.836127  L 300.703663 180.680978  L 297.835909 179.279875  L 295.135624 177.712232  L 292.30173 176.064619  L 289.240563 174.571166  L 286.055763 173.275794  L 282.854121 172.236085  L 279.487883 171.394526  L 276.244779 170.825126  L 272.853878 170.47036  L 269.523153 170.346695  L 261.231158 170.346695  L 253.008 170.346695  L 244.784842 170.346695  L 236.493043 170.346695  L 233.170562 170.462116  L 229.771039 170.81692  L 226.527873 171.394584  L 223.170178 172.23607  L 219.952057 173.27577  L 216.77537 174.571199  L 213.714431 176.064541  L 210.880463 177.703958  L 208.171718 179.279956  L 205.312176 180.681049  L 202.47779 181.836103  L 199.495672 182.802833  L 196.546201 183.540201  L 193.391731 184.105547  L 190.319803 184.425028  L 187.154183 184.531642  L 177.971684 184.531642  L 168.720632 184.531642  L 159.469579 184.531642  L 150.054063 184.531642  z " clip-path="url(#figure-8daff0497094-3-pa8e8e0a22b)" fill="#0b4c9c"></path>
+   </g>
+  </g>
+  <g id="figure-8daff0497094-3-axes_4">
+   <g id="figure-8daff0497094-3-patch_11">
+    <path d="M 447.445895 160.232211  L 445.656536 160.284839  L 443.867176 160.449302  L 442.097553 160.7256  L 440.347665 161.107155  L 438.624091 161.593965  L 436.926831 162.186033  L 435.275621 162.883357  L 433.670461 163.679358  L 432.210028 164.396418  L 430.703545 165.034535  L 429.16417 165.573974  L 427.591902 166.014735  L 425.999899 166.363397  L 424.38816 166.613381  L 422.763264 166.758109  L 421.131789 166.810737  L 401.396211 166.810737  L 399.764736 166.758109  L 398.13984 166.613381  L 396.528101 166.363397  L 394.936098 166.014735  L 393.36383 165.573974  L 391.824455 165.034535  L 390.317972 164.396418  L 388.857539 163.679358  L 387.252379 162.883357  L 385.601169 162.186033  L 383.910488 161.593965  L 382.180335 161.107155  L 380.430447 160.7256  L 378.660824 160.449302  L 376.871464 160.284839  L 375.082105 160.232211  L 309.296842 160.232211  L 309.296842 162.863621  L 375.082105 162.863621  L 376.71358 162.916249  L 378.338476 163.060977  L 379.950215 163.310961  L 381.542218 163.659623  L 383.114486 164.100384  L 384.653861 164.639823  L 386.160344 165.27794  L 387.620776 165.995  L 389.225937 166.791001  L 390.877147 167.488325  L 392.574407 168.080392  L 394.297981 168.567203  L 396.047869 168.948758  L 397.817492 169.225056  L 399.606851 169.389519  L 401.396211 169.442147  L 401.396211 170.757853  L 399.606851 170.810481  L 397.817492 170.974944  L 396.047869 171.251242  L 394.297981 171.632797  L 392.574407 172.119608  L 390.877147 172.711675  L 389.225937 173.408999  L 387.620776 174.205  L 386.160344 174.92206  L 384.653861 175.560177  L 383.114486 176.099616  L 381.542218 176.540377  L 379.950215 176.889039  L 378.338476 177.139023  L 376.71358 177.283751  L 375.082105 177.336379  L 309.296842 177.336379  L 309.296842 179.967789  L 375.082105 179.967789  L 376.871464 179.915161  L 378.660824 179.750698  L 380.430447 179.4744  L 382.180335 179.092845  L 383.910488 178.606035  L 385.601169 178.013967  L 387.252379 177.316643  L 388.857539 176.520642  L 390.317972 175.803582  L 391.824455 175.165465  L 393.36383 174.626026  L 394.936098 174.185265  L 396.528101 173.836603  L 398.13984 173.586619  L 399.764736 173.441891  L 401.396211 173.389263  L 421.131789 173.389263  L 422.763264 173.441891  L 424.38816 173.586619  L 425.999899 173.836603  L 427.591902 174.185265  L 429.16417 174.626026  L 430.703545 175.165465  L 432.210028 175.803582  L 433.670461 176.520642  L 435.275621 177.316643  L 436.926831 178.013967  L 438.624091 178.606035  L 440.347665 179.092845  L 442.097553 179.4744  L 443.867176 179.750698  L 445.656536 179.915161  L 447.445895 179.967789  L 513.231158 179.967789  L 513.231158 177.336379  L 447.445895 177.336379  L 445.81442 177.283751  L 444.189524 177.139023  L 442.577785 176.889039  L 440.985782 176.540377  L 439.413514 176.099616  L 437.874139 175.560177  L 436.367656 174.92206  L 434.907224 174.205  L 433.302063 173.408999  L 431.650853 172.711675  L 429.960172 172.119608  L 428.230019 171.632797  L 426.480131 171.251242  L 424.710508 170.974944  L 422.921149 170.810481  L 421.131789 170.757853  L 421.131789 169.442147  L 422.921149 169.389519  L 424.710508 169.225056  L 426.480131 168.948758  L 428.230019 168.567203  L 429.960172 168.080392  L 431.650853 167.488325  L 433.302063 166.791001  L 434.907224 165.995  L 436.367656 165.27794  L 437.874139 164.639823  L 439.413514 164.100384  L 440.985782 163.659623  L 442.577785 163.310961  L 444.189524 163.060977  L 445.81442 162.916249  L 447.445895 162.863621  L 513.231158 162.863621  L 513.231158 160.232211  z " clip-path="url(#figure-8daff0497094-3-pc713a02017)" fill="#0b4c9c"></path>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="figure-8daff0497094-3-pda0d969520">
+   <rect x="0" y="0" width="504" height="355.32"></rect>
+  </clipPath>
+  <clipPath id="figure-8daff0497094-3-p898c532f24">
+   <rect x="32.256" y="133.56" width="124.992" height="73.08"></rect>
+  </clipPath>
+  <clipPath id="figure-8daff0497094-3-pa8e8e0a22b">
+   <rect x="190.512" y="133.56" width="124.992" height="73.08"></rect>
+  </clipPath>
+  <clipPath id="figure-8daff0497094-3-pc713a02017">
+   <rect x="348.768" y="133.56" width="124.992" height="73.08"></rect>
+  </clipPath>
+ </defs>
+</svg><figcaption><span class="fig-tag">图 3</span>三条路线——Y 分支、定向耦合器、多模干涉器。缩略轮廓取自各自 Notebook 的真实几何。</figcaption></figure>
+<h2>Y 分支：让几何把光掰开</h2>
+<p>Y 分支最容易从外形理解。输入波导经过一段分叉区，接到两条输出支路。</p>
+<p>当结构和激励都满足镜像对称时，两路功率必然相同。这不是调出来的，是算出来的——对称性本身就保证了这一点。</p>
+<figure><img alt="图 4：Y 分支的实际 FDTD 场图，分叉区里能看到模式在重新分配。" src="../../../../../assets/ac2ffc4da058fffa364d9378f765ce805beadb808601224aac464c865455433a.png"><figcaption><span class="fig-tag">图 4</span>Y 分支的实际 FDTD 场图，分叉区里能看到模式在重新分配。</figcaption></figure>
+<h3>关键在“慢慢张开”</h3>
+<p>设计 Y 分支的全部功夫，都花在那个“慢”字上。</p>
+<p>分叉处的过渡越突然，光越容易激发出不需要的成分，多出来的部分就变成辐射损耗。所以真实的 Y 分支会用一条缓慢变化的轮廓：分叉前先把波导加宽，再让两条支路以平缓的角度分开。</p>
+<p>这种过渡叫<strong>绝热</strong>。意思是让光在每一步都“来不及”察觉结构在变——模式形状始终跟着波导走，不产生新的模式。判断标准很朴素：把分叉区拉长一倍，损耗还在明显下降，说明它还不够绝热。</p>
+<p>代价是面积。过渡越平缓，器件越长。<strong>Y 分支的核心权衡就是用面积换损耗。</strong></p>
+<h3>三个容易被忽略的细节</h3>
+<p><strong>分叉前的加宽量。</strong> 加得太少，模式被挤在尖端；加得太多，又会激发高阶模。官方案例用多个宽度参数描述这段轮廓，就是为了把这个平衡点调出来。</p>
+<p><strong>输出弯曲半径。</strong> 分叉之后两条支路通常要拉开距离，好让后级器件有地方放。这段弯曲本身也带来损耗和串扰：弯得太急，光往包层里漏；两条支路靠得太近，又会重新耦合。<strong>Y 分支的实际面积，往往由输出弯曲决定，而不是分叉区。</strong></p>
+<p><strong>对称性能不能兑现。</strong> 器件设计完全对称，但刻蚀出来的两条支路未必。加工偏差打破对称，50∶50 就会偏离。这一条在另外两种结构上同样成立，只是 Y 分支对它的依赖最直接。</p>
+<h3>实测：97% 的总透射</h3>
+<p>官方案例在本地的求解结果：</p>
+<ul>
+<li>1.55 μm 处，两路基模总透射约 <strong>97.0%</strong>；</li>
+<li>1.53–1.57 μm 内，总透射稳定在 <strong>96.6%–97.0%</strong>，几乎不随波长变化；</li>
+<li>两路各 50%。</li>
+</ul>
+<p>那个“几乎不随波长变化”，是 Y 分支最值钱的地方。第四篇会把三种结构的波长响应放在一起看，那时差别会非常明显。</p>
+<p>需要说明：这次只在上路放置了模式监视器，下路的 50% 是由镜像对称推得的，不是两个独立测量。</p>
+<figure><img alt="动图 1：Y 分支的 3D Carpet 动画。Re(Ey)，λ = 1.55 μm；起伏高度代表场值，不是器件表面形变。" src="../../../../../assets/3b81e51df283b6eb9ab479bf529f060c7c2408e7e84c06bac47a4e66ac652c37.gif"><figcaption><span class="fig-tag">动图 1</span>Y 分支的 3D Carpet 动画。Re(Ey)，λ = 1.55 μm；起伏高度代表场值，不是器件表面形变。</figcaption></figure>
+<p>动画里能看清一件事：光在分叉区是<strong>连续摊开</strong>的，没有突变，也没有来回振荡。这就是绝热过渡的直观样子。</p>
+<h3>什么时候选它</h3>
+<p>需要宽带等分、结构越简单越好的场合。1×2、1×4 的分光树，基本都用它。</p>
+<p>本例的对称 Y 分支由对称性保证等分。非对称 Y 分支可以通过截面与绝热模式演化设计实现 70∶30 等比例；打破对称并不必然带来额外损耗，具体仍需优化验证。</p>
+<h2>下一篇</h2>
+<p>下一篇讨论另一种控制分光比的机制：让两条波导靠近，通过倏逝场交换功率。它适合构成 2×2，也提供不同于非对称 Y 的设计自由度。</p>
+<p>下一篇讲定向耦合器：它的比例可以连续调，代价是敏感。</p>
+<h3>配套案例</h3>
+<p><a href="https://www.lingcompute.com/photon/learning-center/examples/notebooks/YJunction">Y 分支：Waveguide Y junction</a></p>
+<p>更多案例见<a href="https://www.lingcompute.com/photon/learning-center/example-library">灵算光子学习中心</a>，国内产品入口为 <a href="https://tidy3d.fangzhen.cloud/">Tidy3D 平台</a>。本次未验证新用户注册与浏览器直接执行 Notebook 的完整路径，请按当前平台文档操作。</p>
+<p>本文数值来自本地实际求解。各 Notebook 的材料模型、端口配置及统计条件不完全相同，不构成同条件下的定量性能排名。</p></main><footer class="brand"><img src="../../../../../assets/510b9dc6fc4142dea696bba38799a59fbad636eb6dee1e46604eca8aaa5271d0.png" alt="灵算科技 LingCompute"><p>自有文章及插图：CC BY-NC 4.0；商用请另行联系。商标与另有标注的第三方材料除外。</p><p>默认系统字体；备用字体：<a href="https://hyperos.mi.com/font/en/download/">MiSans（小米）</a>，按其字体许可使用。</p><p>新稿审核以对应GitHub PR记录为准；预览本身不代表审核通过。</p><p><a href="https://github.com/LingCompute/lingcompute-content/blob/3fcd4b7db36b36165ed973862abc762e4c242ac7/content/photon/power-splitters/SOURCES.md">来源、指标口径与素材说明</a></p></footer><nav aria-label="文章导航"><a href="../../index.html">返回文章目录</a></nav></article></body></html>
