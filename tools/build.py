@@ -15,9 +15,11 @@ import markdown
 from PIL import Image
 
 try:
+    from . import banner as banner_tool
     from .fonts import font_style
     from .svg import image as svg_image
 except ImportError:
+    import banner as banner_tool
     from fonts import font_style
     from svg import image as svg_image
 
@@ -25,6 +27,14 @@ ROOT = Path(__file__).resolve().parents[1]
 BUILD = ROOT / "build"
 REPOSITORY = "https://github.com/LingCompute/lingcompute-content"
 SOURCE_REF = quote(os.environ.get("GITHUB_SHA", "main"), safe="")
+WECHAT_STYLE = (
+    "body{margin:0;padding:0}img{display:block;width:100%;max-width:100%;height:auto}"
+)
+BRAND = {
+    "follow": ROOT / "assets/brand/wechat-follow.png",
+    "signature": ROOT / "assets/brand/wechat-signature.png",
+    "cta": ROOT / "assets/brand/wechat-cta.png",
+}
 TAGS = {
     "p", "br", "h1", "h2", "h3", "h4", "strong", "em", "a", "img",
     "ul", "ol", "li", "blockquote", "pre", "code", "table", "thead",
@@ -61,7 +71,7 @@ def data_uri(path):
 
 def attributes(tag, name, value):
     return (
-        tag == "p" and name == "class" and value == "eq"
+        tag == "p" and name == "class" and value in {"eq", "note"}
         or tag == "a" and name in {"href", "title"}
         or tag == "img" and name in {"src", "alt", "title"}
         or tag in {"th", "td"} and name in {"colspan", "rowspan"}
@@ -140,7 +150,7 @@ class ContentHTML(HTMLParser):
 
 
 def render_body(manuscript, base, root=ROOT, source_ref=SOURCE_REF, source_base=None):
-    rendered = markdown.markdown(manuscript, extensions=["extra", "sane_lists"])
+    rendered = markdown.markdown(manuscript, extensions=["extra", "sane_lists", "attr_list"])
     cleaned = bleach.clean(
         rendered, tags=TAGS, attributes=attributes, protocols={"https", "http", "mailto"}, strip=True
     )
@@ -213,6 +223,11 @@ def read_articles(root=ROOT, source_ref=SOURCE_REF, source_base=None):
                 raise ValueError(f"Article authors must be a list of GitHub logins: {path}")
             body, parser = render_body(manuscript, path.parent, root, source_ref, source_base)
             minutes = reading_minutes(" ".join(parser.text), len(parser.assets), parser.equations)
+            case = entry.get("case")
+            if case is not None:
+                if not case.get("title", "").strip():
+                    raise ValueError(f"Case card needs a title: {path}")
+                case = {**case, "qr": local_path(manifest.parent, case["qr"], root)}
             articles.append({
                 "path": path,
                 "key": path.relative_to(root).as_posix(),
@@ -225,6 +240,7 @@ def read_articles(root=ROOT, source_ref=SOURCE_REF, source_base=None):
                 "assets": parser.assets,
                 "equations": parser.equations,
                 "minutes": minutes,
+                "case": case,
             })
     actual = {
         path.resolve() for path in (root / "content").glob("*/*/*.md")
@@ -255,7 +271,14 @@ def document(title, content, style):
 
 
 def article_html(article, products, style, logo, reviewed, screens=None, navigation="",
-                 root=ROOT, source_ref=SOURCE_REF, notice="", source_base=None):
+                 root=ROOT, source_ref=SOURCE_REF, notice="", source_base=None, wechat=None):
+    if wechat is not None:
+        body = re.sub(r"<h1>.*?</h1>", "", wechat["body"], count=1, flags=re.S)
+        content = (
+            f'<article><section class="follow"><img src="{wechat["follow"]}" alt="点击上方蓝字关注我们"></section>'
+            f'<main id="article-body">{body}</main>{wechat["ending"]}</article>'
+        )
+        return document(article["title"], content, wechat["style"])
     lower, upper = article["minutes"]
     screen_text = f"{screens:.1f} 参考屏" if screens is not None else "测量中"
     warning = (
@@ -287,6 +310,62 @@ def article_html(article, products, style, logo, reviewed, screens=None, navigat
     return document(article["title"], content, style)
 
 
+def section_banners(article):
+    """把正文里的每个二级标题换成发布版那张斜切横幅。"""
+    directory = BUILD / "assets/banners" / Path(article["key"]).stem
+    directory.mkdir(parents=True, exist_ok=True)
+    records = []
+
+    def replace(match):
+        text = html.unescape(re.sub(r"<[^>]+>", "", match.group(1))).strip()
+        index = len(records) + 1
+        path = directory / f"{index:02d}.png"
+        banner_tool.banner(text).save(path)
+        records.append({
+            "order": index,
+            "text": text,
+            "path": path.relative_to(BUILD).as_posix(),
+            "sha256": digest(path),
+            "bytes": path.stat().st_size,
+        })
+        return (
+            f'<section class="section-banner"><img alt="章节：{html.escape(text)}" '
+            f'src="{data_uri(path)}"></section>'
+        )
+
+    return re.sub(r"<h2>(.*?)</h2>", replace, article["body"], flags=re.S), records
+
+
+def ending_html(article):
+    """发布版的页尾：案例卡 → 签名卡 → 阅读原文。"""
+    parts = []
+    record = None
+    if article["case"]:
+        path = BUILD / "assets/cases" / f"{Path(article['key']).stem}.png"
+        path.parent.mkdir(parents=True, exist_ok=True)
+        banner_tool.case_card(article["case"]["title"], article["case"]["qr"]).save(path)
+        record = {
+            "title": article["case"]["title"],
+            "qr": article["case"]["qr"].relative_to(ROOT).as_posix(),
+            "path": path.relative_to(BUILD).as_posix(),
+            "sha256": digest(path),
+            "bytes": path.stat().st_size,
+        }
+        parts.append(
+            f'<section class="case-card"><img alt="学习中心配套案例：{html.escape(article["case"]["title"])}" '
+            f'src="{data_uri(path)}"></section>'
+        )
+    parts.append(
+        '<section class="signature"><img alt="灵算科技联系方式与品牌标识" '
+        f'src="{data_uri(BRAND["signature"])}"></section>'
+    )
+    parts.append(
+        '<section class="cta"><img alt="点击阅读原文，进入官网免费试用" '
+        f'src="{data_uri(BRAND["cta"])}"></section>'
+    )
+    return "".join(parts), record
+
+
 def export_wechat(page):
     return page.locator("article").evaluate("""article => {
         const clone = article.cloneNode(true);
@@ -296,15 +375,19 @@ def export_wechat(page):
           "color", "background-color", "font-family", "font-size", "font-weight",
           "font-style", "line-height", "text-align", "text-decoration",
           "margin-top", "margin-bottom", "padding-top", "padding-bottom",
-          "padding-left", "padding-right", "border-left", "border-top",
-          "border-bottom", "border-radius", "display", "vertical-align",
-          "overflow-wrap", "white-space", "border-collapse", "table-layout"
+          "padding-left", "padding-right", "border-left", "border-right",
+          "border-top", "border-bottom", "border-radius", "box-shadow", "letter-spacing",
+          "display", "vertical-align", "overflow-wrap", "white-space",
+          "border-collapse", "table-layout"
         ];
+        const stack = '-apple-system, system-ui, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif';
         originals.forEach((node, index) => {
             const style = getComputedStyle(node);
-            copies[index].style.cssText = properties.map(
-              property => property + ":" + style.getPropertyValue(property)
-            ).join(";");
+            copies[index].style.cssText = properties.map(property => {
+              if (property !== "font-family") return property + ":" + style.getPropertyValue(property);
+              const family = style.getPropertyValue("font-family");
+              return "font-family:" + (/mono/i.test(family) ? family : stack);
+            }).join(";");
             if (node.tagName === "IMG" || node.tagName === "TABLE") {
                 copies[index].style.width = node.closest(".brand") ? "180px" : "100%";
                 copies[index].style.maxWidth = "100%";
@@ -322,7 +405,9 @@ def build():
 
     products, articles = read_articles()
     ledger = json.loads((ROOT / "reviews/legacy.json").read_text())
-    style = font_style() + "\n" + (ROOT / "tools/style.css").read_text()
+    css = (ROOT / "tools/style.css").read_text()
+    style = font_style() + "\n" + css
+    wechat_style = css + "\n" + WECHAT_STYLE
     brand = ROOT / "assets/brand/lingcompute-horizontal.svg"
     BUILD.mkdir(exist_ok=True)
     report = []
@@ -352,6 +437,18 @@ def build():
             if page.evaluate("document.documentElement.scrollWidth > innerWidth + 1"):
                 raise ValueError(f"Horizontal overflow at reference viewport: {article['key']}")
             page.screenshot(path=str(destination.with_suffix(".png")), full_page=True, animations="disabled", scale="css")
+            wechat_body, banners = section_banners(article)
+            ending, case_record = ending_html(article)
+            wechat_page = article_html(article, products, style, logo, reviewed, wechat={
+                "follow": data_uri(BRAND["follow"]),
+                "body": wechat_body,
+                "ending": ending,
+                "style": wechat_style,
+            })
+            page.set_content(wechat_page, wait_until="load")
+            page.evaluate("async () => { await document.fonts.ready; await Promise.all(Array.from(document.images, image => image.decode())); }")
+            if page.evaluate("document.documentElement.scrollWidth > innerWidth + 1"):
+                raise ValueError(f"Horizontal overflow in the WeChat layout: {article['key']}")
             uploads = {}
             vector_paths = [path for path in article["assets"] if path.suffix.lower() == ".svg"]
             vectors = page.locator("svg.vector-image")
@@ -375,7 +472,7 @@ def build():
                 }
             page.evaluate("async () => { await Promise.all(Array.from(document.images, image => image.decode())); }")
             wechat = export_wechat(page)
-            destination.with_suffix(".wechat.html").write_text(document(article["title"], wechat, ""))
+            destination.with_suffix(".wechat.html").write_text(document(article["title"], wechat, WECHAT_STYLE))
             assets = [
                 {
                     "order": index + 1,
@@ -397,6 +494,18 @@ def build():
                 "over_ten_screens": screens > 10,
                 "historical_review_matches": reviewed,
                 "assets": assets,
+                "generated": {
+                    "section_banners": banners,
+                    "case_card": case_record,
+                },
+                "brand_assets": {
+                    name: {
+                        "path": path.relative_to(ROOT).as_posix(),
+                        "sha256": digest(path),
+                        "bytes": path.stat().st_size,
+                    }
+                    for name, path in BRAND.items()
+                },
                 "brand_asset": {
                     "source": brand.relative_to(ROOT).as_posix(),
                     "source_sha256": digest(brand),
