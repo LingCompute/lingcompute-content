@@ -1,0 +1,205 @@
+
+
+<svg stroke-linejoin="round" stroke-linecap="butt" xmlns:xlink="http://www.w3.org/1999/xlink" width="504pt" height="382.032pt" viewBox="0 0 504 382.032" xmlns="http://www.w3.org/2000/svg">
+ 
+ <defs>
+  
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 382.032 
+L 504 382.032 
+L 504 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 21.168 145.152 
+L 506.016 145.152 
+L 506.016 104.832 
+L 21.168 104.832 
+z
+" clip-path="url(#p72823e6e26)" style="fill: #f7fafd"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 21.168 231.84 
+L 506.016 231.84 
+L 506.016 191.52 
+L 21.168 191.52 
+z
+" clip-path="url(#p72823e6e26)" style="fill: #f7fafd"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 21.168 318.528 
+L 506.016 318.528 
+L 506.016 278.208 
+L 21.168 278.208 
+z
+" clip-path="url(#p72823e6e26)" style="fill: #f7fafd"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 123.984 96.768 
+L 235.872 96.768 
+Q 240.912 96.768 240.912 91.728 
+L 240.912 70.56 
+Q 240.912 65.52 235.872 65.52 
+L 123.984 65.52 
+Q 118.944 65.52 118.944 70.56 
+L 118.944 91.728 
+Q 118.944 96.768 123.984 96.768 
+z
+" clip-path="url(#p72823e6e26)" style="fill: #f1f7fe"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 254.016 96.768 
+L 365.904 96.768 
+Q 370.944 96.768 370.944 91.728 
+L 370.944 70.56 
+Q 370.944 65.52 365.904 65.52 
+L 254.016 65.52 
+Q 248.976 65.52 248.976 70.56 
+L 248.976 91.728 
+Q 248.976 96.768 254.016 96.768 
+z
+" clip-path="url(#p72823e6e26)" style="fill: #f1f7fe"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 384.048 96.768 
+L 495.936 96.768 
+Q 500.976 96.768 500.976 91.728 
+L 500.976 70.56 
+Q 500.976 65.52 495.936 65.52 
+L 384.048 65.52 
+Q 379.008 65.52 379.008 70.56 
+L 379.008 91.728 
+Q 379.008 96.768 384.048 96.768 
+z
+" clip-path="url(#p72823e6e26)" style="fill: #f1f7fe"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 22.68 53.424 
+L 65.52 53.424 
+" clip-path="url(#p72823e6e26)" style="fill: none; stroke: #1f6fd0; stroke-width: 3.2"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 21.168 102.816 
+L 505 102.816 
+" clip-path="url(#p72823e6e26)" style="fill: none; stroke: #dce6ef; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 21.168 331.632 
+L 505 331.632 
+" clip-path="url(#p72823e6e26)" style="fill: none; stroke: #dce6ef; stroke-linecap: square"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 13.5px; font-family: 'MiSans'; text-anchor: start; fill: #4e9be8" x="22.68" y="18.6975" transform="rotate(-0 22.68 18.6975)">横向对照 · 三种结构</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 25px; font-family: 'MiSans'; text-anchor: start; fill: #12263a" x="22.68" y="41.905" transform="rotate(-0 22.68 41.905)">把三种结构放在同一张表里</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 14px; font-family: 'MiSans'; text-anchor: start; fill: #12263a" x="129.024" y="78.302" transform="rotate(-0 129.024 78.302)">Y 分支</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 10.5px; font-family: 'MiSans'; text-anchor: start; fill: #e8823c" x="129.024" y="91.4865" transform="rotate(-0 129.024 91.4865)">对称分流</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 14px; font-family: 'MiSans'; text-anchor: start; fill: #12263a" x="259.056" y="78.302" transform="rotate(-0 259.056 78.302)">定向耦合器</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 10.5px; font-family: 'MiSans'; text-anchor: start; fill: #e8823c" x="259.056" y="91.4865" transform="rotate(-0 259.056 91.4865)">耦合换能</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 14px; font-family: 'MiSans'; text-anchor: start; fill: #12263a" x="389.088" y="78.302" transform="rotate(-0 389.088 78.302)">多模干涉 MMI</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 10.5px; font-family: 'MiSans'; text-anchor: start; fill: #e8823c" x="389.088" y="91.4865" transform="rotate(-0 389.088 91.4865)">干涉成像</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 12.5px; font-family: 'MiSans'; text-anchor: start; fill: #0b4c9c" x="27.72" y="129.8165" transform="rotate(-0 27.72 129.8165)">分光机制</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 11.2px; font-family: 'MiSans'; fill: #4a6076" transform="translate(127.008 120.981437)">分叉处模式演化</text>
+    <text style="font-size: 11.2px; font-family: 'MiSans'; fill: #4a6076" transform="translate(127.008 137.962562)">对称条件下等分</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 11.2px; font-family: 'MiSans'; fill: #4a6076" transform="translate(257.04 120.981437)">两条波导贴近</text>
+    <text style="font-size: 11.2px; font-family: 'MiSans'; fill: #4a6076" transform="translate(257.04 137.962562)">功率来回换手</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 11.2px; font-family: 'MiSans'; fill: #4a6076" transform="translate(387.072 120.981437)">多个模式干涉</text>
+    <text style="font-size: 11.2px; font-family: 'MiSans'; fill: #4a6076" transform="translate(387.072 137.962562)">在像点处叠加</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 12.5px; font-family: 'MiSans'; text-anchor: start; fill: #0b4c9c" x="27.72" y="173.1605" transform="rotate(-0 27.72 173.1605)">关键参数</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 11.2px; font-family: 'MiSans'; fill: #4a6076" transform="translate(127.008 164.325437)">分叉轮廓</text>
+    <text style="font-size: 11.2px; font-family: 'MiSans'; fill: #4a6076" transform="translate(127.008 181.306562)">输出弯曲半径</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 11.2px; font-family: 'MiSans'; fill: #4a6076" transform="translate(257.04 164.325437)">耦合长度</text>
+    <text style="font-size: 11.2px; font-family: 'MiSans'; fill: #4a6076" transform="translate(257.04 181.306562)">波导间距</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 11.2px; font-family: 'MiSans'; fill: #4a6076" transform="translate(387.072 164.325437)">多模区宽度</text>
+    <text style="font-size: 11.2px; font-family: 'MiSans'; fill: #4a6076" transform="translate(387.072 181.306562)">多模区长度</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 12.5px; font-family: 'MiSans'; text-anchor: start; fill: #0b4c9c" x="27.72" y="216.5045" transform="rotate(-0 27.72 216.5045)">波长行为</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 11.2px; font-family: 'MiSans'; fill: #4a6076" transform="translate(127.008 207.669437)">保持对称时等分</text>
+    <text style="font-size: 11.2px; font-family: 'MiSans'; fill: #4a6076" transform="translate(127.008 224.650562)">总透射仍需评估</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 11.2px; font-family: 'MiSans'; fill: #4a6076" transform="translate(257.04 207.669437)">耦合与相位匹配</text>
+    <text style="font-size: 11.2px; font-family: 'MiSans'; fill: #4a6076" transform="translate(257.04 224.650562)">共同决定光谱</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 11.2px; font-family: 'MiSans'; fill: #4a6076" transform="translate(387.072 207.669437)">模式相位与接口</text>
+    <text style="font-size: 11.2px; font-family: 'MiSans'; fill: #4a6076" transform="translate(387.072 224.650562)">共同决定光谱</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 12.5px; font-family: 'MiSans'; text-anchor: start; fill: #0b4c9c" x="27.72" y="259.8485" transform="rotate(-0 27.72 259.8485)">工艺影响项</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 11.2px; font-family: 'MiSans'; fill: #4a6076" transform="translate(127.008 251.013438)">轮廓与截面</text>
+    <text style="font-size: 11.2px; font-family: 'MiSans'; fill: #4a6076" transform="translate(127.008 267.994563)">两侧偏差是否对称</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 11.2px; font-family: 'MiSans'; fill: #4a6076" transform="translate(257.04 251.013438)">间距与线宽</text>
+    <text style="font-size: 11.2px; font-family: 'MiSans'; fill: #4a6076" transform="translate(257.04 267.994563)">两臂相位失配</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 11.2px; font-family: 'MiSans'; fill: #4a6076" transform="translate(387.072 251.013438)">多模区截面与长度</text>
+    <text style="font-size: 11.2px; font-family: 'MiSans'; fill: #4a6076" transform="translate(387.072 267.994563)">端口位置与过渡</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 12.5px; font-family: 'MiSans'; text-anchor: start; fill: #0b4c9c" x="27.72" y="303.1925" transform="rotate(-0 27.72 303.1925)">可先评估</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 11.2px; font-family: 'MiSans'; fill: #4a6076" transform="translate(127.008 294.357437)">对称等分</text>
+    <text style="font-size: 11.2px; font-family: 'MiSans'; fill: #4a6076" transform="translate(127.008 311.338562)">关注过渡与布线</text>
+   </g>
+   <g id="text_27">
+    <text style="font-size: 11.2px; font-family: 'MiSans'; fill: #4a6076" transform="translate(257.04 294.357437)">连续调节比例</text>
+    <text style="font-size: 11.2px; font-family: 'MiSans'; fill: #4a6076" transform="translate(257.04 311.338562)">或实现 2×2 耦合</text>
+   </g>
+   <g id="text_28">
+    <text style="font-size: 11.2px; font-family: 'MiSans'; fill: #4a6076" transform="translate(387.072 294.357437)">多端口或紧凑布局</text>
+    <text style="font-size: 11.2px; font-family: 'MiSans'; fill: #4a6076" transform="translate(387.072 311.338562)">占地需含接口与布线</text>
+   </g>
+   <g id="text_29">
+    <text style="font-size: 11px; font-family: 'MiSans'; text-anchor: start; fill: #8a9bab" x="22.68" y="357.124328" transform="rotate(-0 22.68 357.124328)">按机制筛选候选结构；非等分与 2×2 等功能有多种实现，性能需在统一条件下比较</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p72823e6e26">
+   <rect x="0" y="0" width="504" height="382.032"/>
+  </clipPath>
+ </defs>
+</svg>

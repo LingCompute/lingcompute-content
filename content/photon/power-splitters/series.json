@@ -44,6 +44,20 @@
         "qr": "qr/03-mmi.png",
         "url": "https://www.lingcompute.com/photon/learning-center/examples/notebooks/MMIPowerSplitter2x2"
       }
+    },
+    {
+      "slug": "04-comparison",
+      "authors": [
+        "Frank-DingYC"
+      ],
+      "summary": "按工作机制筛选候选结构，结合基线光谱与端口定义，明确带宽、容差和损耗的评估方法。",
+      "sources": [
+        "https://www.lingcompute.com/photon/learning-center/example-library",
+        "https://tidy3d.fangzhen.cloud/",
+        "https://www.lingcompute.com/photon/learning-center/examples/notebooks/YJunction",
+        "https://www.lingcompute.com/photon/learning-center/examples/notebooks/DirectionalCoupler",
+        "https://www.lingcompute.com/photon/learning-center/examples/notebooks/MMIPowerSplitter2x2"
+      ]
     }
   ]
 }
