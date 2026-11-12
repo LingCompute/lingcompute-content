@@ -1,0 +1,701 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+
+<svg stroke-linejoin="round" stroke-linecap="butt" xmlns:xlink="http://www.w3.org/1999/xlink" width="504pt" height="309.96pt" viewBox="0 0 504 309.96" xmlns="http://www.w3.org/2000/svg">
+ 
+ <defs>
+  
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 309.96 
+L 504 309.96 
+L 504 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="line2d_1">
+    <path d="M 22.68 53.424 
+L 65.52 53.424 
+" clip-path="url(#pda02d380c3)" style="fill: none; stroke: #1f6fd0; stroke-width: 3.2"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 13.5px; font-family: 'MiSans'; text-anchor: start; fill: #4e9be8" x="22.68" y="18.6975" transform="rotate(-0 22.68 18.6975)">定向耦合器 · 耦合长度</text>
+   </g>
+   <g id="text_2">
+    <!-- 分到多少，由 $\kappa L$ 决定 -->
+    <g style="fill: #12263a" transform="translate(22.68 42.928437)">
+     <text>
+      <tspan x="0" y="-0.203125" style="font-weight: 380; font-size: 25px; font-family: 'MiSans'; fill: #12263a">分</tspan>
+      <tspan x="25" y="-0.203125" style="font-weight: 380; font-size: 25px; font-family: 'MiSans'; fill: #12263a">到</tspan>
+      <tspan x="50" y="-0.203125" style="font-weight: 380; font-size: 25px; font-family: 'MiSans'; fill: #12263a">多</tspan>
+      <tspan x="75" y="-0.203125" style="font-weight: 380; font-size: 25px; font-family: 'MiSans'; fill: #12263a">少</tspan>
+      <tspan x="100" y="-0.203125" style="font-weight: 380; font-size: 25px; font-family: 'MiSans'; fill: #12263a">，</tspan>
+      <tspan x="125" y="-0.203125" style="font-weight: 380; font-size: 25px; font-family: 'MiSans'; fill: #12263a">由</tspan>
+      <tspan x="150" y="-0.203125" style="font-weight: 380; font-size: 25px; font-family: 'MiSans'; fill: #12263a"> </tspan>
+      <tspan x="185.937103" y="-0.203125" style="font-weight: 380; font-size: 25px; font-family: 'MiSans'; fill: #12263a"> </tspan>
+      <tspan x="193.212097" y="-0.203125" style="font-weight: 380; font-size: 25px; font-family: 'MiSans'; fill: #12263a">决</tspan>
+      <tspan x="218.212097" y="-0.203125" style="font-weight: 380; font-size: 25px; font-family: 'MiSans'; fill: #12263a">定</tspan>
+      <tspan x="157.274994" y="-0.203125" style="font-style: oblique; font-size: 25px; font-family: 'DejaVu Sans'; fill: #12263a">κ</tspan>
+      <tspan x="172.008881" y="-0.203125" style="font-style: oblique; font-size: 25px; font-family: 'DejaVu Sans'; fill: #12263a">L</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_3">
+    <!-- 交叉端 $\sin^2(\kappa L)$、直通端 $\cos^2(\kappa L)$；解析模型，理想耦合无损耗，两条曲线始终相加为 100% -->
+    <g style="fill: #8a9bab" transform="translate(22.68 282.134344)">
+     <text>
+      <tspan x="0" y="-0.06875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #8a9bab">交</tspan>
+      <tspan x="10.5" y="-0.06875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #8a9bab">叉</tspan>
+      <tspan x="21" y="-0.06875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #8a9bab">端</tspan>
+      <tspan x="31.5" y="-0.06875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #8a9bab"> </tspan>
+      <tspan x="76.616028" y="-0.06875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #8a9bab">、</tspan>
+      <tspan x="87.116028" y="-0.06875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #8a9bab">直</tspan>
+      <tspan x="97.616028" y="-0.06875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #8a9bab">通</tspan>
+      <tspan x="108.116028" y="-0.06875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #8a9bab">端</tspan>
+      <tspan x="118.616028" y="-0.06875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #8a9bab"> </tspan>
+      <tspan x="166.357057" y="-0.06875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #8a9bab">；</tspan>
+      <tspan x="176.857057" y="-0.06875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #8a9bab">解</tspan>
+      <tspan x="187.357057" y="-0.06875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #8a9bab">析</tspan>
+      <tspan x="197.857057" y="-0.06875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #8a9bab">模</tspan>
+      <tspan x="208.357057" y="-0.06875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #8a9bab">型</tspan>
+      <tspan x="218.857057" y="-0.06875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #8a9bab">，</tspan>
+      <tspan x="229.357057" y="-0.06875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #8a9bab">理</tspan>
+      <tspan x="239.857057" y="-0.06875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #8a9bab">想</tspan>
+      <tspan x="250.357057" y="-0.06875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #8a9bab">耦</tspan>
+      <tspan x="260.857057" y="-0.06875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #8a9bab">合</tspan>
+      <tspan x="271.357057" y="-0.06875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #8a9bab">无</tspan>
+      <tspan x="281.857057" y="-0.06875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #8a9bab">损</tspan>
+      <tspan x="292.357057" y="-0.06875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #8a9bab">耗</tspan>
+      <tspan x="302.857057" y="-0.06875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #8a9bab">，</tspan>
+      <tspan x="313.357057" y="-0.06875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #8a9bab">两</tspan>
+      <tspan x="323.857057" y="-0.06875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #8a9bab">条</tspan>
+      <tspan x="334.357057" y="-0.06875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #8a9bab">曲</tspan>
+      <tspan x="344.857057" y="-0.06875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #8a9bab">线</tspan>
+      <tspan x="355.357057" y="-0.06875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #8a9bab">始</tspan>
+      <tspan x="365.857057" y="-0.06875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #8a9bab">终</tspan>
+      <tspan x="376.357057" y="-0.06875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #8a9bab">相</tspan>
+      <tspan x="386.857057" y="-0.06875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #8a9bab">加</tspan>
+      <tspan x="397.357057" y="-0.06875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #8a9bab">为</tspan>
+      <tspan x="407.857057" y="-0.06875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #8a9bab"> </tspan>
+      <tspan x="410.912553" y="-0.06875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #8a9bab">1</tspan>
+      <tspan x="415.322557" y="-0.06875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #8a9bab">0</tspan>
+      <tspan x="422.053056" y="-0.06875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #8a9bab">0</tspan>
+      <tspan x="428.783555" y="-0.06875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #8a9bab">%</tspan>
+      <tspan x="34.555496" y="-0.06875" style="font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #8a9bab">s</tspan>
+      <tspan x="40.025955" y="-0.06875" style="font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #8a9bab">i</tspan>
+      <tspan x="42.943192" y="-0.06875" style="font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #8a9bab">n</tspan>
+      <tspan x="56.385071" y="-0.06875" style="font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #8a9bab">(</tspan>
+      <tspan x="72.519593" y="-0.06875" style="font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #8a9bab">)</tspan>
+      <tspan x="121.671525" y="-0.06875" style="font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #8a9bab">c</tspan>
+      <tspan x="127.444474" y="-0.06875" style="font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #8a9bab">o</tspan>
+      <tspan x="133.868546" y="-0.06875" style="font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #8a9bab">s</tspan>
+      <tspan x="146.1261" y="-0.06875" style="font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #8a9bab">(</tspan>
+      <tspan x="162.260621" y="-0.06875" style="font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #8a9bab">)</tspan>
+      <tspan x="49.70325" y="-4.279688" style="font-size: 7.35px; font-family: 'DejaVu Sans'; fill: #8a9bab">2</tspan>
+      <tspan x="139.444278" y="-4.279688" style="font-size: 7.35px; font-family: 'DejaVu Sans'; fill: #8a9bab">2</tspan>
+      <tspan x="60.481507" y="-0.06875" style="font-style: oblique; font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #8a9bab">κ</tspan>
+      <tspan x="66.669739" y="-0.06875" style="font-style: oblique; font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #8a9bab">L</tspan>
+      <tspan x="150.222535" y="-0.06875" style="font-style: oblique; font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #8a9bab">κ</tspan>
+      <tspan x="156.410768" y="-0.06875" style="font-style: oblique; font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #8a9bab">L</tspan>
+     </text>
+    </g>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_2">
+    <path d="M 52.92 228.312 
+L 433.44 228.312 
+L 433.44 77.112 
+L 52.92 77.112 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_2">
+      <path d="M 52.92 228.312 
+L 52.92 77.112 
+" clip-path="url(#pba0d63b444)" style="fill: none; stroke: #9fb4c6; stroke-opacity: 0.14; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_3">
+      <defs>
+       <path id="mc4ec552fe5" d="M 0 0 
+L 0 3 
+" style="stroke: #4a6076"/>
+      </defs>
+      <g>
+       <use xlink:href="#mc4ec552fe5" x="52.92" y="228.312" style="fill: #4a6076; stroke: #4a6076"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 12px; font-family: 'MiSans'; text-anchor: middle; fill: #4a6076" x="52.92" y="243.74075" transform="rotate(-0 52.92 243.74075)">0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_4">
+      <path d="M 90.972 228.312 
+L 90.972 77.112 
+" clip-path="url(#pba0d63b444)" style="fill: none; stroke: #9fb4c6; stroke-opacity: 0.14; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="#mc4ec552fe5" x="90.972" y="228.312" style="fill: #4a6076; stroke: #4a6076"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 12px; font-family: 'MiSans'; text-anchor: middle; fill: #4a6076" x="90.972" y="243.74075" transform="rotate(-0 90.972 243.74075)">π/4</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_6">
+      <path d="M 129.024 228.312 
+L 129.024 77.112 
+" clip-path="url(#pba0d63b444)" style="fill: none; stroke: #9fb4c6; stroke-opacity: 0.14; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_7">
+      <g>
+       <use xlink:href="#mc4ec552fe5" x="129.024" y="228.312" style="fill: #4a6076; stroke: #4a6076"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <text style="font-size: 12px; font-family: 'MiSans'; text-anchor: middle; fill: #4a6076" x="129.024" y="243.74075" transform="rotate(-0 129.024 243.74075)">π/2</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_8">
+      <path d="M 167.076 228.312 
+L 167.076 77.112 
+" clip-path="url(#pba0d63b444)" style="fill: none; stroke: #9fb4c6; stroke-opacity: 0.14; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_9">
+      <g>
+       <use xlink:href="#mc4ec552fe5" x="167.076" y="228.312" style="fill: #4a6076; stroke: #4a6076"/>
+      </g>
+     </g>
+     <g id="text_7">
+      <text style="font-size: 12px; font-family: 'MiSans'; text-anchor: middle; fill: #4a6076" x="167.076" y="243.74075" transform="rotate(-0 167.076 243.74075)">3π/4</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_10">
+      <path d="M 205.128 228.312 
+L 205.128 77.112 
+" clip-path="url(#pba0d63b444)" style="fill: none; stroke: #9fb4c6; stroke-opacity: 0.14; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_11">
+      <g>
+       <use xlink:href="#mc4ec552fe5" x="205.128" y="228.312" style="fill: #4a6076; stroke: #4a6076"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <text style="font-size: 12px; font-family: 'MiSans'; text-anchor: middle; fill: #4a6076" x="205.128" y="243.74075" transform="rotate(-0 205.128 243.74075)">π</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_12">
+      <path d="M 243.18 228.312 
+L 243.18 77.112 
+" clip-path="url(#pba0d63b444)" style="fill: none; stroke: #9fb4c6; stroke-opacity: 0.14; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_13">
+      <g>
+       <use xlink:href="#mc4ec552fe5" x="243.18" y="228.312" style="fill: #4a6076; stroke: #4a6076"/>
+      </g>
+     </g>
+     <g id="text_9">
+      <text style="font-size: 12px; font-family: 'MiSans'; text-anchor: middle; fill: #4a6076" x="243.18" y="243.74075" transform="rotate(-0 243.18 243.74075)">5π/4</text>
+     </g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_14">
+      <path d="M 281.232 228.312 
+L 281.232 77.112 
+" clip-path="url(#pba0d63b444)" style="fill: none; stroke: #9fb4c6; stroke-opacity: 0.14; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_15">
+      <g>
+       <use xlink:href="#mc4ec552fe5" x="281.232" y="228.312" style="fill: #4a6076; stroke: #4a6076"/>
+      </g>
+     </g>
+     <g id="text_10">
+      <text style="font-size: 12px; font-family: 'MiSans'; text-anchor: middle; fill: #4a6076" x="281.232" y="243.74075" transform="rotate(-0 281.232 243.74075)">3π/2</text>
+     </g>
+    </g>
+    <g id="xtick_8">
+     <g id="line2d_16">
+      <path d="M 319.284 228.312 
+L 319.284 77.112 
+" clip-path="url(#pba0d63b444)" style="fill: none; stroke: #9fb4c6; stroke-opacity: 0.14; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_17">
+      <g>
+       <use xlink:href="#mc4ec552fe5" x="319.284" y="228.312" style="fill: #4a6076; stroke: #4a6076"/>
+      </g>
+     </g>
+     <g id="text_11">
+      <text style="font-size: 12px; font-family: 'MiSans'; text-anchor: middle; fill: #4a6076" x="319.284" y="243.74075" transform="rotate(-0 319.284 243.74075)">7π/4</text>
+     </g>
+    </g>
+    <g id="xtick_9">
+     <g id="line2d_18">
+      <path d="M 357.336 228.312 
+L 357.336 77.112 
+" clip-path="url(#pba0d63b444)" style="fill: none; stroke: #9fb4c6; stroke-opacity: 0.14; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_19">
+      <g>
+       <use xlink:href="#mc4ec552fe5" x="357.336" y="228.312" style="fill: #4a6076; stroke: #4a6076"/>
+      </g>
+     </g>
+     <g id="text_12">
+      <text style="font-size: 12px; font-family: 'MiSans'; text-anchor: middle; fill: #4a6076" x="357.336" y="243.74075" transform="rotate(-0 357.336 243.74075)">2π</text>
+     </g>
+    </g>
+    <g id="xtick_10">
+     <g id="line2d_20">
+      <path d="M 395.388 228.312 
+L 395.388 77.112 
+" clip-path="url(#pba0d63b444)" style="fill: none; stroke: #9fb4c6; stroke-opacity: 0.14; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_21">
+      <g>
+       <use xlink:href="#mc4ec552fe5" x="395.388" y="228.312" style="fill: #4a6076; stroke: #4a6076"/>
+      </g>
+     </g>
+     <g id="text_13">
+      <text style="font-size: 12px; font-family: 'MiSans'; text-anchor: middle; fill: #4a6076" x="395.388" y="243.74075" transform="rotate(-0 395.388 243.74075)">9π/4</text>
+     </g>
+    </g>
+    <g id="xtick_11">
+     <g id="line2d_22">
+      <path d="M 433.44 228.312 
+L 433.44 77.112 
+" clip-path="url(#pba0d63b444)" style="fill: none; stroke: #9fb4c6; stroke-opacity: 0.14; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_23">
+      <g>
+       <use xlink:href="#mc4ec552fe5" x="433.44" y="228.312" style="fill: #4a6076; stroke: #4a6076"/>
+      </g>
+     </g>
+     <g id="text_14">
+      <text style="font-size: 12px; font-family: 'MiSans'; text-anchor: middle; fill: #4a6076" x="433.44" y="243.74075" transform="rotate(-0 433.44 243.74075)">5π/2</text>
+     </g>
+    </g>
+    <g id="text_15">
+     <!-- 归一化耦合长度 $\kappa L$ -->
+     <g style="fill: #12263a" transform="translate(198.87 257.122156)">
+      <text>
+       <tspan x="0" y="-0.71875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #12263a">归</tspan>
+       <tspan x="10.5" y="-0.71875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #12263a">一</tspan>
+       <tspan x="21" y="-0.71875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #12263a">化</tspan>
+       <tspan x="31.5" y="-0.71875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #12263a">耦</tspan>
+       <tspan x="42" y="-0.71875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #12263a">合</tspan>
+       <tspan x="52.5" y="-0.71875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #12263a">长</tspan>
+       <tspan x="63" y="-0.71875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #12263a">度</tspan>
+       <tspan x="73.5" y="-0.71875" style="font-weight: 380; font-size: 10.5px; font-family: 'MiSans'; fill: #12263a"> </tspan>
+       <tspan x="76.555496" y="-0.71875" style="font-style: oblique; font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #12263a">κ</tspan>
+       <tspan x="82.743729" y="-0.71875" style="font-style: oblique; font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #12263a">L</tspan>
+      </text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_24">
+      <path d="M 52.92 224.849405 
+L 433.44 224.849405 
+" clip-path="url(#pba0d63b444)" style="fill: none; stroke: #9fb4c6; stroke-opacity: 0.14; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_25">
+      <defs>
+       <path id="m2a06b64072" d="M 0 0 
+L -3 0 
+" style="stroke: #4a6076"/>
+      </defs>
+      <g>
+       <use xlink:href="#m2a06b64072" x="52.92" y="224.849405" style="fill: #4a6076; stroke: #4a6076"/>
+      </g>
+     </g>
+     <g id="text_16">
+      <text style="font-size: 12px; font-family: 'MiSans'; text-anchor: end; fill: #4a6076" x="46.42" y="229.31378" transform="rotate(-0 46.42 229.31378)">0</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_26">
+      <path d="M 52.92 167.139481 
+L 433.44 167.139481 
+" clip-path="url(#pba0d63b444)" style="fill: none; stroke: #9fb4c6; stroke-opacity: 0.14; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_27">
+      <g>
+       <use xlink:href="#m2a06b64072" x="52.92" y="167.139481" style="fill: #4a6076; stroke: #4a6076"/>
+      </g>
+     </g>
+     <g id="text_17">
+      <text style="font-size: 12px; font-family: 'MiSans'; text-anchor: end; fill: #4a6076" x="46.42" y="171.603856" transform="rotate(-0 46.42 171.603856)">50</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_28">
+      <path d="M 52.92 109.429557 
+L 433.44 109.429557 
+" clip-path="url(#pba0d63b444)" style="fill: none; stroke: #9fb4c6; stroke-opacity: 0.14; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_29">
+      <g>
+       <use xlink:href="#m2a06b64072" x="52.92" y="109.429557" style="fill: #4a6076; stroke: #4a6076"/>
+      </g>
+     </g>
+     <g id="text_18">
+      <text style="font-size: 12px; font-family: 'MiSans'; text-anchor: end; fill: #4a6076" x="46.42" y="113.893932" transform="rotate(-0 46.42 113.893932)">100</text>
+     </g>
+    </g>
+    <g id="text_19">
+     <text style="font-size: 10.5px; font-family: 'MiSans'; text-anchor: middle; fill: #12263a" x="17.749844" y="152.712" transform="rotate(-90 17.749844 152.712)">输出占比 (%)</text>
+    </g>
+   </g>
+   <g id="line2d_30">
+    <path d="M 52.92 109.429557 
+L 54.827368 109.60835 
+L 56.734737 110.143621 
+L 58.642105 111.032052 
+L 60.549474 112.26814 
+L 62.456842 113.844225 
+L 64.364211 115.750541 
+L 66.271579 117.975277 
+L 68.178947 120.504646 
+L 70.086316 123.322977 
+L 72.947368 128.053613 
+L 75.808421 133.328816 
+L 78.669474 139.075088 
+L 82.484211 147.330377 
+L 87.252632 158.313674 
+L 99.650526 187.374747 
+L 103.465263 195.60004 
+L 106.326316 201.317332 
+L 109.187368 206.558438 
+L 112.048421 211.250337 
+L 113.955789 214.040529 
+L 115.863158 216.54011 
+L 117.770526 218.733591 
+L 119.677895 220.607383 
+L 121.585263 222.149873 
+L 123.492632 223.351505 
+L 125.4 224.204832 
+L 127.307368 224.704568 
+L 129.214737 224.847616 
+L 131.122105 224.633089 
+L 133.029474 224.062316 
+L 134.936842 223.138836 
+L 136.844211 221.868368 
+L 138.751579 220.258786 
+L 140.658947 218.320063 
+L 142.566316 216.064212 
+L 144.473684 213.505211 
+L 146.381053 210.658916 
+L 149.242105 205.889836 
+L 152.103158 200.580864 
+L 154.964211 194.805967 
+L 158.778947 186.521194 
+L 163.547368 175.515976 
+L 175.945263 146.479306 
+L 179.76 138.284519 
+L 182.621053 132.596562 
+L 185.482105 127.389878 
+L 188.343158 122.737008 
+L 190.250526 119.975128 
+L 192.157895 117.50549 
+L 194.065263 115.343398 
+L 195.972632 113.502247 
+L 197.88 111.993447 
+L 199.787368 110.826346 
+L 201.694737 110.008176 
+L 203.602105 109.544006 
+L 205.509474 109.436713 
+L 207.416842 109.68696 
+L 209.324211 110.293199 
+L 211.231579 111.251672 
+L 213.138947 112.55644 
+L 215.046316 114.199419 
+L 216.953684 116.170428 
+L 218.861053 118.457255 
+L 220.768421 121.045729 
+L 222.675789 123.919813 
+L 225.536842 128.727041 
+L 228.397895 134.069453 
+L 231.258947 139.872617 
+L 235.073684 148.186361 
+L 239.842105 159.212818 
+L 251.286316 186.092601 
+L 255.101053 194.406345 
+L 257.962105 200.209508 
+L 260.823158 205.551921 
+L 263.684211 210.359149 
+L 265.591579 213.233232 
+L 267.498947 215.821707 
+L 269.406316 218.108534 
+L 271.313684 220.079543 
+L 273.221053 221.722522 
+L 275.128421 223.02729 
+L 277.035789 223.985763 
+L 278.943158 224.592001 
+L 280.850526 224.842249 
+L 282.757895 224.734956 
+L 284.665263 224.270786 
+L 286.572632 223.452616 
+L 288.48 222.285515 
+L 290.387368 220.776714 
+L 292.294737 218.935564 
+L 294.202105 216.773472 
+L 296.109474 214.303834 
+L 298.016842 211.541954 
+L 300.877895 206.889084 
+L 303.738947 201.682399 
+L 306.6 195.994443 
+L 310.414737 187.799656 
+L 315.183158 176.862244 
+L 328.534737 145.633358 
+L 332.349474 137.501105 
+L 335.210526 131.872875 
+L 338.071579 126.735999 
+L 340.932632 122.162048 
+L 342.84 119.457304 
+L 344.747368 117.048011 
+L 346.654737 114.949098 
+L 348.562105 113.17357 
+L 350.469474 111.732429 
+L 352.376842 110.634604 
+L 354.284211 109.886898 
+L 356.191579 109.493944 
+L 358.098947 109.458177 
+L 360.006316 109.779817 
+L 361.913684 110.456874 
+L 363.821053 111.48515 
+L 365.728421 112.858275 
+L 367.635789 114.56774 
+L 369.543158 116.602954 
+L 371.450526 118.951305 
+L 373.357895 121.598242 
+L 375.265263 124.527365 
+L 378.126316 129.409994 
+L 380.987368 134.818292 
+L 383.848421 140.676907 
+L 387.663158 149.047044 
+L 392.431579 160.113927 
+L 403.875789 186.948585 
+L 407.690526 195.203873 
+L 410.551579 200.950146 
+L 413.412632 206.225349 
+L 416.273684 210.955984 
+L 418.181053 213.774315 
+L 420.088421 216.303685 
+L 421.995789 218.52842 
+L 423.903158 220.434737 
+L 425.810526 222.010821 
+L 427.717895 223.246909 
+L 429.625263 224.135341 
+L 431.532632 224.670612 
+L 433.44 224.849405 
+L 433.44 224.849405 
+" clip-path="url(#pba0d63b444)" style="fill: none; stroke: #0b4c9c; stroke-width: 2.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_31">
+    <path d="M 52.92 224.849405 
+L 54.827368 224.670612 
+L 56.734737 224.135341 
+L 58.642105 223.246909 
+L 60.549474 222.010821 
+L 62.456842 220.434737 
+L 64.364211 218.52842 
+L 66.271579 216.303685 
+L 68.178947 213.774315 
+L 70.086316 210.955984 
+L 72.947368 206.225349 
+L 75.808421 200.950146 
+L 78.669474 195.203873 
+L 82.484211 186.948585 
+L 87.252632 175.965288 
+L 99.650526 146.904214 
+L 103.465263 138.678922 
+L 106.326316 132.96163 
+L 109.187368 127.720524 
+L 112.048421 123.028625 
+L 113.955789 120.238433 
+L 115.863158 117.738852 
+L 117.770526 115.54537 
+L 119.677895 113.671579 
+L 121.585263 112.129089 
+L 123.492632 110.927457 
+L 125.4 110.074129 
+L 127.307368 109.574394 
+L 129.214737 109.431346 
+L 131.122105 109.645873 
+L 133.029474 110.216645 
+L 134.936842 111.140126 
+L 136.844211 112.410594 
+L 138.751579 114.020176 
+L 140.658947 115.958898 
+L 142.566316 118.214749 
+L 144.473684 120.773751 
+L 146.381053 123.620046 
+L 149.242105 128.389126 
+L 152.103158 133.698098 
+L 154.964211 139.472995 
+L 158.778947 147.757768 
+L 163.547368 158.762986 
+L 175.945263 187.799656 
+L 179.76 195.994443 
+L 182.621053 201.682399 
+L 185.482105 206.889084 
+L 188.343158 211.541954 
+L 190.250526 214.303834 
+L 192.157895 216.773472 
+L 194.065263 218.935564 
+L 195.972632 220.776714 
+L 197.88 222.285515 
+L 199.787368 223.452616 
+L 201.694737 224.270786 
+L 203.602105 224.734956 
+L 205.509474 224.842249 
+L 207.416842 224.592001 
+L 209.324211 223.985763 
+L 211.231579 223.02729 
+L 213.138947 221.722522 
+L 215.046316 220.079543 
+L 216.953684 218.108534 
+L 218.861053 215.821707 
+L 220.768421 213.233232 
+L 222.675789 210.359149 
+L 225.536842 205.551921 
+L 228.397895 200.209508 
+L 231.258947 194.406345 
+L 235.073684 186.092601 
+L 239.842105 175.066144 
+L 251.286316 148.186361 
+L 255.101053 139.872617 
+L 257.962105 134.069453 
+L 260.823158 128.727041 
+L 263.684211 123.919813 
+L 265.591579 121.045729 
+L 267.498947 118.457255 
+L 269.406316 116.170428 
+L 271.313684 114.199419 
+L 273.221053 112.55644 
+L 275.128421 111.251672 
+L 277.035789 110.293199 
+L 278.943158 109.68696 
+L 280.850526 109.436713 
+L 282.757895 109.544006 
+L 284.665263 110.008176 
+L 286.572632 110.826346 
+L 288.48 111.993447 
+L 290.387368 113.502247 
+L 292.294737 115.343398 
+L 294.202105 117.50549 
+L 296.109474 119.975128 
+L 298.016842 122.737008 
+L 300.877895 127.389878 
+L 303.738947 132.596562 
+L 306.6 138.284519 
+L 310.414737 146.479306 
+L 315.183158 157.416718 
+L 328.534737 188.645604 
+L 332.349474 196.777857 
+L 335.210526 202.406087 
+L 338.071579 207.542963 
+L 340.932632 212.116913 
+L 342.84 214.821658 
+L 344.747368 217.23095 
+L 346.654737 219.329864 
+L 348.562105 221.105392 
+L 350.469474 222.546533 
+L 352.376842 223.644358 
+L 354.284211 224.392064 
+L 356.191579 224.785018 
+L 358.098947 224.820785 
+L 360.006316 224.499144 
+L 361.913684 223.822088 
+L 363.821053 222.793812 
+L 365.728421 221.420687 
+L 367.635789 219.711221 
+L 369.543158 217.676008 
+L 371.450526 215.327657 
+L 373.357895 212.680719 
+L 375.265263 209.751597 
+L 378.126316 204.868968 
+L 380.987368 199.46067 
+L 383.848421 193.602055 
+L 387.663158 185.231918 
+L 392.431579 174.165035 
+L 403.875789 147.330377 
+L 407.690526 139.075088 
+L 410.551579 133.328816 
+L 413.412632 128.053613 
+L 416.273684 123.322977 
+L 418.181053 120.504646 
+L 420.088421 117.975277 
+L 421.995789 115.750541 
+L 423.903158 113.844225 
+L 425.810526 112.26814 
+L 427.717895 111.032052 
+L 429.625263 110.143621 
+L 431.532632 109.60835 
+L 433.44 109.429557 
+L 433.44 109.429557 
+" clip-path="url(#pba0d63b444)" style="fill: none; stroke: #e8823c; stroke-width: 2.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_32">
+    <path d="M 90.972 228.312 
+L 90.972 77.112 
+" clip-path="url(#pba0d63b444)" style="fill: none; stroke-dasharray: 4.4,3.3; stroke-dashoffset: 0; stroke: #0b4c9c; stroke-opacity: 0.7; stroke-width: 1.1"/>
+   </g>
+   <g id="line2d_33">
+    <path d="M 129.024 228.312 
+L 129.024 77.112 
+" clip-path="url(#pba0d63b444)" style="fill: none; stroke-dasharray: 4.4,3.3; stroke-dashoffset: 0; stroke: #e8823c; stroke-opacity: 0.7; stroke-width: 1.1"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 52.92 228.312 
+L 52.92 77.112 
+" style="fill: none; stroke: #d6e2ec; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 433.44 228.312 
+L 433.44 77.112 
+" style="fill: none; stroke: #d6e2ec; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 52.92 228.312 
+L 433.44 228.312 
+" style="fill: none; stroke: #d6e2ec; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 52.92 77.112 
+L 433.44 77.112 
+" style="fill: none; stroke: #d6e2ec; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 10px; font-family: 'MiSans'; text-anchor: start; fill: #0b4c9c" x="95.816931" y="83.050764" transform="rotate(-0 95.816931 83.050764)">3 dB：各一半</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 10px; font-family: 'MiSans'; text-anchor: start; fill: #e8823c" x="133.868931" y="100.363741" transform="rotate(-0 133.868931 100.363741)">完全换手</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 10.5px; font-family: 'MiSans'; text-anchor: middle; fill: #0b4c9c" x="129.024" y="211.473126" transform="rotate(-0 129.024 211.473126)">直通端</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 10.5px; font-family: 'MiSans'; text-anchor: middle; fill: #e8823c" x="205.128" y="211.473126" transform="rotate(-0 205.128 211.473126)">交叉端</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pda02d380c3">
+   <rect x="0" y="0" width="504" height="309.96"/>
+  </clipPath>
+  <clipPath id="pba0d63b444">
+   <rect x="52.92" y="77.112" width="380.52" height="151.2"/>
+  </clipPath>
+ </defs>
+</svg>
