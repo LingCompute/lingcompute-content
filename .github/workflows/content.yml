@@ -24,14 +24,15 @@ jobs:
           python-version: "3.12"
           cache: pip
       - run: pip install -r requirements.txt
-      - run: python -m playwright install --with-deps --no-shell chromium
       - uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830
         with:
           path: .cache/fonts
           key: ${{ runner.os }}-misans-${{ hashFiles('tools/fonts.py') }}
       - run: python tools/fonts.py
+      # 版式与结构的检查不依赖浏览器：先跑，失败时省掉 Chromium 下载
       - run: python -m unittest discover -s tests
       - run: python tools/build.py --check
+      - run: python -m playwright install --with-deps --no-shell chromium
       - run: python tools/build.py
       - run: python tools/catalog.py --check
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
