@@ -35,6 +35,10 @@
 
    预计阅读 **9–17 分钟**，实操另计。 [来源、定量口径与素材说明](content/photon/power-splitters/SOURCES.md)。
 
+4. [三种分光器，到底怎么选](content/photon/power-splitters/04-comparison.md) — 按工作机制筛选候选结构，结合基线光谱与端口定义，明确带宽、容差和损耗的评估方法。
+
+   预计阅读 **8–14 分钟**，实操另计。 [来源、定量口径与素材说明](content/photon/power-splitters/SOURCES.md)。
+
 阅读时长为编辑模型估计；参考视口为390×844 CSS像素，不同设备会有差异。
 
 <!-- END GENERATED CATALOG -->

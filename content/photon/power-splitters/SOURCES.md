@@ -9,9 +9,9 @@
 - [2×2 MMI power splitter](https://www.lingcompute.com/photon/learning-center/examples/notebooks/MMIPowerSplitter2x2)：第 1、2 篇的三类结构几何示意来源；第 3 篇沿用其已建模器件、材料与窄端输入设置，另做本项目的三项逐模 FDTD 实验。
 - 定向耦合器几何参考：[官方 coupler.gds](https://github.com/flexcompute/tidy3d-notebooks/blob/develop/misc/coupler.gds)。
 
-## 数值口径
+## 当前篇目的数值口径
 
-**Y 分支**：约 1.55 μm，输入功率归一化的前向基模总透射约 97.0%，1.53–1.57 μm 约 96.6%–97.0%。只在上支路保存模式监视器，另一支路由镜像对称推得；50∶50 是两路内部的分配，不等于每路收到输入功率的一半，也不是两路独立实测。场图为频域总 `|E|²`。
+**Y 分支**：约 1.55 μm，输入功率归一化的前向基模总透射约 97.0%，1.53–1.57 μm 约 96.6%–97.0%。原始求解只在上支路保存模式监视器；另做一次几何、源、网格与求解时长都不变的同模型补测，在下支路补放一个模式监视器，101 个频点上两路前向基模功率最大相差 2.3×10⁻⁷，补测的上路读数与原始结果逐位一致。因此 50∶50 与总透射现在是两路独立读数，不再是按对称性推出的量；50∶50 是两路内部的分配，不等于每路收到输入功率的一半。场图为频域总 `|E|²`。补测任务与证据见 `production/photon/power-splitters/yjunction-two-arm-evidence.json`。
 
 **定向耦合器**：硅波导、二氧化硅衬底、空气上包层；名义宽 450 nm、间距 100 nm、平行段约 4.0 μm，厚 220 nm，`dilation=20 nm`、底面参考、侧壁角 30°。底面实际宽约 490 nm、间距约 60 nm，不能把名义尺寸当作全高截面。1.5505 μm 的交叉/直通前向基模功率相对源约 59.3%/39.5%，总和约 98.8%；60∶40 的分母是两路之和。1.53–1.57 μm 内保存三个离散点，不代表连续带宽已充分采样。相位采用当前输出模式基底和 `x=8 μm` 参考面，改变约定可能改变相位符号。
 
@@ -49,6 +49,10 @@
 | `video/MMI-modes-FDTD-comparison.gif` | 三项逐模 FDTD 结果的同步对照；前 16 秒为真实时域 Ey 记录（0–236.26 fs），后 8 秒为 1.55 μm 频域场的相位循环，不表示脉冲传播。由本项目已有 24 秒 MP4 转码：720×960、10 fps、240 帧、128 色、无限循环 |
 | `video/MMIPowerSplitter2x2-GUI-3D-crop.gif` | 原案例 GUI 原生导出的 2×2 MMI 3D Carpet 动画，经裁剪、缩放与量化；Re(Ey)，1.55 μm。起伏是单频场相位变化，不是结构形变或脉冲传播 |
 | `qr/03-mmi.png` | 本项目按公开案例 URL 生成的二维码，用于公众号稿页尾案例卡；不含私人链接或凭据 |
+| `figures/07-comparison.svg` | 三种分光结构的机制层定性对照，不含仿真数值 |
+| `figures/08-spectra.svg` | 三个已求解数据集的波长响应；三例均由两路输出模式监视器独立读取 |
+| `figures/09-variants.svg` | 按公开文献器件形态重绘的四种进阶做法，非本文仿真或实测 |
+| `figures/10-workflow.svg` | 从需求到验收的四步流程建议，非仿真步骤 |
 
 示意图与数据图以 SVG 为随文源图，由本地 matplotlib 脚本生成：导出后去掉 DOCTYPE、`metadata` 与全局样式表，把 `*{stroke-linejoin…}` 提升为根元素展示属性，样式写成展示属性，文字保留为 `<text>` 而不转轮廓。第 3 篇的 `16-mmi-phase.svg`、`18-mmi-ruler.svg`、`19-mmi-spectrum.svg` 同样为可编辑 SVG，文字使用小米 MiSans（Regular / Medium / Semibold）；字体文件不入库、不随图分发。公众号上传副本由构建从 SVG 渲染生成，不单独维护。仿真场图与模式场图（`04-y-junction.png`、`05-directional-coupler.png`、`06-mmi.png`、`20-mmi-vector-modes.png`）是原生栅格：场按监视器真实网格重采样后绘制，避免非均匀网格被线性拉伸而与器件轮廓错位；场图不做 PNG 套壳成 SVG。
 

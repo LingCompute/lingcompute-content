@@ -1,0 +1,44 @@
+{
+  "scope": "Y 分支两路独立读数：同几何补测，验证原先按镜像对称的 ×2 推断",
+  "status": "result_downloaded",
+  "base_model": "data/YJunction.simulation.hdf5（原模型，未改动）",
+  "base_result": "data/YJunction.hdf5（原结果，未改动）",
+  "model_path": "data/YJunction-two-arm.simulation.hdf5",
+  "model_sha256": "4e51530ab70d7528d6e6aebb5dc6f902649cb248891e9c8961525613e403b19f",
+  "result_path": "data/YJunction-two-arm.hdf5",
+  "upper_monitor": {
+    "name": "mode",
+    "center": [
+      9.5,
+      2.35,
+      0.11
+    ]
+  },
+  "lower_monitor": {
+    "name": "mode_down",
+    "center": [
+      9.5,
+      -2.35,
+      0.11
+    ]
+  },
+  "task_id": "fdve-bb890b21-e7d0-414a-b013-b4f18e39c043",
+  "api_endpoint": "https://tidy3d-api.simulation.cloud",
+  "maximum_estimated_flexcredits": 0.13246728293606908,
+  "actual_flexcredits": 0.0,
+  "frequency_points": 101,
+  "geometry_source_grid_boundary_runtime_unchanged": true,
+  "window_um": [
+    1.53,
+    1.57
+  ],
+  "window_points": 41,
+  "max_abs_two_arm_power_difference": 2.308e-07,
+  "upper_share_window_percent": 50.0,
+  "total_transmission_window_percent": [
+    96.5839,
+    97.0141
+  ],
+  "upper_reading_matches_original_result_exactly": true,
+  "note": "模型与结果文件保留在制作方，不随内容库分发；此处只记录可复核的任务指纹与读数口径。"
+}
