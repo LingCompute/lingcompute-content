@@ -1,0 +1,138 @@
+{
+  "purpose": "Minimal, credential-free evidence record for the MMI article (03-mmi). Raw FDTD HDF5 results, cloud task identifiers and billing records stay local and can be provided to the designated reviewer on request.",
+  "scope": "Three independent 3D FDTD runs, each launching one TE-like mode of the real 1.0 um x 220 nm MMI cross section into the unchanged original device. This is a mechanism experiment, NOT a reproduction of the original narrow-port input case.",
+  "geometry": {
+    "core_size_um": [
+      3,
+      1,
+      0.22
+    ],
+    "materials": "Si 3.48 / SiO2 1.44 / air cladding; 220 nm silicon layer",
+    "wavelength_um": 1.55,
+    "mode_source_plane_center_um": [
+      -1.2,
+      0.0,
+      0.0
+    ],
+    "source_to_left_core_interface_um": 0.3,
+    "source_to_right_core_interface_um": 2.7,
+    "original_structure_and_S_bends": "unchanged"
+  },
+  "cross_section_modes": {
+    "TE_like_mode_indices": [
+      0,
+      1,
+      2
+    ],
+    "n_eff": [
+      2.743087,
+      2.417316,
+      1.816538
+    ],
+    "mode_grid_steps_per_wavelength": [
+      20,
+      28
+    ],
+    "relative_n_eff_change_20_to_28": [
+      0.0009866541897138236,
+      0.0010299405219051777,
+      0.00036809812252364533
+    ],
+    "note": "Mode-solver grid refinement only, not a full-device FDTD convergence study. Two further TM-like guided modes exist but are not launched."
+  },
+  "monitors": {
+    "frequency": "FieldMonitor at 1.55 um (xy / core yz / output yz)",
+    "time": {
+      "field": "Ey",
+      "plane": "z = 0",
+      "sampling_interval_fs": 0.506995,
+      "recorded_window_fs": [
+        0,
+        236.25963825373384
+      ],
+      "spatial_downsampling": [
+        2,
+        2,
+        1
+      ]
+    },
+    "ports": "ModeMonitor at the wide-core reference plane and after each output S-bend"
+  },
+  "results_per_launched_mode": {
+    "TE0": {
+      "mode_n_eff": 2.743087,
+      "output_forward_fundamental_power_sum_source_normalized": 0.71538146,
+      "split_among_two_fundamentals": [
+        0.500001,
+        0.499999
+      ],
+      "target_mode_fraction_of_stored_forward_modes": 0.99919586,
+      "diverged": false
+    },
+    "TE1": {
+      "mode_n_eff": 2.417316,
+      "output_forward_fundamental_power_sum_source_normalized": 0.97202541,
+      "split_among_two_fundamentals": [
+        0.499999,
+        0.500001
+      ],
+      "target_mode_fraction_of_stored_forward_modes": 1.0,
+      "diverged": false
+    },
+    "TE2": {
+      "mode_n_eff": 1.816538,
+      "output_forward_fundamental_power_sum_source_normalized": 0.23437787,
+      "split_among_two_fundamentals": [
+        0.500004,
+        0.499996
+      ],
+      "target_mode_fraction_of_stored_forward_modes": 0.99923362,
+      "diverged": false
+    }
+  },
+  "derived_lengths_um": {
+    "L_pi_from_vector_modes": 2.378968,
+    "L_pi_refined_mode_grid_approx": 2.377386,
+    "L_pi_slab_estimate": 3.5,
+    "note": "The slab value is only a length-scale estimate; the vector value uses beta0 - beta1 of the real cross section."
+  },
+  "article_assets_sha256": {
+    "figures/06-mmi.png": "d048f4639aef974c87a6d666de935bcaf2a5a0dd16ae42f97105bb2c2e633ab4",
+    "figures/20-mmi-vector-modes.png": "a2db961e1e69c356fdc84ee4b71ad3160ba136843c32d540fd3ce2ce46a75f6f",
+    "figures/16-mmi-phase.svg": "5fc49de9801e6a8a42db220a1cf6d17d05fb11a4d190825d7a3121281dd47cff",
+    "figures/18-mmi-ruler.svg": "5f56406cf015fe3b3115c986499496d1fcf4f128d69f1b8c521e6daeb82c4064",
+    "figures/19-mmi-spectrum.svg": "c3a0ba05523a5c8a401a8db6acffa4d2eb4f8dea48bab9d307126438398d791f",
+    "video/MMI-modes-FDTD-comparison.gif": "34b1c194d6d29f88dd782499b15d9f1cae6f76df445f31aceb9ab7b7a8b2f699",
+    "video/MMIPowerSplitter2x2-GUI-3D-crop.gif": "aabe13a60f66759d27c4192ddb274326e31bc0fa517019299e2669700ee87c54",
+    "qr/03-mmi.png": "0ee4e2b1f049c00eea856390a9e7656b897b6dfdd7641c06bbd50b56a33eb55e"
+  },
+  "movie": {
+    "path": "video/MMI-modes-FDTD-comparison.gif",
+    "source": "24 s MP4 rendered from these three FDTD results, then converted by the author",
+    "seconds": 24,
+    "fps": 10,
+    "size_px": [
+      720,
+      960
+    ],
+    "frames": 240,
+    "chapters_seconds": {
+      "recorded_time_domain": [
+        0,
+        16
+      ],
+      "single_frequency_phase_loop": [
+        16,
+        24
+      ]
+    },
+    "note": "The second chapter is a phase loop of the 1.55 um frequency-domain field, not pulse propagation."
+  },
+  "excluded_from_public_record": [
+    "cloud task identifiers",
+    "FlexCredits cost records",
+    "API credentials",
+    "raw HDF5 solver caches",
+    "private tool logs"
+  ]
+}

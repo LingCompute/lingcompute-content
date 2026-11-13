@@ -27,6 +27,23 @@
       "sources": [
         "https://www.lingcompute.com/photon/learning-center/examples/notebooks/DirectionalCoupler"
       ]
+    },
+    {
+      "slug": "03-mmi",
+      "authors": [
+        "Frank-DingYC"
+      ],
+      "summary": "先求真实截面模式，再用固定器件的逐模 FDTD 看场型与输出，校准拍长并区分均分与高透射。",
+      "sources": [
+        "https://www.lingcompute.com/photon/learning-center/examples/notebooks/MMIPowerSplitter2x2",
+        "https://www.lingcompute.com/photon/learning-center/example-library",
+        "https://tidy3d.fangzhen.cloud/"
+      ],
+      "case": {
+        "title": "2×2 MMI 功率分配器",
+        "qr": "qr/03-mmi.png",
+        "url": "https://www.lingcompute.com/photon/learning-center/examples/notebooks/MMIPowerSplitter2x2"
+      }
     }
   ]
 }

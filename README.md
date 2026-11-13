@@ -31,6 +31,10 @@
 
    预计阅读 **14–26 分钟**，实操另计。 **长文提示：超过10参考屏，建议先扫描小标题，再按问题细读。** [来源、定量口径与素材说明](content/photon/power-splitters/SOURCES.md)。
 
+3. [让一束光，在宽波导里自己干涉成像](content/photon/power-splitters/03-mmi.md) — 先求真实截面模式，再用固定器件的逐模 FDTD 看场型与输出，校准拍长并区分均分与高透射。
+
+   预计阅读 **9–17 分钟**，实操另计。 [来源、定量口径与素材说明](content/photon/power-splitters/SOURCES.md)。
+
 阅读时长为编辑模型估计；参考视口为390×844 CSS像素，不同设备会有差异。
 
 <!-- END GENERATED CATALOG -->
