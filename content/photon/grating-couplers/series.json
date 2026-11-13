@@ -1,0 +1,20 @@
+{
+  "product": "photon",
+  "title": "图解无源光子器件 · 光栅耦合器",
+  "audience": "具有光学基础、需要理解和选择集成光子器件的工程师与科研人员",
+  "articles": [
+    {
+      "slug": "01-overview",
+      "authors": [
+        "Frank-DingYC"
+      ],
+      "summary": "光栅耦合器靠相位匹配把导模「漏」成光束。四个指标、三条路线，先把地图铺开。",
+      "sources": [
+        "https://www.lingcompute.com/photon/learning-center/examples/notebooks/GratingCoupler",
+        "https://www.lingcompute.com/photon/learning-center/examples/notebooks/FocusedApodGC",
+        "https://www.lingcompute.com/photon/learning-center/examples/notebooks/BilayerSiNSiGC",
+        "https://www.lingcompute.com/photon/learning-center/example-library"
+      ]
+    }
+  ]
+}

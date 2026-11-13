@@ -12,10 +12,21 @@
 
 | 产品 | 系列 | 产品入口 |
 | --- | --- | --- |
-| 灵算光子 | [图解无源光子器件 · 功率分配](#series-photon-power-splitters) | [产品介绍](https://www.lingcompute.com/products/photon) |
+| 灵算光子 | [图解无源光子器件 · 光栅耦合器](#series-photon-grating-couplers)、[图解无源光子器件 · 功率分配](#series-photon-power-splitters) | [产品介绍](https://www.lingcompute.com/products/photon) |
 | 灵算流体 | 待首篇审核后收录 | [产品介绍](https://www.lingcompute.com/products/fluid) |
 | 灵算射频 | 待首篇审核后收录 | [产品介绍](https://www.lingcompute.com/products/rf) |
 | 灵算洞察 | 待首篇审核后收录 | [产品介绍](https://www.lingcompute.com/products/insight) |
+
+<a id="series-photon-grating-couplers"></a>
+
+### 图解无源光子器件 · 光栅耦合器
+
+适合：具有光学基础、需要理解和选择集成光子器件的工程师与科研人员。
+
+1. [光怎么进芯片？看懂三类光栅耦合器](content/photon/grating-couplers/01-overview.md) — 光栅耦合器靠相位匹配把导模「漏」成光束。四个指标、三条路线，先把地图铺开。
+
+   预计阅读 **6–10 分钟**，实操另计。 [来源、定量口径与素材说明](content/photon/grating-couplers/SOURCES.md)。
+
 
 <a id="series-photon-power-splitters"></a>
 
