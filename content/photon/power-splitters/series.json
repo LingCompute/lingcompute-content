@@ -26,7 +26,12 @@
       "summary": "从超模相位和耦合模模型出发，理解功率交换及长度、失配和几何参数的取舍。",
       "sources": [
         "https://www.lingcompute.com/photon/learning-center/examples/notebooks/DirectionalCoupler"
-      ]
+      ],
+      "case": {
+        "title": "定向耦合器：Directional coupler",
+        "qr": "qr/02-directional-coupler.png",
+        "url": "https://www.lingcompute.com/photon/learning-center/examples/notebooks/DirectionalCoupler"
+      }
     },
     {
       "slug": "03-mmi",
