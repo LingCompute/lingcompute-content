@@ -1,14 +1,7 @@
 {
-  "main": "4759ec490fab7ab5a52d139a2b8f24f951a971d7",
-  "renderer": "4759ec490fab7ab5a52d139a2b8f24f951a971d7",
+  "main": "6137e8c6ff84e2aa1afde722b680b9246ad5773b",
+  "renderer": "6137e8c6ff84e2aa1afde722b680b9246ad5773b",
   "pulls": [
-    {
-      "number": 52,
-      "sha": "0306e42108c39947d1dcef796cc14afb724bea7f",
-      "path": "previews/52/0306e42108c39947d1dcef796cc14afb724bea7f/",
-      "state": "success",
-      "articles": 0
-    },
     {
       "number": 51,
       "sha": "a2c257c8993cd842c2faf2c53396211b72230d72",
