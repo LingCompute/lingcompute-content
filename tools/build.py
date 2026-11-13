@@ -33,6 +33,7 @@ SCREENS = "{{screens}}"
 WARNING = "{{warning}}"
 LONG_WARNING = '<p class="warning">长文提示：正文超过10参考屏，可先扫描小标题，再按问题细读。</p>'
 VECTOR_WIDTH = 642
+LONG_ARTICLE_SCREENS = 10
 DECODE = (
     "async () => { await document.fonts.ready; "
     "await Promise.all(Array.from(document.images, image => image.decode())); }"
@@ -187,6 +188,11 @@ def render_body(manuscript, base, root=ROOT, source_ref=SOURCE_REF, source_base=
     return body, parser
 
 
+def long_article(screens):
+    """按半屏粒度判断长文：字体度量在平台间有几十像素差异，卡在阈值上会一边提示一边不提示。"""
+    return round(screens * 2) / 2 > LONG_ARTICLE_SCREENS
+
+
 def reading_minutes(text, figures, equations):
     han = len(re.findall(r"[\u3400-\u9fff]", text))
     words = len(re.findall(r"[A-Za-z0-9]+(?:[.-][A-Za-z0-9]+)*", text))
@@ -289,7 +295,7 @@ def article_body(article, products, logo, reviewed, screens=None, navigation="",
         screen_text, warning = SCREENS, WARNING
     else:
         screen_text = f"{screens:.1f} 参考屏"
-        warning = LONG_WARNING if screens > 10 else ""
+        warning = LONG_WARNING if long_article(screens) else ""
     review_text = (
         "与历史人审清单中的内容指纹匹配；原审核者署名和日期未提供。"
         if reviewed else "新稿审核以对应GitHub PR记录为准；预览本身不代表审核通过。"
@@ -324,7 +330,7 @@ def article_html(article, products, style, logo, reviewed, screens=None, navigat
 def finish_screens(content, screens):
     """把测量得到的参考屏数与长文提示写回占位符。"""
     return content.replace(SCREENS, f"{screens:.1f} 参考屏").replace(
-        WARNING, LONG_WARNING if screens > 10 else ""
+        WARNING, LONG_WARNING if long_article(screens) else ""
     )
 
 
@@ -489,7 +495,7 @@ def build():
                 "reference_viewport_css_px": [390, 844],
                 "body_height_css_px": round(height, 1),
                 "reference_screens": round(screens, 2),
-                "over_ten_screens": screens > 10,
+                "over_ten_screens": long_article(screens),
                 "historical_review_matches": reviewed,
                 "assets": assets,
                 "generated": {
@@ -515,7 +521,7 @@ def build():
             destination.with_suffix(".manifest.json").write_text(json.dumps(record, ensure_ascii=False, indent=2) + "\n")
             report.append(record)
             print(f"{article['title']}: {screens:.1f}屏，约{article['minutes'][0]}–{article['minutes'][1]}分钟"
-                  + ("；超长已提示" if screens > 10 else ""))
+                  + ("；超长已提示" if long_article(screens) else ""))
         browser.close()
     cards = []
     for article in articles:
