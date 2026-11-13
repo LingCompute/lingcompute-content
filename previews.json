@@ -3,13 +3,6 @@
   "renderer": "4ea0be417c6489f7dcbf8770399ab79b66d93225",
   "pulls": [
     {
-      "number": 54,
-      "sha": "5bbf2249a74f45a43026c8579cd03a0c0708e1fc",
-      "path": "previews/54/5bbf2249a74f45a43026c8579cd03a0c0708e1fc/",
-      "state": "success",
-      "articles": 3
-    },
-    {
       "number": 51,
       "sha": "33adae93e2059894a02cb5ccd7a3810d728f4ed4",
       "path": "previews/51/33adae93e2059894a02cb5ccd7a3810d728f4ed4/",
