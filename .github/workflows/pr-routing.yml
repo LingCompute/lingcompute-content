@@ -21,9 +21,14 @@ jobs:
       - name: Detect content changes
         id: content
         run: |
-          changed="$(gh api --paginate --slurp "repos/$GH_REPO/pulls/$PR_NUMBER/files?per_page=100" \
-            --jq '[.[][] | (.filename, (.previous_filename // empty)) | startswith("content/")] | any')"
-          echo "changed=$changed" >> "$GITHUB_OUTPUT"
+          # --slurp 不能和 --jq 同用；按页取路径再本地匹配，重命名前的路径也参与判断
+          paths="$(gh api --paginate --jq '.[] | (.filename, (.previous_filename // empty))' \
+            "repos/$GH_REPO/pulls/$PR_NUMBER/files?per_page=100")"
+          if printf '%s\n' "$paths" | grep -q '^content/'; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
       - name: Request reviewer
         if: steps.content.outputs.changed == 'true' && github.event.pull_request.user.login != 'mwn123'
         run: gh api --method POST "repos/$GH_REPO/pulls/$PR_NUMBER/requested_reviewers" -f 'reviewers[]=mwn123' --silent
