@@ -1,0 +1,209 @@
+{
+  "version": 1,
+  "verified": "2026-11-13",
+  "sources": [
+    "《图解无源光子器件 Vol.01丨一束光，怎么被“掰”成两路？》mp.weixin.qq.com/s/d_BloK63Wrv6hBWb8lhIwg",
+    "《图解无源光子器件 Vol.02丨两条波导靠得够近，光就自己换手》mp.weixin.qq.com/s/ZJJI_X8RcEMO1EbkPC_olQ"
+  ],
+  "notes": [
+    "公众号稿的唯一样式来源：tools/wechat.py 读取本文件生成内联样式，不再从浏览器 computed style 反推。",
+    "取值来自两篇发布版的内联样式实测；两篇冲突处以较新的 Vol.02 为准，差异见 docs/wechat-template.md 第五节。",
+    "预览稿仍用 tools/style.css；两者共享的取值由 tests/test_wechat.py 对齐，不共享的只有 h3 字号（公众号稿把 h2 换成了横幅图，h3 要顶到 18px）。"
+  ],
+  "tokens": {
+    "brand": "#0B4C9C",
+    "rule": "#2E7FD1",
+    "ink": "#2C4459",
+    "heading": "#12263A",
+    "muted": "#6C8195",
+    "chip": "#EAF3FD",
+    "wash": "#F3F7FC",
+    "eq-wash": "#F6FAFE",
+    "eq-rule": "#9EC4E8",
+    "row-rule": "#EDF3F9",
+    "row-wash": "#FAFCFF",
+    "head-rule": "#CBE0F5",
+    "shadow": "0 6px 22px rgba(18,60,110,.1)",
+    "font": "-apple-system, system-ui, \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+    "serif": "Georgia, \"Times New Roman\", serif",
+    "mono": "ui-monospace, \"SFMono-Regular\", Consolas, \"Liberation Mono\", monospace"
+  },
+  "elements": {
+    "root": {
+      "font-family": "{font}",
+      "font-size": "15px",
+      "line-height": "1.75",
+      "color": "{ink}",
+      "margin": "0",
+      "padding": "0"
+    },
+    "p": {
+      "margin": "17px 0",
+      "font-size": "15px",
+      "line-height": "1.75",
+      "color": "{ink}"
+    },
+    "h3": {
+      "margin": "36px 0 12px",
+      "padding-left": "13px",
+      "border-left": "4px solid {rule}",
+      "color": "{heading}",
+      "font-size": "18px",
+      "font-weight": "bold",
+      "line-height": "1.5"
+    },
+    "strong": {
+      "color": "{brand}",
+      "font-weight": "600"
+    },
+    "a": {
+      "color": "{brand}",
+      "text-decoration": "none",
+      "overflow-wrap": "anywhere"
+    },
+    "ul": {
+      "margin": "16px 0",
+      "padding-left": "0",
+      "list-style": "none"
+    },
+    "ol": {
+      "margin": "16px 0",
+      "padding-left": "0",
+      "list-style": "none"
+    },
+    "li": {
+      "margin": "9px 0",
+      "padding-left": "22px",
+      "color": "{ink}"
+    },
+    "figure": {
+      "margin": "30px 0 26px"
+    },
+    "img": {
+      "display": "block",
+      "width": "100%",
+      "max-width": "100%",
+      "height": "auto",
+      "border-radius": "12px",
+      "box-shadow": "{shadow}"
+    },
+    "plate": {
+      "display": "block",
+      "width": "100%",
+      "max-width": "100%",
+      "height": "auto"
+    },
+    "figcaption": {
+      "margin-top": "11px",
+      "color": "{muted}",
+      "font-size": "13px",
+      "line-height": "1.75"
+    },
+    "fig-tag": {
+      "display": "inline-block",
+      "margin-right": "7px",
+      "padding": "1px 8px",
+      "border-radius": "5px",
+      "background": "{chip}",
+      "color": "{brand}",
+      "font-size": "12px",
+      "letter-spacing": ".04em"
+    },
+    "eq": {
+      "margin": "24px 0",
+      "padding": "15px 18px 14px",
+      "background": "{eq-wash}",
+      "border-left": "3px solid {eq-rule}",
+      "border-radius": "0 10px 10px 0",
+      "color": "{heading}",
+      "font-family": "{serif}",
+      "font-size": "16px",
+      "line-height": "2.05",
+      "letter-spacing": ".01em",
+      "text-align": "center"
+    },
+    "note": {
+      "color": "{muted}",
+      "font-size": "14px",
+      "font-style": "italic"
+    },
+    "greek": {
+      "font-family": "{serif}",
+      "font-style": "italic"
+    },
+    "table": {
+      "width": "100%",
+      "border-collapse": "collapse",
+      "margin": "24px 0 20px",
+      "font-size": "14.5px",
+      "line-height": "1.7",
+      "font-feature-settings": "\"tnum\""
+    },
+    "th": {
+      "padding": "9px 11px",
+      "border-bottom": "1.5px solid {head-rule}",
+      "background": "{chip}",
+      "color": "{brand}",
+      "font-size": "13px",
+      "font-weight": "600",
+      "letter-spacing": ".03em",
+      "text-align": "left",
+      "vertical-align": "top"
+    },
+    "th-nowrap": {
+      "white-space": "nowrap"
+    },
+    "td": {
+      "padding": "9px 11px",
+      "border-bottom": "1px solid {row-rule}",
+      "color": "{ink}",
+      "vertical-align": "top",
+      "overflow-wrap": "anywhere"
+    },
+    "td-zebra": {
+      "background": "{row-wash}"
+    },
+    "td-last": {
+      "border-bottom": "none"
+    },
+    "blockquote": {
+      "margin": "24px 0",
+      "padding": "4px 18px",
+      "border-left": "3px solid {rule}",
+      "background": "{wash}"
+    },
+    "pre": {
+      "margin": "17px 0",
+      "padding": "14px",
+      "background": "{wash}",
+      "font-family": "{mono}",
+      "font-size": "13px",
+      "white-space": "pre-wrap",
+      "overflow-wrap": "anywhere"
+    },
+    "code": {
+      "font-family": "{mono}",
+      "font-size": "13px"
+    },
+    "follow": {
+      "text-align": "center"
+    },
+    "banner": {
+      "text-align": "center",
+      "margin-top": "40px",
+      "margin-bottom": "0"
+    },
+    "case": {
+      "text-align": "center",
+      "margin-bottom": "0"
+    },
+    "plate-section": {
+      "text-align": "center"
+    }
+  },
+  "limits": {
+    "max_nowrap_columns": 3,
+    "min_body_font_px": 15,
+    "max_heading_chars": 18
+  }
+}

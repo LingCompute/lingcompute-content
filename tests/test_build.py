@@ -59,6 +59,12 @@ class BuildTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             build.render_body("[缺失](missing.md)", self.series, self.root)
 
+    def test_long_article_flag_tolerates_platform_metrics(self):
+        self.assertFalse(build.long_article(9.98))
+        self.assertFalse(build.long_article(10.04))
+        self.assertTrue(build.long_article(10.3))
+        self.assertTrue(build.long_article(15.07))
+
     def test_reading_estimate_includes_figures_and_equations(self):
         lower, upper = build.reading_minutes("中" * 900, 0, 0)
         self.assertEqual((lower, upper), (2, 4))

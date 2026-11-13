@@ -4,6 +4,6 @@
 - 版式、章节横幅、页尾、配图规范：先读 `docs/wechat-template.md`；它是公众号版式的唯一依据，含面向 AI 的硬性要求与自检清单。
 - 人审、合并或审核名单变更：先读 `docs/review.md`；由人工确认专业资格，AI 只准备稿件与检查，不作业内批准。
 - 引入素材或制作材料：先读 `docs/rights.md` 与 `production/README.md`，逐项说明来源和授权。
-- 工具修改：运行 `python -m unittest discover -s tests`、`python tools/build.py --check` 和完整构建；检查生成的手机截图。纯排版修改仍需视觉验收。
+- 工具修改：运行 `python -m unittest discover -s tests`、`python tools/build.py --check` 和完整构建；检查生成的手机截图。纯排版修改仍需视觉验收。公众号稿样式改 `config/wechat-theme.json`，预览稿样式改 `tools/style.css`，两者共享取值由 `tests/test_wechat.py` 对齐。
 - 合并权限：先读 `docs/review.md`；非 `content/` 维护 PR 通过必需检查后可由维护者自行合并；涉及 `content/` 的 PR 须由非作者的指定业内审核者批准当前提交。公众号发送由人确认。
 - `build/` 为生成物，源稿与维护改动均通过 PR 提交。
