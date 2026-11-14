@@ -1,5 +1,13 @@
 {
   "main": "91fe24239cbf6361c221b35fb01b8cbb6477eb71",
   "renderer": "91fe24239cbf6361c221b35fb01b8cbb6477eb71",
-  "pulls": []
+  "pulls": [
+    {
+      "number": 55,
+      "sha": "6638721dc189a20fc4eb6ba954dcd888e158b5b3",
+      "path": "previews/55/6638721dc189a20fc4eb6ba954dcd888e158b5b3/",
+      "state": "success",
+      "articles": 1
+    }
+  ]
 }
