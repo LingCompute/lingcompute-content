@@ -1,0 +1,361 @@
+
+
+<svg stroke-linejoin="round" stroke-linecap="butt" xmlns:xlink="http://www.w3.org/1999/xlink" width="518.4pt" height="261.36pt" viewBox="0 0 518.4 261.36" xmlns="http://www.w3.org/2000/svg">
+ 
+ <defs>
+  
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 261.36 
+L 518.4 261.36 
+L 518.4 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="line2d_1">
+    <path d="M 93.888 71.712 
+L 483.48 71.712 
+" clip-path="url(#p12dd6d4eed)" style="fill: none; stroke: #e7eef5; stroke-width: 0.9; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 93.888 95.079273 
+L 483.48 95.079273 
+" clip-path="url(#p12dd6d4eed)" style="fill: none; stroke: #e7eef5; stroke-width: 0.9; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 93.888 118.446545 
+L 483.48 118.446545 
+" clip-path="url(#p12dd6d4eed)" style="fill: none; stroke: #e7eef5; stroke-width: 0.9; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 93.888 141.813818 
+L 483.48 141.813818 
+" clip-path="url(#p12dd6d4eed)" style="fill: none; stroke: #e7eef5; stroke-width: 0.9; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_5">
+    <path d="M 93.888 165.181091 
+L 483.48 165.181091 
+" clip-path="url(#p12dd6d4eed)" style="fill: none; stroke: #e7eef5; stroke-width: 0.9; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_6">
+    <path d="M 29.88 60.624 
+L 72.72 60.624 
+" clip-path="url(#p12dd6d4eed)" style="fill: none; stroke: #1f6fd0; stroke-width: 3.2"/>
+   </g>
+   <g id="line2d_7">
+    <path d="M 431.5344 174.528 
+L 431.5344 71.712 
+" clip-path="url(#p12dd6d4eed)" style="fill: none; stroke-dasharray: 4,3; stroke-dashoffset: 0; stroke: #8a9bab; stroke-opacity: 0.75"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 13.5px; font-family: 'MiSans'; text-anchor: start; fill: #4e9be8" x="29.88" y="25.8975" transform="rotate(-0 29.88 25.8975)">入口难题</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 25px; font-family: 'MiSans'; text-anchor: start; fill: #12263a" x="29.88" y="49.905781" transform="rotate(-0 29.88 49.905781)">把模场撑多宽，才够用</text>
+   </g>
+   <g id="line2d_8">
+    <path d="M 93.888 174.528 
+L 483.48 174.528 
+" clip-path="url(#p12dd6d4eed)" style="fill: none; stroke: #c2d2e0; stroke-width: 1.2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_9">
+    <path d="M 93.888 174.528 
+L 93.888 71.712 
+" clip-path="url(#p12dd6d4eed)" style="fill: none; stroke: #c2d2e0; stroke-width: 1.2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_10">
+    <path d="M 93.888 174.528 
+L 93.888 178.56 
+" clip-path="url(#p12dd6d4eed)" style="fill: none; stroke: #c2d2e0; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_11">
+    <path d="M 158.82 174.528 
+L 158.82 178.56 
+" clip-path="url(#p12dd6d4eed)" style="fill: none; stroke: #c2d2e0; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_12">
+    <path d="M 223.752 174.528 
+L 223.752 178.56 
+" clip-path="url(#p12dd6d4eed)" style="fill: none; stroke: #c2d2e0; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_13">
+    <path d="M 288.684 174.528 
+L 288.684 178.56 
+" clip-path="url(#p12dd6d4eed)" style="fill: none; stroke: #c2d2e0; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_14">
+    <path d="M 353.616 174.528 
+L 353.616 178.56 
+" clip-path="url(#p12dd6d4eed)" style="fill: none; stroke: #c2d2e0; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_15">
+    <path d="M 418.548 174.528 
+L 418.548 178.56 
+" clip-path="url(#p12dd6d4eed)" style="fill: none; stroke: #c2d2e0; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_16">
+    <path d="M 483.48 174.528 
+L 483.48 178.56 
+" clip-path="url(#p12dd6d4eed)" style="fill: none; stroke: #c2d2e0; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_17">
+    <path d="M 127.5321 162.377018 
+L 111.633 169.8909 
+" clip-path="url(#p12dd6d4eed)" style="fill: none; stroke: #e8823c; stroke-width: 1.1; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_18">
+    <path d="M 177.8544 129.662836 
+L 160.332 114.997313 
+" clip-path="url(#p12dd6d4eed)" style="fill: none; stroke: #4e9be8; stroke-width: 1.1; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_19">
+    <path d="M 207.0738 107.230255 
+L 192.798 100.308655 
+" clip-path="url(#p12dd6d4eed)" style="fill: none; stroke: #1f6fd0; stroke-width: 1.1; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_20">
+    <path d="M 425.52 81.627055 
+L 430.5264 76.248 
+" clip-path="url(#p12dd6d4eed)" style="fill: none; stroke: #8a9bab; stroke-width: 1.1; stroke-linecap: square"/>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 11px; font-family: 'MiSans'; text-anchor: start; fill: #8a9bab" x="29.88" y="243.786" transform="rotate(-0 29.88 243.786)">解析估计：两个高斯模正对时的重叠积分。实际模式不是理想高斯，量级一致。</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 11px; font-family: 'MiSans'; text-anchor: end; fill: #4a6076" x="86.832" y="74.627" transform="rotate(-0 86.832 74.627)">0</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 11px; font-family: 'MiSans'; text-anchor: end; fill: #4a6076" x="86.832" y="97.994273" transform="rotate(-0 86.832 97.994273)">-5</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 11px; font-family: 'MiSans'; text-anchor: end; fill: #4a6076" x="86.832" y="121.361545" transform="rotate(-0 86.832 121.361545)">-10</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 11px; font-family: 'MiSans'; text-anchor: end; fill: #4a6076" x="86.832" y="144.728818" transform="rotate(-0 86.832 144.728818)">-15</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 11px; font-family: 'MiSans'; text-anchor: end; fill: #4a6076" x="86.832" y="168.096091" transform="rotate(-0 86.832 168.096091)">-20</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 11px; font-family: 'MiSans'; text-anchor: middle; fill: #4a6076" x="93.888" y="189.539" transform="rotate(-0 93.888 189.539)">0</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 11px; font-family: 'MiSans'; text-anchor: middle; fill: #4a6076" x="158.82" y="189.539" transform="rotate(-0 158.82 189.539)">2</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 11px; font-family: 'MiSans'; text-anchor: middle; fill: #4a6076" x="223.752" y="189.539" transform="rotate(-0 223.752 189.539)">4</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 11px; font-family: 'MiSans'; text-anchor: middle; fill: #4a6076" x="288.684" y="189.539" transform="rotate(-0 288.684 189.539)">6</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 11px; font-family: 'MiSans'; text-anchor: middle; fill: #4a6076" x="353.616" y="189.539" transform="rotate(-0 353.616 189.539)">8</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 11px; font-family: 'MiSans'; text-anchor: middle; fill: #4a6076" x="418.548" y="189.539" transform="rotate(-0 418.548 189.539)">10</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 11px; font-family: 'MiSans'; text-anchor: middle; fill: #4a6076" x="483.48" y="189.539" transform="rotate(-0 483.48 189.539)">12</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 11.5px; font-family: 'MiSans'; fill: #4a6076" transform="translate(36.4555 164.830859) rotate(-90)">耦合损耗（dB）</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 11.5px; font-family: 'MiSans'; text-anchor: middle; fill: #4a6076" x="288.684" y="213.488" transform="rotate(-0 288.684 213.488)">芯片侧模场直径（μm）</text>
+   </g>
+   <g id="line2d_21">
+    <path d="M 107.52372 173.916878 
+L 109.096759 169.501102 
+L 110.669798 165.523671 
+L 112.242836 161.906225 
+L 115.388914 155.52879 
+L 118.534992 150.036873 
+L 121.681069 145.218739 
+L 124.827147 140.931009 
+L 127.973225 137.072073 
+L 131.119302 133.567281 
+L 134.26538 130.360176 
+L 137.411458 127.407017 
+L 140.557535 124.673223 
+L 145.276652 120.924418 
+L 149.995768 117.534188 
+L 154.714885 114.446743 
+L 159.434001 111.618764 
+L 164.153118 109.015921 
+L 170.445273 105.848578 
+L 176.737428 102.980563 
+L 183.029584 100.370933 
+L 189.321739 97.98698 
+L 197.186933 95.284351 
+L 205.052127 92.851121 
+L 212.917322 90.653578 
+L 220.782516 88.664183 
+L 230.220749 86.519753 
+L 239.658982 84.609593 
+L 249.097215 82.906635 
+L 260.108486 81.151621 
+L 271.119758 79.617531 
+L 283.704069 78.10231 
+L 296.288379 76.810459 
+L 310.445729 75.590645 
+L 324.603078 74.586911 
+L 340.333467 73.691724 
+L 357.636894 72.937899 
+L 376.51336 72.350829 
+L 396.962864 71.948365 
+L 418.985408 71.741108 
+L 444.154029 71.739322 
+L 472.468728 71.97719 
+L 483.48 72.126219 
+L 483.48 72.126219 
+" clip-path="url(#p12dd6d4eed)" style="fill: none; stroke: #0b4c9c; stroke-width: 2.8; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_22">
+    <defs>
+     <path id="mca0dbb30e4" d="M 0 2.3 
+C 0.609967 2.3 1.195034 2.057657 1.626346 1.626346 
+C 2.057657 1.195034 2.3 0.609967 2.3 0 
+C 2.3 -0.609967 2.057657 -1.195034 1.626346 -1.626346 
+C 1.195034 -2.057657 0.609967 -2.3 0 -2.3 
+C -0.609967 -2.3 -1.195034 -2.057657 -1.626346 -1.626346 
+C -2.057657 -1.195034 -2.3 -0.609967 -2.3 0 
+C -2.3 0.609967 -2.057657 1.195034 -1.626346 1.626346 
+C -1.195034 2.057657 -0.609967 2.3 0 2.3 
+z
+" style="stroke: #e8823c"/>
+    </defs>
+    <g clip-path="url(#p12dd6d4eed)">
+     <use xlink:href="#mca0dbb30e4" x="127.5321" y="162.377018" style="fill: #e8823c; stroke: #e8823c"/>
+    </g>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 12px; font-family: 'MiSans'; text-anchor: start; fill: #e8823c" x="131.0601" y="166.169206" transform="rotate(-0 131.0601 166.169206)">0.5 μm 裸波导   0.9%</text>
+   </g>
+   <g id="line2d_23">
+    <defs>
+     <path id="m0f009a6ef9" d="M 0 2.3 
+C 0.609967 2.3 1.195034 2.057657 1.626346 1.626346 
+C 2.057657 1.195034 2.3 0.609967 2.3 0 
+C 2.3 -0.609967 2.057657 -1.195034 1.626346 -1.626346 
+C 1.195034 -2.057657 0.609967 -2.3 0 -2.3 
+C -0.609967 -2.3 -1.195034 -2.057657 -1.626346 -1.626346 
+C -2.057657 -1.195034 -2.3 -0.609967 -2.3 0 
+C -2.3 0.609967 -2.057657 1.195034 -1.626346 1.626346 
+C -1.195034 2.057657 -0.609967 2.3 0 2.3 
+z
+" style="stroke: #4e9be8"/>
+    </defs>
+    <g clip-path="url(#p12dd6d4eed)">
+     <use xlink:href="#m0f009a6ef9" x="177.8544" y="129.662836" style="fill: #4e9be8; stroke: #4e9be8"/>
+    </g>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 12px; font-family: 'MiSans'; text-anchor: start; fill: #4e9be8" x="181.3824" y="133.412836" transform="rotate(-0 181.3824 133.412836)">2 μm 倒锥   14%</text>
+   </g>
+   <g id="line2d_24">
+    <defs>
+     <path id="m0fbbb43389" d="M 0 2.3 
+C 0.609967 2.3 1.195034 2.057657 1.626346 1.626346 
+C 2.057657 1.195034 2.3 0.609967 2.3 0 
+C 2.3 -0.609967 2.057657 -1.195034 1.626346 -1.626346 
+C 1.195034 -2.057657 0.609967 -2.3 0 -2.3 
+C -0.609967 -2.3 -1.195034 -2.057657 -1.626346 -1.626346 
+C -2.057657 -1.195034 -2.3 -0.609967 -2.3 0 
+C -2.3 0.609967 -2.057657 1.195034 -1.626346 1.626346 
+C -1.195034 2.057657 -0.609967 2.3 0 2.3 
+z
+" style="stroke: #1f6fd0"/>
+    </defs>
+    <g clip-path="url(#p12dd6d4eed)">
+     <use xlink:href="#m0fbbb43389" x="207.0738" y="107.230255" style="fill: #1f6fd0; stroke: #1f6fd0"/>
+    </g>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 12px; font-family: 'MiSans'; text-anchor: start; fill: #1f6fd0" x="210.6018" y="111.052442" transform="rotate(-0 210.6018 111.052442)">3 μm 倒锥 + 透镜光纤   28%</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 12px; font-family: 'MiSans'; text-anchor: end; fill: #8a9bab" x="422.496" y="90.429242" transform="rotate(-0 422.496 90.429242)">10.4 μm 光纤模场   100%</text>
+   </g>
+   <g id="line2d_25">
+    <defs>
+     <path id="mfa8c818765" d="M 0 4.25 
+C 1.127113 4.25 2.208214 3.802193 3.005204 3.005204 
+C 3.802193 2.208214 4.25 1.127113 4.25 0 
+C 4.25 -1.127113 3.802193 -2.208214 3.005204 -3.005204 
+C 2.208214 -3.802193 1.127113 -4.25 0 -4.25 
+C -1.127113 -4.25 -2.208214 -3.802193 -3.005204 -3.005204 
+C -3.802193 -2.208214 -4.25 -1.127113 -4.25 0 
+C -4.25 1.127113 -3.802193 2.208214 -3.005204 3.005204 
+C -2.208214 3.802193 -1.127113 4.25 0 4.25 
+z
+" style="stroke: #ffffff; stroke-width: 1.5"/>
+    </defs>
+    <g clip-path="url(#p12dd6d4eed)">
+     <use xlink:href="#mfa8c818765" x="110.121" y="166.8669" style="fill: #e8823c; stroke: #ffffff; stroke-width: 1.5"/>
+    </g>
+   </g>
+   <g id="line2d_26">
+    <defs>
+     <path id="m301c7abf30" d="M 0 4.25 
+C 1.127113 4.25 2.208214 3.802193 3.005204 3.005204 
+C 3.802193 2.208214 4.25 1.127113 4.25 0 
+C 4.25 -1.127113 3.802193 -2.208214 3.005204 -3.005204 
+C 2.208214 -3.802193 1.127113 -4.25 0 -4.25 
+C -1.127113 -4.25 -2.208214 -3.802193 -3.005204 -3.005204 
+C -3.802193 -2.208214 -4.25 -1.127113 -4.25 0 
+C -4.25 1.127113 -3.802193 2.208214 -3.005204 3.005204 
+C -2.208214 3.802193 -1.127113 4.25 0 4.25 
+z
+" style="stroke: #ffffff; stroke-width: 1.5"/>
+    </defs>
+    <g clip-path="url(#p12dd6d4eed)">
+     <use xlink:href="#m301c7abf30" x="158.82" y="111.973313" style="fill: #4e9be8; stroke: #ffffff; stroke-width: 1.5"/>
+    </g>
+   </g>
+   <g id="line2d_27">
+    <defs>
+     <path id="m71d08973ad" d="M 0 4.25 
+C 1.127113 4.25 2.208214 3.802193 3.005204 3.005204 
+C 3.802193 2.208214 4.25 1.127113 4.25 0 
+C 4.25 -1.127113 3.802193 -2.208214 3.005204 -3.005204 
+C 2.208214 -3.802193 1.127113 -4.25 0 -4.25 
+C -1.127113 -4.25 -2.208214 -3.802193 -3.005204 -3.005204 
+C -3.802193 -2.208214 -4.25 -1.127113 -4.25 0 
+C -4.25 1.127113 -3.802193 2.208214 -3.005204 3.005204 
+C -2.208214 3.802193 -1.127113 4.25 0 4.25 
+z
+" style="stroke: #ffffff; stroke-width: 1.5"/>
+    </defs>
+    <g clip-path="url(#p12dd6d4eed)">
+     <use xlink:href="#m71d08973ad" x="191.286" y="97.284655" style="fill: #1f6fd0; stroke: #ffffff; stroke-width: 1.5"/>
+    </g>
+   </g>
+   <g id="line2d_28">
+    <defs>
+     <path id="m480414f5ce" d="M 0 4.25 
+C 1.127113 4.25 2.208214 3.802193 3.005204 3.005204 
+C 3.802193 2.208214 4.25 1.127113 4.25 0 
+C 4.25 -1.127113 3.802193 -2.208214 3.005204 -3.005204 
+C 2.208214 -3.802193 1.127113 -4.25 0 -4.25 
+C -1.127113 -4.25 -2.208214 -3.802193 -3.005204 -3.005204 
+C -3.802193 -2.208214 -4.25 -1.127113 -4.25 0 
+C -4.25 1.127113 -3.802193 2.208214 -3.005204 3.005204 
+C -2.208214 3.802193 -1.127113 4.25 0 4.25 
+z
+" style="stroke: #ffffff; stroke-width: 1.5"/>
+    </defs>
+    <g clip-path="url(#p12dd6d4eed)">
+     <use xlink:href="#m480414f5ce" x="431.5344" y="71.712" style="fill: #8a9bab; stroke: #ffffff; stroke-width: 1.5"/>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p12dd6d4eed">
+   <rect x="7.2" y="7.2" width="504" height="246.96"/>
+  </clipPath>
+ </defs>
+</svg>

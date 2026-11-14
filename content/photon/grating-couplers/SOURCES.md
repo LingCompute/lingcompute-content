@@ -9,6 +9,26 @@
 - [Bilayer SiN/Si grating coupler](https://www.lingcompute.com/photon/learning-center/examples/notebooks/BilayerSiNSiGC)：双层 SiN/Si 光栅，第 1 篇只引用其峰值量级。
 - 系列入口：[灵算光子学习中心](https://www.lingcompute.com/photon/learning-center/example-library)；国内产品入口 [tidy3d.fangzhen.cloud](https://tidy3d.fangzhen.cloud/)。
 
+## 文献参照（第 1 篇「四条路」一节）
+
+这一节只做入口方式的横向说明，数字用于判断量级，不是同条件对比；下表逐条给出出处与它原本的测量对象。
+
+| 正文用法 | 出处 | 原始条件 |
+| --- | --- | --- |
+| 光纤模场直径 10.4 μm、硅波导截面 0.5 × 0.22 μm | 通信单模光纤与硅条波导的通用量级 | 1.55 μm 波段；模场直径按 SMF-28 类光纤取值，波导为几何截面而非模场尺寸 |
+| 重叠效率 η = [2d₁d₂/(d₁²+d₂²)]²，0.5 μm → 0.9%（−20.4 dB） | 两个高斯模正对时的重叠积分，解析式 | **解析估计**，非仿真；真实模式非高斯，量级一致；不含反射与对准误差 |
+| 端面耦合插损 1 dB 量级、带宽 > 100 nm | [Low-cost and high-efficiency single-mode-fiber interfaces to silicon photonic circuits](https://www.sciencedirect.com/science/article/abs/pii/S003040182030170X)（Optik, 2020） | 硅倒锥 + 三维聚合物模斑转换对接解理单模光纤，1550 nm，TE/TM 均约 −1.0 dB，PDL < 0.6 dB。属文献最好值，不代表通用工艺 |
+| 单层均匀光栅 33%（−4.8 dB）、1 dB 带宽 40 nm、1 dB 额外损耗容差 2 μm | F. Van Laere 等，*Compact Focusing Grating Couplers for Silicon-on-Insulator Integrated Circuits*, IEEE PTL 19(23), 2007, [10.1109/LPT.2007.908762](https://doi.org/10.1109/LPT.2007.908762)（转引 Taillaert 等, JJAP 45, 2006） | SOI，1550 nm，近垂直入射；数值为该文引用的实验报道，不是本次求解结果 |
+| 加底部反射镜后 69%（−1.6 dB） | 同上（转引 Van Laere 等, JLT 25, 2007） | 同上；反射镜为额外工艺层 |
+| 45° 折转镜面为全反射、带宽与偏振不敏感 | F. Civitci 等, *Light turning mirrors for hybrid integration of SiON-based optical waveguides and photo-detectors*, Opt. Express 21(20), 2013, [10.1364/OE.21.024375](https://doi.org/10.1364/OE.21.024375) | SiON 平台，45° 准全反射镜；正文只引用机制，不引用其损耗数字（该文测的是对光电探测器的耦合，不是对光纤） |
+| 光子引线键合 C 波段 1.6 ± 0.4 dB、1 dB 带宽 > 300 nm | N. Lindenmann 等, *Photonic wire bonding: a novel concept for chip-scale interconnects*, Opt. Express 20(16), 2012, [10.1364/OE.20.017667](https://doi.org/10.1364/OE.20.017667) | SU-8 聚合物波导，芯约 2 × 1.6 μm，两端 32 μm 长、尖端 20–100 nm 的倒锥；首代原型，非量产指标 |
+
+口径说明：
+
+- 正文的「偏离法线 10° 上下」是近垂直光栅的常见工作角；本系列第 2 篇的案例用 14.5°，属同一族但不在该区间内，两者不构成矛盾，也不可直接互相换算。
+- 「对准容差比光栅小」是定性比较：端面耦合把模场撑到 2–3 μm，容差随模场尺寸缩小；本文不给端面耦合的容差数字，因为不同定义的报道差异过大。
+- 第 1 篇正文出现的所有 dB 值要么来自上表文献，要么来自本系列自己的求解（后者见下一节）；两类数字在文中分别标注，不混算。
+
 ## 数值口径
 
 **第 1 篇引用的均匀光栅读数**（本项目 3D FDTD 求解，高斯光束入射）：硅 260 nm、刻蚀 160 nm、填充因子 0.8、上包层 680 nm、BOX 2 μm，周期 0.62 μm、光纤位置 3.6 μm、倾角 14.5°、TE 偏振。1.55 μm 附近，前向基模耦合效率峰值 **−4.20 dB @1548 nm**（约 38%），1.55 μm 处 −4.23 dB；相对峰值的 3 dB 带宽 69 nm、1 dB 带宽 39 nm，两段均未触及扫描边界；衬底泄漏 26.3%；向上总反射 19.8%。
@@ -27,12 +47,15 @@
 
 | 文件 | 制作与解释边界 |
 | --- | --- |
-| `figures/01-interface.svg` | 本项目原创结构示意：端面耦合与光栅耦合两种入口，尺寸未按真实比例 |
-| `figures/02-principle.svg` | 本项目原创教学示意：相位匹配与散射波叠加，不是仿真场 |
-| `figures/03-metrics.svg` | 本项目数据图：四个指标定义 + 本次均匀光栅求解的四条功率去路（38% / 26% / 20% / 未分解 16%） |
-| `figures/04-three-routes.svg` | 本项目原创结构示意：三条路线的设计自由度对照，齿宽与周期未按真实比例 |
+| `figures/01-mode-gap.svg` | 本项目解析估计图：两个高斯模正对时的重叠效率随芯片侧模场直径的变化，四个点为 0.5 / 2 / 3 / 10.4 μm；不是仿真场，不含反射与对准误差 |
+| `figures/02-four-routes.svg` | 本项目原创结构示意：端面耦合、光栅耦合、45° 折转镜面、3D 打印桥接四种入口的几何对照，尺寸与齿宽未按真实比例 |
+| `figures/03-principle.svg` | 本项目原创教学示意：相位匹配与散射波叠加，不是仿真场 |
+| `figures/04-metrics.svg` | 本项目数据图：四个指标定义 + 本次均匀光栅求解的四条功率去路（38% / 26% / 20% / 未分解 16%） |
+| `figures/05-three-routes.svg` | 本项目原创结构示意：三条路线的设计自由度对照，齿宽与周期未按真实比例 |
 
 示意图与数据图以 SVG 为随文源图，由本地 matplotlib 脚本生成：导出后去掉 DOCTYPE、`metadata` 与全局样式表，样式写成展示属性，文字保留为 `<text>` 而不转轮廓。文字使用小米 MiSans（Regular / Medium / Semibold）；字体文件不入库、不随图分发。公众号上传副本由构建从 SVG 渲染生成，不单独维护。场图与像素化结果保留原生栅格，不做 PNG 套壳成 SVG。
+
+`01-mode-gap.svg` 的曲线由 η = [2d₁d₂/(d₁²+d₂²)]² 在 d₂ = 0.42–12 μm 上直接计算；四条标注与正文的 −20.4 / −8.6 / −5.5 / 0 dB 由同一式代入得到，可逐点复算。`02-four-routes.svg` 只表达"光从哪个面进出、靠什么机制拐弯"，不承载任何尺寸或效率读数。
 
 ## 权利范围
 
@@ -40,4 +63,4 @@
 
 ## 待核查事项
 
-第 1 篇为新增待审稿，按内容 PR 流程由 `config/reviewers.json` 中的光子领域审核者批准当前提交后才收录。需特别核查：三个案例的数值是否按上述口径复算一致；「不能直接排名」的限定是否在正文各处成立；四张图的文字与正文数字是否一一对应。
+第 1 篇为新增待审稿，按内容 PR 流程由 `config/reviewers.json` 中的光子领域审核者批准当前提交后才收录。需特别核查：三个案例的数值是否按上述口径复算一致；「不能直接排名」的限定是否在正文各处成立；五张图的文字与正文数字是否一一对应；「四条路」一节引用的文献数字是否按上表条件转述、没有把不同平台的读数并列成排名。

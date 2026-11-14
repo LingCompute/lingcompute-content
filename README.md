@@ -23,9 +23,9 @@
 
 适合：具有光学基础、需要理解和选择集成光子器件的工程师与科研人员。
 
-1. [光怎么进芯片？看懂三类光栅耦合器](content/photon/grating-couplers/01-overview.md) — 光栅耦合器靠相位匹配把导模「漏」成光束。四个指标、三条路线，先把地图铺开。
+1. [光怎么进芯片？看懂三类光栅耦合器](content/photon/grating-couplers/01-overview.md) — 光进芯片有四条路，光栅赢在接口在表面、位置随便放。四个指标、三条路线，先把地图铺开。
 
-   预计阅读 **6–10 分钟**，实操另计。 [来源、定量口径与素材说明](content/photon/grating-couplers/SOURCES.md)。
+   预计阅读 **9–17 分钟**，实操另计。 [来源、定量口径与素材说明](content/photon/grating-couplers/SOURCES.md)。
 
 
 <a id="series-photon-power-splitters"></a>
