@@ -1,0 +1,279 @@
+
+
+<svg stroke-linejoin="round" stroke-linecap="butt" xmlns:xlink="http://www.w3.org/1999/xlink" width="518.4pt" height="286.56pt" viewBox="0 0 518.4 286.56" xmlns="http://www.w3.org/2000/svg">
+ 
+ <defs>
+  
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 286.56 
+L 518.4 286.56 
+L 518.4 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 34.92 213.84 
+L 483.48 213.84 
+L 483.48 108 
+L 34.92 108 
+z
+" clip-path="url(#p2e894a10fd)" style="fill: #eef3f8"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 29.88 60.624 
+L 72.72 60.624 
+" clip-path="url(#p2e894a10fd)" style="fill: none; stroke: #1f6fd0; stroke-width: 3.2"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 34.92 213.84 
+L 483.48 213.84 
+L 483.48 186.12 
+L 34.92 186.12 
+z
+" clip-path="url(#p2e894a10fd)" style="fill: #dce7f2"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 262.728 143.784 
+L 262.728 133.704 
+" clip-path="url(#p2e894a10fd)" style="fill: none; stroke: #0b4c9c; stroke-width: 1.1; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 283.896 143.784 
+L 283.896 133.704 
+" clip-path="url(#p2e894a10fd)" style="fill: none; stroke: #0b4c9c; stroke-width: 1.1; stroke-linecap: square"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 42.984 265.248 
+L 475.416 265.248 
+Q 483.48 265.248 483.48 257.184 
+L 483.48 231.984 
+Q 483.48 223.92 475.416 223.92 
+L 42.984 223.92 
+Q 34.92 223.92 34.92 231.984 
+L 34.92 257.184 
+Q 34.92 265.248 42.984 265.248 
+z
+" clip-path="url(#p2e894a10fd)" style="fill: #f1f7fe"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 13.5px; font-family: 'MiSans'; text-anchor: start; fill: #4e9be8" x="29.88" y="25.8975" transform="rotate(-0 29.88 25.8975)">原理</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 25px; font-family: 'MiSans'; text-anchor: start; fill: #12263a" x="29.88" y="49.105" transform="rotate(-0 29.88 49.105)">光栅耦合器靠相位匹配工作</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 10px; font-family: 'MiSans'; text-anchor: start; fill: #8a9bab" x="29.88" y="271.212" transform="rotate(-0 29.88 271.212)">示意图。实际器件的齿宽与周期在数百纳米量级。</text>
+   </g>
+   <g id="patch_5">
+    <path d="M 34.92 186.12 
+L 483.48 186.12 
+L 483.48 164.952 
+L 34.92 164.952 
+z
+" clip-path="url(#p2e894a10fd)" style="fill: #0b4c9c; stroke: #0a3f82; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 264.181444 138.744 
+Q 273.312 138.744 282.442556 138.744 
+" style="fill: none; stroke: #0b4c9c; stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 267.781444 140.544 
+L 264.181444 138.744 
+L 267.781444 136.944 
+z
+" style="fill: #0b4c9c; stroke: #0b4c9c; stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 278.842556 136.944 
+L 282.442556 138.744 
+L 278.842556 140.544 
+z
+" style="fill: #0b4c9c; stroke: #0b4c9c; stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 14px; font-family: 'MiSans'; text-anchor: middle; fill: #0b4c9c" x="273.312" y="126.732" transform="rotate(-0 273.312 126.732)">Λ</text>
+   </g>
+   <g id="line2d_4">
+    <path d="M 262.728 152.856 
+L 283.896 99.432 
+" clip-path="url(#p2e894a10fd)" style="fill: none; stroke: #4e9be8; stroke-opacity: 0.45; stroke-width: 1.1; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_5">
+    <path d="M 283.896 152.856 
+L 305.064 99.432 
+" clip-path="url(#p2e894a10fd)" style="fill: none; stroke: #4e9be8; stroke-opacity: 0.45; stroke-width: 1.1; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_6">
+    <path d="M 305.064 152.856 
+L 326.232 99.432 
+" clip-path="url(#p2e894a10fd)" style="fill: none; stroke: #4e9be8; stroke-opacity: 0.45; stroke-width: 1.1; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_7">
+    <path d="M 326.232 152.856 
+L 347.4 99.432 
+" clip-path="url(#p2e894a10fd)" style="fill: none; stroke: #4e9be8; stroke-opacity: 0.45; stroke-width: 1.1; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_8">
+    <path d="M 347.4 152.856 
+L 368.568 99.432 
+" clip-path="url(#p2e894a10fd)" style="fill: none; stroke: #4e9be8; stroke-opacity: 0.45; stroke-width: 1.1; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_9">
+    <path d="M 368.568 152.856 
+L 389.736 99.432 
+" clip-path="url(#p2e894a10fd)" style="fill: none; stroke: #4e9be8; stroke-opacity: 0.45; stroke-width: 1.1; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_10">
+    <path d="M 389.736 152.856 
+L 410.904 99.432 
+" clip-path="url(#p2e894a10fd)" style="fill: none; stroke: #4e9be8; stroke-opacity: 0.45; stroke-width: 1.1; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_11">
+    <path d="M 410.904 152.856 
+L 432.072 99.432 
+" clip-path="url(#p2e894a10fd)" style="fill: none; stroke: #4e9be8; stroke-opacity: 0.45; stroke-width: 1.1; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_12">
+    <path d="M 432.072 152.856 
+L 453.24 99.432 
+" clip-path="url(#p2e894a10fd)" style="fill: none; stroke: #4e9be8; stroke-opacity: 0.45; stroke-width: 1.1; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_13">
+    <path d="M 34.92 175.536 
+L 254.16 175.536 
+" clip-path="url(#p2e894a10fd)" style="fill: none; stroke: #7fb2e0; stroke-opacity: 0.85; stroke-width: 7; stroke-linecap: round"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 85.32 175.536 
+Q 115.56 175.536 143.116718 175.536 
+" clip-path="url(#p2e894a10fd)" style="fill: none; stroke: #0b4c9c; stroke-width: 2.4; stroke-linecap: round"/>
+    <path d="M 136.316718 172.136 
+L 143.116718 175.536 
+L 136.316718 178.936 
+z
+" clip-path="url(#p2e894a10fd)" style="fill: #0b4c9c; stroke: #0b4c9c; stroke-width: 2.4; stroke-linecap: round"/>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 12.5px; font-family: 'MiSans'; text-anchor: start; fill: #0b4c9c" x="57.6" y="199.5125" transform="rotate(-0 57.6 199.5125)">导模沿 +x 传播</text>
+   </g>
+   <g id="patch_8">
+    <path d="M 256.68 166.968 
+L 268.776 166.968 
+L 268.776 153.864 
+L 256.68 153.864 
+z
+" clip-path="url(#p2e894a10fd)" style="fill: #e8823c"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 277.848 166.968 
+L 289.944 166.968 
+L 289.944 153.864 
+L 277.848 153.864 
+z
+" clip-path="url(#p2e894a10fd)" style="fill: #e8823c"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 299.016 166.968 
+L 311.112 166.968 
+L 311.112 153.864 
+L 299.016 153.864 
+z
+" clip-path="url(#p2e894a10fd)" style="fill: #e8823c"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 320.184 166.968 
+L 332.28 166.968 
+L 332.28 153.864 
+L 320.184 153.864 
+z
+" clip-path="url(#p2e894a10fd)" style="fill: #e8823c"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 341.352 166.968 
+L 353.448 166.968 
+L 353.448 153.864 
+L 341.352 153.864 
+z
+" clip-path="url(#p2e894a10fd)" style="fill: #e8823c"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 362.52 166.968 
+L 374.616 166.968 
+L 374.616 153.864 
+L 362.52 153.864 
+z
+" clip-path="url(#p2e894a10fd)" style="fill: #e8823c"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 383.688 166.968 
+L 395.784 166.968 
+L 395.784 153.864 
+L 383.688 153.864 
+z
+" clip-path="url(#p2e894a10fd)" style="fill: #e8823c"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 404.856 166.968 
+L 416.952 166.968 
+L 416.952 153.864 
+L 404.856 153.864 
+z
+" clip-path="url(#p2e894a10fd)" style="fill: #e8823c"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 426.024 166.968 
+L 438.12 166.968 
+L 438.12 153.864 
+L 426.024 153.864 
+z
+" clip-path="url(#p2e894a10fd)" style="fill: #e8823c"/>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 15px; font-family: 'MiSans'; text-anchor: start; fill: #0b4c9c" x="52.56" y="95.847" transform="rotate(-0 52.56 95.847)">散射波同相叠加</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 12.5px; font-family: 'MiSans'; text-anchor: start; fill: #4a6076" x="52.56" y="110.3045" transform="rotate(-0 52.56 110.3045)">合成一束往斜上方走的光</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 12.5px; font-family: 'MiSans'; text-anchor: start; fill: #0b4c9c" x="50.04" y="247.8965" transform="rotate(-0 50.04 247.8965)">相位条件</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 17px; font-family: 'MiSans'; text-anchor: start; fill: #12263a" x="130.68" y="249.089" transform="rotate(-0 130.68 249.089)">n_eff − n_clad·sin θ = λ / Λ</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 12px; font-family: 'MiSans'; text-anchor: start; fill: #e8823c" x="377.64" y="248.106187" transform="rotate(-0 377.64 248.106187)">波长一变，匹配就散</text>
+   </g>
+   <g id="line2d_14">
+    <path d="M 312.0192 149.832 
+L 329.055055 83.959235 
+" clip-path="url(#p2e894a10fd)" style="fill: none; stroke: #1f6fd0; stroke-opacity: 0.72; stroke-width: 2.4; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_15">
+    <path d="M 318.3696 149.832 
+L 335.405455 83.959235 
+" clip-path="url(#p2e894a10fd)" style="fill: none; stroke: #1f6fd0; stroke-opacity: 0.72; stroke-width: 2.4; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_16">
+    <path d="M 324.72 149.832 
+L 341.755855 83.959235 
+" clip-path="url(#p2e894a10fd)" style="fill: none; stroke: #1f6fd0; stroke-opacity: 0.72; stroke-width: 2.4; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_17">
+    <path d="M 331.0704 149.832 
+L 348.106255 83.959235 
+" clip-path="url(#p2e894a10fd)" style="fill: none; stroke: #1f6fd0; stroke-opacity: 0.72; stroke-width: 2.4; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_18">
+    <path d="M 337.4208 149.832 
+L 354.456655 83.959235 
+" clip-path="url(#p2e894a10fd)" style="fill: none; stroke: #1f6fd0; stroke-opacity: 0.72; stroke-width: 2.4; stroke-linecap: round"/>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p2e894a10fd">
+   <rect x="7.2" y="7.2" width="504" height="272.16"/>
+  </clipPath>
+ </defs>
+</svg>
