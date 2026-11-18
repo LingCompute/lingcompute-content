@@ -1,0 +1,147 @@
+
+
+<svg stroke-linejoin="round" stroke-linecap="butt" xmlns:xlink="http://www.w3.org/1999/xlink" width="518.4pt" height="326.88pt" viewBox="0 0 518.4 326.88" xmlns="http://www.w3.org/2000/svg">
+ 
+ <defs>
+  
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 326.88 
+L 518.4 326.88 
+L 518.4 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="line2d_1">
+    <path d="M 29.88 60.624 
+L 72.72 60.624 
+" clip-path="url(#pb8e8007c15)" style="fill: none; stroke: #1f6fd0; stroke-width: 3.2"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 13.5px; font-family: 'MiSans'; text-anchor: start; fill: #4e9be8" x="29.88" y="25.8975" transform="rotate(-0 29.88 25.8975)">四个指标</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 25px; font-family: 'MiSans'; text-anchor: start; fill: #12263a" x="29.88" y="49.105" transform="rotate(-0 29.88 49.105)">入射功率到底去了哪</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 10px; font-family: 'MiSans'; text-anchor: start; fill: #8a9bab" x="29.88" y="311.532" transform="rotate(-0 29.88 311.532)">本次均匀光栅 3D，λ = 1.55 μm；三项已测功率约 84%，余项未作模式与辐射分解。</text>
+   </g>
+   <g id="patch_2">
+    <path d="M 50.04 82.8 
+L 56.088 82.8 
+L 56.088 64.656 
+L 50.04 64.656 
+z
+" clip-path="url(#pb8e8007c15)" style="fill: #0b4c9c"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 50.04 116.064 
+L 56.088 116.064 
+L 56.088 97.92 
+L 50.04 97.92 
+z
+" clip-path="url(#pb8e8007c15)" style="fill: #1f6fd0"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 50.04 149.328 
+L 56.088 149.328 
+L 56.088 131.184 
+L 50.04 131.184 
+z
+" clip-path="url(#pb8e8007c15)" style="fill: #5e93c4"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 50.04 182.592 
+L 56.088 182.592 
+L 56.088 164.448 
+L 50.04 164.448 
+z
+" clip-path="url(#pb8e8007c15)" style="fill: #e8823c"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 50.04 241.56 
+L 208.16496 241.56 
+L 208.16496 205.272 
+L 50.04 205.272 
+z
+" clip-path="url(#pb8e8007c15)" style="fill: #0b4c9c; stroke: #ffffff; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 208.16496 241.56 
+L 318.18312 241.56 
+L 318.18312 205.272 
+L 208.16496 205.272 
+z
+" clip-path="url(#pb8e8007c15)" style="fill: #8fb6d9; stroke: #ffffff; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 318.18312 241.56 
+L 401.01048 241.56 
+L 401.01048 205.272 
+L 318.18312 205.272 
+z
+" clip-path="url(#pb8e8007c15)" style="fill: #e8823c; stroke: #ffffff; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 401.01048 241.56 
+L 468.36 241.56 
+L 468.36 205.272 
+L 401.01048 205.272 
+z
+" clip-path="url(#pb8e8007c15)" style="fill: #d9e3ec; stroke: #ffffff; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 15px; font-family: 'MiSans'; text-anchor: start; fill: #12263a" x="65.16" y="77.703" transform="rotate(-0 65.16 77.703)">耦合效率</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 11.5px; font-family: 'MiSans'; text-anchor: start; fill: #4a6076" x="173.52" y="76.7755" transform="rotate(-0 173.52 76.7755)">进入波导目标基模的功率比例。</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 15px; font-family: 'MiSans'; text-anchor: start; fill: #12263a" x="65.16" y="110.967" transform="rotate(-0 65.16 110.967)">带宽</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 11.5px; font-family: 'MiSans'; fill: #4a6076" transform="translate(173.52 104.047641)">本例 3 dB 宽 69 nm、1 dB 宽 39 nm；</text>
+    <text style="font-size: 11.5px; font-family: 'MiSans'; fill: #4a6076" transform="translate(173.52 116.674641)">均相对峰值定义。</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 15px; font-family: 'MiSans'; text-anchor: start; fill: #12263a" x="65.16" y="144.231" transform="rotate(-0 65.16 144.231)">净下行通量</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 11.5px; font-family: 'MiSans'; text-anchor: start; fill: #4a6076" x="173.52" y="143.671859" transform="rotate(-0 173.52 143.671859)">下方平面净功率，不等于材料吸收。</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 15px; font-family: 'MiSans'; text-anchor: start; fill: #12263a" x="65.16" y="177.495" transform="rotate(-0 65.16 177.495)">向上总反射</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 11.5px; font-family: 'MiSans'; fill: #4a6076" transform="translate(173.52 170.63943)">高斯入射的总反射，</text>
+    <text style="font-size: 11.5px; font-family: 'MiSans'; fill: #4a6076" transform="translate(173.52 183.26643)">不等于光纤或激光器模式回波。</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 15px; font-family: 'MiSans'; text-anchor: middle; fill: #ffffff" x="129.10248" y="227.391" transform="rotate(-0 129.10248 227.391)">38%</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 15px; font-family: 'MiSans'; text-anchor: middle; fill: #ffffff" x="263.17404" y="227.391" transform="rotate(-0 263.17404 227.391)">26%</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 15px; font-family: 'MiSans'; text-anchor: middle; fill: #ffffff" x="359.5968" y="227.391" transform="rotate(-0 359.5968 227.391)">20%</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 15px; font-family: 'MiSans'; text-anchor: middle; fill: #12263a" x="434.68524" y="227.391" transform="rotate(-0 434.68524 227.391)">16%</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 12.5px; font-family: 'MiSans'; text-anchor: start; fill: #4a6076" x="50.04" y="196.4885" transform="rotate(-0 50.04 196.4885)">入射功率 100%</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 12.5px; font-family: 'MiSans'; text-anchor: start; fill: #4a6076" x="50.04" y="262.427445" transform="rotate(-0 50.04 262.427445)">进到波导的只有 38% —— 漏进衬底的那一块，比反射回去的还大</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pb8e8007c15">
+   <rect x="7.2" y="7.2" width="504" height="312.48"/>
+  </clipPath>
+ </defs>
+</svg>

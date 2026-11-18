@@ -1,0 +1,24 @@
+{
+  "product": "photon",
+  "title": "图解无源光子器件 · 光栅耦合器",
+  "audience": "具有光学基础、需要理解和选择集成光子器件的工程师与科研人员",
+  "articles": [
+    {
+      "slug": "01-overview",
+      "authors": [
+        "Frank-DingYC"
+      ],
+      "summary": "光进芯片有四条路，光栅赢在接口在表面、位置随便放。四个指标、三条路线，先把地图铺开。",
+      "sources": [
+        "https://www.lingcompute.com/photon/learning-center/examples/notebooks/GratingCoupler",
+        "https://www.lingcompute.com/photon/learning-center/examples/notebooks/FocusedApodGC",
+        "https://www.lingcompute.com/photon/learning-center/examples/notebooks/BilayerSiNSiGC",
+        "https://www.lingcompute.com/photon/learning-center/example-library",
+        "https://doi.org/10.1109/LPT.2007.908762",
+        "https://doi.org/10.1364/OE.20.017667",
+        "https://doi.org/10.1364/OE.21.024375",
+        "https://www.sciencedirect.com/science/article/abs/pii/S003040182030170X"
+      ]
+    }
+  ]
+}
