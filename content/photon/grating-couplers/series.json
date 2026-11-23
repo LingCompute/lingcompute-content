@@ -19,6 +19,18 @@
         "https://doi.org/10.1364/OE.21.024375",
         "https://www.sciencedirect.com/science/article/abs/pii/S003040182030170X"
       ]
+    },
+    {
+      "slug": "02-uniform",
+      "authors": [
+        "Frank-DingYC"
+      ],
+      "summary": "先用光栅方程算出周期，再扫一遍工作点：周期是硬约束，光纤位置几乎是软约束，−4.2 dB 又是怎么被分掉的。",
+      "sources": [
+        "https://www.lingcompute.com/photon/learning-center/examples/notebooks/GratingCoupler",
+        "https://www.lingcompute.com/photon/learning-center/example-library",
+        "https://tidy3d.fangzhen.cloud/"
+      ]
     }
   ]
 }

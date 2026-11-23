@@ -1,0 +1,369 @@
+
+
+<svg stroke-linejoin="round" stroke-linecap="butt" xmlns:xlink="http://www.w3.org/1999/xlink" width="518.4pt" height="266.4pt" viewBox="0 0 518.4 266.4" xmlns="http://www.w3.org/2000/svg">
+ 
+ <defs>
+  
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 266.4 
+L 518.4 266.4 
+L 518.4 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 37.944 211.32 
+L 263.736 211.32 
+Q 271.8 211.32 271.8 203.256 
+L 271.8 75.744 
+Q 271.8 67.68 263.736 67.68 
+L 37.944 67.68 
+Q 29.88 67.68 29.88 75.744 
+L 29.88 203.256 
+Q 29.88 211.32 37.944 211.32 
+z
+" clip-path="url(#p9c9bcea027)" style="fill: #f1f7fe"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 288.432 211.32 
+L 480.456 211.32 
+Q 488.52 211.32 488.52 203.256 
+L 488.52 75.744 
+Q 488.52 67.68 480.456 67.68 
+L 288.432 67.68 
+Q 280.368 67.68 280.368 75.744 
+L 280.368 203.256 
+Q 280.368 211.32 288.432 211.32 
+z
+" clip-path="url(#p9c9bcea027)" style="fill: #f1f7fe"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 29.88 60.624 
+L 72.72 60.624 
+" clip-path="url(#p9c9bcea027)" style="fill: none; stroke: #1f6fd0; stroke-width: 3.2"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 113.04 141.768 
+L 261.72 141.768 
+L 261.72 110.52 
+L 113.04 110.52 
+z
+" clip-path="url(#p9c9bcea027)" style="fill: #f4f8fc; stroke: #e1ebf5; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 113.04 186.12 
+L 261.72 186.12 
+L 261.72 155.88 
+L 113.04 155.88 
+z
+" clip-path="url(#p9c9bcea027)" style="fill: #dce7f2"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 310.608 116.064 
+L 310.608 105.984 
+" clip-path="url(#p9c9bcea027)" style="fill: none; stroke: #0b4c9c; stroke-width: 1.1; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 362.52 116.064 
+L 362.52 105.984 
+" clip-path="url(#p9c9bcea027)" style="fill: none; stroke: #0b4c9c; stroke-width: 1.1; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 362.52 174.528 
+L 362.52 164.448 
+" clip-path="url(#p9c9bcea027)" style="fill: none; stroke: #0b4c9c; stroke-width: 1.1; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_5">
+    <path d="M 477.432 174.528 
+L 477.432 164.448 
+" clip-path="url(#p9c9bcea027)" style="fill: none; stroke: #0b4c9c; stroke-width: 1.1; stroke-linecap: square"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 13.5px; font-family: 'MiSans'; text-anchor: start; fill: #4e9be8" x="29.88" y="25.8975" transform="rotate(-0 29.88 25.8975)">结构</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 25px; font-family: 'MiSans'; text-anchor: start; fill: #12263a" x="29.88" y="49.105" transform="rotate(-0 29.88 49.105)">均匀光栅的两个设计变量</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 10px; font-family: 'MiSans'; text-anchor: start; fill: #8a9bab" x="29.88" y="251.052" transform="rotate(-0 29.88 251.052)">按案例参数绘制，非等比例；620 nm 与 0.8 占空比为扫描后的最优值。</text>
+   </g>
+   <g id="patch_6">
+    <path d="M 113.04 155.88 
+L 261.72 155.88 
+L 261.72 141.768 
+L 113.04 141.768 
+z
+" clip-path="url(#p9c9bcea027)" style="fill: #0b4c9c"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 362.52 156.384 
+L 477.432 156.384 
+L 477.432 122.112 
+L 362.52 122.112 
+z
+" clip-path="url(#p9c9bcea027)" style="fill: #f4f8fc; stroke: #4e9be8; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 312.061444 111.024 
+Q 336.564 111.024 361.066556 111.024 
+" style="fill: none; stroke: #0b4c9c; stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 315.661444 112.824 
+L 312.061444 111.024 
+L 315.661444 109.224 
+z
+" style="fill: #0b4c9c; stroke: #0b4c9c; stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 357.466556 109.224 
+L 361.066556 111.024 
+L 357.466556 112.824 
+z
+" style="fill: #0b4c9c; stroke: #0b4c9c; stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 10.5px; font-family: 'MiSans'; text-anchor: middle; fill: #0b4c9c" x="336.564" y="100.251" transform="rotate(-0 336.564 100.251)">50 μm 锥形</text>
+   </g>
+   <g id="patch_9">
+    <path d="M 363.973444 169.488 
+Q 419.976 169.488 475.978556 169.488 
+" style="fill: none; stroke: #0b4c9c; stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 367.573444 171.288 
+L 363.973444 169.488 
+L 367.573444 167.688 
+z
+" style="fill: #0b4c9c; stroke: #0b4c9c; stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 472.378556 167.688 
+L 475.978556 169.488 
+L 472.378556 171.288 
+z
+" style="fill: #0b4c9c; stroke: #0b4c9c; stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 10.5px; font-family: 'MiSans'; text-anchor: middle; fill: #0b4c9c" x="419.976" y="175.851" transform="rotate(-0 419.976 175.851)">光栅区</text>
+   </g>
+   <g id="patch_10">
+    <path d="M 173.52 150.84 
+L 181.08 150.84 
+L 181.08 141.768 
+L 173.52 141.768 
+z
+" clip-path="url(#p9c9bcea027)" style="fill: #e8823c"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 186.624 150.84 
+L 194.184 150.84 
+L 194.184 141.768 
+L 186.624 141.768 
+z
+" clip-path="url(#p9c9bcea027)" style="fill: #e8823c"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 199.728 150.84 
+L 207.288 150.84 
+L 207.288 141.768 
+L 199.728 141.768 
+z
+" clip-path="url(#p9c9bcea027)" style="fill: #e8823c"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 212.832 150.84 
+L 220.392 150.84 
+L 220.392 141.768 
+L 212.832 141.768 
+z
+" clip-path="url(#p9c9bcea027)" style="fill: #e8823c"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 225.936 150.84 
+L 233.496 150.84 
+L 233.496 141.768 
+L 225.936 141.768 
+z
+" clip-path="url(#p9c9bcea027)" style="fill: #e8823c"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 239.04 150.84 
+L 246.6 150.84 
+L 246.6 141.768 
+L 239.04 141.768 
+z
+" clip-path="url(#p9c9bcea027)" style="fill: #e8823c"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 252.144 150.84 
+L 259.704 150.84 
+L 259.704 141.768 
+L 252.144 141.768 
+z
+" clip-path="url(#p9c9bcea027)" style="fill: #e8823c"/>
+   </g>
+   <g id="line2d_6">
+    <path d="M 105.48 122.112 
+L 113.04 122.112 
+" clip-path="url(#p9c9bcea027)" style="fill: none; stroke: #4e9be8; stroke-width: 1.4; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_7">
+    <path d="M 105.48 148.824 
+L 113.04 148.824 
+" clip-path="url(#p9c9bcea027)" style="fill: none; stroke: #4e9be8; stroke-width: 1.4; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_8">
+    <path d="M 105.48 174.528 
+L 113.04 174.528 
+" clip-path="url(#p9c9bcea027)" style="fill: none; stroke: #4e9be8; stroke-width: 1.4; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_9">
+    <path d="M 236.52 110.52 
+L 223.92 141.264 
+" clip-path="url(#p9c9bcea027)" style="fill: none; stroke: #4e9be8; stroke-width: 1.4; stroke-linecap: round"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 310.608 141.768 
+L 310.608 136.728 
+L 362.52 122.112 
+L 362.52 156.384 
+z
+" clip-path="url(#p9c9bcea027)" style="fill: #e8823c"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 368.064 156.384 
+L 375.624 156.384 
+L 375.624 122.112 
+L 368.064 122.112 
+z
+" clip-path="url(#p9c9bcea027)" style="fill: #e8823c"/>
+   </g>
+   <g id="patch_19">
+    <path d="M 383.184 156.384 
+L 390.744 156.384 
+L 390.744 122.112 
+L 383.184 122.112 
+z
+" clip-path="url(#p9c9bcea027)" style="fill: #e8823c"/>
+   </g>
+   <g id="patch_20">
+    <path d="M 398.304 156.384 
+L 405.864 156.384 
+L 405.864 122.112 
+L 398.304 122.112 
+z
+" clip-path="url(#p9c9bcea027)" style="fill: #e8823c"/>
+   </g>
+   <g id="patch_21">
+    <path d="M 413.424 156.384 
+L 420.984 156.384 
+L 420.984 122.112 
+L 413.424 122.112 
+z
+" clip-path="url(#p9c9bcea027)" style="fill: #e8823c"/>
+   </g>
+   <g id="patch_22">
+    <path d="M 428.544 156.384 
+L 436.104 156.384 
+L 436.104 122.112 
+L 428.544 122.112 
+z
+" clip-path="url(#p9c9bcea027)" style="fill: #e8823c"/>
+   </g>
+   <g id="patch_23">
+    <path d="M 443.664 156.384 
+L 451.224 156.384 
+L 451.224 122.112 
+L 443.664 122.112 
+z
+" clip-path="url(#p9c9bcea027)" style="fill: #e8823c"/>
+   </g>
+   <g id="patch_24">
+    <path d="M 458.784 156.384 
+L 466.344 156.384 
+L 466.344 122.112 
+L 458.784 122.112 
+z
+" clip-path="url(#p9c9bcea027)" style="fill: #e8823c"/>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 15px; font-family: 'MiSans'; text-anchor: start; fill: #12263a" x="43.488" y="86.775" transform="rotate(-0 43.488 86.775)">截面（x–z）</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 11px; font-family: 'MiSans'; text-anchor: start; fill: #4a6076" x="43.488" y="125.027" transform="rotate(-0 43.488 125.027)">上包层 680 nm</text>
+   </g>
+   <g id="line2d_10">
+    <defs>
+     <path id="m4e124dcdc5" d="M 0 2.3 
+C 0.609967 2.3 1.195034 2.057657 1.626346 1.626346 
+C 2.057657 1.195034 2.3 0.609967 2.3 0 
+C 2.3 -0.609967 2.057657 -1.195034 1.626346 -1.626346 
+C 1.195034 -2.057657 0.609967 -2.3 0 -2.3 
+C -0.609967 -2.3 -1.195034 -2.057657 -1.626346 -1.626346 
+C -2.057657 -1.195034 -2.3 -0.609967 -2.3 0 
+C -2.3 0.609967 -2.057657 1.195034 -1.626346 1.626346 
+C -1.195034 2.057657 -0.609967 2.3 0 2.3 
+z
+" style="stroke: #4e9be8"/>
+    </defs>
+    <g clip-path="url(#p9c9bcea027)">
+     <use xlink:href="#m4e124dcdc5" x="105.48" y="122.112" style="fill: #4e9be8; stroke: #4e9be8"/>
+    </g>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 11px; font-family: 'MiSans'; text-anchor: start; fill: #4a6076" x="43.488" y="151.739" transform="rotate(-0 43.488 151.739)">Si 260 nm</text>
+   </g>
+   <g id="line2d_11">
+    <g clip-path="url(#p9c9bcea027)">
+     <use xlink:href="#m4e124dcdc5" x="105.48" y="148.824" style="fill: #4e9be8; stroke: #4e9be8"/>
+    </g>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 11px; font-family: 'MiSans'; text-anchor: start; fill: #4a6076" x="43.488" y="177.520344" transform="rotate(-0 43.488 177.520344)">BOX 2 μm</text>
+   </g>
+   <g id="line2d_12">
+    <g clip-path="url(#p9c9bcea027)">
+     <use xlink:href="#m4e124dcdc5" x="105.48" y="174.528" style="fill: #4e9be8; stroke: #4e9be8"/>
+    </g>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 11px; font-family: 'MiSans'; text-anchor: end; fill: #1f6fd0" x="167.472" y="98.315" transform="rotate(-0 167.472 98.315)">14.5°</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 10.5px; font-family: 'MiSans'; text-anchor: end; fill: #0b4c9c" x="258.192" y="104.7345" transform="rotate(-0 258.192 104.7345)">Λ = 620 nm</text>
+   </g>
+   <g id="line2d_13">
+    <g clip-path="url(#p9c9bcea027)">
+     <use xlink:href="#m4e124dcdc5" x="236.52" y="110.52" style="fill: #4e9be8; stroke: #4e9be8"/>
+    </g>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 11px; font-family: 'MiSans'; text-anchor: start; fill: #4a6076" x="43.488" y="203.651" transform="rotate(-0 43.488 203.651)">20 个齿 · 部分刻蚀 160 nm · 占空比 0.8</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 15px; font-family: 'MiSans'; text-anchor: start; fill: #12263a" x="293.976" y="87.555469" transform="rotate(-0 293.976 87.555469)">俯视（x–y）</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 10px; font-family: 'MiSans'; text-anchor: end; fill: #4a6076" x="294.48" y="142.976313" transform="rotate(-0 294.48 142.976313)">0.5 μm</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 10.5px; font-family: 'MiSans'; text-anchor: start; fill: #4a6076" x="362.52" y="120.463172" transform="rotate(-0 362.52 120.463172)">宽 10.8 μm</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 10.5px; font-family: 'MiSans'; text-anchor: middle; fill: #4a6076" x="423" y="193.4385" transform="rotate(-0 423 193.4385)">光栅宽度取光纤模场直径</text>
+   </g>
+   <g id="line2d_14">
+    <path d="M 189.648 101.952 
+L 180.576 123.12 
+" clip-path="url(#p9c9bcea027)" style="fill: none; stroke: #c9d8e6; stroke-width: 11; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_15">
+    <path d="M 189.648 101.952 
+L 180.576 123.12 
+" clip-path="url(#p9c9bcea027)" style="fill: none; stroke: #e8823c; stroke-opacity: 0.9; stroke-width: 3.4; stroke-linecap: round"/>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p9c9bcea027">
+   <rect x="7.2" y="7.2" width="504" height="252"/>
+  </clipPath>
+ </defs>
+</svg>
