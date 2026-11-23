@@ -79,7 +79,7 @@
 | `figures/05-three-routes.svg` | 本项目原创结构示意：三条路线的设计自由度对照，齿宽与周期未按真实比例 |
 | `figures/06-uniform-setup.svg` | 本项目绘图：2D 扫描设置。几何、源与监视器取自 `make_2d_sim(0.62, 3.6)`；source_x 按 `source.center[0]` 到光栅起点 x = 0 绘制；网格图对应实际 7 × 11 个扫描点 |
 | `figures/07-uniform-sweep.svg` | 本项目数据图：77 点 2D 扫描的耦合效率，色标固定 −9…−2 dB，等高线 −7…−3 dB，空心圈标注网格最优 620 nm / 3.6 μm |
-| `figures/08-uniform-field-2d.png` | 本项目补算结果：最优点那组几何加场监视器重跑一次 2D。上为 Ey 幅值相对入射幅度（1 V/m）的 dB，下为 Re(Ey) 按 ±4 截断；光栅区共振增强约 33 dB，色标截断属有意 |
+| `figures/08-uniform-field-2d.png` | 本项目补算结果：最优点那组几何加场监视器重跑一次 2D。上下同色标 −28…25 dB（Ey 幅值相对入射幅度 1 V/m）；光栅区峰值约 33 dB，超出部分按色标上限截断 |
 | `figures/09-uniform-structure-3d.svg` | 本项目绘图：3D 模型的真实结构，轮廓遍历 `simulation.structures` 的 Box / PolySlab 得到，无手绘；俯视按真实比例，齿距在 12.4 μm 尺度下不可分辨 |
 | `figures/10-uniform-field-3d.png` | 3D 求解的原生栅格场图：Ey 幅值对数色标，λ = 1.55 μm，上为全线、下为光栅区放大；结构轮廓同 09，含 680 nm 上包层 |
 | `figures/11-uniform-spectrum.svg` | 本项目数据图：左为 1500–1600 nm 效率与 −1/−3 dB 参考线，右为三条功率去路；101 点、1 nm 步长 |
