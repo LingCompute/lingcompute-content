@@ -85,7 +85,7 @@
 | `figures/11-uniform-spectrum.svg` | 本项目数据图：左为 1500–1600 nm 效率与 −1/−3 dB 参考线，右为三条功率去路；101 点、1 nm 步长 |
 | `video/GratingCoupler-GUI-3D-crop.gif` | GUI 原生导出的 3D Carpet 单频场动画（field_xy，Re(Ey)，1.55 μm），经裁剪与量化；起伏表示场值，不是结构形变或脉冲传播 |
 
-示意图与数据图以 SVG 为随文源图，由本地 matplotlib 脚本生成：导出后去掉 DOCTYPE、`metadata` 与全局样式表，样式写成展示属性，文字保留为 `<text>` 而不转轮廓。文字使用小米 MiSans（Regular / Medium / Semibold）；字体文件不入库、不随图分发。公众号上传副本由构建从 SVG 渲染生成，不单独维护。场图与像素化结果保留原生栅格，不做 PNG 套壳成 SVG。
+示意图与数据图以 SVG 为随文源图，由本地 matplotlib 脚本生成：导出后去掉 DOCTYPE、`metadata` 与全局样式表，样式写成展示属性，文字保留为 `<text>` 而不转轮廓。文字使用小米 MiSans（Regular / Medium / Semibold）；字体文件不入库、不随图分发。公众号上传副本由构建从 SVG 渲染生成，不单独维护。场图与像素化结果保留原生栅格，不做 PNG 套壳成 SVG。本篇的制图脚本保留在本地制作目录，取数路径、归一化与截断方式均已写入上表；审核需要时由维护者提供脚本与原始 hdf5 供复算。
 
 `01-mode-gap.svg` 的曲线由 η = [2d₁d₂/(d₁²+d₂²)]² 在 d₂ = 0.42–12 μm 上直接计算；四条标注与正文的 −20.4 / −8.6 / −5.5 / 0 dB 由同一式代入得到，可逐点复算。`02-four-routes.svg` 只表达"光从哪个面进出、靠什么机制拐弯"，不承载任何尺寸或效率读数。
 
