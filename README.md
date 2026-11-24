@@ -27,6 +27,10 @@
 
    预计阅读 **9–17 分钟**，实操另计。 [来源、定量口径与素材说明](content/photon/grating-couplers/SOURCES.md)。
 
+2. [聚焦切趾光栅耦合器怎么设计？从逐齿计算到 3D 验证](content/photon/grating-couplers/03-apodized.md) — 给有波导或 FDTD 基础的读者：从 PDK 和相位匹配式算出逐齿尺寸，画成聚焦版图，再用 2D、3D 仿真检查效率与工艺余量。
+
+   预计阅读 **6–11 分钟**，实操另计。 [来源、定量口径与素材说明](content/photon/grating-couplers/SOURCES.md)。
+
 
 <a id="series-photon-power-splitters"></a>
 
