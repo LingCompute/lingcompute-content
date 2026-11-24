@@ -19,6 +19,18 @@
         "https://doi.org/10.1364/OE.21.024375",
         "https://www.sciencedirect.com/science/article/abs/pii/S003040182030170X"
       ]
+    },
+    {
+      "slug": "02-uniform",
+      "authors": [
+        "Frank-DingYC"
+      ],
+      "summary": "2D 扫描定周期，3D 动图从硅层内看光场沿锥形收进窄波导，再追踪 −4.2 dB 背后的功率去路。",
+      "sources": [
+        "https://www.lingcompute.com/photon/learning-center/examples/notebooks/GratingCoupler",
+        "https://www.lingcompute.com/photon/learning-center/example-library",
+        "https://tidy3d.fangzhen.cloud/"
+      ]
     }
   ]
 }

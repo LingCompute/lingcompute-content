@@ -27,6 +27,10 @@
 
    预计阅读 **9–17 分钟**，实操另计。 [来源、定量口径与素材说明](content/photon/grating-couplers/SOURCES.md)。
 
+2. [一排齿，怎么把光拐进波导？](content/photon/grating-couplers/02-uniform.md) — 2D 扫描定周期，3D 动图从硅层内看光场沿锥形收进窄波导，再追踪 −4.2 dB 背后的功率去路。
+
+   预计阅读 **8–15 分钟**，实操另计。 [来源、定量口径与素材说明](content/photon/grating-couplers/SOURCES.md)。
+
 
 <a id="series-photon-power-splitters"></a>
 
