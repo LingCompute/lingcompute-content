@@ -1,6 +1,6 @@
 # 协作入口
 
-- 文章变更：先读 `docs/editorial.md`；每篇 Markdown 与随文图同属发布源稿，更新 `series.json` 与 `SOURCES.md` 后构建。
+- 文章变更：先读 `docs/editorial.md`；按「发布前中文审改」使用 `humanizer-zh` 审核并修改正文。每篇 Markdown 与随文图同属发布源稿，更新 `series.json` 与 `SOURCES.md` 后构建。
 - 版式、章节横幅、页尾、配图规范：先读 `docs/wechat-template.md`；它是公众号版式的唯一依据，含面向 AI 的硬性要求与自检清单。
 - 人审、合并或审核名单变更：先读 `docs/review.md`；由人工确认专业资格，AI 只准备稿件与检查，不作业内批准。
 - 引入素材或制作材料：先读 `docs/rights.md` 与 `production/README.md`，逐项说明来源和授权。
